@@ -42,6 +42,7 @@ d21b3ee16cc64dfa7808f2bbf77756f6b89df77b7d1aeaf7fed302ba58523f6e  ./refs/papers/
 9ca8ad3fe6cf70f7649e819c2d71a9314abc4cbc40c9649ebbd5dcf3658c67ae  ./refs/papers/LeeKim2026.pdf
 1166a1618f1e9a2cf996afd0122278eac20bfec2ace5e201a51f263183d76ac2  ./refs/references.bib
 52ee54171f6d42a32ac2093c1db8882a50a27c18f191845c068e28913fed4cd7  ./refs/references.json
+3b2587237752a71a0bfa77c489477addd6351f83b97724ee09a15ad5ad3c9f49  ./release_notes.md
 5f6c007f014fc8d629a76e6012b8634d98c9c5991c1ca7c4a12bd9edb18adb70  ./requirements.txt
 71e4f8b14f5087cb038bab13dfed72a9fcdfd5a5f22857d6241bf3de8553275e  ./run_all.sh
 e8cafd623e0d61ed9c6ebf79d28373f948dc8e46f966c72d8613198fedc1a977  ./source/algebra.tex
