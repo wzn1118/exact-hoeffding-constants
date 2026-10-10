@@ -2,23 +2,24 @@
 
 **Zinan Wang · 2026 年 10 月 11 日修订**
 
-[主论文 PDF（28 页）](manuscript.pdf) · [技术补充 PDF（6 页）](supplementary_refinements.pdf) · [单文件投稿源码](submission/manuscript.tex)
+[英文主论文（28 页）](manuscript.pdf) · [技术补充（6 页）](supplementary_refinements.pdf) · [独立投稿 LaTeX 源码](submission/manuscript.tex)
 
-## 精确常数
+## 主定理
 
-对任意有限总体规模，有界交换序列的中心化线性对比满足最优 Hoeffding 系数公式
+对任意有限总体规模，中心化有界交换序列的最优 Hoeffding 系数为
+
 \[
-C_N^\star=\begin{cases}
-N/(N-1),&N\text{ 为偶数},\\
-[(N-1)\operatorname{artanh}(1/N)]^{-1},&N\text{ 为奇数}.
+C_N^\star = \begin{cases}
+\dfrac{N}{N-1}, & N\text{ 为偶数},\\[4pt]
+\dfrac{1}{(N-1)\operatorname{artanh}(1/N)}, & N\text{ 为奇数}.
 \end{cases}
 \]
 
-主论文集中呈现两水平归约、全参数倾斜方差界、奇偶统一的 Laplace 包络、精确常数和奇数总体的等号分类。四阶展开收至附录。固定样本成功数极值与精确失衡系数、紧成功比例区间解析收缩、次要曲率例子与积分恒等式收至独立的技术补充，保留完整论证。
+主论文集中论述 Lee–Kim 两水平归约、全参数倾斜方差界、奇偶统一的 Laplace 包络、精确常数和奇数总体的等号分类。四阶渐近展开进入附录。固定样本成功数极值、紧成功率区间上的解析收缩以及次要曲率反例与积分恒等式移入独立技术补充，保留完整证明。
 
-## 可复现性
+## 完整复现
 
-CI 已改为实际执行全部 `run_all.sh` 数学测试，而非仅编译 PDF。包括偶数总体包络在内的十一项检查均须通过；运行日志保存到 `checks/logs/`，包含 `verify_even_envelope_extension.log`。同时验证 27–30 页主稿要求、补充文稿、文献引用和 SHA256 文件哈希。
+连续集成现在执行全部 `run_all.sh` 数学测试，涵盖偶数总体包络检查，并保存 `checks/logs/verify_even_envelope_extension.log` 等逐项日志。自动构建同时生成 28 页主论文和 6 页补充论文，检查校验和后将产物同步到 `main`。
 
 ```bash
 python3 -m pip install -r requirements.txt
@@ -28,4 +29,12 @@ python3 checks/refresh_checksums.py
 sha256sum -c SHA256SUMS.txt
 ```
 
-论文和补充材料从 `source/manuscript.tex` 与 `source/supplement.tex` 编译。版权归作者所有，详见 `LICENSE`、`COPYRIGHT.md` 和 `THIRD_PARTY_NOTICES.md`。
+主论文、补充论文和单文件投稿源码分别位于 `manuscript.pdf`、`supplementary_refinements.pdf` 与 `submission/manuscript.tex`。源码入口为 `source/manuscript.tex` 和 `source/supplement.tex`。
+
+版权所有 © 2026 Zinan Wang。原创文字、源码及验证脚本保留全部权利，详见 `LICENSE`、`COPYRIGHT.md` 和第三方文献声明 `THIRD_PARTY_NOTICES.md`。
+
+## 证明核验与文献对照
+
+- [全局曲率与 Laplace 包络的证明证书](docs/proof_certification_2026-10-11.md)
+- [逐定理文献与原创性对照](docs/theorem_priority_2026-10-11.md)
+- 独立代数核验：`python3 checks/verify_independent_certificates.py`；日志：`checks/logs/verify_independent_certificates.log`。
