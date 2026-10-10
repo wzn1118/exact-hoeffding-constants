@@ -31,7 +31,7 @@ We determine the least constant in the Hoeffding-type exponential-moment inequal
  \displaystyle[(N-1)\operatorname{artanh}(1/N)]^{-1},&N\text{ odd}.
  \end{cases}
 \]
-The even coefficient coincides with the maximal normalized variance. In odd populations the optimal Laplace parameter is nonzero, and the sharp coefficient strictly exceeds the variance benchmark. We obtain the result through a two-level reduction to hypergeometric laws, a global tilted-variance bound, and a mean-dependent quadratic envelope for their Laplace transforms. The envelope holds for both parities throughout the sub-half-population parameter range; parity enters when the remaining discrete margins are optimized. We also classify the odd-population extremizers and derive fourth-order expansions of the optimized hypergeometric proxies.
+The even coefficient coincides with the maximal normalized variance. In odd populations the optimal Laplace parameter is nonzero, and the sharp coefficient strictly exceeds the variance benchmark. We obtain the result through a two-level reduction to hypergeometric laws, a global tilted-variance bound, and a mean-dependent quadratic envelope for their Laplace transforms. The envelope holds for both parities throughout the sub-half-population parameter range; parity enters when the remaining discrete margins are optimized. The proof also determines all odd-population extremizers.
 \end{abstract}
 \noindent\textbf{Keywords.} Hypergeometric distribution; finite exchangeability; optimal sub-Gaussian proxy; Fisher noncentral hypergeometric law; Jacobi polynomials; exponential tilting; Riccati equation.\\
 \textbf{MSC 2020.} 60E15, 60F10, 33C45, 62E15.
@@ -69,20 +69,14 @@ We state and prove this variational identity immediately after the main results.
 
 Two complementary estimates determine the optimum. First, a sharp bound on hypergeometric variance at every exponential tilt implies the universal coefficient $N/(N-1)$, which is attained for even populations. Second, a quadratic upper envelope for variance as a function of the tilted mean gives a scaled-Bernoulli Laplace comparison. The certificate for this envelope is valid in the sub-half-population regime for both parities. For odd $N$, all admissible success counts stay away from the exact half-population balance; optimizing the Bernoulli comparison then singles out the one-draw laws. For even $N$, the balanced zero-tilt equality accounts for the sharp constant. This separation of the continuous Laplace comparison from the discrete optimization isolates the role of parity.
 
-\subsection{Extremal refinements and relation to prior work}
-The exact constant leaves a finer question: how do nonsingleton samples approach the extremal value? For fixed $m$ and fixed odd success imbalance $s$, Theorem \ref{thm:odd_expansion} proves uniqueness of the global maximizing tilt and expands it through $N^{-3}$, while expanding the optimized proxy through $N^{-4}$. For the nearest-balanced population,
-\[
- L_N-R_{N,1,m}
- =\frac{2(m-1)}{3N^3}
- +\frac{2(m-1)(2m+1)}{3N^4}+O_m(N^{-5}).
-\]
-The first two correction orders therefore agree with the singleton law; the order-$N^{-3}$ term resolves the competition between sample sizes. Theorem \ref{thm:uniform_fixed} additionally maximizes over every success count at fixed $m$, and Theorem \ref{thm:exact_imbalance} computes the exact quadratic response to a continuous success imbalance at each finite population size. The global localization of the maximizing tilt supplies the analytic remainders in these expansions.
+\subsection{Relation to prior work and further refinements}
+The proof of the sharp constant rests on two global ingredients: the all-tilt hypergeometric curvature bound and the parity-uniform quadratic Laplace envelope. The complete classification of odd-population equality cases is part of the central theorem. Appendix \ref{sec:odd_asym} records fourth-order expansions for fixed margins. The finer fixed-sample extremality and compact-proportion comparison, together with subsidiary curvature examples, are given in the accompanying technical supplement. These refinements have no role in the proof of Theorem \ref{thm:exchange}.
 
 Hoeffding \cite{Hoeffding}, Serfling \cite{Serfling}, Bardenet and Maillard \cite{BardenetMaillard}, and Greene and Wellner \cite{GreeneWellner} develop exponential inequalities and finite-sampling corrections. Diaconis and Freedman \cite{DiaconisFreedman} provide the classical finite-exchangeability framework. Gottschling and Caprio \cite{GottschlingCaprio} bound tails of sample means of bounded infinitely exchangeable sequences relative to the extremal means in the support of the de Finetti mixing measure. Equation \eqref{eq:exchange-intro} concerns finite sequences and arbitrary zero-sum contrasts. Fisher's noncentral hypergeometric family describes the exponential tilts used here \cite{Fog}.
 
 Kou and Ying \cite{Kou} connect fixed-margin laws with Jacobi polynomials and sums of independent Bernoulli variables; Borcea, Br\"and\'en, and Liggett \cite{BBL} develop the broader stability framework. The Jacobi identities and zero-location theorem are classical \cite[Chapter IV and Section 6.7]{Szego}. Arbel, Marchal, and Nguyen \cite{ArbelMarchalNguyen} study optimal variance proxies and strict sub-Gaussianity, and Marchal and Arbel \cite{MarchalArbel} use differential equations for Beta and Dirichlet proxies. Atouani, Marchal, and Arbel \cite[Theorem 3.2 and Corollary 3.3]{AtouaniMarchalArbel} give the three-mass proxy formula specialized in Section \ref{sec:twodraw}. That section applies their formula to two draws and evaluates the resulting success-count extremum and singleton comparison. The all-degree variance certificates, the parity-uniform Laplace envelope, the classification of odd-population extremizers, and the optimized expansions for each fixed sample size are the hypergeometric results developed here. The fourth-order local moment expansion in \cite[Remark 3.6]{AtouaniMarchalArbel} is in the Laplace argument; our expansion is in $N^{-1}$ at the globally optimizing argument, and is accompanied by an extremum theorem over all success counts.
 
-The main statements are followed immediately by the exchangeability-to-hypergeometric reduction. We then develop the curvature estimate, determine the parity-dependent sharp constants, and establish the unified Laplace envelope. The extremal expansions and local imbalance theory follow. Technical cumulant calculations, subsidiary curvature examples, analytic contraction details, and algebraic certificates are collected in the appendices.
+The main statements are followed immediately by the exchangeability-to-hypergeometric reduction. We then develop the curvature estimate, determine the parity-dependent sharp constants, and establish the unified Laplace envelope. The odd-population extremizers and the uniform envelope complete the main argument. Fourth-order asymptotics and computational algebra are placed in the appendices, with additional finite-sample refinements in the technical supplement.
 
 \section{Statements of the main results}\label{sec:main}
 For $N\ge2$ and $1\le k,m<N$, write
@@ -166,19 +160,6 @@ The centered log-Laplace transform satisfies $\psi(0)=\psi'(0)=0$. Integrate the
 
 
 Write $L_N=2/[(N-1)\log((N+1)/(N-1))]$ for odd $N$, and let $R_{N,1,m}$ denote the normalized proxy $4N\sigma^2_{\mathrm{opt}}(H_{N,(N-1)/2,m})/[m(N-m)]$.
-\begin{theorem}[Uniform fixed-sample odd extremizers]\label{thm:main_uniform}
-For each fixed $m\ge2$, all sufficiently large odd $N$ satisfy
-\[
- \max_{1\le k<N}\frac{4N}{m(N-m)}\sigma^2_{\mathrm{opt}}(H_{N,k,m})
- =R_{N,1,m}<L_N.
-\]
-Only the success counts $(N-1)/2$ and $(N+1)/2$ maximize the left side. Their proxy and maximizing tilt admit the fourth- and third-order expansions in Theorem \ref{thm:odd_expansion}.
-\end{theorem}
-\begin{proof}
-The extremizer statement is proved in Theorem \ref{thm:uniform_fixed}; the expansions are given in Theorem \ref{thm:odd_expansion}.
-\end{proof}
-
-
 \begin{corollary}[Weighted finite-exchangeability concentration]\label{cor:tail}
 Let $X_1,\ldots,X_N\in[-1,1]$ be exchangeable, $1\le n\le N$, $w\in\R^n$, and let $\widetilde w$ be the $N$-vector obtained by padding $w$ with zeros. Put
 \[
@@ -518,8 +499,6 @@ Every admissible $(N,k,m)$ is carried by the complement/transposition symmetries
 
 \input{odd_uniform.tex}
 
-\input{new_results.tex}
-
 \section{Jacobi root dispersion and variance geometry}\label{sec:structure}
 \subsection{A root-spread inequality for Jacobi polynomials}
 Write $Q_j(z)=\text{const.}\prod_i(z+\alpha_i)$ as in \eqref{eq:factor}. Because
@@ -551,9 +530,8 @@ Thus the envelope is saturated at zero tilt whenever the larger margin product e
 The Poisson--binomial bound $v\le u(j-u)/j$ defines a region in the mean--variance plane. At each stationary tilt, the pair $(u,v)$ also satisfies $\mathcal F(u,v)=0$. For $j\ge3$, Lemmas \ref{lem:universal} and \ref{lem:identity} place the admissible stationary branch at or below $v=B$. The singleton and two-mark calculations complete the curvature bound for all degrees.
 
 \appendix
+\input{new_results.tex}
 \input{odd_cumulants.tex}
-\input{analytic_contraction.tex}
-\input{auxiliary_curvature.tex}
 \input{algebra.tex}
 
 \section{Proof of the Bernoulli optimal proxy}\label{app:bernoulli}
