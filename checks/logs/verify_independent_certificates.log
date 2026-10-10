@@ -1,0 +1,9 @@
+PASS independent curvature stationary elimination and factor identity
+PASS independent curvature positivity polynomial in a=j-3, s=h+r
+PASS independent Laplace residual identity F(u,P)+n*y*P*P'= -G*y^2*W
+PASS independent Laplace Bernoulli admissibility identity
+PASS independent Laplace SOS identity and positive determinant identity
+PASS independent Laplace quadrant coefficient identities
+PASS independent Jacobi generating-polynomial differential equation (96 exact cases)
+PASS direct finite-sum Laplace stress test N=7..18
+ALL independent certificate checks passed

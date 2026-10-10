@@ -16,4 +16,12 @@ for name in latex_build supplement_build; do
 done
 cp build/manuscript.pdf manuscript.pdf
 cp build/supplement.pdf supplementary_refinements.pdf
+for pass in 1 2; do
+  (cd docs && pdflatex -interaction=nonstopmode -halt-on-error proof_certification_2026-10-11.tex) > "build/proof_certification_pass_$pass.log" 2>&1
+done
+cp build/proof_certification_pass_2.log checks/logs/proof_certification_build.log
+if grep -E 'undefined references|undefined on input|Overfull|! LaTeX Error|multiply defined' checks/logs/proof_certification_build.log; then
+  printf 'Proof certification build failed.\n' >&2
+  exit 1
+fi
 printf 'Main manuscript and supplement compiled successfully.\n'

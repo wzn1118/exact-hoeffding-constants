@@ -1,0 +1,219 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,xcolor,hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue!50!black,linkcolor=blue!40!black}
+\DeclareMathOperator{\Var}{Var}\DeclareMathOperator{\Hyp}{Hyp}\DeclareMathOperator{\Bern}{Bern}
+\newcommand{\E}{\mathbb E}\newcommand{\R}{\mathbb R}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{lemma}[theorem]{Lemma}
+\title{Algebraic Verification of Two Global Hypergeometric Inequalities\\\large Curvature Certificates and Bernoulli Laplace Envelopes}
+\author{Zinan Wang}
+\date{11 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give an independent algebraic reconstruction and a complete sign analysis of the two global inequalities used in the exact finite-exchangeability Hoeffding constant. The first is a uniform bound on variance under every exponential tilt of a hypergeometric law. The second is a scaled Bernoulli log-Laplace comparison valid for both population parities in the canonical triangular parameter regime. Exact polynomial identities are checked through a separate symbolic computation and direct finite-sum calculations. A theorem-level concordance fixes the attribution of structural reductions and three-mass proxy formulas.
+\end{abstract}
+
+\section{The all-tilt curvature bound}
+For $H\sim\Hyp(N,k,m)$, write $\E_tH=u(t)$ and $\Var_t(H)=v(t)$ for the exponential tilt proportional to $e^{tH}$.
+\begin{theorem}[Universal curvature inequality]\label{thm:curv}
+For $N\ge2$, $1\le k,m<N$ and $t\in\R$,
+\begin{equation}\label{eq:curv}
+ v(t)\le \frac{\min\{k(N-k),m(N-m)\}}{4(N-1)}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The complement and transposition symmetries reduce to
+\[
+ k=j,\qquad m=j+h,\qquad N=2j+h+r,\qquad j\ge1,\quad h,r\ge0.
+\]
+The generating polynomial is
+\[
+ Q_j(z)=\sum_{i=0}^j\binom ji(j+h)_{\underline i}\frac{(r+j)!}{(r+i)!}z^i.
+\]
+Its Jacobi representation
+$Q_j(z)=j!(1-z)^jP_j^{(r,h)}((1+z)/(1-z))$ has exclusively negative simple zeros. Under each positive tilt the associated random variable is a sum of $j$ independent Bernoulli variables. Consequently
+\begin{equation}\label{eq:PB}
+0<u<j,\qquad 0<v\le\frac{u(j-u)}j.
+\end{equation}
+The polynomial satisfies
+\[
+ z(1-z)Q_j''+[r+1+(j+m-1)z]Q_j'-jmQ_j=0.
+\]
+Set $z=e^t$. If $v'(t)=0$, logarithmic differentiation and elimination of $z$ yield $F(u,v)=0$, where
+\begin{align*}
+ D_0(u,v)&=(j-u)(m-u)-v(j+m-2u-1),\\
+ F(u,v)&=[D_0-v(r+2u)](v+u^2)+rD_0u\\
+ &\quad +(j+m)v(r+2u)u-jmv(r+2u).
+\end{align*}
+As a polynomial in $v$, $F$ has leading coefficient $-(N-1)$ and positive constant term
+\[
+ F(u,0)=u(j-u)(r+u)(m-u)>0.
+\]
+There is exactly one positive root $v_+(u)$. Set
+\[
+ T=N-1,\quad L=N-j-1,\quad D=h-r,\quad S=h+r=L-j+1,\quad B=\frac{j(L+1)}{4T}.
+\]
+At a global maximizer $v_*$, suppose $v_*>B$. Such a maximizer exists because the tilted variance tends to zero at both ends of the real line. By \eqref{eq:PB}, with $x=2u_*-j$,
+\[
+ A:=j^2(j-1)-Tx^2>0.
+\]
+An unrestricted polynomial identity gives
+\begin{equation}\label{eq:stationary}
+-16TF\left(\frac{j+x}2,B\right)=A(D-x)^2+(L+1)(2jDx+Ex^2),\qquad E=L(L+1)-2j.
+\end{equation}
+For $j\ge3$ one has $L\ge j-1$, $E\ge0$, and $|D|\le S$. If $xD\ge0$, the right side is nonnegative. For $xD<0$, set $q=|x|$ and $d=|D|$. The right side is
+\[
+ g(d)=A(d+q)^2+(L+1)(Eq^2-2jqd),\qquad 0\le d\le S.
+\]
+If $A\ge j^2/L$, completion of squares gives
+\[
+ g(d)=A\left(d+q-\frac{j(L+1)q}{A}\right)^2
+ +(L+1)q^2\left[E+2j-\frac{j^2(L+1)}A\right]\ge0,
+\]
+using $E+2j=L(L+1)$.
+
+Suppose $0<A<j^2/L$. Then
+\[
+ q>q_0:=j\sqrt{\frac{(j-1)L-1}{LT}}\ge\frac jL.
+\]
+The final inequality follows from $(j-1)L^2-2L-j\ge0$ for $L\ge j-1$, $j\ge3$. Hence
+\[
+ A(d+q)\le\frac{j^2}{L}(S+q)\le j(L+1)q,
+\]
+so $g$ decreases on $[0,S]$. Write $a=j-3\ge0$, $L=j-1+S$. The inequality $Eq_0\ge2jS$ is equivalent to the polynomial nonnegativity
+\begin{equation}\label{eq:K}
+ \mathcal K:=E^2((j-1)L-1)-4S^2L(L+j)\ge0.
+\end{equation}
+Its exact expansion is
+\begin{align*}
+\mathcal K={}&a^2(a+1)(a+3)^3
++a(a+3)^2(5a^2+16a+10)S\\
+&+(10a^4+80a^3+213a^2+202a+35)S^2\\
+&+(10a^3+64a^2+117a+52)S^3\\
+&+(5a^2+22a+19)S^4+(a+2)S^5.
+\end{align*}
+Every coefficient is nonnegative for $a,S\ge0$. Therefore
+$g(d)\ge g(S)\ge0$, and \eqref{eq:stationary} gives $F(u_*,B)\le0$. The positive root $v_+(u_*)$ lies below $B$, a contradiction.
+
+For $j=1$, the tilted law is Bernoulli and $v\le1/4=B$. For $j=2$ the centered generating polynomial is proportional to $1+2\rho e^s+e^{2s}$, where
+\[
+ \rho=\sqrt{\frac{m(N-m)}{(m-1)(N-m-1)}}\in\left[\frac{N}{N-2},2\right].
+\]
+Writing $q=\cosh s\ge1$ gives
+\[
+ v=\frac{\rho q+1}{(\rho+q)^2}\le\frac1{1+\rho}\le\frac{N-2}{2(N-1)}=B.
+\]
+All parameter cases follow by symmetry.
+\end{proof}
+
+\section{The mean--variance Laplace comparison}
+\begin{theorem}[Parity-uniform scaled Bernoulli comparison]\label{thm:lap}
+Let $N\ge7$, $3\le m\le k\le\lfloor N/2\rfloor$ and $N>2m$. Set $p=k/N$, $M=m(N-m)/(N-1)$ and $a=(N-2m)/(N-2)$. For every $t\in\R$,
+\begin{equation}\label{eq:lap}
+ \log\E e^{t(H-mp)}\le\frac M{a^2}\left[\log(1-p+pe^{at})-pat\right],
+\end{equation}
+with strict inequality for $t\ne0$.
+\end{theorem}
+\begin{proof}
+Put $\mu=mp$, $d=1-2p$ and $u=\E_tH$. Since the tilted mean increases strictly from $0$ to $m$, its variance defines $V(u)$. Real-rootedness gives $V(u)\le u(m-u)/m$.
+
+Write
+\begin{align*}
+A(u)&=u(u+N-k-m),\qquad C(u)=(k-u)(m-u),\\
+F(u,v)&=-(N-1)v^2+[A+C-A'C+C'A]v+AC.
+\end{align*}
+The hypergeometric adjacent-mass recurrence yields the exact differential equation
+\begin{equation}\label{eq:curve}
+ F(u,V)+N(u-\mu)VV'=0.
+\end{equation}
+Introduce the quadratic
+\[
+ P(u)=Mp(1-p)+ad(u-\mu)-\frac{a^2}{M}(u-\mu)^2
+\]
+and $z_0=2(u-\mu)/M$, together with
+\begin{align*}
+G&=\frac{N^2(m-1)(N-m-1)}{4(N-2)^2(N-1)}>0,\\
+W(d,z_0)&=N-4+3Nd^2-4Nad z_0+[(N+1)a^2-M]z_0^2.
+\end{align*}
+Polynomial expansion in $u,k,m,N$ gives
+\begin{equation}\label{eq:residual}
+ F(u,P)+N(u-\mu)PP'=-G(u-\mu)^2W(d,z_0).
+\end{equation}
+Let $\delta=(N-2m)/N$, $b=(N-m)/(N-2)$ and
+\[
+ c=\frac{(N-m)[3N^2-4N-4m(N-1)]}{(N-1)(N-2)^2},\qquad
+ E(d,z_0)=1-d^2+4bdz_0-cz_0^2.
+\]
+The exact admissibility identity is
+\begin{equation}\label{eq:admiss}
+ \frac{u(m-u)}m-P(u)=\frac{m(m-1)}{4(N-1)}E(d,z_0).
+\end{equation}
+Thus at a contact $V=P$, one has $E(d,z_0)\ge0$. Also $0\le d\le\delta$.
+
+Define
+\[
+\lambda=\frac{m^2-mN+3m+N^2-4N}{2(N-m)},\qquad
+\alpha=\frac{N-4-\lambda}{\delta^2},
+\]
+\[
+ A_0=3N+\lambda+\alpha,\quad B_0=-2Na-2\lambda b,\quad C_0=(N+1)a^2-M+\lambda c.
+\]
+A second exact identity gives the quadratic certificate
+\begin{equation}\label{eq:sos}
+ W=\lambda E+\alpha(\delta^2-d^2)+A_0d^2+2B_0dz_0+C_0z_0^2.
+\end{equation}
+Its determinant factors as
+\begin{equation}\label{eq:det}
+ A_0C_0-B_0^2=\frac{N^2U_0V_0}{(N-2m)^2(N-2)^2(N-1)},
+\end{equation}
+where $U_0=N^2-2N-m^2-mN+3m$ and
+$V_0=m^3-6m^2-2mN^2+14mN-3m+N^3-7N^2+6N$.
+Write $j=m-3\ge0$, $r=N-2m\ge1$. Direct expansions are
+\begin{align*}
+2(N-m)\lambda&=3j^2+3jr+13j+r^2+5r+12,\\
+2(N-m)(N-4-\lambda)&=j^2+3jr+3j+r^2+5r,\\
+U_0&=j^2+3jr+5j+r^2+7r+6,\\
+V_0&=j^3+4j^2r+3j^2+4jr^2+10jr+r^3+5r^2.
+\end{align*}
+Each expression is positive on the indicated integer domain. Therefore $\lambda,\alpha,A_0>0$ and the quadratic form in \eqref{eq:sos} is positive definite. In particular, $W(d,z_0)>0$ at every contact $V=P$.
+
+At $u=0,m$ the quadratic barrier $P$ is positive, while $V$ vanishes. At $u=\mu$, the two curves meet. If $f=V-P$ vanishes at any other interior point, \eqref{eq:curve} and \eqref{eq:residual} yield
+\[
+ f'(u)=\frac{G(u-\mu)W(d,z_0)}{NP(u)}.
+\]
+Every noncentral zero to the left of $\mu$ crosses downward, and every such zero to the right crosses upward. The endpoint signs exclude a positive component of $f$ on either side. The same derivative formula excludes further interior equality. Thus $V(u)<P(u)$ for $u\ne\mu$.
+
+Finally, put $y(t)=u(t)-\mu$. The quadratic differential inequality is
+\[
+ y'\le Mp(1-p)+ady-\frac{a^2}{M}y^2.
+\]
+Its exact equality solution with initial value zero is
+\[
+ Y(t)=\frac M a\left(\frac{pe^{at}}{1-p+pe^{at}}-p\right).
+\]
+Variation of constants gives $y(t)<Y(t)$ for $t>0$ and $y(t)>Y(t)$ for $t<0$. Integration with the corresponding orientation yields \eqref{eq:lap} and the asserted strictness.
+\end{proof}
+
+\section{Theorem provenance and scope}
+The sharp weighted finite-exchangeability constant is obtained by inserting Theorems \ref{thm:curv} and \ref{thm:lap}, together with the $m=1,2$ computations, into the hypergeometric variational identity of Lee and Kim~\cite{LeeKim}. Their Theorem~1 bounds the inflation by $\Gamma_N=1+3/(2N)+O(N^{-2})$; Proposition~1 gives the variance lower bound, Remark~1 states the exact hypergeometric supremum, and Proposition~2 gives the two-level reduction. The present sharp evaluation is
+\[
+ C_N^\star=\begin{cases}
+ N/(N-1),&N\text{ even},\\[3pt]
+ [(N-1)\operatorname{artanh}(1/N)]^{-1},&N\text{ odd}.
+ \end{cases}
+\]
+The three-mass optimal-proxy identity used for $m=2$ is Theorem~3.2 of Atouani, Marchal and Arbel~\cite{AMA}. The hypergeometric two-draw maximization is an additional optimization over the success count. Classical Jacobi zero localization~\cite{Szego} supplies the real-root factorization. General optimal-proxy characterizations occur in Arbel, Marchal and Nguyen~\cite{AMN}. Barber's exchangeable weighted inequality~\cite{Barber} and the de Finetti extremal-mean concentration of Gottschling and Caprio~\cite{GC} address related bounds with different constants or hypotheses.
+
+The independent verifier \texttt{checks/verify\_independent\_certificates.py} reconstructs the stationary identity, positivity polynomial, residual equation, quadratic certificate, determinant and sign expansions from their defining expressions. It checks the generating-polynomial differential equation in 96 exact cases and evaluates log-Laplace transforms directly for $7\le N\le18$. The mathematical implications in the proofs above are uniform in all admissible parameters.
+
+\begin{thebibliography}{9}
+\bibitem{LeeKim} S.~Lee and I.~Kim, \emph{A sharper Hoeffding bound for weighted sums of exchangeable random variables}, arXiv:2608.04900v2 (2026).
+\bibitem{AMA} S.~Atouani, O.~Marchal and J.~Arbel, \emph{Optimal sub-Gaussian variance proxy for 3-mass distributions}, arXiv:2510.06132 (2025).
+\bibitem{AMN} J.~Arbel, O.~Marchal and H.~D.~Nguyen, \emph{On strict sub-Gaussianity, optimal proxy variance and symmetry for bounded random variables}, ESAIM: Probability and Statistics 24 (2020), 39--55.
+\bibitem{Barber} R.~Foygel Barber, \emph{Hoeffding and Bernstein inequalities for weighted sums of exchangeable random variables}, Electron. Commun. Probab. 29 (2024), with erratum (2025).
+\bibitem{GC} N.~M.~Gottschling and M.~Caprio, \emph{Hoeffding-style concentration bounds for exchangeable random variables}, arXiv:2603.10190v2 (2026).
+\bibitem{Szego} G.~Szeg\H{o}, \emph{Orthogonal Polynomials}, 4th ed., American Mathematical Society (1975).
+\end{thebibliography}
+\end{document}
