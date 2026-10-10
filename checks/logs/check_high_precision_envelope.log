@@ -1,0 +1,9 @@
+N=7,k=3,m=3: min tested (P-v)=0.00029071990639156, min tested (U-psi)=2.4346619362231e-7
+N=15,k=7,m=3: min tested (P-v)=0.00020677203138855, min tested (U-psi)=1.7289336194849e-7
+N=31,k=3,m=3: min tested (P-v)=0.00011973414223388, min tested (U-psi)=1.0070195541354e-7
+N=101,k=50,m=17: min tested (P-v)=0.0001896096557857, min tested (U-psi)=2.4785621122659e-8
+N=101,k=50,m=50: min tested (P-v)=0.00062477021616401, min tested (U-psi)=8.1664708172433e-8
+N=1001,k=500,m=30: min tested (P-v)=8.1942553564022e-7, min tested (U-psi)=1.090386227807e-12
+N=1001,k=500,m=500: min tested (P-v)=6.2499770789688e-5, min tested (U-psi)=8.3166644730798e-11
+N=10001,k=5000,m=100: min tested (P-v)=9.7039699382965e-9, min tested (U-psi)=1.2936039321526e-16
+PASS: 40 direct-mass, 80-digit comparisons; each uses nonzero tilt.

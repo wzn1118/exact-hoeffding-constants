@@ -1,0 +1,226 @@
+\section{Optimal proxies for nearly balanced odd populations}\label{sec:odd_asym}
+The strict singleton comparison of Theorem \ref{odd:thm:odd} has a small gap for nearly balanced populations. This section determines that gap through fourth order and the location of the globally maximizing tilt through third order, for every fixed sample size and fixed success imbalance. The cases $m=1$ and $m=2$ agree with the Bernoulli formula \eqref{eq:bernproxy} and the three-point specialization in Section \ref{sec:twodraw}. The theorem gives the expansion for arbitrary fixed $m$, together with uniqueness of the global optimizer and analytic remainders.
+
+Let $N$ be odd, let $s\ge1$ be a fixed odd integer, and put
+\begin{equation}\label{eq:oddparams}
+ k=\frac{N-s}{2},\qquad H_N\sim\Hyp(N,k,m),\qquad
+ R_{N,s,m}=\frac{4N}{m(N-m)}\sigma^2_{\mathrm{opt}}(H_N).
+\end{equation}
+Here $m\ge1$ is fixed while $N\to\infty$ runs through odd integers larger than $s+2m$. The prescribed centering gives a Bernoulli-success fraction $p=(1-s/N)/2$. The regime includes the most nearly balanced success count when $s=1$.
+
+\begin{theorem}[Fourth-order sharp-proxy expansion]\label{thm:odd_expansion}
+Fix $m\ge1$ and a positive odd integer $s$. For all sufficiently large odd $N$, the function
+\[
+ t\longmapsto\frac{2}{t^2}\log\E\exp\{t(H_N-mk/N)\},
+\]
+extended continuously at $t=0$, has a unique global maximizer $t_{N,s,m}>0$. The maximizer and the optimal normalized proxy have the expansions
+\begin{align}
+ t_{N,s,m}&=\frac{4s}{N}+\frac{4s(m-1)}{N^2}
+ +\frac{4s(6m+s^2-6)}{3N^3}+O_{m,s}(N^{-4}),\label{eq:tiltexp}\\
+ R_{N,s,m}
+ &=1+\frac1N+\frac{1-s^2/3}{N^2}
+ +\frac{1-(2m-1)s^2/3}{N^3}\notag\\
+ &\quad+\frac{1-(4m^2-2m-1)s^2/3-4s^4/45}{N^4}
+ +O_{m,s}(N^{-5}).\label{eq:Rexp}
+\end{align}
+The remainder is analytic in $N^{-1}$ in a neighborhood of zero for every fixed $m,s$.
+\end{theorem}
+
+\begin{corollary}[Fourth-order singleton dominance]\label{cor:fixedm_gap}
+For every fixed integer $m\ge2$, let $H_N\sim\Hyp(N,(N-1)/2,m)$, $N$ odd, and let
+\[
+ L_N=\frac{1}{(N-1)\operatorname{artanh}(1/N)}.
+\]
+Then
+\begin{equation}\label{eq:fixedgap}
+ \boxed{\quad L_N-R_{N,1,m}
+ =\frac{2(m-1)}{3N^3}
+ +\frac{2(m-1)(2m+1)}{3N^4}+O_m(N^{-5}).\quad}
+\end{equation}
+In particular, $R_{N,1,m}<L_N$ for all sufficiently large odd $N$, for every fixed $m\ge2$. More generally, if $s\ge3$ is fixed and odd, then
+\begin{equation}\label{eq:offs_gap}
+ L_N-R_{N,s,m}=\frac{s^2-1}{3N^2}+O_{m,s}(N^{-3})>0
+\end{equation}
+for all sufficiently large odd $N$.
+\end{corollary}
+
+\subsection{Cumulants from factorial moments}\label{sec:cumulants_odd}
+We compute the cumulants entering the globally optimized expansion in Theorem \ref{thm:odd_expansion}. Write $\varepsilon=N^{-1}$. For $r\le m$, the factorial moments of $H_N$ satisfy
+\begin{equation}\label{eq:factorial_moments}
+ \E(H_N)_{\underline r}
+ =\frac{(m)_{\underline r}(k)_{\underline r}}
+ {(N)_{\underline r}},\qquad k=\frac{N-s}{2}.
+\end{equation}
+The ordinary moments up to order six are obtained by the Stirling transformation
+\[
+ \E H_N^q=\sum_{r=0}^q\left\{\begin{matrix}q\\r\end{matrix}\right\}
+ \E(H_N)_{\underline r}.
+\]
+The expressions remain valid when $r>m$, with zero falling factorials. Let $\kappa_j(\varepsilon)$ denote the $j$th cumulant of $H_N$. Elementary simplification of the first six moments yields
+\begin{align}
+ \kappa_2(e)&=\frac m4\left[1-(m-1)e-(m+s^2-1)e^2
+ +(m-1)(s^2-1)(e^3+e^4)\right]+O_{m,s}(e^5),\label{eq:kappa2exp}\\
+ \kappa_3(e)&=\frac{ms}{4}\left[e-3(m-1)e^2
+ +(2m^2-9m-s^2+7)e^3\right]+O_{m,s}(e^4),\label{eq:kappa3exp}\\
+ \kappa_4(e)&=-\frac m8+\frac{m(m-1)}2e
+ +\frac{m(-6m^2+19m+4s^2-13)}8e^2+O_{m,s}(e^3),\label{eq:kappa4exp}\\
+ \kappa_5(e)&=-\frac{ms}{2}e+O_{m,s}(e^2),\qquad
+ \kappa_6(e)=\frac m4+O_{m,s}(e).\label{eq:kappa56exp}
+\end{align}
+Here $e=\varepsilon$. All expansions follow from factorial moments through order six and the cumulant recursion
+\[
+ \kappa_r=\mu_r-\sum_{j=1}^{r-1}\binom{r-1}{j-1}\kappa_j\mu_{r-j},
+ \qquad \mu_r=\E H^r.
+\]
+For the variance and third cumulant one can verify the first two identities directly from
+\begin{align}
+ \kappa_2(\varepsilon)
+ &=\frac m4(1-s^2\varepsilon^2)\frac{1-m\varepsilon}{1-\varepsilon},\label{eq:exactk2}\\
+ \kappa_3(\varepsilon)
+ &=\kappa_2(\varepsilon)\,s\varepsilon
+ \frac{1-2m\varepsilon}{1-2\varepsilon}.
+ \label{eq:exactk3}
+\end{align}
+Formula \eqref{eq:kappa4exp} follows from \eqref{eq:factorial_moments} for $r=1,2,3,4$, using
+\[
+ \kappa_4=\E(H-\E H)^4-3\kappa_2^2.
+\]
+All these identities are rational in $\varepsilon$ for fixed $m,s$ and are valid in a neighborhood of the origin. The zero-parameter limit is $H_0\sim\mathrm{Binomial}(m,1/2)$, for which odd cumulants vanish and $\kappa_4(0)=-m/8$.
+
+\subsection{Localization and uniqueness of the maximizing tilt}
+Let
+\[
+ Q_\varepsilon(t)=\begin{cases}
+  2\psi_\varepsilon(t)/t^2,&t\ne0,\\
+  \kappa_2(\varepsilon),&t=0.
+ \end{cases}
+\]
+For every fixed $m,s$, the finite probability generating polynomial depends analytically on $(t,\varepsilon)$ near $(0,0)$, and its value at $(0,0)$ is one. Consequently $Q_\varepsilon$ is jointly real analytic in a neighborhood of $(0,0)$. At $\varepsilon=0$,
+\begin{equation}\label{eq:q0}
+ Q_0(t)=\frac{2m}{t^2}\log\cosh(t/2),\qquad Q_0(0)=m/4.
+\end{equation}
+The strict inequality $\log\cosh x<x^2/2$ for $x\ne0$ implies
+\begin{equation}\label{eq:qstrict}
+ Q_0(t)<Q_0(0)\qquad(t\ne0).
+\end{equation}
+Furthermore, $|H_N-\E H_N|\le m$ implies $0\le Q_\varepsilon(t)\le2m/|t|$ for $t\ne0$, uniformly in the admissible populations. On every compact interval, $Q_\varepsilon$ converges uniformly to $Q_0$, including at zero by analytic continuation. Combining this compact convergence with the uniform tail bound shows that every global maximizer of $Q_\varepsilon$ tends to zero as $\varepsilon\downarrow0$.
+
+Near $(0,0)$, the cumulant expansion gives
+\begin{equation}\label{eq:Qexpand}
+ Q_\varepsilon(t)=\kappa_2(\varepsilon)
+ +\frac{\kappa_3(\varepsilon)}3t
+ +\frac{\kappa_4(\varepsilon)}{12}t^2
+ +\frac{\kappa_5(\varepsilon)}{60}t^3
+ +\frac{\kappa_6(\varepsilon)}{360}t^4+O_{m,s}(t^5).
+\end{equation}
+At the limiting law, $\kappa_5(0)=0$, and
+\[
+ \partial_t^2Q_0(0)=\frac{\kappa_4(0)}6=-\frac m{48}<0.
+\]
+Thus $Q_\varepsilon$ is strictly concave on some fixed neighborhood of zero for all sufficiently small $\varepsilon$. The derivative at zero is $\kappa_3(\varepsilon)/3>0$ for $\varepsilon>0$ small. By the analytic implicit-function theorem, there exists a unique critical point $t(\varepsilon)$ in that neighborhood; it is analytic in $\varepsilon$, and the localization argument establishes that it is the unique global maximizer. Differentiation of the critical point equation at zero gives
+\[
+ t'(0)=-\frac{\partial_\varepsilon\partial_t Q(0,0)}{\partial_t^2Q(0,0)}
+ =-\frac{ms/12}{-m/48}=4s.
+\]
+This proves the leading term of \eqref{eq:tiltexp} and the positivity of the maximizing tilt. The next subsection computes the remaining coefficients.
+
+\subsection{Evaluation through fourth order}
+The analytic critical-point equation can be expanded coefficient by coefficient:
+\[
+ 0=\frac{\kappa_3(e)}3+\frac{\kappa_4(e)}6t
+ +\frac{\kappa_5(e)}{20}t^2+\frac{\kappa_6(e)}{90}t^3+O_{m,s}(t^4).
+\]
+Set $t=a e+b e^2+c e^3+O(e^4)$. The coefficients of $e,e^2,e^3$, in order, give
+\[
+ a=4s,\qquad b=4s(m-1),\qquad c=\frac{4s(6m+s^2-6)}3.
+\]
+The terms omitted from the derivative contribute $O_{m,s}(e^4)$ because the cumulants are analytic and $t=O(e)$. This establishes the full tilt expansion in \eqref{eq:tiltexp}.
+
+For the optimal value through order $e^4$, it suffices to use
+\[
+ \widehat t=4se+4s(m-1)e^2.
+\]
+Indeed $t_* -\widehat t=O(e^3)$ and $Q_e'(t_*)=0$, so Taylor's theorem around the true optimizer gives $Q_e(t_*)-Q_e(\widehat t)=O(e^6)$. With $\kappa_5(0)=0$ and $\kappa_6(0)=m/4$, substitution into \eqref{eq:Qexpand} yields
+\begin{align*}
+ \sigma^2_{\mathrm{opt}}(H_N)
+ &=\kappa_2+\frac{\kappa_3}3\widehat t
+ +\frac{\kappa_4}{12}\widehat t^2
+ +\frac{\kappa_5}{60}\widehat t^3
+ +\frac{\kappa_6}{360}\widehat t^4+O_{m,s}(e^5)\\
+ &=\frac m4\Bigl[1-(m-1)e+(1-m-s^2/3)e^2\\
+ &\hspace{14mm}-(m-1)(1+s^2/3)e^3\\
+ &\hspace{14mm}+\{1-m-(2m^2-m-1)s^2/3-4s^4/45\}e^4\Bigr]
+ +O_{m,s}(e^5).
+\end{align*}
+Multiplying by $4/[m(1-me)]$ proves the fourth-order proxy expansion \eqref{eq:Rexp}. The analytic global optimizer supplies the Taylor remainder for each fixed $m,s$.
+
+The exact singleton benchmark is
+\begin{equation}\label{eq:singletonL}
+ L_N=\frac{1}{(N-1)\operatorname{artanh}(1/N)}
+ =1+e+\frac23e^2+\frac23e^3+\frac{26}{45}e^4+O(e^5).
+\end{equation}
+Subtracting \eqref{eq:Rexp} from this expression proves Corollary \ref{cor:fixedm_gap}.
+
+\subsection{Finite-size interpretation}
+The $N^{-1}$ coefficient in \eqref{eq:Rexp} is one. The $N^{-2}$ coefficient records the success imbalance through $-s^2/3$ and is common to all fixed sample sizes. For $s=1$, the first sample-size contribution is the order-$N^{-3}$ term $-2(m-1)/3$ relative to the singleton law. Thus \eqref{eq:fixedgap} quantifies the separation between the optimized proxies. The maximizing tilt has leading term $4s/N$.
+
+\input{uniform_results.tex}
+
+\section{Pointwise curvature and its weighted integral}\label{sec:curvature_obstruction}
+The exact odd-population constant defines the factor
+\[
+ \rho_N=\frac{N-1}{N}L_N=\frac{1}{N\operatorname{artanh}(1/N)}<1.
+\]
+The corresponding pointwise inequality takes the form
+\begin{equation}\label{eq:falseoddcurve}
+ \psi_{N,k,m}''(t)\le\rho_N\frac{m(N-m)}{4(N-1)}.
+\end{equation}
+The next proposition gives an exact tilted variance above the right side of \eqref{eq:falseoddcurve}.
+
+\begin{proposition}[Exact exceedance of the constant pointwise bound]\label{prop:obstruction}
+For $N=15$, $k=7$, $m=3$, and $t=\log(7/6)$,
+\begin{equation}\label{eq:obs_exact}
+ \frac{4(N-1)}{m(N-m)}\psi_{N,k,m}''(t)
+ =\frac{307887776}{308178025}
+ >\frac{675}{676}>\rho_{15}.
+\end{equation}
+This nearest-balanced population violates \eqref{eq:falseoddcurve} at the stated tilt.
+\end{proposition}
+
+\begin{proof}
+With $z=7/6$, the tilted hypergeometric weights for $j=0,1,2,3$ are proportional to
+\[
+ w_j=\binom7j\binom8{3-j}z^j.
+\]
+They are rational, so both the mean and the variance are rational. Direct summation gives
+\[
+ \E_tH=\frac{26313}{17555},\qquad
+ \operatorname{Var}_t(H)=\frac{197927856}{308178025}.
+\]
+Since $m(N-m)/[4(N-1)]=9/14$, the first equality in \eqref{eq:obs_exact} follows by multiplying the variance by $14/9$. The first strict inequality follows from
+\[
+ \frac{307887776}{308178025}-\frac{675}{676}
+ =\frac{111969701}{208328344900}>0.
+\]
+Finally, the power series for $\operatorname{artanh}$ at $x=1/15$ yields
+\[
+ \operatorname{artanh}(1/15)>\frac1{15}+\frac1{3\cdot15^3},
+ \quad\text{hence}\quad
+ \rho_{15}<\left(1+\frac1{3\cdot15^2}\right)^{-1}=\frac{675}{676}.
+\]
+Combining these two inequalities proves \eqref{eq:obs_exact}.
+\end{proof}
+
+\begin{proposition}[Integrated curvature identity]\label{prop:integral}
+For every centered random variable with finite moment generating function, writing $\psi(t)=\log\E e^{tX}$ gives
+\begin{equation}\label{eq:curv_integral}
+ \frac{2\psi(t)}{t^2}=2\int_0^1(1-u)\psi''(ut)\,du,
+ \qquad t\ne0.
+\end{equation}
+The proxy objective is therefore a weighted average of curvature along the segment from zero to the chosen tilt.
+\end{proposition}
+\begin{proof}
+Twice integrate $\psi''$ using $\psi(0)=\psi'(0)=0$ and substitute $s=ut$; the formula is valid for either sign of $t$.
+\end{proof}
+
+Theorem \ref{odd:thm:envelope} bounds the weighted integral \eqref{eq:curv_integral} through the mean-dependent envelope of Lemma \ref{odd:lem:barrier}. Proposition \ref{prop:obstruction} identifies a point of this variance curve above the constant threshold in \eqref{eq:falseoddcurve}.

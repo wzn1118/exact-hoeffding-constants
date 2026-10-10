@@ -1,0 +1,39 @@
+\section{Coefficient forms of the stationary identities}\label{app:algebra}
+The stationary polynomial \eqref{eq:F} expands as
+\begin{equation}\label{eq:explicitF}
+ \mathcal F(u,v)=-(N-1)v^2+b(u)v+c(u),
+\end{equation}
+where
+\begin{align}\label{eq:bc}
+ b(u)&=(N+2)u^2+(-2jm-j-m+r)u+jm(1-r),\\
+ c(u)&=u(j-u)(r+u)(m-u).\notag
+\end{align}
+For $0<u<j$, $c(u)>0$, so the positive stationary root is
+\begin{equation}\label{eq:vplus}
+ v_+(u)=\frac{b(u)+\sqrt{b(u)^2+4(N-1)c(u)}}{2(N-1)}.
+\end{equation}
+The Bernoulli admissibility constraint restricts this root to $v_+(u)\le u(j-u)/j$ at an actual stationary tilt.
+
+For the identity in Lemma \ref{lem:identity}, substitute $u=(j+x)/2$, $B=j(L+1)/(4T)$, $T=N-1$, $L=N-j-1$, and $D=h-r$. Collecting powers of $D$ gives
+\begin{align*}
+ 16T\mathcal F((j+x)/2,B)
+ &=-AD^2+2x[A-j(L+1)]D-x^2[A+(L+1)E]\\
+ &=-A(D-x)^2-(L+1)(2jDx+Ex^2),
+\end{align*}
+where $A=j^2(j-1)-Tx^2$ and $E=L(L+1)-2j$.
+
+\subsection{The all-degree positivity polynomial}\label{app:poly}
+The coefficient identity \eqref{eq:Kpositive} follows by setting $a=j-3$ and $L=a+2+S$. The three factors become
+\[
+ E=a(a+3)+(2a+5)S+S^2,\qquad
+ (j-1)L-1=(a+1)(a+3)+(a+2)S,
+\]
+\[
+ L(L+j)=(a+2+S)(2a+5+S).
+\]
+Therefore the polynomial is
+\[
+ [a(a+3)+(2a+5)S+S^2]^2[(a+1)(a+3)+(a+2)S]
+ -4S^2(a+2+S)(2a+5+S).
+\]
+Multiplication and collection of $S^0,\ldots,S^5$ give exactly the six nonnegative coefficients displayed in \eqref{eq:Kpositive}.

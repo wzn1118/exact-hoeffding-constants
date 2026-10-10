@@ -1,0 +1,7 @@
+PASS variance-curve residual identity
+PASS Poisson-binomial admissibility identity
+PASS quadratic certificate identity
+PASS positive determinant factorization
+PASS all-degree nonnegative-coefficient certificates
+PASS endpoint positivity identities
+PASS differential identity and its orientation

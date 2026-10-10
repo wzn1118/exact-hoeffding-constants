@@ -1,0 +1,5 @@
+PASS: factorial-moment recursion gives all stated cumulant coefficients (free m,s).
+PASS: third-order optimizer, fourth-order proxy, and fourth-order gap (free m,s).
+PASS: exact finite-N imbalance coefficient and strictly positive separation (free N,m).
+PASS: flipped-binomial correction and removable balanced coefficient 2/3.
+PASS: all fourth-order symbolic identities.

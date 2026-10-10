@@ -1,0 +1,170 @@
+\section{Uniform extremizers at fixed sample size}\label{sec:uniform_fixed}
+At each fixed sample size, the following results maximize the proxy over every success count and compute its local separation from the Bernoulli envelope.
+
+\subsection{A two-parameter analytic family}
+Fix an integer $m\ge1$. Write $e=N^{-1}$, $d=1-2k/N$, $p=(1-d)/2$, and $q=1-p$. For $i=0,\ldots,m$, define
+\begin{equation}\label{eq:analytic_masses}
+ P_i(e,d)=\binom mi
+ \frac{\prod_{r=0}^{i-1}(p-re)\prod_{r=0}^{m-i-1}(q-re)}
+ {\prod_{r=0}^{m-1}(1-re)}.
+\end{equation}
+Empty products equal one. For physical parameters this is the hypergeometric probability mass function. Vandermonde's falling-factorial identity gives $\sum_iP_i=1$ and $\sum_i iP_i=mp$. In a rectangle around $(e,d)=(0,0)$, every factor is positive and the masses are analytic. At $e=0$ the law is $\mathrm{Binomial}(m,p)$. Define
+\[
+ \psi(e,d,t)=\log\sum_{i=0}^mP_i(e,d)e^{t(i-mp)},\qquad
+ Q(e,d,t)=\frac{2\psi(e,d,t)}{t^2},
+\]
+with $Q(e,d,0)=\partial_t^2\psi(e,d,0)$. Division by $t^2$ is removable because $\psi(e,d,0)=\partial_t\psi(e,d,0)=0$. Let
+\[
+ \mathcal R_m(e,d)=\frac{4}{m(1-me)}\max_{t\in\mathbb R}Q(e,d,t).
+\]
+
+\begin{lemma}[Joint analytic optimizer]\label{lem:joint_optimizer}
+For each fixed $m$, there is a rectangle around $(0,0)$ on which $Q(e,d,\cdot)$ has a unique global maximizer $\tau_m(e,d)$. Both $\tau_m$ and $\mathcal R_m$ are real analytic. Moreover,
+\begin{align}
+ \tau_m(e,-d)&=-\tau_m(e,d),&
+ \mathcal R_m(e,-d)&=\mathcal R_m(e,d),\label{eq:joint_symmetry}\\
+ \tau_m(e,0)&=0,&
+ \mathcal R_m(e,0)&=\frac1{1-e}.\label{eq:balanced_exact}
+\end{align}
+\end{lemma}
+\begin{proof}
+At $(e,d)=(0,0)$, $Q(t)=2m\log\cosh(t/2)/t^2$ has its unique maximum at zero and $Q_{tt}(0)=-m/48$. For nearby parameters, $|H-mp|\le m$ gives $0\le Q(t)\le2m/|t|$. Choose $T$ so large that this tail bound lies strictly below $m/4$. On $[-T,T]$, joint continuity, including at $t=0$, yields uniform convergence to the limiting objective. Its strict gap outside any neighborhood of zero forces every maximizing point into that neighborhood. Joint analyticity and $Q_{tt}(0,0,0)<0$ then give a fixed smaller neighborhood where $Q_{tt}<0$. The analytic implicit-function theorem applied to $Q_t=0$ gives one critical point there, which the localization argument identifies as the unique global maximum.
+
+The identity $P_i(e,-d)=P_{m-i}(e,d)$ implies $Q(e,-d,t)=Q(e,d,-t)$, proving \eqref{eq:joint_symmetry}. At $d=0$ the objective is even in $t$, so uniqueness gives $\tau_m(e,0)=0$. Its value is the exact variance
+\[
+ \partial_t^2\psi(e,0,0)=\frac m4\frac{1-me}{1-e},
+\]
+which proves \eqref{eq:balanced_exact}.
+\end{proof}
+
+\begin{theorem}[Uniform fixed-sample maximum]\label{thm:uniform_fixed}
+For each fixed integer $m\ge1$, there exists $N_0(m)$ such that, for every odd $N\ge N_0(m)$,
+\begin{equation}\label{eq:fixed_all_k}
+ \max_{1\le k<N}\frac{4N}{m(N-m)}
+ \sigma^2_{\mathrm{opt}}(H_{N,k,m})=R_{N,1,m}.
+\end{equation}
+The maximizing success counts are exactly $k=(N-1)/2$ and $k=(N+1)/2$. If $m\ge2$, this maximum is strictly below $L_N$. Consequently, for every fixed $M\ge2$, all sample sizes $2\le m\le M$ and all success counts are simultaneously below $L_N$ once $N$ is sufficiently large.
+\end{theorem}
+\begin{proof}
+At $e=0$, the Bernoulli proxy formula gives
+\[
+ \mathcal R_m(0,d)=g(d):=\frac d{\operatorname{artanh}d},\qquad g(0)=1.
+\]
+In particular $g(d)=1-d^2/3+O(d^4)$. The even analytic function from Lemma \ref{lem:joint_optimizer} therefore has the form
+\[
+ \mathcal R_m(e,d)=\frac1{1-e}-d^2A_m(e,d^2),\qquad A_m(0,0)=\frac13,
+\]
+where $A_m$ is analytic. Choose $d_0>0$ and $e_0>0$ inside its analytic rectangle such that
+\[
+ A_m(e,d^2)+d^2\partial_2A_m(e,d^2)>0
+ \quad(0\le e\le e_0,\ 0\le d\le d_0).
+\]
+It follows that $\partial_d\mathcal R_m(e,d)<0$ for $0<d\le d_0$. Thus, among odd-population success counts in this interval, the maximum is uniquely attained at $d=1/N=e$.
+
+For the remaining success counts, the elementary-symmetric-mean inequality gives
+\begin{equation}\label{eq:maclaurin_mgf}
+ \E e^{tH_{N,k,m}}\le(q+pe^t)^m.
+\end{equation}
+Indeed, $\E e^{tH}$ is the normalized $m$th elementary symmetric polynomial of $N$ positive weights, $k$ equal to $e^t$ and the others equal to one. At fixed sum, averaging a pair of weights increases that polynomial by $(a-b)^2e_{m-2}(\mathrm{rest})/4\ge0$. Repeatedly averaging the largest and smallest weights decreases the sum of their squares by $(a-b)^2/2$; consequently their difference tends to zero, and the weights converge to their common mean. The elementary symmetric polynomial never decreases during this procedure. The case $m=1$ is equality. This proves \eqref{eq:maclaurin_mgf}. After centering, the Bernoulli proxy formula yields
+\[
+ \frac{4N}{m(N-m)}\sigma^2_{\mathrm{opt}}(H_{N,k,m})
+ \le\frac{g(d)}{1-me}\le\frac{g(d_0)}{1-me}\quad(d\ge d_0).
+\]
+Since $g(d_0)<1$, this last bound is below one for sufficiently small $e>0$, whereas $\mathcal R_m(e,e)=1+e+O_m(e^2)>1$. Reflection covers negative $d$. This proves \eqref{eq:fixed_all_k} and the equality cases. The strict comparison with $L_N$ follows from Corollary \ref{cor:fixedm_gap}. Taking the largest of finitely many thresholds proves the assertion for $2\le m\le M$.
+\end{proof}
+
+
+\subsection{Exact local separation at finite population size}
+The polynomial proof of Theorem \ref{thm:curvature} also applies to the normal form with integer $j\ge1$ and real $h,r\ge0$. In this extension, the coefficients in \eqref{eq:Q} use Gamma functions for factorial ratios. Their ratio, the differential equation, and the stationary identity remain unchanged; Jacobi orthogonality holds for real $h,r\ge0$, and the positivity certificate uses only $S=h+r\ge0$. The cases $j\ge3$ and the two boundary layers therefore prove the same curvature bound. This observation allows a continuous success-count perturbation at $k=N/2$, including odd $N$.
+
+\begin{theorem}[Exact imbalance coefficient]\label{thm:exact_imbalance}
+Fix integers $N\ge5$ and $1\le m\le\lfloor N/2\rfloor$. Extend the hypergeometric masses to real $k=N(1-d)/2$ by \eqref{eq:analytic_masses}, with $e=1/N$. For all sufficiently small $|d|$, the optimal normalized proxy has a unique maximizing tilt, analytic in $d$, and
+\begin{align}
+ \tau_m(1/N,d)&=T_{N,m}d+O_{N,m}(d^3),\label{eq:finite_tilt}\\
+ \mathcal R_m(1/N,d)&=\frac N{N-1}-A_{N,m}d^2+O_{N,m}(d^4),\label{eq:finite_imbalance}
+\end{align}
+where, writing $D_{N,m}=N^2-N-3m(N-m)>0$,
+\begin{align}
+ T_{N,m}&=\frac{4(N-2m)(N-3)(N-1)}{(N-2)D_{N,m}},\label{eq:finite_T}\\
+ A_{N,m}&=\frac N{3(N-1)}+
+ \frac{2N^2(N-4)(m-1)(N-m-1)}
+ {3(N-2)^2(N-1)D_{N,m}}.\label{eq:finite_A}
+\end{align}
+For $m\ge2$, $A_{N,m}>A_{N,1}$. Thus the Bernoulli envelope strictly dominates the $m$-draw proxy for every sufficiently small nonzero real imbalance.
+\end{theorem}
+\begin{proof}
+At $d=0$, use the real-margin extension with $j=m$ and $h=r=N/2-m\ge0$. The curvature envelope equals the variance
+\[
+ B=\frac{m(N-m)}{4(N-1)}.
+\]
+Its twice-integrated bound is strict at every nonzero $t$, by the analytic-gap argument in Corollary \ref{cor:mgf}; hence $Q(1/N,0,t)$ has its unique global maximum at zero. The masses remain positive for $|d|$ sufficiently small. Their finite support gives uniform tail control, so the localization argument in Lemma \ref{lem:joint_optimizer} applies at this fixed $N$.
+
+Factorial moments give, at $d=0$,
+\begin{align*}
+ \kappa_2(d)&=B(1-d^2),\\
+ \kappa_3(d)&=B\frac{N-2m}{N-2}d+O(d^3),\\
+ \kappa_4(0)&=-\frac{BD_{N,m}}{2(N-3)(N-1)}.
+\end{align*}
+Since $m(N-m)\le N^2/4$, $D_{N,m}\ge N(N-4)/4>0$. Consequently $Q_{tt}(1/N,0,0)=\kappa_4(0)/6<0$, and the analytic implicit-function theorem gives a unique analytic maximizing tilt. If $b=B(N-2m)/(N-2)$ and $c=\kappa_4(0)$, the stationary equation gives $T_{N,m}=-2b/c$, proving \eqref{eq:finite_T}. Substitution into
+\[
+ Q(d,t)=B(1-d^2)+\frac{bd}{3}t+\frac c{12}t^2
+ +O_{N,m}(d^4)\qquad(t=O(d))
+\]
+gives
+\[
+ \max_tQ(d,t)=B-\left(B+\frac{b^2}{3c}\right)d^2+O_{N,m}(d^4).
+\]
+Reflection makes the optimized value even in $d$, so the stated remainder follows. Multiplying by $4N/[m(N-m)]$ yields
+\[
+ A_{N,m}=\frac N{N-1}\left[
+ 1-\frac{2(N-2m)^2(N-3)(N-1)}{3(N-2)^2D_{N,m}}\right].
+\]
+Subtracting $N/[3(N-1)]$ and putting over a common denominator gives exactly the positive second term of \eqref{eq:finite_A}. The singleton proxy is $\mathcal R_1(1/N,d)=N g(d)/(N-1)$, so its quadratic coefficient is $A_{N,1}=N/[3(N-1)]$. The asserted local domination follows from the strict coefficient difference.
+\end{proof}
+
+\subsection{Contraction on compact success-proportion intervals}
+The first finite-population correction gives a comparison away from the balanced point as well.
+
+\begin{theorem}[Uniform Bernoulli envelope at fixed sample size]\label{thm:compact_contraction}
+Fix $m\ge2$ and $0<\eta<1/2$. There exists $N_1(m,\eta)$ such that, for all $N\ge N_1(m,\eta)$ and $\eta\le k/N\le1-\eta$,
+\begin{equation}\label{eq:compact_envelope}
+ \sigma^2_{\mathrm{opt}}(H_{N,k,m})
+ \le\frac{m(N-m)}{N-1}\,
+ \sigma^2_{\mathrm{opt}}(\Bern(k/N)).
+\end{equation}
+Equality holds when $k=N/2$; the inequality is strict otherwise.
+\end{theorem}
+\begin{proof}
+By reflection let $d\in[0,1-2\eta]$. At $e=0$ the binomial proxy has its unique maximizing tilt $t_0(d)=4\operatorname{artanh}d$, with continuous value $t_0(0)=0$. Its second derivative there is negative: for $d>0$, the Bernoulli proof in Appendix \ref{app:bernoulli} gives $G''(t_0)=c-pq>0$ and $Q''(t_0)=-2mG''(t_0)/t_0^2<0$; at $d=0$ the derivative is $-m/48$. Compactness, the uniform tail bound, and the strict uniqueness at $e=0$ allow the localization and implicit-function arguments to be applied uniformly on this interval. Thus $\mathcal R_m(e,d)$ is analytic on a neighborhood of its compact parameter interval for sufficiently small $|e|$.
+
+For $p,q$ in this compact interval, expanding \eqref{eq:analytic_masses} gives
+\[
+ P_i(e,d)=\binom mi p^iq^{m-i}\left[
+ 1+\frac e2\left\{m(m-1)-\frac{i(i-1)}p
+ -\frac{(m-i)(m-i-1)}q\right\}\right]+O_{m,\eta}(e^2).
+\]
+If $Z=q+pe^t$, binomial factorial moments therefore yield
+\begin{equation}\label{eq:first_order_psi}
+ \psi(e,d,t)=m\log Z-mpt+
+ \frac{em(m-1)}2\left[1-\frac{pe^{2t}+q}{Z^2}\right]+O_{m,\eta}(e^2)
+\end{equation}
+on compact $t$ intervals. Analytic divisibility by $t^2$ permits the same expansion for $Q$ at zero. Evaluation at the unique limiting maximizer gives, with $a=\log(q/p)=2\operatorname{artanh}d$,
+\[
+ \mathcal R_m(e,d)=g(d)+e\left[m g(d)-(m-1)\frac{d^2}{a^2pq}\right]+O_{m,\eta}(e^2).
+\]
+The continuous interpretation is used at $d=0$. Since $\mathcal R_1(e,d)=g(d)/(1-e)$, their difference vanishes identically at $e=0$ and also at $d=0$ for every small $e$. It is even in $d$. Joint analyticity consequently factors it exactly as
+\[
+ \mathcal R_1(e,d)-\mathcal R_m(e,d)=e d^2 B_m(e,d),
+\]
+where $B_m$ is continuous on the compact interval and
+\[
+ B_m(0,d)=\frac{(m-1)g(d)}{d^2}
+ \left[\frac{d}{(1-d^2)\operatorname{artanh}d}-1\right],
+ \qquad B_m(0,0)=\frac{2(m-1)}3.
+\]
+For $d>0$, integration gives $\operatorname{artanh}d<d/(1-d^2)$, so $B_m(0,d)>0$. Its compact minimum is positive. Uniform continuity then gives $B_m(e,d)>0$ for all sufficiently small $e>0$. This proves the normalized comparison, including strictness, and multiplying through gives \eqref{eq:compact_envelope}.
+\end{proof}
+
+\begin{remark}[Relation to the finite-population envelope]
+Theorem \ref{thm:compact_contraction} gives a local analytic comparison for both parities on compact success-proportion intervals. For odd populations, Theorem \ref{thm:main_laplace} gives the strict proxy comparison at every finite sample size in the canonical triangular domain. Theorem \ref{thm:uniform_fixed} further identifies the maximizing success count at each fixed sample size for all sufficiently large odd $N$.
+\end{remark}

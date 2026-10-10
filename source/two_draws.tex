@@ -1,0 +1,96 @@
+\section{The exact two-draw benchmark}\label{sec:twodraw}
+For two draws, the hypergeometric law has three support points. The optimal-proxy formula is the specialization of Atouani, Marchal, and Arbel \cite[Theorem 3.2 and Corollary 3.3]{AtouaniMarchalArbel} under a shift of the support. We give its calculus proof and then optimize the resulting expression over the hypergeometric success count.
+
+\begin{lemma}[Three-mass proxy formula; Atouani--Marchal--Arbel]\label{lem:threemass}
+Let $X$ take values $0,1,2$ with strictly positive masses $p_0,p_1,p_2$, and suppose
+\[
+ \frac{p_1}{2\sqrt{p_0p_2}}\le2.
+\]
+Then, with the continuous interpretation when $p_0=p_2$,
+\begin{equation}\label{eq:threeproxy}
+ \sigma^2_{\mathrm{opt}}(X)=\frac{2(p_0-p_2)}{\log(p_0/p_2)}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+By reflection take $p_0\ge p_2$ and set $A=p_1$, $B=2\sqrt{p_0p_2}$, $a=\frac12\log(p_0/p_2)$. Writing $f(x)=\log(A+B\cosh x)$ gives
+\[
+ \E e^{tX}=e^t\{A+B\cosh(t-a)\},\qquad
+ f'(a)=p_0-p_2.
+\]
+For $x>0$,
+\[
+ f'''(x)=\frac{B\sinh x\,[A^2-AB\cosh x-2B^2]}{(A+B\cosh x)^3}\le0,
+\]
+since $A\le2B$. Thus $f'(x)/x$ decreases on $(0,\infty)$, and $f$ is even. For $a>0$, integration on either side of $a$ yields
+\[
+ f(x)-f(a)\le\frac{f'(a)}{2a}(x^2-a^2),\qquad x\in\mathbb R.
+\]
+After substituting $x=t-a$ and centering $X$, this gives the optimal quadratic bound with equality at $t=2a$. When $a=0$, the same derivative argument gives the optimal coefficient $f''(0)=2p_0$, equal to the continuous limit of \eqref{eq:threeproxy}.
+\end{proof}
+
+\begin{proposition}[All two-draw laws for an odd population]\label{prop:odd2}
+Let $N\ge5$ be odd. Among all $H\sim\Hyp(N,k,2)$, the largest normalized optimal variance proxy equals
+\begin{equation}\label{eq:Ltwo}
+ L_N^{(2)}=\frac{4}{(N-2)\log\frac{N+1}{N-3}},
+\end{equation}
+attained at $k=(N-1)/2$ or $k=(N+1)/2$. For every such $N$,
+\begin{equation}\label{eq:twostrict}
+ L_N^{(2)}<L_N,
+ \qquad L_N-L_N^{(2)}=\frac{2}{3N^3}+O(N^{-4}).
+\end{equation}
+\end{proposition}
+\begin{proof}
+For $2\le k\le N-2$, the three masses of $H$ are
+\[
+ p_0=\frac{(N-k)(N-k-1)}{N(N-1)},\quad
+ p_1=\frac{2k(N-k)}{N(N-1)},\quad
+ p_2=\frac{k(k-1)}{N(N-1)}.
+\]
+The hypothesis of Lemma \ref{lem:threemass} follows from
+$\bigl(p_1/(2\sqrt{p_0p_2})\bigr)^2=k(N-k)/[(k-1)(N-k-1)]\in[1,4]$.
+Consequently, for $k\ne N/2$,
+\[
+ \sigma^2_{\mathrm{opt}}(H)
+ =\frac{2(N-2k)}{N\log\frac{(N-k)(N-k-1)}{k(k-1)}}.
+\]
+On replacing $k$ by $N-k$ if necessary, put $x=N-2k>0$. Then
+\[
+ \log\frac{(N-k)(N-k-1)}{k(k-1)}
+ =2\operatorname{artanh}(x/N)+2\operatorname{artanh}(x/(N-2)).
+\]
+As $\operatorname{artanh}(x/b)/x$ is strictly increasing for $0<x<b$, the normalized proxy is largest when $x=1$. The endpoint laws $k=1,N-1$ are Bernoulli; Hoeffding's lemma bounds their normalized contributions by $N/[2(N-2)]<1$, whereas the central two-draw contribution exceeds one. This proves \eqref{eq:Ltwo}.
+
+Set $y=N-1$. A direct integral identity gives
+\begin{align*}
+ &(y-1)\log\frac{y+2}{y-2}-2y\log\frac{y+2}{y}\\
+ &\qquad=2y\int_0^1(1-u)
+ \left[\frac1{y^2-(2-u)^2}-\frac1{y^2-u^2}\right]du>0.
+\end{align*}
+This is equivalent to $L_N^{(2)}<L_N$. The asymptotic difference follows by expanding $\operatorname{artanh}x=x+x^3/3+x^5/5+O(x^7)$ in both exact formulas.
+\end{proof}
+
+\begin{corollary}[Two-draw Bernoulli envelope]\label{cor:two_bern_envelope}
+For every odd $N\ge5$ and $2\le k\le(N-1)/2$,
+\[
+ \sigma^2_{\mathrm{opt}}(H_{N,k,2})
+ <\frac{2(N-2)}{N-1}\sigma^2_{\mathrm{opt}}(\Bern(k/N)).
+\]
+\end{corollary}
+\begin{proof}
+Put $d=1-2k/N>0$ and
+\[
+ A_1=2\operatorname{artanh}d,\qquad
+ B_1=2\operatorname{artanh}\frac{Nd}{N-2}.
+\]
+The formula in the proof of Proposition \ref{prop:odd2} gives
+$\sigma^2_{\mathrm{opt}}(H)=2d/(A_1+B_1)$. Since $\operatorname{artanh}(x)/x$ is strictly increasing on $(0,1)$ and $k\ge2$,
+\[
+ B_1>\frac{N}{N-2}A_1.
+\]
+Consequently
+\[
+ \frac{2d}{A_1+B_1}<\frac{(N-2)d}{(N-1)A_1}
+ =\frac{2(N-2)}{N-1}\sigma^2_{\mathrm{opt}}(\Bern(k/N)),
+\]
+as asserted.
+\end{proof}

@@ -1,0 +1,4 @@
+PASS: exact rational tilted moments and strict symbolic upper-bound comparison
+N,k,m,z: 15 7 3 7/6
+tilted mean: 26313/17555 variance: 197927856/308178025 curvature ratio: 307887776/308178025
+ratio - atanh upper: 111969701/208328344900

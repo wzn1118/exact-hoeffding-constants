@@ -1,0 +1,4 @@
+PASS: stationarity polynomial, constant term, complete-square identity (all symbolic).
+PASS: universal two-variable positivity certificate (all coefficients exact).
+PASS: Jacobi identity for 128 parameter combinations.
+PASS: all symbolic identities.

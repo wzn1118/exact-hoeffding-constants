@@ -1,0 +1,3 @@
+PASS: exact 2nd and 3rd cumulant identities; 4th-cumulant coefficients
+PASS: unrestricted symbolic m,s third-order proxy expansion
+PASS: exact singleton-minus-fixed-m third-order coefficient

@@ -1,0 +1,20 @@
+ASYM 1 1 101 N^4 tilt residual 0.00792134674444 N^5 proxy residual 0.583089917489
+ASYM 1 1 501 N^4 tilt residual 0.00159681093135 N^5 proxy residual 0.5788402114
+ASYM 1 1 1001 N^4 tilt residual 0.000799201368919 N^5 proxy residual 0.578308994679
+ASYM 1 1 2001 N^4 tilt residual 0.000399800171272 N^5 proxy residual 0.57804338624
+ASYM 2 1 101 N^4 tilt residual 20.4953740482 N^5 proxy residual -11.4684633166
+ASYM 2 1 501 N^4 tilt residual 20.0978910861 N^5 proxy residual -11.1815116567
+ASYM 2 1 1001 N^4 tilt residual 20.0488726522 N^5 proxy residual -11.1462455283
+ASYM 2 1 2001 N^4 tilt residual 20.0244181482 N^5 proxy residual -11.1286618974
+ASYM 3 1 101 N^4 tilt residual -40.214968206 N^5 proxy residual -50.4766080266
+ASYM 3 1 501 N^4 tilt residual -33.5395549787 N^5 proxy residual -48.589669717
+ASYM 3 1 1001 N^4 tilt residual -32.7636528559 N^5 proxy residual -48.360749823
+ASYM 3 1 2001 N^4 tilt residual -32.3803087623 N^5 proxy residual -48.2468544023
+ASYM 5 3 101 N^4 tilt residual -1935.37717286 N^5 proxy residual -2520.43782244
+ASYM 5 3 501 N^4 tilt residual -1607.83950953 N^5 proxy residual -2368.38103813
+ASYM 5 3 1001 N^4 tilt residual -1571.46436533 N^5 proxy residual -2350.29169718
+ASYM 5 3 2001 N^4 tilt residual -1553.6201108 N^5 proxy residual -2341.32126803
+FINITE IMBALANCE 5 2 exact A 0.87962962962963 PMF A 0.879629629697668
+FINITE IMBALANCE 15 3 exact A 0.507558052806922 PMF A 0.507558052828537
+FINITE IMBALANCE 51 20 exact A 0.90080328848487 PMF A 0.900803288518523
+PASS: high-precision finite-population coefficient evaluations.

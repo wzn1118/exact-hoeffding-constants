@@ -1,0 +1,163 @@
+[
+  {
+    "key": "ArbelMarchalNguyen",
+    "title": "On strict sub-Gaussianity, optimal proxy variance and symmetry for bounded random variables",
+    "year": "2020",
+    "source_url": "https://www.numdam.org/item/10.1051/ps/2019018.pdf",
+    "url": "https://www.numdam.org/articles/10.1051/ps/2019018/",
+    "local_pdf": "papers/ArbelMarchalNguyen2020.pdf",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_source": "https://www.numdam.org/articles/10.1051/ps/2019018/",
+    "sha256": "1b774d954dc43b97d74cd604f822ecc384a6c3ff723b92af2bf1a01d8ea48bfc",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "key": "AtouaniMarchalArbel",
+    "title": "Optimal sub-Gaussian variance proxy for 3-mass distributions",
+    "year": "2025",
+    "source_url": "https://arxiv.org/pdf/2510.06132v1",
+    "url": "https://arxiv.org/abs/2510.06132",
+    "local_pdf": "papers/AtouaniMarchalArbel2025.pdf",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_source": "https://arxiv.org/abs/2510.06132v1",
+    "sha256": "d21b3ee16cc64dfa7808f2bbf77756f6b89df77b7d1aeaf7fed302ba58523f6e",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "key": "BardenetMaillard",
+    "title": "Concentration inequalities for sampling without replacement",
+    "year": "2015",
+    "source_url": "https://arxiv.org/pdf/1309.4029v2",
+    "url": "https://doi.org/10.3150/14-BEJ605",
+    "local_pdf": null,
+    "checked_on": "2026-10-10"
+  },
+  {
+    "key": "Barber",
+    "title": "Hoeffding and Bernstein inequalities for weighted sums of exchangeable random variables",
+    "year": "2024",
+    "source_url": "https://arxiv.org/pdf/2404.06457v3",
+    "url": "https://doi.org/10.1214/24-ECP620",
+    "local_pdf": null,
+    "checked_on": "2026-10-10"
+  },
+  {
+    "key": "BarberErratum",
+    "title": "Erratum to ``Hoeffding and Bernstein inequalities for weighted sums of exchangeable random variables''",
+    "year": "2025",
+    "source_url": "https://doi.org/10.1214/25-ECP715",
+    "url": "https://doi.org/10.1214/25-ECP715",
+    "local_pdf": null,
+    "checked_on": "2026-10-10"
+  },
+  {
+    "key": "BBL",
+    "title": "Negative dependence and the geometry of polynomials",
+    "year": "2009",
+    "source_url": "https://arxiv.org/pdf/0707.2340v2",
+    "url": "https://doi.org/10.1090/S0894-0347-08-00618-8",
+    "local_pdf": null,
+    "checked_on": "2026-10-10"
+  },
+  {
+    "key": "DiaconisFreedman",
+    "title": "Finite exchangeable sequences",
+    "year": "1980",
+    "source_url": "https://doi.org/10.1214/aop/1176994663",
+    "url": "https://doi.org/10.1214/aop/1176994663",
+    "local_pdf": null,
+    "checked_on": "2026-10-10"
+  },
+  {
+    "key": "Fog",
+    "title": "Sampling methods for Wallenius' and Fisher's noncentral hypergeometric distributions",
+    "year": "2008",
+    "source_url": "https://www.agner.org/random/theory/nchyp2.pdf",
+    "url": "https://www.agner.org/random/theory/nchyp2.pdf",
+    "local_pdf": null,
+    "checked_on": "2026-10-10"
+  },
+  {
+    "key": "GottschlingCaprio",
+    "title": "Hoeffding-Style Concentration Bounds for Exchangeable Random Variables",
+    "year": "2026",
+    "source_url": "https://arxiv.org/pdf/2603.10190v2",
+    "url": "https://arxiv.org/abs/2603.10190v2",
+    "local_pdf": "papers/GottschlingCaprio2026.pdf",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_source": "https://arxiv.org/abs/2603.10190v2",
+    "sha256": "62660b529c20ca6865f4defdab4b68187f6b60118ea66f866cf91d76e06c5099",
+    "checked_on": "2026-10-10",
+    "version": "v2"
+  },
+  {
+    "key": "GreeneWellner",
+    "title": "Exponential bounds for the hypergeometric distribution",
+    "year": "2017",
+    "source_url": "https://arxiv.org/pdf/1507.08298v3",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5839521/",
+    "local_pdf": null,
+    "checked_on": "2026-10-10"
+  },
+  {
+    "key": "Hoeffding",
+    "title": "Probability inequalities for sums of bounded random variables",
+    "year": "1963",
+    "source_url": "https://www.cs.rpi.edu/academics/courses/spring06/random/hoefding.pdf",
+    "url": "https://doi.org/10.1080/01621459.1963.10500830",
+    "local_pdf": null,
+    "checked_on": "2026-10-10"
+  },
+  {
+    "key": "Kou",
+    "title": "Asymptotics for a $2\\times2$ table with fixed margins",
+    "year": "1996",
+    "source_url": "https://www3.stat.sinica.edu.tw/statistica/oldpdf/A6n42.pdf",
+    "url": "https://www3.stat.sinica.edu.tw/statistica/oldpdf/A6n42.pdf",
+    "local_pdf": null,
+    "checked_on": "2026-10-10"
+  },
+  {
+    "key": "LeeKim",
+    "title": "A sharper Hoeffding bound for weighted sums of exchangeable random variables",
+    "year": "2026",
+    "source_url": "https://arxiv.org/pdf/2608.04900v2",
+    "url": "https://arxiv.org/abs/2608.04900v2",
+    "local_pdf": "papers/LeeKim2026.pdf",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_source": "https://arxiv.org/abs/2608.04900v2",
+    "sha256": "9ca8ad3fe6cf70f7649e819c2d71a9314abc4cbc40c9649ebbd5dcf3658c67ae",
+    "checked_on": "2026-10-10"
+  },
+  {
+    "key": "MarchalArbel",
+    "title": "On the sub-Gaussianity of the Beta and Dirichlet distributions",
+    "year": "2017",
+    "source_url": "https://arxiv.org/pdf/1705.00048v2",
+    "url": "https://arxiv.org/abs/1705.00048",
+    "local_pdf": null,
+    "checked_on": "2026-10-10"
+  },
+  {
+    "key": "Serfling",
+    "title": "Probability inequalities for the sum in sampling without replacement",
+    "year": "1974",
+    "source_url": "https://doi.org/10.1214/aos/1176342611",
+    "url": "https://doi.org/10.1214/aos/1176342611",
+    "local_pdf": null,
+    "checked_on": "2026-10-10"
+  },
+  {
+    "key": "Szego",
+    "title": "Orthogonal Polynomials",
+    "year": "1975",
+    "source_url": "https://www.ams.org/coll/023",
+    "url": "https://doi.org/10.1090/coll/023",
+    "local_pdf": null,
+    "checked_on": "2026-10-10"
+  }
+]

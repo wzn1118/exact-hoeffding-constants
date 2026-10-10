@@ -1,0 +1,5 @@
+PASS: the three-coordinate direction preserves sum and squared norm to first order.
+PASS: the two-level squared norm and variational normalization.
+PASS: exact parity-gap integral identity and fourth-order coefficients.
+PASS: the explicit odd nonzero-tilt equality and contrast norm.
+PASS: cube-vertex variance formula for each success count.

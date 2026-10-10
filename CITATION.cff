@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript using this metadata."
+title: "Exact Hoeffding Constants for Finite Exchangeable Sequences"
+authors:
+  - family-names: Wang
+    given-names: Zinan
+type: software
+version: "1.0.0"
+date-released: "2026-10-10"
+repository-code: "https://github.com/wzn1118/exact-hoeffding-constants"
+preferred-citation:
+  type: unpublished
+  title: "Exact Hoeffding Constants for Finite Exchangeable Sequences"
+  authors:
+    - family-names: Wang
+      given-names: Zinan
+  year: 2026
+  date-published: "2026-10-10"
+  url: "https://github.com/wzn1118/exact-hoeffding-constants"
+  notes: "Manuscript. Copyright (c) 2026 Zinan Wang. All rights reserved."
+abstract: >-
+  Exact Hoeffding constants for centered linear contrasts of bounded finite
+  exchangeable sequences, with parity-dependent formulas, hypergeometric
+  tilted-variance bounds, a uniform odd-population Laplace comparison,
+  extremizer classification and higher-order optimized proxy expansions.
+keywords:
+  - finite exchangeability
+  - concentration inequalities
+  - hypergeometric distribution
+  - optimal sub-Gaussian variance proxy
