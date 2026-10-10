@@ -1,0 +1,110 @@
+{
+  "build_logs": [
+    {
+      "bytes": 7479,
+      "file": "checks/logs/latex_build.log",
+      "name": "latex_build",
+      "sha256": "d54a5afcf67f76a502906627566bbdcd3398e5b01ac08fa950e1096ea37fff0d"
+    },
+    {
+      "bytes": 7016,
+      "file": "checks/logs/supplement_build.log",
+      "name": "supplement_build",
+      "sha256": "11e0642382bde96f04bb892a1c1c910259ba30224db1c21b23e90abcd71055e4"
+    }
+  ],
+  "commit": "fdd48e096f0c9863b1495e963dd77ef7a15079ac",
+  "mathematical_tests": [
+    {
+      "bytes": 343,
+      "file": "checks/logs/verify_parity_structure.log",
+      "name": "verify_parity_structure",
+      "sha256": "4e3ba493689f98012c05bf8e0996876bd2acc0e4e7544cfd11473c699f7b362e"
+    },
+    {
+      "bytes": 250,
+      "file": "checks/logs/verify_curvature.log",
+      "name": "verify_curvature",
+      "sha256": "e917ec183262a0bad5e6b5ee08f553e7e5ee952517540c24200dec88738518ec"
+    },
+    {
+      "bytes": 191,
+      "file": "checks/logs/verify_third_order.log",
+      "name": "verify_third_order",
+      "sha256": "d0bc4eec8e1fa2f712a95e0cd3db089373347635fd88cdd7df9ed3176b0c9c1b"
+    },
+    {
+      "bytes": 372,
+      "file": "checks/logs/verify_fourth_order.log",
+      "name": "verify_fourth_order",
+      "sha256": "c258091a84569b641c132aedfd432345e925a700905446dc0ff0f9accf3edcbc"
+    },
+    {
+      "bytes": 235,
+      "file": "checks/logs/verify_curvature_counterexample.log",
+      "name": "verify_curvature_counterexample",
+      "sha256": "263000924cde96d9dfeb1bc63569aa0606387177abcf85fa24588320bc462cad"
+    },
+    {
+      "bytes": 295,
+      "file": "checks/logs/verify_odd_envelope.log",
+      "name": "verify_odd_envelope",
+      "sha256": "2289e501eb9ffa57bd4f126118208beec63bcec77a48db14dfb5b81a7bd70039"
+    },
+    {
+      "bytes": 325,
+      "file": "checks/logs/verify_even_envelope_extension.log",
+      "name": "verify_even_envelope_extension",
+      "sha256": "ed045ea70ac1233779319a1aa6f9ba9e5426d6e9ddf3a0eaab4dbc4edf6eef22"
+    },
+    {
+      "bytes": 85,
+      "file": "checks/logs/check_exact_curvature.log",
+      "name": "check_exact_curvature",
+      "sha256": "3de4d60c89799bdbfd4918ace5bef69c0687bb582b50e0ecd9b7ccd9ab641dbd"
+    },
+    {
+      "bytes": 77,
+      "file": "checks/logs/check_exact_odd_envelope.log",
+      "name": "check_exact_odd_envelope",
+      "sha256": "940987a9c9cf94e2ff05cdf45f13cef4f33500341faf912b85aeb2ab966695f1"
+    },
+    {
+      "bytes": 1565,
+      "file": "checks/logs/check_high_precision_asymptotics.log",
+      "name": "check_high_precision_asymptotics",
+      "sha256": "4ccf2b22743920d272cb1d29495e99adb93bfdba15de7a8ee0a98db8aeddd5c6"
+    },
+    {
+      "bytes": 810,
+      "file": "checks/logs/check_high_precision_envelope.log",
+      "name": "check_high_precision_envelope",
+      "sha256": "9b180f3d85dbed1dc3b5253a7e440c67cf63639ef32ec0a41d544acf36dc75ee"
+    },
+    {
+      "bytes": 98,
+      "file": "checks/logs/verify_independent_curvature.log",
+      "name": "verify_independent_curvature",
+      "sha256": "066f5f6a2336f92b62394bcf6a63b493192d93daf71b56a7b76e9627ccd4a76f"
+    },
+    {
+      "bytes": 220,
+      "file": "checks/logs/verify_independent_odd_envelope.log",
+      "name": "verify_independent_odd_envelope",
+      "sha256": "a3a3a0a844eef92fa07bea840f766dc4dd61523664582d23e089e9bf908403b3"
+    }
+  ],
+  "package_validation": {
+    "bytes": 391,
+    "file": "checks/logs/package_validation.log",
+    "sha256": "f2ad9597619398118bde34dc59abe24a660630a487d6e2ca88e0e59d277ecb45"
+  },
+  "python": "3.11.17",
+  "result": "PASS",
+  "suite_log": {
+    "bytes": 5796,
+    "file": "checks/logs/run_all.log",
+    "sha256": "7004fe7f89fcecb9000017b314fd8f3348acc1776eeb3af1654ec4c3eb4ddd44"
+  },
+  "test_count": 13
+}

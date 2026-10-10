@@ -1,0 +1,5 @@
+PASS: quadratic positivity certificate
+PASS: positive determinant factorization
+PASS: nonnegative coefficient decompositions
+PASS: universal variance-curve residual identity
+PASS: Poisson-binomial admissibility identity

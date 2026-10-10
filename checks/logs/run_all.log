@@ -45,6 +45,17 @@ PASS: strict tilted Laplace bound for all even 6<=N<=30, 2<=m<N/2, m<=k<=N/2 at 
 PASS: balanced even margin gives equality at zero tilt, hence equality of optimal variance proxies
 Minimum numerical positive Laplace gap: 1.42957169985e-7
 
+== verify_independent_curvature ==
+PASS: stationary curvature identity
+PASS: all-degree coefficient positivity and small-A threshold
+
+== verify_independent_odd_envelope ==
+PASS: quadratic positivity certificate
+PASS: positive determinant factorization
+PASS: nonnegative coefficient decompositions
+PASS: universal variance-curve residual identity
+PASS: Poisson-binomial admissibility identity
+
 == check_exact_curvature ==
 PASS: exact rational PMF evaluations: 34650 integer parameter/tilt cases for N=2..28
 
@@ -91,4 +102,4 @@ PASS: 28-page main manuscript, compiled supplement, author metadata, and both bu
 PASS: all mathematical computation logs present and successful.
 PASS: document identity and source consistency.
 
-All computations and manuscript build completed.
+All 13 mathematical tests and manuscript builds completed.
