@@ -1,0 +1,35 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25.5mm,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,mathrsfs,booktabs,longtable,enumitem,hyperref,graphicx,fancyhdr,xcolor,listings,setspace}
+\usepackage[nopatch=footnote]{microtype}
+\setstretch{1.045}
+\hypersetup{pdftitle={Exact Hoeffding Constants for Finite Exchangeable Sequences},pdfauthor={Zinan Wang},colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!40!black}
+\pagestyle{fancy}\fancyhf{}\fancyhead[LO]{\small WANG -- SHARP FINITE EXCHANGEABILITY}\fancyfoot[C]{\thepage}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\DeclareMathOperator{\Var}{Var}\DeclareMathOperator{\Cov}{Cov}\DeclareMathOperator{\Hyp}{Hyp}\DeclareMathOperator{\Bern}{Bern}\DeclareMathOperator{\supp}{supp}\DeclareMathOperator{\artanh}{artanh}
+\newcommand{\E}{\mathbb E}\newcommand{\R}{\mathbb R}\newcommand{\N}{\mathbb N}\newcommand{\one}{\mathbf1}
+\newcommand{\psiH}{\psi_{N,k,m}}
+\newcommand{\CN}{C_N^\star}
+\lstset{basicstyle=\ttfamily\scriptsize,breaklines=true,columns=fullflexible,frame=single,rulecolor=\color{black!20},keepspaces=true,showstringspaces=false}
+\title{\bfseries Technical Refinements for Exact Hoeffding Constants}
+\author{Zinan Wang\thanks{Copyright \textcopyright\ 2026 Zinan Wang. All rights reserved.}}
+\date{11 October 2026}
+\usepackage{xr-hyper}
+\externaldocument{../build/manuscript}[manuscript.pdf]
+\hypersetup{pdftitle={Technical Refinements for Exact Hoeffding Constants}}
+\begin{document}
+\maketitle
+\begin{abstract}
+This supplement contains the full proofs of the fixed-sample success-count extremality and exact imbalance response, analytic contraction on compact success-proportion intervals, and auxiliary pointwise-curvature examples. The main paper proves the parity-dependent exact Hoeffding constants independently of these refinements. The symbols and equation references used here are those of the accompanying manuscript.
+\end{abstract}
+\input{uniform_results.tex}
+\input{analytic_contraction.tex}
+\input{auxiliary_curvature.tex}
+\end{document}

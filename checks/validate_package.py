@@ -30,16 +30,27 @@ for input_name in re.findall(r'\\input\{([^}]+)\}',tex):
  assert (root/'source'/input_name).exists(),input_name
 pdfinfo=subprocess.run(['pdfinfo',str(root/'manuscript.pdf')],check=True,capture_output=True,text=True).stdout
 pages=int(re.search(r'^Pages:\s+(\d+)',pdfinfo,re.M).group(1))
+assert 27 <= pages <= 30, f'Primary paper must be 27--30 pages; got {pages}'
+assert (root/'supplementary_refinements.pdf').exists()
+subinfo=subprocess.run(['pdfinfo',str(root/'supplementary_refinements.pdf')],check=True,capture_output=True,text=True).stdout
+assert 'Technical Refinements for Exact Hoeffding Constants' in subinfo
 assert 'Zinan Wang' in pdfinfo
 assert 'Exact Hoeffding Constants for Finite Exchangeable Sequences' in pdfinfo
 log=(root/'checks/logs/latex_build.log').read_text()
 assert not re.search(r'undefined references|undefined on input|Overfull|! LaTeX Error|multiply defined|Warning',log)
+required_logs=('verify_parity_structure','verify_curvature','verify_third_order',
+ 'verify_fourth_order','verify_curvature_counterexample','verify_odd_envelope',
+ 'verify_even_envelope_extension','check_exact_curvature','check_exact_odd_envelope',
+ 'check_high_precision_asymptotics','check_high_precision_envelope')
+for test in required_logs:
+ logfile=root/'checks/logs'/f'{test}.log'
+ assert logfile.is_file() and 'PASS' in logfile.read_text(),f'Missing/failed {logfile}'
 for p in (root/'checks/logs').glob('*.log'):
- if p.name in ['latex_build.log','package_validation.log'] or p.name.startswith('latex_pass_'):continue
+ if p.name in ['latex_build.log','supplement_build.log','package_validation.log'] or p.name.startswith('latex_pass_'):continue
  assert 'PASS' in p.read_text(),p.name
 print(f'PASS: {len(labels)} unique labels and {len(references)} valid cross-references.')
 print(f'PASS: {len(keys)} matching citations, BibTeX entries, and bibliographic records.')
 print(f'PASS: {local_count} licensed reference PDFs with matching source hashes.')
-print(f'PASS: {pages}-page manuscript, author metadata, source includes, and final build log.')
+print(f'PASS: {pages}-page main manuscript, compiled supplement, author metadata, and both build logs.')
 print('PASS: all mathematical computation logs present and successful.')
 print('PASS: document identity and source consistency.')

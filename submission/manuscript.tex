@@ -31,7 +31,7 @@ We determine the least constant in the Hoeffding-type exponential-moment inequal
  \displaystyle[(N-1)\operatorname{artanh}(1/N)]^{-1},&N\text{ odd}.
  \end{cases}
 \]
-The even coefficient coincides with the maximal normalized variance. In odd populations the optimal Laplace parameter is nonzero, and the sharp coefficient strictly exceeds the variance benchmark. We obtain the result through a two-level reduction to hypergeometric laws, a global tilted-variance bound, and a mean-dependent quadratic envelope for their Laplace transforms. The envelope holds for both parities throughout the sub-half-population parameter range; parity enters when the remaining discrete margins are optimized. We also classify the odd-population extremizers and derive fourth-order expansions of the optimized hypergeometric proxies.
+The even coefficient coincides with the maximal normalized variance. In odd populations the optimal Laplace parameter is nonzero, and the sharp coefficient strictly exceeds the variance benchmark. We obtain the result through a two-level reduction to hypergeometric laws, a global tilted-variance bound, and a mean-dependent quadratic envelope for their Laplace transforms. The envelope holds for both parities throughout the sub-half-population parameter range; parity enters when the remaining discrete margins are optimized. The proof also determines all odd-population extremizers.
 \end{abstract}
 \noindent\textbf{Keywords.} Hypergeometric distribution; finite exchangeability; optimal sub-Gaussian proxy; Fisher noncentral hypergeometric law; Jacobi polynomials; exponential tilting; Riccati equation.\\
 \textbf{MSC 2020.} 60E15, 60F10, 33C45, 62E15.
@@ -69,20 +69,14 @@ We state and prove this variational identity immediately after the main results.
 
 Two complementary estimates determine the optimum. First, a sharp bound on hypergeometric variance at every exponential tilt implies the universal coefficient $N/(N-1)$, which is attained for even populations. Second, a quadratic upper envelope for variance as a function of the tilted mean gives a scaled-Bernoulli Laplace comparison. The certificate for this envelope is valid in the sub-half-population regime for both parities. For odd $N$, all admissible success counts stay away from the exact half-population balance; optimizing the Bernoulli comparison then singles out the one-draw laws. For even $N$, the balanced zero-tilt equality accounts for the sharp constant. This separation of the continuous Laplace comparison from the discrete optimization isolates the role of parity.
 
-\subsection{Extremal refinements and relation to prior work}
-The exact constant leaves a finer question: how do nonsingleton samples approach the extremal value? For fixed $m$ and fixed odd success imbalance $s$, Theorem \ref{thm:odd_expansion} proves uniqueness of the global maximizing tilt and expands it through $N^{-3}$, while expanding the optimized proxy through $N^{-4}$. For the nearest-balanced population,
-\[
- L_N-R_{N,1,m}
- =\frac{2(m-1)}{3N^3}
- +\frac{2(m-1)(2m+1)}{3N^4}+O_m(N^{-5}).
-\]
-The first two correction orders therefore agree with the singleton law; the order-$N^{-3}$ term resolves the competition between sample sizes. Theorem \ref{thm:uniform_fixed} additionally maximizes over every success count at fixed $m$, and Theorem \ref{thm:exact_imbalance} computes the exact quadratic response to a continuous success imbalance at each finite population size. The global localization of the maximizing tilt supplies the analytic remainders in these expansions.
+\subsection{Relation to prior work and further refinements}
+The proof of the sharp constant rests on two global ingredients: the all-tilt hypergeometric curvature bound and the parity-uniform quadratic Laplace envelope. The complete classification of odd-population equality cases is part of the central theorem. Appendix \ref{sec:odd_asym} records fourth-order expansions for fixed margins. The finer fixed-sample extremality and compact-proportion comparison, together with subsidiary curvature examples, are given in the accompanying technical supplement. These refinements have no role in the proof of Theorem \ref{thm:exchange}.
 
 Hoeffding \cite{Hoeffding}, Serfling \cite{Serfling}, Bardenet and Maillard \cite{BardenetMaillard}, and Greene and Wellner \cite{GreeneWellner} develop exponential inequalities and finite-sampling corrections. Diaconis and Freedman \cite{DiaconisFreedman} provide the classical finite-exchangeability framework. Gottschling and Caprio \cite{GottschlingCaprio} bound tails of sample means of bounded infinitely exchangeable sequences relative to the extremal means in the support of the de Finetti mixing measure. Equation \eqref{eq:exchange-intro} concerns finite sequences and arbitrary zero-sum contrasts. Fisher's noncentral hypergeometric family describes the exponential tilts used here \cite{Fog}.
 
 Kou and Ying \cite{Kou} connect fixed-margin laws with Jacobi polynomials and sums of independent Bernoulli variables; Borcea, Br\"and\'en, and Liggett \cite{BBL} develop the broader stability framework. The Jacobi identities and zero-location theorem are classical \cite[Chapter IV and Section 6.7]{Szego}. Arbel, Marchal, and Nguyen \cite{ArbelMarchalNguyen} study optimal variance proxies and strict sub-Gaussianity, and Marchal and Arbel \cite{MarchalArbel} use differential equations for Beta and Dirichlet proxies. Atouani, Marchal, and Arbel \cite[Theorem 3.2 and Corollary 3.3]{AtouaniMarchalArbel} give the three-mass proxy formula specialized in Section \ref{sec:twodraw}. That section applies their formula to two draws and evaluates the resulting success-count extremum and singleton comparison. The all-degree variance certificates, the parity-uniform Laplace envelope, the classification of odd-population extremizers, and the optimized expansions for each fixed sample size are the hypergeometric results developed here. The fourth-order local moment expansion in \cite[Remark 3.6]{AtouaniMarchalArbel} is in the Laplace argument; our expansion is in $N^{-1}$ at the globally optimizing argument, and is accompanied by an extremum theorem over all success counts.
 
-The main statements are followed immediately by the exchangeability-to-hypergeometric reduction. We then develop the curvature estimate, determine the parity-dependent sharp constants, and establish the unified Laplace envelope. The extremal expansions and local imbalance theory follow. Technical cumulant calculations, subsidiary curvature examples, analytic contraction details, and algebraic certificates are collected in the appendices.
+The main statements are followed immediately by the exchangeability-to-hypergeometric reduction. We then develop the curvature estimate, determine the parity-dependent sharp constants, and establish the unified Laplace envelope. The odd-population extremizers and the uniform envelope complete the main argument. Fourth-order asymptotics and computational algebra are placed in the appendices, with additional finite-sample refinements in the technical supplement.
 
 \section{Statements of the main results}\label{sec:main}
 For $N\ge2$ and $1\le k,m<N$, write
@@ -166,19 +160,6 @@ The centered log-Laplace transform satisfies $\psi(0)=\psi'(0)=0$. Integrate the
 
 
 Write $L_N=2/[(N-1)\log((N+1)/(N-1))]$ for odd $N$, and let $R_{N,1,m}$ denote the normalized proxy $4N\sigma^2_{\mathrm{opt}}(H_{N,(N-1)/2,m})/[m(N-m)]$.
-\begin{theorem}[Uniform fixed-sample odd extremizers]\label{thm:main_uniform}
-For each fixed $m\ge2$, all sufficiently large odd $N$ satisfy
-\[
- \max_{1\le k<N}\frac{4N}{m(N-m)}\sigma^2_{\mathrm{opt}}(H_{N,k,m})
- =R_{N,1,m}<L_N.
-\]
-Only the success counts $(N-1)/2$ and $(N+1)/2$ maximize the left side. Their proxy and maximizing tilt admit the fourth- and third-order expansions in Theorem \ref{thm:odd_expansion}.
-\end{theorem}
-\begin{proof}
-The extremizer statement is proved in Theorem \ref{thm:uniform_fixed}; the expansions are given in Theorem \ref{thm:odd_expansion}.
-\end{proof}
-
-
 \begin{corollary}[Weighted finite-exchangeability concentration]\label{cor:tail}
 Let $X_1,\ldots,X_N\in[-1,1]$ be exchangeable, $1\le n\le N$, $w\in\R^n$, and let $\widetilde w$ be the $N$-vector obtained by padding $w$ with zeros. Put
 \[
@@ -1050,6 +1031,37 @@ Applying \eqref{eq:LKidentity} proves the odd formula in Theorem \ref{thm:exchan
 
 % end odd_uniform.tex
 
+\section{Jacobi root dispersion and variance geometry}\label{sec:structure}
+\subsection{A root-spread inequality for Jacobi polynomials}
+Write $Q_j(z)=\text{const.}\prod_i(z+\alpha_i)$ as in \eqref{eq:factor}. Because
+\[
+ v(\log z)=\sum_{i=1}^j\frac{z\alpha_i}{(z+\alpha_i)^2}
+ =\frac14\sum_{i=1}^j\left[1-\left(\frac{z-\alpha_i}{z+\alpha_i}\right)^2\right],
+\]
+Theorem \ref{thm:curvature} yields the following root inequality, valid for all Jacobi degrees and all nonnegative integer parameters $h,r$:
+\begin{equation}\label{eq:rootineq}
+ \boxed{\quad
+ \sum_{i=1}^j\left(\frac{z-\alpha_i}{z+\alpha_i}\right)^2
+ \ge\frac{j(j-1)}{N-1}
+ \quad(z>0),\qquad N=2j+h+r.\quad}
+\end{equation}
+At $z=1$, \eqref{eq:rootineq} recovers the ordinary hypergeometric variance bound. For all $z>0$, it gives the same lower bound for the sum of squared transformed Jacobi zeros.
+
+\subsection{An exact finite-population variance envelope}
+The central hypergeometric variance is
+\[
+ \Var(H)=\frac{km(N-k)(N-m)}{N^2(N-1)}.
+\]
+The ratio of this variance to the all-tilt symmetric envelope is
+\[
+ \frac{4\max\{k(N-k),m(N-m)\}}{N^2}\le1.
+\]
+Thus the envelope is saturated at zero tilt whenever the larger margin product equals $N^2/4$. For $m=1$ and $k\ne N/2$, the tilted variance is maximized at $t=\log((N-k)/k)\ne0$. Theorem \ref{thm:curvature} bounds the maximizing variance for every pair of margins.
+
+\subsection{A probabilistic interpretation of the positivity argument}
+The Poisson--binomial bound $v\le u(j-u)/j$ defines a region in the mean--variance plane. At each stationary tilt, the pair $(u,v)$ also satisfies $\mathcal F(u,v)=0$. For $j\ge3$, Lemmas \ref{lem:universal} and \ref{lem:identity} place the admissible stationary branch at or below $v=B$. The singleton and two-mark calculations complete the curvature bound for all degrees.
+
+\appendix
 
 % begin new_results.tex
 \section{Optimal proxies for nearly balanced odd populations}\label{sec:odd_asym}
@@ -1177,167 +1189,8 @@ Subtracting \eqref{eq:Rexp} from this expression proves Corollary \ref{cor:fixed
 \subsection{Finite-size interpretation}
 The $N^{-1}$ coefficient in \eqref{eq:Rexp} is one. The $N^{-2}$ coefficient records the success imbalance through $-s^2/3$ and is common to all fixed sample sizes. For $s=1$, the first sample-size contribution is the order-$N^{-3}$ term $-2(m-1)/3$ relative to the singleton law. Thus \eqref{eq:fixedgap} quantifies the separation between the optimized proxies. The maximizing tilt has leading term $4s/N$.
 
-
-% begin uniform_results.tex
-\section{Uniform extremizers at fixed sample size}\label{sec:uniform_fixed}
-At each fixed sample size, the following results maximize the proxy over every success count and compute its local separation from the Bernoulli envelope.
-
-\subsection{A two-parameter analytic family}
-Fix an integer $m\ge1$. Write $e=N^{-1}$, $d=1-2k/N$, $p=(1-d)/2$, and $q=1-p$. For $i=0,\ldots,m$, define
-\begin{equation}\label{eq:analytic_masses}
- P_i(e,d)=\binom mi
- \frac{\prod_{r=0}^{i-1}(p-re)\prod_{r=0}^{m-i-1}(q-re)}
- {\prod_{r=0}^{m-1}(1-re)}.
-\end{equation}
-Empty products equal one. For physical parameters this is the hypergeometric probability mass function. Vandermonde's falling-factorial identity gives $\sum_iP_i=1$ and $\sum_i iP_i=mp$. In a rectangle around $(e,d)=(0,0)$, every factor is positive and the masses are analytic. At $e=0$ the law is $\mathrm{Binomial}(m,p)$. Define
-\[
- \psi(e,d,t)=\log\sum_{i=0}^mP_i(e,d)e^{t(i-mp)},\qquad
- Q(e,d,t)=\frac{2\psi(e,d,t)}{t^2},
-\]
-with $Q(e,d,0)=\partial_t^2\psi(e,d,0)$. Division by $t^2$ is removable because $\psi(e,d,0)=\partial_t\psi(e,d,0)=0$. Let
-\[
- \mathcal R_m(e,d)=\frac{4}{m(1-me)}\max_{t\in\mathbb R}Q(e,d,t).
-\]
-
-\begin{lemma}[Joint analytic optimizer]\label{lem:joint_optimizer}
-For each fixed $m$, there is a rectangle around $(0,0)$ on which $Q(e,d,\cdot)$ has a unique global maximizer $\tau_m(e,d)$. Both $\tau_m$ and $\mathcal R_m$ are real analytic. Moreover,
-\begin{align}
- \tau_m(e,-d)&=-\tau_m(e,d),&
- \mathcal R_m(e,-d)&=\mathcal R_m(e,d),\label{eq:joint_symmetry}\\
- \tau_m(e,0)&=0,&
- \mathcal R_m(e,0)&=\frac1{1-e}.\label{eq:balanced_exact}
-\end{align}
-\end{lemma}
-\begin{proof}
-At $(e,d)=(0,0)$, $Q(t)=2m\log\cosh(t/2)/t^2$ has its unique maximum at zero and $Q_{tt}(0)=-m/48$. For nearby parameters, $|H-mp|\le m$ gives $0\le Q(t)\le2m/|t|$. Choose $T$ so large that this tail bound lies strictly below $m/4$. On $[-T,T]$, joint continuity, including at $t=0$, yields uniform convergence to the limiting objective. Its strict gap outside any neighborhood of zero forces every maximizing point into that neighborhood. Joint analyticity and $Q_{tt}(0,0,0)<0$ then give a fixed smaller neighborhood where $Q_{tt}<0$. The analytic implicit-function theorem applied to $Q_t=0$ gives one critical point there, which the localization argument identifies as the unique global maximum.
-
-The identity $P_i(e,-d)=P_{m-i}(e,d)$ implies $Q(e,-d,t)=Q(e,d,-t)$, proving \eqref{eq:joint_symmetry}. At $d=0$ the objective is even in $t$, so uniqueness gives $\tau_m(e,0)=0$. Its value is the exact variance
-\[
- \partial_t^2\psi(e,0,0)=\frac m4\frac{1-me}{1-e},
-\]
-which proves \eqref{eq:balanced_exact}.
-\end{proof}
-
-\begin{theorem}[Uniform fixed-sample maximum]\label{thm:uniform_fixed}
-For each fixed integer $m\ge1$, there exists $N_0(m)$ such that, for every odd $N\ge N_0(m)$,
-\begin{equation}\label{eq:fixed_all_k}
- \max_{1\le k<N}\frac{4N}{m(N-m)}
- \sigma^2_{\mathrm{opt}}(H_{N,k,m})=R_{N,1,m}.
-\end{equation}
-The maximizing success counts are exactly $k=(N-1)/2$ and $k=(N+1)/2$. If $m\ge2$, this maximum is strictly below $L_N$. Consequently, for every fixed $M\ge2$, all sample sizes $2\le m\le M$ and all success counts are simultaneously below $L_N$ once $N$ is sufficiently large.
-\end{theorem}
-\begin{proof}
-At $e=0$, the Bernoulli proxy formula gives
-\[
- \mathcal R_m(0,d)=g(d):=\frac d{\operatorname{artanh}d},\qquad g(0)=1.
-\]
-In particular $g(d)=1-d^2/3+O(d^4)$. The even analytic function from Lemma \ref{lem:joint_optimizer} therefore has the form
-\[
- \mathcal R_m(e,d)=\frac1{1-e}-d^2A_m(e,d^2),\qquad A_m(0,0)=\frac13,
-\]
-where $A_m$ is analytic. Choose $d_0>0$ and $e_0>0$ inside its analytic rectangle such that
-\[
- A_m(e,d^2)+d^2\partial_2A_m(e,d^2)>0
- \quad(0\le e\le e_0,\ 0\le d\le d_0).
-\]
-It follows that $\partial_d\mathcal R_m(e,d)<0$ for $0<d\le d_0$. Thus, among odd-population success counts in this interval, the maximum is uniquely attained at $d=1/N=e$.
-
-For the remaining success counts, the elementary-symmetric-mean inequality gives
-\begin{equation}\label{eq:maclaurin_mgf}
- \E e^{tH_{N,k,m}}\le(q+pe^t)^m.
-\end{equation}
-Indeed, $\E e^{tH}$ is the normalized $m$th elementary symmetric polynomial of $N$ positive weights, $k$ equal to $e^t$ and the others equal to one. At fixed sum, averaging a pair of weights increases that polynomial by $(a-b)^2e_{m-2}(\mathrm{rest})/4\ge0$. Repeatedly averaging the largest and smallest weights decreases the sum of their squares by $(a-b)^2/2$; consequently their difference tends to zero, and the weights converge to their common mean. The elementary symmetric polynomial never decreases during this procedure. The case $m=1$ is equality. This proves \eqref{eq:maclaurin_mgf}. After centering, the Bernoulli proxy formula yields
-\[
- \frac{4N}{m(N-m)}\sigma^2_{\mathrm{opt}}(H_{N,k,m})
- \le\frac{g(d)}{1-me}\le\frac{g(d_0)}{1-me}\quad(d\ge d_0).
-\]
-Since $g(d_0)<1$, this last bound is below one for sufficiently small $e>0$, whereas $\mathcal R_m(e,e)=1+e+O_m(e^2)>1$. Reflection covers negative $d$. This proves \eqref{eq:fixed_all_k} and the equality cases. The strict comparison with $L_N$ follows from Corollary \ref{cor:fixedm_gap}. Taking the largest of finitely many thresholds proves the assertion for $2\le m\le M$.
-\end{proof}
-
-
-\subsection{Exact local separation at finite population size}
-The polynomial proof of Theorem \ref{thm:curvature} also applies to the normal form with integer $j\ge1$ and real $h,r\ge0$. In this extension, the coefficients in \eqref{eq:Q} use Gamma functions for factorial ratios. Their ratio, the differential equation, and the stationary identity remain unchanged; Jacobi orthogonality holds for real $h,r\ge0$, and the positivity certificate uses only $S=h+r\ge0$. The cases $j\ge3$ and the two boundary layers therefore prove the same curvature bound. This observation allows a continuous success-count perturbation at $k=N/2$, including odd $N$.
-
-\begin{theorem}[Exact imbalance coefficient]\label{thm:exact_imbalance}
-Fix integers $N\ge5$ and $1\le m\le\lfloor N/2\rfloor$. Extend the hypergeometric masses to real $k=N(1-d)/2$ by \eqref{eq:analytic_masses}, with $e=1/N$. For all sufficiently small $|d|$, the optimal normalized proxy has a unique maximizing tilt, analytic in $d$, and
-\begin{align}
- \tau_m(1/N,d)&=T_{N,m}d+O_{N,m}(d^3),\label{eq:finite_tilt}\\
- \mathcal R_m(1/N,d)&=\frac N{N-1}-A_{N,m}d^2+O_{N,m}(d^4),\label{eq:finite_imbalance}
-\end{align}
-where, writing $D_{N,m}=N^2-N-3m(N-m)>0$,
-\begin{align}
- T_{N,m}&=\frac{4(N-2m)(N-3)(N-1)}{(N-2)D_{N,m}},\label{eq:finite_T}\\
- A_{N,m}&=\frac N{3(N-1)}+
- \frac{2N^2(N-4)(m-1)(N-m-1)}
- {3(N-2)^2(N-1)D_{N,m}}.\label{eq:finite_A}
-\end{align}
-For $m\ge2$, $A_{N,m}>A_{N,1}$. Thus the Bernoulli envelope strictly dominates the $m$-draw proxy for every sufficiently small nonzero real imbalance.
-\end{theorem}
-\begin{proof}
-At $d=0$, use the real-margin extension with $j=m$ and $h=r=N/2-m\ge0$. The curvature envelope equals the variance
-\[
- B=\frac{m(N-m)}{4(N-1)}.
-\]
-Its twice-integrated bound is strict at every nonzero $t$, by the analytic-gap argument in Corollary \ref{cor:mgf}; hence $Q(1/N,0,t)$ has its unique global maximum at zero. The masses remain positive for $|d|$ sufficiently small. Their finite support gives uniform tail control, so the localization argument in Lemma \ref{lem:joint_optimizer} applies at this fixed $N$.
-
-Factorial moments give, at $d=0$,
-\begin{align*}
- \kappa_2(d)&=B(1-d^2),\\
- \kappa_3(d)&=B\frac{N-2m}{N-2}d+O(d^3),\\
- \kappa_4(0)&=-\frac{BD_{N,m}}{2(N-3)(N-1)}.
-\end{align*}
-Since $m(N-m)\le N^2/4$, $D_{N,m}\ge N(N-4)/4>0$. Consequently $Q_{tt}(1/N,0,0)=\kappa_4(0)/6<0$, and the analytic implicit-function theorem gives a unique analytic maximizing tilt. If $b=B(N-2m)/(N-2)$ and $c=\kappa_4(0)$, the stationary equation gives $T_{N,m}=-2b/c$, proving \eqref{eq:finite_T}. Substitution into
-\[
- Q(d,t)=B(1-d^2)+\frac{bd}{3}t+\frac c{12}t^2
- +O_{N,m}(d^4)\qquad(t=O(d))
-\]
-gives
-\[
- \max_tQ(d,t)=B-\left(B+\frac{b^2}{3c}\right)d^2+O_{N,m}(d^4).
-\]
-Reflection makes the optimized value even in $d$, so the stated remainder follows. Multiplying by $4N/[m(N-m)]$ yields
-\[
- A_{N,m}=\frac N{N-1}\left[
- 1-\frac{2(N-2m)^2(N-3)(N-1)}{3(N-2)^2D_{N,m}}\right].
-\]
-Subtracting $N/[3(N-1)]$ and putting over a common denominator gives exactly the positive second term of \eqref{eq:finite_A}. The singleton proxy is $\mathcal R_1(1/N,d)=N g(d)/(N-1)$, so its quadratic coefficient is $A_{N,1}=N/[3(N-1)]$. The asserted local domination follows from the strict coefficient difference.
-\end{proof}
-
-% end uniform_results.tex
-
 % end new_results.tex
 
-\section{Jacobi root dispersion and variance geometry}\label{sec:structure}
-\subsection{A root-spread inequality for Jacobi polynomials}
-Write $Q_j(z)=\text{const.}\prod_i(z+\alpha_i)$ as in \eqref{eq:factor}. Because
-\[
- v(\log z)=\sum_{i=1}^j\frac{z\alpha_i}{(z+\alpha_i)^2}
- =\frac14\sum_{i=1}^j\left[1-\left(\frac{z-\alpha_i}{z+\alpha_i}\right)^2\right],
-\]
-Theorem \ref{thm:curvature} yields the following root inequality, valid for all Jacobi degrees and all nonnegative integer parameters $h,r$:
-\begin{equation}\label{eq:rootineq}
- \boxed{\quad
- \sum_{i=1}^j\left(\frac{z-\alpha_i}{z+\alpha_i}\right)^2
- \ge\frac{j(j-1)}{N-1}
- \quad(z>0),\qquad N=2j+h+r.\quad}
-\end{equation}
-At $z=1$, \eqref{eq:rootineq} recovers the ordinary hypergeometric variance bound. For all $z>0$, it gives the same lower bound for the sum of squared transformed Jacobi zeros.
-
-\subsection{An exact finite-population variance envelope}
-The central hypergeometric variance is
-\[
- \Var(H)=\frac{km(N-k)(N-m)}{N^2(N-1)}.
-\]
-The ratio of this variance to the all-tilt symmetric envelope is
-\[
- \frac{4\max\{k(N-k),m(N-m)\}}{N^2}\le1.
-\]
-Thus the envelope is saturated at zero tilt whenever the larger margin product equals $N^2/4$. For $m=1$ and $k\ne N/2$, the tilted variance is maximized at $t=\log((N-k)/k)\ne0$. Theorem \ref{thm:curvature} bounds the maximizing variance for every pair of margins.
-
-\subsection{A probabilistic interpretation of the positivity argument}
-The Poisson--binomial bound $v\le u(j-u)/j$ defines a region in the mean--variance plane. At each stationary tilt, the pair $(u,v)$ also satisfies $\mathcal F(u,v)=0$. For $j\ge3$, Lemmas \ref{lem:universal} and \ref{lem:identity} place the admissible stationary branch at or below $v=B$. The singleton and two-mark calculations complete the curvature bound for all degrees.
-
-\appendix
 
 % begin odd_cumulants.tex
 \section{Factorial-moment and cumulant expansions}\label{app:cumulants}
@@ -1385,121 +1238,6 @@ Formula \eqref{eq:kappa4exp} follows from \eqref{eq:factorial_moments} for $r=1,
 All these identities are rational in $\varepsilon$ for fixed $m,s$ and are valid in a neighborhood of the origin. The zero-parameter limit is $H_0\sim\mathrm{Binomial}(m,1/2)$, for which odd cumulants vanish and $\kappa_4(0)=-m/8$.
 
 % end odd_cumulants.tex
-
-
-% begin analytic_contraction.tex
-\section{Analytic contraction on compact success-proportion intervals}\label{app:contraction}
-\subsection{Fixed-sample comparison}
-The first finite-population correction gives a comparison away from the balanced point as well.
-
-\begin{theorem}[Uniform Bernoulli envelope at fixed sample size]\label{thm:compact_contraction}
-Fix $m\ge2$ and $0<\eta<1/2$. There exists $N_1(m,\eta)$ such that, for all $N\ge N_1(m,\eta)$ and $\eta\le k/N\le1-\eta$,
-\begin{equation}\label{eq:compact_envelope}
- \sigma^2_{\mathrm{opt}}(H_{N,k,m})
- \le\frac{m(N-m)}{N-1}\,
- \sigma^2_{\mathrm{opt}}(\Bern(k/N)).
-\end{equation}
-Equality holds when $k=N/2$; the inequality is strict otherwise.
-\end{theorem}
-\begin{proof}
-By reflection let $d\in[0,1-2\eta]$. At $e=0$ the binomial proxy has its unique maximizing tilt $t_0(d)=4\operatorname{artanh}d$, with continuous value $t_0(0)=0$. Its second derivative there is negative: for $d>0$, the Bernoulli proof in Appendix \ref{app:bernoulli} gives $G''(t_0)=c-pq>0$ and $Q''(t_0)=-2mG''(t_0)/t_0^2<0$; at $d=0$ the derivative is $-m/48$. Compactness, the uniform tail bound, and the strict uniqueness at $e=0$ allow the localization and implicit-function arguments to be applied uniformly on this interval. Thus $\mathcal R_m(e,d)$ is analytic on a neighborhood of its compact parameter interval for sufficiently small $|e|$.
-
-For $p,q$ in this compact interval, expanding \eqref{eq:analytic_masses} gives
-\[
- P_i(e,d)=\binom mi p^iq^{m-i}\left[
- 1+\frac e2\left\{m(m-1)-\frac{i(i-1)}p
- -\frac{(m-i)(m-i-1)}q\right\}\right]+O_{m,\eta}(e^2).
-\]
-If $Z=q+pe^t$, binomial factorial moments therefore yield
-\begin{equation}\label{eq:first_order_psi}
- \psi(e,d,t)=m\log Z-mpt+
- \frac{em(m-1)}2\left[1-\frac{pe^{2t}+q}{Z^2}\right]+O_{m,\eta}(e^2)
-\end{equation}
-on compact $t$ intervals. Analytic divisibility by $t^2$ permits the same expansion for $Q$ at zero. Evaluation at the unique limiting maximizer gives, with $a=\log(q/p)=2\operatorname{artanh}d$,
-\[
- \mathcal R_m(e,d)=g(d)+e\left[m g(d)-(m-1)\frac{d^2}{a^2pq}\right]+O_{m,\eta}(e^2).
-\]
-The continuous interpretation is used at $d=0$. Since $\mathcal R_1(e,d)=g(d)/(1-e)$, their difference vanishes identically at $e=0$ and also at $d=0$ for every small $e$. It is even in $d$. Joint analyticity consequently factors it exactly as
-\[
- \mathcal R_1(e,d)-\mathcal R_m(e,d)=e d^2 B_m(e,d),
-\]
-where $B_m$ is continuous on the compact interval and
-\[
- B_m(0,d)=\frac{(m-1)g(d)}{d^2}
- \left[\frac{d}{(1-d^2)\operatorname{artanh}d}-1\right],
- \qquad B_m(0,0)=\frac{2(m-1)}3.
-\]
-For $d>0$, integration gives $\operatorname{artanh}d<d/(1-d^2)$, so $B_m(0,d)>0$. Its compact minimum is positive. Uniform continuity then gives $B_m(e,d)>0$ for all sufficiently small $e>0$. This proves the normalized comparison, including strictness, and multiplying through gives \eqref{eq:compact_envelope}.
-\end{proof}
-
-\begin{remark}[Relation to the finite-population envelope]
-Theorem \ref{thm:main_laplace} now gives the finite-population proxy comparison for both parities in the canonical sub-half-population range, with equality at the balanced even margin. The present analytic argument records the first finite-population correction uniformly over compact success-proportion intervals, and Theorem \ref{thm:uniform_fixed} identifies the maximizing success count for each fixed sample size in sufficiently large odd populations.
-\end{remark}
-
-% end analytic_contraction.tex
-
-
-% begin auxiliary_curvature.tex
-\section{Pointwise curvature and its weighted integral}\label{sec:curvature_obstruction}
-The exact odd-population constant defines the factor
-\[
- \rho_N=\frac{N-1}{N}L_N=\frac{1}{N\operatorname{artanh}(1/N)}<1.
-\]
-The corresponding pointwise inequality takes the form
-\begin{equation}\label{eq:falseoddcurve}
- \psi_{N,k,m}''(t)\le\rho_N\frac{m(N-m)}{4(N-1)}.
-\end{equation}
-The next proposition gives an exact tilted variance above the right side of \eqref{eq:falseoddcurve}.
-
-\begin{proposition}[Exact exceedance of the constant pointwise bound]\label{prop:obstruction}
-For $N=15$, $k=7$, $m=3$, and $t=\log(7/6)$,
-\begin{equation}\label{eq:obs_exact}
- \frac{4(N-1)}{m(N-m)}\psi_{N,k,m}''(t)
- =\frac{307887776}{308178025}
- >\frac{675}{676}>\rho_{15}.
-\end{equation}
-This nearest-balanced population violates \eqref{eq:falseoddcurve} at the stated tilt.
-\end{proposition}
-
-\begin{proof}
-With $z=7/6$, the tilted hypergeometric weights for $j=0,1,2,3$ are proportional to
-\[
- w_j=\binom7j\binom8{3-j}z^j.
-\]
-They are rational, so both the mean and the variance are rational. Direct summation gives
-\[
- \E_tH=\frac{26313}{17555},\qquad
- \operatorname{Var}_t(H)=\frac{197927856}{308178025}.
-\]
-Since $m(N-m)/[4(N-1)]=9/14$, the first equality in \eqref{eq:obs_exact} follows by multiplying the variance by $14/9$. The first strict inequality follows from
-\[
- \frac{307887776}{308178025}-\frac{675}{676}
- =\frac{111969701}{208328344900}>0.
-\]
-Finally, the power series for $\operatorname{artanh}$ at $x=1/15$ yields
-\[
- \operatorname{artanh}(1/15)>\frac1{15}+\frac1{3\cdot15^3},
- \quad\text{hence}\quad
- \rho_{15}<\left(1+\frac1{3\cdot15^2}\right)^{-1}=\frac{675}{676}.
-\]
-Combining these two inequalities proves \eqref{eq:obs_exact}.
-\end{proof}
-
-\begin{proposition}[Integrated curvature identity]\label{prop:integral}
-For every centered random variable with finite moment generating function, writing $\psi(t)=\log\E e^{tX}$ gives
-\begin{equation}\label{eq:curv_integral}
- \frac{2\psi(t)}{t^2}=2\int_0^1(1-u)\psi''(ut)\,du,
- \qquad t\ne0.
-\end{equation}
-The proxy objective is therefore a weighted average of curvature along the segment from zero to the chosen tilt.
-\end{proposition}
-\begin{proof}
-Twice integrate $\psi''$ using $\psi(0)=\psi'(0)=0$ and substitute $s=ut$; the formula is valid for either sign of $t$.
-\end{proof}
-
-Theorem \ref{odd:thm:envelope} bounds the weighted integral \eqref{eq:curv_integral} through the mean-dependent envelope of Lemma \ref{odd:lem:barrier}. Proposition \ref{prop:obstruction} identifies a point of this variance curve above the constant threshold in \eqref{eq:falseoddcurve}.
-
-% end auxiliary_curvature.tex
 
 
 % begin algebra.tex

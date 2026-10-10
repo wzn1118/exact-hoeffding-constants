@@ -1,46 +1,31 @@
 # 有限交换序列的精确 Hoeffding 常数
 
-**Exact Hoeffding Constants for Finite Exchangeable Sequences**  
-作者：Zinan Wang · 修订日期：2026-10-11
+**Zinan Wang · 2026 年 10 月 11 日修订**
 
-版权归作者所有，详见 `LICENSE` 和 `COPYRIGHT.md`。第三方文献的许可见 `THIRD_PARTY_NOTICES.md`。
+[主论文 PDF（28 页）](manuscript.pdf) · [技术补充 PDF（6 页）](supplementary_refinements.pdf) · [单文件投稿源码](submission/manuscript.tex)
 
-[最新英文论文 PDF](manuscript.pdf) · [独立投稿 LaTeX 源码](submission/manuscript.tex) · [参考文献目录](refs/README_zh.md)
+## 精确常数
 
-## 主定理
-
-对任意有限总体规模，最优 Hoeffding 常数为
-
+对任意有限总体规模，有界交换序列的中心化线性对比满足最优 Hoeffding 系数公式
 \[
-C_N^\star=
-\begin{cases}
+C_N^\star=\begin{cases}
 N/(N-1),&N\text{ 为偶数},\\
 [(N-1)\operatorname{artanh}(1/N)]^{-1},&N\text{ 为奇数}.
 \end{cases}
 \]
 
-偶数情形由最大归一化方差确定，奇数情形的最优值在明确的非零 Laplace 倾斜处取得。本次修订将两水平归约提前，统一升阶乘与降阶乘的记号，并将核心 Bernoulli Laplace 包络比较推广至适当参数范围内的偶数总体；同时保留奇数情形的极值分类及四阶展开。
+主论文集中呈现两水平归约、全参数倾斜方差界、奇偶统一的 Laplace 包络、精确常数和奇数总体的等号分类。四阶展开收至附录。固定样本成功数极值与精确失衡系数、紧成功比例区间解析收缩、次要曲率例子与积分恒等式收至独立的技术补充，保留完整论证。
 
-## 正式版本
+## 可复现性
 
-- `manuscript.pdf`：当前 33 页论文 PDF，由 LaTeX 源码自动构建。
-- `source/`：完整分模块证明与主稿。
-- `submission/manuscript.tex`：自包含单文件投稿源码。
-- `checks/`：证明校验与生成脚本。
-- `refs/`：参考文献记录与获得授权的文献副本。
-- `SHA256SUMS.txt`：文件校验清单。
-
-旧版投稿 ZIP 已从最新树中清理。Git 历史仍保留历次提交，方便追踪论文的数学修订。
-
-## 构建
+CI 已改为实际执行全部 `run_all.sh` 数学测试，而非仅编译 PDF。包括偶数总体包络在内的十一项检查均须通过；运行日志保存到 `checks/logs/`，包含 `verify_even_envelope_extension.log`。同时验证 27–30 页主稿要求、补充文稿、文献引用和 SHA256 文件哈希。
 
 ```bash
 python3 -m pip install -r requirements.txt
 python3 checks/sync_submission.py
-bash build_manuscript.sh
 bash run_all.sh
 python3 checks/refresh_checksums.py
 sha256sum -c SHA256SUMS.txt
 ```
 
-正式稿通过 [GitHub Actions](.github/workflows/publish-manuscript.yml) 自动构建和同步 PDF。
+论文和补充材料从 `source/manuscript.tex` 与 `source/supplement.tex` 编译。版权归作者所有，详见 `LICENSE`、`COPYRIGHT.md` 和 `THIRD_PARTY_NOTICES.md`。
