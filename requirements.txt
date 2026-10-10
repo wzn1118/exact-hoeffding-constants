@@ -1,2 +1,2 @@
 sympy==1.14.0
-mpmath==1.4.1
+mpmath==1.3.0
