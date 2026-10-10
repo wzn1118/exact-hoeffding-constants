@@ -1,0 +1,58 @@
+\section{Pointwise curvature and its weighted integral}\label{sec:curvature_obstruction}
+The exact odd-population constant defines the factor
+\[
+ \rho_N=\frac{N-1}{N}L_N=\frac{1}{N\operatorname{artanh}(1/N)}<1.
+\]
+The corresponding pointwise inequality takes the form
+\begin{equation}\label{eq:falseoddcurve}
+ \psi_{N,k,m}''(t)\le\rho_N\frac{m(N-m)}{4(N-1)}.
+\end{equation}
+The next proposition gives an exact tilted variance above the right side of \eqref{eq:falseoddcurve}.
+
+\begin{proposition}[Exact exceedance of the constant pointwise bound]\label{prop:obstruction}
+For $N=15$, $k=7$, $m=3$, and $t=\log(7/6)$,
+\begin{equation}\label{eq:obs_exact}
+ \frac{4(N-1)}{m(N-m)}\psi_{N,k,m}''(t)
+ =\frac{307887776}{308178025}
+ >\frac{675}{676}>\rho_{15}.
+\end{equation}
+This nearest-balanced population violates \eqref{eq:falseoddcurve} at the stated tilt.
+\end{proposition}
+
+\begin{proof}
+With $z=7/6$, the tilted hypergeometric weights for $j=0,1,2,3$ are proportional to
+\[
+ w_j=\binom7j\binom8{3-j}z^j.
+\]
+They are rational, so both the mean and the variance are rational. Direct summation gives
+\[
+ \E_tH=\frac{26313}{17555},\qquad
+ \operatorname{Var}_t(H)=\frac{197927856}{308178025}.
+\]
+Since $m(N-m)/[4(N-1)]=9/14$, the first equality in \eqref{eq:obs_exact} follows by multiplying the variance by $14/9$. The first strict inequality follows from
+\[
+ \frac{307887776}{308178025}-\frac{675}{676}
+ =\frac{111969701}{208328344900}>0.
+\]
+Finally, the power series for $\operatorname{artanh}$ at $x=1/15$ yields
+\[
+ \operatorname{artanh}(1/15)>\frac1{15}+\frac1{3\cdot15^3},
+ \quad\text{hence}\quad
+ \rho_{15}<\left(1+\frac1{3\cdot15^2}\right)^{-1}=\frac{675}{676}.
+\]
+Combining these two inequalities proves \eqref{eq:obs_exact}.
+\end{proof}
+
+\begin{proposition}[Integrated curvature identity]\label{prop:integral}
+For every centered random variable with finite moment generating function, writing $\psi(t)=\log\E e^{tX}$ gives
+\begin{equation}\label{eq:curv_integral}
+ \frac{2\psi(t)}{t^2}=2\int_0^1(1-u)\psi''(ut)\,du,
+ \qquad t\ne0.
+\end{equation}
+The proxy objective is therefore a weighted average of curvature along the segment from zero to the chosen tilt.
+\end{proposition}
+\begin{proof}
+Twice integrate $\psi''$ using $\psi(0)=\psi'(0)=0$ and substitute $s=ut$; the formula is valid for either sign of $t$.
+\end{proof}
+
+Theorem \ref{odd:thm:envelope} bounds the weighted integral \eqref{eq:curv_integral} through the mean-dependent envelope of Lemma \ref{odd:lem:barrier}. Proposition \ref{prop:obstruction} identifies a point of this variance curve above the constant threshold in \eqref{eq:falseoddcurve}.

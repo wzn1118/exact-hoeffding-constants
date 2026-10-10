@@ -1,8 +1,8 @@
-\section{Uniform Bernoulli envelopes and exact odd-population constants}\label{sec:odd_uniform}
-Write $g(d)=d/\operatorname{artanh}d$ with $g(0)=1$, and recall $L_N=[(N-1)\operatorname{artanh}(1/N)]^{-1}$. The following comparison is uniform over all sample sizes in the canonical odd-population domain.
+\section{Uniform Laplace envelopes and odd-population extremizers}\label{sec:odd_uniform}
+Write $g(d)=d/\operatorname{artanh}d$ with $g(0)=1$, and recall $L_N=[(N-1)\operatorname{artanh}(1/N)]^{-1}$. The Laplace comparison below applies to both parities; only the final optimization over discrete success counts uses oddness.
 
-\begin{theorem}[Uniform Bernoulli envelope]\label{odd:thm:envelope}
-Let $N\ge7$ be odd, $3\le m\le k\le(N-1)/2$, and $H\sim\Hyp(N,k,m)$. Write $\psi=\psi_{N,k,m}$ and set
+\begin{theorem}[Parity-uniform Bernoulli envelope]\label{odd:thm:envelope}
+Let $N\ge7$ be an integer with $3\le m\le k\le\lfloor N/2\rfloor$ and $N>2m$, and let $H\sim\Hyp(N,k,m)$. Write $\psi=\psi_{N,k,m}$ and set
 \[
  p=\frac{k}{N},\quad q=1-p,\quad d=1-2p,\quad
  M=\frac{m(N-m)}{N-1},\quad a=\frac{N-2m}{N-2}>0.
@@ -12,17 +12,18 @@ For every $t\in\R$,
  \boxed{\quad
  \psi(t)\le\frac{M}{a^2}\bigl[\log(q+pe^{at})-pat\bigr].\quad}
 \end{equation}
-The inequality is strict for $t\ne0$. Consequently,
+The Laplace inequality is strict for $t\ne0$. If $k<N/2$, then
 \begin{equation}\label{odd:eq:BernEnvelope}
  \sigma^2_{\rm opt}(H)<M\sigma^2_{\rm opt}(\Bern(p)),\qquad
  \frac{4N}{m(N-m)}\sigma^2_{\rm opt}(H)
- <\frac{N}{N-1}g(d)\le L_N.
+ <\frac{N}{N-1}g(d).
 \end{equation}
-All constants and inequalities are finite-$N$ statements, uniform in $k,m$.
+If $N$ is even and $k=N/2$, the two optimal proxies are equal: both sides of the first comparison equal $M/4$, and both sides of the normalized comparison equal $N/(N-1)$. For odd $N$, $d\ge 1/N$, so the last expression in \eqref{odd:eq:BernEnvelope} is at most $L_N$.
+All these estimates are finite-population statements.
 \end{theorem}
 
 \subsection{Tilted mean and variance as a curve}
-Throughout this section assume the hypotheses of Theorem~\ref{odd:thm:envelope}.
+Throughout the envelope proof assume the hypotheses of Theorem~\ref{odd:thm:envelope}.
 Let $\E_t$ and $\Var_t$ denote exponential tilting by $e^{tH}$, and write
 \[
  u(t)=\E_tH,\qquad v(t)=\Var_t(H).
@@ -121,7 +122,7 @@ The exact admissibility identity is
  \frac{u(m-u)}m-P(u)=\frac{m(m-1)}{4(N-1)}E(d,z_0).
 \end{equation}
 Thus, at any contact $V=P$, Lemma~\ref{odd:lem:PB} implies $E\ge0$.
-Also $m\le k\le(N-1)/2$ implies $0<d\le\delta$.
+Also $m\le k\le N/2$ implies $0\le d\le\delta$; equality $d=0$ occurs precisely at the even balanced margin $k=N/2$.
 
 Define
 \begin{equation}\label{odd:eq:lambda}
@@ -167,7 +168,7 @@ Then
 It follows that $\lambda,\alpha>0$, $A_0>0$, and $A_0C_0-B_0^2>0$.
 The quadratic form in \eqref{odd:eq:certificate} is positive definite. Therefore
 \begin{equation}\label{odd:eq:Wpositive}
- E\ge0,\quad 0<d\le\delta\quad\Longrightarrow\quad W(d,z_0)>0.
+ E\ge0,\quad 0\le d\le\delta\quad\Longrightarrow\quad W(d,z_0)>0.
 \end{equation}
 The coefficient identities establish strict positivity for every allowed $N,m$.
 
@@ -231,14 +232,11 @@ The exact Bernoulli proxy is
 \end{equation}
 On substituting $s=at$ in the supremum, \eqref{odd:eq:laplace} implies
 $\sigma^2_{\rm opt}(H)\le M\sigma^2_{\rm opt}(\Bern(p))$.
-To prove strictness of the optimized inequality, extend the hypergeometric quotient continuously to zero.
-It tends to zero at either infinity. Its maximum is attained at a finite point. At every nonzero point it is strictly below the Bernoulli bound. At zero it equals $Mpq$, which is also strictly below $Md/(4\artanh d)$, because
+To optimize the comparison, extend the hypergeometric quotient continuously to zero. It tends to zero at either infinity, so its maximum is attained at a finite point. At every nonzero tilt it is strictly below the Bernoulli upper envelope. If $d>0$, its value at zero is $Mpq$, strictly below $M\sigma^2_{\rm opt}(\Bern(p))=Md/(4\artanh d)$, because
 \[
- \artanh d=\int_0^d\frac{dx}{1-x^2}<\frac{d}{1-d^2}\quad(0<d<1).
+ \artanh d=\int_0^d\frac{dx}{1-x^2}<\frac{d}{1-d^2}\qquad(0<d<1).
 \]
-This proves the first strict inequality in \eqref{odd:eq:BernEnvelope}.
-Finally $g(d)$ strictly decreases for $d>0$ by the same integral inequality, and $d\ge1/N$. Multiplication by $4N/[m(N-m)]$ proves the rest of Theorem~\ref{odd:thm:envelope}.
-
+Thus the proxy comparison is strict for $k<N/2$. If $d=0$, the integrated Laplace bound and $\log\cosh x\le x^2/2$ give $\sigma^2_{\rm opt}(H)\le M/4$. The variance at zero tilt is $Mpq=M/4$, so equality holds in the optimal-proxy comparison. Finally, $g(d)$ strictly decreases for $d>0$ by the same integral inequality. In the odd case $d\ge1/N$, and hence $g(d)\le g(1/N)$. This completes Theorem~\ref{odd:thm:envelope} for both parities.
 
 \subsection{Exact odd-population extremizers}
 \begin{theorem}[Odd-population hypergeometric extremizers]\label{odd:thm:odd}

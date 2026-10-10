@@ -1,0 +1,47 @@
+\section{Analytic contraction on compact success-proportion intervals}\label{app:contraction}
+\subsection{Fixed-sample comparison}
+The first finite-population correction gives a comparison away from the balanced point as well.
+
+\begin{theorem}[Uniform Bernoulli envelope at fixed sample size]\label{thm:compact_contraction}
+Fix $m\ge2$ and $0<\eta<1/2$. There exists $N_1(m,\eta)$ such that, for all $N\ge N_1(m,\eta)$ and $\eta\le k/N\le1-\eta$,
+\begin{equation}\label{eq:compact_envelope}
+ \sigma^2_{\mathrm{opt}}(H_{N,k,m})
+ \le\frac{m(N-m)}{N-1}\,
+ \sigma^2_{\mathrm{opt}}(\Bern(k/N)).
+\end{equation}
+Equality holds when $k=N/2$; the inequality is strict otherwise.
+\end{theorem}
+\begin{proof}
+By reflection let $d\in[0,1-2\eta]$. At $e=0$ the binomial proxy has its unique maximizing tilt $t_0(d)=4\operatorname{artanh}d$, with continuous value $t_0(0)=0$. Its second derivative there is negative: for $d>0$, the Bernoulli proof in Appendix \ref{app:bernoulli} gives $G''(t_0)=c-pq>0$ and $Q''(t_0)=-2mG''(t_0)/t_0^2<0$; at $d=0$ the derivative is $-m/48$. Compactness, the uniform tail bound, and the strict uniqueness at $e=0$ allow the localization and implicit-function arguments to be applied uniformly on this interval. Thus $\mathcal R_m(e,d)$ is analytic on a neighborhood of its compact parameter interval for sufficiently small $|e|$.
+
+For $p,q$ in this compact interval, expanding \eqref{eq:analytic_masses} gives
+\[
+ P_i(e,d)=\binom mi p^iq^{m-i}\left[
+ 1+\frac e2\left\{m(m-1)-\frac{i(i-1)}p
+ -\frac{(m-i)(m-i-1)}q\right\}\right]+O_{m,\eta}(e^2).
+\]
+If $Z=q+pe^t$, binomial factorial moments therefore yield
+\begin{equation}\label{eq:first_order_psi}
+ \psi(e,d,t)=m\log Z-mpt+
+ \frac{em(m-1)}2\left[1-\frac{pe^{2t}+q}{Z^2}\right]+O_{m,\eta}(e^2)
+\end{equation}
+on compact $t$ intervals. Analytic divisibility by $t^2$ permits the same expansion for $Q$ at zero. Evaluation at the unique limiting maximizer gives, with $a=\log(q/p)=2\operatorname{artanh}d$,
+\[
+ \mathcal R_m(e,d)=g(d)+e\left[m g(d)-(m-1)\frac{d^2}{a^2pq}\right]+O_{m,\eta}(e^2).
+\]
+The continuous interpretation is used at $d=0$. Since $\mathcal R_1(e,d)=g(d)/(1-e)$, their difference vanishes identically at $e=0$ and also at $d=0$ for every small $e$. It is even in $d$. Joint analyticity consequently factors it exactly as
+\[
+ \mathcal R_1(e,d)-\mathcal R_m(e,d)=e d^2 B_m(e,d),
+\]
+where $B_m$ is continuous on the compact interval and
+\[
+ B_m(0,d)=\frac{(m-1)g(d)}{d^2}
+ \left[\frac{d}{(1-d^2)\operatorname{artanh}d}-1\right],
+ \qquad B_m(0,0)=\frac{2(m-1)}3.
+\]
+For $d>0$, integration gives $\operatorname{artanh}d<d/(1-d^2)$, so $B_m(0,d)>0$. Its compact minimum is positive. Uniform continuity then gives $B_m(e,d)>0$ for all sufficiently small $e>0$. This proves the normalized comparison, including strictness, and multiplying through gives \eqref{eq:compact_envelope}.
+\end{proof}
+
+\begin{remark}[Relation to the finite-population envelope]
+Theorem \ref{thm:main_laplace} now gives the finite-population proxy comparison for both parities in the canonical sub-half-population range, with equality at the balanced even margin. The present analytic argument records the first finite-population correction uniformly over compact success-proportion intervals, and Theorem \ref{thm:uniform_fixed} identifies the maximizing success count for each fixed sample size in sufficiently large odd populations.
+\end{remark}

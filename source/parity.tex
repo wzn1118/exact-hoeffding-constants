@@ -1,0 +1,75 @@
+\section{Parity, maximal variance, and explicit sharp contrasts}\label{sec:parity}
+\begin{proposition}[The variance constant and the parity gap]\label{prop:variance_parity}
+For $N\ge2$, define the variance constant over nonzero contrasts by
+\[
+ D_N=\sup_{\substack{X\in[-1,1]^N\ \mathrm{exchangeable}\\a\ne0,\ a\perp\one}}
+ \frac{\Var\langle a,X\rangle}{\|a\|_2^2}.
+\]
+Then
+\begin{equation}\label{eq:variance_constant}
+ D_N=\frac{4\lfloor N^2/4\rfloor}{N(N-1)}
+ =\begin{cases}N/(N-1),&N\text{ even},\\(N+1)/N,&N\text{ odd}.
+ \end{cases}
+\end{equation}
+For even $N$, $C_N^\star=D_N$. For odd $N$, $D_N<C_N^\star<N/(N-1)$, and, with $x=1/N$,
+\begin{align}
+ C_N^\star-D_N
+ &=\frac{2\int_0^x t\operatorname{artanh}t\,dt}
+ {(1-x)\operatorname{artanh}x}>0,\label{eq:variance_gap_integral}\\
+ &=\frac{2}{3N^2}+\frac{2}{3N^3}+\frac{26}{45N^4}+O(N^{-5}).\label{eq:variance_gap_expansion}
+\end{align}
+\end{proposition}
+\begin{proof}
+Exchangeability and $a\perp\one$ give
+\[
+ \frac{\Var\langle a,X\rangle}{\|a\|_2^2}
+ =\E(X_1^2-X_1X_2)
+ =\frac1{N-1}\E\sum_{i=1}^N(X_i-\bar X_N)^2.
+\]
+The sum $\sum_i(x_i-\bar x)^2$ is a convex function on the cube. At a vertex with $k$ positive coordinates it equals $4k(N-k)/N$, whose maximum is $4\lfloor N^2/4\rfloor/N$. A uniformly permuted nearest-balanced vertex attains the maximum for every nonzero $a\perp\one$. This proves \eqref{eq:variance_constant}.
+
+For even $N$, \eqref{eq:globalC} and the variance lower bound prove equality. For odd $N$, use the value established in Theorem \ref{odd:thm:odd}:
+\[
+ C_N^\star-D_N
+ =\frac{x-(1-x^2)\operatorname{artanh}x}
+ {(1-x)\operatorname{artanh}x}.
+\]
+The numerator has derivative $2x\operatorname{artanh}x$ and vanishes at zero, proving \eqref{eq:variance_gap_integral}. Expanding $\operatorname{artanh}x$ gives \eqref{eq:variance_gap_expansion}; $\operatorname{artanh}x>x$ gives $C_N^\star<N/(N-1)$.
+\end{proof}
+
+\begin{proposition}[A sharp single-coordinate contrast]\label{prop:explicit_extremizer}
+Let $X$ be uniform on the Hamming slice with $k=\lfloor N/2\rfloor$ positive coordinates, and put $a=e_1-N^{-1}\one$. Then
+\[
+ \|a\|_2^2=\frac{N-1}{N},\qquad
+ \langle a,X\rangle=X_1-\bar X_N=2(B-p),
+ \quad B\sim\Bern(p),\quad p=\frac{k}{N}.
+\]
+For odd $N$, the optimal bound \eqref{eq:exchange-intro} is attained at the nonzero argument $\lambda_\star=\log((N+1)/(N-1))$. For even $N$, its sharp coefficient is attained in the limit $\lambda\to0$.
+\end{proposition}
+\begin{proof}
+For odd $N$, write $\alpha=\log((N+1)/(N-1))=\log((1-p)/p)$. The identity $1-p+pe^{2\alpha}=e^\alpha$ gives
+\[
+ \log\E e^{\alpha\langle a,X\rangle}
+ =(1-2p)\alpha=\frac\alpha N
+ =\frac{\alpha^2 L_N}{2}\frac{N-1}{N}.
+\]
+For even $N$, $2(B-p)$ is a symmetric sign, so
+\[
+ \lim_{\lambda\to0}\frac{2\log\E e^{\lambda\langle a,X\rangle}}
+ {\lambda^2\|a\|_2^2}
+ =\lim_{\lambda\to0}\frac{2N\log\cosh\lambda}{(N-1)\lambda^2}
+ =\frac{N}{N-1}.
+\]
+\end{proof}
+
+The Bernoulli optimal proxy, used below in both normalizations, is
+\begin{equation}\label{eq:bernproxy}
+ \sigma^2_{\mathrm{opt}}(\Bern(p))=
+ \begin{cases}\displaystyle\frac{1-2p}{2\log((1-p)/p)},&p\ne1/2,\\[5pt]1/4,&p=1/2.
+ \end{cases}
+\end{equation}
+A calculus proof appears in Appendix \ref{app:bernoulli}; see also \cite{ArbelMarchalNguyen}. The sharp examples prove the odd lower bound
+\begin{equation}\label{eq:oddL}
+ C_N^\star\ge L_N=\frac{2}{(N-1)\log((N+1)/(N-1))},
+\end{equation}
+while \eqref{eq:globalC} gives the upper bound for all $N$. Since $L_N=1+N^{-1}+O(N^{-2})$, the first-order limit \eqref{eq:asymptotic} follows. The odd upper bound and the complete hypergeometric equality classification are proved in Section \ref{sec:odd_uniform}.

@@ -70,14 +70,15 @@ This is equivalent to $L_N^{(2)}<L_N$. The asymptotic difference follows by expa
 \end{proof}
 
 \begin{corollary}[Two-draw Bernoulli envelope]\label{cor:two_bern_envelope}
-For every odd $N\ge5$ and $2\le k\le(N-1)/2$,
+For every integer $N\ge5$ and $2\le k\le\lfloor N/2\rfloor$,
 \[
  \sigma^2_{\mathrm{opt}}(H_{N,k,2})
- <\frac{2(N-2)}{N-1}\sigma^2_{\mathrm{opt}}(\Bern(k/N)).
+ \le\frac{2(N-2)}{N-1}\sigma^2_{\mathrm{opt}}(\Bern(k/N)).
 \]
+The inequality is strict for $k<N/2$ and is an equality for even $N$ and $k=N/2$.
 \end{corollary}
 \begin{proof}
-Put $d=1-2k/N>0$ and
+For $k=N/2$ the three-mass law is symmetric, and Lemma \ref{lem:threemass} gives its proxy as its variance $2(N-2)/[4(N-1)]$, establishing equality. For $k<N/2$, put $d=1-2k/N>0$ and
 \[
  A_1=2\operatorname{artanh}d,\qquad
  B_1=2\operatorname{artanh}\frac{Nd}{N-2}.
