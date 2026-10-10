@@ -41,5 +41,5 @@ print(f'PASS: {len(labels)} unique labels and {len(references)} valid cross-refe
 print(f'PASS: {len(keys)} matching citations, BibTeX entries, and bibliographic records.')
 print(f'PASS: {local_count} licensed reference PDFs with matching source hashes.')
 print(f'PASS: {pages}-page manuscript, author metadata, source includes, and final build log.')
-print('PASS: all ten mathematical computation logs present and successful.')
+print('PASS: all mathematical computation logs present and successful.')
 print('PASS: document identity and source consistency.')

@@ -1,0 +1,43 @@
+\section{Factorial-moment and cumulant expansions}\label{app:cumulants}
+\subsection{Cumulants from factorial moments}\label{sec:cumulants_odd}
+We compute the cumulants entering the globally optimized expansion in Theorem \ref{thm:odd_expansion}. Write $\varepsilon=N^{-1}$. For $r\le m$, the factorial moments of $H_N$ satisfy
+\begin{equation}\label{eq:factorial_moments}
+ \E(H_N)_{\underline r}
+ =\frac{(m)_{\underline r}(k)_{\underline r}}
+ {(N)_{\underline r}},\qquad k=\frac{N-s}{2}.
+\end{equation}
+The ordinary moments up to order six are obtained by the Stirling transformation
+\[
+ \E H_N^q=\sum_{r=0}^q\left\{\begin{matrix}q\\r\end{matrix}\right\}
+ \E(H_N)_{\underline r}.
+\]
+The expressions remain valid when $r>m$, with zero falling factorials. Let $\kappa_j(\varepsilon)$ denote the $j$th cumulant of $H_N$. Elementary simplification of the first six moments yields
+\begin{align}
+ \kappa_2(e)&=\frac m4\left[1-(m-1)e-(m+s^2-1)e^2
+ +(m-1)(s^2-1)(e^3+e^4)\right]+O_{m,s}(e^5),\label{eq:kappa2exp}\\
+ \kappa_3(e)&=\frac{ms}{4}\left[e-3(m-1)e^2
+ +(2m^2-9m-s^2+7)e^3\right]+O_{m,s}(e^4),\label{eq:kappa3exp}\\
+ \kappa_4(e)&=-\frac m8+\frac{m(m-1)}2e
+ +\frac{m(-6m^2+19m+4s^2-13)}8e^2+O_{m,s}(e^3),\label{eq:kappa4exp}\\
+ \kappa_5(e)&=-\frac{ms}{2}e+O_{m,s}(e^2),\qquad
+ \kappa_6(e)=\frac m4+O_{m,s}(e).\label{eq:kappa56exp}
+\end{align}
+Here $e=\varepsilon$. All expansions follow from factorial moments through order six and the cumulant recursion
+\[
+ \kappa_r=\mu_r-\sum_{j=1}^{r-1}\binom{r-1}{j-1}\kappa_j\mu_{r-j},
+ \qquad \mu_r=\E H^r.
+\]
+For the variance and third cumulant one can verify the first two identities directly from
+\begin{align}
+ \kappa_2(\varepsilon)
+ &=\frac m4(1-s^2\varepsilon^2)\frac{1-m\varepsilon}{1-\varepsilon},\label{eq:exactk2}\\
+ \kappa_3(\varepsilon)
+ &=\kappa_2(\varepsilon)\,s\varepsilon
+ \frac{1-2m\varepsilon}{1-2\varepsilon}.
+ \label{eq:exactk3}
+\end{align}
+Formula \eqref{eq:kappa4exp} follows from \eqref{eq:factorial_moments} for $r=1,2,3,4$, using
+\[
+ \kappa_4=\E(H-\E H)^4-3\kappa_2^2.
+\]
+All these identities are rational in $\varepsilon$ for fixed $m,s$ and are valid in a neighborhood of the origin. The zero-parameter limit is $H_0\sim\mathrm{Binomial}(m,1/2)$, for which odd cumulants vanish and $\kappa_4(0)=-m/8$.
