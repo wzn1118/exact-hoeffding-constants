@@ -1,0 +1,4 @@
+PASS: positive-definite certificate conditions for all even N=8,...,40
+PASS: strict tilted Laplace bound for all even 6<=N<=30, 2<=m<N/2, m<=k<=N/2 at six nonzero tilts
+PASS: balanced even margin gives equality at zero tilt, hence equality of optimal variance proxies
+Minimum numerical positive Laplace gap: 1.42957169985e-7

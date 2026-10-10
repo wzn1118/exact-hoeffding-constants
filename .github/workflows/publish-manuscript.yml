@@ -1,4 +1,4 @@
-name: Publish manuscript PDF
+name: Verify and publish exact Hoeffding manuscript
 
 on:
   push:
@@ -6,8 +6,10 @@ on:
     paths:
       - 'source/**'
       - 'submission/manuscript.tex'
+      - 'checks/**'
+      - 'requirements.txt'
+      - 'run_all.sh'
       - 'build_manuscript.sh'
-      - 'checks/sync_submission.py'
       - '.github/workflows/publish-manuscript.yml'
   workflow_dispatch:
 
@@ -15,13 +17,12 @@ permissions:
   contents: write
 
 jobs:
-  publish:
+  verify-and-publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - name: Check out current manuscript
         uses: actions/checkout@v4
-        with:
-          persist-credentials: true
 
       - name: Install LaTeX and PDF tools
         run: |
@@ -29,24 +30,50 @@ jobs:
           sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
             texlive-latex-extra texlive-fonts-recommended texlive-science lmodern poppler-utils
 
-      - name: Build the current manuscript
-        run: |
-          python3 checks/sync_submission.py
-          bash build_manuscript.sh
-          test -s manuscript.pdf
-          pdfinfo manuscript.pdf | grep -E '^Pages:[[:space:]]+33$'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-      - name: Refresh publication checksums
+      - name: Install mathematical test requirements
+        run: python3 -m pip install -r requirements.txt
+
+      - name: Synchronize the submission source
+        run: python3 checks/sync_submission.py
+
+      - name: Run the complete mathematical test suite and build both PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p checks/logs
+          bash run_all.sh | tee checks/logs/run_all.log
+
+      - name: Verify PDF pages and the even-envelope test log
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s manuscript.pdf
+          test -s supplementary_refinements.pdf
+          pages="$(pdfinfo manuscript.pdf | awk '/^Pages:/ {print $2}')"
+          test "$pages" -ge 27 && test "$pages" -le 30
+          grep -q '^PASS:' checks/logs/verify_even_envelope_extension.log
+          grep -q 'PASS: all mathematical computation logs' checks/logs/package_validation.log
+          printf 'Primary paper: %s pages; all test logs are present.\n' "$pages"
+
+      - name: Recompute and verify release checksums
         run: |
           python3 checks/refresh_checksums.py
           sha256sum -c SHA256SUMS.txt
 
-      - name: Commit regenerated publication files
+      - name: Publish verified PDFs and computation logs
+        shell: bash
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add manuscript.pdf submission/manuscript.tex SHA256SUMS.txt checks/logs/latex_build.log
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add manuscript.pdf supplementary_refinements.pdf submission/manuscript.tex \
+            SHA256SUMS.txt checks/logs/*.log
           if ! git diff --cached --quiet; then
-            git commit -m "Publish current Hoeffding manuscript PDF [skip ci]"
+            git commit -m 'Publish verified 28-page manuscript, supplement and full test logs [skip ci]'
             git push origin HEAD:main
           fi
