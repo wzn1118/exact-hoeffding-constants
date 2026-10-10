@@ -1,6 +1,6 @@
-PASS: 167 unique labels and 172 valid cross-references.
+PASS: 168 unique labels and 168 valid cross-references.
 PASS: 16 matching citations, BibTeX entries, and bibliographic records.
 PASS: 4 licensed reference PDFs with matching source hashes.
-PASS: 33-page manuscript, author metadata, source includes, and final build log.
-PASS: all ten mathematical computation logs present and successful.
+PASS: 28-page main manuscript, compiled supplement, author metadata, and both build logs.
+PASS: all mathematical computation logs present and successful.
 PASS: document identity and source consistency.

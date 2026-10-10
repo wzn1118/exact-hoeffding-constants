@@ -95,12 +95,11 @@ dmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texm
 f/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.
 enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}]
-[2] [3] [4] (./exchangeability.tex [5] [6]) [7] [8] [9] [10] [11] [12]
-(./parity.tex [13] [14]) (./two_draws.tex [15]) (./odd_uniform.tex [16]
-[17] [18] [19] [20]) (./new_results.tex [21] [22] [23] (./uniform_results.tex
-[24] [25] [26])) [27] (./odd_cumulants.tex [28]) (./analytic_contraction.tex
-[29]) (./auxiliary_curvature.tex [30]) (./algebra.tex [31]) (./references.tex
-(/usr/share/texmf/tex/latex/lm/t1lmtt.fd) [32]) [33] (../build/manuscript.aux) 
+[2] [3] [4] (./exchangeability.tex [5]) [6] [7] [8] [9] [10] [11] [12]
+(./parity.tex [13]) (./two_draws.tex [14] [15]) (./odd_uniform.tex [16]
+[17] [18] [19] [20]) [21] (./new_results.tex [22] [23]) (./odd_cumulants.tex
+[24]) (./algebra.tex [25]) [26] (./references.tex
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd) [27]) [28] (../build/manuscript.aux) 
 )</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr
 /share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/pub
@@ -115,5 +114,5 @@ m/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy
 8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ../build/manuscript.pdf (33 pages, 528221 bytes).
+Output written on ../build/manuscript.pdf (28 pages, 495471 bytes).
 Transcript written on ../build/manuscript.log.
