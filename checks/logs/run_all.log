@@ -1,4 +1,15 @@
 
+== verify_independent_certificates ==
+PASS independent curvature stationary elimination and factor identity
+PASS independent curvature positivity polynomial in a=j-3, s=h+r
+PASS independent Laplace residual identity F(u,P)+n*y*P*P'= -G*y^2*W
+PASS independent Laplace Bernoulli admissibility identity
+PASS independent Laplace SOS identity and positive determinant identity
+PASS independent Laplace quadrant coefficient identities
+PASS independent Jacobi generating-polynomial differential equation (96 exact cases)
+PASS direct finite-sum Laplace stress test N=7..18
+ALL independent certificate checks passed
+
 == verify_parity_structure ==
 PASS: the three-coordinate direction preserves sum and squared norm to first order.
 PASS: the two-level squared norm and variational normalization.
@@ -45,17 +56,6 @@ PASS: strict tilted Laplace bound for all even 6<=N<=30, 2<=m<N/2, m<=k<=N/2 at 
 PASS: balanced even margin gives equality at zero tilt, hence equality of optimal variance proxies
 Minimum numerical positive Laplace gap: 1.42957169985e-7
 
-== verify_independent_curvature ==
-PASS: stationary curvature identity
-PASS: all-degree coefficient positivity and small-A threshold
-
-== verify_independent_odd_envelope ==
-PASS: quadratic positivity certificate
-PASS: positive determinant factorization
-PASS: nonnegative coefficient decompositions
-PASS: universal variance-curve residual identity
-PASS: Poisson-binomial admissibility identity
-
 == check_exact_curvature ==
 PASS: exact rational PMF evaluations: 34650 integer parameter/tilt cases for N=2..28
 
@@ -98,8 +98,8 @@ Main manuscript and supplement compiled successfully.
 PASS: 168 unique labels and 168 valid cross-references.
 PASS: 16 matching citations, BibTeX entries, and bibliographic records.
 PASS: 4 licensed reference PDFs with matching source hashes.
-PASS: 28-page main manuscript, compiled supplement, author metadata, and both build logs.
+PASS: 28-page main manuscript, supplement, and proof certificate compiled successfully.
 PASS: all mathematical computation logs present and successful.
 PASS: document identity and source consistency.
 
-All 13 mathematical tests and manuscript builds completed.
+All computations and manuscript build completed.
