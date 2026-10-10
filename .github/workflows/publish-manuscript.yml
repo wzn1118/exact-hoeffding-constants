@@ -48,7 +48,10 @@ jobs:
           mkdir -p checks/logs
           bash run_all.sh | tee checks/logs/run_all.log
 
-      - name: Verify PDF pages and the even-envelope test log
+      - name: Index mathematical verification records
+        run: python3 checks/write_test_report.py
+
+      - name: Verify PDF pages and test evidence
         shell: bash
         run: |
           set -euo pipefail
@@ -57,8 +60,11 @@ jobs:
           pages="$(pdfinfo manuscript.pdf | awk '/^Pages:/ {print $2}')"
           test "$pages" -ge 27 && test "$pages" -le 30
           grep -q '^PASS:' checks/logs/verify_even_envelope_extension.log
+          grep -q '^PASS:' checks/logs/verify_independent_curvature.log
+          grep -q '^PASS:' checks/logs/verify_independent_odd_envelope.log
+          python3 -c "import json; r=json.load(open('checks/logs/math_test_report.json')); assert r['result']=='PASS' and r['test_count']==13"
           grep -q 'PASS: all mathematical computation logs' checks/logs/package_validation.log
-          printf 'Primary paper: %s pages; all test logs are present.\n' "$pages"
+          printf 'Primary paper: %s pages; independent certificates and complete logs verified.\n' "$pages"
 
       - name: Recompute and verify release checksums
         run: |
@@ -72,8 +78,20 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add manuscript.pdf supplementary_refinements.pdf submission/manuscript.tex \
-            SHA256SUMS.txt checks/logs/*.log
+            SHA256SUMS.txt checks/logs/*.log checks/logs/math_test_report.json
           if ! git diff --cached --quiet; then
-            git commit -m 'Publish verified 28-page manuscript, supplement and full test logs [skip ci]'
+            git commit -m 'Publish verified manuscript, supplement and complete mathematical test records [skip ci]'
             git push origin HEAD:main
           fi
+
+      - name: Retain mathematical verification artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hoeffding-verification-${{ github.run_id }}
+          path: |
+            checks/logs/
+            build/latex_pass_*.log
+            build/supplement_pass_*.log
+          if-no-files-found: warn
+          retention-days: 90

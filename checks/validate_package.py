@@ -41,7 +41,7 @@ assert not re.search(r'undefined references|undefined on input|Overfull|! LaTeX 
 required_logs=('verify_parity_structure','verify_curvature','verify_third_order',
  'verify_fourth_order','verify_curvature_counterexample','verify_odd_envelope',
  'verify_even_envelope_extension','check_exact_curvature','check_exact_odd_envelope',
- 'check_high_precision_asymptotics','check_high_precision_envelope')
+ 'check_high_precision_asymptotics','check_high_precision_envelope',\n 'verify_independent_curvature','verify_independent_odd_envelope')
 for test in required_logs:
  logfile=root/'checks/logs'/f'{test}.log'
  assert logfile.is_file() and 'PASS' in logfile.read_text(),f'Missing/failed {logfile}'

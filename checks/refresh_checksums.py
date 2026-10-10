@@ -18,7 +18,7 @@ tracked.update({
     'build_manuscript.sh','.github/workflows/publish-manuscript.yml',
     'checks/refresh_checksums.py',
 })
-for group in ['source/*.tex','checks/*.py','checks/logs/*.log']:
+for group in ['source/*.tex','checks/*.py','checks/logs/*.log','checks/logs/*.json']:
     tracked.update(p.relative_to(root).as_posix() for p in root.glob(group) if p.is_file())
 lines=[]
 for name in sorted(tracked):
