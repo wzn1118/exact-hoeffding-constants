@@ -21,7 +21,7 @@ Paper: **Exact Hoeffding Constants for Finite Exchangeable Sequences** (Zinan Wa
 | Parity margin and normalized variance algebra | `even_variance_formula`, `odd_variance_formula` | Exact real identities |
 | Convex curvature-to-quadratic envelope implication | `convex_stationary_global_minimum`, `quadratic_envelope_of_convex_gap`, `quadratic_envelope_of_gap_second_derivative` | Abstract twice-differentiable real functions, **conditional on a verified curvature hypothesis** |
 
-The modules `Sampling.lean` and `CurvatureBridge.lean` additionally connect normalized one-draw hypergeometric MGFs to Bernoulli MGFs and isolate the curvature-to-Laplace implication. Their exact full-project CI verdict must be read from the branch's latest GitHub Actions run, rather than inferred from this list.
+The modules `Sampling.lean` and `CurvatureBridge.lean` connect normalized one-draw hypergeometric MGFs to Bernoulli MGFs and isolate the conditional curvature-to-Laplace implication. Both are included in the successful kernel build #38603075214.
 
 Latest complete kernel build:
 [GitHub Actions #38603075214](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38603075214)
