@@ -39,7 +39,8 @@ theorem hypergeom_mean_succ (k h m : ℕ)
         (∑ i ∈ Finset.range (m + 2),
           (i : ℝ) * (hypergeomCount (k + h + 1) (k + 1) (m + 1) i : ℝ)) /
             (Nat.choose (k + h + 1) (m + 1) : ℝ) := by
-      simp only [hypergeomMass, ← Finset.sum_div]
+      simp only [hypergeomMass]
+      rw [← Finset.sum_div]
       apply Finset.sum_congr rfl
       intro i hi
       ring
