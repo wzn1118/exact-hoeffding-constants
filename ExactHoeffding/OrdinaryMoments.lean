@@ -40,10 +40,8 @@ theorem hypergeom_mean_succ (k h m : ℕ)
           (i : ℝ) * (hypergeomCount (k + h + 1) (k + 1) (m + 1) i : ℝ)) /
             (Nat.choose (k + h + 1) (m + 1) : ℝ) := by
       simp only [hypergeomMass]
-      rw [← Finset.sum_div]
-      apply Finset.sum_congr rfl
-      intro i hi
-      ring
+      simp_rw [← mul_div_assoc]
+      rw [Finset.sum_div]
     _ = ((k + 1 : ℕ) : ℝ) * (Nat.choose (k + h) m : ℝ) /
         (Nat.choose (k + h + 1) (m + 1) : ℝ) := by rw [hcnt]
     _ = ((m + 1 : ℕ) : ℝ) * ((k + 1 : ℕ) : ℝ) /
