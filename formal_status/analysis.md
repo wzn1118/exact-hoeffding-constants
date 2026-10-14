@@ -18,29 +18,44 @@
 - the MGF at the nondegenerate Fenchel tilt is exactly `(1-p)/(1-x)`;
 - the interior Fenchel identity for `0 < p,x < 1`;
 - the totalized endpoint identities `KL(0 || p) = -log(1-p)` and
-  `KL(1 || p) = -log p`.
+  `KL(1 || p) = -log p`;
+- `bernoulliKL_nonneg` for the nondegenerate interior, proved from
+  `Real.log_le_sub_one_of_pos` applied to the two reciprocal ratios;
+- the global Fenchel upper bound
+  `x*t - log(1-p+p*exp t) <= bernoulliKL p x` for every `0 <= x <= 1`,
+  with separate kernel proofs for `x = 0`, `0 < x < 1`, and `x = 1`.
 
 This is an exact Bernoulli rate identity, not a claim about the unresolved
 finite-population crossing comparison or the global optimal quadratic proxy.
 
 ## Verification record
 
-The fixed 4.33.0 target build passed:
+The fixed 4.33.0 direct module build passed after the scoped target build was
+resource-bound by concurrent repository work:
 
 ```text
-PATH=/data/.toolchains/lean-4.33.0-linux/bin:$PATH lake build ExactHoeffding.BernoulliKL
-Build completed successfully (1950 jobs).
+PATH=/data/.toolchains/lean-4.33.0-linux/bin:$PATH \
+  LEAN_PATH=<local .lake/build/lib/lean plus read-only control package paths> \
+  lean -j 1 -o .lake/build/lib/lean/ExactHoeffding/BernoulliKL.olean \
+  -i .lake/build/lib/lean/ExactHoeffding/BernoulliKL.ilean \
+  ExactHoeffding/BernoulliKL.lean
+exit=0; only unused endpoint-parameter linter warnings
 ```
 
-The first invocation timed out while preparing the inherited library cache;
-the bounded retry compiled only the requested target after `Basic` and
-`Laplace` were available. The axioms audit was run with
-`lake env lean /dev/stdin` importing this module and reported:
+The initial `lake build ExactHoeffding.BernoulliKL` attempt was bounded at
+180 seconds and stopped without a success claim; no dependency update or
+cache operation was used. The successful direct build above uses the same
+fixed Lean 4.33.0 kernel and the read-only control package cache. The axioms
+audit imported the generated local `.olean` and reported:
 
 ```text
 'ExactHoeffding.bernoulli_fenchel_identity' depends on axioms:
   [propext, Classical.choice, Quot.sound]
 'ExactHoeffding.bernoulliKL_zero_endpoint' depends on axioms:
+  [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.bernoulliKL_nonneg' depends on axioms:
+  [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.bernoulli_fenchel_upper' depends on axioms:
   [propext, Classical.choice, Quot.sound]
 ```
 
