@@ -3,3 +3,4 @@ import ExactHoeffding.Contrasts
 import ExactHoeffding.Hypergeometric
 import ExactHoeffding.Laplace
 import ExactHoeffding.Parity
+import ExactHoeffding.Normalization
