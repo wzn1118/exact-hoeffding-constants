@@ -1,21 +1,22 @@
-# Lean 4 formal verification — Exact Hoeffding Constants
+# Lean 4 development — Exact Hoeffding Constants
 
-This is a Mathlib-backed Lean 4 subproject for the paper **Exact Hoeffding Constants for Finite Exchangeable Sequences** (Zinan Wang, 2026).
+A Mathlib-backed formalization accompanying Zinan Wang's 2026 probability manuscript **Exact Hoeffding Constants for Finite Exchangeable Sequences**. The source code follows the manuscript's finite-population hypergeometric reduction and precise odd/even variance analysis.
 
-The first modules mechanize selected exact combinatorial and analytic-algebraic identities needed for the main proof, with one source module for each mathematical ingredient. All demonstrated theorem statements have real proof terms. There are no admitted results and no fabricated kernel attestations.
+## Structure
 
-## Modules
+- `ExactHoeffding/Basic.lean`: quadratic finite-population algebra.
+- `ExactHoeffding/Contrasts.lean`: zero-sum contrasts and centering.
+- `ExactHoeffding/Hypergeometric.lean`: combinatorial sample masses.
+- `ExactHoeffding/Normalization.lean`: Vandermonde normalization, exact single-draw masses and MGF at zero.
+- `ExactHoeffding/Laplace.lean`: finite MGFs and a Bernoulli log-odds identity.
+- `ExactHoeffding/Sampling.lean`: one-draw hypergeometric/Bernoulli MGF identification and centering.
+- `ExactHoeffding/SharpExample.lean`: nonzero-tilt exact candidate and quadratic saturation.
+- `ExactHoeffding/Parity.lean`: even/odd normalized variance expressions.
+- `ExactHoeffding/CurvatureBridge.lean`: abstract curvature-to-Laplace theorem via global convexity.
 
-- `ExactHoeffding/Basic.lean`: centered quadratic identities, balanced margin inequality, Bernoulli variance ceiling.
-- `ExactHoeffding/Contrasts.lean`: contrast centering and translation invariance.
-- `ExactHoeffding/Hypergeometric.lean`: finite combinatorial probability weights and generating polynomial.
-- `ExactHoeffding/Laplace.lean`: finite exponential moments and Bernoulli log-odds identity.
-- `ExactHoeffding/Parity.lean`: exact even/odd normalized variance algebra.
-- `ExactHoeffding.lean`: library umbrella import.
+The umbrella file `ExactHoeffding.lean` imports the complete source library. Toolchain: Lean 4 v4.33.0 + matching Mathlib.
 
-## Run locally
-
-Install Lean's elan toolchain manager, then from the repository root:
+## Build and check
 
 ```bash
 lake update
@@ -24,6 +25,10 @@ lake build ExactHoeffding
 lake env lean ExactHoeffding.lean
 ```
 
-## Verification coverage
+The `Lean 4 proof kernel` GitHub Actions workflow executes the build and scans for unsound proof placeholders.
 
-Refer to `LEAN_PROOF_STATUS.md` before citing this formalization. The full sharp constant, Riccati curvature theorem and uniform hypergeometric envelope are **not currently Lean-proved**. Building this library certifies only declarations actually present in its source files.
+## Scope of certification
+
+The package establishes genuine combinatorial identities, normalized finite probabilities, the exact odd-population single-coordinate **lower-bound equality**, and an abstract implication from a second-derivative certificate to a quadratic Laplace inequality.
+
+**The complete sharp constant theorem is not yet formalized.** In particular, the global tilted-variance curvature inequality, uniform Riccati/Laplace barrier, all odd extremizers, and the exchangeability-to-hypergeometric variational reduction remain open formalization obligations. The repository maintains an explicit theorem-by-theorem status table in `LEAN_PROOF_STATUS.md` and does not treat Python test passes as Lean proofs.
