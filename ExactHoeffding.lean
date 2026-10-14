@@ -10,3 +10,4 @@ import ExactHoeffding.CurvatureBridge
 import ExactHoeffding.MomentGenerating
 import ExactHoeffding.FactorialMoments
 import ExactHoeffding.TiltedVariance
+import ExactHoeffding.OrdinaryMoments
