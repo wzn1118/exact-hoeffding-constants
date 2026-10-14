@@ -43,6 +43,6 @@ theorem centeredHypergeomMGF_singleton (N k : ℕ) (hk : k ≤ N)
     centeredHypergeomMGF N k 1 t =
       Real.exp (t * (-((k : ℝ) / N))) * bernoulliMGF ((k : ℝ) / N) t := by
   rw [centeredHypergeomMGF_factor, hypergeomMGF_singleton N k hk hN]
-  simp
+  simp only [Nat.cast_one, mul_one, neg_div]
 
 end ExactHoeffding
