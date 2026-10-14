@@ -52,4 +52,46 @@ theorem hypergeomCount_first_moment_succ (k h m : ℕ) :
     _ = (k + 1) * Nat.choose (k + h) m := by
       rw [← Finset.mul_sum, hv]
 
+
+/-- A second factorial-moment Vandermonde convolution, valid for every
+population margin including degenerate and over-sampling cases. -/
+theorem hypergeomCount_second_factorial_succ (k h m : ℕ) :
+    (∑ i ∈ Finset.range (m + 3),
+      i * (i - 1) * (Nat.choose (k + 2) i *
+        Nat.choose h (m + 2 - i))) =
+      (k + 2) * (k + 1) * Nat.choose (k + h) m := by
+  have hshift :
+      (∑ i ∈ Finset.range (m + 3),
+        i * (i - 1) * (Nat.choose (k + 2) i *
+          Nat.choose h (m + 2 - i))) =
+      (k + 2) * (∑ i ∈ Finset.range (m + 2),
+        i * (Nat.choose (k + 1) i *
+          Nat.choose h (m + 1 - i))) := by
+    rw [show m + 3 = (m + 2) + 1 by omega, Finset.sum_range_succ']
+    simp only [Nat.zero_mul, add_zero]
+    rw [Finset.mul_sum]
+    apply Finset.sum_congr rfl
+    intro i hi
+    have hsub : m + 2 - (i + 1) = m + 1 - i := by omega
+    have hprev : i + 1 - 1 = i := by omega
+    rw [hsub, hprev]
+    have hc : (i + 1) * Nat.choose (k + 2) (i + 1) =
+        (k + 2) * Nat.choose (k + 1) i := by
+      calc
+        _ = Nat.choose (k + 2) (i + 1) * (i + 1) := by ac_rfl
+        _ = (k + 2) * Nat.choose (k + 1) i := by
+          simpa [Nat.add_assoc] using
+            (Nat.add_one_mul_choose_eq (k + 1) i).symm
+    calc
+      ((i + 1) * i) * (Nat.choose (k + 2) (i + 1) *
+          Nat.choose h (m + 1 - i)) =
+        ((i + 1) * Nat.choose (k + 2) (i + 1)) *
+          (i * Nat.choose h (m + 1 - i)) := by ac_rfl
+      _ = ((k + 2) * Nat.choose (k + 1) i) *
+          (i * Nat.choose h (m + 1 - i)) := by rw [hc]
+      _ = (k + 2) * (i * (Nat.choose (k + 1) i *
+          Nat.choose h (m + 1 - i))) := by ac_rfl
+  rw [hshift, hypergeomCount_first_moment_succ]
+  ring
+
 end ExactHoeffding
