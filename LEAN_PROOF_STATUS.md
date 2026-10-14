@@ -23,12 +23,30 @@ Paper: **Exact Hoeffding Constants for Finite Exchangeable Sequences** (Zinan Wa
 
 The modules `Sampling.lean` and `CurvatureBridge.lean` additionally connect normalized one-draw hypergeometric MGFs to Bernoulli MGFs and isolate the curvature-to-Laplace implication. Their exact full-project CI verdict must be read from the branch's latest GitHub Actions run, rather than inferred from this list.
 
-Last independently confirmed green build before the latest additions:
-[GitHub Actions #38597444686](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38597444686).
+Latest complete kernel build:
+[GitHub Actions #38603075214](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38603075214)
+at commit `aea3ced42bbbdb64ba57b98dde3c4174636c7abe`: **SUCCESS**.
+
+## Formalization added on 15 October 2026
+
+| Result | Lean name(s) | Verified |
+| --- | --- | --- |
+| First derivative of any finite exponential moment | `finiteMGF_hasDerivAt`, `finiteMGF_deriv_zero` | Kernel checked |
+| Second raw tilted moment derivative | `finiteTiltFirst_hasDerivAt`, `finiteTiltSecond_zero` | Kernel checked |
+| General first hypergeometric factorial moment | `hypergeomCount_first_moment_succ` | Kernel checked |
+| General second hypergeometric factorial moment | `hypergeomCount_second_factorial_succ` | Kernel checked |
+| Normalized hypergeometric expectation `E[H] = km/N` | `hypergeom_mean_succ` | Kernel checked for positive marked and sample margins; edge cases require an explicit separate normalization theorem |
+| Strict positivity of finite normalized MGF for every tilt | `finiteMGF_pos_of_normalized` | Kernel checked |
+| Exact first log-MGF derivative | `finiteLogMGF_hasDerivAt` | Kernel checked |
+| Exact second log-MGF derivative as tilted variance | `finiteLogMGF_second_deriv`, `hypergeomLogMGF_second_deriv` | Kernel checked |
+| Tilted mean derivative | `finiteTiltedMean_hasDerivAt` | Kernel checked |
+| Finite weighted Cauchy–Schwarz and curvature nonnegativity | `finiteTilt_cauchy_schwarz`, `finiteLogMGF_second_deriv_nonneg`, `hypergeomLogMGF_second_deriv_nonneg` | Kernel checked |
+
+These are analytically significant prerequisites for the paper's global curvature theorem. In particular **nonnegative curvature** is a *lower* bound on the second derivative of log MGF; the manuscript requires a **sharp global upper bound**. The latter remains open in Lean. Both first and second factorial-moment identities have exact all-parameter natural-number proofs, including over-sampling cases.
 
 ## Open mathematical proof obligations
 
-1. Formalize the hypergeometric first and second moments and the entire exponentially tilted variance formula.
+1. Finish the zero-margin and positive-denominator edge cases of ordinary hypergeometric moments; derive the closed-form un-tilted variance from verified factorial moments. The general all-tilt variance *identity* is now formalized.
 2. Formalize the Jacobi real-rootedness argument / Poisson–binomial admissibility and its constrained mean–variance inequality.
 3. Prove the all-tilt hypergeometric curvature theorem `thm:curvature` for all finite `N,k,m,t`.
 4. Prove the parity-uniform Riccati barrier and scaled-Bernoulli Laplace comparison `thm:main_laplace`, including strictness.
