@@ -23,7 +23,7 @@ Paper: **Exact Hoeffding Constants for Finite Exchangeable Sequences** (Zinan Wa
 
 The modules `Sampling.lean` and `CurvatureBridge.lean` connect normalized one-draw hypergeometric MGFs to Bernoulli MGFs and isolate the conditional curvature-to-Laplace implication. Both are included in the successful baseline kernel build #38606516354.
 
-Latest complete kernel build:
+Baseline complete kernel build:
 [GitHub Actions #38606516354](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38606516354)
 at commit `ebf534362f596175a24fc33e9eebc1cd4145349f`: **SUCCESS**.
 
@@ -45,6 +45,12 @@ at commit `ebf534362f596175a24fc33e9eebc1cd4145349f`: **SUCCESS**.
 These are analytically significant prerequisites for the paper's global curvature theorem. In particular **nonnegative curvature** is a *lower* bound on the second derivative of log MGF; the manuscript requires a **sharp global upper bound**. The latter remains open in Lean. Both first and second factorial-moment identities have exact all-parameter natural-number proofs, including over-sampling cases.
 
 ## Research integration on 15 October 2026
+
+Verified research commit: `167b616e44815440732c86af7c471a5af56f14a3`.
+Its [Lean kernel run 38620327901](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38620327901)
+and [analytic research run 38620327863](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38620327863)
+both completed successfully. [PR 5](https://github.com/wzn1118/exact-hoeffding-constants/pull/5)
+is a draft research milestone, separate from a claim of full formalization.
 
 The integrated library builds with Lean 4.33.0 and pinned Mathlib revision
 `db584cd6d46c92f209a44c0f1c829460d327499d`. All existing theorem statements

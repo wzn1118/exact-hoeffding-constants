@@ -44,4 +44,6 @@ The package establishes genuine combinatorial identities, first and second facto
 
 **Baseline CI success:** [Lean kernel #38606516354](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38606516354), commit `ebf534362f596175a24fc33e9eebc1cd4145349f`. Research-branch CI is checked separately for its own commit.
 
+**Research CI success:** [Lean kernel #38620327901](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38620327901), commit `167b616e44815440732c86af7c471a5af56f14a3`; the corresponding analytic research run `38620327863` also succeeds. The work is reviewed in draft PR 5.
+
 **The complete sharp constant theorem is not yet formalized.** In particular, the global tilted-variance curvature inequality, uniform Riccati/Laplace barrier, all odd extremizers, and the exchangeability-to-hypergeometric variational reduction remain open formalization obligations. The repository maintains an explicit theorem-by-theorem status table in `LEAN_PROOF_STATUS.md` and does not treat Python test passes as Lean proofs.
