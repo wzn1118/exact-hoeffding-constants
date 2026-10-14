@@ -8,3 +8,4 @@ import ExactHoeffding.SharpExample
 import ExactHoeffding.Sampling
 import ExactHoeffding.CurvatureBridge
 import ExactHoeffding.MomentGenerating
+import ExactHoeffding.FactorialMoments
