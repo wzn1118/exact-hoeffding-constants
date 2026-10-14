@@ -68,7 +68,6 @@ theorem hypergeomMass_one_failure_complement (N k : ℕ)
     hypergeomMass N k 1 0 = 1 - (k : ℝ) / N := by
   rw [hypergeomMass_one_failure, Nat.cast_sub hk]
   have hN' : (N : ℝ) ≠ 0 := by exact_mod_cast Nat.ne_of_gt hN
-  field_simp
-  ring
+  field_simp <;> ring
 
 end ExactHoeffding
