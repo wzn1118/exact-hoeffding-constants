@@ -30,9 +30,12 @@ theorem finiteMGF_hasDerivAt {ι : Type*} [DecidableEq ι]
       (weights i * (values i * Real.exp (t * values i))) t := by
     have hinner : HasDerivAt (fun τ : ℝ => τ * values i) (values i) t := by
       simpa using (hasDerivAt_id t).mul_const (values i)
-    convert (hinner.exp).const_mul (weights i) using 1 <;> ring
-  simpa only [finiteMGF, finiteTiltFirst] using
-    (HasDerivAt.fun_sum (u := s)
+    convert (hinner.exp).const_mul (weights i) using 1
+    all_goals ring
+  change HasDerivAt
+    (fun τ : ℝ => ∑ i ∈ s, weights i * Real.exp (τ * values i))
+    (∑ i ∈ s, weights i * (values i * Real.exp (t * values i))) t
+  exact (HasDerivAt.fun_sum (u := s)
       (A := fun i τ => weights i * Real.exp (τ * values i))
       (A' := fun i => weights i * (values i * Real.exp (t * values i)))
       (fun i _ => hi i))
@@ -48,9 +51,12 @@ theorem finiteTiltFirst_hasDerivAt {ι : Type*} [DecidableEq ι]
       (weights i * (values i ^ 2 * Real.exp (t * values i))) t := by
     have hinner : HasDerivAt (fun τ : ℝ => τ * values i) (values i) t := by
       simpa using (hasDerivAt_id t).mul_const (values i)
-    convert ((hinner.exp).const_mul (values i)).const_mul (weights i) using 1 <;> ring
-  simpa only [finiteTiltFirst, finiteTiltSecond] using
-    (HasDerivAt.fun_sum (u := s)
+    convert ((hinner.exp).const_mul (values i)).const_mul (weights i) using 1
+    all_goals ring
+  change HasDerivAt
+    (fun τ : ℝ => ∑ i ∈ s, weights i * (values i * Real.exp (τ * values i)))
+    (∑ i ∈ s, weights i * (values i ^ 2 * Real.exp (t * values i))) t
+  exact (HasDerivAt.fun_sum (u := s)
       (A := fun i τ => weights i * (values i * Real.exp (τ * values i)))
       (A' := fun i => weights i * (values i ^ 2 * Real.exp (t * values i)))
       (fun i _ => hi i))
