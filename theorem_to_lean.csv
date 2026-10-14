@@ -1,0 +1,8 @@
+theorem,paper_location,lean_location,dependencies,status,evidence
+hypergeomLogMGF_second_deriv,manuscript.tex eq:curvature prerequisites,ExactHoeffding/TiltedVariance.lean,Normalization;MomentGenerating,existing kernel theorem,prior CI only
+quadratic_envelope_of_gap_second_derivative,manuscript.tex cor:mgf,ExactHoeffding/CurvatureBridge.lean,Laplace;calculus,conditional interface,prior CI only
+finite_mean_variance_bound,manuscript.tex Lemma lem:PB eq:PB algebraic Cauchy-Schwarz step,ExactHoeffding/PoissonBinomial.lean,finite-sum Cauchy-Schwarz; real arithmetic,kernel checked under Lean 4.33.0,checks/logs/B/lake_build_PoissonBinomial_4.33.log; axioms in checks/logs/B/print_axioms_PoissonBinomial_4.33.log
+poissonBinomial_variance_bound,manuscript.tex Lemma lem:PB eq:PB conditional finite Bernoulli-list interface,ExactHoeffding/PoissonBinomial.lean,finite_mean_variance_bound; explicit parameter bounds,kernel checked under Lean 4.33.0,checks/logs/B/lake_build_PoissonBinomial_4.33.log; axioms in checks/logs/B/print_axioms_PoissonBinomial_4.33.log
+poissonBinomial_variance_nonneg,manuscript.tex Lemma lem:PB eq:PB positivity of finite Bernoulli-list variance,ExactHoeffding/PoissonBinomial.lean,finite-sum nonnegativity; parameter bounds,kernel checked under Lean 4.33.0,checks/logs/B/lake_build_PoissonBinomial_4.33.log; axioms in checks/logs/B/print_axioms_PoissonBinomial_4.33.log
+jacobi_poisson_binomial_representation,manuscript.tex sec:jacobi eq:factor and Lemma lem:PB,not yet formalized,Jacobi root localization;factorization,explicit gap,not claimed
+hypergeom_curvature_sharp_upper_bound,manuscript.tex Theorem thm:curvature eq:curvature,not yet formalized,Jacobi/PB;stationary branch certificate,explicit gap,not claimed

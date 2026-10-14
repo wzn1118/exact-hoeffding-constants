@@ -1,0 +1,5 @@
+command: lake env lean --stdin with import ExactHoeffding.PoissonBinomial and #print axioms for all three declarations
+'ExactHoeffding.finite_mean_variance_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.poissonBinomial_variance_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.poissonBinomial_variance_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit_code=0
