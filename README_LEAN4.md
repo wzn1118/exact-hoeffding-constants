@@ -13,6 +13,11 @@ A Mathlib-backed formalization accompanying Zinan Wang's 2026 probability manusc
 - `ExactHoeffding/SharpExample.lean`: nonzero-tilt exact candidate and quadratic saturation.
 - `ExactHoeffding/Parity.lean`: even/odd normalized variance expressions.
 - `ExactHoeffding/CurvatureBridge.lean`: abstract curvature-to-Laplace theorem via global convexity.
+- `ExactHoeffding/MomentGenerating.lean`: first and second derivatives of finite moment-generating functions.
+- `ExactHoeffding/FactorialMoments.lean`: all-parameter first and second hypergeometric factorial-moment convolution identities.
+- `ExactHoeffding/OrdinaryMoments.lean`: normalized hypergeometric expectation for positive sample/success margins.
+- `ExactHoeffding/TiltedVariance.lean`: exact all-tilt log-Laplace second derivative as a normalized central moment.
+- `ExactHoeffding/CurvatureNonnegative.lean`: finite Cauchy–Schwarz and nonnegative log-Laplace curvature.
 
 The umbrella file `ExactHoeffding.lean` imports the complete source library. Toolchain: Lean 4 v4.33.0 + matching Mathlib.
 
@@ -29,6 +34,8 @@ The `Lean 4 proof kernel` GitHub Actions workflow executes the build and scans f
 
 ## Scope of certification
 
-The package establishes genuine combinatorial identities, normalized finite probabilities, the exact odd-population single-coordinate **lower-bound equality**, and an abstract implication from a second-derivative certificate to a quadratic Laplace inequality.
+The package establishes genuine combinatorial identities, first and second factorial moments, normalized expectation, exact all-tilt variance identities, nonnegative curvature, the exact odd-population single-coordinate **lower-bound equality**, and an abstract implication from a sharp upper-curvature certificate to a quadratic Laplace inequality.
+
+**Latest confirmed complete CI success:** [Lean kernel #38603075214](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38603075214), commit `aea3ced42bbbdb64ba57b98dde3c4174636c7abe`.
 
 **The complete sharp constant theorem is not yet formalized.** In particular, the global tilted-variance curvature inequality, uniform Riccati/Laplace barrier, all odd extremizers, and the exchangeability-to-hypergeometric variational reduction remain open formalization obligations. The repository maintains an explicit theorem-by-theorem status table in `LEAN_PROOF_STATUS.md` and does not treat Python test passes as Lean proofs.
