@@ -1,4 +1,5 @@
 import ExactHoeffding.MomentGenerating
+import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
 /-!
 # Exact tilted variance for finite distributions

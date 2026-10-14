@@ -5,6 +5,7 @@ on:
     paths:
       - 'lean-toolchain'
       - 'lakefile.toml'
+      - 'lake-manifest.json'
       - 'ExactHoeffding.lean'
       - 'ExactHoeffding/**'
       - '.github/workflows/lean4.yml'
@@ -12,6 +13,7 @@ on:
     paths:
       - 'lean-toolchain'
       - 'lakefile.toml'
+      - 'lake-manifest.json'
       - 'ExactHoeffding.lean'
       - 'ExactHoeffding/**'
       - '.github/workflows/lean4.yml'
@@ -32,8 +34,8 @@ jobs:
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
       - name: Fetch mathlib sources and compiled artifacts
         run: |
-          lake update
           lake exe cache get
+          git diff --exit-code -- lean-toolchain lakefile.toml lake-manifest.json
       - name: Compile formal development with Lean kernel
         run: lake build ExactHoeffding
       - name: Reject unsound proof placeholders

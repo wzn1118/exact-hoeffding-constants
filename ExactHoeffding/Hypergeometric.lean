@@ -1,4 +1,5 @@
 import ExactHoeffding.Basic
+import Mathlib.Data.Nat.Choose.Cast
 
 /-!
 # The hypergeometric weight model

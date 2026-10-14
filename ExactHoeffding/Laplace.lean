@@ -1,4 +1,5 @@
 import ExactHoeffding.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 /-!
 # Finite Laplace transforms and two-point tilting
