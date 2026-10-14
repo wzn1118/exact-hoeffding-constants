@@ -19,6 +19,11 @@ The main paper gives the two-level reduction, all-tilt hypergeometric curvature 
 
 ## Current publication files
 
+- [Piecewise KL research note](research/tail_bounds/minimum_variance_tail.pdf):
+  explicit nonquadratic tail bounds, switching points and comparison proofs.
+  [Reproduction and proof scope](research/tail_bounds/README.md) distinguish
+  the analytic theorem from its current Lean coverage.
+
 - `manuscript.pdf`: the **28-page** principal paper, including the proofs of the sharp constants.
 - `supplementary_refinements.pdf`: the **6-page** standalone technical supplement.
 - `source/manuscript.tex`: modular LaTeX paper entry point.

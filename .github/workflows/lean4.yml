@@ -8,6 +8,7 @@ on:
       - 'lake-manifest.json'
       - 'ExactHoeffding.lean'
       - 'ExactHoeffding/**'
+      - 'checks/lean_axioms.lean'
       - '.github/workflows/lean4.yml'
   pull_request:
     paths:
@@ -16,6 +17,7 @@ on:
       - 'lake-manifest.json'
       - 'ExactHoeffding.lean'
       - 'ExactHoeffding/**'
+      - 'checks/lean_axioms.lean'
       - '.github/workflows/lean4.yml'
   workflow_dispatch:
 
@@ -48,3 +50,11 @@ jobs:
           fi
       - name: Verify kernel-checkable outputs
         run: lake env lean ExactHoeffding.lean
+      - name: Audit theorem axioms
+        run: |
+          lake env lean checks/lean_axioms.lean | tee lean_axioms.log
+          if grep -E 'sorryAx|axioms:.*\[.*(unsafe|admit)' lean_axioms.log; then exit 1; fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lean-axiom-audit
+          path: lean_axioms.log

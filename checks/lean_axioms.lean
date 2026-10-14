@@ -1,0 +1,15 @@
+import ExactHoeffding
+
+#print axioms ExactHoeffding.hypergeomMass_total
+#print axioms ExactHoeffding.hypergeomLogMGF_second_deriv
+#print axioms ExactHoeffding.hypergeomLogMGF_second_deriv_nonneg
+#print axioms ExactHoeffding.singleton_odd_quadratic_saturation
+#print axioms ExactHoeffding.finite_mean_variance_bound
+#print axioms ExactHoeffding.poissonBinomial_variance_bound
+#print axioms ExactHoeffding.poissonBinomial_variance_nonneg
+#print axioms ExactHoeffding.reciprocal_variance_minimum
+#print axioms ExactHoeffding.bernoulli_envelope_gap
+#print axioms ExactHoeffding.bernoulli_envelope_order
+#print axioms ExactHoeffding.complement_envelope_gap
+#print axioms ExactHoeffding.complement_envelope_order
+#print axioms ExactHoeffding.finite_markov_exp_bound

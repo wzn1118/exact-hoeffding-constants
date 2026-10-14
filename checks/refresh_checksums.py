@@ -18,8 +18,14 @@ tracked.update({
     'submission/manuscript.tex','requirements.txt','run_all.sh',
     'build_manuscript.sh','.github/workflows/publish-manuscript.yml',
     'checks/refresh_checksums.py',
+    'ExactHoeffding.lean','lean-toolchain','lakefile.toml','lake-manifest.json',
+    'LEAN_PROOF_STATUS.md','README_LEAN4.md','proof_gap_register.md',
+    'theorem_to_lean.csv','checks/lean_axioms.lean','checks/verify_research.sh',
+    '.github/workflows/lean4.yml','.github/workflows/research-validation.yml',
 })
 for group in ['source/*.tex','checks/*.py','checks/logs/*.log','docs/*.md','docs/*.tex','docs/proof_certification_2026-10-11.pdf']:
+    tracked.update(p.relative_to(root).as_posix() for p in root.glob(group) if p.is_file())
+for group in ['ExactHoeffding/*.lean','research/tail_bounds/**/*','checks/results/piecewise_kl_*']:
     tracked.update(p.relative_to(root).as_posix() for p in root.glob(group) if p.is_file())
 lines=[]
 for name in sorted(tracked):

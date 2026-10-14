@@ -19,12 +19,18 @@ A Mathlib-backed formalization accompanying Zinan Wang's 2026 probability manusc
 - `ExactHoeffding/TiltedVariance.lean`: exact all-tilt log-Laplace second derivative as a normalized central moment.
 - `ExactHoeffding/CurvatureNonnegative.lean`: finite Cauchy–Schwarz and nonnegative log-Laplace curvature.
 
-The umbrella file `ExactHoeffding.lean` imports the complete source library. Toolchain: Lean 4 v4.33.0 + matching Mathlib.
+The umbrella file `ExactHoeffding.lean` imports the complete source library. Toolchain: Lean 4 v4.33.0 + matching Mathlib. The committed `lake-manifest.json` locks dependency revisions.
+
+The research extension adds `PoissonBinomial.lean` (finite variance algebra),
+`VarianceComparison.lean` (symmetry-envelope comparisons), and
+`Chernoff.lean` (finite exponential Markov). The full library and thirteen
+selected axiom audits have been checked locally; evidence is in
+`research/tail_bounds/evidence/`. Run `lake env lean checks/lean_axioms.lean`
+to reproduce the axiom inspection.
 
 ## Build and check
 
 ```bash
-lake update
 lake exe cache get
 lake build ExactHoeffding
 lake env lean ExactHoeffding.lean
@@ -36,6 +42,6 @@ The `Lean 4 proof kernel` GitHub Actions workflow executes the build and scans f
 
 The package establishes genuine combinatorial identities, first and second factorial moments, normalized expectation, exact all-tilt variance identities, nonnegative curvature, the exact odd-population single-coordinate **lower-bound equality**, and an abstract implication from a sharp upper-curvature certificate to a quadratic Laplace inequality.
 
-**Latest confirmed complete CI success:** [Lean kernel #38603075214](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38603075214), commit `aea3ced42bbbdb64ba57b98dde3c4174636c7abe`.
+**Baseline CI success:** [Lean kernel #38606516354](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38606516354), commit `ebf534362f596175a24fc33e9eebc1cd4145349f`. Research-branch CI is checked separately for its own commit.
 
 **The complete sharp constant theorem is not yet formalized.** In particular, the global tilted-variance curvature inequality, uniform Riccati/Laplace barrier, all odd extremizers, and the exchangeability-to-hypergeometric variational reduction remain open formalization obligations. The repository maintains an explicit theorem-by-theorem status table in `LEAN_PROOF_STATUS.md` and does not treat Python test passes as Lean proofs.

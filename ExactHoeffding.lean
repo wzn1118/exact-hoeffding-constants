@@ -13,3 +13,5 @@ import ExactHoeffding.TiltedVariance
 import ExactHoeffding.OrdinaryMoments
 import ExactHoeffding.CurvatureNonnegative
 import ExactHoeffding.VarianceComparison
+import ExactHoeffding.PoissonBinomial
+import ExactHoeffding.Chernoff

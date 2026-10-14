@@ -1,3 +1,3 @@
-command: PATH=/data/.toolchains/lean-4.33.0-linux/bin:$PATH lake build ExactHoeffding
+command: [Lean 4.33.0 on PATH] lake build ExactHoeffding
 result: interrupted with SIGINT after umbrella Mathlib imports exceeded the bounded work window
 exit_code=130

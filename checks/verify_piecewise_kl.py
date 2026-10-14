@@ -215,7 +215,7 @@ def main():
     out = ROOT/'checks/results'
     out.mkdir(parents=True,exist_ok=True)
     with (out/'piecewise_kl_matrix.csv').open('w',newline='') as f:
-        writer = csv.DictWriter(f,fieldnames=list(rows[0]))
+        writer = csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
     summary = {'matrix_sha256':hashlib.sha256(CONFIG.read_bytes()).hexdigest(),

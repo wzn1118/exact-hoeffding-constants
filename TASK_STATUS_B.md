@@ -5,18 +5,16 @@
 - Branch: `research/B-jacobi-20261014`
 - Required baseline: `origin/main@ebf534362f596175a24fc33e9eebc1cd4145349f`
 - Current baseline commit: `ebf534362f596175a24fc33e9eebc1cd4145349f`
-- Write owner: current B session only; the duplicate B session was instructed
-  to stop and is not writing this worktree.
-- Date: 2026-10-14 (UTC)
+- Date: 2026-10-15 (Asia/Shanghai)
 - No `main`, old formal branches, or other worktrees are being edited.
 
 ## Environment audit
 
 - Declared project toolchain: `leanprover/lean4:v4.33.0`.
-- Lean 4.33.0 is installed at `/data/.toolchains/lean-4.33.0-linux`; verified
-  version is `4.33.0`, commit `d8b18978322de05a8f3dba51ef03cf5461676c17`.
+- Verified compiler version is `4.33.0`, commit
+  `d8b18978322de05a8f3dba51ef03cf5461676c17`.
 - All proof commands below used
-  `PATH=/data/.toolchains/lean-4.33.0-linux/bin:$PATH`; `lean-toolchain`
+  the matching Lean 4.33.0 compiler on `PATH`; `lean-toolchain`
   remains unchanged at v4.33.0.
 - mathlib source is present at `.lake/packages/mathlib` and is pinned to
   `v4.33.0`, commit `db584cd6d46c92f209a44c0f1c829460d327499d`.
@@ -73,13 +71,12 @@ explicit gaps and are not stated as unconditional theorems.
 - [x] Add and kernel-check the finite Bernoulli-list mean-variance inequality.
 - [x] Run `#print axioms` for all three declarations.
 - [x] Update theorem map and gap register with exact scope and evidence.
-- [ ] Run the full umbrella build and `lake env lean ExactHoeffding.lean` after
-  integration; this is delegated to the main/control worktree.
+- [x] Integrated complete library build, umbrella check and axiom audit pass;
+  see `research/tail_bounds/evidence/lean_integrated_build.log` and
+  `lean_axioms.log`.
 
 ## Minimal blocker
 
-There is no blocker for the scoped theorem: the v4.33.0 targeted build and
-kernel check passed. Upstream `lake update` remains network-limited, and the
-complete umbrella build is intentionally left for the control worktree's
-integration run. The Jacobi-to-Poisson-binomial representation is still an
-open mathematical formalization gap.
+There is no blocker for the scoped theorem or its integrated build. The
+Jacobi-to-Poisson-binomial representation remains an open mathematical
+formalization gap.

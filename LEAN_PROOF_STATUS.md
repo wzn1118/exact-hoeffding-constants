@@ -21,11 +21,11 @@ Paper: **Exact Hoeffding Constants for Finite Exchangeable Sequences** (Zinan Wa
 | Parity margin and normalized variance algebra | `even_variance_formula`, `odd_variance_formula` | Exact real identities |
 | Convex curvature-to-quadratic envelope implication | `convex_stationary_global_minimum`, `quadratic_envelope_of_convex_gap`, `quadratic_envelope_of_gap_second_derivative` | Abstract twice-differentiable real functions, **conditional on a verified curvature hypothesis** |
 
-The modules `Sampling.lean` and `CurvatureBridge.lean` connect normalized one-draw hypergeometric MGFs to Bernoulli MGFs and isolate the conditional curvature-to-Laplace implication. Both are included in the successful kernel build #38603075214.
+The modules `Sampling.lean` and `CurvatureBridge.lean` connect normalized one-draw hypergeometric MGFs to Bernoulli MGFs and isolate the conditional curvature-to-Laplace implication. Both are included in the successful baseline kernel build #38606516354.
 
 Latest complete kernel build:
-[GitHub Actions #38603075214](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38603075214)
-at commit `aea3ced42bbbdb64ba57b98dde3c4174636c7abe`: **SUCCESS**.
+[GitHub Actions #38606516354](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38606516354)
+at commit `ebf534362f596175a24fc33e9eebc1cd4145349f`: **SUCCESS**.
 
 ## Formalization added on 15 October 2026
 
@@ -44,6 +44,29 @@ at commit `aea3ced42bbbdb64ba57b98dde3c4174636c7abe`: **SUCCESS**.
 
 These are analytically significant prerequisites for the paper's global curvature theorem. In particular **nonnegative curvature** is a *lower* bound on the second derivative of log MGF; the manuscript requires a **sharp global upper bound**. The latter remains open in Lean. Both first and second factorial-moment identities have exact all-parameter natural-number proofs, including over-sampling cases.
 
+## Research integration on 15 October 2026
+
+The integrated library builds with Lean 4.33.0 and pinned Mathlib revision
+`db584cd6d46c92f209a44c0f1c829460d327499d`. All existing theorem statements
+are preserved; broad Mathlib imports are replaced by their actual dependencies.
+
+The complete `lake build ExactHoeffding`, umbrella check and thirteen axiom
+audits pass. Evidence is in `research/tail_bounds/evidence/`:
+`lean_integrated_build.log`, `lean_umbrella.log` and `lean_axioms.log`.
+All audited declarations use only `propext`, `Classical.choice`, `Quot.sound`.
+
+Nine added declarations are kernel-checked: three finite Bernoulli-list
+variance lemmas in `PoissonBinomial.lean`, five reciprocal/symmetry-envelope
+algebra lemmas in `VarianceComparison.lean`, and `finite_markov_exp_bound`
+in `Chernoff.lean`. The first module supplies the algebra needed after a
+Poisson--binomial representation; it does not prove that representation.
+The last supplies the exponential Markov step; it does not prove the
+Bernoulli KL optimizer or instantiate the hypergeometric envelope.
+
+The six-page piecewise KL note has a written analytic proof and finite
+high-precision verification. Its variance-envelope integration remains
+unformalized. The proof chain below therefore remains incomplete.
+
 ## Open mathematical proof obligations
 
 1. Finish the zero-margin and positive-denominator edge cases of ordinary hypergeometric moments; derive the closed-form un-tilted variance from verified factorial moments. The general all-tilt variance *identity* is now formalized.
@@ -60,7 +83,6 @@ These are analytically significant prerequisites for the paper's global curvatur
 ## Reproduce
 
 ```bash
-lake update
 lake exe cache get
 lake build ExactHoeffding
 lake env lean ExactHoeffding.lean

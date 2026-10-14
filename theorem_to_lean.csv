@@ -6,3 +6,8 @@ poissonBinomial_variance_bound,manuscript.tex Lemma lem:PB eq:PB conditional fin
 poissonBinomial_variance_nonneg,manuscript.tex Lemma lem:PB eq:PB positivity of finite Bernoulli-list variance,ExactHoeffding/PoissonBinomial.lean,finite-sum nonnegativity; parameter bounds,kernel checked under Lean 4.33.0,checks/logs/B/lake_build_PoissonBinomial_4.33.log; axioms in checks/logs/B/print_axioms_PoissonBinomial_4.33.log
 jacobi_poisson_binomial_representation,manuscript.tex sec:jacobi eq:factor and Lemma lem:PB,not yet formalized,Jacobi root localization;factorization,explicit gap,not claimed
 hypergeom_curvature_sharp_upper_bound,manuscript.tex Theorem thm:curvature eq:curvature,not yet formalized,Jacobi/PB;stationary branch certificate,explicit gap,not claimed
+reciprocal_variance_minimum,tail note Theorem1 reciprocal step,ExactHoeffding/VarianceComparison.lean,positive reciprocal order,kernel checked, research/tail_bounds/evidence/lean_axioms.log
+bernoulli_envelope_order,tail note Section4.1,ExactHoeffding/VarianceComparison.lean,exact rational difference,kernel checked,research/tail_bounds/evidence/lean_axioms.log
+complement_envelope_order,tail note Section4.1,ExactHoeffding/VarianceComparison.lean,nonnegative square decomposition,kernel checked,research/tail_bounds/evidence/lean_axioms.log
+finite_markov_exp_bound,tail note Chernoff prerequisite,ExactHoeffding/Chernoff.lean,finiteMGF and exponential monotonicity,kernel checked,research/tail_bounds/evidence/lean_axioms.log
+piecewise_KL_rate,tail note Theorem2,not formalized,inverse mean; variance envelopes; integration,written analytic proof,research/tail_bounds/minimum_variance_tail.tex
