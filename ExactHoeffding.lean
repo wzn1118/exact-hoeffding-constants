@@ -12,3 +12,4 @@ import ExactHoeffding.FactorialMoments
 import ExactHoeffding.TiltedVariance
 import ExactHoeffding.OrdinaryMoments
 import ExactHoeffding.CurvatureNonnegative
+import ExactHoeffding.VarianceComparison

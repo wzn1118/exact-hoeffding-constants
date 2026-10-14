@@ -1,0 +1,78 @@
+{
+  "matrix_sha256": "b8ecfb7f7eed07026f5004f0359b5f1f7b6a749d490919e60f1127c67a4f8c32",
+  "rows": 292,
+  "cases": 20,
+  "precision": 70,
+  "outside_envelope_cases_not_evaluated": [
+    [
+      6,
+      3,
+      3
+    ],
+    [
+      10,
+      1,
+      1
+    ],
+    [
+      10,
+      2,
+      2
+    ],
+    [
+      16,
+      8,
+      8
+    ],
+    [
+      15,
+      10,
+      12
+    ]
+  ],
+  "scaled_kl_weaker_than_binomial_rows": 17,
+  "representative_counterexamples": [
+    [
+      8,
+      3,
+      3,
+      "0.0",
+      "1.3840649446000977789207154363794083349546",
+      "1.4100108877372066609528110934450261941027"
+    ],
+    [
+      9,
+      3,
+      3,
+      "0.0",
+      "1.15603024127190749170125803280850809267612",
+      "1.21639532432449314593403934639304740971597"
+    ],
+    [
+      9,
+      4,
+      3,
+      "0.0",
+      "1.75637424050940314640153795120413224649827",
+      "1.76335999470635702456919342185659130930814"
+    ],
+    [
+      15,
+      3,
+      3,
+      "0.0",
+      "0.608608893169298216115017936154242066166975",
+      "0.669430653942629267298885270929503510123803"
+    ],
+    [
+      15,
+      7,
+      3,
+      "0.0",
+      "1.81687374176211935369646093215539532003117",
+      "1.88582597826712241323292461732255091983977"
+    ]
+  ],
+  "assertions": "exact_tail <= factorial <= exact_Chernoff < piecewise_KL; piecewise_KL strictly improves four binomial KL; dominates uniform quadratic",
+  "proof_level": "symbolic identities and finite numerical verification; analytic proof is in minimum_variance_tail.tex"
+}
