@@ -6,3 +6,4 @@ import ExactHoeffding.Parity
 import ExactHoeffding.Normalization
 import ExactHoeffding.SharpExample
 import ExactHoeffding.Sampling
+import ExactHoeffding.CurvatureBridge
