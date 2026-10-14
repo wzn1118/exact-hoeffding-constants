@@ -29,9 +29,7 @@ theorem finiteTilt_cauchy_schwarz {ι : Type*} [DecidableEq ι]
       (g := fun i => a i * values i ^ 2)
       ha
       (fun i hi => mul_nonneg (ha i hi) (sq_nonneg _))
-      (fun i hi => by
-        dsimp only
-        nlinarith [sq_nonneg (a i), sq_nonneg (values i)])
+      (fun i hi => by ring)
   have hA : (∑ i ∈ s, a i) = finiteMGF s weights values t := rfl
   have hB : (∑ i ∈ s, a i * values i) =
       finiteTiltFirst s weights values t := by
