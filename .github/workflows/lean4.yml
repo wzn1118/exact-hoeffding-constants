@@ -1,0 +1,48 @@
+name: Lean 4 proof kernel
+
+on:
+  push:
+    paths:
+      - 'lean-toolchain'
+      - 'lakefile.toml'
+      - 'ExactHoeffding.lean'
+      - 'ExactHoeffding/**'
+      - '.github/workflows/lean4.yml'
+  pull_request:
+    paths:
+      - 'lean-toolchain'
+      - 'lakefile.toml'
+      - 'ExactHoeffding.lean'
+      - 'ExactHoeffding/**'
+      - '.github/workflows/lean4.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean-kernel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Fetch mathlib sources and compiled artifacts
+        run: |
+          lake update
+          lake exe cache get
+      - name: Compile formal development with Lean kernel
+        run: lake build ExactHoeffding
+      - name: Reject unsound proof placeholders
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE '(^|[[:space:]])(sorry|admit|axiom)([[:space:]]|$)' ExactHoeffding ExactHoeffding.lean; then
+            echo 'Proof placeholder or axiom found.' >&2
+            exit 1
+          fi
+      - name: Verify kernel-checkable outputs
+        run: lake env lean ExactHoeffding.lean
