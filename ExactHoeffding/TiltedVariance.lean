@@ -67,7 +67,7 @@ theorem finiteLogMGF_second_deriv {ι : Type*} [DecidableEq ι]
         finiteTiltFirst s weights values t * finiteTiltFirst s weights values t) /
         (finiteMGF s weights values t) ^ 2 := by
   have hfirst :
-      (fun u => deriv (fun v => Real.log (finiteMGF s weights values v)) u) =
+      deriv (fun v => Real.log (finiteMGF s weights values v)) =
       (fun u => finiteTiltFirst s weights values u / finiteMGF s weights values u) := by
     funext u
     exact (finiteLogMGF_hasDerivAt s weights values hw hs u).deriv
