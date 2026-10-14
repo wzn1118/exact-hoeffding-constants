@@ -11,7 +11,7 @@ independence of the coordinates.
 namespace ExactHoeffding
 
 /-- The centered version of a contrast vector. -/
-def centerContrast {n : ℕ} (a : Fin n → ℝ) : Fin n → ℝ :=
+noncomputable def centerContrast {n : ℕ} (a : Fin n → ℝ) : Fin n → ℝ :=
   fun i => a i - (∑ j : Fin n, a j) / n
 
 /-- Centering does not alter pairwise differences of coefficients. -/

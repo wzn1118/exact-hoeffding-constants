@@ -60,10 +60,10 @@ theorem bernoulli_log_odds_balance (p : ℝ)
   have hpos : 0 < (1 - p) / p := div_pos (by linarith) hp
   have hexp : Real.exp (Real.log ((1 - p) / p)) = (1 - p) / p :=
     Real.exp_log hpos
+  unfold bernoulliMGF
   rw [show 2 * Real.log ((1 - p) / p) =
     Real.log ((1 - p) / p) + Real.log ((1 - p) / p) by ring,
     Real.exp_add, hexp]
-  unfold bernoulliMGF
   have hp0 : p ≠ 0 := ne_of_gt hp
   field_simp
   ring
