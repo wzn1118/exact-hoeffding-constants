@@ -5,3 +5,4 @@ import ExactHoeffding.Laplace
 import ExactHoeffding.Parity
 import ExactHoeffding.Normalization
 import ExactHoeffding.SharpExample
+import ExactHoeffding.Sampling
