@@ -1,0 +1,8 @@
+compile_started=2026-10-15T18:19:38UTC
+ExactHoeffding/JointFullAxisOptimalValue.lean:61:14: warning: Variable name `hd₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+lean_exit_code=0
