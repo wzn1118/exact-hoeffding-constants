@@ -101,3 +101,4 @@ import ExactHoeffding.ExchangeableConstants
 import ExactHoeffding.VariationalUpper
 import ExactHoeffding.VariationalIdentity
 import ExactHoeffding.ExactParityConstants
+import ExactHoeffding.Cumulants
