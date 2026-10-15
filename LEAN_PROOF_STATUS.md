@@ -43,18 +43,13 @@ Public entry points include `hypergeomTiltVariance_sharp`,
 `exact_finite_exchangeability_constants`, and the six closed-form interfaces
 in `ExactOddGlobalTheorem.lean`.
 
-## Scope of the remaining work
+## Manuscript coverage
 
-The full manuscript includes further assertions beyond the exact constants:
-exact finite-population imbalance response and the compact analytic correction factorization. The joint analytic optimizer and its actual normalized global value are proved. Standard Jacobi normalization
-and the all-success fixed-sample extremizer theorem are proved. The compact success-proportion comparison itself
-is proved with an explicit threshold and complete equality classification. Their precise state is recorded in
-[proof_gap_register.md](proof_gap_register.md). A proof of a fixed-population
-Taylor formula does not establish the global optimized population expansion.
+The compact success-proportion argument now has both an independent finite comparison and an analytic proof for the actual global optimum. The analytic development includes the full binomial axis, the exact continuous population/imbalance factor, its positive boundary value, and the explicit first population correction with a uniform quadratic remainder through balance. Exact finite-population imbalance response includes the actual optimizing tilt, explicit T/A coefficients, odd/even analytic remainders and strict Bernoulli comparison.
 
-The integrated source checkpoint passes the umbrella build and a generated
-audit of **1322 public theorems in 214 project modules**. Only `propext`,
-`Classical.choice`, and `Quot.sound` occur in the reported dependencies.
+The thirty-result check is recorded in [formal_status/manuscript_concordance.md](formal_status/manuscript_concordance.md). Two assembled propositions remain under final proof: the actual variance supremum and its parity gap, and the actual single-coordinate extremizer with its pushforward law and limiting contact.
+
+The last integrated umbrella audit verifies **1450 public theorems in 239 project modules**. The subsequently added stationary-branch and explicit compact-correction modules have passed individual root kernel checks; they will be included in the final generated audit. Only `propext`, `Classical.choice`, and `Quot.sound` occur in the integrated dependencies.
 
 ## Verification
 
@@ -64,4 +59,4 @@ coverage and the permitted axiom set. Build and audit commands are in the
 detailed inventory and `.github/workflows/lean4.yml`.
 
 `theorem_to_lean.csv` maps manuscript assertions to their precise Lean modules;
-partial and open assertions are listed separately from proved results.
+the per-result concordance distinguishes assembled statements from their proved components.

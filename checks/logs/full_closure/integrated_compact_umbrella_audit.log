@@ -1,0 +1,4 @@
+compile_started=2026-10-15T18:39:27UTC
+umbrella_exit_code=0
+audit_exit_code=0
+PASS: 1450 public theorems; only propext, Classical.choice, Quot.sound

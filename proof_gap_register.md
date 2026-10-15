@@ -16,7 +16,7 @@ The formerly open `m_N → ∞` odd comparison is closed by
 `odd_normalized_proxy_all_upper` and `odd_normalized_proxy_all_equality`.
 These quantify over every legal sample size for each odd population.
 
-## Remaining obligations
+## Assertion coverage
 
 | ID | Manuscript assertion | Proved input | Remaining statement |
 | --- | --- | --- | --- |
@@ -26,10 +26,15 @@ These quantify over every legal sample size for each odd population.
 | F-04 | Fourth-order log-MGF Taylor formula | `MGFDerivatives` and `LogMGFTaylor` | Completed: actual first four derivatives and fixed-population Peano/Lagrange remainders |
 | F-05 | Fourth-order sharp-proxy expansion | `FourthOrderMainTheorem`, `ActualNormalizedFourthCoefficient`, `OptimalProxyFourthExpansion`: same globally optimizing branch, tilt through N⁻³, normalized value through N⁻⁴, analytic fifth-order remainder, actual supremum bridge | Completed, including the nearly balanced odd singleton gap and its fourth-order limit |
 | F-06 | Fixed-sample all-success maximum | `FixedSampleGlobalExtrema`: every fixed positive m, all legal success counts, eventual odd-population optimum and complete equality; shared thresholds over every finite sample range; strict singleton comparison for m≥2 | Completed, including the independent joint analytic global optimizer and its actual normalized supremum value |
-| F-07 | Exact imbalance coefficient | `ExactImbalanceAlgebra`: D/T/A algebra and strict gap; `RealMarginMasses`: actual positive normalized real-margin masses and recurrence; `RealRecurrenceCurvature`: real-parameter all-tilt sharp curvature for support degree≥3 and strict mean-variance feasibility | Small supports and balanced strict global proxy optimality are proved for all sample sizes; exact finite-population analytic response and coefficient identification remain |
+| F-07 | Exact imbalance coefficient | `RealMarginExactImbalance`, `RealMarginPhysicalSpecialization`: actual fixed-N unique global optimizer, exact T/A derivatives, odd/even analytic remainders, least-proxy and physical-law bridges | Completed for N≥5, 0<m, 2m≤N, including strict Bernoulli domination for m≥2 |
 | F-08 | Higher cumulant expansions | All-degree factorial moments and exact cumulants through four | Completed through sixth order, including actual fifth/sixth log-MGF derivatives and displayed κ₄, κ₅, κ₆ asymptotic remainders; optimized proxy fourth-order expansion is completed in F-05 |
-| F-09 | Compact success-proportion comparison | `CompactAnalyticContraction` proves the original full inequality with explicit threshold, both parities, strictness and complete equality | Main theorem and actual mass/MGF/log-MGF first-order corrections completed; the optimized compact-parameter correction and analytic B-factor remain |
+| F-09 | Compact success-proportion comparison | `CompactCanonicalContraction`, `CompactAnalyticHypergeomContraction`: actual canonical global optimum on full binomial axis, exact continuous e*d² factor, explicit boundary, uniform compact positivity and physical proxy bridge | Completed: actual compact analytic comparison; continuous factor with exact boundary; explicit first population coefficient; uniform quadratic remainder through balance in `CanonicalOptimizedPopulationRemainder` and `ActualCompactFirstCorrection` |
 | F-10 | Reverse even proxy classification | `EvenHypergeomExtremizers` | Completed: `even_normalized_proxy_all_equality` proves exactly k=N/2 for every legal nondegenerate sample size |
+
+
+## Final manuscript consolidation
+
+The thirty-result audit in `formal_status/manuscript_concordance.md` identifies two additional proposition-level obligations: the actual exchangeable variance supremum and odd variance-gap expansion (`prop:variance_parity`), and the assembled actual single-coordinate Hamming-law extremizer (`prop:explicit_extremizer`). Both are being proved in dedicated modules; their separate component lemmas do not count as completed assembled propositions.
 
 An incorrect pointwise odd constant curvature shortcut remains excluded:
 the odd sharp quadratic proxy must follow from integrated mean-dependent

@@ -50,16 +50,16 @@ At $e=0$, the Bernoulli proxy formula gives
 \[
  \mathcal R_m(0,d)=g(d):=\frac d{\operatorname{artanh}d},\qquad g(0)=1.
 \]
-In particular $g(d)=1-d^2/3+O(d^4)$. The even analytic function from Lemma \ref{lem:joint_optimizer} therefore has the form
+In particular $g(d)=1-d^2/3+O(d^4)$, so
 \[
- \mathcal R_m(e,d)=\frac1{1-e}-d^2A_m(e,d^2),\qquad A_m(0,0)=\frac13,
+ \partial_d^2\mathcal R_m(0,0)=-\frac23.
 \]
-where $A_m$ is analytic. Choose $d_0>0$ and $e_0>0$ inside its analytic rectangle such that
+Joint analyticity makes this second derivative continuous in $(e,d)$. Choose $e_0,d_0>0$ inside the analytic rectangle such that
 \[
- A_m(e,d^2)+d^2\partial_2A_m(e,d^2)>0
- \quad(0\le e\le e_0,\ 0\le d\le d_0).
+ \partial_d^2\mathcal R_m(e,d)<0
+ \qquad (0\le e\le e_0,\ |d|\le d_0).
 \]
-It follows that $\partial_d\mathcal R_m(e,d)<0$ for $0<d\le d_0$. Thus, among odd-population success counts in this interval, the maximum is uniquely attained at $d=1/N=e$.
+Evenness in $d$ gives $\partial_d\mathcal R_m(e,0)=0$. The mean value theorem now yields $\partial_d\mathcal R_m(e,d)<0$ for $0<d\le d_0$, uniformly for $0\le e\le e_0$. Thus $\mathcal R_m(e,\cdot)$ is strictly decreasing on $[0,d_0]$, and among odd-population success counts in this interval the maximum is uniquely attained at $d=1/N=e$.
 
 For the remaining success counts, the elementary-symmetric-mean inequality gives
 \begin{equation}\label{eq:maclaurin_mgf}
