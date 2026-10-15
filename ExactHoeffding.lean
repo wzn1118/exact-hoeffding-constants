@@ -17,6 +17,7 @@ import ExactHoeffding.PoissonBinomial
 import ExactHoeffding.Chernoff
 import ExactHoeffding.Support
 import ExactHoeffding.OrdinaryMomentsComplete
+import ExactHoeffding.ZeroTiltMoments
 import ExactHoeffding.Jacobi
 import ExactHoeffding.BernoulliKL
 import ExactHoeffding.StationaryCertificates
