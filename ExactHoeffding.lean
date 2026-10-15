@@ -16,6 +16,7 @@ import ExactHoeffding.VarianceComparison
 import ExactHoeffding.PoissonBinomial
 import ExactHoeffding.Chernoff
 import ExactHoeffding.Support
+import ExactHoeffding.SliceSampling
 import ExactHoeffding.OrdinaryMomentsComplete
 import ExactHoeffding.ZeroTiltMoments
 import ExactHoeffding.Jacobi
