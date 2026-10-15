@@ -1,5 +1,8 @@
 # Analysis-closure status
 
+> Historical workstream log, retained for source and compilation provenance. The final integrated coverage and audit supersede the intermediate pending-work descriptions below; see [full_closure.md](full_closure.md) and [manuscript_concordance.md](manuscript_concordance.md).
+
+
 ## Baseline
 
 - Worktree: `/data/lean_worktrees/analysis-closure`
@@ -167,10 +170,6 @@ bernoulli_sharp_quadratic_optimal (p) (0 <= p) (p <= 1) :
   `native_decide`, or `unsafe` declaration. This is a direct module kernel
   build, not a claim that the full historical branch was rebuilt.
 
-## Remaining scope
+## Archived interim scope (superseded by final closure)
 
-- The finite-population odd-exact optimization and integration into the
-  manuscript's main theorem remain root-owned work. The closed-interval
-  Bernoulli result alone is not reported as that full theorem.
-- The earlier Riccati/Jacobi/support/moment gaps are external workstreams;
-  this status file does not certify their closure.
+- The former workstream boundary is superseded by the integrated closure. See `full_closure.md` and `manuscript_concordance.md` for the final theorem map and audit.

@@ -104,11 +104,11 @@ limit is also proved.
 
 The joint analytic optimizer and actual normalized supremum are proved in `JointGlobalOptimizer`, `JointOptimizedValue`, and `JointFullAxisGlobalOptimizer`. The local strict imbalance monotonicity follows from the actual binomial Hessian, joint analyticity, and evenness in `JointLocalImbalanceMonotonicity`.
 
-`RealMarginExactImbalance` and `RealMarginPhysicalSpecialization` prove the finite-population optimizing tilt and optimal coefficient, with explicit T/A derivatives, analytic cubic/quartic remainders, least-proxy identification, and strict local Bernoulli domination. `AuxiliaryCurvature` proves the actual curvature counterexample and the integrated curvature identity.
+`RealMarginExactImbalance` and `RealMarginPhysicalSpecialization` prove the finite-population optimizing tilt and optimal coefficient, with explicit T/A derivatives, analytic cubic/quartic remainders, least-proxy identification, and strict local Bernoulli domination. `AuxiliaryCurvature` proves the actual curvature counterexample and the integrated curvature identity. `GeneralCGFCurvature` derives the same identity from a centered probability law and explicit exponential-integrability domain hypotheses.
 
 `CanonicalGapPopulationDerivative`, `CompactCanonicalContraction`, and `CompactAnalyticHypergeomContraction` prove the exact continuous factorization, its explicit boundary, uniform compact positivity, and strict actual hypergeometric comparison. `CanonicalOptimizedPopulationRemainder` and `ActualCompactFirstCorrection` prove the explicit first population correction and a uniform quadratic remainder on compact success-proportion intervals, including balance.
 
-`EvenHypergeomExtremizers` and `OddHypergeomExtremizers` classify all maximizing hypergeometric margin pairs. The thirty-result concordance currently records two final assembled-proposition obligations: `prop:variance_parity` and `prop:explicit_extremizer`.
+`EvenHypergeomExtremizers` and `OddHypergeomExtremizers` classify all maximizing hypergeometric margin pairs. `ExchangeableVarianceSupremum` proves the actual variance supremum, nearest-balanced Hamming attainment, parity comparison, integral gap and fourth-order expansion. `ExplicitExtremizerTheorem` gives the actual single-coordinate sharpness witness, including the Bernoulli pushforward and both parity equality mechanisms. All 30 named manuscript results have complete entries in the concordance.
 
 ## Reproduction and evidence
 
@@ -126,18 +126,18 @@ The checker requires one result for every public theorem and accepts only
 performs this audit. Individual module evidence is retained under
 `checks/logs/full_closure/`; each log applies to its recorded source checkpoint.
 New modules under development are added to the umbrella after their successful
-kernel check. `proof_gap_register.md` lists open obligations explicitly.
+kernel check. `proof_gap_register.md` records completed assertion coverage; `checks/check_manuscript_concordance.py` verifies all 30 named-result entries and their imported theorem references.
 
 ## Integrated verification checkpoint
 
 The control worktree independently recompiled the Jacobi, fixed-sample,
 real-margin, all-order derivative, jointly analytic global optimizer, and
 actual fourth-order expansion chains. Every integrated module passed its kernel check. The complete umbrella and
-generated audit pass: **1450 public theorems in 239 project modules**, with
+generated audit pass: **1518 public theorems in 252 project modules**, with
 only `propext`, `Classical.choice`, and `Quot.sound`.
 
 Evidence: `checks/logs/full_closure/jacobi_tilt_second_rootverify.log`,
 `fixed_sample_global_rootverify.log`, `real_recurrence_curvature.log`,
 `optimized_third_rootverify.log`, `global_analytic_equality_rootverify.log`,
-`actual_joint_normalized_rootverify.log`, `actual_fourth_final_rootverify.log`, and `integrated_compact_umbrella_audit.log`.
+`actual_joint_normalized_rootverify.log`, `actual_fourth_final_rootverify.log`, and `final_all_manuscript_umbrella_audit.log`.
 The audit source is `checks/full_closure_axioms.lean`.

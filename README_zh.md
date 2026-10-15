@@ -25,7 +25,7 @@ C_N^\star = \begin{cases}
 python3 checks/package_submission.py
 ```
 
-投稿包与文献包的文件清单、校验和及编译报告随包保存。Lean 源码与构建记录保留在仓库中，形式化状态以相应记录为准。
+投稿包与文献包的文件清单、校验和及编译报告随包保存。全文与技术补充的 30 项命名结果均有完整 Lean 对应；总构建与公理审计通过 252 个项目模块中的 1518 条公开定理。逐项映射见 `formal_status/manuscript_concordance.md`，审计日志见 `checks/logs/full_closure/final_all_manuscript_umbrella_audit.log`。
 
 ## 完整复现
 

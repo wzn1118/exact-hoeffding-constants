@@ -1,19 +1,19 @@
 {
   "build_logs": [
     {
-      "bytes": 7479,
+      "bytes": 7633,
       "file": "checks/logs/latex_build.log",
       "name": "latex_build",
-      "sha256": "d54a5afcf67f76a502906627566bbdcd3398e5b01ac08fa950e1096ea37fff0d"
+      "sha256": "7b524543fc9c9206f5c3c8e32bc7eacbb6bf0e4f7147edecc4d0b34893d59669"
     },
     {
-      "bytes": 7016,
+      "bytes": 7169,
       "file": "checks/logs/supplement_build.log",
       "name": "supplement_build",
-      "sha256": "11e0642382bde96f04bb892a1c1c910259ba30224db1c21b23e90abcd71055e4"
+      "sha256": "caab3d897a053700d25d74b1847bd7cb34b931c423699c384889fe30defff28d"
     }
   ],
-  "commit": "fdd48e096f0c9863b1495e963dd77ef7a15079ac",
+  "commit": "local",
   "mathematical_tests": [
     {
       "bytes": 343,
@@ -95,16 +95,16 @@
     }
   ],
   "package_validation": {
-    "bytes": 391,
+    "bytes": 389,
     "file": "checks/logs/package_validation.log",
-    "sha256": "f2ad9597619398118bde34dc59abe24a660630a487d6e2ca88e0e59d277ecb45"
+    "sha256": "557f4ac3a6ad9d020f7f7584fedf7ea7aca8dc1b255ea7ae2f0089e113bb254d"
   },
-  "python": "3.11.17",
+  "python": "3.10.12",
   "result": "PASS",
   "suite_log": {
-    "bytes": 5796,
+    "bytes": 5999,
     "file": "checks/logs/run_all.log",
-    "sha256": "7004fe7f89fcecb9000017b314fd8f3348acc1776eeb3af1654ec4c3eb4ddd44"
+    "sha256": "40ef025f1391d12a286c184da11217aa4dc12845f0502a9d6459158df375ebaa"
   },
   "test_count": 13
 }

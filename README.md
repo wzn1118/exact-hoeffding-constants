@@ -29,10 +29,12 @@ probability measures on the real cube.
 
 [Proof coverage](LEAN_PROOF_STATUS.md),
 [theorem mapping](theorem_to_lean.csv), and
-[remaining manuscript obligations](proof_gap_register.md) distinguish those
-proved conclusions from the higher-order and analytic supplement work.
-CI compiles the umbrella and audits all imported public theorems, including
-their transitive axiom dependencies.
+[completed assertion inventory](proof_gap_register.md) give the precise statement domains.
+All 30 named results in the main paper and supplement have complete entries in
+[the manuscript concordance](formal_status/manuscript_concordance.md), including
+the fourth-order optimized expansion, exact imbalance response, compact analytic
+contraction, actual variance supremum, and explicit Hamming-law extremizer.
+The integrated Lean kernel build and audit pass for **1518 public theorems in 252 project modules**. CI reproduces the build, manuscript-concordance check and transitive axiom audit.
 
 ## Current publication files
 

@@ -199,3 +199,23 @@ import ExactHoeffding.CanonicalOptimizedPopulationRemainder
 import ExactHoeffding.StationaryPositiveBranch
 
 import ExactHoeffding.ActualCompactFirstCorrection
+
+import ExactHoeffding.CubeCenteredEnergyBounds
+
+import ExactHoeffding.ExchangeableVarianceMoments
+
+import ExactHoeffding.ParityVarianceGap
+
+import ExactHoeffding.ExchangeableCenteredEnergy
+
+import ExactHoeffding.ExplicitSingletonExtremizer
+
+import ExactHoeffding.ExplicitSingletonExtremizerLaw
+
+import ExactHoeffding.ExplicitExtremizerTheorem
+
+import ExactHoeffding.ExchangeableVarianceSupremum
+
+import ExactHoeffding.ActualCompactFirstCorrectionAllSamples
+
+import ExactHoeffding.GeneralCGFCurvature

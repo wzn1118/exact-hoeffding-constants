@@ -90,6 +90,7 @@ lake exe cache get
 lake build ExactHoeffding 2>&1 | tee build/formal/kernel_build.log
 lake env lean ExactHoeffding.lean 2>&1 | tee build/formal/umbrella.log
 python3 checks/generate_axiom_audit.py --check
+python3 checks/check_manuscript_concordance.py
 lake env lean checks/full_closure_axioms.lean 2>&1 | tee build/formal/axioms.log
 python3 checks/check_axiom_output.py build/formal/axioms.log
 '''

@@ -18,7 +18,7 @@ These quantify over every legal sample size for each odd population.
 
 ## Assertion coverage
 
-| ID | Manuscript assertion | Proved input | Remaining statement |
+| ID | Manuscript assertion | Proved input | Final coverage |
 | --- | --- | --- | --- |
 | F-01 | Classical Jacobi zeros | `JacobiStandardNormalization`: independently defined standard binomial Jacobi polynomial; exact Rodrigues and hypergeometric normalizations; both root maps; degree, simplicity and all roots in `(-1,1)` | Completed for every natural canonical parameter, including degree zero |
 | F-02 | Full tilted Poisson–binomial law | Actual canonical coefficient/tilted PGF and product-space construction | Completed: `hypergeom_tilted_law_eq_shifted_independent_bernoulli` covers every legal margin, tilt, and degeneracy |
@@ -32,9 +32,14 @@ These quantify over every legal sample size for each odd population.
 | F-10 | Reverse even proxy classification | `EvenHypergeomExtremizers` | Completed: `even_normalized_proxy_all_equality` proves exactly k=N/2 for every legal nondegenerate sample size |
 
 
-## Final manuscript consolidation
+## Completed proposition assembly
 
-The thirty-result audit in `formal_status/manuscript_concordance.md` identifies two additional proposition-level obligations: the actual exchangeable variance supremum and odd variance-gap expansion (`prop:variance_parity`), and the assembled actual single-coordinate Hamming-law extremizer (`prop:explicit_extremizer`). Both are being proved in dedicated modules; their separate component lemmas do not count as completed assembled propositions.
+All 30 named results in the principal manuscript and supplement have complete mappings in `formal_status/manuscript_concordance.md`.
+
+- `ExchangeableVarianceSupremum` defines the actual variance supremum over exchangeable cube probability laws and nonzero zero-sum contrasts. It proves the floor and parity formulas, attainment under the nearest-balanced Hamming law for every contrast, the strict odd variance gap, its integral identity, and its fourth-order expansion with coefficient `26/45`.
+- `ExplicitExtremizerTheorem` assembles the nearest-balanced actual Hamming law, explicit coordinate contrast, full Bernoulli pushforward, odd nonzero-tilt contact, and even zero-tilt limiting equality for every population `N≥2`.
+
+The integrated kernel build and generated axiom audit pass for all 1518 public theorems in 251 imported project modules. All F-01–F-10 obligations and the two assembled parity propositions are completed.
 
 An incorrect pointwise odd constant curvature shortcut remains excluded:
 the odd sharp quadratic proxy must follow from integrated mean-dependent
