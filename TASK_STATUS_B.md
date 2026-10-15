@@ -1,3 +1,5 @@
+> Historical Jacobi workstream record. The final integrated branch supersedes the interim status below; the authoritative records are `formal_status/full_closure.md`, `formal_status/manuscript_concordance.md`, and the final closure audit logs.
+
 # TASK_STATUS_B
 
 ## Scope
@@ -77,6 +79,6 @@ explicit gaps and are not stated as unconditional theorems.
 
 ## Minimal blocker
 
-There is no blocker for the scoped theorem or its integrated build. The
-Jacobi-to-Poisson-binomial representation remains an open mathematical
-formalization gap.
+There is no blocker for the scoped theorem or its integrated build. At the
+time of this snapshot, the Jacobi-to-Poisson-binomial representation was an
+open formalization gap; it is completed in the integrated branch.

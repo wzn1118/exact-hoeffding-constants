@@ -39,7 +39,7 @@ All 30 named results in the principal manuscript and supplement have complete ma
 - `ExchangeableVarianceSupremum` defines the actual variance supremum over exchangeable cube probability laws and nonzero zero-sum contrasts. It proves the floor and parity formulas, attainment under the nearest-balanced Hamming law for every contrast, the strict odd variance gap, its integral identity, and its fourth-order expansion with coefficient `26/45`.
 - `ExplicitExtremizerTheorem` assembles the nearest-balanced actual Hamming law, explicit coordinate contrast, full Bernoulli pushforward, odd nonzero-tilt contact, and even zero-tilt limiting equality for every population `N≥2`.
 
-The integrated kernel build and generated axiom audit pass for all 1518 public theorems in 251 imported project modules. All F-01–F-10 obligations and the two assembled parity propositions are completed.
+The integrated kernel build and generated axiom audit pass for all 1518 public theorems in 252 imported project modules. All F-01–F-10 obligations and the two assembled parity propositions are completed.
 
 An incorrect pointwise odd constant curvature shortcut remains excluded:
 the odd sharp quadratic proxy must follow from integrated mean-dependent
