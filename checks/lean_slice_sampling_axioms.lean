@@ -1,0 +1,10 @@
+import ExactHoeffding.SliceSampling
+
+#print axioms ExactHoeffding.sliceSamples_card_product
+#print axioms ExactHoeffding.sliceSamples_card
+#print axioms ExactHoeffding.sliceSamples_eq_empty_of_lt
+#print axioms ExactHoeffding.uniformSliceIntersectionMass_eq_hypergeomPMF
+#print axioms ExactHoeffding.fin_uniformSliceIntersectionMass_eq_hypergeomPMF
+#print axioms ExactHoeffding.uniformSliceIntersectionMass_sum
+#print axioms ExactHoeffding.uniformSlice_expectation
+#print axioms ExactHoeffding.uniformSlice_mgf
