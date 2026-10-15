@@ -1,8 +1,11 @@
 import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.Algebra.Polynomial.Coeff
+import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.Data.Nat.Choose.Cast
 import Mathlib.Data.Nat.Factorial.Basic
+import ExactHoeffding.Hypergeometric
 import Lean.Elab.Tactic.Omega
 import Mathlib.Tactic.Ring
 
@@ -167,5 +170,135 @@ theorem jacobiCoeff_recurrence {j h r i : ℕ} (hi : i < j) :
     _ = (Nat.choose j i * Nat.descFactorial (j + h) i *
         Nat.descFactorial (r + j) (j - i)) * (j - i) * (j + h - i) := by
           ring
+
+/-! ## Connection with the existing hypergeometric polynomial -/
+
+/-- The coefficient-independent scale relating the Jacobi normalization to
+the unnormalized hypergeometric counts. -/
+noncomputable def jacobiHypergeomScale (j h r : ℕ) : ℝ :=
+  ((Nat.factorial (j + h) : ℝ) * (Nat.factorial (r + j) : ℝ)) /
+    (Nat.factorial (j + h + r) : ℝ)
+
+theorem jacobiCoeff_scaled_hypergeomCount_of_le {j h r i : ℕ} (hi : i ≤ j) :
+    (jacobiCoeff j h r i : ℝ) =
+      jacobiHypergeomScale j h r *
+        (hypergeomCount (jacobiN j h r) (jacobiK j) (jacobiM j h) i : ℝ) := by
+  have hji : j - i ≤ r + j := by omega
+  have hji' : r + j - (j - i) = r + i := by omega
+  have hijh : i ≤ j + h := by omega
+  have hchoose : j + h - i ≤ j + h + r := by omega
+  have hchoose' : j + h + r - (j + h - i) = r + i := by omega
+  have hdesc₁ := Nat.factorial_mul_descFactorial hijh
+  have hdesc₂ := Nat.factorial_mul_descFactorial hji
+  have hchoose₁ := Nat.choose_mul_factorial_mul_factorial hchoose
+  have hdesc₁r :
+      (Nat.factorial (j + h - i) : ℝ) *
+          (Nat.descFactorial (j + h) i : ℝ) =
+        (Nat.factorial (j + h) : ℝ) := by
+    exact_mod_cast hdesc₁
+  have hdesc₂r :
+      (Nat.factorial (r + i) : ℝ) *
+          (Nat.descFactorial (r + j) (j - i) : ℝ) =
+        (Nat.factorial (r + j) : ℝ) := by
+    rw [← hji']
+    exact_mod_cast hdesc₂
+  have hchooser :
+      (Nat.choose (j + h + r) (j + h - i) : ℝ) *
+          (Nat.factorial (j + h - i) : ℝ) *
+          (Nat.factorial (r + i) : ℝ) =
+        (Nat.factorial (j + h + r) : ℝ) := by
+    rw [hchoose'] at hchoose₁
+    exact_mod_cast hchoose₁
+  have hcore :
+      (Nat.descFactorial (j + h) i : ℝ) *
+          (Nat.descFactorial (r + j) (j - i) : ℝ) *
+          (Nat.factorial (j + h + r) : ℝ) =
+        (Nat.factorial (j + h) : ℝ) *
+          (Nat.factorial (r + j) : ℝ) *
+          (Nat.choose (j + h + r) (j + h - i) : ℝ) := by
+    calc
+      _ = (Nat.descFactorial (j + h) i : ℝ) *
+          (Nat.descFactorial (r + j) (j - i) : ℝ) *
+          ((Nat.choose (j + h + r) (j + h - i) : ℝ) *
+            (Nat.factorial (j + h - i) : ℝ) *
+            (Nat.factorial (r + i) : ℝ)) := by rw [hchooser]
+      _ = ((Nat.factorial (j + h - i) : ℝ) *
+            (Nat.descFactorial (j + h) i : ℝ)) *
+          ((Nat.factorial (r + i) : ℝ) *
+            (Nat.descFactorial (r + j) (j - i) : ℝ)) *
+          (Nat.choose (j + h + r) (j + h - i) : ℝ) := by ring
+      _ = _ := by rw [hdesc₁r, hdesc₂r]
+  unfold jacobiHypergeomScale hypergeomCount jacobiCoeff jacobiK jacobiM jacobiN
+  simp only [Nat.cast_mul]
+  field_simp [Nat.factorial_ne_zero]
+  have hscaled := congrArg
+    (fun x : ℝ => (Nat.choose j i : ℝ) * x) hcore
+  have hNsub : 2 * j + h + r - j = j + h + r := by omega
+  simp only [hNsub] at *
+  nlinarith [hscaled]
+
+theorem jacobiCoeff_zero_of_lt {j h r i : ℕ} (hij : j < i) :
+    jacobiCoeff j h r i = 0 := by
+  simp [jacobiCoeff, Nat.choose_eq_zero_of_lt hij]
+
+theorem hypergeomCount_jacobi_zero_of_lt {j h r i : ℕ} (hij : j < i) :
+    hypergeomCount (jacobiN j h r) (jacobiK j) (jacobiM j h) i = 0 := by
+  simp [hypergeomCount, jacobiK, Nat.choose_eq_zero_of_lt hij]
+
+theorem jacobiCoeff_scaled_hypergeomCount (j h r i : ℕ) :
+    (jacobiCoeff j h r i : ℝ) =
+      jacobiHypergeomScale j h r *
+        (hypergeomCount (jacobiN j h r) (jacobiK j) (jacobiM j h) i : ℝ) := by
+  by_cases hi : i ≤ j
+  · exact jacobiCoeff_scaled_hypergeomCount_of_le hi
+  · have hij : j < i := Nat.lt_of_not_ge hi
+    simp [jacobiCoeff_zero_of_lt hij, hypergeomCount_jacobi_zero_of_lt hij]
+
+theorem jacobiPGF_eval_eq_scaled_hypergeomPolynomial
+    (j h r : ℕ) (z : ℝ) :
+    (jacobiPGF j h r).eval z =
+      jacobiHypergeomScale j h r *
+        hypergeomPolynomial (jacobiN j h r) (jacobiK j) (jacobiM j h) z := by
+  classical
+  have hleft :
+      (jacobiPGF j h r).eval z =
+        ∑ i ∈ Finset.range (j + 1),
+          (jacobiCoeff j h r i : ℝ) * z ^ i := by
+    simp only [jacobiPGF, Polynomial.eval_finsetSum, Polynomial.eval_monomial]
+  have hrange :
+      ∑ i ∈ Finset.range (j + 1),
+          (jacobiCoeff j h r i : ℝ) * z ^ i =
+        ∑ i ∈ Finset.range (j + h + 1),
+          (jacobiCoeff j h r i : ℝ) * z ^ i := by
+    apply Finset.sum_subset
+    · exact Finset.range_mono (by omega)
+    · intro i hi hnot
+      have hij : j < i := by
+        simp only [Finset.mem_range] at hnot
+        omega
+      simp [jacobiCoeff_zero_of_lt hij]
+  calc
+    (jacobiPGF j h r).eval z =
+        ∑ i ∈ Finset.range (j + 1),
+          (jacobiCoeff j h r i : ℝ) * z ^ i := hleft
+    _ = ∑ i ∈ Finset.range (j + h + 1),
+          (jacobiCoeff j h r i : ℝ) * z ^ i := hrange
+    _ = jacobiHypergeomScale j h r *
+          ∑ i ∈ Finset.range (j + h + 1),
+            (hypergeomCount (jacobiN j h r) (jacobiK j)
+              (jacobiM j h) i : ℝ) * z ^ i := by
+        rw [Finset.mul_sum]
+        apply Finset.sum_congr rfl
+        intro i hi
+        rw [jacobiCoeff_scaled_hypergeomCount]
+        ring
+    _ = jacobiHypergeomScale j h r *
+          hypergeomPolynomial (jacobiN j h r) (jacobiK j)
+            (jacobiM j h) z := by
+        simp only [hypergeomPolynomial, jacobiM]
+
+#print axioms jacobiCoeff_scaled_hypergeomCount_of_le
+#print axioms jacobiCoeff_scaled_hypergeomCount
+#print axioms jacobiPGF_eval_eq_scaled_hypergeomPolynomial
 
 end ExactHoeffding

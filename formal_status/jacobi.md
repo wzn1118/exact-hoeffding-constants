@@ -47,16 +47,32 @@ exact degree drop show its derivative is split. Iterating this for
 and `(X-1)^r`, proves `jacobiRodrigues j h r` splits.
 
 The targeted check used Lean 4.33.0 and the existing mathlib build artifacts:
-`flock /data/hoeffding_full_20261015/lean_compile.lock lean -j 1
-ExactHoeffding/JacobiRoots.lean`; it exited with code `0`. This was a direct
-file check, not a full project build. `#print axioms` for these new declarations
-is still pending and is not claimed here.
+`lean -j 1 ExactHoeffding/JacobiRoots.lean`; it exited with code `0`. This was
+a direct file check, not a full project build. `#print axioms` for these new
+declarations is still pending and is not claimed here.
+
+## Hypergeometric Connection
+
+`jacobiPGF_eval_eq_scaled_hypergeomPolynomial` now proves, for every real `z`,
+that the Jacobi coefficient polynomial evaluates to
+
+```text
+((j+h)! (r+j)! / (j+h+r)!) * hypergeomPolynomial (2*j+h+r) j (j+h) z.
+```
+
+The proof establishes coefficient equality over the entire support, including
+the zero tail, then identifies the finite sums. A direct Lean 4.33.0 check
+compiled `ExactHoeffding/Jacobi.lean` to its targeted `.olean` with exit code
+`0`. The `#print axioms` output for the scaled coefficient lemmas and the
+full-evaluation identity contains only `propext`, `Classical.choice`, and
+`Quot.sound`; no `sorryAx` is present. This was a targeted direct Lean check,
+not a full project build.
 
 This is not yet the PGF root theorem or the Poisson-binomial factorization.
-The nearest proof gap is the explicit Leibniz expansion of the Rodrigues
-derivative and the polynomial identity connecting its reverse composed with
-`1-X` to `jacobiPGF`. Until that bridge and its splitting transport are proved,
-the original `jacobiPGF` has no real-rootedness claim in Lean.
+The next bridge is the explicit Leibniz expansion of the Rodrigues derivative
+and the identity connecting its reverse composed with `1-X` to `jacobiPGF`.
+Only after that identity and its splitting transport are checked can the
+original PGF be claimed to split.
 
 ## Deliberately not claimed
 
