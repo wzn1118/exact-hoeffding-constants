@@ -104,6 +104,7 @@ import ExactHoeffding.ExactParityConstants
 import ExactHoeffding.ExactOddGlobalTheorem
 import ExactHoeffding.Cumulants
 import ExactHoeffding.JacobiActualPGF
+import ExactHoeffding.JacobiSimpleRoots
 import ExactHoeffding.SharpWeightedTail
 import ExactHoeffding.ConstantAsymptotics
 import ExactHoeffding.HypergeomBernoulliMGF

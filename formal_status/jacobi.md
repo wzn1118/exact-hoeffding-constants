@@ -102,3 +102,16 @@ Mobius identity and must not yet be presented as splitting of the PGF.
 - `source/manuscript.tex`, `sec:reductions` and `sec:jacobi` (especially
   equation `eq:jacobi` and the factorization `eq:factor`).
 - `source/odd_uniform.tex`, the proof of `odd:lem:PB`.
+
+
+## Simple roots of the actual PGF
+
+`ExactHoeffding/JacobiSimpleRoots.lean` proves the coefficient recurrence form of
+the second-order Jacobi differential equation for the actual canonical PGF.
+Using the negative-root location and polynomial root multiplicity divisibility,
+it proves that every real root has nonzero derivative and hence that the root
+multiset has no repetitions. The checked module is compiled at commit
+`4c5a347`; the targeted Lean invocation exited with code `0` (only unused-simp
+and unused-tactic linter warnings). This closes the actual-PGF simple-root
+claim. Standard Jacobi normalization and the corresponding `(-1,1)`
+localization remain separate statements.
