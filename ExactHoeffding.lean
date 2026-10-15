@@ -21,3 +21,6 @@ import ExactHoeffding.BernoulliKL
 import ExactHoeffding.StationaryCertificates
 import ExactHoeffding.GlobalCrossing
 import ExactHoeffding.RiccatiCertificates
+import ExactHoeffding.WholeLineCrossing
+import ExactHoeffding.BernoulliProxy
+import ExactHoeffding.HypergeometricODE
