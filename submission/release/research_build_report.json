@@ -1,7 +1,7 @@
 {
   "date": "2026-10-15",
-  "project_commit": "64b6cf4b88b9da061b51fa3f81b1270affe31d0c",
-  "project_branch": "formal/full-closure-20261015",
+  "project_commit": "f62034fb579e4592927803eb378275e18c8e94b4",
+  "project_branch": "fix/gottschling-title-20261016",
   "working_tree_status": [],
   "lean_toolchain": "leanprover/lean4:v4.33.0",
   "mathlib_git": "https://github.com/leanprover-community/mathlib4.git",
@@ -14,8 +14,8 @@
   "verification": "Snapshot consistency, placeholder scan, audit-source regeneration, archive integrity and manifest checks. Kernel reproduction is performed by reproduce_formal.sh.",
   "archive": "Wang_Zinan_Exact_Hoeffding_Formalized_Research_Bundle_2026-10-15.zip",
   "archive_members": 442,
-  "bytes": 4558678,
-  "sha256": "e7fc07545cc267fdee0b1e3cd90e2b8b3fc5134d365f4187feda3e7f0fe76ab0",
+  "bytes": 4559688,
+  "sha256": "cb6ed3708b3b4050f4407bc931a031ca0f144704cc52b22d2712fc6fee9762b9",
   "extracted_manifest_check_exit_code": 0,
   "extracted_audit_regeneration_exit_code": 0,
   "reproduction_script_syntax_exit_code": 0
