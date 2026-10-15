@@ -68,18 +68,34 @@ full-evaluation identity contains only `propext`, `Classical.choice`, and
 `Quot.sound`; no `sorryAx` is present. This was a targeted direct Lean check,
 not a full project build.
 
-This is not yet the PGF root theorem or the Poisson-binomial factorization.
-The next bridge is the explicit Leibniz expansion of the Rodrigues derivative
-and the identity connecting its reverse composed with `1-X` to `jacobiPGF`.
-Only after that identity and its splitting transport are checked can the
-original PGF be claimed to split.
+## Checked Mobius Bridge
+
+`ExactHoeffding/JacobiMobius.lean` now proves the explicit Leibniz expansion,
+the exact degree `j` of the Rodrigues quotient, and the polynomial identity
+
+```text
+jacobiPGF j h r = (jacobiRodrigues j h r).reverse.comp (C 1 - X).
+```
+
+This connects the already checked actual hypergeometric coefficients to the
+split Rodrigues quotient without assuming a root or factorization theorem.
+The targeted Lean 4.33.0 command, using this worktree's private build path,
+was `flock /data/hoeffding_full_20261015/lean_compile.lock timeout 600 lean
+-j1 -o .lake/build/lib/lean/ExactHoeffding/JacobiMobius.olean
+ExactHoeffding/JacobiMobius.lean`. The lock had no wait timeout. The real
+exit code was `0`; `/tmp/jacobi-mobius-lean4.log` records that result and
+the three `#print axioms` checks, each containing only `propext`,
+`Classical.choice`, and `Quot.sound`.
+
+The splitting transport, negative roots, and tilted product factorization
+are still pending the separate `JacobiFactorization.lean` check.
 
 ## Deliberately not claimed
 
 This block does not assert Jacobi orthogonality, simple roots, negative roots
 of `jacobiPGF`, a product factorization, or the tilted Poisson-binomial
-representation. Splitting is established only for the separately defined
-Rodrigues quotient above; it must not be presented as splitting of the PGF.
+representation. Splitting has not yet been transported through the checked
+Mobius identity and must not yet be presented as splitting of the PGF.
 
 ## Sources
 
