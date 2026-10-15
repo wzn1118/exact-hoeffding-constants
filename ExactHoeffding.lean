@@ -38,3 +38,4 @@ import ExactHoeffding.TiltedAdmissibilityDirect
 import ExactHoeffding.TiltedEndpoints
 import ExactHoeffding.HypergeometricEndpoints
 import ExactHoeffding.SmallSupportCurvature
+import ExactHoeffding.TwoDrawProxy
