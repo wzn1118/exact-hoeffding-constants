@@ -36,4 +36,5 @@ import ExactHoeffding.HypergeometricODE
 import ExactHoeffding.HypergeometricODEMargins
 import ExactHoeffding.TiltedAdmissibilityDirect
 import ExactHoeffding.TiltedEndpoints
+import ExactHoeffding.HypergeometricEndpoints
 import ExactHoeffding.SmallSupportCurvature
