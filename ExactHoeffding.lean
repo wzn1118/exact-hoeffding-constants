@@ -93,6 +93,7 @@ import ExactHoeffding.TwoDrawProxy
 import ExactHoeffding.TwoDrawProxyComplete
 import ExactHoeffding.TwoDrawComparison
 import ExactHoeffding.TwoDrawSingletonComparison
+import ExactHoeffding.FixedSampleExtrema
 import ExactHoeffding.BernoulliOptimal
 import ExactHoeffding.HammingExchangeableLower
 import ExactHoeffding.ProjectedWeights
@@ -105,6 +106,7 @@ import ExactHoeffding.ExactOddGlobalTheorem
 import ExactHoeffding.Cumulants
 import ExactHoeffding.JacobiActualPGF
 import ExactHoeffding.JacobiSimpleRoots
+import ExactHoeffding.JacobiRootLocalization
 import ExactHoeffding.SharpWeightedTail
 import ExactHoeffding.ConstantAsymptotics
 import ExactHoeffding.HypergeomBernoulliMGF
