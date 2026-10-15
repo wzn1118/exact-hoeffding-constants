@@ -33,6 +33,7 @@ import ExactHoeffding.RiccatiBarrier
 import ExactHoeffding.VarianceBarrierFlow
 import ExactHoeffding.HypergeometricBarrier
 import ExactHoeffding.HypergeometricLaplace
+import ExactHoeffding.LaplaceEnvelopeTheorem
 import ExactHoeffding.RiccatiComparison
 import ExactHoeffding.BernoulliRiccati
 import ExactHoeffding.BernoulliBalancedLimit
