@@ -30,6 +30,7 @@ import ExactHoeffding.BernoulliKL
 import ExactHoeffding.StationaryCertificates
 import ExactHoeffding.StationaryEquality
 import ExactHoeffding.StationaryGlobal
+import ExactHoeffding.StrictGlobalGap
 import ExactHoeffding.GlobalCrossing
 import ExactHoeffding.RiccatiCertificates
 import ExactHoeffding.RiccatiBarrier
