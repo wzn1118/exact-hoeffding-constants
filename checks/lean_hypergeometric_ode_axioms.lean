@@ -1,0 +1,11 @@
+import ExactHoeffding.HypergeometricODE
+
+#print axioms ExactHoeffding.hypergeomCount_adjacent
+#print axioms ExactHoeffding.hypergeomMass_tilted_balance
+#print axioms ExactHoeffding.hypergeomTiltExpectation_balance
+#print axioms ExactHoeffding.hypergeomTiltMoments_balance
+#print axioms ExactHoeffding.hypergeomTiltMean_hasDerivAt
+#print axioms ExactHoeffding.hypergeomTiltMeanVariance_balance
+#print axioms ExactHoeffding.hypergeomTiltMean_riccati
+#print axioms ExactHoeffding.hypergeomTiltMeanVariance_balance_of_margins
+#print axioms ExactHoeffding.hypergeomTiltMean_riccati_of_margins
