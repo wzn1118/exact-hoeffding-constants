@@ -104,3 +104,13 @@ import ExactHoeffding.ExactParityConstants
 import ExactHoeffding.ExactOddGlobalTheorem
 import ExactHoeffding.Cumulants
 import ExactHoeffding.JacobiActualPGF
+import ExactHoeffding.SharpWeightedTail
+import ExactHoeffding.ConstantAsymptotics
+import ExactHoeffding.HypergeomBernoulliMGF
+import ExactHoeffding.LogMGFTaylor
+
+import ExactHoeffding.HighCumulants
+import ExactHoeffding.EvenHypergeomExtremizers
+import ExactHoeffding.BernoulliProductLaw
+import ExactHoeffding.HypergeomBernoulliLaw
+import ExactHoeffding.FinitePopulationBernoulliEnvelope
