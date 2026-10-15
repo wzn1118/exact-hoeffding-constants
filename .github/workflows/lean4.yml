@@ -9,6 +9,9 @@ on:
       - 'ExactHoeffding.lean'
       - 'ExactHoeffding/**'
       - 'checks/lean_axioms.lean'
+      - 'checks/full_closure_axioms.lean'
+      - 'checks/generate_axiom_audit.py'
+      - 'checks/check_axiom_output.py'
       - '.github/workflows/lean4.yml'
   pull_request:
     paths:
@@ -18,6 +21,9 @@ on:
       - 'ExactHoeffding.lean'
       - 'ExactHoeffding/**'
       - 'checks/lean_axioms.lean'
+      - 'checks/full_closure_axioms.lean'
+      - 'checks/generate_axiom_audit.py'
+      - 'checks/check_axiom_output.py'
       - '.github/workflows/lean4.yml'
   workflow_dispatch:
 
@@ -52,8 +58,10 @@ jobs:
         run: lake env lean ExactHoeffding.lean
       - name: Audit theorem axioms
         run: |
-          lake env lean checks/lean_axioms.lean | tee lean_axioms.log
-          if grep -E 'sorryAx|axioms:.*\[.*(unsafe|admit)' lean_axioms.log; then exit 1; fi
+          set -euo pipefail
+          python3 checks/generate_axiom_audit.py --check
+          lake env lean checks/full_closure_axioms.lean | tee lean_axioms.log
+          python3 checks/check_axiom_output.py lean_axioms.log
       - uses: actions/upload-artifact@v4
         with:
           name: lean-axiom-audit
