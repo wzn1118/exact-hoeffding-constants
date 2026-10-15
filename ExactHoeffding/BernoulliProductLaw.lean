@@ -71,6 +71,61 @@ theorem independentBernoulli_shifted_sum_mgf {j : ℕ} (p : Fin j → unitInterv
   simpa [mgf, mul_comm b t] using
     congrArg (Real.exp (t * b) * ·) (independentBernoulli_sum_mgf p t)
 
+theorem independentBernoulli_coordinates_zero_one {j : ℕ}
+    (p : Fin j → unitInterval) :
+    ∀ᵐ x ∂independentBernoulliMeasure p, ∀ i, x i = 0 ∨ x i = 1 := by
+  rw [ae_all_iff]
+  intro i
+  have h : ∀ᵐ y ∂bernoulliMeasure (1 : ℝ) 0 (p i), y = 0 ∨ y = 1 := by
+    rw [bernoulliMeasure_def, ae_add_measure_iff]
+    constructor
+    · exact Measure.ae_smul_measure (by simp [ae_dirac_eq]) _
+    · exact Measure.ae_smul_measure (by simp [ae_dirac_eq]) _
+  apply ae_of_ae_map (μ := independentBernoulliMeasure p)
+    (f := fun x : Fin j → ℝ => x i) (p := fun y : ℝ => y = 0 ∨ y = 1)
+    (measurable_pi_apply i).aemeasurable
+  rwa [independentBernoulli_coordinate_law]
+
+/-- The number of successful coordinates, defined on every real vector. -/
+def bernoulliSuccessCount {j : ℕ} (x : Fin j → ℝ) : Fin (j + 1) := by
+  classical
+  refine ⟨∑ i, if x i = 1 then 1 else 0, Nat.lt_succ_of_le ?_⟩
+  calc
+    _ ≤ ∑ _i : Fin j, 1 := Finset.sum_le_sum (fun i _ => by split_ifs <;> omega)
+    _ = j := by simp
+
+theorem bernoulliSuccessCount_measurable {j : ℕ} :
+    Measurable (bernoulliSuccessCount (j := j)) := by
+  classical
+  have hc : Measurable (fun x : Fin j → ℝ => ∑ i, if x i = 1 then (1 : ℕ) else 0) := by
+    apply Finset.measurable_sum
+    intro i _
+    exact Measurable.ite (measurableSet_eq_fun (measurable_pi_apply i) measurable_const)
+      measurable_const measurable_const
+  apply measurable_to_countable'
+  intro a
+  convert hc (measurableSet_singleton (a : ℕ)) using 1
+  ext x
+  simp only [Set.mem_preimage, Set.mem_singleton_iff]
+  exact Fin.ext_iff
+
+theorem bernoulliSuccessCount_eq_sum_ae {j : ℕ} (p : Fin j → unitInterval) :
+    (fun x => (bernoulliSuccessCount x : ℝ)) =ᵐ[independentBernoulliMeasure p]
+      (fun x : Fin j → ℝ => ∑ i, x i) := by
+  classical
+  filter_upwards [independentBernoulli_coordinates_zero_one p] with x hx
+  change ((∑ i : Fin j, if x i = 1 then 1 else 0 : ℕ) : ℝ) = _
+  push_cast
+  apply Finset.sum_congr rfl
+  intro i _
+  rcases hx i with hi | hi <;> simp [hi]
+
+theorem bernoulliSuccessCount_mgf {j : ℕ} (p : Fin j → unitInterval) (t : ℝ) :
+    mgf (fun x => (bernoulliSuccessCount x : ℝ)) (independentBernoulliMeasure p) t =
+      ∏ i, (1 - (p i : ℝ) + (p i : ℝ) * Real.exp t) := by
+  rw [mgf_congr (bernoulliSuccessCount_eq_sum_ae p)]
+  exact independentBernoulli_sum_mgf p t
+
 /-- A finite lattice measure, including zero masses and the empty lattice. -/
 def finiteLatticeMeasure (n : ℕ) (w : Fin n → ℝ≥0) : Measure ℝ :=
   ∑ i, (w i : ℝ≥0∞) • Measure.dirac (i : ℝ)
