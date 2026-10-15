@@ -47,7 +47,7 @@ one squeeze argument. The identical limit holds for the actual infimum
 | --- | --- |
 | Support and degeneracies | `Support`, `OrdinaryMomentsComplete`, `ZeroTiltMoments`: exact support, totalized mass, zero/full margins, mean and ordinary variance, including `N=0,1` |
 | Sampling and symmetries | `Symmetries`, `SliceSampling`, `PermutationSlice`: actual transpose/complements, uniform subset sampling, and finite random permutation sampling |
-| Factorial moments | `GeneralFactorialMoments`, `Cumulants`: all-degree factorial moment identity, actual raw moments through order four, exact first four cumulants |
+| Factorial moments | `GeneralFactorialMoments`, `Cumulants`, `HighCumulants`: all-degree factorial moment identity, actual raw moments through order six, exact cumulant and fixed-margin asymptotic interfaces |
 | Actual tilted feasibility | `CrossSum`, `TiltedAdmissibilityDirect`, `StrictAdmissibility`: actual tilted mean–variance inequality and its strict version |
 | Riccati and stationary algebra | `HypergeometricODE`, `HypergeometricODEMargins`, `StationaryCertificates`, `RiccatiCertificates`: actual differential identities, all-degree positive expansions, stationary comparison and residual certificates |
 | Global curvature | `StationaryGlobal`, `SmallSupportCurvature`, `CanonicalCurvatureComplete`, `SharpCurvatureTheorem`: the sharp symmetric minimum for every legal `N,k,m,t` |
@@ -74,8 +74,8 @@ the formal proof does not change that literature attribution.
 
 1. Classical Jacobi identification, root location and simple-root statement;
    all-parameter shifted Poisson–binomial distribution on an explicit product
-   probability space. The actual law equality is now proved by `HypergeomBernoulliLaw`;
-   classical Jacobi normalization and simple-root identification remain open.
+   probability space. The actual law equality is now proved by `HypergeomBernoulliLaw`; Jacobi PGF roots
+   are also proved simple by the ODE, while standard Jacobi normalization remains open.
 2. The main theorem's first-order limit is complete in `ConstantAsymptotics`.
 3. The fixed-population fourth-order Taylor formula is complete in
    `MGFDerivatives` and `LogMGFTaylor`, with actual derivatives, `o(t^4)`
@@ -84,8 +84,8 @@ the formal proof does not change that literature attribution.
    and uniform remainder in `source/new_results.tex`.
 5. The fixed-sample, all-success-count eventual maximum, joint analytic
    optimizer, and exact imbalance coefficient in `source/uniform_results.tex`.
-6. Jacobi root dispersion; the supplement's analytic contraction results, and
-   the globally optimized fourth-order/fixed-sample appendix theorems.
+6. Standard Jacobi normalization; the globally optimized fourth-order/fixed-sample
+   appendix theorems; and the exact continuous-margin response theorem.
 
 Item 1 is being extended in separate modules. Fixed-population Taylor
 expansion is a different statement from the optimized population asymptotics

@@ -20,7 +20,7 @@ These quantify over every legal sample size for each odd population.
 
 | ID | Manuscript assertion | Proved input | Remaining statement |
 | --- | --- | --- | --- |
-| F-01 | Classical Jacobi zeros | Actual canonical PGF splits over ℝ, has `j` negative roots counted with multiplicity, and factors into Bernoulli PGFs | Standard Jacobi normalization, `(-1,1)` localization and simplicity |
+| F-01 | Classical Jacobi zeros | Actual canonical PGF splits over ℝ, has `j` negative roots, is simple by its ODE, and factors into Bernoulli PGFs | Standard Jacobi normalization and `(-1,1)` localization |
 | F-02 | Full tilted Poisson–binomial law | Actual canonical coefficient/tilted PGF and product-space construction | Completed: `hypergeom_tilted_law_eq_shifted_independent_bernoulli` covers every legal margin, tilt, and degeneracy |
 | F-03 | Main first-order population limit | `ConstantAsymptotics` proves finite bounds and both exact-coefficient limits | Completed; module compiled successfully |
 | F-04 | Fourth-order log-MGF Taylor formula | `MGFDerivatives` and `LogMGFTaylor` | Completed: actual first four derivatives and fixed-population Peano/Lagrange remainders |
@@ -28,7 +28,7 @@ These quantify over every legal sample size for each odd population.
 | F-06 | Fixed-sample all-success maximum | All-parameter bound below the odd singleton benchmark | Success-count extremizers at fixed sample size, uniformly for all success counts at sufficiently large population |
 | F-07 | Exact imbalance coefficient | Moment identities and curvature certificates | Continuous-margin extension, analytic optimizer and complete response coefficient theorem |
 | F-08 | Higher cumulant expansions | All-degree factorial moments and exact cumulants through four | Completed through sixth order, including displayed κ₄, κ₅, κ₆ asymptotic remainders; higher optimized proxy expansion remains F-05 |
-| F-09 | Supplementary refinements | Sharp curvature and strict Laplace comparison | Jacobi root dispersion and analytic contraction, with their exact domains |
+| F-09 | Supplementary refinements | Sharp curvature, actual Bernoulli tilt geometry, and Jacobi root dispersion are proved | Analytic contraction on compact success-proportion intervals |
 | F-10 | Reverse even proxy classification | Balanced success margins attain the even bound for every nondegenerate sample size | Public `iff` for the complete even proxy maximizing-margin set |
 
 An incorrect pointwise odd constant curvature shortcut remains excluded:
