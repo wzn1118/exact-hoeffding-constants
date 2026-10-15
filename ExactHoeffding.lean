@@ -58,6 +58,8 @@ import ExactHoeffding.UniformLaplace
 import ExactHoeffding.VarianceOptimality
 import ExactHoeffding.ThreePointTangent
 import ExactHoeffding.ThreePointRolle
+import ExactHoeffding.ThreePointHermite
+import ExactHoeffding.ThreePointCircle
 import ExactHoeffding.CanonicalCurvatureEquality
 import ExactHoeffding.SmallSupportCurvature
 import ExactHoeffding.DegenerateCurvature
