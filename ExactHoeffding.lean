@@ -54,6 +54,8 @@ import ExactHoeffding.CanonicalCurvature
 import ExactHoeffding.CanonicalCurvatureComplete
 import ExactHoeffding.SharpCurvatureTheorem
 import ExactHoeffding.UniformLaplace
+import ExactHoeffding.VarianceOptimality
+import ExactHoeffding.ThreePointTangent
 import ExactHoeffding.CanonicalCurvatureEquality
 import ExactHoeffding.SmallSupportCurvature
 import ExactHoeffding.DegenerateCurvature
