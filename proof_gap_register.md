@@ -1,5 +1,14 @@
 # Proof Gap Register B
 
+Current 15 October full-closure work is recorded in
+[`formal_status/full_closure.md`](formal_status/full_closure.md).
+The table below records the earlier research baseline. On the full-closure
+branch, ordinary mean/variance including zero denominators, actual tilted
+admissibility, the stationary algebra certificate, Riccati positive
+certificate and global comparison lemmas have since been proved. Actual
+admissibility uses adjacent-mass cross sums and does not presuppose Jacobi
+factorization. Whole-manuscript certification is still pending.
+
 | ID | Gap | Current boundary | Required evidence | Status |
 | --- | --- | --- | --- | --- |
 | B-G-001 | Jacobi real-rootedness and positive-root factorization | No Lean interface currently connects the hypergeometric polynomial to Jacobi zeros. | A kernel-checked root-localization/factorization theorem with all parameter hypotheses. | Open; retained as a conditional gap |

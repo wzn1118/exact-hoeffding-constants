@@ -1,0 +1,11 @@
+'ExactHoeffding.linear_subsolution_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.linear_subsolution_comparison_of_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.quadratic_riccati_mean_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.log_laplace_le_of_mean_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.strict_linear_subsolution_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.strict_quadratic_riccati_mean_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.log_laplace_lt_of_strict_mean_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.quadratic_riccati_log_laplace_domination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.strict_quadratic_riccati_log_laplace_domination' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

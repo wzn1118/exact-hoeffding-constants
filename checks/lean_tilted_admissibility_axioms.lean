@@ -1,0 +1,12 @@
+import ExactHoeffding.TiltedAdmissibilityDirect
+
+#print axioms ExactHoeffding.hypergeomTiltUpDown_balance
+#print axioms ExactHoeffding.hypergeomTiltUpDown_cross
+#print axioms ExactHoeffding.hypergeomTiltUpDown_cross_order
+#print axioms ExactHoeffding.hypergeomTiltUp_sum
+#print axioms ExactHoeffding.hypergeomTiltUp_first
+#print axioms ExactHoeffding.hypergeomTiltDown_sum
+#print axioms ExactHoeffding.hypergeomTiltDown_first
+#print axioms ExactHoeffding.hypergeomTiltVariance_admissible
+#print axioms ExactHoeffding.hypergeomTiltVariance_admissible_of_margins
+#print axioms ExactHoeffding.hypergeomLogMGF_second_deriv_admissible

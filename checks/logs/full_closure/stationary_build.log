@@ -1,0 +1,5 @@
+⚠ [1024/1024] Built ExactHoeffding.StationaryCertificates (67s)
+warning: ExactHoeffding/StationaryCertificates.lean:252:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Build completed successfully (1024 jobs).

@@ -1,0 +1,14 @@
+ExactHoeffding/SmallSupportCurvature.lean:211:21: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'ExactHoeffding.hypergeom_one_draw_curvature_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeom_one_draw_curvature_balanced' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.threePointVariance_normal_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.threePointVariance_sqrt_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.threePointVariance_finite_population_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeomMass_two_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeomMass_two_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeomMass_two_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeom_two_draw_curvature_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeom_two_draw_curvature_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeom_two_draw_curvature_balanced' depends on axioms: [propext, Classical.choice, Quot.sound]
