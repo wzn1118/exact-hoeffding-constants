@@ -68,6 +68,7 @@ import ExactHoeffding.ThreePointHermitePositive
 import ExactHoeffding.ThreePointCircle
 import ExactHoeffding.ThreePointCircleObjective
 import ExactHoeffding.ThreePointExponential
+import ExactHoeffding.SliceExponentialAlgebra
 import ExactHoeffding.CanonicalCurvatureEquality
 import ExactHoeffding.SmallSupportCurvature
 import ExactHoeffding.DegenerateCurvature
