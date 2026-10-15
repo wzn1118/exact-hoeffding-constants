@@ -1,41 +1,34 @@
 # Lean 4 development — Exact Hoeffding Constants
 
-A Mathlib-backed formalization accompanying Zinan Wang's 2026 probability manuscript **Exact Hoeffding Constants for Finite Exchangeable Sequences**. The source code follows the manuscript's finite-population hypergeometric reduction and precise odd/even variance analysis.
+A Mathlib formalization of Zinan Wang's **Exact Hoeffding Constants for Finite Exchangeable Sequences**, including actual finite probability laws, exact parity constants, and their equality cases.
 
-## Structure
+## Main interfaces
 
-- `ExactHoeffding/Basic.lean`: quadratic finite-population algebra.
-- `ExactHoeffding/Contrasts.lean`: zero-sum contrasts and centering.
-- `ExactHoeffding/Hypergeometric.lean`: combinatorial sample masses.
-- `ExactHoeffding/Normalization.lean`: Vandermonde normalization, exact single-draw masses and MGF at zero.
-- `ExactHoeffding/Laplace.lean`: finite MGFs and a Bernoulli log-odds identity.
-- `ExactHoeffding/Sampling.lean`: one-draw hypergeometric/Bernoulli MGF identification and centering.
-- `ExactHoeffding/SharpExample.lean`: nonzero-tilt exact candidate and quadratic saturation.
-- `ExactHoeffding/Parity.lean`: even/odd normalized variance expressions.
-- `ExactHoeffding/CurvatureBridge.lean`: abstract curvature-to-Laplace theorem via global convexity.
-- `ExactHoeffding/MomentGenerating.lean`: first and second derivatives of finite moment-generating functions.
-- `ExactHoeffding/FactorialMoments.lean`: all-parameter first and second hypergeometric factorial-moment convolution identities.
-- `ExactHoeffding/OrdinaryMoments.lean`: normalized hypergeometric expectation for positive sample/success margins.
-- `ExactHoeffding/TiltedVariance.lean`: exact all-tilt log-Laplace second derivative as a normalized central moment.
-- `ExactHoeffding/CurvatureNonnegative.lean`: finite Cauchy–Schwarz and nonnegative log-Laplace curvature.
+- `SharpCurvatureTheorem`: sharp all-tilt hypergeometric curvature for every legal population and margin, with all-parameter equality in `AllParameterCurvatureEquality`.
+- `LaplaceEnvelopeTheorem`, `UniformLaplace`, `StrictUniformLaplace`: the scaled Bernoulli envelope, balanced limit, and quadratic domination.
+- `OddHypergeomExtremizers`, `EvenHypergeomExtremizers`: complete classifications of the maximizing margin pairs, including all sample sizes.
+- `VariationalIdentity`, `ExactParityConstants`, `ExactOddGlobalTheorem`: the actual real-cube exchangeability reduction, least valid coefficient, closed forms, and attaining margins.
+- `SharpWeightedTail`: weighted concentration and zero-variance endpoints.
+- `JacobiStandardNormalization`, `HypergeomBernoulliLaw`: classical Jacobi normalization and the actual tilted independent-Bernoulli representation.
+- `FixedSampleGlobalExtrema`: every fixed positive sample size, all success counts, and shared finite-range thresholds.
+- `JointGlobalOptimizer`, `JointOptimizedValue`: the jointly analytic unique global optimizer of the actual real-margin law near independent population and imbalance parameters, its normalized supremum value, balanced identity, and reflection.
+- `ActualMomentCumulantRecursion`: all-order actual moment–cumulant recursion; `FourthOrderMainTheorem`, `ActualNormalizedFourthCoefficient` and `OptimalProxyFourthExpansion`: the same actual global optimizer, third tilt coefficient, fourth optimized-value coefficient, analytic fifth-order remainder, and fourth-order singleton gap.
 
-The umbrella file `ExactHoeffding.lean` imports the complete source library. Toolchain: Lean 4 v4.33.0 + matching Mathlib.
+The umbrella `ExactHoeffding.lean` imports the certified development. The precise manuscript coverage and verification inventory are recorded in [theorem_to_lean.csv](theorem_to_lean.csv) and [proof_gap_register.md](proof_gap_register.md).
 
-## Build and check
+## Reproduction
+
+Lean 4.33.0 and Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d` are pinned by `lean-toolchain` and `lake-manifest.json`.
 
 ```bash
-lake update
 lake exe cache get
 lake build ExactHoeffding
 lake env lean ExactHoeffding.lean
+python3 checks/generate_axiom_audit.py --check
+lake env lean checks/full_closure_axioms.lean > lean_axioms.log
+python3 checks/check_axiom_output.py lean_axioms.log
 ```
 
-The `Lean 4 proof kernel` GitHub Actions workflow executes the build and scans for unsound proof placeholders.
+The `Lean 4 proof kernel` workflow reproduces these checks. The generated audit covers every public theorem in the actual umbrella import closure and checks its complete transitive axiom dependencies. The integrated 15 October checkpoint verifies **1518 public theorems in 252 project modules**; the reported dependencies are `propext`, `Classical.choice`, and `Quot.sound`. Evidence is retained in `checks/logs/full_closure/final_all_manuscript_umbrella_audit.log`.
 
-## Scope of certification
-
-The package establishes genuine combinatorial identities, first and second factorial moments, normalized expectation, exact all-tilt variance identities, nonnegative curvature, the exact odd-population single-coordinate **lower-bound equality**, and an abstract implication from a sharp upper-curvature certificate to a quadratic Laplace inequality.
-
-**Latest confirmed complete CI success:** [Lean kernel #38603075214](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38603075214), commit `aea3ced42bbbdb64ba57b98dde3c4174636c7abe`.
-
-**The complete sharp constant theorem is not yet formalized.** In particular, the global tilted-variance curvature inequality, uniform Riccati/Laplace barrier, all odd extremizers, and the exchangeability-to-hypergeometric variational reduction remain open formalization obligations. The repository maintains an explicit theorem-by-theorem status table in `LEAN_PROOF_STATUS.md` and does not treat Python test passes as Lean proofs.
+Copyright © 2026 Zinan Wang. Original source and documentation are governed by the repository's rights notices.

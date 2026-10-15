@@ -1,0 +1,8 @@
+compile_started=2026-10-15T18:15:43UTC
+module=AnalyticGlobalMaximum
+lean_exit_code=0
+module=JointBinomialOptimizer
+lean_exit_code=0
+module=JointFullAxisGlobalOptimizer
+ExactHoeffding/JointFullAxisGlobalOptimizer.lean:28:6: error: failed to prove positivity/nonnegativity/nonzeroness
+lean_exit_code=1

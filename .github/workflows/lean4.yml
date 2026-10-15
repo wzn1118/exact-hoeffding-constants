@@ -5,15 +5,31 @@ on:
     paths:
       - 'lean-toolchain'
       - 'lakefile.toml'
+      - 'lake-manifest.json'
       - 'ExactHoeffding.lean'
       - 'ExactHoeffding/**'
+      - 'checks/lean_axioms.lean'
+      - 'checks/full_closure_axioms.lean'
+      - 'checks/generate_axiom_audit.py'
+      - 'checks/check_axiom_output.py'
+      - 'checks/check_manuscript_concordance.py'
+      - 'formal_status/manuscript_concordance.md'
+      - 'source/**'
       - '.github/workflows/lean4.yml'
   pull_request:
     paths:
       - 'lean-toolchain'
       - 'lakefile.toml'
+      - 'lake-manifest.json'
       - 'ExactHoeffding.lean'
       - 'ExactHoeffding/**'
+      - 'checks/lean_axioms.lean'
+      - 'checks/full_closure_axioms.lean'
+      - 'checks/generate_axiom_audit.py'
+      - 'checks/check_axiom_output.py'
+      - 'checks/check_manuscript_concordance.py'
+      - 'formal_status/manuscript_concordance.md'
+      - 'source/**'
       - '.github/workflows/lean4.yml'
   workflow_dispatch:
 
@@ -32,8 +48,8 @@ jobs:
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
       - name: Fetch mathlib sources and compiled artifacts
         run: |
-          lake update
           lake exe cache get
+          git diff --exit-code -- lean-toolchain lakefile.toml lake-manifest.json
       - name: Compile formal development with Lean kernel
         run: lake build ExactHoeffding
       - name: Reject unsound proof placeholders
@@ -46,3 +62,14 @@ jobs:
           fi
       - name: Verify kernel-checkable outputs
         run: lake env lean ExactHoeffding.lean
+      - name: Audit theorem axioms
+        run: |
+          set -euo pipefail
+          python3 checks/generate_axiom_audit.py --check
+          python3 checks/check_manuscript_concordance.py
+          lake env lean checks/full_closure_axioms.lean | tee lean_axioms.log
+          python3 checks/check_axiom_output.py lean_axioms.log
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lean-axiom-audit
+          path: lean_axioms.log

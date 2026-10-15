@@ -1,0 +1,51 @@
+⚠ [1967/2025] Replayed ExactHoeffding.Normalization
+warning: ExactHoeffding/Normalization.lean:73:17: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/Normalization.lean:73:17: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [1968/2025] Replayed ExactHoeffding.SharpExample
+warning: ExactHoeffding/SharpExample.lean:45:26: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/SharpExample.lean:56:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/SharpExample.lean:76:34: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/SharpExample.lean:76:34: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [2128/2175] Replayed ExactHoeffding.CurvatureBridge
+warning: ExactHoeffding/CurvatureBridge.lean:28:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [2168/2175] Replayed ExactHoeffding.TiltedVariance
+warning: ExactHoeffding/TiltedVariance.lean:23:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [2170/2175] Replayed ExactHoeffding.CurvatureNonnegative
+warning: ExactHoeffding/CurvatureNonnegative.lean:38:18: This simp argument is unused:
+  finiteTiltFirst
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [a]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/CurvatureNonnegative.lean:44:18: This simp argument is unused:
+  finiteTiltSecond
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [a]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [2172/2175] Built ExactHoeffding.PoissonBinomial (11s)
+✔ [2173/2175] Built ExactHoeffding.Chernoff (11s)
+✔ [2174/2175] Built ExactHoeffding (6.5s)
+Build completed successfully (2175 jobs).

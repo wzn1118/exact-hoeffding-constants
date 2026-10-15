@@ -1,5 +1,7 @@
 import ExactHoeffding.Hypergeometric
 import ExactHoeffding.Laplace
+import Mathlib.Data.Nat.Choose.Vandermonde
+import Mathlib.Algebra.BigOperators.Field
 
 /-!
 # Vandermonde normalization of the hypergeometric distribution

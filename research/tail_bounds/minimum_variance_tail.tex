@@ -1,0 +1,364 @@
+\documentclass[11pt]{article}
+\usepackage[margin=26mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,hyperref}
+\hypersetup{pdftitle={A Piecewise KL Bound from Hypergeometric Variance Envelopes},pdfauthor={Zinan Wang}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Hyp}{Hyp}
+\newcommand{\E}{\mathbb E}
+\title{A Piecewise KL Bound from Hypergeometric Variance Envelopes}
+\author{Zinan Wang\thanks{Copyright \textcopyright\ 2026 Zinan Wang. All rights reserved.}}
+\date{15 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We integrate the pointwise minimum of two bounds on hypergeometric tilted
+variance: a finite-population quadratic envelope and the classical
+Poisson--binomial admissibility bound. The resulting rate has a closed
+piecewise form, with a scaled Bernoulli relative entropy in its central
+region and tangent-corrected binomial relative entropies in both tails.
+It strictly improves the binomial KL bounds obtained by sampling and
+success-count duality, and it improves the original scaled KL rate beyond
+two explicit switching points. We also compare it with the optimal uniform
+quadratic bound and prove that optimized factorial-moment bounds dominate
+MGF-based Chernoff bounds at integer thresholds.
+\end{abstract}
+
+\section{Parameters and established variance inequalities}
+Throughout Sections 1--4, assume
+\begin{equation}\label{domain}
+ N\ge7,\qquad 3\le m\le k\le\lfloor N/2\rfloor,\qquad N>2m.
+\end{equation}
+Both population parities are allowed. Let $H\sim\Hyp(N,k,m)$, and put
+\[
+ p=k/N,\quad q=1-p,\quad \mu=mp,\quad
+ M=\frac{m(N-m)}{N-1},\quad a=\frac{N-2m}{N-2},\quad d=1-2p.
+\]
+All masses on $\{0,\ldots,m\}$ are positive. Write
+$\Lambda(t)=\log\E e^{tH}$, $u=\Lambda'(t)$, and
+$V(u)=\Lambda''(t(u))$, where $t(u)$ is the inverse tilted-mean map.
+The mean map is strictly increasing from $\mathbb R$ onto $(0,m)$.
+
+We use the two inequalities established in the accompanying manuscript
+\cite{Wang}:
+\begin{align}
+ V(u)&\le B(u):=\frac{u(m-u)}m,\label{PB}\\
+ V(u)&\le P(u):=Mpq+ad(u-\mu)-\frac{a^2}{M}(u-\mu)^2.
+ \label{barrier}
+\end{align}
+The first follows from the classical Jacobi real-root representation as a
+sum of independent Bernoulli variables; the second is its quadratic
+variance-envelope refinement. In \eqref{barrier}, equality holds exactly
+at $u=\mu$. In particular, $P(\mu)=Mpq>0$, and the endpoint calculations in
+\cite{Wang} give $P(0)>0$ and $P(m)>0$. Concavity implies $P>0$ on $[0,m]$.
+The results below are consequences and refinements of these established
+inequalities; their proof does not assert a new Jacobi factorization or a
+new two-level exchangeability reduction.
+
+Define binary relative entropy by
+\[
+ D(z\Vert p)=z\log\frac zp+(1-z)\log\frac{1-z}{1-p},\qquad 0\le z\le1,
+\]
+using the continuous endpoint values. All logarithms are natural.
+
+\section{Integration in the tilted mean}
+\begin{theorem}[Variance-envelope integration]\label{integration}
+Let $X$ have finite support with minimum $l$, maximum $h$, and positive
+mass at both endpoints, with $l<h$. Let $\mu=\E X$ and
+$I(v)=\sup_t\{tv-\log\E e^{tX}\}$.
+Suppose its tilted variance $V(u)$ is bounded by a continuous function
+$Q(u)>0$ on $(l,h)$. Set
+\[
+ J_Q(v)=
+ \begin{cases}
+ \displaystyle\int_\mu^v\frac{v-u}{Q(u)}\,du,&\mu\le v<h,\\[5pt]
+ \displaystyle\int_v^\mu\frac{u-v}{Q(u)}\,du,&l<v\le\mu.
+ \end{cases}
+\]
+Then $I(v)\ge J_Q(v)$. Consequently
+\[
+ \Pr(X\ge v)\le e^{-J_Q(v)}\quad(v\ge\mu),\qquad
+ \Pr(X\le v)\le e^{-J_Q(v)}\quad(v\le\mu).
+\]
+The same statements hold at $l,h$ whenever the displayed integrals have
+finite one-sided limits. If $V<Q$ on an interval of positive length between
+$\mu$ and $v$, then $I(v)>J_Q(v)$.
+\end{theorem}
+\begin{proof}
+The tilted-mean map is strictly increasing, with derivative $V>0$.
+For $v\in(l,h)$, differentiation of its Legendre transform gives
+$I'(v)=t(v)$, $I''(v)=1/V(v)$, and $I(\mu)=I'(\mu)=0$.
+Integrating twice gives exactly the displayed integrals with $V$ in place
+of $Q$. Their kernels are nonnegative on the respective integration
+intervals, proving both the comparison and its strict version.
+Markov's inequality, optimized over $t\ge0$ for the upper tail and
+$t\le0$ for the lower tail, proves the tail assertions.
+At the endpoints, the finite-support exponential sum gives
+$I(l)=-\log\Pr(X=l)$ and $I(h)=-\log\Pr(X=h)$.
+Taking limits in the integral comparisons completes the proof.
+\end{proof}
+
+The rate obtained from $P$ is
+\begin{equation}\label{IP}
+ I_P(v)=\frac M{a^2}D\left(p+\frac aM(v-\mu)\,\middle\Vert\,p\right).
+\end{equation}
+Indeed, $I_P''=1/P$ and $I_P(\mu)=I_P'(\mu)=0$.
+Its KL argument remains strictly inside $(0,1)$ for $0\le v\le m$, since
+\[
+ 1-\frac{am}{M}
+ =\frac{N(m-1)}{(N-2)(N-m)}>0.
+\]
+Thus an endpoint of the hypergeometric support never requires an invalid
+KL argument in \eqref{IP}. The corresponding rate for $B$ is
+\begin{equation}\label{IB}
+ I_B(v)=mD(v/m\Vert p).
+\end{equation}
+
+For completeness, direct optimization of the established Laplace bound
+\[
+ \log\E e^{t(H-\mu)}\le
+ \frac M{a^2}\{\log(q+pe^{at})-pat\}
+\]
+at threshold $v$ gives
+$t_*=a^{-1}\log[\theta q/(p(1-\theta))]$,
+where $\theta=p+a(v-\mu)/M$, and exponent $I_P(v)$.
+This is the ordinary Bernoulli Chernoff transform. For an abstract
+Bernoulli envelope, $\theta=0,1$ are interpreted by $t\to\mp\infty$;
+values outside $[0,1]$ are not inserted into $D$.
+
+\section{A closed piecewise rate}
+Put
+\[
+ c=\frac1m-\frac{a^2}{M},\qquad
+ h=(1-a)d,\qquad b=(m-M)pq,
+\]
+and define
+\begin{equation}\label{switch}
+ r_\pm=\mu+\frac{h\pm\sqrt{h^2+4cb}}{2c}.
+\end{equation}
+\begin{theorem}[Piecewise KL rate]\label{piecewise}
+Under \eqref{domain}, $0<r_-<\mu<r_+<m$. The rate obtained by integrating
+$1/\min(P,B)$ is
+\begin{equation}\label{J}
+ J(v)=
+ \begin{cases}
+ I_B(v)+I_P(r_-)-I_B(r_-)
+ +(v-r_-)[I_P'(r_-)-I_B'(r_-)],&0\le v<r_-,\\
+ I_P(v),&r_-\le v\le r_+,\\
+ I_B(v)+I_P(r_+)-I_B(r_+)
+ +(v-r_+)[I_P'(r_+)-I_B'(r_+)],&r_+<v\le m.
+ \end{cases}
+\end{equation}
+It gives valid upper and lower tail bounds as in Theorem~\ref{integration}.
+For every $v\ne\mu$ in $[0,m]$,
+\begin{equation}\label{strict}
+ I(v)>J(v)>I_B(v),\qquad J(v)\ge I_P(v),
+\end{equation}
+and $J(v)>I_P(v)$ holds exactly outside $[r_-,r_+]$.
+\end{theorem}
+\begin{proof}
+Writing $y=u-\mu$ gives $P(u)-B(u)=cy^2-hy-b$.
+Here $b>0$ and
+\[
+ c=\frac{(m-1)\{3N^2-4N-4m(N-1)\}}
+ {m(N-m)(N-2)^2}>0,
+\]
+because $m<N/2$ makes the bracket exceed $N(N-2)>0$.
+The difference is negative at $\mu$ and positive at $0,m$; hence its
+two roots are precisely \eqref{switch}, with the asserted locations.
+It follows that $\min(P,B)=P$ between the roots and $B$ outside.
+Integrating with zero value and derivative at $\mu$ yields \eqref{J};
+the affine corrections are forced by continuity of the rate and its
+first derivative at each root. In fact $J$ is twice continuously
+differentiable at the roots because $P=B$ there.
+
+Comparison of the nonnegative integration kernels gives $J\ge I_P,I_B$.
+On every noncentral path the interval near $\mu$ has $P<B$, proving
+$J>I_B$. A path leaving $[r_-,r_+]$ also crosses an interval where $B<P$,
+proving the characterization of $J>I_P$. Finally, $V<P$ except at $\mu$,
+so the central interval gives $I>J$ on every noncentral path.
+At $0,m$, $1/B$ has simple poles, canceled by the endpoint integration
+kernels; the limits are finite and the same strict arguments apply.
+\end{proof}
+
+\begin{corollary}[Integer and two-sided events]
+For real $x>0$, set
+$z_+=\lceil\mu+x\rceil$ and $z_-=\lfloor\mu-x\rfloor$.
+Use $e^{-J(z_+)}$ for the upper event when $z_+\le m$, and zero otherwise;
+use $e^{-J(z_-)}$ for the lower event when $z_-\ge0$, and zero otherwise.
+Their sum, capped at one, bounds $\Pr(|H-\mu|\ge x)$.
+\end{corollary}
+
+\section{Comparison boundaries}
+\subsection{Four binomial KL bounds}
+Sampling duality and complementation give the following four classical
+binomial Chernoff rates at a fixed threshold $v$:
+\begin{align*}
+ R_1(v)&=mD(v/m\Vert k/N),&
+ R_2(v)&=kD(v/k\Vert m/N),\\
+ R_3(v)&=(N-m)D((k-v)/(N-m)\Vert k/N),&
+ R_4(v)&=(N-k)D((m-v)/(N-k)\Vert m/N).
+\end{align*}
+All have value and derivative zero at $\mu$. Their reciprocal second
+derivatives are, respectively,
+\[
+ B_1=B,\quad B_2=\frac{v(k-v)}k,\quad
+ B_3=\frac{(k-v)(N-m-k+v)}{N-m},\quad
+ B_4=\frac{(m-v)(N-k-m+v)}{N-k}.
+\]
+With $L=k-m\ge0$ and $R=N-m-k\ge0$,
+\begin{align*}
+ B_2-B&=\frac{(k-m)v^2}{mk}\ge0,\\
+ B_4-B&=\frac{(N-k-m)(m-v)^2}{m(N-k)}\ge0,\\
+ B_3-B&=\frac{Lv^2+R(m-v)^2+mLR}{m(N-m)}\ge0.
+\end{align*}
+Therefore $R_1=I_B\ge R_j$ for $j=2,3,4$ on $[0,m]$, and
+Theorem~\ref{piecewise} strictly improves their maximum at every
+noncentral threshold. Duality itself is classical and is explicitly used
+by Mannalath, Zapatero and Curty~\cite{MZC}; the improvement here comes
+from integrating the smaller mean-dependent variance bound.
+
+\subsection{The optimal uniform quadratic coefficient}
+Define
+\[
+ \kappa_N=\begin{cases}1,&N\text{ even},\\
+ [N\operatorname{artanh}(1/N)]^{-1},&N\text{ odd},\end{cases}
+ \qquad V_* = M\kappa_N/4.
+\]
+This is the coefficient for $H-\mu$ obtained from the exact uniform
+exchangeability constant in \cite{Wang}, in the convention
+$\log\E e^{t(H-\mu)}\le V_*t^2/2$.
+The optimal Bernoulli proxy is
+\[
+ \beta(p)=\frac{1-2p}{2\log((1-p)/p)},\qquad \beta(1/2)=1/4.
+\]
+Under \eqref{domain}, $M\beta(p)\le V_*$. Consequently the whole scaled
+Laplace envelope is bounded above by $M\beta(p)t^2/2$, and conjugation gives
+\begin{equation}\label{quadratic}
+ J(v)\ge I_P(v)\ge \frac{(v-\mu)^2}{2M\beta(p)}
+ \ge\frac{(v-\mu)^2}{2V_*}.
+\end{equation}
+Thus the scaled KL and piecewise bounds are never weaker than this
+particular uniform quadratic bound. They need not dominate the numerically
+optimized quadratic proxy for each fixed hypergeometric law.
+
+For $p<1/2$, equality in the middle inequality at a nonzero displacement
+requires $\theta=1-p$, hence $v-\mu=M(1-2p)/a>0$; this follows from the
+unique nonzero equality in the Bernoulli proxy inequality.
+For odd $N$, equality with the final uniform rate additionally requires
+$k=(N-1)/2$. For even $N$, equality $M\beta(p)=V_*$ requires $p=1/2$,
+but the balanced Bernoulli quadratic inequality is strict at nonzero tilt.
+The inequality $J\ge I_P$ is an equality precisely in the central region.
+
+Writing $x=v-\mu$, the local expansion is
+\[
+ I_P(\mu+x)=\frac{x^2}{2Mpq}
+ -\frac{a(1-2p)x^3}{6M^2p^2q^2}
+ +\frac{a^2(p^3+q^3)x^4}{12M^3p^3q^3}+O(x^5).
+\]
+This shows the directional asymmetry and the variance-scale improvement
+near the mean. Since $M<m$, $I_P>I_B$ locally, but the unspliced $I_P$
+can be smaller than $I_B$ in the tails. Theorem~\ref{piecewise} removes
+this loss relative to the four binomial bounds.
+
+\subsection{Exact-variance Bennett and Bernstein bounds}
+Put $v_0=Mpq$ and $h_0(z)=(1+z)\log(1+z)-z$.
+The Bennett exponent in Greene--Wellner~\cite[Theorem 3]{GW} is
+$v_0h_0(x/v_0)$; their Bernstein corollary replaces it by
+$x^2/[2(v_0+x/3)]$. For either tail, the scaled rate is strictly larger
+than the Bennett exponent at every nonzero supported deviation.
+Indeed, for $s>0$,
+\[
+ P(\mu+s)=v_0+ad s-a^2s^2/M<v_0+s,\qquad
+ P(\mu-s)=v_0-ad s-a^2s^2/M<v_0+s,
+\]
+because $0\le ad<1$. The second derivative of $v_0h_0(x/v_0)$ is
+$1/(v_0+x)$, while that of $I_P(\mu\pm x)$ is $1/P(\mu\pm x)$.
+Both rates and their first derivatives vanish at zero. Integrating the
+strict comparison twice, and then using $J\ge I_P$, proves the assertion.
+The standard inequality $h_0(z)\ge z^2/[2(1+z/3)]$ gives the Bernstein
+comparison as well. This does not compare $J$ with Greene--Wellner's
+other bounds containing a prefactor and a quartic exponent.
+
+\subsection{Optimized factorial moments}
+\begin{proposition}[A comparison with exact Chernoff]\label{factorial}
+Let $X$ be nonnegative and integer-valued with bounded support, and let
+$d\ge1$ be an integer. Define
+\[
+ F_d=\min_{0\le j\le d}\frac{\E\binom Xj}{\binom dj}.
+\]
+Then
+\[
+ \Pr(X\ge d)\le F_d\le
+ \inf_{t\ge0}\E e^{t(X-d)}.
+\]
+For the hypergeometric law,
+\[
+ \frac{\E\binom Hj}{\binom dj}
+ =\frac{(k)_{\underline j}(m)_{\underline j}}
+ {(N)_{\underline j}(d)_{\underline j}},\qquad 0\le j\le d.
+\]
+In particular, at integer upper thresholds $d>\mu$ in \eqref{domain},
+\[
+ \Pr(H\ge d)\le F_d\le e^{-I(d)}<e^{-J(d)}.
+\]
+The lower-tail version follows by applying the result to $m-H$.
+\end{proposition}
+\begin{proof}
+For $j\le d$, $\binom Xj\ge\binom dj$ on $\{X\ge d\}$, which proves
+the first inequality. For $z=e^t-1\ge0$, the binomial theorem gives
+\[
+ \E(1+z)^X=\sum_{j\ge0}\E\binom Xj z^j
+ \ge F_d\sum_{j=0}^d\binom dj z^j=F_d(1+z)^d.
+\]
+Divide by $e^{td}$ and take the infimum. Hypergeometric factorial
+moments give the displayed ratio.
+\end{proof}
+
+Optimized hypergeometric factorial-moment bounds are already studied
+in \cite{MZC}; neither that method nor its optimization is new here.
+Earlier comparisons of moment bounds with Chernoff bounds include
+Philips and Nelson~\cite{PN}; Proposition~\ref{factorial} provides the
+finite integer-valued binomial-basis argument used for the present comparison.
+For $\mu<d\le\min(k,m)$, a valid minimizing index is
+\[
+ j_* =\left\lceil\frac{Nd-km}{N+d-k-m}\right\rceil\in\{1,\ldots,d\}.
+\]
+Indeed the ratio of consecutive candidates is at most one exactly when
+$j\le(Nd-km)/(N+d-k-m)$. When this fraction is integral, the two adjacent
+indices tie if both are admissible. At $d=\min(k,m)$ the valid endpoint
+index is $j=d$; one must not use the undefined denominator
+$(d)_{\underline{d+1}}$. These facts set a precise comparison boundary:
+the piecewise KL expression is an explicit refinement of the stated KL
+and uniform quadratic envelopes, not a universal improvement over
+optimized factorial moments or all existing finite-population bounds.
+
+\begin{thebibliography}{9}
+\bibitem{Wang} Z. Wang, \emph{Exact Hoeffding Constants for Finite Exchangeable
+Sequences}, 2026, main repository source at commit
+\texttt{ebf534362f596175a24fc33e9eebc1cd4145349f},
+the uniform Laplace comparison and quadratic variance-envelope lemma in
+\texttt{source/odd\_uniform.tex}.
+\bibitem{Hoeffding} W. Hoeffding, Probability inequalities for sums of bounded
+random variables, \emph{J. Amer. Statist. Assoc.} 58 (1963), 13--30.
+\bibitem{Chvatal} V. Chv\'atal, The tail of the hypergeometric distribution,
+\emph{Discrete Math.} 25 (1979), 285--287.
+\bibitem{MZC} V. Mannalath, V. Zapatero and M. Curty,
+\emph{Elementary tail bounds on the hypergeometric distribution},
+arXiv:2510.19726v2 (2025), Propositions 1--2;
+\url{https://arxiv.org/abs/2510.19726v2}; published in
+\emph{Communications in Statistics---Theory and Methods} 55 (2026),
+6938--6943, \url{https://doi.org/10.1080/03610926.2026.2676012}.
+\bibitem{GW} E. Greene and J. A. Wellner, Exponential bounds for the
+hypergeometric distribution, \emph{Bernoulli} 23 (2017), 1911--1950.
+\bibitem{BM} R. Bardenet and O.-A. Maillard, Concentration inequalities for
+sampling without replacement, \emph{Bernoulli} 21 (2015), 1361--1385.
+\bibitem{PN} T. K. Philips and R. Nelson, The moment bound is tighter than
+Chernoff's bound for positive tail probabilities,
+\emph{The American Statistician} 49 (1995), 175--178.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,5 @@
+compile_started=2026-10-15T21:42:01UTC
+umbrella_exit_code=0
+audit_exit_code=0
+PASS: 1518 public theorems; only propext, Classical.choice, Quot.sound
+PASS: all 30 named manuscript results have complete concordance rows and imported public Lean theorem references

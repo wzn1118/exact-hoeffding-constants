@@ -1,0 +1,33 @@
+ExactHoeffding/RiccatiCertificates.lean:38:44: warning: Variable name `hNm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hNm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ExactHoeffding/RiccatiCertificates.lean:56:34: warning: Variable name `hN1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hN1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ExactHoeffding/RiccatiCertificates.lean:57:5: warning: Variable name `hN2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hN2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ExactHoeffding/RiccatiCertificates.lean:57:19: warning: Variable name `hNm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hNm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ExactHoeffding/RiccatiCertificates.lean:142:5: warning: Variable name `hN` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hN
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ExactHoeffding/RiccatiCertificates.lean:150:40: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

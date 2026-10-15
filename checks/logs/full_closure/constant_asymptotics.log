@@ -1,0 +1,23 @@
+compile_started=2026-10-15T13:20:20+00:00
+ExactHoeffding/ConstantAsymptotics.lean:40:34: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ExactHoeffding/ConstantAsymptotics.lean:64:31: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ExactHoeffding/ConstantAsymptotics.lean:64:31: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+ExactHoeffding/ConstantAsymptotics.lean:70:27: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ExactHoeffding/ConstantAsymptotics.lean:104:31: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ExactHoeffding/ConstantAsymptotics.lean:104:31: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+ExactHoeffding/ConstantAsymptotics.lean:115:27: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+lean_exit_code=0

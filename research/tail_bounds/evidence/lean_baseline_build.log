@@ -1,0 +1,58 @@
+✔ [2157/2172] Built ExactHoeffding.Basic (12s)
+✔ [2158/2172] Built ExactHoeffding.Contrasts (5.4s)
+✔ [2159/2172] Built ExactHoeffding.Hypergeometric (5.4s)
+✔ [2160/2172] Built ExactHoeffding.Parity (5.7s)
+✔ [2161/2172] Built ExactHoeffding.Laplace (9.6s)
+⚠ [2162/2172] Built ExactHoeffding.Normalization (6.0s)
+warning: ExactHoeffding/Normalization.lean:73:17: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/Normalization.lean:73:17: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [2163/2172] Built ExactHoeffding.CurvatureBridge (7.2s)
+warning: ExactHoeffding/CurvatureBridge.lean:28:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [2164/2172] Built ExactHoeffding.SharpExample (10s)
+warning: ExactHoeffding/SharpExample.lean:45:26: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/SharpExample.lean:56:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/SharpExample.lean:76:34: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/SharpExample.lean:76:34: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+✔ [2165/2172] Built ExactHoeffding.Sampling (10s)
+✔ [2166/2172] Built ExactHoeffding.FactorialMoments (10s)
+✔ [2167/2172] Built ExactHoeffding.MomentGenerating (10s)
+⚠ [2168/2172] Built ExactHoeffding.TiltedVariance (34s)
+warning: ExactHoeffding/TiltedVariance.lean:23:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [2169/2172] Built ExactHoeffding.OrdinaryMoments (37s)
+⚠ [2170/2172] Built ExactHoeffding.CurvatureNonnegative (7.3s)
+warning: ExactHoeffding/CurvatureNonnegative.lean:38:18: This simp argument is unused:
+  finiteTiltFirst
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [a]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/CurvatureNonnegative.lean:44:18: This simp argument is unused:
+  finiteTiltSecond
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [a]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [2171/2172] Built ExactHoeffding (5.8s)
+Build completed successfully (2172 jobs).

@@ -13,13 +13,19 @@ if manifest.exists():
         if match:
             tracked.add(match.group(1))
 tracked.update({
-    'README.md','README_zh.md','CITATION.cff','REVISION_NOTES_2026-10-11.md',
+    'README.md','README_zh.md','CITATION.cff','REVISION_NOTES_2026-10-11.md','release_notes.md',
     'manuscript.pdf','supplementary_refinements.pdf',
     'submission/manuscript.tex','requirements.txt','run_all.sh',
     'build_manuscript.sh','.github/workflows/publish-manuscript.yml',
     'checks/refresh_checksums.py',
+    'ExactHoeffding.lean','lean-toolchain','lakefile.toml','lake-manifest.json',
+    'LEAN_PROOF_STATUS.md','README_LEAN4.md','proof_gap_register.md',
+    'theorem_to_lean.csv','checks/lean_axioms.lean','checks/verify_research.sh',
+    '.github/workflows/lean4.yml','.github/workflows/research-validation.yml',
 })
-for group in ['source/*.tex','checks/*.py','checks/logs/*.log','docs/*.md','docs/*.tex','docs/proof_certification_2026-10-11.pdf']:
+for group in ['source/*.tex','submission/*.tex','submission/*.md','submission/release/*','checks/*.py','checks/logs/*.log','docs/*.md','docs/*.tex','docs/proof_certification_2026-10-11.pdf']:
+    tracked.update(p.relative_to(root).as_posix() for p in root.glob(group) if p.is_file())
+for group in ['ExactHoeffding/*.lean','formal_status/*.md','checks/*.lean','checks/logs/full_closure/*.log','submission/release/build_evidence/*','research/tail_bounds/**/*','checks/results/piecewise_kl_*']:
     tracked.update(p.relative_to(root).as_posix() for p in root.glob(group) if p.is_file())
 lines=[]
 for name in sorted(tracked):

@@ -1,0 +1,17 @@
+import ExactHoeffding.ThreePointTangent
+import ExactHoeffding.ThreePointHermite
+import ExactHoeffding.ThreePointCircle
+import ExactHoeffding.ThreePointRolle
+
+#print axioms ExactHoeffding.threePointWeight_sum
+#print axioms ExactHoeffding.threePointWeight_first_moment
+#print axioms ExactHoeffding.threePointWeight_second_moment
+#print axioms ExactHoeffding.threePoint_tangent_stationary_affine
+#print axioms ExactHoeffding.threeHermitePolynomial_values
+#print axioms ExactHoeffding.threeHermitePolynomial_derivatives
+#print axioms ExactHoeffding.threeHermitePolynomial_fifth_derivative
+#print axioms ExactHoeffding.IsLocalMax.second_deriv_nonpos
+#print axioms ExactHoeffding.circleCoordinate_second_deriv_zero
+#print axioms ExactHoeffding.threeCircle_sum
+#print axioms ExactHoeffding.threeCircle_sq_sum
+#print axioms ExactHoeffding.three_double_zeros_fifth_zero

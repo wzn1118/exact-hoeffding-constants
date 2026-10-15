@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "frozen_on": "2026-10-15",
+  "precision_decimal_digits": 70,
+  "threshold_rule": "All integer thresholds from 0 through m; also both switching points and midpoint thresholds between them and support endpoints. The exact lattice event uses ceil(v) or floor(v).",
+  "cases": [[7,3,3],[8,3,3],[8,4,3],[9,3,3],[9,4,3],[9,4,4],[15,3,3],[15,7,3],[15,7,7],[16,3,3],[16,8,3],[16,8,7],[31,3,3],[31,15,3],[31,15,15],[32,16,3],[32,16,15],[101,3,3],[101,50,17],[101,50,49]],
+  "outside_envelope_cases": [[6,3,3],[10,1,1],[10,2,2],[16,8,8],[15,10,12]],
+  "benchmarks": ["exact_lattice_tail", "exact_mgf_chernoff_diagnostic", "scaled_kl", "piecewise_kl", "four_symmetry_binomial_kl", "optimal_uniform_quadratic", "hoeffding", "serfling", "optimized_factorial_moment"]
+}

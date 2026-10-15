@@ -5,8 +5,8 @@ authors:
   - family-names: Wang
     given-names: Zinan
 type: software
-version: "1.1.0"
-date-released: "2026-10-11"
+version: "1.2.0"
+date-released: "2026-10-15"
 repository-code: "https://github.com/wzn1118/exact-hoeffding-constants"
 preferred-citation:
   type: unpublished
@@ -15,7 +15,7 @@ preferred-citation:
     - family-names: Wang
       given-names: Zinan
   year: 2026
-  date-published: "2026-10-11"
+  date-published: "2026-10-15"
   url: "https://github.com/wzn1118/exact-hoeffding-constants"
   notes: "Revised manuscript. Copyright (c) 2026 Zinan Wang. All rights reserved."
 abstract: >-

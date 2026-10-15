@@ -1,0 +1,39 @@
+name: Verify probability research
+on:
+  pull_request:
+    paths:
+      - 'research/**'
+      - 'checks/verify_piecewise_kl.py'
+      - 'checks/verify_research.sh'
+      - '.github/workflows/research-validation.yml'
+  push:
+    paths:
+      - 'research/**'
+      - 'checks/verify_piecewise_kl.py'
+      - 'checks/verify_research.sh'
+      - '.github/workflows/research-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  analytic-certificates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements.txt
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended lmodern poppler-utils
+      - name: Validate frozen matrix and compile research note
+        run: bash checks/verify_research.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: probability-research-evidence
+          path: |
+            research/tail_bounds/minimum_variance_tail.pdf
+            research/tail_bounds/evidence/
+            checks/results/piecewise_kl_*
+            build/tail_bounds/*.log

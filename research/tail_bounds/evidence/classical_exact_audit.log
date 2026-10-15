@@ -1,0 +1,8 @@
+PASS: exact endpoint strictness checks: 19600 all-success rows and 19600 all-failure rows
+PASS: exact upper-tail/KL sweep: 154825 comparisons; strict: 153600 equality: 1225 dual violations: 0
+PASS: exact lower-tail/KL sweep: 154825 comparisons; strict: 153600 equality: 1225 dual violations: 0
+PASS: exact symmetry-transposition checks: 309650
+CERTIFICATE sample N,K,m,r = (17, 8, 4, 3)
+  exact tail = 41/170
+  KL/Chernoff = 131072/250563
+  exact gap = 706421/2505630

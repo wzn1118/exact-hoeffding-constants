@@ -1,4 +1,5 @@
 import ExactHoeffding.Normalization
+import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
 /-!
 # Differentiation of finite exponential moments

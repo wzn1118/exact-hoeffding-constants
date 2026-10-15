@@ -1,0 +1,105 @@
+compile_started=2026-10-15T16:52:32UTC
+module=RescaledFactorialFamily
+lean_exit_code=0
+compile_started=2026-10-15T16:52:43UTC
+module=RescaledMGFBridge
+lean_exit_code=0
+compile_started=2026-10-15T16:52:51UTC
+module=AnalyticQuotientKernels
+lean_exit_code=0
+compile_started=2026-10-15T16:53:00UTC
+module=RescaledProxyAnalytic
+lean_exit_code=0
+compile_started=2026-10-15T16:53:11UTC
+module=RescaledQLimit
+ExactHoeffding/RescaledQLimit.lean:45:22: warning: This simp argument is unused:
+  Nat.cast_descFactorial_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rescaledMean]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ExactHoeffding/RescaledQLimit.lean:56:23: warning: This simp argument is unused:
+  mul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [zero_mul, zero_add, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ExactHoeffding/RescaledQLimit.lean:56:33: warning: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [zero_mul, mul_zero, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean_exit_code=0
+compile_started=2026-10-15T16:53:21UTC
+module=LimitProxyStrict
+lean_exit_code=0
+compile_started=2026-10-15T16:53:32UTC
+module=RescaledActualProxy
+lean_exit_code=0
+compile_started=2026-10-15T16:53:42UTC
+module=RescaledCompactConvergence
+lean_exit_code=0
+compile_started=2026-10-15T16:53:51UTC
+module=ActualProxyTail
+lean_exit_code=0
+compile_started=2026-10-15T16:54:01UTC
+module=ActualOptimizerLocalization
+lean_exit_code=0
+compile_started=2026-10-15T16:54:13UTC
+module=LimitProxyCurvature
+lean_exit_code=0
+compile_started=2026-10-15T16:54:25UTC
+module=AnalyticTiltPartial
+lean_exit_code=0
+compile_started=2026-10-15T16:54:31UTC
+module=RescaledUniformConcavity
+lean_exit_code=0
+compile_started=2026-10-15T16:54:40UTC
+module=ActualUniqueOptimizer
+lean_exit_code=0
+compile_started=2026-10-15T16:54:50UTC
+module=AnalyticImplicitTilt
+lean_exit_code=0
+compile_started=2026-10-15T16:54:57UTC
+module=RescaledAnalyticOptimizer
+lean_exit_code=0
+compile_started=2026-10-15T16:55:06UTC
+module=RescaledTiltCoefficient
+lean_exit_code=0
+compile_started=2026-10-15T16:55:17UTC
+module=RescaledMixedDerivative
+lean_exit_code=0
+compile_started=2026-10-15T16:55:28UTC
+module=AnalyticOptimizerLeading
+lean_exit_code=0
+compile_started=2026-10-15T16:55:41UTC
+module=RescaledOptimumLeading
+lean_exit_code=0
+compile_started=2026-10-15T16:55:53UTC
+module=ActualAnalyticAsymptotics
+lean_exit_code=0
+compile_started=2026-10-15T16:56:03UTC
+module=ActualOptimizerPopulationLimit
+lean_exit_code=0
+compile_started=2026-10-15T16:56:11UTC
+module=AnalyticCurveSecondDerivative
+lean_exit_code=0
+compile_started=2026-10-15T16:56:20UTC
+module=RescaledVarianceSecond
+lean_exit_code=0
+compile_started=2026-10-15T16:56:29UTC
+module=RescaledOptimumSecond
+lean_exit_code=0
+compile_started=2026-10-15T16:56:38UTC
+module=NormalizedOptimumSecond
+lean_exit_code=0
+compile_started=2026-10-15T16:56:49UTC
+module=ActualOptimumSecondExpansion
+lean_exit_code=0
+compile_started=2026-10-15T16:56:58UTC
+module=ActualNormalizedAsymptotics
+lean_exit_code=0

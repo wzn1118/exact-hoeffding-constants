@@ -1,0 +1,7 @@
+PASS: variance-switch, support, KL curvature and four symmetry identities
+PASS: 292 frozen parameter/threshold checks at 70 digits
+PASS: exact integer tails and optimized factorial moments with valid endpoint order
+PASS: both improper endpoint integrals match the piecewise closed form
+PASS: all four symmetry KL rates and uniform quadratic comparisons
+PASS: strict comparison with exact-variance Bennett and Bernstein bounds
+PASS: 17 scaled-only losses to binomial KL corrected by the piecewise rate

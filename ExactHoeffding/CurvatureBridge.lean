@@ -1,4 +1,5 @@
 import ExactHoeffding.Laplace
+import Mathlib.Analysis.Convex.Deriv
 
 /-!
 # From a curvature certificate to a quadratic Laplace envelope

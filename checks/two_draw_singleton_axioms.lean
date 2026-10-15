@@ -1,0 +1,13 @@
+import ExactHoeffding.TwoDrawSingletonComparison
+
+#print axioms ExactHoeffding.oddTwoDrawConstant_eq_normalized_proxy
+#print axioms ExactHoeffding.oddTwoDrawConstant_lt_singleton
+#print axioms ExactHoeffding.odd_two_draw_closed_strict
+#print axioms ExactHoeffding.hypergeom_two_draw_single_mark_proxy
+#print axioms ExactHoeffding.hypergeom_two_draw_single_failure_proxy
+#print axioms ExactHoeffding.odd_two_draw_central_variance_lower
+#print axioms ExactHoeffding.one_lt_oddTwoDrawConstant
+#print axioms ExactHoeffding.odd_two_draw_endpoints_strictly_below
+#print axioms ExactHoeffding.odd_two_draw_all_success_upper
+#print axioms ExactHoeffding.odd_two_draw_all_success_least
+#print axioms ExactHoeffding.odd_two_draw_all_success_extremizers

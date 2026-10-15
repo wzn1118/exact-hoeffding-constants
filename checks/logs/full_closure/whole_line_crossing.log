@@ -1,0 +1,2 @@
+'ExactHoeffding.whole_line_crossing_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.whole_line_crossing_barrier_of_limits' depends on axioms: [propext, Classical.choice, Quot.sound]

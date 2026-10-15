@@ -1,4 +1,11 @@
-import Mathlib
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Order.BigOperators.Ring.Finset
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.FieldSimp
+import Lean.Elab.Tactic.Omega
 
 /-!
 # Basic algebra for finite-population concentration

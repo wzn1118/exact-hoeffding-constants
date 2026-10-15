@@ -1,0 +1,14 @@
+import ExactHoeffding.TwoLevelReduction
+
+#print axioms ExactHoeffding.threePoint_hermite_weighted_derivative_pos
+#print axioms ExactHoeffding.pairedExponential_stationary_quadratic_positive
+#print axioms ExactHoeffding.pairedExponential_no_three_distinct_max
+#print axioms ExactHoeffding.sliceExponential_insert
+#print axioms ExactHoeffding.sliceExponential_three_insert
+#print axioms ExactHoeffding.sliceExponential_no_ordered_triple_max
+#print axioms ExactHoeffding.sliceExponential_maximizer_at_most_two
+#print axioms ExactHoeffding.fixedSumSquareSet_isCompact
+#print axioms ExactHoeffding.exists_two_level_slice_dominator
+#print axioms ExactHoeffding.twoValue_zero_sum_representation
+#print axioms ExactHoeffding.atMostTwo_zero_sum_representation
+#print axioms ExactHoeffding.centered_slice_two_level_reduction

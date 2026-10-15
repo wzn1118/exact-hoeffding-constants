@@ -1,0 +1,12 @@
+import ExactHoeffding.TwoDrawProxyComplete
+
+#print axioms ExactHoeffding.optimalQuadraticProxy_of_contact
+#print axioms ExactHoeffding.threeMassCenteredLog_reflection
+#print axioms ExactHoeffding.threeMass_asymmetric_optimal_proxy
+#print axioms ExactHoeffding.logCoshMassSecond_le_zero
+#print axioms ExactHoeffding.quadraticProxy_of_derivative_bound
+#print axioms ExactHoeffding.threeMass_balanced_proxy_upper
+#print axioms ExactHoeffding.quadraticProxy_lower_of_quotient_limit
+#print axioms ExactHoeffding.threeMass_balanced_optimal_proxy
+#print axioms ExactHoeffding.threeMass_optimal_proxy
+#print axioms ExactHoeffding.hypergeom_two_draw_optimal_proxy

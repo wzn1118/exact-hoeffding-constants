@@ -1,69 +1,62 @@
-# Lean 4 proof coverage and mathematical audit
+# Lean proof coverage
 
-Paper: **Exact Hoeffding Constants for Finite Exchangeable Sequences** (Zinan Wang, 2026).
+Paper: **Exact Hoeffding Constants for Finite Exchangeable Sequences**.
+Author: **Zinan Wang**. Updated 15 October 2026.
 
-**Certification rule.** A mathematical result is recorded as proved only if a Lean declaration with the same mathematical content has a proof term accepted by the Lean 4 kernel on the referenced commit. A successful build of a subset is *not* an end-to-end formal proof of the manuscript. This ledger is intentionally explicit about open theorems.
+The current source branch is `formal/full-closure-20261015`, using Lean 4.33.0
+and pinned Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`.
+The detailed inventory is [formal_status/full_closure.md](formal_status/full_closure.md).
 
-## Verified mathematical ingredients
+## Main conclusions
 
-| Paper ingredient | Lean declarations | Scope |
-| --- | --- | --- |
-| Quadratic margin ceiling; Bernoulli variance ceiling | `balance_product_bound`, `min_margin_product_bound`, `bernoulli_variance_bound` | All real parameters |
-| Centered contrast algebra | `centerContrast_difference`, `centerContrast_fixed` | Finite real coefficient vectors |
-| Hypergeometric nonnegative mass | `hypergeomMass_nonneg` | Finite discrete masses |
-| Exact Vandermonde sum | `hypergeomCount_total` | Every `k ≤ N`, any draw index `m` |
-| Hypergeometric PMF normalization | `hypergeomMass_total` | Every `k,m ≤ N` |
-| Hypergeometric MGF at zero and nonnegativity | `hypergeomMGF_zero`, `hypergeomMGF_nonneg` | All valid parameters |
-| Single-draw hypergeometric masses | `hypergeomMass_one_success`, `hypergeomMass_one_failure_complement` | Exact finite populations |
-| Finite MGF shift and normalization | `finiteMGF_shift`, `finiteMGF_zero_of_normalized` | Finite weights |
-| Bernoulli log-odds equality | `bernoulli_log_odds_balance`, `bernoulli_centered_log_odds_equality` | Nondegenerate Bernoulli parameters |
-| Odd-population single-coordinate candidate equality | `singleton_odd_log_mgf_certificate`, `singleton_odd_quadratic_saturation` | Every real population parameter `N > 1`; gives sharp **lower-bound certificate**, not global optimality |
-| Parity margin and normalized variance algebra | `even_variance_formula`, `odd_variance_formula` | Exact real identities |
-| Convex curvature-to-quadratic envelope implication | `convex_stationary_global_minimum`, `quadratic_envelope_of_convex_gap`, `quadratic_envelope_of_gap_second_derivative` | Abstract twice-differentiable real functions, **conditional on a verified curvature hypothesis** |
+- The sharp hypergeometric curvature upper bound holds for every legal
+  `N,k,m` and every real tilt, including deterministic and small-support cases.
+- The strict mean-dependent Bernoulli envelope and its zero-scale limit are
+  formalized for the stated domains.
+- Odd-population normalized proxies are maximized exactly at singleton or
+  complementary-singleton samples and the two nearest-balanced success counts.
+  This is an all-parameter finite statement; no `m_N` regime is omitted.
+- The real-cube exchangeability reduction and the matching actual Hamming
+  lower bound prove the hypergeometric variational identity.
+- Every actual tilted hypergeometric law is identified with a shifted independent
+  Bernoulli sum on a finite product probability space, including degeneracies.
+- Fifth and sixth actual cumulants, their log-MGF derivative identities, and
+  the stated κ₄/κ₅/κ₆ fixed-margin asymptotic remainders are kernel checked.
+- For every `N ≥ 2`, the actual least finite-exchangeability coefficient is
+  `N/(N-1)` for even `N` and `1/((N-1) artanh(1/N))` for odd `N`.
+- Weighted concentration for actual probability measures is proved through
+  coefficient validity and projected weight normalization.
+- The main theorem's first-order limit `N(C_N-1) → 1` is proved for the
+  entire natural population sequence, covering both parities at once.
 
-The modules `Sampling.lean` and `CurvatureBridge.lean` connect normalized one-draw hypergeometric MGFs to Bernoulli MGFs and isolate the conditional curvature-to-Laplace implication. Both are included in the successful kernel build #38603075214.
+- For each fixed positive sample size and success imbalance, all global maximizing
+  tilts localize to zero and form a unique analytic branch for sufficiently large
+  admissible populations. Its first three coefficients are `4s`, `4s(m-1)`, and `4s(6m+s²-6)/3`. The actual normalized
+  optimum has fourth coefficient `1-(4m²-2m-1)s²/3-4s⁴/45` and an analytic fifth-order remainder.
+  The odd nearly balanced singleton gap has fourth coefficient `2(m-1)(2m+1)/3`.
+- Both parity maximizing-margin classifications are complete: for even populations
+  the normalized optimum is attained exactly at balanced success counts.
 
-Latest complete kernel build:
-[GitHub Actions #38603075214](https://github.com/wzn1118/exact-hoeffding-constants/actions/runs/38603075214)
-at commit `aea3ced42bbbdb64ba57b98dde3c4174636c7abe`: **SUCCESS**.
+Public entry points include `hypergeomTiltVariance_sharp`,
+`hypergeom_laplace_envelope`, `odd_normalized_proxy_all_equality`,
+`exactExchangeableConstant_eq_variational`,
+`exact_finite_exchangeability_constants`, and the six closed-form interfaces
+in `ExactOddGlobalTheorem.lean`.
 
-## Formalization added on 15 October 2026
+## Manuscript coverage
 
-| Result | Lean name(s) | Verified |
-| --- | --- | --- |
-| First derivative of any finite exponential moment | `finiteMGF_hasDerivAt`, `finiteMGF_deriv_zero` | Kernel checked |
-| Second raw tilted moment derivative | `finiteTiltFirst_hasDerivAt`, `finiteTiltSecond_zero` | Kernel checked |
-| General first hypergeometric factorial moment | `hypergeomCount_first_moment_succ` | Kernel checked |
-| General second hypergeometric factorial moment | `hypergeomCount_second_factorial_succ` | Kernel checked |
-| Normalized hypergeometric expectation `E[H] = km/N` | `hypergeom_mean_succ` | Kernel checked for positive marked and sample margins; edge cases require an explicit separate normalization theorem |
-| Strict positivity of finite normalized MGF for every tilt | `finiteMGF_pos_of_normalized` | Kernel checked |
-| Exact first log-MGF derivative | `finiteLogMGF_hasDerivAt` | Kernel checked |
-| Exact second log-MGF derivative as tilted variance | `finiteLogMGF_second_deriv`, `hypergeomLogMGF_second_deriv` | Kernel checked |
-| Tilted mean derivative | `finiteTiltedMean_hasDerivAt` | Kernel checked |
-| Finite weighted Cauchy–Schwarz and curvature nonnegativity | `finiteTilt_cauchy_schwarz`, `finiteLogMGF_second_deriv_nonneg`, `hypergeomLogMGF_second_deriv_nonneg` | Kernel checked |
+The compact success-proportion argument now has both an independent finite comparison and an analytic proof for the actual global optimum. The analytic development includes the full binomial axis, the exact continuous population/imbalance factor, its positive boundary value, and the explicit first population correction with a uniform quadratic remainder through balance. Exact finite-population imbalance response includes the actual optimizing tilt, explicit T/A coefficients, odd/even analytic remainders and strict Bernoulli comparison.
 
-These are analytically significant prerequisites for the paper's global curvature theorem. In particular **nonnegative curvature** is a *lower* bound on the second derivative of log MGF; the manuscript requires a **sharp global upper bound**. The latter remains open in Lean. Both first and second factorial-moment identities have exact all-parameter natural-number proofs, including over-sampling cases.
+All 30 named results in the principal paper and technical supplement have complete theorem mappings in [formal_status/manuscript_concordance.md](formal_status/manuscript_concordance.md). The actual variance supremum, its strict odd gap and fourth-order expansion, and the explicit Hamming-law extremizer with its full Bernoulli pushforward and both parity contact mechanisms are included.
 
-## Open mathematical proof obligations
+The complete integrated umbrella build and generated audit pass: **1518 public theorems in 252 project modules**. The audit reports only `propext`, `Classical.choice`, and `Quot.sound`. All project Lean modules are imported by the umbrella.
 
-1. Finish the zero-margin and positive-denominator edge cases of ordinary hypergeometric moments; derive the closed-form un-tilted variance from verified factorial moments. The general all-tilt variance *identity* is now formalized.
-2. Formalize the Jacobi real-rootedness argument / Poisson–binomial admissibility and its constrained mean–variance inequality.
-3. Prove the all-tilt hypergeometric curvature theorem `thm:curvature` for all finite `N,k,m,t`.
-4. Prove the parity-uniform Riccati barrier and scaled-Bernoulli Laplace comparison `thm:main_laplace`, including strictness.
-5. Prove the `m=2` three-mass optimal-proxy theorem and strict comparison.
-6. Prove the global odd-population maximizing margins and their exhaustive equality classification.
-7. Formalize finite exchangeable measures, their reduction to Hamming slices and the complete Lee–Kim variational identity for arbitrary zero-sum contrasts.
-8. Combine all the previous theorems into an **unconditional, end-to-end Lean theorem** establishing the exact `C_N^★` formula for both parities, including the weighted tail corollary and asymptotic claims.
+## Verification
 
-**Status:** The complete manuscript has **not** been formally certified. No source file claims the unproved upper bound as a Lean theorem, and there are no `sorry`, `admit`, or newly introduced axioms used to conceal it.
+`checks/full_closure_axioms.lean` is generated from every public theorem in
+the umbrella's project import closure. The audit checker verifies both full
+coverage and the permitted axiom set. Build and audit commands are in the
+detailed inventory and `.github/workflows/lean4.yml`.
 
-## Reproduce
-
-```bash
-lake update
-lake exe cache get
-lake build ExactHoeffding
-lake env lean ExactHoeffding.lean
-```
-
-The dedicated workflow `.github/workflows/lean4.yml` rejects proof placeholders and builds every imported module. Check the commit SHA reported by the workflow; the success of an earlier SHA does not certify a later commit.
+`theorem_to_lean.csv` maps manuscript assertions to their precise Lean modules;
+the per-result concordance distinguishes assembled statements from their proved components.

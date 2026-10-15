@@ -1,0 +1,19 @@
+{
+  "title": "Exact Hoeffding Constants for Finite Exchangeable Sequences",
+  "authors": [
+    "Zinan Wang"
+  ],
+  "date": "2026-10-15",
+  "primary_category": "math.PR",
+  "optional_cross_list": "math.ST",
+  "comments": "34 pages, including all technical refinements; no figures",
+  "msc_2020": [
+    "60E15",
+    "60F10",
+    "33C45",
+    "62E15"
+  ],
+  "upload_archive": "Wang_Zinan_Exact_Hoeffding_arXiv_Source_2026-10-15.zip",
+  "entry_point": "combined_all.tex",
+  "copyright": "Copyright (c) 2026 Zinan Wang. All rights reserved."
+}
