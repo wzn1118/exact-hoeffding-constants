@@ -1,0 +1,12 @@
+ExactHoeffding/CanonicalCurvature.lean:24:6: warning: Unused tactic linter: `change Real.exp t * stationaryDen (m : ℝ) (k : ℝ) u v = v * ((r : ℝ) + 2 * u)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ExactHoeffding/CanonicalCurvature.lean:26:28: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ExactHoeffding/CanonicalCurvature.lean:39:21: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ExactHoeffding/CanonicalCurvature.lean:69:20: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

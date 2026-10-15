@@ -1,0 +1,17 @@
+ExactHoeffding/TwoDrawSingletonComparison.lean:65:21: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ExactHoeffding/TwoDrawSingletonComparison.lean:144:21: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'ExactHoeffding.oddTwoDrawConstant_eq_normalized_proxy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.oddTwoDrawConstant_lt_singleton' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.odd_two_draw_closed_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeom_two_draw_single_mark_proxy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeom_two_draw_single_failure_proxy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.odd_two_draw_central_variance_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.one_lt_oddTwoDrawConstant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.odd_two_draw_endpoints_strictly_below' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.odd_two_draw_all_success_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.odd_two_draw_all_success_least' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.odd_two_draw_all_success_extremizers' depends on axioms: [propext, Classical.choice, Quot.sound]

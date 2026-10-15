@@ -1,0 +1,14 @@
+'ExactHoeffding.logOdds_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.logOdds_strictConvex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.artanh_ratio_strictMono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.logOdds_scale_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeom_two_draw_log_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeom_two_draw_proxy_eq_imbalance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeom_two_draw_bernoulli_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeom_two_draw_proxy_strictMono_below_half' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ExactHoeffding.hypergeom_two_draw_proxy_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeom_two_draw_odd_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeom_two_draw_odd_max_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.hypergeom_two_draw_odd_max_value' depends on axioms: [propext, Classical.choice, Quot.sound]
