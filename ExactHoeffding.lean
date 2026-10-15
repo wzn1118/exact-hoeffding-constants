@@ -58,6 +58,7 @@ import ExactHoeffding.CanonicalCurvature
 import ExactHoeffding.CanonicalCurvatureComplete
 import ExactHoeffding.SharpCurvatureTheorem
 import ExactHoeffding.UniformLaplace
+import ExactHoeffding.StrictUniformLaplace
 import ExactHoeffding.HypergeometricTail
 import ExactHoeffding.VarianceOptimality
 import ExactHoeffding.ProxyQuotient
