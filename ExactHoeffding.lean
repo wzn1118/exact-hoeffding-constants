@@ -43,6 +43,7 @@ import ExactHoeffding.BernoulliProxy
 import ExactHoeffding.HypergeometricODE
 import ExactHoeffding.HypergeometricODEMargins
 import ExactHoeffding.TiltedAdmissibilityDirect
+import ExactHoeffding.StrictAdmissibility
 import ExactHoeffding.TiltedEndpoints
 import ExactHoeffding.HypergeometricEndpoints
 import ExactHoeffding.CanonicalCurvature
