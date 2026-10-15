@@ -26,7 +26,7 @@ These quantify over every legal sample size for each odd population.
 | F-04 | Fourth-order log-MGF Taylor formula | `MGFDerivatives` and `LogMGFTaylor` | Completed: actual first four derivatives and fixed-population Peano/Lagrange remainders |
 | F-05 | Fourth-order sharp-proxy expansion | Exact constants and strict finite singleton dominance | Joint analytic family, localization, unique global optimizing tilt, optimized coefficients and analytic remainder |
 | F-06 | Fixed-sample all-success maximum | All-parameter bound below the odd singleton benchmark | Success-count extremizers at fixed sample size, uniformly for all success counts at sufficiently large population |
-| F-07 | Exact imbalance coefficient | Moment identities and curvature certificates | Continuous-margin extension, analytic optimizer and complete response coefficient theorem |
+| F-07 | Exact imbalance coefficient | `ExactImbalanceAlgebra`: continuous-margin cumulants, D/T/A identities and strict algebraic gap | Analytic optimizer and complete response coefficient theorem |
 | F-08 | Higher cumulant expansions | All-degree factorial moments and exact cumulants through four | Completed through sixth order, including displayed κ₄, κ₅, κ₆ asymptotic remainders; higher optimized proxy expansion remains F-05 |
 | F-09 | Supplementary refinements | Sharp curvature, actual Bernoulli tilt geometry, and Jacobi root dispersion are proved | Analytic contraction on compact success-proportion intervals |
 | F-10 | Reverse even proxy classification | Balanced success margins attain the even bound for every nondegenerate sample size | Public `iff` for the complete even proxy maximizing-margin set |

@@ -116,3 +116,4 @@ import ExactHoeffding.HypergeomBernoulliLaw
 import ExactHoeffding.FinitePopulationBernoulliEnvelope
 import ExactHoeffding.JacobiRootDispersion
 import ExactHoeffding.BernoulliMGFGeometry
+import ExactHoeffding.ExactImbalanceAlgebra
