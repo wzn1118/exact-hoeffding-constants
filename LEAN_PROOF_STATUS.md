@@ -4,6 +4,19 @@ Paper: **Exact Hoeffding Constants for Finite Exchangeable Sequences** (Zinan Wa
 
 **Certification rule.** A mathematical result is recorded as proved only if a Lean declaration with the same mathematical content has a proof term accepted by the Lean 4 kernel on the referenced commit. A successful build of a subset is *not* an end-to-end formal proof of the manuscript. This ledger is intentionally explicit about open theorems.
 
+## Current full-closure branch
+
+The 15 October 2026 development on `formal/full-closure-20261015` is tracked
+in [`formal_status/full_closure.md`](formal_status/full_closure.md). It adds
+all-parameter ordinary moments, actual hypergeometric Riccati identities and
+strict tilted positivity, direct tilted mean-variance admissibility,
+one-/two-draw sharp curvature, the all-degree stationary certificate,
+positive Riccati residual certificates, global crossing and bilateral
+strict integration. The dated baseline inventory below is retained as
+history; its old statement that ordinary-moment edge cases or actual
+admissibility are still absent is superseded by the current branch ledger.
+The complete manuscript theorem remains an open composition obligation.
+
 ## Verified mathematical ingredients
 
 | Paper ingredient | Lean declarations | Scope |
