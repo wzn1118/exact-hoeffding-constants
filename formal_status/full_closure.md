@@ -75,32 +75,49 @@ factorization or an external Lee–Kim conclusion as an axiom. The two-draw
 three-mass formula is a specialization of the attributed three-point theory;
 the formal proof does not change that literature attribution.
 
+## Globally optimized population expansion
+
+`RescaledFactorialFamily` constructs the actual factorial-basis analytic
+family in inverse population. `RescaledActualProxy` identifies its removable
+zero-tilt value with the actual variance and its other values with the actual
+centered log-MGF quotient. Compact convergence includes zero tilt.
+`ActualProxyTail` supplies a uniform tail bound;
+`ActualOptimizerLocalization` localizes all global maxima.
+`ActualUniqueOptimizer` and `RescaledAnalyticOptimizer` establish existence,
+uniqueness and analytic dependence of the actual global optimizing tilt.
+
+`AnalyticOptimizerLeading` computes its leading coefficient `4s`.
+`NormalizedOptimumSecond` computes the second normalized optimum coefficient
+`1-s²/3`. `ActualOptimumSecondExpansion` gives an analytic cubic remainder.
+`OptimalProxyAsymptotics` identifies the nonzero maximizing value with the
+supremum defining `hypergeomOptimalProxy` and transfers the expansion to
+`normalizedHypergeomProxy`, along every admissible population sequence.
+Its odd-singleton gap has coefficient `(s²-1)/3` at order `N⁻²` and a cubic
+remainder; when `s>1`, this also proves eventual strict separation.
+
 ## Work remaining for the entire manuscript
 
-1. Classical Jacobi identification, root location and simple-root statement;
-   all-parameter shifted Poisson–binomial distribution on an explicit product
-   probability space. The actual law equality is now proved by `HypergeomBernoulliLaw`; Jacobi PGF roots
-   are also proved simple by the ODE in `JacobiSimpleRoots`, while standard Jacobi normalization remains open.
-2. The main theorem's first-order limit is complete in `ConstantAsymptotics`.
-3. The fixed-population fourth-order Taylor formula is complete in
-   `MGFDerivatives` and `LogMGFTaylor`, with actual derivatives, `o(t^4)`
-   remainder and a fifth-derivative Lagrange remainder for both signs of tilt.
-4. The globally optimized `N⁻⁴` expansion, analytic optimizer, localization,
-   and uniform remainder in `source/new_results.tex`.
-5. The fixed-sample, all-success-count eventual maximum, joint analytic
-   optimizer, and exact imbalance coefficient in `source/uniform_results.tex`.
-6. Standard Jacobi normalization; the globally optimized fourth-order/fixed-sample
-   appendix theorems; and the exact continuous-margin response theorem.
+1. Named standard Jacobi polynomial identification and normalization. The
+   canonical PGF already has simple negative roots; Rodrigues roots map to
+   `(-1,1)`. The actual shifted product-Bernoulli distribution is proved.
+2. Explicit tilt coefficients at orders `N⁻²,N⁻³` and optimized normalized
+   coefficients at orders `N⁻³,N⁻⁴`, with analytic fifth-order remainder.
+   Global localization, uniqueness, analyticity and the first two value
+   coefficients are complete.
+3. Eventual fixed-sample all-success-count maxima for general fixed `m`.
+   The two-draw and complementary `N-2` specializations are complete.
+4. The continuous-margin optimizer/localization theorem for the exact
+   finite-population imbalance response. Its cumulant and `D,T,A` algebra
+   are proved in `ExactImbalanceAlgebra`.
+5. Independent joint-analytic first-order correction and factorization identities
+   in the compact-comparison proof. The compact comparison theorem itself is
+   complete in `CompactAnalyticContraction`, with an explicit threshold, both
+   parities, and equality exactly at balanced success counts.
 
-Item 1 is being extended in separate modules. Fixed-population Taylor
-expansion is a different statement from the optimized population asymptotics
-in item 4. The odd global exact constant does not depend on those appendices.
-
-The exhaustive odd classification concerns the hypergeometric proxy margins.
-It is not a classification of every probability measure and vector that can
-saturate an MGF inequality. Even balanced-margin attainment is proved; an
-additional reverse `iff` interface for all even proxy maximizers remains to
-be assembled.
+`EvenHypergeomExtremizers` gives the full reverse `iff` for even normalized
+proxy maximizers: precisely the balanced success margin, for every legal
+nondegenerate sample size. The odd classification is likewise exhaustive
+for hypergeometric proxy margins. These statements classify margin pairs.
 
 ## Reproduction and evidence
 
@@ -119,3 +136,17 @@ performs this audit. Individual module evidence is retained under
 `checks/logs/full_closure/`; each log applies to its recorded source checkpoint.
 New modules under development are added to the umbrella after their successful
 kernel check. `proof_gap_register.md` lists open obligations explicitly.
+
+## Integrated verification checkpoint
+
+The inverse-population optimizer chain was independently recompiled in the
+control worktree, one module at a time, under the shared exclusive build lock.
+All 28 modules returned exit code zero. The supremum bridge and compact
+comparison were then compiled successfully. The complete umbrella and the
+generated audit passed: **992 public theorems in 157 project modules**, with
+only `propext`, `Classical.choice`, and `Quot.sound`.
+
+Reproduction logs: `checks/logs/full_closure/optimizer_second_rootverify.log`,
+`optimal_proxy_asymptotics.log`, `compact_contraction.log`, and
+`optimizer_second_umbrella_audit.log`. The generated audit source is
+`checks/full_closure_axioms.lean`.

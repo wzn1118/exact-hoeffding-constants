@@ -29,6 +29,13 @@ The detailed inventory is [formal_status/full_closure.md](formal_status/full_clo
 - The main theorem's first-order limit `N(C_N-1) → 1` is proved for the
   entire natural population sequence, covering both parities at once.
 
+- For each fixed positive sample size and success imbalance, all global maximizing
+  tilts localize to zero and form a unique analytic branch for sufficiently large
+  admissible populations. Its leading coefficient is `4s`; the actual normalized
+  optimum is `1 + N⁻¹ + (1-s²/3)N⁻² + O(N⁻³)`.
+- Both parity maximizing-margin classifications are complete: for even populations
+  the normalized optimum is attained exactly at balanced success counts.
+
 Public entry points include `hypergeomTiltVariance_sharp`,
 `hypergeom_laplace_envelope`, `odd_normalized_proxy_all_equality`,
 `exactExchangeableConstant_eq_variational`,
@@ -39,9 +46,10 @@ in `ExactOddGlobalTheorem.lean`.
 
 The full manuscript includes further assertions beyond the exact constants:
 standard Jacobi normalization (the actual canonical PGF simple-root statement is now proved),
-optimized fourth-order asymptotics,
-fixed-sample uniform extremizers, exact imbalance response, and analytic
-contraction. Their precise state is recorded in
+the explicit third/fourth optimized expansion coefficients,
+fixed-sample uniform extremizers, exact imbalance response, and the independent
+analytic correction identities. The compact success-proportion comparison itself
+is proved with an explicit threshold and complete equality classification. Their precise state is recorded in
 [proof_gap_register.md](proof_gap_register.md). A proof of a fixed-population
 Taylor formula does not establish the global optimized population expansion.
 

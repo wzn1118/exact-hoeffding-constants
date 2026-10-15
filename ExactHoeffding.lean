@@ -123,3 +123,11 @@ import ExactHoeffding.ExactImbalanceAlgebra
 import ExactHoeffding.HigherLogMGFDerivatives
 import ExactHoeffding.BernoulliSharpBounds
 import ExactHoeffding.AnalyticContractionCoefficient
+
+import ExactHoeffding.ActualOptimizerPopulationLimit
+
+import ExactHoeffding.ActualNormalizedAsymptotics
+
+import ExactHoeffding.OptimalProxyAsymptotics
+
+import ExactHoeffding.CompactAnalyticContraction
