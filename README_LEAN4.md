@@ -12,7 +12,7 @@ A Mathlib formalization of Zinan Wang's **Exact Hoeffding Constants for Finite E
 - `JacobiStandardNormalization`, `HypergeomBernoulliLaw`: classical Jacobi normalization and the actual tilted independent-Bernoulli representation.
 - `FixedSampleGlobalExtrema`: every fixed positive sample size, all success counts, and shared finite-range thresholds.
 - `JointGlobalOptimizer`, `JointOptimizedValue`: the jointly analytic unique global optimizer of the actual real-margin law near independent population and imbalance parameters, its normalized supremum value, balanced identity, and reflection.
-- `ActualMomentCumulantRecursion`: all-order actual moment–cumulant recursion; `ActualNormalizedThirdCoefficient` and `OptimalProxyAsymptotics`: actual globally optimized inverse-population expansions through cubic order.
+- `ActualMomentCumulantRecursion`: all-order actual moment–cumulant recursion; `FourthOrderMainTheorem`, `ActualNormalizedFourthCoefficient` and `OptimalProxyFourthExpansion`: the same actual global optimizer, third tilt coefficient, fourth optimized-value coefficient, analytic fifth-order remainder, and fourth-order singleton gap.
 
 The umbrella `ExactHoeffding.lean` imports the certified development. The precise manuscript mapping and remaining higher-order appendix coefficients are recorded in [theorem_to_lean.csv](theorem_to_lean.csv) and [proof_gap_register.md](proof_gap_register.md).
 
@@ -29,6 +29,6 @@ lake env lean checks/full_closure_axioms.lean > lean_axioms.log
 python3 checks/check_axiom_output.py lean_axioms.log
 ```
 
-The `Lean 4 proof kernel` workflow reproduces these checks. The generated audit covers every public theorem in the actual umbrella import closure and checks its complete transitive axiom dependencies. The integrated 15 October checkpoint verifies **1257 public theorems in 194 project modules**; the reported dependencies are `propext`, `Classical.choice`, and `Quot.sound`. Evidence is retained in `checks/logs/full_closure/integrated_joint_umbrella_audit.log`.
+The `Lean 4 proof kernel` workflow reproduces these checks. The generated audit covers every public theorem in the actual umbrella import closure and checks its complete transitive axiom dependencies. The integrated 15 October checkpoint verifies **1322 public theorems in 214 project modules**; the reported dependencies are `propext`, `Classical.choice`, and `Quot.sound`. Evidence is retained in `checks/logs/full_closure/integrated_fourth_umbrella_audit.log`.
 
 Copyright © 2026 Zinan Wang. Original source and documentation are governed by the repository's rights notices.
