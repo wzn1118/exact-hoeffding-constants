@@ -31,3 +31,15 @@ python3 checks/package_submission.py
 The script regenerates both flattened LaTeX sources, creates the upload archive, extracts it into a new temporary directory and runs pdfLaTeX three times. It also builds the modular principal paper and supplement in a separate clean directory, checks final-pass diagnostics, validates the 30 statements and 16 bibliography entries, and verifies the four included reference PDFs against their recorded hashes. The final TeX logs and compiler output are retained in `release/build_evidence/`.
 
 The publication bundle includes `build_articles.sh`; run `bash build_articles.sh` after extraction to rebuild all three PDFs. Lean source and formalization records are maintained in the repository alongside the manuscript.
+
+## Full research bundle
+
+After integrating the final Lean source, theorem mapping and public-theorem audit, create the research archive with:
+
+```bash
+python3 checks/package_research.py
+```
+
+The script packages the complete article and literature together with every project Lean source file, `lean-toolchain`, the exact Mathlib and transitive dependency pins from `lake-manifest.json`, `reproduce_formal.sh`, theorem mapping and audit records. It checks that the publication sources match the integrated sources and that the public-theorem audit matches the umbrella import closure. `RESEARCH_PROVENANCE.json` records the project commit, source inventory and dependency versions. The archive excludes compiled objects, external dependency caches and earlier delivery archives.
+
+For a separate integrated worktree, use `python3 checks/package_research.py --formal-root /path/to/integrated/repository`. The source snapshot and publication files must agree.

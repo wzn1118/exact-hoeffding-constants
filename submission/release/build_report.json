@@ -39,20 +39,20 @@
   ],
   "artifacts": {
     "Wang_Zinan_Exact_Hoeffding_arXiv_Source_2026-10-15.zip": {
-      "bytes": 29542,
-      "sha256": "ae0fd07efcb03f56b34df2e51384b6be17f2107871ba8237ea84de18c92bffba"
+      "bytes": 29655,
+      "sha256": "18c558b1cefd351fa6f1b6b047c82ceb8a1761095510513699a67ff4f00b57f9"
     },
     "Wang_Zinan_Exact_Hoeffding_References_2026-10-15.zip": {
       "bytes": 2248817,
       "sha256": "20d539c83672288a1ceeedae36d4087ca3a3ab3ff8baae444a3d60690760c6fe"
     },
     "Wang_Zinan_Exact_Hoeffding_Publication_Bundle_2026-10-15.zip": {
-      "bytes": 3614851,
-      "sha256": "826b9a91c165e4780d8cff208ff2de92d056a3cbeb581f2776c2f8894bfd4875"
+      "bytes": 3616815,
+      "sha256": "09cfeff2e6d4916e527b16a7895e0fee82a90cdb2df8b1224efe6d8538fcdd3e"
     },
     "combined_all.pdf": {
-      "bytes": 527753,
-      "sha256": "8e15b8d6072fdc9eb0c695d1f864c702a7469e2b0638cd40b166dee199fecf85"
+      "bytes": 528478,
+      "sha256": "a80ba90f4bcbd3f41e50cced222713ca858722fdb1ededa020b648760d85cd9d"
     }
   }
 }

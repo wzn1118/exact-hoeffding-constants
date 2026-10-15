@@ -701,7 +701,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ] [29]
 [30] [31] [32]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-568.
+570.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -715,13 +715,13 @@ Package rerunfilecheck Info: File `combined_all.out' has not changed.
 (rerunfilecheck)             Checksum: 43B8C681A03FE5C45F866CDEBE8E8161;11836.
  )
 Here is how much of TeX's memory you used:
- 16502 strings out of 480247
- 256747 string characters out of 5896151
+ 16500 strings out of 480247
+ 256725 string characters out of 5896151
  600485 words of memory out of 5000000
  33576 multiletter control sequences out of 15000+600000
- 591353 words of font info for 284 fonts, out of 8000000 for 9000
+ 591270 words of font info for 283 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,13n,63p,1319b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,13n,63p,1319b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ma
@@ -740,9 +740,9 @@ hare/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on combined_all.pdf (34 pages, 527753 bytes).
+Output written on combined_all.pdf (34 pages, 528478 bytes).
 PDF statistics:
- 890 PDF objects out of 1000 (max. 8388607)
- 798 compressed objects within 8 object streams
+ 889 PDF objects out of 1000 (max. 8388607)
+ 797 compressed objects within 8 object streams
  246 named destinations out of 1000 (max. 500000)
  68441 words of extra memory for PDF output out of 74296 (max. 10000000)

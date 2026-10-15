@@ -713,10 +713,6 @@ LaTeX Warning: Reference `eq:balanced_exact' on page 28 undefined on input line
 
 [28]
 
-LaTeX Warning: Reference `lem:joint_optimizer' on page 29 undefined on input li
-ne 1376.
-
-
 LaTeX Warning: Reference `eq:maclaurin_mgf' on page 29 undefined on input line
 1391.
 
@@ -766,53 +762,53 @@ e 1468.
 
 
 LaTeX Warning: Reference `eq:compact_envelope' on page 31 undefined on input li
-ne 1493.
-
-
-LaTeX Warning: Reference `thm:main_laplace' on page 31 undefined on input line
-1497.
-
-
-LaTeX Warning: Reference `thm:uniform_fixed' on page 31 undefined on input line
- 1497.
+ne 1495.
 
 [31]
 
-LaTeX Warning: Reference `eq:falseoddcurve' on page 32 undefined on input line
-1513.
+LaTeX Warning: Reference `thm:main_laplace' on page 32 undefined on input line
+1499.
+
+
+LaTeX Warning: Reference `thm:uniform_fixed' on page 32 undefined on input line
+ 1499.
 
 
 LaTeX Warning: Reference `eq:falseoddcurve' on page 32 undefined on input line
-1522.
+1515.
 
 
-LaTeX Warning: Reference `eq:obs_exact' on page 32 undefined on input line 1535
+LaTeX Warning: Reference `eq:falseoddcurve' on page 32 undefined on input line
+1524.
+
+
+LaTeX Warning: Reference `eq:obs_exact' on page 32 undefined on input line 1537
 .
 
 
-LaTeX Warning: Reference `eq:obs_exact' on page 32 undefined on input line 1546
+LaTeX Warning: Reference `eq:obs_exact' on page 32 undefined on input line 1548
 .
 
 [32]
 
 LaTeX Warning: Reference `odd:thm:envelope' on page 33 undefined on input line
-1561.
+1563.
 
 
 LaTeX Warning: Reference `eq:curv_integral' on page 33 undefined on input line
-1561.
+1563.
 
 
 LaTeX Warning: Reference `odd:lem:barrier' on page 33 undefined on input line 1
-561.
+563.
 
 
 LaTeX Warning: Reference `prop:obstruction' on page 33 undefined on input line
-1561.
+1563.
 
 
 LaTeX Warning: Reference `eq:falseoddcurve' on page 33 undefined on input line
-1561.
+1563.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd) [33] [34] (./combined_all.aux)
 
@@ -844,5 +840,5 @@ hare/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on combined_all.pdf (34 pages, 516914 bytes).
+Output written on combined_all.pdf (34 pages, 517649 bytes).
 Transcript written on combined_all.log.
