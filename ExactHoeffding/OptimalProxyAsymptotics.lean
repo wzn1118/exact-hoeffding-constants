@@ -1,4 +1,5 @@
 import ExactHoeffding.ActualNormalizedAsymptotics
+import ExactHoeffding.ActualNormalizedThirdAsymptotics
 import ExactHoeffding.NormalizedProxy
 import ExactHoeffding.OddHypergeomExtremizers
 
@@ -54,6 +55,24 @@ theorem normalizedHypergeomProxy_second_expansion_along
   rw [normalizedHypergeomProxy, hopt]
   ring
 
+theorem normalizedHypergeomProxy_third_expansion_along
+    (m : ℕ) (hm : 0 < m) (s : ℝ) (hs : 0 < s) (N K : ℕ → ℕ)
+    (hN : Tendsto N atTop atTop)
+    (hvalid : ∀ᶠ n in atTop,
+      K n ≤ N n ∧ m ≤ N n ∧ 2 * (K n : ℝ) + s = (N n : ℝ)) :
+    (fun n => normalizedHypergeomProxy (N n) (K n) m -
+      1 - 1 / (N n : ℝ) - (1 - s ^ 2 / 3) * (1 / (N n : ℝ)) ^ 2 -
+      (1 - (2 * (m : ℝ) - 1) * s ^ 2 / 3) * (1 / (N n : ℝ)) ^ 3)
+      =O[atTop] (fun n => (1 / (N n : ℝ)) ^ 4) := by
+  obtain ⟨τ, _, _, _, hglobal, hO⟩ :=
+    actualHypergeomProxy_normalized_optimum_third_along m hm s hs N K hN hvalid
+  apply hO.congr' ?_ Filter.EventuallyEq.rfl
+  filter_upwards [hvalid, hglobal] with n hv hg
+  have hopt := hypergeomOptimalProxy_eq_actual_at_global_max (N n) (K n) m
+    hv.1 hv.2.1 (τ (1 / (N n : ℝ))) (ne_of_gt hg.1) ((hg.2 _).mpr rfl)
+  rw [normalizedHypergeomProxy, hopt]
+  ring
+
 /-- The leading separation from the odd singleton optimum, along every
 admissible fixed-imbalance population sequence. -/
 theorem odd_singleton_gap_second_expansion_along
@@ -75,6 +94,36 @@ theorem odd_singleton_gap_second_expansion_along
   have h1 := normalizedHypergeomProxy_second_expansion_along 1 (by omega)
     1 (by norm_num) N J hN hsingle
   have hmO := normalizedHypergeomProxy_second_expansion_along m hm s hs N K hN hvalid
+  apply (h1.sub hmO).congr' ?_ Filter.EventuallyEq.rfl
+  filter_upwards [hodd, hN.eventually (eventually_ge_atTop 3)] with n hn hlarge
+  have hj : 0 < J n := by omega
+  have heq : normalizedHypergeomProxy (N n) (J n) 1 = oddHypergeomConstant (N n) := by
+    rw [hn]
+    exact (odd_normalized_proxy_all_equality (J n) (J n) 1 hj hj (by omega)
+      (by omega) (by omega)).mpr ⟨Or.inl rfl, Or.inl rfl⟩
+  rw [heq]
+  ring
+
+theorem odd_singleton_gap_third_expansion_along
+    (m : ℕ) (hm : 0 < m) (s : ℝ) (hs : 0 < s) (N K J : ℕ → ℕ)
+    (hN : Tendsto N atTop atTop)
+    (hvalid : ∀ᶠ n in atTop,
+      K n ≤ N n ∧ m ≤ N n ∧ 2 * (K n : ℝ) + s = (N n : ℝ))
+    (hodd : ∀ᶠ n in atTop, N n = 2 * J n + 1) :
+    (fun n => oddHypergeomConstant (N n) - normalizedHypergeomProxy (N n) (K n) m -
+      (s ^ 2 - 1) / 3 * (1 / (N n : ℝ)) ^ 2 -
+      ((2 * (m : ℝ) - 1) * s ^ 2 - 1) / 3 * (1 / (N n : ℝ)) ^ 3)
+      =O[atTop] (fun n => (1 / (N n : ℝ)) ^ 4) := by
+  have hsingle : ∀ᶠ n in atTop,
+      J n ≤ N n ∧ 1 ≤ N n ∧ 2 * (J n : ℝ) + (1 : ℝ) = (N n : ℝ) := by
+    filter_upwards [hodd] with n hn
+    refine ⟨by omega, by omega, ?_⟩
+    rw [hn]
+    push_cast
+    rfl
+  have h1 := normalizedHypergeomProxy_third_expansion_along 1 (by omega)
+    1 (by norm_num) N J hN hsingle
+  have hmO := normalizedHypergeomProxy_third_expansion_along m hm s hs N K hN hvalid
   apply (h1.sub hmO).congr' ?_ Filter.EventuallyEq.rfl
   filter_upwards [hodd, hN.eventually (eventually_ge_atTop 3)] with n hn hlarge
   have hj : 0 < J n := by omega

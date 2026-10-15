@@ -56,13 +56,15 @@ one squeeze argument. The identical limit holds for the actual infimum
 | Zero scale and quadratic domination | `BernoulliBalancedLimit`, `UniformLaplace`, `StrictUniformLaplace`: balanced limit, quadratic envelope and equality |
 | Bernoulli optimum | `BernoulliOptimal`: sharp quadratic upper bound and leastness for the whole closed probability interval |
 | Two draws | `TwoDrawProxyComplete`, `TwoDrawComparison`, `TwoDrawSingletonComparison`, `FixedSampleExtrema`: actual three-mass specialization, all-success-count odd extremizers, and fixed-sample odd two-draw and complementary `N-2` maxima with equality classifications |
+| Fixed-sample global extremizers | `FixedSampleGlobalExtrema`: all successes for every fixed positive sample size, shared finite-range thresholds and complete equality |
+| Real-parameter curvature | `RealMarginMasses`, `RealRecurrenceCurvature`: actual real-margin masses, normalization, mean, recurrence and degree≥3 sharp all-tilt curvature |
 | Odd global optimum | `StrictGlobalGap`, `StrictHypergeometricProxy`, `OddHypergeomExtremizers`: strict global proxy comparison and all legal margin pairs |
 | Real-cube reduction | `CubeVertexReduction`, `MeasureExchangeability`: convex vertex reduction and averaging for actual exchangeable probability measures |
 | Two-level reduction | `ThreePointExclusion`, `TwoLevelOptimization`, `TwoLevelExistence`, `TwoLevelRepresentation`, `TwoLevelReduction`: compact maximizer, two-valued form, exact contrast norm and hypergeometric MGF |
 | Matching lower bound | `HammingMeasure`, `HammingExchangeableLower`: actual probability measures realizing Hamming slices |
 | Variational identity and exact coefficient | `ExchangeableConstants`, `VariationalUpper`, `VariationalIdentity`, `ExactParityConstants`, `ExactOddGlobalTheorem` |
 | Weighted concentration | `ProjectedWeights`, `GeneralWeightedTail`: projected squared norm, actual-measure exponential Markov bound and confidence threshold |
-| Jacobi factorization | `JacobiRoots`, `JacobiMobius`, `JacobiFactorization`, `JacobiActualPGF`, `JacobiSimpleRoots`, `JacobiRootLocalization`: Rodrigues real splitting, exact Möbius bridge, simple actual PGF roots, interior Bernoulli factors, and normalized Rodrigues roots mapped into `(-1,1)` |
+| Jacobi factorization | `JacobiRoots`, `JacobiMobius`, `JacobiFactorization`, `JacobiActualPGF`, `JacobiSimpleRoots`, `JacobiRootLocalization`: Rodrigues real splitting, exact Möbius bridge, simple actual PGF roots, interior Bernoulli factors, and normalized Rodrigues roots mapped into `(-1,1)`; `JacobiStandardNormalization` identifies the independently defined standard polynomial with exact normalization and complete simple root theorem |
 
 The Bernoulli sharp proxy is also bounded by the universal quarter coefficient,
 with strict inequality for nonbalanced interior parameters.
@@ -87,29 +89,28 @@ centered log-MGF quotient. Compact convergence includes zero tilt.
 uniqueness and analytic dependence of the actual global optimizing tilt.
 
 `AnalyticOptimizerLeading` computes its leading coefficient `4s`.
-`NormalizedOptimumSecond` computes the second normalized optimum coefficient
-`1-s²/3`. `ActualOptimumSecondExpansion` gives an analytic cubic remainder.
+`ActualTiltSecondCoefficient` computes the second optimizing-tilt coefficient
+`4s(m-1)`. `ActualNormalizedThirdCoefficient` proves the normalized optimum
+through its cubic coefficient `1-(2m-1)s²/3`, with analytic quartic remainder.
 `OptimalProxyAsymptotics` identifies the nonzero maximizing value with the
 supremum defining `hypergeomOptimalProxy` and transfers the expansion to
 `normalizedHypergeomProxy`, along every admissible population sequence.
-Its odd-singleton gap has coefficient `(s²-1)/3` at order `N⁻²` and a cubic
-remainder; when `s>1`, this also proves eventual strict separation.
+Its odd-singleton gap has coefficients `(s²-1)/3` at order `N⁻²` and
+`((2m-1)s²-1)/3` at order `N⁻³`, with quartic remainder; when `s>1`, this also proves eventual strict separation.
 
 ## Work remaining for the entire manuscript
 
-1. Named standard Jacobi polynomial identification and normalization. The
-   canonical PGF already has simple negative roots; Rodrigues roots map to
-   `(-1,1)`. The actual shifted product-Bernoulli distribution is proved.
-2. Explicit tilt coefficients at orders `N⁻²,N⁻³` and optimized normalized
-   coefficients at orders `N⁻³,N⁻⁴`, with analytic fifth-order remainder.
-   Global localization, uniqueness, analyticity and the first two value
-   coefficients are complete.
-3. Eventual fixed-sample all-success-count maxima for general fixed `m`.
-   The two-draw and complementary `N-2` specializations are complete.
-4. The continuous-margin optimizer/localization theorem for the exact
-   finite-population imbalance response. Its cumulant and `D,T,A` algebra
-   are proved in `ExactImbalanceAlgebra`.
-5. Independent joint-analytic first-order correction and factorization identities
+1. The explicit third optimizing-tilt and fourth optimized-value coefficients,
+   with analytic fifth-order remainder. Global localization, uniqueness,
+   analyticity and value coefficients through cubic order are complete.
+2. The joint analytic optimizer lemma for independently varying inverse
+   population and success imbalance. Its three-variable analytic objective is
+   proved. The fixed-sample all-success theorem is separately complete.
+3. The continuous-margin optimizer/localization theorem for the exact
+   finite-population imbalance response. Actual positive normalized masses,
+   their recurrence and the real-parameter sharp curvature bound for support
+   degree at least three are proved. The `D,T,A` algebra is complete.
+4. Independent joint-analytic first-order correction and factorization identities
    in the compact-comparison proof. The compact comparison theorem itself is
    complete in `CompactAnalyticContraction`, with an explicit threshold, both
    parities, and equality exactly at balanced success counts.
@@ -139,14 +140,15 @@ kernel check. `proof_gap_register.md` lists open obligations explicitly.
 
 ## Integrated verification checkpoint
 
-The inverse-population optimizer chain was independently recompiled in the
-control worktree, one module at a time, under the shared exclusive build lock.
-All 28 modules returned exit code zero. The supremum bridge and compact
-comparison were then compiled successfully. The complete umbrella and the
-generated audit passed: **992 public theorems in 157 project modules**, with
+The control worktree independently recompiled the standard Jacobi module,
+real-margin masses, second optimizing-tilt coefficient, five fixed-sample
+extremizer modules and the cubic optimized-value chain. The real-parameter
+recurrence module was compiled from identical source in the isolated Jacobi
+worktree. Every module returned exit code zero. The complete umbrella and
+generated audit pass: **1120 public theorems in 172 project modules**, with
 only `propext`, `Classical.choice`, and `Quot.sound`.
 
-Reproduction logs: `checks/logs/full_closure/optimizer_second_rootverify.log`,
-`optimal_proxy_asymptotics.log`, `compact_contraction.log`, and
-`optimizer_second_umbrella_audit.log`. The generated audit source is
-`checks/full_closure_axioms.lean`.
+Evidence: `checks/logs/full_closure/jacobi_tilt_second_rootverify.log`,
+`fixed_sample_global_rootverify.log`, `real_recurrence_curvature.log`,
+`optimized_third_rootverify.log`, and `integrated_third_umbrella_audit.log`.
+The audit source is `checks/full_closure_axioms.lean`.

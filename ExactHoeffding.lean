@@ -131,3 +131,15 @@ import ExactHoeffding.ActualNormalizedAsymptotics
 import ExactHoeffding.OptimalProxyAsymptotics
 
 import ExactHoeffding.CompactAnalyticContraction
+
+import ExactHoeffding.ActualTiltSecondCoefficient
+
+import ExactHoeffding.JacobiStandardNormalization
+
+import ExactHoeffding.RealMarginMasses
+
+import ExactHoeffding.JointProxyAnalytic
+
+import ExactHoeffding.FixedSampleGlobalExtrema
+
+import ExactHoeffding.RealRecurrenceCurvature
