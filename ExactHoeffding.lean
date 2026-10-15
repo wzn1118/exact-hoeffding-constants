@@ -33,6 +33,7 @@ import ExactHoeffding.StationaryEquality
 import ExactHoeffding.StationaryGlobal
 import ExactHoeffding.StrictGlobalGap
 import ExactHoeffding.StrictBernoulliProxyComparison
+import ExactHoeffding.StrictHypergeometricProxy
 import ExactHoeffding.GlobalCrossing
 import ExactHoeffding.RiccatiCertificates
 import ExactHoeffding.RiccatiBarrier
