@@ -61,6 +61,7 @@ import ExactHoeffding.ProxyQuotient
 import ExactHoeffding.ThreePointTangent
 import ExactHoeffding.ThreePointRolle
 import ExactHoeffding.ThreePointHermite
+import ExactHoeffding.ThreePointHermitePositive
 import ExactHoeffding.ThreePointCircle
 import ExactHoeffding.CanonicalCurvatureEquality
 import ExactHoeffding.SmallSupportCurvature
