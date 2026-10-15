@@ -20,3 +20,4 @@ import ExactHoeffding.Jacobi
 import ExactHoeffding.BernoulliKL
 import ExactHoeffding.StationaryCertificates
 import ExactHoeffding.GlobalCrossing
+import ExactHoeffding.RiccatiCertificates
