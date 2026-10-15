@@ -50,6 +50,7 @@ import ExactHoeffding.StrictAdmissibility
 import ExactHoeffding.TiltedEndpoints
 import ExactHoeffding.HypergeometricEndpoints
 import ExactHoeffding.CanonicalCurvature
+import ExactHoeffding.CanonicalCurvatureComplete
 import ExactHoeffding.CanonicalCurvatureEquality
 import ExactHoeffding.SmallSupportCurvature
 import ExactHoeffding.DegenerateCurvature
