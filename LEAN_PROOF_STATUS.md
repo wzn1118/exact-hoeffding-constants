@@ -49,7 +49,7 @@ The compact success-proportion argument now has both an independent finite compa
 
 All 30 named results in the principal paper and technical supplement have complete theorem mappings in [formal_status/manuscript_concordance.md](formal_status/manuscript_concordance.md). The actual variance supremum, its strict odd gap and fourth-order expansion, and the explicit Hamming-law extremizer with its full Bernoulli pushforward and both parity contact mechanisms are included.
 
-The complete integrated umbrella build and generated audit pass: **1518 public theorems in 251 project modules**. The audit reports only `propext`, `Classical.choice`, and `Quot.sound`. All project Lean modules are imported by the umbrella.
+The complete integrated umbrella build and generated audit pass: **1518 public theorems in 252 project modules**. The audit reports only `propext`, `Classical.choice`, and `Quot.sound`. All project Lean modules are imported by the umbrella.
 
 ## Verification
 

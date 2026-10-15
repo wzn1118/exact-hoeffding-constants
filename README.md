@@ -34,7 +34,7 @@ All 30 named results in the main paper and supplement have complete entries in
 [the manuscript concordance](formal_status/manuscript_concordance.md), including
 the fourth-order optimized expansion, exact imbalance response, compact analytic
 contraction, actual variance supremum, and explicit Hamming-law extremizer.
-The integrated Lean kernel build and audit pass for **1514 public theorems in 251 project modules**. CI reproduces the build, manuscript-concordance check and transitive axiom audit.
+The integrated Lean kernel build and audit pass for **1518 public theorems in 252 project modules**. CI reproduces the build, manuscript-concordance check and transitive axiom audit.
 
 ## Current publication files
 

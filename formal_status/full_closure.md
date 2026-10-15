@@ -133,7 +133,7 @@ kernel check. `proof_gap_register.md` records completed assertion coverage; `che
 The control worktree independently recompiled the Jacobi, fixed-sample,
 real-margin, all-order derivative, jointly analytic global optimizer, and
 actual fourth-order expansion chains. Every integrated module passed its kernel check. The complete umbrella and
-generated audit pass: **1518 public theorems in 251 project modules**, with
+generated audit pass: **1518 public theorems in 252 project modules**, with
 only `propext`, `Classical.choice`, and `Quot.sound`.
 
 Evidence: `checks/logs/full_closure/jacobi_tilt_second_rootverify.log`,
