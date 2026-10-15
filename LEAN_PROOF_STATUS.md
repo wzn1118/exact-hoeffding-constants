@@ -20,8 +20,8 @@ The detailed inventory is [formal_status/full_closure.md](formal_status/full_clo
   lower bound prove the hypergeometric variational identity.
 - Every actual tilted hypergeometric law is identified with a shifted independent
   Bernoulli sum on a finite product probability space, including degeneracies.
-- Fifth and sixth actual cumulants and the stated κ₄/κ₅/κ₆ fixed-margin
-  asymptotic remainders are kernel checked.
+- Fifth and sixth actual cumulants, their log-MGF derivative identities, and
+  the stated κ₄/κ₅/κ₆ fixed-margin asymptotic remainders are kernel checked.
 - For every `N ≥ 2`, the actual least finite-exchangeability coefficient is
   `N/(N-1)` for even `N` and `1/((N-1) artanh(1/N))` for odd `N`.
 - Weighted concentration for actual probability measures is proved through

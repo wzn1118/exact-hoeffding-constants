@@ -117,3 +117,4 @@ import ExactHoeffding.FinitePopulationBernoulliEnvelope
 import ExactHoeffding.JacobiRootDispersion
 import ExactHoeffding.BernoulliMGFGeometry
 import ExactHoeffding.ExactImbalanceAlgebra
+import ExactHoeffding.HigherLogMGFDerivatives

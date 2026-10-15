@@ -47,7 +47,7 @@ one squeeze argument. The identical limit holds for the actual infimum
 | --- | --- |
 | Support and degeneracies | `Support`, `OrdinaryMomentsComplete`, `ZeroTiltMoments`: exact support, totalized mass, zero/full margins, mean and ordinary variance, including `N=0,1` |
 | Sampling and symmetries | `Symmetries`, `SliceSampling`, `PermutationSlice`: actual transpose/complements, uniform subset sampling, and finite random permutation sampling |
-| Factorial moments | `GeneralFactorialMoments`, `Cumulants`, `HighCumulants`: all-degree factorial moment identity, actual raw moments through order six, exact cumulant and fixed-margin asymptotic interfaces |
+| Factorial moments | `GeneralFactorialMoments`, `Cumulants`, `HighCumulants`, `HigherLogMGFDerivatives`: all-degree factorial moment identity, actual raw moments through order six, exact log-MGF derivatives through six, and fixed-margin asymptotic interfaces |
 | Actual tilted feasibility | `CrossSum`, `TiltedAdmissibilityDirect`, `StrictAdmissibility`: actual tilted mean–variance inequality and its strict version |
 | Riccati and stationary algebra | `HypergeometricODE`, `HypergeometricODEMargins`, `StationaryCertificates`, `RiccatiCertificates`: actual differential identities, all-degree positive expansions, stationary comparison and residual certificates |
 | Global curvature | `StationaryGlobal`, `SmallSupportCurvature`, `CanonicalCurvatureComplete`, `SharpCurvatureTheorem`: the sharp symmetric minimum for every legal `N,k,m,t` |
