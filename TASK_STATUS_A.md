@@ -1,3 +1,5 @@
+> Historical PR #5 workstream record. The final integrated branch supersedes the interim status below; the authoritative records are `formal_status/full_closure.md`, `formal_status/manuscript_concordance.md`, and the final closure audit logs.
+
 # Mathematical integration status, 15 October 2026
 
 Baseline: `ebf534362f596175a24fc33e9eebc1cd4145349f`.
@@ -28,9 +30,9 @@ Research branch: `research/kl-control-20261015`.
 
 Lean 4.33.0 and pinned Mathlib 4.33.0 compile the entire integrated library.
 Nine additional declarations are accepted, and thirteen audited declarations
-use only `propext`, `Classical.choice` and `Quot.sound`. The principal analytic
-chain L1--L8 remains incomplete, as specified in `proof_gap_register.md`.
-No complete-formalization claim is made.
+use only `propext`, `Classical.choice` and `Quot.sound`. This snapshot predates
+the final closure; the integrated branch now contains the completed L1--L8 chain.
+See `formal_status/full_closure.md` and `formal_status/manuscript_concordance.md`.
 
 The source statements of existing Lean theorems were preserved. Scoped
 imports replace the broad Mathlib import; dependency revisions are locked.

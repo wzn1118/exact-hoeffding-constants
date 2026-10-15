@@ -1,3 +1,5 @@
+> Historical finite-Chernoff workstream record. The final integrated branch supersedes the interim status below; the authoritative records are `formal_status/full_closure.md`, `formal_status/manuscript_concordance.md`, and the final closure audit logs.
+
 # Finite Chernoff bridge status, 15 October 2026
 
 `ExactHoeffding.finite_markov_exp_bound` proves a finite weighted exponential
@@ -12,6 +14,6 @@ library build. `checks/lean_axioms.lean` reports only `propext`,
 Evidence: `research/tail_bounds/evidence/lean_integrated_build.log`,
 `lean_umbrella.log`, `lean_axioms.log`.
 
-The optimizer-to-KL identity, its endpoint limits, Riccati barrier and complete
-hypergeometric instantiation remain open kernel proof obligations. They are
-not replaced by a conditional MGF hypothesis in a purported final theorem.
+At the time of this snapshot, the optimizer-to-KL identity, endpoint limits,
+Riccati barrier and hypergeometric instantiation were open obligations. They are
+completed in the integrated branch and audited through the final umbrella.
