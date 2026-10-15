@@ -43,4 +43,5 @@ import ExactHoeffding.TiltedEndpoints
 import ExactHoeffding.HypergeometricEndpoints
 import ExactHoeffding.CanonicalCurvature
 import ExactHoeffding.SmallSupportCurvature
+import ExactHoeffding.DegenerateCurvature
 import ExactHoeffding.TwoDrawProxy
