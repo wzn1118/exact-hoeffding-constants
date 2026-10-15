@@ -33,6 +33,7 @@ import ExactHoeffding.VarianceBarrierFlow
 import ExactHoeffding.HypergeometricBarrier
 import ExactHoeffding.RiccatiComparison
 import ExactHoeffding.BernoulliRiccati
+import ExactHoeffding.BernoulliBalancedLimit
 import ExactHoeffding.ScaledBernoulliComparison
 import ExactHoeffding.CrossSum
 import ExactHoeffding.WholeLineCrossing
