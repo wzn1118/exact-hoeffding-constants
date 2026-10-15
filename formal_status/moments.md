@@ -135,3 +135,91 @@ The source policy scan for `sorry`, `admit`, `axiom`, and `native_decide`,
 and `git diff --check`, also returned exit code 0.
 No standalone `#print` audit is run for this module; the coordinator owns
 the final combined audit.
+
+## Actual inverse-population optimizer closure (2026-10-15)
+
+All modules below are new owned files in `moments-closure`, on
+`formal/moments-closure-20261015`. No root umbrella, other worker module,
+or finite-population Bernoulli comparison is changed. In particular,
+`HighCumulants.lean` and `FinitePopulationBernoulliEnvelope.lean` remain
+outside this worker's ownership.
+
+The continuation is the actual factorial-basis MGF with independent real
+inverse population `e`, not a numerical proxy or a fixed-law tilt Taylor
+series. For `N >= 2`, `k <= N`, `1 <= m <= N`, and
+`2 * (k : Real) + s = N`, it agrees at `e = 1/N` with the finite
+hypergeometric law. The removable value of `Q(e,0)` is proved equal to
+the actual variance; for `t != 0` it is exactly
+`2 * log(centeredHypergeomMGF N k m t) / t^2`.
+
+### Committed kernel-checked modules
+
+| Commit | Module | Successful build log under `.lake/build/` |
+| --- | --- | --- |
+| `2a375de` | `RescaledFactorialFamily` | `rescaled-factorial-family-build-3.log` |
+| `c0af066` | `RescaledMGFBridge` | `rescaled-mgf-bridge-build-2.log` |
+| `d2c31b6` | `AnalyticQuotientKernels` | `analytic-quotient-kernels-build-2.log` |
+| `1ef0f03` | `RescaledProxyAnalytic` | `rescaled-proxy-analytic-build-2.log` |
+| `619f965` | `RescaledQLimit` | `rescaled-q-limit-build-3.log` |
+| `2edcfd7` | `LimitProxyStrict` | `limit-proxy-strict-build-7.log` |
+| `1bf9dbd` | `RescaledActualProxy` | `rescaled-actual-proxy-build-3.log` |
+| `932ce6a` | `RescaledCompactConvergence` | `rescaled-compact-convergence-build-4.log` |
+| `30e2d95` | `ActualProxyTail` | `actual-proxy-tail-build-2.log` |
+| `89a2bc1` | `ActualOptimizerLocalization` | `actual-optimizer-localization-build-7.log` |
+| `41c9f11` | `LimitProxyCurvature` | `limit-proxy-curvature-build-2.log` |
+| `927f34b` | `AnalyticTiltPartial` | `analytic-tilt-partial-build-2.log` |
+| `5dabb00` | `RescaledUniformConcavity` | `rescaled-uniform-concavity-build-1.log` |
+| `988ac9f` | `ActualUniqueOptimizer` | `actual-unique-optimizer-build-1.log` |
+| `1bee98a` | `AnalyticImplicitTilt` | `analytic-implicit-tilt-build-3.log` |
+| `a6ae366` | `RescaledAnalyticOptimizer` | `rescaled-analytic-optimizer-build-2.log` |
+| `f64cd63` | `RescaledTiltCoefficient` | `rescaled-tilt-coefficient-build-3.log` |
+| `d8fe091` | `RescaledMixedDerivative` | `rescaled-mixed-derivative-build-2.log` |
+| `e701509` | `AnalyticOptimizerLeading` | `analytic-optimizer-leading-build-2.log` |
+| `6cd7a66` | `RescaledOptimumLeading` | `rescaled-optimum-leading-build-2.log` |
+| `74f24db` | `ActualAnalyticAsymptotics` | `actual-analytic-asymptotics-build-3.log` |
+| `35d0551` | `ActualOptimizerPopulationLimit` | `actual-optimizer-population-limit-build-1.log` |
+
+Each listed proof module was compiled with Lean 4.33.0, `-j 1`, and exit
+code 0. Earlier failed build attempts are not certificates; the table
+records the successful final log for each module.
+All new compilations use the exclusive lock
+`/data/hoeffding_full_20261015/lean_compile.lock` and `timeout 600` inside
+the lock. No standalone `#print` or extra audit compilation is run.
+
+### Actual proved mathematical scope
+
+- Joint real analyticity of the explicit removable `Q` near `(0,0)` and
+  along the entire limiting axis `(0,t)`; compact uniform convergence
+  includes zero tilt.
+- Strict limiting inequality `Q(0,t) < Q(0,0) = m/4` for `m > 0`,
+  `t != 0`, plus the actual support tail `Q_N(t) <= 2*m/abs(t)`.
+- Uniform localization of all actual global maxima, proved rather than
+  assumed, and existence and uniqueness for all sufficiently large
+  admissible integer populations. Arbitrary subsequences `N(n) -> infinity`
+  are covered, so odd-population applications do not use a vacuous
+  all-integers fixed-parity premise.
+- Actual limiting Hessian `Q_tt(0,0) = -m/48` and actual mixed derivative
+  `Q_et(0,0) = m*s/12`.
+- An analytic implicit critical branch is constructed using the analytic
+  inverse theorem and identified with the actual unique global optimizer.
+  No maximizer, optimizer continuity, or derivative formula is assumed.
+- The same optimizing branch satisfies `tau(0)=0`, `tau'(0)=4*s`,
+  `tau(e)=4*s*e+e^2*T(e)` with `T` analytic near zero, and hence an
+  actual `O(e^2)` remainder. For `s > 0`, its actual optimizing tilt is
+  positive eventually along every admissible population subsequence, with
+  `tau(1/N)/(1/N) -> 4*s`.
+- The normalized optimized value is analytic, equals one at zero, has
+  derivative one there, and is exactly `1+e+e^2*U(e)` for an analytic
+  `U` near zero. Thus this is an optimizer expansion in inverse population,
+  not the earlier fixed-distribution Taylor theorem.
+
+### Remaining coefficient work (not certified here)
+
+The explicit tilt coefficients at orders `e^2,e^3` and normalized optimal
+value coefficients at orders `e^2,e^3,e^4` in `source/new_results.tex`
+have not yet been asserted as Lean theorems by these modules. In particular,
+the analytic `T,U` remainders do not identify those coefficients. The
+fourth-order numerical expansion and its `O(e^5)` remainder remain open
+until those actual derivative/coefficient computations are kernel-checked.
+The coordinator's high-cumulant work is not duplicated or inferred from
+uncompiled statements.
