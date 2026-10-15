@@ -79,3 +79,4 @@ import ExactHoeffding.AllParameterCurvatureEquality
 import ExactHoeffding.TwoDrawProxy
 import ExactHoeffding.TwoDrawProxyComplete
 import ExactHoeffding.TwoDrawComparison
+import ExactHoeffding.TwoDrawSingletonComparison
