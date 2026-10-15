@@ -68,7 +68,7 @@ private theorem halfLogOdds_hasDerivAt (x : ℝ) (hx : -1 < x ∧ x < 1) :
   apply (h.const_mul (1 / 2)).congr_deriv
   dsimp
   field_simp
-  <;> ring
+  ring
 
 /-- A strict cubic lower bound for artanh at the rational point in the appendix. -/
 theorem artanh_one_fifteenth_cubic_lower :
@@ -84,7 +84,7 @@ theorem artanh_one_fifteenth_cubic_lower :
     apply h.congr_deriv
     dsimp
     field_simp
-    <;> ring
+    ring
   have hmono : StrictMonoOn f (Set.Icc (0 : ℝ) (1 / 15)) := by
     apply strictMonoOn_of_deriv_pos (convex_Icc _ _)
     · exact fun x hx => (hf x hx).continuousAt.continuousWithinAt
@@ -120,6 +120,45 @@ theorem hypergeom_curvature_obstruction :
     norm_num
   · norm_num
 
+/-- Centering changes the log MGF by a linear function and preserves its
+second derivative at every tilt. -/
+theorem centeredHypergeomLogMGF_second_deriv (N k m : ℕ)
+    (hk : k ≤ N) (hm : m ≤ N) (t : ℝ) :
+    deriv (deriv (fun u => Real.log (centeredHypergeomMGF N k m u))) t =
+      deriv (deriv (fun u => Real.log (hypergeomMGF N k m u))) t := by
+  have hlog : (fun u => Real.log (centeredHypergeomMGF N k m u)) =
+      (fun u => Real.log (hypergeomMGF N k m u) - (k : ℝ) * m / N * u) := by
+    funext u
+    have hp : 0 < hypergeomMGF N k m u :=
+      finiteMGF_pos_of_normalized (Finset.range (m + 1))
+      (hypergeomMass N k m) (fun i => (i : ℝ))
+      (fun i _ => hypergeomMass_nonneg N k m i) (hypergeomMass_total N k m hk hm) u
+    rw [centeredHypergeomMGF_factor,
+      Real.log_mul (Real.exp_ne_zero _) (ne_of_gt hp), Real.log_exp]
+    ring
+  have hfirst : deriv (fun u => Real.log (centeredHypergeomMGF N k m u)) =
+      (fun u => deriv (fun v => Real.log (hypergeomMGF N k m v)) u -
+        (k : ℝ) * m / N) := by
+    rw [hlog]
+    funext u
+    rw [deriv_fun_sub
+      (((hypergeom_logMGF_contDiff N k m 1 hk hm).differentiable (by norm_num)) u)
+      (by fun_prop), deriv_const_mul_id]
+  rw [hfirst, deriv_sub_const]
+
+/-- The appendix counterexample as an inequality for the actual centered log
+MGF, with the paper's finite-population variance scale. -/
+theorem hypergeom_centered_curvature_pointwise_bound_fails :
+    1 / (15 * Real.artanh (1 / 15)) *
+        ((3 : ℝ) * (15 - 3) / (4 * (15 - 1))) <
+      deriv (deriv (fun t => Real.log (centeredHypergeomMGF 15 7 3 t)))
+        (Real.log (7 / 6)) := by
+  rw [centeredHypergeomLogMGF_second_deriv 15 7 3 (by norm_num) (by norm_num),
+    hypergeom_curvature_obstruction_variance]
+  have h := curvature_obstruction_rho_lt
+  norm_num at h ⊢
+  linarith
+
 /-- Twice-integrated curvature for any centered `C²` function, for either sign
 of the nonzero tilt. -/
 theorem centered_integrated_curvature (ψ : ℝ → ℝ) (hψ : ContDiff ℝ 2 ψ)
@@ -149,7 +188,7 @@ theorem centered_integrated_curvature (ψ : ℝ → ℝ) (hψ : ContDiff ℝ 2 �
   have hi := intervalIntegral.integral_eq_sub_of_hasDerivAt (fun u _ => hF u) hint
   rw [intervalIntegral.integral_const_mul] at hi
   dsimp [F] at hi
-  simp only [one_mul, zero_mul, sub_self, mul_zero, zero_add, add_zero,
+  simp only [one_mul, zero_mul, sub_self, mul_zero, add_zero,
     sub_zero, hzero, hderivzero] at hi
   rw [← hi]
   field_simp
