@@ -19,6 +19,7 @@ import ExactHoeffding.Support
 import ExactHoeffding.Jacobi
 import ExactHoeffding.BernoulliKL
 import ExactHoeffding.StationaryCertificates
+import ExactHoeffding.StationaryGlobal
 import ExactHoeffding.GlobalCrossing
 import ExactHoeffding.RiccatiCertificates
 import ExactHoeffding.RiccatiBarrier
