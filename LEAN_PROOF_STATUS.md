@@ -38,7 +38,7 @@ in `ExactOddGlobalTheorem.lean`.
 ## Scope of the remaining work
 
 The full manuscript includes further assertions beyond the exact constants:
-classical Jacobi simple roots and standard Jacobi normalization,
+standard Jacobi normalization (the actual canonical PGF simple-root statement is now proved),
 optimized fourth-order asymptotics,
 fixed-sample uniform extremizers, exact imbalance response, and analytic
 contraction. Their precise state is recorded in

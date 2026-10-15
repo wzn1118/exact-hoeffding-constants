@@ -62,7 +62,7 @@ one squeeze argument. The identical limit holds for the actual infimum
 | Matching lower bound | `HammingMeasure`, `HammingExchangeableLower`: actual probability measures realizing Hamming slices |
 | Variational identity and exact coefficient | `ExchangeableConstants`, `VariationalUpper`, `VariationalIdentity`, `ExactParityConstants`, `ExactOddGlobalTheorem` |
 | Weighted concentration | `ProjectedWeights`, `GeneralWeightedTail`: projected squared norm, actual-measure exponential Markov bound and confidence threshold |
-| Jacobi factorization | `JacobiRoots`, `JacobiMobius`, `JacobiFactorization`, `JacobiActualPGF`: Rodrigues real splitting, exact Möbius bridge, `j` negative roots counted with multiplicity, actual canonical tilted PGF product with interior Bernoulli parameters |
+| Jacobi factorization | `JacobiRoots`, `JacobiMobius`, `JacobiFactorization`, `JacobiActualPGF`, `JacobiSimpleRoots`: Rodrigues real splitting, exact Möbius bridge, `j` negative roots counted with multiplicity, actual canonical tilted PGF product with interior Bernoulli parameters |
 
 The Bernoulli sharp proxy is also bounded by the universal quarter coefficient,
 with strict inequality for nonbalanced interior parameters.
@@ -78,7 +78,7 @@ the formal proof does not change that literature attribution.
 1. Classical Jacobi identification, root location and simple-root statement;
    all-parameter shifted Poisson–binomial distribution on an explicit product
    probability space. The actual law equality is now proved by `HypergeomBernoulliLaw`; Jacobi PGF roots
-   are also proved simple by the ODE, while standard Jacobi normalization remains open.
+   are also proved simple by the ODE in `JacobiSimpleRoots`, while standard Jacobi normalization remains open.
 2. The main theorem's first-order limit is complete in `ConstantAsymptotics`.
 3. The fixed-population fourth-order Taylor formula is complete in
    `MGFDerivatives` and `LogMGFTaylor`, with actual derivatives, `o(t^4)`
