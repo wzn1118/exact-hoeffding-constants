@@ -31,8 +31,9 @@ The detailed inventory is [formal_status/full_closure.md](formal_status/full_clo
 
 - For each fixed positive sample size and success imbalance, all global maximizing
   tilts localize to zero and form a unique analytic branch for sufficiently large
-  admissible populations. Its first two coefficients are `4s` and `4s(m-1)`; the actual normalized
-  optimum is `1 + N⁻¹ + (1-s²/3)N⁻² + (1-(2m-1)s²/3)N⁻³ + O(N⁻⁴)`.
+  admissible populations. Its first three coefficients are `4s`, `4s(m-1)`, and `4s(6m+s²-6)/3`. The actual normalized
+  optimum has fourth coefficient `1-(4m²-2m-1)s²/3-4s⁴/45` and an analytic fifth-order remainder.
+  The odd nearly balanced singleton gap has fourth coefficient `2(m-1)(2m+1)/3`.
 - Both parity maximizing-margin classifications are complete: for even populations
   the normalized optimum is attained exactly at balanced success counts.
 
@@ -45,7 +46,6 @@ in `ExactOddGlobalTheorem.lean`.
 ## Scope of the remaining work
 
 The full manuscript includes further assertions beyond the exact constants:
-the explicit third tilt and fourth optimized-value coefficients,
 exact finite-population imbalance response and the compact analytic correction factorization. The joint analytic optimizer and its actual normalized global value are proved. Standard Jacobi normalization
 and the all-success fixed-sample extremizer theorem are proved. The compact success-proportion comparison itself
 is proved with an explicit threshold and complete equality classification. Their precise state is recorded in
@@ -53,7 +53,7 @@ is proved with an explicit threshold and complete equality classification. Their
 Taylor formula does not establish the global optimized population expansion.
 
 The integrated source checkpoint passes the umbrella build and a generated
-audit of **1257 public theorems in 194 project modules**. Only `propext`,
+audit of **1322 public theorems in 214 project modules**. Only `propext`,
 `Classical.choice`, and `Quot.sound` occur in the reported dependencies.
 
 ## Verification
