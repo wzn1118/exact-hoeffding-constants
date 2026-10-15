@@ -118,3 +118,4 @@ import ExactHoeffding.JacobiRootDispersion
 import ExactHoeffding.BernoulliMGFGeometry
 import ExactHoeffding.ExactImbalanceAlgebra
 import ExactHoeffding.HigherLogMGFDerivatives
+import ExactHoeffding.BernoulliSharpBounds

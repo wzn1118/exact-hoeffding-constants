@@ -64,6 +64,9 @@ one squeeze argument. The identical limit holds for the actual infimum
 | Weighted concentration | `ProjectedWeights`, `GeneralWeightedTail`: projected squared norm, actual-measure exponential Markov bound and confidence threshold |
 | Jacobi factorization | `JacobiRoots`, `JacobiMobius`, `JacobiFactorization`, `JacobiActualPGF`: Rodrigues real splitting, exact Möbius bridge, `j` negative roots counted with multiplicity, actual canonical tilted PGF product with interior Bernoulli parameters |
 
+The Bernoulli sharp proxy is also bounded by the universal quarter coefficient,
+with strict inequality for nonbalanced interior parameters.
+
 The curvature and finite-exchangeability constant proofs use the direct
 adjacent-weight feasibility argument. They do not require a presumed Jacobi
 factorization or an external Lee–Kim conclusion as an axiom. The two-draw
