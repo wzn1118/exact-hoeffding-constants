@@ -26,7 +26,7 @@ Scope: the 30 labelled `theorem`, `lemma`, `proposition`, and `corollary` enviro
 | 20 | `odd:lem:ode` | `HypergeometricODE`: `hypergeomTiltMean_riccati`, `hypergeomTiltVariance_differential_balance`, `hypergeomTiltVariance_curve_identity`; `VarianceBarrierFlow`: `variance_barrier_of_riccati_flow` | Complete actual differential identity in the tilt coordinate. The proof uses the equivalent monotone mean flow directly and needs no formal inverse-mean definition. |
 | 21 | `odd:lem:barrier` | `HypergeometricBarrier`: `hypergeomTiltVariance_barrier_canonical`; `VarianceBarrierFlow`: `variance_barrier_of_riccati_flow` | Complete global quadratic barrier with equality exactly at zero tilt; polynomial and crossing arguments are internal inputs. |
 | 22 | `odd:thm:odd` | `OddHypergeomExtremizers`: `odd_normalized_proxy_all_upper`, `odd_normalized_proxy_all_equality`; `ExactOddGlobalTheorem`: `odd_normalized_proxy_global_optimality`, `exact_odd_global_theorem` | Complete all margins, exhaustive equality classification, variational optimum and exact odd exchangeability constant. |
-| 23 | `prop:variance_parity` | `Parity`: `even_margin_identity`, `odd_margin_identity`, `even_variance_formula`, `odd_variance_formula`; `ConstantAsymptotics`: `oddHypergeomConstant_first_order_lower`; `HammingExchangeableLower`: `normalized_variance_le_exchangeable_coefficient` | Partial. These do not yet establish the proposition's actual variance supremum, its integral gap identity, strict variance-vs-proxy inequality or the displayed fourth-order gap expansion. See follow-up below. |
+| 23 | `prop:variance_parity` | `ExchangeableVarianceMoments`: `finiteExchangeable_contrast_variance`; `ExchangeableCenteredEnergy`: `finiteExchangeable_contrast_variance_energy`; `CubeCenteredEnergyBounds`: `centeredCubeEnergy_le`, `centeredCubeEnergy_signVertex`; `ExchangeableVarianceSupremum`: `finiteExchangeable_variance_le_parity`, `uniformHammingMeasure_nearestBalanced_variance`, `exactExchangeableVarianceConstant_eq`, `exactExchangeableVarianceConstant_floor`, `exact_variance_parity_theorem`, `exact_variance_gap_fourth_expansion_along`; `ParityVarianceGap`: `oddHypergeomConstant_variance_gap_integral`, `oddHypergeomConstant_gt_variance`, `odd_variance_gap_fourth_expansion_along` | Complete actual exchangeable-measure variance supremum over every nonzero zero-sum contrast, floor and parity formulas, attainment by every contrast under the nearest-balanced Hamming law, strict odd gap, integral identity and fourth-order expansion with coefficient `26/45`. |
 | 24 | `prop:explicit_extremizer` | `ExplicitExtremizerTheorem`: `explicit_single_coordinate_extremizer`; `ExplicitSingletonExtremizer`: `singleCoordinateContrast_sum`, `singleCoordinateContrast_sq_norm`, `singleCoordinateContrast_linear`, `singleCoordinate_odd_contact`; `ExplicitSingletonExtremizerLaw`: `singleCoordinateBernoulli_law`, `singleCoordinateContrast_eq_centeredBernoulli_ae`, `singleCoordinate_even_quadratic_limit` | Complete actual Hamming probability law, exchangeability and cube support; explicit coordinate contrast, full Bernoulli pushforward, odd nonzero-tilt equality and even zero-tilt limit for every N≥2. |
 | 25 | `lem:threemass` | `TwoDrawProxyComplete`: `threeMass_asymmetric_optimal_proxy`, `threeMass_balanced_optimal_proxy`, `threeMass_optimal_proxy` | Complete positive three-mass formula in the printed parameter regime, with attribution retained in the manuscript. |
 | 26 | `prop:odd2` | `TwoDrawProxyComplete`: `hypergeom_two_draw_optimal_proxy`; `TwoDrawComparison`: `hypergeom_two_draw_odd_max_iff`, `hypergeom_two_draw_odd_max_value`; `TwoDrawSingletonComparison`: `odd_two_draw_all_success_extremizers`, `oddTwoDrawConstant_lt_singleton`; `OptimalProxyFourthExpansion`: `odd_nearly_balanced_gap_fourth_expansion_along` specialized to `m=2` | Complete exact formula, all success counts, strict singleton comparison and stated asymptotic gap. |
@@ -46,18 +46,8 @@ The original proof introduced an analytic function in the squared coordinate, `A
 
 `JointLocalImbalanceMonotonicity.jointNormalizedValue_uniform_local_strictAnti` internally constructs the actual analytic global optimizer and proves precisely this uniform strict decrease. `source/uniform_results.tex` now uses this route. No assertion that an analytic squared-coordinate factor has been formalized is needed.
 
-## Statements requiring additional consolidation or proofs
+## Proposition assembly
 
-### `prop:variance_parity`
+`prop:variance_parity` is completed in `ExchangeableVarianceSupremum`, including the actual variance supremum, nearest-balanced Hamming attainment for every contrast, the strict odd gap, its integral identity, and the fourth-order expansion.
 
-The exact remaining conclusions are:
-
-- Define the supremum over actual exchangeable cube measures and nonzero zero-sum contrasts, then prove its value `4 floor(N²/4)/(N(N-1))`.
-- Establish the actual contrast covariance identity and attainment by every nonzero contrast under a nearest-balanced Hamming law.
-- Establish strict positivity of the odd gap, its integral identity `2∫₀ˣ t artanh(t) dt / ((1-x) artanh(x))`, and the fourth-order expansion with coefficient `26/45`.
-
-The existing first-order lower bound is non-strict. The parity algebra and the sharp MGF constant alone do not replace these variance assertions.
-
-### `prop:explicit_extremizer`
-
-Completed by `ExplicitExtremizerTheorem.explicit_single_coordinate_extremizer`, which assembles the actual probability law, full Bernoulli pushforward, contrast norm and both parity contact mechanisms in a single statement.
+`prop:explicit_extremizer` is completed by `ExplicitExtremizerTheorem.explicit_single_coordinate_extremizer`, which assembles the actual probability law, full Bernoulli pushforward, contrast norm and both parity contact mechanisms in a single statement.
