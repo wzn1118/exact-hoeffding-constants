@@ -93,3 +93,11 @@ import ExactHoeffding.TwoDrawProxy
 import ExactHoeffding.TwoDrawProxyComplete
 import ExactHoeffding.TwoDrawComparison
 import ExactHoeffding.TwoDrawSingletonComparison
+import ExactHoeffding.BernoulliOptimal
+import ExactHoeffding.HammingExchangeableLower
+import ExactHoeffding.ProjectedWeights
+import ExactHoeffding.GeneralWeightedTail
+import ExactHoeffding.ExchangeableConstants
+import ExactHoeffding.VariationalUpper
+import ExactHoeffding.VariationalIdentity
+import ExactHoeffding.ExactParityConstants
