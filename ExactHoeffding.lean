@@ -25,6 +25,7 @@ import ExactHoeffding.Jacobi
 import ExactHoeffding.JacobiRoots
 import ExactHoeffding.BernoulliKL
 import ExactHoeffding.StationaryCertificates
+import ExactHoeffding.StationaryEquality
 import ExactHoeffding.StationaryGlobal
 import ExactHoeffding.GlobalCrossing
 import ExactHoeffding.RiccatiCertificates
