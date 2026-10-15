@@ -26,6 +26,7 @@ import ExactHoeffding.GlobalCrossing
 import ExactHoeffding.RiccatiCertificates
 import ExactHoeffding.RiccatiBarrier
 import ExactHoeffding.RiccatiComparison
+import ExactHoeffding.BernoulliRiccati
 import ExactHoeffding.CrossSum
 import ExactHoeffding.WholeLineCrossing
 import ExactHoeffding.BernoulliProxy
