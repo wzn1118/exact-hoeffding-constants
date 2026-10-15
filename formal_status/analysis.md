@@ -40,7 +40,7 @@ bernoulliCenteredLogMGF (1/2) t <= (1/4) * t^2 / 2
 by the exact factorization
 `bernoulliMGF (1/2) t = exp (t/2) * cosh (t/2)` and Mathlib's
 `Real.cosh_le_exp_half_sq`.  It also proves the exact equality statement at
-`t = 0`.  The general non-balanced sharp coefficient is still open here.
+`t = 0`.  The non-balanced extension is recorded below.
 
 The fixed 4.33.0 direct module build was run serially under
 `/data/hoeffding_full_20261015/lean_compile.lock`:
@@ -97,11 +97,80 @@ audit imported the generated local `.olean` and reported:
 
 No `sorryAx`, `sorry`, `admit`, or extra axiom is present in this module.
 
+## Checked sub-half extension (2026-10-15)
+
+- Commit: `d3ee261fef212d15935a55e63d0d293a3a8e8dc7`.
+- Paper location: `source/manuscript.tex`, Appendix `app:bernoulli`, formula
+  `eq:bernproxy`; equivalent squared-coordinate proof as in
+  `docs/odd_population_proof_zh.md`.
+- Statement: `bernoulli_quadratic_bound_lt_half (p) (0 < p) (p < 1/2) (t)`
+  proves `bernoulliCenteredLogMGF p t <=
+  ((1-2*p)/(2*log((1-p)/p))) * t^2/2` for every real tilt `t`.
+- Proof: exact shifted `log cosh` representation, proved concavity of `tanh`
+  on `Ici 0`, antitonicity of `tanh(x)/x` on `Ioi 0`, and the shared generic
+  `even_tangent_square_of_deriv_ratio_antitone`. No tangent inequality or
+  Bernoulli upper bound is assumed in the theorem.
+- External checked dependency: `ExactHoeffding.TwoDrawProxy`, worker commit
+  `03f6e5adc2ced2d45f3026d74c5795d8d4e3f177`, integrated by root as `6495d3a`.
+  Only existing `.olean` artifacts were copied into the private build; their
+  sources are not duplicated in this branch.
+- Build: fixed Lean 4.33.0, `lean -j1 -o
+  .lake/build/lib/lean/ExactHoeffding/BernoulliProxy.olean -i
+  .lake/build/lib/lean/ExactHoeffding/BernoulliProxy.ilean
+  ExactHoeffding/BernoulliProxy.lean`, serialized by `flock
+  /data/hoeffding_full_20261015/lean_compile.lock` with no lock-wait timeout.
+  The resulting `.olean` was imported successfully for the axioms audit.
+  Compile log: `/data/hoeffding_full_20261015/evidence/bernoulli_proxy_subhalf.log`;
+  only the unused `zero_div` simp-argument warning remains. This is a direct
+  module kernel build, not a new claim of a full `lake build` on this old
+  branch.
+- The subsequent lock-protected `lean -j1 --stdin` audit printed the same
+  axiom list for `bernoulli_quadratic_bound_lt_half`,
+  `bernoulli_log_cosh_tangent_square`, and `bernoulli_tanh_ratio_antitone`:
+  `[propext, Classical.choice, Quot.sound]`. There is no `sorryAx`.
+
+## Checked closed-interval sharp proxy (2026-10-15)
+
+`ExactHoeffding/BernoulliOptimal.lean` proves the sharp global quadratic
+bound and its leastness for every `0 <= p <= 1`:
+
+```text
+bernoulli_sharp_quadratic_bound (p) (0 <= p) (p <= 1) :
+  IsQuadraticProxy (bernoulliCenteredLogMGF p) (bernoulliSharpBeta p)
+
+bernoulli_sharp_quadratic_optimal (p) (0 <= p) (p <= 1) :
+  IsOptimalQuadraticProxy (bernoulliCenteredLogMGF p) (bernoulliSharpBeta p)
+```
+
+- `bernoulliSharpBeta` is `1/4` at balance and
+  `(1-2*p)/(2*log((1-p)/p))` otherwise, with proved value zero at both
+  deterministic endpoints.
+- MGF reflection supplies the upper-half bound. At every non-balanced
+  interior parameter, the tilt `2*log((1-p)/p)` is nonzero and attains
+  equality; this proves leastness without assuming any desired bound.
+- The balanced lower bound reuses the checked actual hypergeometric
+  quotient limit at `N=2, k=1, m=1`, the balanced zero-tilt variance formula,
+  and the exact singleton identity. The dependency
+  `ExactHoeffding.SingletonOptimalProxy` was integrated by root as
+  `c38b5d6`; `ExactHoeffding.VarianceOptimality` as `8dc68b3`.
+  These modules do not import `BernoulliOptimal`, so there is no cycle.
+- Existing dependency artifacts were copied only to this worktree's private
+  build. No shared package, other worktree source, or umbrella was edited.
+- Verification: Lean 4.33.0, private `LEAN_PATH`, shared `flock` without a
+  lock-wait timeout, and `timeout 600 lean -j1 -o ... -i ...
+  ExactHoeffding/BernoulliOptimal.lean`. The complete module compilation
+  started at `2026-10-15T06:51:47Z` and returned `lean_exit_code=0`.
+  Log: `/data/hoeffding_full_20261015/evidence/bernoulli_optimal4.log`.
+  Only two `unnecessarySeqFocus` linter warnings remain.
+- No extra per-module axioms audit was queued; the new module's audit is
+  root-owned as requested. Its source contains no `sorry`, `admit`, `axiom`,
+  `native_decide`, or `unsafe` declaration. This is a direct module kernel
+  build, not a claim that the full historical branch was rebuilt.
+
 ## Remaining scope
 
-- Complete the nondegenerate, non-balanced Bernoulli optimal quadratic upper
-  bound.  The balanced case `p = 1/2` and equality at `t = 0` are now checked.
-- Keep the Riccati/Laplace crossing comparison separate from the main theorem;
-  no unproved crossing lemma may be used as an assumption of a claimed result.
-- Preserve the finite-population parity, Jacobi, support, and ordinary-moment
-  gaps as external dependencies owned by the other workstreams.
+- The finite-population odd-exact optimization and integration into the
+  manuscript's main theorem remain root-owned work. The closed-interval
+  Bernoulli result alone is not reported as that full theorem.
+- The earlier Riccati/Jacobi/support/moment gaps are external workstreams;
+  this status file does not certify their closure.

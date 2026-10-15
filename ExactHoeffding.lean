@@ -1,5 +1,6 @@
 import ExactHoeffding.Basic
 import ExactHoeffding.Contrasts
+import ExactHoeffding.ProjectedWeights
 import ExactHoeffding.Hypergeometric
 import ExactHoeffding.Laplace
 import ExactHoeffding.Parity
@@ -68,6 +69,7 @@ import ExactHoeffding.ProxyQuotient
 import ExactHoeffding.OptimalProxy
 import ExactHoeffding.NormalizedProxy
 import ExactHoeffding.ParityProxyComparison
+import ExactHoeffding.OddHypergeomExtremizers
 import ExactHoeffding.SingletonOptimalProxy
 import ExactHoeffding.ThreePointTangent
 import ExactHoeffding.ThreePointRolle
@@ -91,3 +93,14 @@ import ExactHoeffding.TwoDrawProxy
 import ExactHoeffding.TwoDrawProxyComplete
 import ExactHoeffding.TwoDrawComparison
 import ExactHoeffding.TwoDrawSingletonComparison
+import ExactHoeffding.BernoulliOptimal
+import ExactHoeffding.HammingExchangeableLower
+import ExactHoeffding.ProjectedWeights
+import ExactHoeffding.GeneralWeightedTail
+import ExactHoeffding.ExchangeableConstants
+import ExactHoeffding.VariationalUpper
+import ExactHoeffding.VariationalIdentity
+import ExactHoeffding.ExactParityConstants
+import ExactHoeffding.ExactOddGlobalTheorem
+import ExactHoeffding.Cumulants
+import ExactHoeffding.JacobiActualPGF
