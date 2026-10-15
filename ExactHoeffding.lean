@@ -51,3 +51,4 @@ import ExactHoeffding.CanonicalCurvature
 import ExactHoeffding.SmallSupportCurvature
 import ExactHoeffding.DegenerateCurvature
 import ExactHoeffding.TwoDrawProxy
+import ExactHoeffding.TwoDrawProxyComplete
