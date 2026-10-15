@@ -1,0 +1,4 @@
+'ExactHoeffding.scaledBernoulliMean_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.scaledBernoulliLogLaplace_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.balancedBernoulliMean_riccati' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ExactHoeffding.balancedBernoulliLogLaplace_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]

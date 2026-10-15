@@ -1,0 +1,162 @@
+-- Whole-manuscript closure audit: only explicit kernel theorem dependencies.
+import ExactHoeffding.Support
+import ExactHoeffding.OrdinaryMomentsComplete
+import ExactHoeffding.ZeroTiltMoments
+import ExactHoeffding.StationaryCertificates
+import ExactHoeffding.StationaryGlobal
+import ExactHoeffding.RiccatiCertificates
+import ExactHoeffding.GlobalCrossing
+import ExactHoeffding.WholeLineCrossing
+import ExactHoeffding.RiccatiComparison
+import ExactHoeffding.BernoulliRiccati
+import ExactHoeffding.CrossSum
+import ExactHoeffding.HypergeometricODE
+import ExactHoeffding.TiltedAdmissibilityDirect
+import ExactHoeffding.TiltedEndpoints
+import ExactHoeffding.SmallSupportCurvature
+#print axioms ExactHoeffding.hypergeomSupport_iff
+#print axioms ExactHoeffding.hypergeomSupport_bounds
+#print axioms ExactHoeffding.hypergeomMass_ne_zero_iff
+#print axioms ExactHoeffding.hypergeomPMFValue_ne_zero_iff
+#print axioms ExactHoeffding.hypergeomPMFValue_sum_range_eq
+#print axioms ExactHoeffding.hypergeomPMFValue_sum_range
+#print axioms ExactHoeffding.hypergeomMass_zero_marks
+#print axioms ExactHoeffding.hypergeomMass_zero_draws
+#print axioms ExactHoeffding.hypergeomMass_full_draws
+#print axioms ExactHoeffding.hypergeomMass_full_marks
+#print axioms ExactHoeffding.hypergeom_mean_complete
+#print axioms ExactHoeffding.hypergeom_factorial_second_complete
+#print axioms ExactHoeffding.hypergeom_raw_second_complete
+#print axioms ExactHoeffding.hypergeom_variance_complete
+#print axioms ExactHoeffding.hypergeomTiltMean_zero
+#print axioms ExactHoeffding.hypergeomTiltVariance_zero
+#print axioms ExactHoeffding.stationary_elimination
+#print axioms ExactHoeffding.stationary_polynomial_constant
+#print axioms ExactHoeffding.stationary_polynomial_quadratic
+#print axioms ExactHoeffding.concave_quadratic_positive_root_bound
+#print axioms ExactHoeffding.stationary_main_identity
+#print axioms ExactHoeffding.stationary_K_expansion
+#print axioms ExactHoeffding.stationary_K_nonnegative
+#print axioms ExactHoeffding.stationary_square_identity
+#print axioms ExactHoeffding.stationary_small_A_auxiliary
+#print axioms ExactHoeffding.stationary_small_A_auxiliary_positive
+#print axioms ExactHoeffding.stationary_large_A_square
+#print axioms ExactHoeffding.stationary_large_A_nonnegative
+#print axioms ExactHoeffding.stationary_small_A_q_bound
+#print axioms ExactHoeffding.stationary_small_A_Eq_bound
+#print axioms ExactHoeffding.stationary_G_nonnegative
+#print axioms ExactHoeffding.universal_stationary_comparison
+#print axioms ExactHoeffding.admissible_stationary_sharp_bound
+#print axioms ExactHoeffding.two_mark_variance_envelope
+#print axioms ExactHoeffding.global_bound_of_stationary_bound
+#print axioms ExactHoeffding.riccati_differential_algebra
+#print axioms ExactHoeffding.barrier_admissibility_identity
+#print axioms ExactHoeffding.barrier_sum_of_squares_identity
+#print axioms ExactHoeffding.certificate_U_expansion
+#print axioms ExactHoeffding.certificate_V_expansion
+#print axioms ExactHoeffding.certificate_U_positive
+#print axioms ExactHoeffding.certificate_V_positive
+#print axioms ExactHoeffding.quadratic_form_identity
+#print axioms ExactHoeffding.quadratic_form_positive
+#print axioms ExactHoeffding.certificate_lambda_expansion
+#print axioms ExactHoeffding.certificate_alpha_numerator_expansion
+#print axioms ExactHoeffding.certificate_lambda_positive
+#print axioms ExactHoeffding.certificate_alpha_numerator_positive
+#print axioms ExactHoeffding.barrier_determinant_identity
+#print axioms ExactHoeffding.barrier_residual_identity
+#print axioms ExactHoeffding.barrier_certificate_positive
+#print axioms ExactHoeffding.barrier_left_endpoint_identity
+#print axioms ExactHoeffding.barrier_right_endpoint_identity
+#print axioms ExactHoeffding.barrier_endpoints_positive
+#print axioms ExactHoeffding.riccati_contact_derivative_identity
+#print axioms ExactHoeffding.envelopeM_positive
+#print axioms ExactHoeffding.barrierG_positive
+#print axioms ExactHoeffding.barrier_contact_W_positive
+#print axioms ExactHoeffding.strict_neg_of_deriv_neg_at_zeros_left
+#print axioms ExactHoeffding.strict_neg_of_deriv_pos_at_zeros_right
+#print axioms ExactHoeffding.global_crossing_barrier
+#print axioms ExactHoeffding.whole_line_crossing_barrier
+#print axioms ExactHoeffding.whole_line_crossing_barrier_of_limits
+#print axioms ExactHoeffding.linear_subsolution_comparison
+#print axioms ExactHoeffding.linear_subsolution_comparison_of_continuous
+#print axioms ExactHoeffding.quadratic_riccati_mean_comparison
+#print axioms ExactHoeffding.log_laplace_le_of_mean_comparison
+#print axioms ExactHoeffding.strict_linear_subsolution_comparison
+#print axioms ExactHoeffding.strict_quadratic_riccati_mean_comparison
+#print axioms ExactHoeffding.log_laplace_lt_of_strict_mean_comparison
+#print axioms ExactHoeffding.quadratic_riccati_log_laplace_domination
+#print axioms ExactHoeffding.strict_quadratic_riccati_log_laplace_domination
+#print axioms ExactHoeffding.scaledBernoulliDenom_pos
+#print axioms ExactHoeffding.scaledBernoulliDenom_hasDerivAt
+#print axioms ExactHoeffding.scaledBernoulliMean_hasDerivAt
+#print axioms ExactHoeffding.scaledBernoulliLogLaplace_hasDerivAt
+#print axioms ExactHoeffding.scaledBernoulliMean_zero
+#print axioms ExactHoeffding.scaledBernoulliLogLaplace_zero
+#print axioms ExactHoeffding.scaledBernoulliMean_probability_zero
+#print axioms ExactHoeffding.scaledBernoulliMean_probability_one
+#print axioms ExactHoeffding.scaledBernoulliLogLaplace_probability_zero
+#print axioms ExactHoeffding.scaledBernoulliLogLaplace_probability_one
+#print axioms ExactHoeffding.scaledBernoulliMean_continuous
+#print axioms ExactHoeffding.scaledBernoulliLogLaplace_continuous
+#print axioms ExactHoeffding.balancedBernoulliMean_hasDerivAt
+#print axioms ExactHoeffding.balancedBernoulliMean_riccati
+#print axioms ExactHoeffding.balancedBernoulliLogLaplace_hasDerivAt
+#print axioms ExactHoeffding.balancedBernoulliMean_zero
+#print axioms ExactHoeffding.balancedBernoulliLogLaplace_zero
+#print axioms ExactHoeffding.balancedBernoulliMean_continuous
+#print axioms ExactHoeffding.balancedBernoulliLogLaplace_continuous
+#print axioms ExactHoeffding.cross_sum_identity
+#print axioms ExactHoeffding.cross_sum_order
+#print axioms ExactHoeffding.hypergeomCount_adjacent
+#print axioms ExactHoeffding.hypergeomCount_adjacent_real
+#print axioms ExactHoeffding.hypergeomMass_adjacent_real
+#print axioms ExactHoeffding.hypergeomMass_tilted_adjacent
+#print axioms ExactHoeffding.hypergeomMass_tilted_balance
+#print axioms ExactHoeffding.hypergeomTiltExpectation_balance
+#print axioms ExactHoeffding.hypergeomTiltMoments_balance
+#print axioms ExactHoeffding.hypergeomMGF_pos
+#print axioms ExactHoeffding.hypergeomTiltMean_hasDerivAt
+#print axioms ExactHoeffding.hypergeomTiltMeanVariance_balance
+#print axioms ExactHoeffding.hypergeomTiltMean_riccati
+#print axioms ExactHoeffding.hypergeomTiltMeanVariance_balance_of_margins
+#print axioms ExactHoeffding.hypergeomTiltMean_riccati_of_margins
+#print axioms ExactHoeffding.finiteTiltSecond_differentiableAt
+#print axioms ExactHoeffding.hypergeomTiltVariance_differentiableAt
+#print axioms ExactHoeffding.hypergeomTiltVariance_differential_balance
+#print axioms ExactHoeffding.hypergeomTiltVariance_stationary_balance
+#print axioms ExactHoeffding.hypergeomTiltVariance_curve_identity
+#print axioms ExactHoeffding.hypergeomMass_pos_canonical
+#print axioms ExactHoeffding.hypergeomTiltMean_pos
+#print axioms ExactHoeffding.hypergeomTiltMean_lt
+#print axioms ExactHoeffding.hypergeomTiltVariance_centered_square
+#print axioms ExactHoeffding.hypergeomTiltVariance_pos
+#print axioms ExactHoeffding.hypergeomTiltMeanVariance_den_pos
+#print axioms ExactHoeffding.hypergeomTiltExp_ratio
+#print axioms ExactHoeffding.hypergeomLogMGF_second_deriv_eq_variance
+#print axioms ExactHoeffding.hypergeomTiltUpDown_balance
+#print axioms ExactHoeffding.hypergeomTiltDown_nonneg
+#print axioms ExactHoeffding.hypergeomTiltUpDown_cross
+#print axioms ExactHoeffding.hypergeomTiltUpDown_cross_order
+#print axioms ExactHoeffding.hypergeomTiltUp_sum
+#print axioms ExactHoeffding.hypergeomTiltUp_first
+#print axioms ExactHoeffding.hypergeomTiltDown_sum
+#print axioms ExactHoeffding.hypergeomTiltDown_first
+#print axioms ExactHoeffding.hypergeomTiltVariance_admissible
+#print axioms ExactHoeffding.hypergeomTiltVariance_admissible_of_margins
+#print axioms ExactHoeffding.hypergeomLogMGF_second_deriv_admissible
+#print axioms ExactHoeffding.tilted_ratio_shift
+#print axioms ExactHoeffding.finite_exp_sum_tendsto_atTop
+#print axioms ExactHoeffding.finite_exp_sum_tendsto_atBot
+#print axioms ExactHoeffding.finite_tilted_expectation_tendsto_atTop
+#print axioms ExactHoeffding.finite_tilted_expectation_tendsto_atBot
+#print axioms ExactHoeffding.hypergeom_one_draw_curvature_le
+#print axioms ExactHoeffding.hypergeom_one_draw_curvature_balanced
+#print axioms ExactHoeffding.threePointVariance_normal_form
+#print axioms ExactHoeffding.threePointVariance_sqrt_envelope
+#print axioms ExactHoeffding.threePointVariance_finite_population_bound
+#print axioms ExactHoeffding.hypergeomMass_two_zero
+#print axioms ExactHoeffding.hypergeomMass_two_one
+#print axioms ExactHoeffding.hypergeomMass_two_two
+#print axioms ExactHoeffding.hypergeom_two_draw_curvature_formula
+#print axioms ExactHoeffding.hypergeom_two_draw_curvature_le
+#print axioms ExactHoeffding.hypergeom_two_draw_curvature_balanced
