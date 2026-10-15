@@ -19,6 +19,8 @@ import ExactHoeffding.Support
 import ExactHoeffding.Symmetries
 import ExactHoeffding.SliceSampling
 import ExactHoeffding.PermutationSlice
+import ExactHoeffding.FiniteExchangeability
+import ExactHoeffding.CurvatureSymmetries
 import ExactHoeffding.OrdinaryMomentsComplete
 import ExactHoeffding.ZeroTiltMoments
 import ExactHoeffding.Jacobi
