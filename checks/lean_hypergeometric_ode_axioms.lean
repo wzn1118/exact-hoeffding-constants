@@ -9,3 +9,15 @@ import ExactHoeffding.HypergeometricODE
 #print axioms ExactHoeffding.hypergeomTiltMean_riccati
 #print axioms ExactHoeffding.hypergeomTiltMeanVariance_balance_of_margins
 #print axioms ExactHoeffding.hypergeomTiltMean_riccati_of_margins
+#print axioms ExactHoeffding.hypergeomTiltVariance_differentiableAt
+#print axioms ExactHoeffding.hypergeomTiltVariance_differential_balance
+#print axioms ExactHoeffding.hypergeomTiltVariance_stationary_balance
+#print axioms ExactHoeffding.hypergeomTiltVariance_curve_identity
+#print axioms ExactHoeffding.hypergeomMass_pos_canonical
+#print axioms ExactHoeffding.hypergeomTiltMean_pos
+#print axioms ExactHoeffding.hypergeomTiltMean_lt
+#print axioms ExactHoeffding.hypergeomTiltVariance_centered_square
+#print axioms ExactHoeffding.hypergeomTiltVariance_pos
+#print axioms ExactHoeffding.hypergeomTiltMeanVariance_den_pos
+#print axioms ExactHoeffding.hypergeomTiltExp_ratio
+#print axioms ExactHoeffding.hypergeomLogMGF_second_deriv_eq_variance

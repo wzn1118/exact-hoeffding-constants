@@ -250,4 +250,246 @@ theorem hypergeomTiltMean_riccati_of_margins (N k m : ℕ)
   rw [(hypergeomTiltMean_hasDerivAt N k m (by omega) (by omega) t).deriv]
   nlinarith only [hypergeomTiltMeanVariance_balance_of_margins N k m hmk hkm t]
 
+/-- Finite raw second tilted moments are differentiable at every real tilt. -/
+theorem finiteTiltSecond_differentiableAt {ι : Type*} [DecidableEq ι]
+    (s : Finset ι) (weights values : ι → ℝ) (t : ℝ) :
+    DifferentiableAt ℝ (finiteTiltSecond s weights values) t := by
+  unfold finiteTiltSecond
+  apply DifferentiableAt.fun_sum
+  intro i hi
+  exact ((((differentiableAt_id.mul_const (values i)).exp).const_mul
+    (values i ^ 2)).const_mul (weights i))
+
+/-- The actual tilted variance is differentiable, directly from finite sums. -/
+theorem hypergeomTiltVariance_differentiableAt (N k m : ℕ)
+    (hk : k ≤ N) (hm : m ≤ N) (t : ℝ) :
+    DifferentiableAt ℝ (hypergeomTiltVariance N k m) t := by
+  have hg := (finiteMGF_hasDerivAt (Finset.range (m + 1))
+    (hypergeomMass N k m) (fun i => (i : ℝ)) t).differentiableAt
+  have hs := finiteTiltSecond_differentiableAt (Finset.range (m + 1))
+    (hypergeomMass N k m) (fun i => (i : ℝ)) t
+  have hu := (hypergeomTiltMean_hasDerivAt N k m hk hm t).differentiableAt
+  exact (hs.div hg (ne_of_gt (hypergeomMGF_pos N k m hk hm t))).sub (hu.pow 2)
+
+/-- Differentiating the genuine adjacent balance once, keeping the equation
+valid also at zero tilt and at variance stationary points. -/
+theorem hypergeomTiltVariance_differential_balance (k m r : ℕ)
+    (hmk : m ≤ k) (t : ℝ) :
+    let u := hypergeomTiltMean (k + m + r) k m t
+    let v := hypergeomTiltVariance (k + m + r) k m t
+    let w := deriv (hypergeomTiltVariance (k + m + r) k m) t
+    (2 * u + r) * v + w =
+      Real.exp t * (((k : ℝ) - u) * ((m : ℝ) - u) + v) +
+        Real.exp t * ((2 * u - k - m) * v + w) := by
+  dsimp only
+  let U := hypergeomTiltMean (k + m + r) k m
+  let V := hypergeomTiltVariance (k + m + r) k m
+  have hu : HasDerivAt U (V t) t :=
+    hypergeomTiltMean_hasDerivAt (k + m + r) k m (by omega) (by omega) t
+  have hv : HasDerivAt V (deriv V t) t :=
+    (hypergeomTiltVariance_differentiableAt (k + m + r) k m
+      (by omega) (by omega) t).hasDerivAt
+  have hl : HasDerivAt (fun s => U s * (U s + (r : ℝ)) + V s)
+      ((2 * U t + r) * V t + deriv V t) t := by
+    exact ((hu.mul (hu.add_const (r : ℝ))).add hv).congr_deriv (by ring)
+  have hk := ((hasDerivAt_const t (k : ℝ)).sub hu)
+  have hm := ((hasDerivAt_const t (m : ℝ)).sub hu)
+  have hr : HasDerivAt
+      (fun s => Real.exp s * (((k : ℝ) - U s) * ((m : ℝ) - U s) + V s))
+      (Real.exp t * (((k : ℝ) - U t) * ((m : ℝ) - U t) + V t) +
+        Real.exp t * ((2 * U t - k - m) * V t + deriv V t)) t := by
+    exact ((Real.hasDerivAt_exp t).mul ((hk.mul hm).add hv)).congr_deriv (by
+      simp only [Pi.add_apply, Pi.sub_apply, Pi.mul_apply]
+      ring)
+  have heq : (fun s => U s * (U s + (r : ℝ)) + V s) =
+      (fun s => Real.exp s * (((k : ℝ) - U s) * ((m : ℝ) - U s) + V s)) := by
+    funext s
+    exact hypergeomTiltMeanVariance_balance k m r hmk s
+  rw [heq] at hl
+  exact hl.unique hr
+
+/-- The stationary derivative equation needed by the algebraic curvature
+certificate; its only extra hypothesis is actual derivative vanishing. -/
+theorem hypergeomTiltVariance_stationary_balance (k m r : ℕ)
+    (hmk : m ≤ k) (t : ℝ)
+    (hw : deriv (hypergeomTiltVariance (k + m + r) k m) t = 0) :
+    let u := hypergeomTiltMean (k + m + r) k m t
+    let v := hypergeomTiltVariance (k + m + r) k m t
+    Real.exp t * (((k : ℝ) - u) * ((m : ℝ) - u) -
+      v * ((k : ℝ) + m - 2 * u - 1)) = v * ((r : ℝ) + 2 * u) := by
+  have h := hypergeomTiltVariance_differential_balance k m r hmk t
+  dsimp only at h ⊢
+  rw [hw] at h
+  nlinarith only [h]
+
+/-- Eliminating the exponential tilt gives the denominator-free variance ODE.
+Here the differentiated variance is with respect to the original tilt `t`. -/
+theorem hypergeomTiltVariance_curve_identity (k m r : ℕ)
+    (hmk : m ≤ k) (t : ℝ) :
+    let u := hypergeomTiltMean (k + m + r) k m t
+    let v := hypergeomTiltVariance (k + m + r) k m t
+    let w := deriv (hypergeomTiltVariance (k + m + r) k m) t
+    let A := u * (u + r)
+    let C := ((k : ℝ) - u) * ((m : ℝ) - u)
+    (C - A) * w =
+      -((k : ℝ) + m + r - 1) * v ^ 2 +
+        (A + C - (2 * u + r) * C + (2 * u - k - m) * A) * v + A * C := by
+  have h₀ := hypergeomTiltMeanVariance_balance k m r hmk t
+  have h₁ := hypergeomTiltVariance_differential_balance k m r hmk t
+  dsimp only at h₁ ⊢
+  let u := hypergeomTiltMean (k + m + r) k m t
+  let v := hypergeomTiltVariance (k + m + r) k m t
+  let w := deriv (hypergeomTiltVariance (k + m + r) k m) t
+  change u * (u + r) + v =
+    Real.exp t * (((k : ℝ) - u) * ((m : ℝ) - u) + v) at h₀
+  change (2 * u + r) * v + w =
+    Real.exp t * (((k : ℝ) - u) * ((m : ℝ) - u) + v) +
+      Real.exp t * ((2 * u - k - m) * v + w) at h₁
+  change (((k : ℝ) - u) * ((m : ℝ) - u) - u * (u + r)) * w = _
+  linear_combination
+    (((k : ℝ) - u) * ((m : ℝ) - u) + v) * h₁ -
+      (((k : ℝ) - u) * ((m : ℝ) - u) + v +
+        (2 * u - k - m) * v + w) * h₀
+
+/-- Every mass in the stated canonical support is strictly positive. -/
+theorem hypergeomMass_pos_canonical (k m r i : ℕ)
+    (hmk : m ≤ k) (hi : i ≤ m) :
+    0 < hypergeomMass (k + m + r) k m i := by
+  have hn : k + m + r - k = m + r := by omega
+  unfold hypergeomMass hypergeomCount
+  rw [hn]
+  apply div_pos
+  · exact_mod_cast mul_pos (Nat.choose_pos (by omega : i ≤ k))
+      (Nat.choose_pos (by omega : m - i ≤ m + r))
+  · exact_mod_cast Nat.choose_pos (by omega : m ≤ k + m + r)
+
+/-- A nondegenerate canonical tilted mean stays strictly above zero. -/
+theorem hypergeomTiltMean_pos (k m r : ℕ) (hmk : m ≤ k) (hm : 0 < m)
+    (t : ℝ) : 0 < hypergeomTiltMean (k + m + r) k m t := by
+  apply div_pos
+  · unfold finiteTiltFirst
+    apply Finset.sum_pos'
+    · intro i hi
+      exact mul_nonneg (hypergeomMass_nonneg _ _ _ _) (by positivity)
+    · refine ⟨1, Finset.mem_range.mpr (by omega), ?_⟩
+      have hmass := hypergeomMass_pos_canonical k m r 1 hmk (by omega)
+      simpa using mul_pos hmass (Real.exp_pos t)
+  · exact hypergeomMGF_pos (k + m + r) k m (by omega) (by omega) t
+
+/-- A nondegenerate canonical tilted mean stays strictly below its support maximum. -/
+theorem hypergeomTiltMean_lt (k m r : ℕ) (hmk : m ≤ k) (hm : 0 < m)
+    (t : ℝ) : hypergeomTiltMean (k + m + r) k m t < (m : ℝ) := by
+  have hg := hypergeomMGF_pos (k + m + r) k m (by omega) (by omega) t
+  have hsum :
+      (∑ i ∈ Finset.range (m + 1), hypergeomMass (k + m + r) k m i *
+        (((m : ℝ) - i) * Real.exp (t * i))) =
+      (m : ℝ) * hypergeomMGF (k + m + r) k m t -
+        finiteTiltFirst (Finset.range (m + 1))
+          (hypergeomMass (k + m + r) k m) (fun i => (i : ℝ)) t := by
+    simp only [hypergeomMGF, finiteMGF, finiteTiltFirst, Finset.mul_sum,
+      ← Finset.sum_sub_distrib]
+    apply Finset.sum_congr rfl
+    intro i hi
+    ring
+  have hp : 0 <
+      ∑ i ∈ Finset.range (m + 1), hypergeomMass (k + m + r) k m i *
+        (((m : ℝ) - i) * Real.exp (t * i)) := by
+    apply Finset.sum_pos'
+    · intro i hi
+      have hi' : (i : ℝ) ≤ m := by exact_mod_cast Nat.le_of_lt_succ (Finset.mem_range.mp hi)
+      exact mul_nonneg (hypergeomMass_nonneg _ _ _ _)
+        (mul_nonneg (sub_nonneg.mpr hi') (le_of_lt (Real.exp_pos _)))
+    · refine ⟨0, Finset.mem_range.mpr (by omega), ?_⟩
+      have hmass := hypergeomMass_pos_canonical k m r 0 hmk (by omega)
+      have hm' : (0 : ℝ) < m := by exact_mod_cast hm
+      simpa using mul_pos hmass hm'
+  rw [hsum] at hp
+  unfold hypergeomTiltMean
+  exact (div_lt_iff₀ hg).mpr (by linarith)
+
+/-- Tilted variance equals the actual expectation of the centered square. -/
+theorem hypergeomTiltVariance_centered_square (N k m : ℕ)
+    (hk : k ≤ N) (hm : m ≤ N) (t : ℝ) :
+    hypergeomTiltExpectation N k m t
+        (fun i => ((i : ℝ) - hypergeomTiltMean N k m t) ^ 2) =
+      hypergeomTiltVariance N k m t := by
+  let u := hypergeomTiltMean N k m t
+  have hsum :
+      (∑ i ∈ Finset.range (m + 1), hypergeomMass N k m i *
+        (((i : ℝ) - u) ^ 2 * Real.exp (t * i))) =
+      finiteTiltSecond (Finset.range (m + 1)) (hypergeomMass N k m)
+          (fun i => (i : ℝ)) t -
+        2 * u * finiteTiltFirst (Finset.range (m + 1)) (hypergeomMass N k m)
+          (fun i => (i : ℝ)) t + u ^ 2 * hypergeomMGF N k m t := by
+    simp only [finiteTiltSecond, finiteTiltFirst, hypergeomMGF, finiteMGF,
+      Finset.mul_sum, ← Finset.sum_sub_distrib, ← Finset.sum_add_distrib]
+    apply Finset.sum_congr rfl
+    intro i hi
+    ring
+  have hg : hypergeomMGF N k m t ≠ 0 := ne_of_gt (hypergeomMGF_pos N k m hk hm t)
+  unfold hypergeomTiltExpectation
+  change (∑ i ∈ Finset.range (m + 1), hypergeomMass N k m i *
+    (((i : ℝ) - u) ^ 2 * Real.exp (t * i))) / hypergeomMGF N k m t = _
+  rw [hsum]
+  dsimp [u, hypergeomTiltVariance, hypergeomTiltMean]
+  field_simp [hg]
+  ring
+
+/-- Positive variance at every tilt follows from positive mass at zero and
+a strictly positive tilted mean, without a root factorization hypothesis. -/
+theorem hypergeomTiltVariance_pos (k m r : ℕ)
+    (hmk : m ≤ k) (hm : 0 < m) (t : ℝ) :
+    0 < hypergeomTiltVariance (k + m + r) k m t := by
+  rw [← hypergeomTiltVariance_centered_square (k + m + r) k m
+    (by omega) (by omega) t]
+  unfold hypergeomTiltExpectation
+  apply div_pos
+  · apply Finset.sum_pos'
+    · intro i hi
+      exact mul_nonneg (hypergeomMass_nonneg _ _ _ _) (by positivity)
+    · refine ⟨0, Finset.mem_range.mpr (by omega), ?_⟩
+      have hu := hypergeomTiltMean_pos k m r hmk hm t
+      have hmass := hypergeomMass_pos_canonical k m r 0 hmk (by omega)
+      simpa using mul_pos hmass (sq_pos_of_pos hu)
+  · exact hypergeomMGF_pos (k + m + r) k m (by omega) (by omega) t
+
+/-- Both quadratic terms in the tilted balance have a positive denominator. -/
+theorem hypergeomTiltMeanVariance_den_pos (k m r : ℕ)
+    (hmk : m ≤ k) (hm : 0 < m) (t : ℝ) :
+    0 < ((k : ℝ) - hypergeomTiltMean (k + m + r) k m t) *
+      ((m : ℝ) - hypergeomTiltMean (k + m + r) k m t) +
+      hypergeomTiltVariance (k + m + r) k m t := by
+  have hu := hypergeomTiltMean_lt k m r hmk hm t
+  have hv := hypergeomTiltVariance_pos k m r hmk hm t
+  have hmk' : (m : ℝ) ≤ k := by exact_mod_cast hmk
+  have hku : 0 < (k : ℝ) - hypergeomTiltMean (k + m + r) k m t := by linarith
+  have hmu : 0 < (m : ℝ) - hypergeomTiltMean (k + m + r) k m t := by linarith
+  exact add_pos (mul_pos hku hmu) hv
+
+/-- The exact exponential-tilt ratio, with its denominator proved positive. -/
+theorem hypergeomTiltExp_ratio (k m r : ℕ)
+    (hmk : m ≤ k) (hm : 0 < m) (t : ℝ) :
+    let u := hypergeomTiltMean (k + m + r) k m t
+    let v := hypergeomTiltVariance (k + m + r) k m t
+    Real.exp t = (u * (u + r) + v) /
+      (((k : ℝ) - u) * ((m : ℝ) - u) + v) := by
+  dsimp only
+  apply (eq_div_iff (ne_of_gt (hypergeomTiltMeanVariance_den_pos k m r hmk hm t))).mpr
+  exact (hypergeomTiltMeanVariance_balance k m r hmk t).symm
+
+/-- The variance used by the recurrence is precisely log-MGF curvature. -/
+theorem hypergeomLogMGF_second_deriv_eq_variance (N k m : ℕ)
+    (hk : k ≤ N) (hm : m ≤ N) (t : ℝ) :
+    deriv (deriv (fun s => Real.log (hypergeomMGF N k m s))) t =
+      hypergeomTiltVariance N k m t := by
+  have hfirst : deriv (fun s => Real.log (hypergeomMGF N k m s)) =
+      hypergeomTiltMean N k m := by
+    funext s
+    exact (finiteLogMGF_hasDerivAt (Finset.range (m + 1))
+      (hypergeomMass N k m) (fun i => (i : ℝ))
+      (fun i _ => hypergeomMass_nonneg N k m i)
+      (hypergeomMass_total N k m hk hm) s).deriv
+  rw [hfirst]
+  exact (hypergeomTiltMean_hasDerivAt N k m hk hm t).deriv
+
 end ExactHoeffding
