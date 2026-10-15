@@ -1,0 +1,10 @@
+import ExactHoeffding.PermutationSlice
+
+#print axioms ExactHoeffding.permutationSliceFiber_card_eq
+#print axioms ExactHoeffding.permutationSliceFiber_self_pos
+#print axioms ExactHoeffding.permutation_card_eq_slice_mul_fiber
+#print axioms ExactHoeffding.permutation_intersection_count
+#print axioms ExactHoeffding.permutationIntersectionMass_eq_uniformSlice
+#print axioms ExactHoeffding.permutationIntersectionMass_eq_hypergeomPMF
+#print axioms ExactHoeffding.uniformPermutation_expectation
+#print axioms ExactHoeffding.uniformPermutation_mgf

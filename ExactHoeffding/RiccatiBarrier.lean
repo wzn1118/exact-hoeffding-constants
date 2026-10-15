@@ -1,5 +1,7 @@
 import ExactHoeffding.RiccatiCertificates
 import ExactHoeffding.GlobalCrossing
+import Mathlib.Analysis.Calculus.Deriv.MeanValue
+import Mathlib.Analysis.Calculus.Deriv.Pow
 
 namespace ExactHoeffding
 noncomputable section
@@ -41,6 +43,41 @@ theorem riccati_contact_derivative_sign (N m d z w : ℝ)
   · intro hz
     rw [hid (ne_of_gt hz)]
     positivity
+
+/-- The same contact calculation in the original tilt variable avoids
+introducing an inverse mean map. -/
+theorem riccati_time_contact_identity (N m d z w : ℝ)
+    (hN : N≠0) (hN1 : N-1≠0) (hN2 : N-2≠0)
+    (hm : m≠0) (hNm : N-m≠0) (hy : envelopeM N m*z/2≠0)
+    (hode : riccatiF N (N*(1-d)/2) m (m*(1-d)/2+envelopeM N m*z/2)
+      (varianceBarrier N m d (envelopeM N m*z/2))+
+      N*(envelopeM N m*z/2)*w=0) :
+    w-varianceBarrierDerivative N m d (envelopeM N m*z/2)*
+      varianceBarrier N m d (envelopeM N m*z/2)=
+      barrierG N m*(envelopeM N m*z/2)*barrierW N m d z/N := by
+  have hr := barrier_residual_identity N m d z hN1 hN2 hm hNm
+  have hprod : (envelopeM N m*z/2)*
+      ((w-varianceBarrierDerivative N m d (envelopeM N m*z/2)*
+        varianceBarrier N m d (envelopeM N m*z/2))*N)=
+      (envelopeM N m*z/2)*(barrierG N m*(envelopeM N m*z/2)*barrierW N m d z) := by
+    linear_combination hode-hr
+  exact (eq_div_iff hN).2 (mul_left_cancel₀ hy hprod)
+
+theorem varianceBarrier_hasDerivAt (N m d y : ℝ) :
+    HasDerivAt (varianceBarrier N m d) (varianceBarrierDerivative N m d y) y := by
+  unfold varianceBarrier varianceBarrierDerivative
+  have hcalc := (((hasDerivAt_const y (envelopeM N m*(1-d^2)/4)).add
+    ((hasDerivAt_id y).const_mul (envelopeScale N m*d))).sub
+    (((hasDerivAt_id y).pow 2).const_mul ((envelopeScale N m)^2/envelopeM N m)))
+  have hf : (((fun x : ℝ => envelopeM N m*(1-d^2)/4)+
+      fun y => envelopeScale N m*d*id y)-
+      fun y => (envelopeScale N m)^2/envelopeM N m*(id^2) y)=
+      (fun y => envelopeM N m*(1-d^2)/4+envelopeScale N m*d*y-
+        (envelopeScale N m)^2/envelopeM N m*y^2) := by
+    ext y
+    rfl
+  rw [hf] at hcalc
+  exact hcalc.congr_deriv (by norm_num; ring)
 
 end
 end ExactHoeffding
