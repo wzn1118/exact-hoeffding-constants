@@ -149,4 +149,18 @@ theorem hypergeomMGF_success_complement (N k m : ℕ)
           intro j hj
           ring
 
+/-- Sample-complement identity, obtained by transposing, complementing
+successes, and transposing back. -/
+theorem hypergeomMGF_sample_complement (N k m : ℕ)
+    (hk : k ≤ N) (hm : m ≤ N) (t : ℝ) :
+    hypergeomMGF N k m t =
+      Real.exp (t * (k : ℝ)) * hypergeomMGF N k (N - m) (-t) := by
+  calc
+    hypergeomMGF N k m t = hypergeomMGF N m k t :=
+      hypergeomMGF_transpose N k m hk hm t
+    _ = Real.exp (t * (k : ℝ)) * hypergeomMGF N (N - m) k (-t) :=
+      hypergeomMGF_success_complement N m k hm hk t
+    _ = Real.exp (t * (k : ℝ)) * hypergeomMGF N k (N - m) (-t) := by
+      rw [hypergeomMGF_transpose N (N - m) k (by omega) (by omega) (-t)]
+
 end ExactHoeffding
