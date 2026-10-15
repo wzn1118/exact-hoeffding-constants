@@ -57,5 +57,6 @@ import ExactHoeffding.UniformLaplace
 import ExactHoeffding.CanonicalCurvatureEquality
 import ExactHoeffding.SmallSupportCurvature
 import ExactHoeffding.DegenerateCurvature
+import ExactHoeffding.SmallSupportEquality
 import ExactHoeffding.TwoDrawProxy
 import ExactHoeffding.TwoDrawProxyComplete
