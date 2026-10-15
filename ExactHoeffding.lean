@@ -101,4 +101,6 @@ import ExactHoeffding.ExchangeableConstants
 import ExactHoeffding.VariationalUpper
 import ExactHoeffding.VariationalIdentity
 import ExactHoeffding.ExactParityConstants
+import ExactHoeffding.ExactOddGlobalTheorem
 import ExactHoeffding.Cumulants
+import ExactHoeffding.JacobiActualPGF
