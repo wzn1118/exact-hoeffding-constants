@@ -23,6 +23,7 @@ import ExactHoeffding.PermutationSlice
 import ExactHoeffding.FiniteExchangeability
 import ExactHoeffding.CubeVertexReduction
 import ExactHoeffding.MeasureExchangeability
+import ExactHoeffding.HammingMeasure
 import ExactHoeffding.CurvatureSymmetries
 import ExactHoeffding.OrdinaryMomentsComplete
 import ExactHoeffding.ZeroTiltMoments
