@@ -51,5 +51,44 @@ theorem odd_exchangeable_constant_attained (n : ℕ) (hn : 0 < n) :
   exact (odd_normalized_proxy_all_equality n n 1 hn hn (by omega) (by omega)
     (by omega)).2 ⟨Or.inl rfl, Or.inl rfl⟩
 
+/-- Valid odd-population coefficients form exactly the closed upper ray
+starting at the explicit optimal coefficient. -/
+theorem odd_exchangeable_coefficient_iff (n : ℕ) (hn : 0 < n) (C : ℝ) :
+    IsExchangeableCoefficient (2*n+1) C ↔
+      1 / ((((2*n+1:ℕ):ℝ)-1) * Real.artanh (1/((2*n+1:ℕ):ℝ))) ≤ C := by
+  rw [exchangeable_coefficient_iff_variational (2*n+1) (by omega) C,
+    ← exactExchangeableConstant_eq_variational (2*n+1) (by omega),
+    exact_odd_exchangeable_constant_closed_form n hn]
+
+/-- The odd closed form is an attained minimum, not merely an infimum. -/
+theorem odd_exchangeable_constant_isLeast (n : ℕ) (hn : 0 < n) :
+    IsLeast {C : ℝ | IsExchangeableCoefficient (2*n+1) C}
+      (1 / ((((2*n+1:ℕ):ℝ)-1) * Real.artanh (1/((2*n+1:ℕ):ℝ)))) := by
+  exact ⟨odd_exchangeable_constant_is_valid n hn,
+    fun C hC => odd_exchangeable_constant_is_least n hn C hC⟩
+
+/-- End-to-end odd-population theorem: all legal margins, the exhaustive
+extremizers, the finite variational optimum, the exact exchangeability
+constant, and validity with leastness of its explicit closed form.
+There is no asymptotic or bounded-sample-size hypothesis. -/
+theorem exact_odd_global_theorem (n : ℕ) (hn : 0 < n) :
+    let N := 2*n+1
+    let C : ℝ := 1 / (((N:ℝ)-1) * Real.artanh (1/(N:ℝ)))
+    (∀ k m : ℕ, 0 < k → k < N → 0 < m → m < N →
+      normalizedHypergeomProxy N k m ≤ C ∧
+        (normalizedHypergeomProxy N k m = C ↔
+          (m = 1 ∨ m = 2*n) ∧ (k = n ∨ k = n+1))) ∧
+      hypergeomVariationalConstant N = C ∧
+      exactExchangeableConstant N = C ∧
+      IsLeast {D : ℝ | IsExchangeableCoefficient N D} C := by
+  dsimp only
+  have hclosed := oddHypergeomConstant_eq_artanh (2*n+1) (by omega)
+  refine ⟨?_, ?_, exact_odd_exchangeable_constant_closed_form n hn,
+    odd_exchangeable_constant_isLeast n hn⟩
+  · intro k m hk hkN hm hmN
+    rw [← hclosed]
+    exact odd_normalized_proxy_global_optimality n k m hn hk hkN hm hmN
+  · rw [hypergeomVariationalConstant_odd n hn, hclosed]
+
 end
 end ExactHoeffding

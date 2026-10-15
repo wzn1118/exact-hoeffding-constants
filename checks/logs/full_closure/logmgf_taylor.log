@@ -1,0 +1,8 @@
+derivatives_compile_started=2026-10-15T13:24:07Z
+derivatives_exit_code=0
+[formal/moments-closure-20261015 380e1d7] Prove actual finite MGF derivatives and four log cumulants
+ 1 file changed, 304 insertions(+)
+ create mode 100644 ExactHoeffding/MGFDerivatives.lean
+derivatives_commit=380e1d7c637534f2427dd6d4a6a38520ddaa3b65
+taylor_compile_started=2026-10-15T13:24:17Z
+taylor_exit_code=0

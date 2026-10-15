@@ -1,73 +1,116 @@
-# Whole-manuscript formalization — 15 October 2026
+# Formal proof coverage — 15 October 2026
 
 Branch: `formal/full-closure-20261015`.
-Pinned kernel: Lean 4.33.0; Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`.
+Lean 4.33.0; Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`.
 
-## Kernel-checked advances
+## Exact constants and actual probability laws
 
-- `Support`: true support, totalized point masses, zero/full margins.
-- `OrdinaryMomentsComplete`, `ZeroTiltMoments`: every legal `N,k,m`, including
-  `N=0,1`, exact mean and ordinary variance, and their actual tilted-zero values.
-- `HypergeometricODE`: actual adjacent mass recurrence, normalized tilted
-  expectation identity, `u'=v`, differentiated variance equation, stationary
-  balance, positive variance and open-support mean.
-- `HypergeometricODEMargins`: original-parameter versions and centered equation
-  `F+N(u-mk/N)v_t=0`.
-- `CrossSum`, `TiltedAdmissibilityDirect`: actual tilted mean-variance bound
-  `v<=u(m-u)/m`, proved from adjacent weights, independent of Jacobi factorization.
-- `StationaryCertificates`: exact elimination, universal stationary comparison,
-  all-degree positive coefficient certificate, and admissible sharp stationary bound.
-- `StationaryGlobal`: endpoint limits plus stationary bounds imply a global bound.
-- `SmallSupportCurvature`: actual one- and two-draw sharp curvature upper bounds,
-  with balanced zero-tilt equality examples.
-- `RiccatiCertificates`: residual, determinant and sum-of-squares identities;
-  positivity across the real parameter domain; endpoint signs and contact algebra.
-- `GlobalCrossing`, `WholeLineCrossing`: finite-interval and whole-line strict
-  crossing comparison, including the unique central equality point.
-- `RiccatiComparison`: nonstrict and strict two-sided comparison/integration.
-- `BernoulliRiccati`, `ScaledBernoulliComparison`: concrete scaled solution,
-  endpoints, separate zero-scale branch, and four Laplace comparison interfaces.
-- `TiltedEndpoints`: arbitrary finite tilted expectations converge to the
-  unique endpoint value at either infinite tilt.
-- `BernoulliKL`: global Fenchel inequality including endpoints.
-- `JacobiRoots`: Rodrigues derivative/quotient splits over the reals.
+The committed development proves the all-parameter odd hypergeometric
+maximum and its complete margin-extremizer classification. There is no
+bounded-sample-size assumption, fixed-sample assumption, or growth-rate
+restriction. Thus it covers sequences with `m_N → ∞` as well as bounded
+sample sizes.
 
-## Actual-law composition completed
+For `N = 2n+1`, `n > 0`, every `0 < k,m < N` satisfies
 
-- `HypergeometricEndpoints`: tilted means approach true support endpoints and
-  tilted variance approaches zero at both infinities.
-- `StrictAdmissibility`: actual strict mean–variance feasibility for degree >=2.
-- `CanonicalCurvature`, `CanonicalCurvatureComplete`: actual all-tilt sharp
-  curvature, every support degree, on canonical margins.
-- `CurvatureSymmetries`: actual variance under transpose and both complements.
-- `CanonicalCurvatureEquality`: degree >=3 equality holds precisely at zero
-  tilt with a balanced larger margin.
-- `VarianceBarrierFlow`, `HypergeometricBarrier`: actual strict mean-dependent
-  variance envelope and its unique equality point.
-- `HypergeometricLaplace`, `LaplaceEnvelopeTheorem`: original-parameter
-  parity-uniform Bernoulli envelope, strict for all nonzero real tilts.
-- `BernoulliBalancedLimit`: genuine two-sided scale-zero limit and continuous
-  extension, including deterministic probability endpoints.
-- `TwoDrawProxyComplete`: complete positive three-mass least quadratic proxy,
-  both asymmetry directions and balance, specialized to actual two-draw laws.
-- `SliceSampling`, `PermutationSlice`: actual uniform subset and permutation
-  sampling, exact hypergeometric PMF, expectations and MGF.
-- `FiniteExchangeability`: finite Boolean exchangeable slice mixture, exact
-  two-level contrast norm and hypergeometric MGF realization.
+```
+normalizedHypergeomProxy N k m ≤ oddHypergeomConstant N
+```
 
-## Remaining whole-manuscript obligations
+Equality holds exactly when `m = 1` or `m = N-1`, and `k = n` or `k = n+1`.
+The proxy is the supremum of the actual centered log-MGF quotient over all
+nonzero real tilts. It is not an auxiliary polynomial coefficient.
 
-The all-parameter curvature reduction, exhaustive equality classification,
-uniform quadratic Laplace corollary and actual hypergeometric tail bound are
-now kernel-checked. The full Jacobi-to-PGF Möbius/factorization chain, general
-Bernoulli optimal proxy, odd singleton dominance and complete parity constants remain in progress.
+`exactExchangeableConstant N` is the infimum of valid coefficients over all
+exchangeable probability measures supported on the real cube, all zero-sum
+coefficient vectors, and all real tilts. `VariationalIdentity` proves that
+this infimum equals the hypergeometric variational supremum. The coefficient
+at the infimum is valid. `ExactParityConstants` then proves, for every `N ≥ 2`,
 
-The real-cube vertex reduction and complete Lee–Kim two-level optimization,
-including a genuine compact maximizer, its at-most-two values and exact
-hypergeometric MGF/norm parameterization, are now kernel-checked. The remaining
-general finite exchangeable measures, the unconditional exact-constant and
-weighted-tail theorems, and higher-order appendices still require proof.
-The entire manuscript is not yet certified.
+```
+C_N = N / (N-1)                       if N is even
+C_N = 1 / ((N-1) * artanh (1/N))       if N is odd.
+```
 
-Individual checks and axiom outputs are in `checks/logs/full_closure/`.
-Earlier checkpoints certify only their exact source trees.
+`ExactOddGlobalTheorem` exposes the actual odd optimum, its closed form,
+validity, leastness, and an attaining singleton margin.
+
+`ConstantAsymptotics` proves `N(C_N-1) → 1` along the complete natural
+population sequence. Its finite bound is
+`1 ≤ N(C_N-1) ≤ N/(N-1)` for every `N ≥ 2`, so both parities are covered by
+one squeeze argument. The identical limit holds for the actual infimum
+`exactExchangeableConstant`.
+
+## Kernel-checked proof chain
+
+| Component | Modules and scope |
+| --- | --- |
+| Support and degeneracies | `Support`, `OrdinaryMomentsComplete`, `ZeroTiltMoments`: exact support, totalized mass, zero/full margins, mean and ordinary variance, including `N=0,1` |
+| Sampling and symmetries | `Symmetries`, `SliceSampling`, `PermutationSlice`: actual transpose/complements, uniform subset sampling, and finite random permutation sampling |
+| Factorial moments | `GeneralFactorialMoments`, `Cumulants`, `HighCumulants`: all-degree factorial moment identity, actual raw moments through order six, exact cumulant and fixed-margin asymptotic interfaces |
+| Actual tilted feasibility | `CrossSum`, `TiltedAdmissibilityDirect`, `StrictAdmissibility`: actual tilted mean–variance inequality and its strict version |
+| Riccati and stationary algebra | `HypergeometricODE`, `HypergeometricODEMargins`, `StationaryCertificates`, `RiccatiCertificates`: actual differential identities, all-degree positive expansions, stationary comparison and residual certificates |
+| Global curvature | `StationaryGlobal`, `SmallSupportCurvature`, `CanonicalCurvatureComplete`, `SharpCurvatureTheorem`: the sharp symmetric minimum for every legal `N,k,m,t` |
+| Curvature equality | `AllParameterCurvatureEquality`: interior, one-point-width, complementary and deterministic cases; interior equality is `t=0` with at least one balanced margin |
+| Global Laplace comparison | `GlobalCrossing`, `WholeLineCrossing`, `RiccatiComparison`, `VarianceBarrierFlow`, `HypergeometricBarrier`, `LaplaceEnvelopeTheorem`: strict scaled Bernoulli domination, with actual-law inputs |
+| Zero scale and quadratic domination | `BernoulliBalancedLimit`, `UniformLaplace`, `StrictUniformLaplace`: balanced limit, quadratic envelope and equality |
+| Bernoulli optimum | `BernoulliOptimal`: sharp quadratic upper bound and leastness for the whole closed probability interval |
+| Two draws | `TwoDrawProxyComplete`, `TwoDrawComparison`, `TwoDrawSingletonComparison`: actual three-mass specialization, all-success-count odd extremizers, strict singleton comparison |
+| Odd global optimum | `StrictGlobalGap`, `StrictHypergeometricProxy`, `OddHypergeomExtremizers`: strict global proxy comparison and all legal margin pairs |
+| Real-cube reduction | `CubeVertexReduction`, `MeasureExchangeability`: convex vertex reduction and averaging for actual exchangeable probability measures |
+| Two-level reduction | `ThreePointExclusion`, `TwoLevelOptimization`, `TwoLevelExistence`, `TwoLevelRepresentation`, `TwoLevelReduction`: compact maximizer, two-valued form, exact contrast norm and hypergeometric MGF |
+| Matching lower bound | `HammingMeasure`, `HammingExchangeableLower`: actual probability measures realizing Hamming slices |
+| Variational identity and exact coefficient | `ExchangeableConstants`, `VariationalUpper`, `VariationalIdentity`, `ExactParityConstants`, `ExactOddGlobalTheorem` |
+| Weighted concentration | `ProjectedWeights`, `GeneralWeightedTail`: projected squared norm, actual-measure exponential Markov bound and confidence threshold |
+| Jacobi factorization | `JacobiRoots`, `JacobiMobius`, `JacobiFactorization`, `JacobiActualPGF`: Rodrigues real splitting, exact Möbius bridge, `j` negative roots counted with multiplicity, actual canonical tilted PGF product with interior Bernoulli parameters |
+
+The curvature and finite-exchangeability constant proofs use the direct
+adjacent-weight feasibility argument. They do not require a presumed Jacobi
+factorization or an external Lee–Kim conclusion as an axiom. The two-draw
+three-mass formula is a specialization of the attributed three-point theory;
+the formal proof does not change that literature attribution.
+
+## Work remaining for the entire manuscript
+
+1. Classical Jacobi identification, root location and simple-root statement;
+   all-parameter shifted Poisson–binomial distribution on an explicit product
+   probability space. The actual law equality is now proved by `HypergeomBernoulliLaw`; Jacobi PGF roots
+   are also proved simple by the ODE, while standard Jacobi normalization remains open.
+2. The main theorem's first-order limit is complete in `ConstantAsymptotics`.
+3. The fixed-population fourth-order Taylor formula is complete in
+   `MGFDerivatives` and `LogMGFTaylor`, with actual derivatives, `o(t^4)`
+   remainder and a fifth-derivative Lagrange remainder for both signs of tilt.
+4. The globally optimized `N⁻⁴` expansion, analytic optimizer, localization,
+   and uniform remainder in `source/new_results.tex`.
+5. The fixed-sample, all-success-count eventual maximum, joint analytic
+   optimizer, and exact imbalance coefficient in `source/uniform_results.tex`.
+6. Standard Jacobi normalization; the globally optimized fourth-order/fixed-sample
+   appendix theorems; and the exact continuous-margin response theorem.
+
+Item 1 is being extended in separate modules. Fixed-population Taylor
+expansion is a different statement from the optimized population asymptotics
+in item 4. The odd global exact constant does not depend on those appendices.
+
+The exhaustive odd classification concerns the hypergeometric proxy margins.
+It is not a classification of every probability measure and vector that can
+saturate an MGF inequality. Even balanced-margin attainment is proved; an
+additional reverse `iff` interface for all even proxy maximizers remains to
+be assembled.
+
+## Reproduction and evidence
+
+The canonical build is `lake build ExactHoeffding`, with pinned dependencies.
+The theorem audit is generated from the actual project import closure:
+
+```
+python3 checks/generate_axiom_audit.py --check
+lake env lean checks/full_closure_axioms.lean > lean_axioms.log
+python3 checks/check_axiom_output.py lean_axioms.log
+```
+
+The checker requires one result for every public theorem and accepts only
+`propext`, `Classical.choice`, and `Quot.sound`. CI builds the umbrella and
+performs this audit. Individual module evidence is retained under
+`checks/logs/full_closure/`; each log applies to its recorded source checkpoint.
+New modules under development are added to the umbrella after their successful
+kernel check. `proof_gap_register.md` lists open obligations explicitly.

@@ -17,6 +17,23 @@ C_N^\star=\begin{cases}
 
 The main paper gives the two-level reduction, all-tilt hypergeometric curvature theorem, parity-uniform Laplace envelope, sharp constant and odd-population equality classification. Its appendix provides fixed-margin fourth-order expansions. The separate technical supplement contains the fixed-sample success-count maximum, analytic contraction and subsidiary curvature results with their proofs.
 
+## Lean formalization
+
+The `formal/full-closure-20261015` development proves the sharp curvature
+bound, the strict Laplace comparison, the odd all-parameter proxy maximum
+with its exhaustive margin extremizers, the actual finite-exchangeability
+variational identity, and the exact coefficient for every population size
+`N ≥ 2`. The odd theorem includes every legal sample size, with no asymptotic
+restriction. Its coefficient is the least valid one for actual exchangeable
+probability measures on the real cube.
+
+[Proof coverage](LEAN_PROOF_STATUS.md),
+[theorem mapping](theorem_to_lean.csv), and
+[remaining manuscript obligations](proof_gap_register.md) distinguish those
+proved conclusions from the higher-order and analytic supplement work.
+CI compiles the umbrella and audits all imported public theorems, including
+their transitive axiom dependencies.
+
 ## Current publication files
 
 - [Piecewise KL research note](research/tail_bounds/minimum_variance_tail.pdf):
