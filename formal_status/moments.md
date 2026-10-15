@@ -178,6 +178,12 @@ the actual variance; for `t != 0` it is exactly
 | `6cd7a66` | `RescaledOptimumLeading` | `rescaled-optimum-leading-build-2.log` |
 | `74f24db` | `ActualAnalyticAsymptotics` | `actual-analytic-asymptotics-build-3.log` |
 | `35d0551` | `ActualOptimizerPopulationLimit` | `actual-optimizer-population-limit-build-1.log` |
+| `e9b4a4e` | `AnalyticCurveSecondDerivative` | `analytic-curve-second-derivative-build-2.log` |
+| `2c89348` | `RescaledVarianceSecond` | `rescaled-variance-second-build-2.log` |
+| `e8b0cd0` | `RescaledOptimumSecond` | `rescaled-optimum-second-build-2.log` |
+| `6bac0f7` | `NormalizedOptimumSecond` | `normalized-optimum-second-build-2.log` |
+| `85ac836` | `ActualOptimumSecondExpansion` | `actual-optimum-second-expansion-build-1.log` |
+| `25aabea` | `ActualNormalizedAsymptotics` | `actual-normalized-asymptotics-build-2.log` |
 
 Each listed proof module was compiled with Lean 4.33.0, `-j 1`, and exit
 code 0. Earlier failed build attempts are not certificates; the table
@@ -209,17 +215,54 @@ the lock. No standalone `#print` or extra audit compilation is run.
   positive eventually along every admissible population subsequence, with
   `tau(1/N)/(1/N) -> 4*s`.
 - The normalized optimized value is analytic, equals one at zero, has
-  derivative one there, and is exactly `1+e+e^2*U(e)` for an analytic
-  `U` near zero. Thus this is an optimizer expansion in inverse population,
-  not the earlier fixed-distribution Taylor theorem.
+  derivative one there, and has second derivative `2*(1-s^2/3)` at zero.
+  It is exactly `1+e+(1-s^2/3)*e^2+e^3*U(e)` for `U` analytic near zero,
+  with an actual `O(e^3)` remainder. The proof differentiates the actual
+  analytic optimizing curve and computes its Hessian; it does not assume
+  a derivative-of-supremum formula.
+- `actualHypergeomProxy_normalized_optimum_second_along` specializes this
+  to the actual normalization `4*N*Q_N(t*)/(m*(N-m))` along every
+  admissible integer sequence tending to infinity. It simultaneously
+  supplies the same positive analytic unique global optimizing branch
+  when `s > 0`. There is no assumption selecting an optimizer.
+
+Thus this is a genuine globally optimized expansion in inverse population,
+not the earlier fixed-distribution Taylor theorem. The arithmetic domain
+is fixed `m > 0`, fixed real `s` (positive for positivity), eventual
+`N >= 2`, `k <= N`, `m <= N`, and `2*k+s=N`. The normalization bridge
+uses eventual `N > m`, which follows from the population limit.
 
 ### Remaining coefficient work (not certified here)
 
 The explicit tilt coefficients at orders `e^2,e^3` and normalized optimal
-value coefficients at orders `e^2,e^3,e^4` in `source/new_results.tex`
-have not yet been asserted as Lean theorems by these modules. In particular,
-the analytic `T,U` remainders do not identify those coefficients. The
-fourth-order numerical expansion and its `O(e^5)` remainder remain open
-until those actual derivative/coefficient computations are kernel-checked.
+value coefficients at orders `e^3,e^4` in `source/new_results.tex`
+have not yet been asserted as Lean theorems by these modules. The normalized
+`e^2` coefficient is now proved, not just hidden in an analytic remainder.
+The next tilt coefficient needs the next actual derivatives of the
+critical equation, including the inverse-population derivative of
+`Q_tt(e,0)` (the actual fourth-cumulant continuation); the subsequent
+coefficients require the higher derivatives as well. The fourth-order
+expansion and its `O(e^5)` remainder remain open until these actual
+derivative/coefficient computations are kernel-checked.
 The coordinator's high-cumulant work is not duplicated or inferred from
 uncompiled statements.
+
+### Reproduce a newly proved module
+
+For example, after its committed imports are built in the same local
+build directory:
+
+```sh
+export PATH=/data/.toolchains/lean-4.33.0-linux/bin:$PATH
+export LEAN_PATH="$PWD/.lake/build/lib/lean"
+for package in .lake/packages/*; do
+  export LEAN_PATH="$LEAN_PATH:$PWD/$package/.lake/build/lib/lean"
+done
+flock -x /data/hoeffding_full_20261015/lean_compile.lock -c \
+  'timeout 600 lean -j 1 -o .lake/build/lib/lean/ExactHoeffding/ActualNormalizedAsymptotics.olean ExactHoeffding/ActualNormalizedAsymptotics.lean'
+```
+
+The last command completed with exit code 0; the final log also records
+`lean_exit_code=0`. Each intermediate module was independently compiled
+and committed before compiling its dependent modules. Source-policy and
+whitespace checks do not trigger any extra Lean import or audit.
