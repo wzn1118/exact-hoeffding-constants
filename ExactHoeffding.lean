@@ -9,6 +9,7 @@ import ExactHoeffding.Sampling
 import ExactHoeffding.CurvatureBridge
 import ExactHoeffding.MomentGenerating
 import ExactHoeffding.FactorialMoments
+import ExactHoeffding.GeneralFactorialMoments
 import ExactHoeffding.TiltedVariance
 import ExactHoeffding.OrdinaryMoments
 import ExactHoeffding.CurvatureNonnegative
