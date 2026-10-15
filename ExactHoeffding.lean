@@ -27,6 +27,7 @@ import ExactHoeffding.StationaryGlobal
 import ExactHoeffding.GlobalCrossing
 import ExactHoeffding.RiccatiCertificates
 import ExactHoeffding.RiccatiBarrier
+import ExactHoeffding.VarianceBarrierFlow
 import ExactHoeffding.RiccatiComparison
 import ExactHoeffding.BernoulliRiccati
 import ExactHoeffding.ScaledBernoulliComparison
