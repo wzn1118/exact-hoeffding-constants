@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-15",
+  "clean_directory_build": true,
+  "publication_bundle_build_exit_code": 0,
+  "publication_bundle_hash_check_exit_code": 0,
+  "builds": {
+    "combined_all": {
+      "pages": 34,
+      "passes": 3,
+      "exit_code": 0,
+      "final_diagnostics": []
+    },
+    "manuscript": {
+      "pages": 28,
+      "passes": 3,
+      "exit_code": 0,
+      "final_diagnostics": []
+    },
+    "supplement": {
+      "pages": 6,
+      "passes": 3,
+      "exit_code": 0,
+      "final_diagnostics": []
+    }
+  },
+  "source_structure": {
+    "theorem_statements": 30,
+    "bibliographic_entries": 16,
+    "unique_labels": 168
+  },
+  "arxiv_archive_members": [
+    "combined_all.tex"
+  ],
+  "reference_pdfs_verified": [
+    "refs/papers/ArbelMarchalNguyen2020.pdf",
+    "refs/papers/AtouaniMarchalArbel2025.pdf",
+    "refs/papers/GottschlingCaprio2026.pdf",
+    "refs/papers/LeeKim2026.pdf"
+  ],
+  "artifacts": {
+    "Wang_Zinan_Exact_Hoeffding_arXiv_Source_2026-10-15.zip": {
+      "bytes": 29542,
+      "sha256": "ae0fd07efcb03f56b34df2e51384b6be17f2107871ba8237ea84de18c92bffba"
+    },
+    "Wang_Zinan_Exact_Hoeffding_References_2026-10-15.zip": {
+      "bytes": 2248817,
+      "sha256": "20d539c83672288a1ceeedae36d4087ca3a3ab3ff8baae444a3d60690760c6fe"
+    },
+    "Wang_Zinan_Exact_Hoeffding_Publication_Bundle_2026-10-15.zip": {
+      "bytes": 3614851,
+      "sha256": "826b9a91c165e4780d8cff208ff2de92d056a3cbeb581f2776c2f8894bfd4875"
+    },
+    "combined_all.pdf": {
+      "bytes": 527753,
+      "sha256": "8e15b8d6072fdc9eb0c695d1f864c702a7469e2b0638cd40b166dee199fecf85"
+    }
+  }
+}

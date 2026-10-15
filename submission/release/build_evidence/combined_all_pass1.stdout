@@ -1,0 +1,848 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./combined_all.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+No file combined_all.aux.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd)
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd)
+
+LaTeX Warning: Citation `Barber' on page 1 undefined on input line 48.
+
+
+LaTeX Warning: Citation `BarberErratum' on page 1 undefined on input line 48.
+
+
+LaTeX Warning: Citation `LeeKim' on page 1 undefined on input line 48.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Reference `prop:variance_parity' on page 2 undefined on input li
+ne 60.
+
+
+LaTeX Warning: Reference `prop:explicit_extremizer' on page 2 undefined on inpu
+t line 60.
+
+
+LaTeX Warning: Reference `sec:odd_asym' on page 2 undefined on input line 73.
+
+
+LaTeX Warning: Reference `sec:uniform_fixed' on page 2 undefined on input line
+73.
+
+
+LaTeX Warning: Reference `sec:curvature_obstruction' on page 2 undefined on inp
+ut line 73.
+
+
+LaTeX Warning: Reference `thm:exchange' on page 2 undefined on input line 73.
+
+
+LaTeX Warning: Citation `Hoeffding' on page 2 undefined on input line 75.
+
+
+LaTeX Warning: Citation `Serfling' on page 2 undefined on input line 75.
+
+
+LaTeX Warning: Citation `BardenetMaillard' on page 2 undefined on input line 75
+.
+
+
+LaTeX Warning: Citation `GreeneWellner' on page 2 undefined on input line 75.
+
+
+LaTeX Warning: Citation `DiaconisFreedman' on page 2 undefined on input line 75
+.
+
+
+LaTeX Warning: Citation `GottschlingCaprio' on page 2 undefined on input line 7
+5.
+
+
+LaTeX Warning: Reference `eq:exchange-intro' on page 2 undefined on input line
+75.
+
+
+LaTeX Warning: Citation `Fog' on page 2 undefined on input line 75.
+
+[2]
+
+LaTeX Warning: Citation `Kou' on page 3 undefined on input line 77.
+
+
+LaTeX Warning: Citation `BBL' on page 3 undefined on input line 77.
+
+
+LaTeX Warning: Citation `Szego' on page 3 undefined on input line 77.
+
+
+LaTeX Warning: Citation `ArbelMarchalNguyen' on page 3 undefined on input line
+77.
+
+
+LaTeX Warning: Citation `MarchalArbel' on page 3 undefined on input line 77.
+
+
+LaTeX Warning: Citation `AtouaniMarchalArbel' on page 3 undefined on input line
+ 77.
+
+
+LaTeX Warning: Reference `sec:twodraw' on page 3 undefined on input line 77.
+
+
+LaTeX Warning: Citation `AtouaniMarchalArbel' on page 3 undefined on input line
+ 77.
+
+
+LaTeX Warning: Reference `sec:uniform_fixed' on page 3 undefined on input line
+79.
+
+
+LaTeX Warning: Reference `sec:curvature_obstruction' on page 3 undefined on inp
+ut line 79.
+
+
+LaTeX Warning: Reference `eq:exchange-intro' on page 3 undefined on input line
+94.
+
+
+LaTeX Warning: Reference `eq:LKidentity' on page 3 undefined on input line 107.
+
+
+[3]
+
+LaTeX Warning: Reference `sec:exchangeable' on page 4 undefined on input line 1
+17.
+
+
+LaTeX Warning: Reference `sec:parity' on page 4 undefined on input line 117.
+
+
+LaTeX Warning: Reference `odd:thm:odd' on page 4 undefined on input line 117.
+
+
+LaTeX Warning: Reference `sec:parity' on page 4 undefined on input line 117.
+
+
+LaTeX Warning: Reference `odd:thm:envelope' on page 4 undefined on input line 1
+33.
+
+
+LaTeX Warning: Reference `cor:two_bern_envelope' on page 4 undefined on input l
+ine 133.
+
+[4]
+
+LaTeX Warning: Reference `eq:CNexact' on page 5 undefined on input line 178.
+
+
+LaTeX Warning: Citation `LeeKim' on page 5 undefined on input line 184.
+
+[5]
+
+LaTeX Warning: Reference `eq:twolevel_second' on page 6 undefined on input line
+ 222.
+
+
+LaTeX Warning: Reference `eq:exchange-intro' on page 6 undefined on input line
+226.
+
+
+LaTeX Warning: Reference `prop:two_level' on page 6 undefined on input line 239
+.
+
+
+LaTeX Warning: Reference `eq:LKidentity' on page 6 undefined on input line 244.
+
+
+
+LaTeX Warning: Reference `cor:mgf' on page 6 undefined on input line 254.
+
+
+LaTeX Warning: Reference `eq:LKidentity' on page 6 undefined on input line 254.
+
+
+
+LaTeX Warning: Reference `odd:thm:odd' on page 6 undefined on input line 260.
+
+
+LaTeX Warning: Reference `thm:exchange' on page 6 undefined on input line 260.
+
+
+LaTeX Warning: Reference `eq:exchange-intro' on page 6 undefined on input line
+260.
+
+
+LaTeX Warning: Reference `cor:tail' on page 6 undefined on input line 260.
+
+[6]
+
+LaTeX Warning: Reference `eq:hypergeom' on page 7 undefined on input line 291.
+
+
+LaTeX Warning: Reference `eq:hyperode' on page 7 undefined on input line 308.
+
+[7]
+
+LaTeX Warning: Reference `eq:Q' on page 8 undefined on input line 320.
+
+
+LaTeX Warning: Reference `eq:jacobi' on page 8 undefined on input line 320.
+
+
+LaTeX Warning: Reference `eq:coeffratio' on page 8 undefined on input line 320.
+
+
+
+LaTeX Warning: Reference `eq:tiltuv' on page 8 undefined on input line 332.
+
+
+LaTeX Warning: Reference `eq:PB' on page 8 undefined on input line 344.
+
+
+LaTeX Warning: Reference `eq:PB' on page 8 undefined on input line 348.
+
+
+LaTeX Warning: Reference `eq:hyperode' on page 8 undefined on input line 352.
+
+
+LaTeX Warning: Reference `eq:tiltuv' on page 8 undefined on input line 352.
+
+
+LaTeX Warning: Reference `eq:riccati' on page 8 undefined on input line 358.
+
+[8]
+
+LaTeX Warning: Reference `eq:differentiated' on page 9 undefined on input line
+367.
+
+
+LaTeX Warning: Reference `eq:riccati' on page 9 undefined on input line 371.
+
+
+LaTeX Warning: Reference `eq:zfromuv' on page 9 undefined on input line 371.
+
+
+LaTeX Warning: Reference `eq:F' on page 9 undefined on input line 389.
+
+
+LaTeX Warning: Reference `eq:PB' on page 9 undefined on input line 392.
+
+[9]
+
+LaTeX Warning: Reference `eq:masterpositive' on page 10 undefined on input line
+ 420.
+
+
+LaTeX Warning: Reference `eq:qbound' on page 10 undefined on input line 443.
+
+
+LaTeX Warning: Reference `eq:g' on page 10 undefined on input line 449.
+
+[10]
+
+LaTeX Warning: Reference `eq:Eq' on page 11 undefined on input line 470.
+
+
+LaTeX Warning: Reference `eq:Kdef' on page 11 undefined on input line 487.
+
+
+LaTeX Warning: Reference `eq:Eq' on page 11 undefined on input line 487.
+
+
+LaTeX Warning: Reference `eq:gS' on page 11 undefined on input line 487.
+
+
+LaTeX Warning: Reference `eq:masterpositive' on page 11 undefined on input line
+ 487.
+
+
+LaTeX Warning: Reference `eq:Kpositive' on page 11 undefined on input line 491.
+
+
+
+LaTeX Warning: Reference `eq:F' on page 11 undefined on input line 495.
+
+
+LaTeX Warning: Reference `eq:param' on page 11 undefined on input line 497.
+
+
+LaTeX Warning: Reference `eq:letters' on page 11 undefined on input line 497.
+
+
+LaTeX Warning: Reference `eq:AandE' on page 11 undefined on input line 497.
+
+
+LaTeX Warning: Reference `eq:F' on page 11 undefined on input line 508.
+
+
+LaTeX Warning: Reference `app:algebra' on page 11 undefined on input line 508.
+
+[11]
+
+LaTeX Warning: Reference `eq:param' on page 12 undefined on input line 514.
+
+
+LaTeX Warning: Reference `eq:Q' on page 12 undefined on input line 520.
+
+
+LaTeX Warning: Reference `eq:PB' on page 12 undefined on input line 522.
+
+
+LaTeX Warning: Reference `lem:universal' on page 12 undefined on input line 531
+.
+
+
+LaTeX Warning: Reference `lem:identity' on page 12 undefined on input line 531.
+
+
+
+LaTeX Warning: Reference `eq:F' on page 12 undefined on input line 535.
+
+
+LaTeX Warning: Reference `lem:branch' on page 12 undefined on input line 535.
+
+
+LaTeX Warning: Reference `eq:curvature' on page 12 undefined on input line 539.
+
+
+[12]
+
+LaTeX Warning: Reference `thm:curvature' on page 13 undefined on input line 574
+.
+
+
+LaTeX Warning: Reference `eq:sym1' on page 13 undefined on input line 575.
+
+
+LaTeX Warning: Reference `eq:sym4' on page 13 undefined on input line 575.
+
+
+LaTeX Warning: Reference `eq:param' on page 13 undefined on input line 575.
+
+
+LaTeX Warning: Reference `eq:3pointvar' on page 13 undefined on input line 575.
+
+
+
+LaTeX Warning: Reference `prop:allinner' on page 13 undefined on input line 575
+.
+
+
+LaTeX Warning: Reference `eq:curvature' on page 13 undefined on input line 575.
+
+
+
+LaTeX Warning: Reference `thm:curvature' on page 13 undefined on input line 575
+.
+
+[13]
+
+LaTeX Warning: Reference `eq:variance_constant' on page 14 undefined on input l
+ine 607.
+
+
+LaTeX Warning: Reference `eq:globalC' on page 14 undefined on input line 609.
+
+
+LaTeX Warning: Reference `odd:thm:odd' on page 14 undefined on input line 609.
+
+
+LaTeX Warning: Reference `eq:variance_gap_integral' on page 14 undefined on inp
+ut line 615.
+
+
+LaTeX Warning: Reference `eq:variance_gap_expansion' on page 14 undefined on in
+put line 615.
+
+
+LaTeX Warning: Reference `eq:exchange-intro' on page 14 undefined on input line
+ 625.
+
+
+LaTeX Warning: Reference `app:bernoulli' on page 14 undefined on input line 649
+.
+
+
+LaTeX Warning: Citation `ArbelMarchalNguyen' on page 14 undefined on input line
+ 649.
+
+
+LaTeX Warning: Reference `eq:globalC' on page 14 undefined on input line 653.
+
+
+LaTeX Warning: Reference `eq:asymptotic' on page 14 undefined on input line 653
+.
+
+
+LaTeX Warning: Reference `sec:odd_uniform' on page 14 undefined on input line 6
+53.
+
+
+LaTeX Warning: Citation `AtouaniMarchalArbel' on page 14 undefined on input lin
+e 660.
+
+[14]
+
+LaTeX Warning: Reference `eq:threeproxy' on page 15 undefined on input line 686
+.
+
+
+LaTeX Warning: Reference `lem:threemass' on page 15 undefined on input line 707
+.
+
+[15]
+
+LaTeX Warning: Reference `eq:Ltwo' on page 16 undefined on input line 719.
+
+
+LaTeX Warning: Reference `lem:threemass' on page 16 undefined on input line 739
+.
+
+
+LaTeX Warning: Reference `prop:odd2' on page 16 undefined on input line 744.
+
+[16]
+
+LaTeX Warning: Reference `odd:eq:BernEnvelope' on page 17 undefined on input li
+ne 781.
+
+
+LaTeX Warning: Reference `odd:thm:envelope' on page 17 undefined on input line
+786.
+
+
+LaTeX Warning: Reference `sec:jacobi' on page 17 undefined on input line 803.
+
+[17]
+
+LaTeX Warning: Reference `odd:eq:curveODE' on page 18 undefined on input line 8
+39.
+
+
+LaTeX Warning: Reference `odd:eq:F' on page 18 undefined on input line 866.
+
+
+LaTeX Warning: Reference `odd:lem:PB' on page 18 undefined on input line 884.
+
+[18]
+
+LaTeX Warning: Reference `odd:eq:certificate' on page 19 undefined on input lin
+e 929.
+
+
+LaTeX Warning: Reference `odd:lem:barrier' on page 19 undefined on input line 9
+35.
+
+
+LaTeX Warning: Reference `odd:eq:variance0' on page 19 undefined on input line
+946.
+
+
+LaTeX Warning: Reference `odd:eq:curveODE' on page 19 undefined on input line 9
+49.
+
+
+LaTeX Warning: Reference `odd:eq:residual' on page 19 undefined on input line 9
+49.
+
+
+LaTeX Warning: Reference `odd:eq:E' on page 19 undefined on input line 953.
+
+
+LaTeX Warning: Reference `odd:eq:PB' on page 19 undefined on input line 953.
+
+
+LaTeX Warning: Reference `odd:eq:Wpositive' on page 19 undefined on input line
+954.
+
+[19]
+
+LaTeX Warning: Reference `odd:eq:crossing' on page 20 undefined on input line 9
+56.
+
+
+LaTeX Warning: Reference `odd:eq:barrier' on page 20 undefined on input line 95
+6.
+
+
+LaTeX Warning: Reference `odd:lem:barrier' on page 20 undefined on input line 9
+60.
+
+
+LaTeX Warning: Reference `odd:eq:laplace' on page 20 undefined on input line 98
+6.
+
+
+LaTeX Warning: Reference `odd:eq:laplace' on page 20 undefined on input line 99
+3.
+
+
+LaTeX Warning: Reference `odd:thm:envelope' on page 20 undefined on input line
+999.
+
+[20]
+
+LaTeX Warning: Reference `eq:bernproxy' on page 21 undefined on input line 1014
+.
+
+
+LaTeX Warning: Reference `cor:two_bern_envelope' on page 21 undefined on input
+line 1019.
+
+
+LaTeX Warning: Reference `odd:thm:envelope' on page 21 undefined on input line
+1019.
+
+
+LaTeX Warning: Reference `eq:LKidentity' on page 21 undefined on input line 103
+0.
+
+
+LaTeX Warning: Reference `thm:exchange' on page 21 undefined on input line 1030
+.
+
+
+LaTeX Warning: Reference `eq:factor' on page 21 undefined on input line 1036.
+
+
+LaTeX Warning: Reference `thm:curvature' on page 21 undefined on input line 104
+1.
+
+
+LaTeX Warning: Reference `eq:rootineq' on page 21 undefined on input line 1048.
+
+
+[21]
+
+LaTeX Warning: Reference `thm:curvature' on page 22 undefined on input line 105
+9.
+
+
+LaTeX Warning: Reference `lem:universal' on page 22 undefined on input line 106
+2.
+
+
+LaTeX Warning: Reference `lem:identity' on page 22 undefined on input line 1062
+.
+
+
+LaTeX Warning: Reference `odd:thm:odd' on page 22 undefined on input line 1068.
+
+
+
+LaTeX Warning: Reference `eq:bernproxy' on page 22 undefined on input line 1068
+.
+
+
+LaTeX Warning: Reference `sec:twodraw' on page 22 undefined on input line 1068.
+
+
+[22]
+
+LaTeX Warning: Reference `app:cumulants' on page 23 undefined on input line 111
+3.
+
+[23]
+
+LaTeX Warning: Reference `eq:tiltexp' on page 24 undefined on input line 1150.
+
+
+LaTeX Warning: Reference `eq:tiltexp' on page 24 undefined on input line 1162.
+
+
+LaTeX Warning: Reference `eq:Qexpand' on page 24 undefined on input line 1168.
+
+
+LaTeX Warning: Reference `eq:Rexp' on page 24 undefined on input line 1180.
+
+
+LaTeX Warning: Reference `eq:Rexp' on page 24 undefined on input line 1187.
+
+
+LaTeX Warning: Reference `cor:fixedm_gap' on page 24 undefined on input line 11
+87.
+
+
+LaTeX Warning: Reference `eq:Rexp' on page 24 undefined on input line 1190.
+
+
+LaTeX Warning: Reference `eq:fixedgap' on page 24 undefined on input line 1190.
+
+
+[24]
+
+LaTeX Warning: Reference `thm:odd_expansion' on page 25 undefined on input line
+ 1198.
+
+
+LaTeX Warning: Reference `eq:kappa4exp' on page 25 undefined on input line 1234
+.
+
+
+LaTeX Warning: Reference `eq:factorial_moments' on page 25 undefined on input l
+ine 1234.
+
+
+LaTeX Warning: Reference `eq:F' on page 25 undefined on input line 1245.
+
+[25]
+
+LaTeX Warning: Reference `lem:identity' on page 26 undefined on input line 1260
+.
+
+
+LaTeX Warning: Reference `eq:Kpositive' on page 26 undefined on input line 1269
+.
+
+
+LaTeX Warning: Reference `eq:Kpositive' on page 26 undefined on input line 1282
+.
+
+
+LaTeX Warning: Reference `eq:bernproxy' on page 26 undefined on input line 1287
+.
+
+[26]
+
+LaTeX Warning: Reference `eq:bernref' on page 27 undefined on input line 1309.
+
+
+LaTeX Warning: Reference `eq:bernsecond' on page 27 undefined on input line 130
+9.
+
+
+LaTeX Warning: Reference `eq:bernproxy' on page 27 undefined on input line 1317
+.
+
+[27]
+
+LaTeX Warning: Reference `eq:joint_symmetry' on page 28 undefined on input line
+ 1356.
+
+
+LaTeX Warning: Reference `eq:balanced_exact' on page 28 undefined on input line
+ 1360.
+
+[28]
+
+LaTeX Warning: Reference `lem:joint_optimizer' on page 29 undefined on input li
+ne 1376.
+
+
+LaTeX Warning: Reference `eq:maclaurin_mgf' on page 29 undefined on input line
+1391.
+
+
+LaTeX Warning: Reference `eq:fixed_all_k' on page 29 undefined on input line 13
+96.
+
+
+LaTeX Warning: Reference `cor:fixedm_gap' on page 29 undefined on input line 13
+96.
+
+
+LaTeX Warning: Reference `thm:curvature' on page 29 undefined on input line 140
+1.
+
+
+LaTeX Warning: Reference `eq:Q' on page 29 undefined on input line 1401.
+
+
+LaTeX Warning: Reference `eq:analytic_masses' on page 29 undefined on input lin
+e 1404.
+
+[29]
+
+LaTeX Warning: Reference `cor:mgf' on page 30 undefined on input line 1423.
+
+
+LaTeX Warning: Reference `lem:joint_optimizer' on page 30 undefined on input li
+ne 1423.
+
+
+LaTeX Warning: Reference `eq:finite_T' on page 30 undefined on input line 1431.
+
+
+
+LaTeX Warning: Reference `eq:finite_A' on page 30 undefined on input line 1445.
+
+
+[30]
+
+LaTeX Warning: Reference `app:bernoulli' on page 31 undefined on input line 146
+6.
+
+
+LaTeX Warning: Reference `eq:analytic_masses' on page 31 undefined on input lin
+e 1468.
+
+
+LaTeX Warning: Reference `eq:compact_envelope' on page 31 undefined on input li
+ne 1493.
+
+
+LaTeX Warning: Reference `thm:main_laplace' on page 31 undefined on input line
+1497.
+
+
+LaTeX Warning: Reference `thm:uniform_fixed' on page 31 undefined on input line
+ 1497.
+
+[31]
+
+LaTeX Warning: Reference `eq:falseoddcurve' on page 32 undefined on input line
+1513.
+
+
+LaTeX Warning: Reference `eq:falseoddcurve' on page 32 undefined on input line
+1522.
+
+
+LaTeX Warning: Reference `eq:obs_exact' on page 32 undefined on input line 1535
+.
+
+
+LaTeX Warning: Reference `eq:obs_exact' on page 32 undefined on input line 1546
+.
+
+[32]
+
+LaTeX Warning: Reference `odd:thm:envelope' on page 33 undefined on input line
+1561.
+
+
+LaTeX Warning: Reference `eq:curv_integral' on page 33 undefined on input line
+1561.
+
+
+LaTeX Warning: Reference `odd:lem:barrier' on page 33 undefined on input line 1
+561.
+
+
+LaTeX Warning: Reference `prop:obstruction' on page 33 undefined on input line
+1561.
+
+
+LaTeX Warning: Reference `eq:falseoddcurve' on page 33 undefined on input line
+1561.
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd) [33] [34] (./combined_all.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `combined_all.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ ){/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share
+/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ma
+thsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf/f
+onts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/symbols/msbm10.pfb>
+Output written on combined_all.pdf (34 pages, 516914 bytes).
+Transcript written on combined_all.log.

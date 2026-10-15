@@ -1,8 +1,8 @@
 # 有限交换序列的精确 Hoeffding 常数
 
-**Zinan Wang · 2026 年 10 月 11 日修订**
+**Zinan Wang · 2026 年 10 月 15 日修订**
 
-[英文主论文（28 页）](manuscript.pdf) · [技术补充（6 页）](supplementary_refinements.pdf) · [独立投稿 LaTeX 源码](submission/manuscript.tex)
+[英文主论文（28 页）](manuscript.pdf) · [技术补充（6 页）](supplementary_refinements.pdf) · [完整论文与 arXiv 投稿包](submission/README.md)
 
 ## 主定理
 
@@ -16,6 +16,16 @@ C_N^\star = \begin{cases}
 \]
 
 主论文集中论述 Lee–Kim 两水平归约、全参数倾斜方差界、奇偶统一的 Laplace 包络、精确常数和奇数总体的等号分类。四阶渐近展开进入附录。固定样本成功数极值、紧成功率区间上的解析收缩以及次要曲率反例与积分恒等式移入独立技术补充，保留完整证明。
+
+## arXiv 投稿文件
+
+[投稿说明](submission/README.md)列出单入口源码包、合并全文及独立参考文献包。`submission/combined_all.tex` 合并主稿与全部技术补充，共用一份参考文献。运行以下命令可重新打包，并在空目录中解压、编译投稿源码：
+
+```bash
+python3 checks/package_submission.py
+```
+
+投稿包与文献包的文件清单、校验和及编译报告随包保存。Lean 源码与构建记录保留在仓库中，形式化状态以相应记录为准。
 
 ## 完整复现
 
