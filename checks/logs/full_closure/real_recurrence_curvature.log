@@ -1,0 +1,12 @@
+compile_started=2026-10-15T17:18:11UTC
+ExactHoeffding/RealRecurrenceCurvature.lean:553:6: warning: Unused tactic linter: `change
+  Real.exp t * stationaryDen (L.degree : ℝ) L.marks u v = v * (L.remainder + 2 * u)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ExactHoeffding/RealRecurrenceCurvature.lean:556:28: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ExactHoeffding/RealRecurrenceCurvature.lean:568:21: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+lean_exit_code=0
