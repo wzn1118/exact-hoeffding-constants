@@ -99,5 +99,43 @@ theorem odd_normalized_proxy_two_draw_eq_constant_iff (n k : ℕ)
   rw [← odd_normalized_proxy_two_draw_value n hn]
   exact odd_normalized_proxy_two_draw_max_iff n k hn hk hkN
 
+
+/-- The sample-complementary fixed sample `N-2` has the same maximum as the
+odd two-draw problem. -/
+theorem odd_normalized_proxy_two_from_end_max (n k : ℕ)
+    (hn : 2 ≤ n) (hk : 1 ≤ k) (hkN : k ≤ 2 * n) :
+    normalizedHypergeomProxy (2 * n + 1) k (2 * n - 1) ≤
+      normalizedHypergeomProxy (2 * n + 1) n (2 * n - 1) := by
+  rw [normalizedHypergeomProxy_sample_complement (2 * n + 1) k (2 * n - 1)
+      (by omega) (by omega) (by omega),
+    normalizedHypergeomProxy_sample_complement (2 * n + 1) n (2 * n - 1)
+      (by omega) (by omega) (by omega)]
+  have hcomp : 2 * n + 1 - (2 * n - 1) = 2 := by omega
+  rw [hcomp]
+  exact odd_normalized_proxy_two_draw_max n k hn hk hkN
+
+/-- Closed value and equality classification for the sample-complementary
+fixed sample `N-2`. -/
+theorem odd_normalized_proxy_two_from_end_max_iff (n k : ℕ)
+    (hn : 2 ≤ n) (hk : 1 ≤ k) (hkN : k ≤ 2 * n) :
+    normalizedHypergeomProxy (2 * n + 1) k (2 * n - 1) =
+      normalizedHypergeomProxy (2 * n + 1) n (2 * n - 1) ↔
+      k = n ∨ k = n + 1 := by
+  rw [normalizedHypergeomProxy_sample_complement (2 * n + 1) k (2 * n - 1)
+      (by omega) (by omega) (by omega),
+    normalizedHypergeomProxy_sample_complement (2 * n + 1) n (2 * n - 1)
+      (by omega) (by omega) (by omega)]
+  have hcomp : 2 * n + 1 - (2 * n - 1) = 2 := by omega
+  rw [hcomp]
+  exact odd_normalized_proxy_two_draw_max_iff n k hn hk hkN
+
+theorem odd_normalized_proxy_two_from_end_value (n : ℕ) (hn : 2 ≤ n) :
+    normalizedHypergeomProxy (2 * n + 1) n (2 * n - 1) = oddTwoDrawConstant n := by
+  rw [normalizedHypergeomProxy_sample_complement (2 * n + 1) n (2 * n - 1)
+      (by omega) (by omega) (by omega)]
+  have hcomp : 2 * n + 1 - (2 * n - 1) = 2 := by omega
+  rw [hcomp]
+  exact odd_normalized_proxy_two_draw_value n hn
+
 end
 end ExactHoeffding
