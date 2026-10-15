@@ -19,6 +19,7 @@ import ExactHoeffding.Support
 import ExactHoeffding.OrdinaryMomentsComplete
 import ExactHoeffding.ZeroTiltMoments
 import ExactHoeffding.Jacobi
+import ExactHoeffding.JacobiRoots
 import ExactHoeffding.BernoulliKL
 import ExactHoeffding.StationaryCertificates
 import ExactHoeffding.StationaryGlobal
@@ -31,6 +32,7 @@ import ExactHoeffding.CrossSum
 import ExactHoeffding.WholeLineCrossing
 import ExactHoeffding.BernoulliProxy
 import ExactHoeffding.HypergeometricODE
+import ExactHoeffding.HypergeometricODEMargins
 import ExactHoeffding.TiltedAdmissibilityDirect
 import ExactHoeffding.TiltedEndpoints
 import ExactHoeffding.SmallSupportCurvature
