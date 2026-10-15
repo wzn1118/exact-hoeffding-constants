@@ -30,4 +30,5 @@ import ExactHoeffding.WholeLineCrossing
 import ExactHoeffding.BernoulliProxy
 import ExactHoeffding.HypergeometricODE
 import ExactHoeffding.TiltedAdmissibilityDirect
+import ExactHoeffding.TiltedEndpoints
 import ExactHoeffding.SmallSupportCurvature
