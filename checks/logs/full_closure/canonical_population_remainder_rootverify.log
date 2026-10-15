@@ -1,0 +1,20 @@
+compile_started=2026-10-15T18:41:03UTC
+ExactHoeffding/CanonicalOptimizedPopulationRemainder.lean:52:27: warning: This simp argument is unused:
+  one_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.mk_add_mk, Prod.smul_mk, smul_eq_mul, mul_zero, zero_add, add_zero, Finset.sum_range_succ,
+    Finset.sum_range_zero, zero_add, Nat.factorial_zero, Nat.cast_one, inv_one, iteratedFDeriv_zero_apply,
+    Nat.factorial_one, iteratedFDeriv_one_apply, pow_one, one_mul] at ht
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ExactHoeffding/CanonicalOptimizedPopulationRemainder.lean:104:4: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ExactHoeffding/CanonicalOptimizedPopulationRemainder.lean:109:14: warning: Variable name `hd₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+lean_exit_code=0

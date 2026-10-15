@@ -57,7 +57,6 @@ theorem populationSlope_continuousAt_axis (F : ℝ × ℝ → ℝ) (d₀ : ℝ)
     (continuousAt_snd : ContinuousAt (fun p : ℝ × ℝ => p.2) (0,d₀)).tendsto.eventually haxis
   filter_upwards [hA,hG,hZ] with p hp hgp hz
   symm
-  change J p=populationSlope F p
   have hid : p.1*J p=F p := by
     have hcont : ContinuousOn (fun r : ℝ => parameterPartial F (1,0) (r*p.1,p.2)) (Icc 0 1) := by
       intro r hr

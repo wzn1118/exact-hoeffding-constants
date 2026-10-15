@@ -1373,16 +1373,16 @@ At $e=0$, the Bernoulli proxy formula gives
 \[
  \mathcal R_m(0,d)=g(d):=\frac d{\operatorname{artanh}d},\qquad g(0)=1.
 \]
-In particular $g(d)=1-d^2/3+O(d^4)$. The even analytic function from Lemma \ref{lem:joint_optimizer} therefore has the form
+In particular $g(d)=1-d^2/3+O(d^4)$, so
 \[
- \mathcal R_m(e,d)=\frac1{1-e}-d^2A_m(e,d^2),\qquad A_m(0,0)=\frac13,
+ \partial_d^2\mathcal R_m(0,0)=-\frac23.
 \]
-where $A_m$ is analytic. Choose $d_0>0$ and $e_0>0$ inside its analytic rectangle such that
+Joint analyticity makes this second derivative continuous in $(e,d)$. Choose $e_0,d_0>0$ inside the analytic rectangle such that
 \[
- A_m(e,d^2)+d^2\partial_2A_m(e,d^2)>0
- \quad(0\le e\le e_0,\ 0\le d\le d_0).
+ \partial_d^2\mathcal R_m(e,d)<0
+ \qquad (0\le e\le e_0,\ |d|\le d_0).
 \]
-It follows that $\partial_d\mathcal R_m(e,d)<0$ for $0<d\le d_0$. Thus, among odd-population success counts in this interval, the maximum is uniquely attained at $d=1/N=e$.
+Evenness in $d$ gives $\partial_d\mathcal R_m(e,0)=0$. The mean value theorem now yields $\partial_d\mathcal R_m(e,d)<0$ for $0<d\le d_0$, uniformly for $0\le e\le e_0$. Thus $\mathcal R_m(e,\cdot)$ is strictly decreasing on $[0,d_0]$, and among odd-population success counts in this interval the maximum is uniquely attained at $d=1/N=e$.
 
 For the remaining success counts, the elementary-symmetric-mean inequality gives
 \begin{equation}\label{eq:maclaurin_mgf}
@@ -1480,11 +1480,13 @@ on compact $t$ intervals. Analytic divisibility by $t^2$ permits the same expans
 \[
  \mathcal R_m(e,d)=g(d)+e\left[m g(d)-(m-1)\frac{d^2}{a^2pq}\right]+O_{m,\eta}(e^2).
 \]
-The continuous interpretation is used at $d=0$. Since $\mathcal R_1(e,d)=g(d)/(1-e)$, their difference vanishes identically at $e=0$ and also at $d=0$ for every small $e$. It is even in $d$. Joint analyticity consequently factors it exactly as
+The continuous interpretation is used at $d=0$. Put $D_m(e,d)=\mathcal R_1(e,d)-\mathcal R_m(e,d)$. Since $\mathcal R_1(e,d)=g(d)/(1-e)$, this difference vanishes at $e=0$ and at $d=0$ for every small $e$. Reflection also gives $\partial_d D_m(e,0)=0$. Taylor's formula in $d$, followed by the fundamental theorem of calculus in $e$, therefore gives the exact identity
 \[
- \mathcal R_1(e,d)-\mathcal R_m(e,d)=e d^2 B_m(e,d),
+ D_m(e,d)=e d^2 B_m(e,d),\qquad
+ B_m(e,d)=\int_0^1(1-s)\int_0^1
+ \partial_e\partial_d^2D_m(re,sd)\,dr\,ds.
 \]
-where $B_m$ is continuous on the compact interval and
+The joint continuity of the differentiated objective makes $B_m$ continuous on a neighborhood of the compact parameter interval. The first population correction identifies its boundary values as
 \[
  B_m(0,d)=\frac{(m-1)g(d)}{d^2}
  \left[\frac{d}{(1-d^2)\operatorname{artanh}d}-1\right],
