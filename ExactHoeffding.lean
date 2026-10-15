@@ -51,6 +51,7 @@ import ExactHoeffding.TiltedEndpoints
 import ExactHoeffding.HypergeometricEndpoints
 import ExactHoeffding.CanonicalCurvature
 import ExactHoeffding.CanonicalCurvatureComplete
+import ExactHoeffding.SharpCurvatureTheorem
 import ExactHoeffding.CanonicalCurvatureEquality
 import ExactHoeffding.SmallSupportCurvature
 import ExactHoeffding.DegenerateCurvature
