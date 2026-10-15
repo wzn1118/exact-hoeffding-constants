@@ -57,6 +57,7 @@ import ExactHoeffding.SharpCurvatureTheorem
 import ExactHoeffding.UniformLaplace
 import ExactHoeffding.HypergeometricTail
 import ExactHoeffding.VarianceOptimality
+import ExactHoeffding.ProxyQuotient
 import ExactHoeffding.ThreePointTangent
 import ExactHoeffding.ThreePointRolle
 import ExactHoeffding.ThreePointHermite
