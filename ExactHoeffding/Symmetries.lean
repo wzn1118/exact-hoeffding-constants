@@ -94,4 +94,59 @@ theorem hypergeomMGF_transpose (N k m : ℕ) (hk : k ≤ N) (hm : m ≤ N)
   intro i hi
   rw [hypergeomPMFValue_transpose N k m i hk hm]
 
+/-- Complementing marked and unmarked elements sends the count `i` to
+`m - i` without changing its probability mass. -/
+theorem hypergeomMass_success_complement (N k m i : ℕ)
+    (hk : k ≤ N) (hi : i ≤ m) :
+    hypergeomMass N (N - k) m (m - i) = hypergeomMass N k m i := by
+  have hcomp : N - (N - k) = k := Nat.sub_sub_self hk
+  have hsub : m - (m - i) = i := Nat.sub_sub_self hi
+  simp [hypergeomMass, hypergeomCount, hcomp, hsub, Nat.mul_comm]
+
+/-- Success-complement identity for the finite hypergeometric MGF. -/
+theorem hypergeomMGF_success_complement (N k m : ℕ)
+    (hk : k ≤ N) (hm : m ≤ N) (t : ℝ) :
+    hypergeomMGF N k m t =
+      Real.exp (t * (m : ℝ)) * hypergeomMGF N (N - k) m (-t) := by
+  unfold hypergeomMGF finiteMGF
+  calc
+    (∑ i ∈ Finset.range (m + 1),
+        hypergeomMass N k m i * Real.exp (t * (i : ℝ))) =
+      ∑ i ∈ Finset.range (m + 1),
+        hypergeomMass N k m i * Real.exp (t * (i : ℝ)) := rfl
+    _ = ∑ j ∈ Finset.range (m + 1),
+          hypergeomMass N k m (m - j) *
+            (Real.exp (t * (m : ℝ)) * Real.exp ((-t) * (j : ℝ))) := by
+          conv_lhs =>
+            rw [← Finset.sum_range_reflect (fun i =>
+              hypergeomMass N k m i * Real.exp (t * (i : ℝ))) (m + 1)]
+          apply Finset.sum_congr rfl
+          intro j hj
+          have hjm : j ≤ m := Nat.le_of_lt_succ (Finset.mem_range.mp hj)
+          have hidx : m + 1 - 1 - j = m - j := by omega
+          rw [hidx]
+          have hexp : Real.exp (t * ((m - j : ℕ) : ℝ)) =
+              Real.exp (t * (m : ℝ)) * Real.exp ((-t) * (j : ℝ)) := by
+            rw [Nat.cast_sub hjm, ← Real.exp_add]
+            congr 1 <;> ring
+          rw [hexp]
+    _ = ∑ j ∈ Finset.range (m + 1),
+          hypergeomMass N (N - k) m j *
+            (Real.exp (t * (m : ℝ)) * Real.exp ((-t) * (j : ℝ))) := by
+          apply Finset.sum_congr rfl
+          intro j hj
+          have hjm : j ≤ m := Nat.le_of_lt_succ (Finset.mem_range.mp hj)
+          have hsub : m - (m - j) = j := Nat.sub_sub_self hjm
+          have hmass := hypergeomMass_success_complement N k m (m - j) hk
+            (Nat.sub_le _ _)
+          rw [hsub] at hmass
+          rw [← hmass]
+    _ = Real.exp (t * (m : ℝ)) *
+          ∑ j ∈ Finset.range (m + 1),
+            hypergeomMass N (N - k) m j * Real.exp ((-t) * (j : ℝ)) := by
+          rw [Finset.mul_sum]
+          apply Finset.sum_congr rfl
+          intro j hj
+          ring
+
 end ExactHoeffding
