@@ -1,0 +1,15 @@
+import ExactHoeffding.TwoDrawProxy
+
+#print axioms ExactHoeffding.even_tangent_square_of_deriv_ratio_antitone
+#print axioms ExactHoeffding.threeMassMGF_log_ratio
+#print axioms ExactHoeffding.threeMass_candidate_proxy_equality
+#print axioms ExactHoeffding.hypergeom_two_draw_candidate_equality
+#print axioms ExactHoeffding.logCoshMassFirst_hasDerivAt
+#print axioms ExactHoeffding.logCoshMassSecond_hasDerivAt
+#print axioms ExactHoeffding.logCoshMassThird_nonpos
+#print axioms ExactHoeffding.logCoshMass_ratio_antitone
+#print axioms ExactHoeffding.logCoshMass_tangent_square
+#print axioms ExactHoeffding.threeMass_balance_parameters
+#print axioms ExactHoeffding.threeMass_asymmetric_quadratic_bound
+#print axioms ExactHoeffding.hypergeom_two_draw_threeMass_admissible
+#print axioms ExactHoeffding.hypergeom_two_draw_proxy_upper
