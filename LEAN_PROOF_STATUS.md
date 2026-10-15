@@ -46,15 +46,14 @@ in `ExactOddGlobalTheorem.lean`.
 
 The full manuscript includes further assertions beyond the exact constants:
 the explicit third tilt and fourth optimized-value coefficients,
-exact finite-population imbalance response, the joint analytic optimizer lemma,
-and the independent analytic correction identities. Standard Jacobi normalization
+exact finite-population imbalance response and the compact analytic correction factorization. The joint analytic optimizer and its actual normalized global value are proved. Standard Jacobi normalization
 and the all-success fixed-sample extremizer theorem are proved. The compact success-proportion comparison itself
 is proved with an explicit threshold and complete equality classification. Their precise state is recorded in
 [proof_gap_register.md](proof_gap_register.md). A proof of a fixed-population
 Taylor formula does not establish the global optimized population expansion.
 
 The integrated source checkpoint passes the umbrella build and a generated
-audit of **1120 public theorems in 172 project modules**. Only `propext`,
+audit of **1257 public theorems in 194 project modules**. Only `propext`,
 `Classical.choice`, and `Quot.sound` occur in the reported dependencies.
 
 ## Verification
