@@ -136,3 +136,17 @@ performs this audit. Individual module evidence is retained under
 `checks/logs/full_closure/`; each log applies to its recorded source checkpoint.
 New modules under development are added to the umbrella after their successful
 kernel check. `proof_gap_register.md` lists open obligations explicitly.
+
+## Integrated verification checkpoint
+
+The inverse-population optimizer chain was independently recompiled in the
+control worktree, one module at a time, under the shared exclusive build lock.
+All 28 modules returned exit code zero. The supremum bridge and compact
+comparison were then compiled successfully. The complete umbrella and the
+generated audit passed: **992 public theorems in 157 project modules**, with
+only `propext`, `Classical.choice`, and `Quot.sound`.
+
+Reproduction logs: `checks/logs/full_closure/optimizer_second_rootverify.log`,
+`optimal_proxy_asymptotics.log`, `compact_contraction.log`, and
+`optimizer_second_umbrella_audit.log`. The generated audit source is
+`checks/full_closure_axioms.lean`.
