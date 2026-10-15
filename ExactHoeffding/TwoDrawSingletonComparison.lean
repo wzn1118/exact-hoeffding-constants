@@ -149,7 +149,7 @@ theorem one_lt_oddTwoDrawConstant (n : ℕ) (hn : 2≤n) : 1<oddTwoDrawConstant 
   have hfrac : 1<(2*(n:ℝ)+2)/(2*(n:ℝ)+1) := (lt_div_iff₀ hN).mpr (by linarith)
   exact lt_of_lt_of_le hfrac hv
 
-/-- Endpoint laws admit a strictly smaller normalized proxy than either central law. -/
+/-- Endpoint laws have a strictly smaller normalized proxy than either central law. -/
 theorem odd_two_draw_endpoints_strictly_below (n : ℕ) (hn : 2≤n) :
     (2*(2*(n:ℝ)+1)/(2*(n:ℝ)-1))*(1/4:ℝ)<oddTwoDrawConstant n := by
   have hN : 4<2*(n:ℝ)+1 := by exact_mod_cast (show 4<2*n+1 by omega)
