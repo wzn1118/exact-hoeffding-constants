@@ -1,0 +1,14 @@
+import ExactHoeffding.TwoDrawComparison
+
+#print axioms ExactHoeffding.logOdds_hasDerivAt
+#print axioms ExactHoeffding.logOdds_strictConvex
+#print axioms ExactHoeffding.artanh_ratio_strictMono
+#print axioms ExactHoeffding.logOdds_scale_strict
+#print axioms ExactHoeffding.hypergeom_two_draw_log_ratio
+#print axioms ExactHoeffding.hypergeom_two_draw_proxy_eq_imbalance
+#print axioms ExactHoeffding.hypergeom_two_draw_bernoulli_envelope
+#print axioms ExactHoeffding.hypergeom_two_draw_proxy_strictMono_below_half
+#print axioms ExactHoeffding.hypergeom_two_draw_proxy_complement
+#print axioms ExactHoeffding.hypergeom_two_draw_odd_max
+#print axioms ExactHoeffding.hypergeom_two_draw_odd_max_iff
+#print axioms ExactHoeffding.hypergeom_two_draw_odd_max_value
