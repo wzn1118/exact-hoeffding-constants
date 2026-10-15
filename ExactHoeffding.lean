@@ -28,3 +28,4 @@ import ExactHoeffding.CrossSum
 import ExactHoeffding.WholeLineCrossing
 import ExactHoeffding.BernoulliProxy
 import ExactHoeffding.HypergeometricODE
+import ExactHoeffding.SmallSupportCurvature
