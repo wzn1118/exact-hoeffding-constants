@@ -1,5 +1,8 @@
 # F-07 real-margin probability and derivative foundation
 
+> Historical workstream log, retained for source and compilation provenance. The final integrated coverage and audit supersede the intermediate pending-work descriptions below; see [full_closure.md](full_closure.md) and [manuscript_concordance.md](manuscript_concordance.md).
+
+
 The following results concern the actual finite mass function in
 `realMarginMass`, not merely a postulated factorial-moment sequence.
 
@@ -32,10 +35,8 @@ The `RealMarginRecurrenceLaw` module imports root's proved
 `RealRecurrenceCurvature`; compile after that module. No source axioms,
 `sorry`, or optimizer assumptions are introduced.
 
-## Current next layer
+## Archived next-layer note
 
 `RealMarginActualProxy` and `RealMarginFiniteResponse` construct an explicit
 jointly analytic actual quotient and the fixed-population critical branch.
-They are under compilation and are not counted as verified here. Complete
-fixed-population global localization, analytic optimizer identification,
-reflection, and the exact `T/A` response remain subsequent steps.
+Those intermediate files are retained for provenance. Their final integrated counterparts are kernel-checked and included in the umbrella; see `full_closure.md`.

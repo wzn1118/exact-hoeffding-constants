@@ -47,9 +47,9 @@ in `ExactOddGlobalTheorem.lean`.
 
 The compact success-proportion argument now has both an independent finite comparison and an analytic proof for the actual global optimum. The analytic development includes the full binomial axis, the exact continuous population/imbalance factor, its positive boundary value, and the explicit first population correction with a uniform quadratic remainder through balance. Exact finite-population imbalance response includes the actual optimizing tilt, explicit T/A coefficients, odd/even analytic remainders and strict Bernoulli comparison.
 
-The thirty-result check is recorded in [formal_status/manuscript_concordance.md](formal_status/manuscript_concordance.md). Two assembled propositions remain under final proof: the actual variance supremum and its parity gap, and the actual single-coordinate extremizer with its pushforward law and limiting contact.
+All 30 named results in the principal paper and technical supplement have complete theorem mappings in [formal_status/manuscript_concordance.md](formal_status/manuscript_concordance.md). The actual variance supremum, its strict odd gap and fourth-order expansion, and the explicit Hamming-law extremizer with its full Bernoulli pushforward and both parity contact mechanisms are included.
 
-The last integrated umbrella audit verifies **1450 public theorems in 239 project modules**. The subsequently added stationary-branch and explicit compact-correction modules have passed individual root kernel checks; they will be included in the final generated audit. Only `propext`, `Classical.choice`, and `Quot.sound` occur in the integrated dependencies.
+The complete integrated umbrella build and generated audit pass: **1518 public theorems in 251 project modules**. The audit reports only `propext`, `Classical.choice`, and `Quot.sound`. All project Lean modules are imported by the umbrella.
 
 ## Verification
 

@@ -1,0 +1,50 @@
+compile_started=2026-10-15T18:55:53UTC
+module=ExchangeableVarianceMoments
+lean_exit_code=0
+module=ParityVarianceGap
+lean_exit_code=0
+module=ExchangeableCenteredEnergy
+lean_exit_code=0
+module=ExplicitSingletonExtremizer
+ExactHoeffding/ExplicitSingletonExtremizer.lean:23:27: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ExactHoeffding/ExplicitSingletonExtremizer.lean:56:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ExactHoeffding/ExplicitSingletonExtremizer.lean:94:4: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+lean_exit_code=0
+module=ExplicitSingletonExtremizerLaw
+ExactHoeffding/ExplicitSingletonExtremizerLaw.lean:48:33: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ExactHoeffding/ExplicitSingletonExtremizerLaw.lean:62:32: warning: This simp argument is unused:
+  Finset.sum_const_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_const, nsmul_eq_mul, mul_one, mul_zero, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ExactHoeffding/ExplicitSingletonExtremizerLaw.lean:73:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+ExactHoeffding/ExplicitSingletonExtremizerLaw.lean:94:11: warning: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ExactHoeffding/ExplicitSingletonExtremizerLaw.lean:115:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ExactHoeffding/ExplicitSingletonExtremizerLaw.lean:144:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+lean_exit_code=0
+module=ExplicitExtremizerTheorem
+lean_exit_code=0

@@ -1,5 +1,8 @@
 # Moment and symmetry formalization status
 
+> Historical workstream log, retained for source and compilation provenance. The final integrated coverage and audit supersede the intermediate pending-work descriptions below; see [full_closure.md](full_closure.md) and [manuscript_concordance.md](manuscript_concordance.md).
+
+
 Worktree: `/data/lean_worktrees/moments-closure`  
 Branch: `formal/moments-closure-20261015`  
 Base: `e5621798df470fc7381a7462d377f8568b06c53c`  
@@ -232,20 +235,13 @@ is fixed `m > 0`, fixed real `s` (positive for positivity), eventual
 `N >= 2`, `k <= N`, `m <= N`, and `2*k+s=N`. The normalization bridge
 uses eventual `N > m`, which follows from the population limit.
 
-### Remaining coefficient work (not certified here)
+### Archived coefficient-work note
 
-The explicit tilt coefficients at orders `e^2,e^3` and normalized optimal
-value coefficients at orders `e^3,e^4` in `source/new_results.tex`
-have not yet been asserted as Lean theorems by these modules. The normalized
-`e^2` coefficient is now proved, not just hidden in an analytic remainder.
-The next tilt coefficient needs the next actual derivatives of the
-critical equation, including the inverse-population derivative of
-`Q_tt(e,0)` (the actual fourth-cumulant continuation); the subsequent
-coefficients require the higher derivatives as well. The fourth-order
-expansion and its `O(e^5)` remainder remain open until these actual
-derivative/coefficient computations are kernel-checked.
-The coordinator's high-cumulant work is not duplicated or inferred from
-uncompiled statements.
+The intermediate worker note below is retained only as provenance. The final
+integrated modules `FourthOrderMainTheorem`, `ActualNormalizedFourthCoefficient`,
+`ActualNormalizedFourthAsymptotics`, and `OptimalProxyFourthExpansion` prove the
+same fourth-order optimized expansion and analytic remainder used by the
+manuscript. The final umbrella audit includes those declarations.
 
 ### Reproduce a newly proved module
 

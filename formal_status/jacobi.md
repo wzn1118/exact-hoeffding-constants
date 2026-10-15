@@ -1,5 +1,7 @@
 # Jacobi Closure Status
 
+> Historical workstream log. The final integrated umbrella supersedes intermediate pending descriptions below. The actual PGF root, factorization, tilted Bernoulli law and normalized Jacobi statements are covered by `full_closure.md`, `manuscript_concordance.md`, and the 1518-theorem audit.
+
 Updated: 2026-10-15. Owner: Jacobi closure worktree.
 
 ## Scope
@@ -48,8 +50,7 @@ and `(X-1)^r`, proves `jacobiRodrigues j h r` splits.
 
 The targeted check used Lean 4.33.0 and the existing mathlib build artifacts:
 `lean -j 1 ExactHoeffding/JacobiRoots.lean`; it exited with code `0`. This was
-a direct file check, not a full project build. `#print axioms` for these new
-declarations is still pending and is not claimed here.
+a direct file check, not a full project build. The final transitive axiom audit covers these declarations and reports only the three permitted foundational dependencies.
 
 ## Hypergeometric Connection
 
@@ -87,15 +88,11 @@ exit code was `0`; `/tmp/jacobi-mobius-lean4.log` records that result and
 the three `#print axioms` checks, each containing only `propext`,
 `Classical.choice`, and `Quot.sound`.
 
-The splitting transport, negative roots, and tilted product factorization
-are still pending the separate `JacobiFactorization.lean` check.
+The integrated modules `JacobiFactorization`, `JacobiActualPGF`, `JacobiSimpleRoots`, `JacobiRootLocalization`, and `HypergeomBernoulliLaw` now provide these statements; this paragraph records the earlier checkpoint only.
 
-## Deliberately not claimed
+## Historical intermediate note (superseded by final closure)
 
-This block does not assert Jacobi orthogonality, simple roots, negative roots
-of `jacobiPGF`, a product factorization, or the tilted Poisson-binomial
-representation. Splitting has not yet been transported through the checked
-Mobius identity and must not yet be presented as splitting of the PGF.
+The statements in this historical checkpoint were later assembled and extended by the integrated Jacobi and hypergeometric modules listed above; the final concordance is the authoritative coverage record.
 
 ## Sources
 
@@ -114,4 +111,4 @@ multiset has no repetitions. The checked module is compiled at commit
 `4c5a347`; the targeted Lean invocation exited with code `0` (only unused-simp
 and unused-tactic linter warnings). This closes the actual-PGF simple-root
 claim. Standard Jacobi normalization and the corresponding `(-1,1)`
-localization remain separate statements.
+localization are included in the final integrated modules and audit.

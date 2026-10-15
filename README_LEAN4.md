@@ -29,6 +29,6 @@ lake env lean checks/full_closure_axioms.lean > lean_axioms.log
 python3 checks/check_axiom_output.py lean_axioms.log
 ```
 
-The `Lean 4 proof kernel` workflow reproduces these checks. The generated audit covers every public theorem in the actual umbrella import closure and checks its complete transitive axiom dependencies. The integrated 15 October checkpoint verifies **1450 public theorems in 239 project modules**; the reported dependencies are `propext`, `Classical.choice`, and `Quot.sound`. Evidence is retained in `checks/logs/full_closure/integrated_compact_umbrella_audit.log`.
+The `Lean 4 proof kernel` workflow reproduces these checks. The generated audit covers every public theorem in the actual umbrella import closure and checks its complete transitive axiom dependencies. The integrated 15 October checkpoint verifies **1518 public theorems in 251 project modules**; the reported dependencies are `propext`, `Classical.choice`, and `Quot.sound`. Evidence is retained in `checks/logs/full_closure/final_all_manuscript_umbrella_audit.log`.
 
 Copyright © 2026 Zinan Wang. Original source and documentation are governed by the repository's rights notices.

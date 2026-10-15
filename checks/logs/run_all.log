@@ -95,7 +95,7 @@ N=1001,k=500,m=500: min tested (P-v)=6.2499770789688e-5, min tested (U-psi)=8.31
 N=10001,k=5000,m=100: min tested (P-v)=9.7039699382965e-9, min tested (U-psi)=1.2936039321526e-16
 PASS: 40 direct-mass, 80-digit comparisons; each uses nonzero tilt.
 Main manuscript and supplement compiled successfully.
-PASS: 168 unique labels and 168 valid cross-references.
+PASS: 168 unique labels and 167 valid cross-references.
 PASS: 16 matching citations, BibTeX entries, and bibliographic records.
 PASS: 4 licensed reference PDFs with matching source hashes.
 PASS: 28-page main manuscript, supplement, and proof certificate compiled successfully.
