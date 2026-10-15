@@ -143,3 +143,31 @@ import ExactHoeffding.JointProxyAnalytic
 import ExactHoeffding.FixedSampleGlobalExtrema
 
 import ExactHoeffding.RealRecurrenceCurvature
+
+import ExactHoeffding.RealRecurrenceEquality
+
+import ExactHoeffding.RealMarginSmallSupport
+
+import ExactHoeffding.RealMarginRecurrenceLaw
+
+import ExactHoeffding.RealMarginLogDerivatives
+
+import ExactHoeffding.JointAnalyticOptimizer
+
+import ExactHoeffding.AnalyticFourthRemainder
+
+import ExactHoeffding.AnalyticLogCumulantRecursion
+
+import ExactHoeffding.FactorialMGFDerivatives
+
+import ExactHoeffding.CompactContractionBoundary
+
+import ExactHoeffding.JointOptimizerSymmetry
+
+import ExactHoeffding.JointOptimizerLocalization
+import ExactHoeffding.RealMarginSmallSupportEquality
+import ExactHoeffding.RescaledHigherTiltInputs
+import ExactHoeffding.JointGlobalOptimizer
+import ExactHoeffding.JointPopulationFirstCorrection
+import ExactHoeffding.ActualMomentCumulantRecursion
+import ExactHoeffding.JointOptimizedValue

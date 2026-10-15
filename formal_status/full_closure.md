@@ -103,15 +103,17 @@ Its odd-singleton gap has coefficients `(s²-1)/3` at order `N⁻²` and
 1. The explicit third optimizing-tilt and fourth optimized-value coefficients,
    with analytic fifth-order remainder. Global localization, uniqueness,
    analyticity and value coefficients through cubic order are complete.
-2. The joint analytic optimizer lemma for independently varying inverse
-   population and success imbalance. Its three-variable analytic objective is
-   proved. The fixed-sample all-success theorem is separately complete.
-3. The continuous-margin optimizer/localization theorem for the exact
-   finite-population imbalance response. Actual positive normalized masses,
-   their recurrence and the real-parameter sharp curvature bound for support
-   degree at least three are proved. The `D,T,A` algebra is complete.
-4. Independent joint-analytic first-order correction and factorization identities
-   in the compact-comparison proof. The compact comparison theorem itself is
+2. The joint analytic optimizer lemma is complete in `JointGlobalOptimizer` and
+   `JointOptimizedValue`, including its actual normalized supremum, exact balanced
+   value, and reflection. Its full compact-interval extension is part of item 4.
+3. The finite-population analytic imbalance response and its coefficient
+   identification. `RealMarginSmallSupportEquality` completes sharp balanced
+   curvature, strict quadratic domination and unique proxy maximality for every
+   support size. Actual moments, cumulants, and the `D,T,A` algebra are complete.
+4. The optimized first-order correction and joint analytic factorization in
+   the compact-comparison proof. `JointPopulationFirstCorrection` and
+   `JointMGFFirstCorrection` prove the actual mass, MGF, and log-MGF first
+   corrections with analytic quadratic remainders. The compact comparison theorem itself is
    complete in `CompactAnalyticContraction`, with an explicit threshold, both
    parities, and equality exactly at balanced success counts.
 
@@ -140,15 +142,14 @@ kernel check. `proof_gap_register.md` lists open obligations explicitly.
 
 ## Integrated verification checkpoint
 
-The control worktree independently recompiled the standard Jacobi module,
-real-margin masses, second optimizing-tilt coefficient, five fixed-sample
-extremizer modules and the cubic optimized-value chain. The real-parameter
-recurrence module was compiled from identical source in the isolated Jacobi
-worktree. Every module returned exit code zero. The complete umbrella and
-generated audit pass: **1120 public theorems in 172 project modules**, with
+The control worktree independently recompiled the Jacobi, fixed-sample,
+real-margin, all-order derivative, jointly analytic global optimizer, and
+actual cubic expansion chains. Every integrated module passed its kernel check. The complete umbrella and
+generated audit pass: **1257 public theorems in 194 project modules**, with
 only `propext`, `Classical.choice`, and `Quot.sound`.
 
 Evidence: `checks/logs/full_closure/jacobi_tilt_second_rootverify.log`,
 `fixed_sample_global_rootverify.log`, `real_recurrence_curvature.log`,
-`optimized_third_rootverify.log`, and `integrated_third_umbrella_audit.log`.
+`optimized_third_rootverify.log`, `global_analytic_equality_rootverify.log`,
+`actual_joint_normalized_rootverify.log`, and `integrated_joint_umbrella_audit.log`.
 The audit source is `checks/full_closure_axioms.lean`.
