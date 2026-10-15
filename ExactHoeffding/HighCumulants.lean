@@ -2,6 +2,8 @@ import ExactHoeffding.Cumulants
 import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.Analysis.Calculus.Deriv.Inv
 import Mathlib.Analysis.Calculus.Deriv.Add
+import Mathlib.Analysis.Analytic.Constructions
+import Mathlib.Analysis.Calculus.FDeriv.Analytic
 
 /-!
 # Hypergeometric moments and cumulants through degree six
@@ -347,7 +349,7 @@ theorem hypergeom_rescaled_factorial_hasDerivAt_zero (m q : ℕ) (s : ℝ) :
       (HasDerivAt.const_mul (r : ℝ) (hasDerivAt_id (0 : ℝ)))
     have hb := HasDerivAt.sub (hasDerivAt_const (0 : ℝ) (1 : ℝ))
       (HasDerivAt.const_mul (r : ℝ) (hasDerivAt_id (0 : ℝ)))
-    convert! HasDerivAt.div ha hb (by norm_num) using 1 <;> dsimp [f] <;> ring
+    convert! HasDerivAt.div ha hb (by norm_num) using 1 <;> (dsimp [f]; ring)
   have hval (r : ℕ) : (∏ i ∈ Finset.range r, f i 0) = 1 / 2 ^ r := by
     simp [f, Finset.prod_const]
   have hp (r : ℕ) :
@@ -466,6 +468,172 @@ theorem hypergeom_cumulant5_balanced_limit
   have h := (hypergeom_rescaled_cumulant5_limit_zero m s).comp (hlim.const_div_atTop 1)
   simpa only [Function.comp_def,
     hypergeom_rescaled_cumulant5_actual _ _ _ (hN _) (hk _) (hm _) s (hs _)] using h
+
+
+/-- Analyticity supplies a quadratic remainder for the linear Taylor jet. -/
+theorem analyticAt_linear_remainder_bigO {f : ℝ → ℝ} {a : ℝ}
+    (hf : AnalyticAt ℝ f 0) (hd : HasDerivAt f a 0) :
+    (fun ε => f ε - f 0 - a * ε) =O[𝓝 0] (fun ε : ℝ => ε ^ 2) := by
+  obtain ⟨p, hp⟩ := hf
+  have hcoeff : p.coeff 1 = a := hp.hasDerivAt.unique hd
+  have hsum (ε : ℝ) : p.partialSum 2 ε = f 0 + a * ε := by
+    simp only [FormalMultilinearSeries.partialSum, Finset.sum_range_succ,
+      Finset.sum_range_zero, zero_add]
+    rw [hp.coeff_zero, FormalMultilinearSeries.apply_eq_pow_smul_coeff, hcoeff]
+    simp only [pow_one, smul_eq_mul]
+    ring
+  have h := hp.isBigO_sub_partialSum_pow 2
+  simp only [zero_add, hsum, ← norm_pow, Asymptotics.isBigO_norm_right] at h
+  convert! h using 1
+  funext ε
+  ring
+
+theorem hypergeom_rescaled_cumulant5_analyticAt_zero (m : ℕ) (s : ℝ) :
+    AnalyticAt ℝ (hypergeomRescaledCumulant5 m s) 0 := by
+  unfold hypergeomRescaledCumulant5 cumulant5Polynomial hypergeomRescaledMoment
+  simp only [momentFromFactorials, hypergeomRescaledFactorial]
+  fun_prop (disch := norm_num)
+
+theorem hypergeom_rescaled_cumulant6_analyticAt_zero (m : ℕ) (s : ℝ) :
+    AnalyticAt ℝ (hypergeomRescaledCumulant6 m s) 0 := by
+  unfold hypergeomRescaledCumulant6 cumulant6Polynomial hypergeomRescaledMoment
+  simp only [momentFromFactorials, hypergeomRescaledFactorial]
+  fun_prop (disch := norm_num)
+
+/-- The full fifth-cumulant remainder from the manuscript. -/
+theorem hypergeom_rescaled_cumulant5_remainder (m : ℕ) (s : ℝ) :
+    (fun ε => hypergeomRescaledCumulant5 m s ε + (m : ℝ) * s * ε / 2)
+      =O[𝓝 0] (fun ε : ℝ => ε ^ 2) := by
+  have h := analyticAt_linear_remainder_bigO
+    (hypergeom_rescaled_cumulant5_analyticAt_zero m s)
+    (hypergeom_rescaled_cumulant5_hasDerivAt_zero m s)
+  convert! h using 1
+  funext ε
+  rw [hypergeom_rescaled_cumulant5_at_zero]
+  ring
+
+/-- The sixth cumulant approaches its binomial value at order `1/N`. -/
+theorem hypergeom_rescaled_cumulant6_remainder (m : ℕ) (s : ℝ) :
+    (fun ε => hypergeomRescaledCumulant6 m s ε - (m : ℝ) / 4)
+      =O[𝓝 0] (fun ε : ℝ => ε) := by
+  have h := (hypergeom_rescaled_cumulant6_analyticAt_zero m s).differentiableAt.isBigO_sub
+  simpa only [hypergeom_rescaled_cumulant6_at_zero, sub_zero] using h
+
+
+/-- The actual fourth cumulant continued in inverse population size. -/
+def hypergeomRescaledCumulant4 (m : ℕ) (s ε : ℝ) : ℝ :=
+  let a := hypergeomRescaledMoment m 1 s ε
+  let b := hypergeomRescaledMoment m 2 s ε
+  let c := hypergeomRescaledMoment m 3 s ε
+  let d := hypergeomRescaledMoment m 4 s ε
+  d - 4 * c * a - 3 * b ^ 2 + 12 * b * a ^ 2 - 6 * a ^ 4
+
+theorem hypergeom_rescaled_cumulant4_actual (N k m : ℕ)
+    (hN : 0 < N) (hk : k ≤ N) (hm : m ≤ N)
+    (s : ℝ) (hs : (N : ℝ) - 2 * (k : ℝ) = s) :
+    hypergeomRescaledCumulant4 m s (1 / (N : ℝ)) = hypergeomCumulant4 N k m := by
+  have hq (q : ℕ) := hypergeom_rescaled_factorial_actual N k m q hN hk hm s hs
+  simp_rw [hypergeomRescaledCumulant4, hypergeomRescaledMoment, hq]
+  rw [hypergeom_cumulant4_factorial_complete N k m hk hm]
+  rfl
+
+/-- The complete second-order fourth-cumulant jet. -/
+def hypergeomCumulant4Taylor (m : ℕ) (s ε : ℝ) : ℝ :=
+  -(m : ℝ) / 8 + (m : ℝ) * ((m : ℝ) - 1) / 2 * ε +
+    (m : ℝ) * (-6 * (m : ℝ) ^ 2 + 19 * (m : ℝ) + 4 * s ^ 2 - 13) / 8 * ε ^ 2
+
+/-- An explicit polynomial certificate for the third-order fourth-cumulant remainder. -/
+def hypergeomCumulant4RemainderNumerator (m : ℕ) (s ε : ℝ) : ℝ :=
+  let x := (m : ℝ);
+  -x * (x - 1) * (-3 * x ^ 2 + 27 * x + 22 * s ^ 2 - 40) / 8 +
+  (-3 * x * (2 * x ^ 3 - 12 * x ^ 2 * s ^ 2 - 34 * x ^ 2 -
+    10 * x * s ^ 2 + 85 * x + s ^ 4 + 22 * s ^ 2 - 53) / 8) * ε +
+  (x * (-18 * x ^ 3 * s ^ 2 - 48 * x ^ 2 * s ^ 2 - 102 * x ^ 2 +
+    18 * x * s ^ 4 - 2 * x * s ^ 2 + 299 * x + 3 * s ^ 4 +
+    68 * s ^ 2 - 197) / 8) * ε ^ 2 +
+  (-3 * x * (-8 * x ^ 3 * s ^ 2 + 10 * x ^ 2 * s ^ 4 - 12 * x ^ 2 +
+    7 * x * s ^ 4 + 38 * x + 8 * s ^ 2 - 26) / 8) * ε ^ 3 +
+  (3 * x ^ 3 * s ^ 4 * (5 * x + 12) / 8) * ε ^ 4 -
+  (9 * x ^ 4 * s ^ 4 / 4) * ε ^ 5
+
+
+def hypergeomCumulant4RemainderFactor (m : ℕ) (s ε : ℝ) : ℝ :=
+  hypergeomCumulant4RemainderNumerator m s ε /
+    ((1 - ε) ^ 2 * (1 - 2 * ε) * (1 - 3 * ε))
+
+/-- Exact algebraic remainder, verified by ring normalization after denominator clearing. -/
+theorem hypergeom_rescaled_cumulant4_remainder_identity (m : ℕ) (s ε : ℝ)
+    (h1 : 1 - ε ≠ 0) (h2 : 1 - 2 * ε ≠ 0) (h3 : 1 - 3 * ε ≠ 0) :
+    hypergeomRescaledCumulant4 m s ε - hypergeomCumulant4Taylor m s ε =
+      hypergeomCumulant4RemainderFactor m s ε * ε ^ 3 := by
+  unfold hypergeomRescaledCumulant4 hypergeomRescaledMoment
+    hypergeomCumulant4Taylor hypergeomCumulant4RemainderFactor
+    hypergeomCumulant4RemainderNumerator
+  simp only [momentFromFactorials, hypergeomRescaledFactorial,
+    descFactorial_cast_product, Finset.prod_range_succ, Finset.prod_range_zero]
+  norm_num
+  field_simp [h1, h2, h3] <;> ring
+
+/-- The fourth-cumulant expansion has its asserted cubic remainder. -/
+theorem hypergeom_rescaled_cumulant4_remainder (m : ℕ) (s : ℝ) :
+    (fun ε => hypergeomRescaledCumulant4 m s ε - hypergeomCumulant4Taylor m s ε)
+      =O[𝓝 0] (fun ε : ℝ => ε ^ 3) := by
+  have hc : ContinuousAt (hypergeomCumulant4RemainderFactor m s) 0 := by
+    unfold hypergeomCumulant4RemainderFactor hypergeomCumulant4RemainderNumerator
+    fun_prop (disch := norm_num)
+  have h := hc.isBigO.mul (Asymptotics.isBigO_refl (fun ε : ℝ => ε ^ 3) (𝓝 0))
+  have h1 : ∀ᶠ ε : ℝ in 𝓝 0, 1 - ε ≠ 0 := by
+    exact (continuousAt_const.sub continuousAt_id).eventually_ne (by norm_num)
+  have h2 : ∀ᶠ ε : ℝ in 𝓝 0, 1 - 2 * ε ≠ 0 := by
+    exact (continuousAt_const.sub (continuousAt_id.const_mul 2)).eventually_ne (by norm_num)
+  have h3 : ∀ᶠ ε : ℝ in 𝓝 0, 1 - 3 * ε ≠ 0 := by
+    exact (continuousAt_const.sub (continuousAt_id.const_mul 3)).eventually_ne (by norm_num)
+  simp only [one_mul] at h
+  refine h.congr' ?_ Filter.EventuallyEq.rfl
+  filter_upwards [h1, h2, h3] with ε h1 h2 h3
+  exact (hypergeom_rescaled_cumulant4_remainder_identity m s ε h1 h2 h3).symm
+
+
+/-- Fifth-cumulant expansion for the actual sequence of hypergeometric laws. -/
+theorem hypergeom_cumulant5_balanced_expansion
+    (Ns ks : ℕ → ℕ) (m : ℕ) (s : ℝ)
+    (hN : ∀ n, 0 < Ns n) (hk : ∀ n, ks n ≤ Ns n) (hm : ∀ n, m ≤ Ns n)
+    (hs : ∀ n, (Ns n : ℝ) - 2 * (ks n : ℝ) = s)
+    (hlim : Tendsto (fun n => (Ns n : ℝ)) atTop atTop) :
+    (fun n => hypergeomCumulant5 (Ns n) (ks n) m +
+      (m : ℝ) * s * (1 / (Ns n : ℝ)) / 2)
+      =O[atTop] (fun n => (1 / (Ns n : ℝ)) ^ 2) := by
+  have h := (hypergeom_rescaled_cumulant5_remainder m s).comp_tendsto
+    (hlim.const_div_atTop 1)
+  simpa only [Function.comp_def,
+    hypergeom_rescaled_cumulant5_actual _ _ _ (hN _) (hk _) (hm _) s (hs _)] using h
+
+/-- Sixth-cumulant expansion for the actual sequence of hypergeometric laws. -/
+theorem hypergeom_cumulant6_balanced_expansion
+    (Ns ks : ℕ → ℕ) (m : ℕ) (s : ℝ)
+    (hN : ∀ n, 0 < Ns n) (hk : ∀ n, ks n ≤ Ns n) (hm : ∀ n, m ≤ Ns n)
+    (hs : ∀ n, (Ns n : ℝ) - 2 * (ks n : ℝ) = s)
+    (hlim : Tendsto (fun n => (Ns n : ℝ)) atTop atTop) :
+    (fun n => hypergeomCumulant6 (Ns n) (ks n) m - (m : ℝ) / 4)
+      =O[atTop] (fun n => 1 / (Ns n : ℝ)) := by
+  have h := (hypergeom_rescaled_cumulant6_remainder m s).comp_tendsto
+    (hlim.const_div_atTop 1)
+  simpa only [Function.comp_def,
+    hypergeom_rescaled_cumulant6_actual _ _ _ (hN _) (hk _) (hm _) s (hs _)] using h
+
+/-- Second-order fourth-cumulant expansion for the actual hypergeometric laws. -/
+theorem hypergeom_cumulant4_balanced_expansion
+    (Ns ks : ℕ → ℕ) (m : ℕ) (s : ℝ)
+    (hN : ∀ n, 0 < Ns n) (hk : ∀ n, ks n ≤ Ns n) (hm : ∀ n, m ≤ Ns n)
+    (hs : ∀ n, (Ns n : ℝ) - 2 * (ks n : ℝ) = s)
+    (hlim : Tendsto (fun n => (Ns n : ℝ)) atTop atTop) :
+    (fun n => hypergeomCumulant4 (Ns n) (ks n) m -
+      hypergeomCumulant4Taylor m s (1 / (Ns n : ℝ)))
+      =O[atTop] (fun n => (1 / (Ns n : ℝ)) ^ 3) := by
+  have h := (hypergeom_rescaled_cumulant4_remainder m s).comp_tendsto
+    (hlim.const_div_atTop 1)
+  simpa only [Function.comp_def,
+    hypergeom_rescaled_cumulant4_actual _ _ _ (hN _) (hk _) (hm _) s (hs _)] using h
 
 end
 end ExactHoeffding
