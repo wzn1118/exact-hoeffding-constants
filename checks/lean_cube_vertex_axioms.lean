@@ -1,0 +1,10 @@
+import ExactHoeffding.CubeVertexReduction
+
+#print axioms ExactHoeffding.signVertex_mem_realCube
+#print axioms ExactHoeffding.realCube_eq_convexHull_vertices
+#print axioms ExactHoeffding.vertex_eq_signVertex
+#print axioms ExactHoeffding.convexOn_realCube_le_vertex
+#print axioms ExactHoeffding.symmetrizedExpContrast_convexOn
+#print axioms ExactHoeffding.uniformPermutation_subset_average
+#print axioms ExactHoeffding.symmetrizedExpContrast_vertex
+#print axioms ExactHoeffding.symmetrizedExpContrast_le_max_slice
