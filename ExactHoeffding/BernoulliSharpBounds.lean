@@ -101,3 +101,38 @@ theorem bernoulliSharpBeta_lt_quarter {p : ℝ}
     nlinarith
 
 end ExactHoeffding
+
+namespace ExactHoeffding
+
+/-- On the sub-half interval the sharp Bernoulli proxy increases with the
+success parameter and therefore is maximized at the nearest balanced point. -/
+theorem bernoulliSharpBeta_strictMono_subhalf {p q : ℝ}
+    (hp0 : 0 < p) (hqhalf : q < 1 / 2) (hpq : p < q) :
+    bernoulliSharpBeta p < bernoulliSharpBeta q := by
+  have hq0 : 0 < q := lt_trans hp0 hpq
+  have hpne : p ≠ 1 / 2 := by linarith
+  have hqne : q ≠ 1 / 2 := by linarith
+  rw [bernoulliSharpBeta_eq_formula p hpne,
+    bernoulliSharpBeta_eq_formula q hqne]
+  have hdp0 : 0 < 1-2*p := by linarith
+  have hdq0 : 0 < 1-2*q := by linarith
+  have hdp1 : 1-2*p < 1 := by linarith
+  have hdq1 : 1-2*q < 1 := by linarith
+  have hroot : 1-2*q < 1-2*p := by linarith
+  have hi := imbalanceFactor_strictAnti ⟨hdq0,hdq1⟩ ⟨hdp0,hdp1⟩ hroot
+  have hformp : (1-2*p)/(2*Real.log ((1-p)/p)) =
+      imbalanceFactor (1-2*p)/4 := by
+    unfold imbalanceFactor logOdds
+    have hden : 1-(1-2*p)^2 ≠ 0 := by nlinarith
+    field_simp [hden, hp0.ne', (by linarith : 1-p ≠ 0)]
+    ring
+  have hformq : (1-2*q)/(2*Real.log ((1-q)/q)) =
+      imbalanceFactor (1-2*q)/4 := by
+    unfold imbalanceFactor logOdds
+    have hden : 1-(1-2*q)^2 ≠ 0 := by nlinarith
+    field_simp [hden, hq0.ne', (by linarith : 1-q ≠ 0)]
+    ring
+  rw [hformp, hformq]
+  linarith
+
+end ExactHoeffding
