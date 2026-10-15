@@ -63,3 +63,4 @@ import ExactHoeffding.DegenerateCurvature
 import ExactHoeffding.SmallSupportEquality
 import ExactHoeffding.TwoDrawProxy
 import ExactHoeffding.TwoDrawProxyComplete
+import ExactHoeffding.TwoDrawComparison
