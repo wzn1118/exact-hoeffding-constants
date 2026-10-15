@@ -71,6 +71,7 @@ import ExactHoeffding.ThreePointExponential
 import ExactHoeffding.ThreePointExclusion
 import ExactHoeffding.TwoLevelOptimization
 import ExactHoeffding.TwoLevelExistence
+import ExactHoeffding.TwoLevelRepresentation
 import ExactHoeffding.SliceExponentialAlgebra
 import ExactHoeffding.CanonicalCurvatureEquality
 import ExactHoeffding.SmallSupportCurvature
