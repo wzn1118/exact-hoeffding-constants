@@ -32,19 +32,42 @@ Pinned kernel: Lean 4.33.0; Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`.
 - `BernoulliKL`: global Fenchel inequality including endpoints.
 - `JacobiRoots`: Rodrigues derivative/quotient splits over the reals.
 
-## Precise remaining joins
+## Actual-law composition completed
 
-The hypergeometric canonical curvature and mean-dependent barrier composition
-are under kernel checking. Their current source drafts are not certification.
-General transpose/complement reduction, the full Jacobi-to-PGF Möbius identity,
-root factorization and Bernoulli-sum law, general Bernoulli optimal proxy,
-three-mass proxy extrema, and the odd discrete optimization remain in progress.
+- `HypergeometricEndpoints`: tilted means approach true support endpoints and
+  tilted variance approaches zero at both infinities.
+- `StrictAdmissibility`: actual strict mean–variance feasibility for degree >=2.
+- `CanonicalCurvature`, `CanonicalCurvatureComplete`: actual all-tilt sharp
+  curvature, every support degree, on canonical margins.
+- `CurvatureSymmetries`: actual variance under transpose and both complements.
+- `CanonicalCurvatureEquality`: degree >=3 equality holds precisely at zero
+  tilt with a balanced larger margin.
+- `VarianceBarrierFlow`, `HypergeometricBarrier`: actual strict mean-dependent
+  variance envelope and its unique equality point.
+- `HypergeometricLaplace`, `LaplaceEnvelopeTheorem`: original-parameter
+  parity-uniform Bernoulli envelope, strict for all nonzero real tilts.
+- `BernoulliBalancedLimit`: genuine two-sided scale-zero limit and continuous
+  extension, including deterministic probability endpoints.
+- `TwoDrawProxyComplete`: complete positive three-mass least quadratic proxy,
+  both asymmetry directions and balance, specialized to actual two-draw laws.
+- `SliceSampling`, `PermutationSlice`: actual uniform subset and permutation
+  sampling, exact hypergeometric PMF, expectations and MGF.
+- `FiniteExchangeability`: finite Boolean exchangeable slice mixture, exact
+  two-level contrast norm and hypergeometric MGF realization.
 
-Finite exchangeable measures, cube-vertex reduction, the complete two-level
-variational reduction, the unconditional exact-constant theorem and the
-higher-order appendix still require formal proofs. The entire manuscript is
-not yet certified. Generic comparison lemmas are recorded as generic results,
-not as unconditional hypergeometric main theorems.
+## Remaining whole-manuscript obligations
+
+The all-parameter curvature reduction, exhaustive equality classification,
+uniform quadratic Laplace corollary and actual hypergeometric tail bound are
+now kernel-checked. The full Jacobi-to-PGF Möbius/factorization chain, general
+Bernoulli optimal proxy, odd singleton dominance and complete parity constants remain in progress.
+
+The real-cube vertex reduction and complete Lee–Kim two-level optimization,
+including a genuine compact maximizer, its at-most-two values and exact
+hypergeometric MGF/norm parameterization, are now kernel-checked. The remaining
+general finite exchangeable measures, the unconditional exact-constant and
+weighted-tail theorems, and higher-order appendices still require proof.
+The entire manuscript is not yet certified.
 
 Individual checks and axiom outputs are in `checks/logs/full_closure/`.
-A successful earlier source commit does not certify later unverified drafts.
+Earlier checkpoints certify only their exact source trees.
