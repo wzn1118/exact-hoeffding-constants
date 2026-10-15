@@ -55,14 +55,14 @@ one squeeze argument. The identical limit holds for the actual infimum
 | Global Laplace comparison | `GlobalCrossing`, `WholeLineCrossing`, `RiccatiComparison`, `VarianceBarrierFlow`, `HypergeometricBarrier`, `LaplaceEnvelopeTheorem`: strict scaled Bernoulli domination, with actual-law inputs |
 | Zero scale and quadratic domination | `BernoulliBalancedLimit`, `UniformLaplace`, `StrictUniformLaplace`: balanced limit, quadratic envelope and equality |
 | Bernoulli optimum | `BernoulliOptimal`: sharp quadratic upper bound and leastness for the whole closed probability interval |
-| Two draws | `TwoDrawProxyComplete`, `TwoDrawComparison`, `TwoDrawSingletonComparison`: actual three-mass specialization, all-success-count odd extremizers, strict singleton comparison |
+| Two draws | `TwoDrawProxyComplete`, `TwoDrawComparison`, `TwoDrawSingletonComparison`, `FixedSampleExtrema`: actual three-mass specialization, all-success-count odd extremizers, and fixed-sample odd two-draw maximum with equality classification |
 | Odd global optimum | `StrictGlobalGap`, `StrictHypergeometricProxy`, `OddHypergeomExtremizers`: strict global proxy comparison and all legal margin pairs |
 | Real-cube reduction | `CubeVertexReduction`, `MeasureExchangeability`: convex vertex reduction and averaging for actual exchangeable probability measures |
 | Two-level reduction | `ThreePointExclusion`, `TwoLevelOptimization`, `TwoLevelExistence`, `TwoLevelRepresentation`, `TwoLevelReduction`: compact maximizer, two-valued form, exact contrast norm and hypergeometric MGF |
 | Matching lower bound | `HammingMeasure`, `HammingExchangeableLower`: actual probability measures realizing Hamming slices |
 | Variational identity and exact coefficient | `ExchangeableConstants`, `VariationalUpper`, `VariationalIdentity`, `ExactParityConstants`, `ExactOddGlobalTheorem` |
 | Weighted concentration | `ProjectedWeights`, `GeneralWeightedTail`: projected squared norm, actual-measure exponential Markov bound and confidence threshold |
-| Jacobi factorization | `JacobiRoots`, `JacobiMobius`, `JacobiFactorization`, `JacobiActualPGF`, `JacobiSimpleRoots`: Rodrigues real splitting, exact Möbius bridge, `j` negative roots counted with multiplicity, actual canonical tilted PGF product with interior Bernoulli parameters |
+| Jacobi factorization | `JacobiRoots`, `JacobiMobius`, `JacobiFactorization`, `JacobiActualPGF`, `JacobiSimpleRoots`, `JacobiRootLocalization`: Rodrigues real splitting, exact Möbius bridge, simple actual PGF roots, interior Bernoulli factors, and normalized Rodrigues roots mapped into `(-1,1)` |
 
 The Bernoulli sharp proxy is also bounded by the universal quarter coefficient,
 with strict inequality for nonbalanced interior parameters.

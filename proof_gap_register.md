@@ -20,12 +20,12 @@ These quantify over every legal sample size for each odd population.
 
 | ID | Manuscript assertion | Proved input | Remaining statement |
 | --- | --- | --- | --- |
-| F-01 | Classical Jacobi zeros | Actual canonical PGF splits over ℝ, has `j` negative roots, is simple by its ODE, and factors into Bernoulli PGFs | Standard Jacobi normalization and `(-1,1)` localization |
+| F-01 | Classical Jacobi zeros | Actual canonical PGF splits over ℝ, has `j` negative roots, is simple by its ODE, factors into Bernoulli PGFs, and the normalized Rodrigues roots map into `(-1,1)` | Named standard Jacobi polynomial identity/normalization remains open |
 | F-02 | Full tilted Poisson–binomial law | Actual canonical coefficient/tilted PGF and product-space construction | Completed: `hypergeom_tilted_law_eq_shifted_independent_bernoulli` covers every legal margin, tilt, and degeneracy |
 | F-03 | Main first-order population limit | `ConstantAsymptotics` proves finite bounds and both exact-coefficient limits | Completed; module compiled successfully |
 | F-04 | Fourth-order log-MGF Taylor formula | `MGFDerivatives` and `LogMGFTaylor` | Completed: actual first four derivatives and fixed-population Peano/Lagrange remainders |
 | F-05 | Fourth-order sharp-proxy expansion | Exact constants and strict finite singleton dominance | Joint analytic family, localization, unique global optimizing tilt, optimized coefficients and analytic remainder |
-| F-06 | Fixed-sample all-success maximum | All-parameter bound below the odd singleton benchmark | Success-count extremizers at fixed sample size, uniformly for all success counts at sufficiently large population |
+| F-06 | Fixed-sample all-success maximum | The odd two-draw fixed-sample maximum and equality classification are proved in `FixedSampleExtrema` | The corresponding theorem for every fixed sample size `m` and the eventual all-`m` statement remain open |
 | F-07 | Exact imbalance coefficient | `ExactImbalanceAlgebra`: continuous-margin cumulants, D/T/A identities and strict algebraic gap | Analytic optimizer and complete response coefficient theorem |
 | F-08 | Higher cumulant expansions | All-degree factorial moments and exact cumulants through four | Completed through sixth order, including actual fifth/sixth log-MGF derivatives and displayed κ₄, κ₅, κ₆ asymptotic remainders; higher optimized proxy expansion remains F-05 |
 | F-09 | Supplementary refinements | Sharp curvature, actual Bernoulli tilt geometry, and Jacobi root dispersion are proved | Analytic contraction on compact success-proportion intervals |
