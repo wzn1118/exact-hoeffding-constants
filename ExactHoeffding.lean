@@ -64,6 +64,7 @@ import ExactHoeffding.VarianceOptimality
 import ExactHoeffding.ProxyQuotient
 import ExactHoeffding.OptimalProxy
 import ExactHoeffding.NormalizedProxy
+import ExactHoeffding.ParityProxyComparison
 import ExactHoeffding.SingletonOptimalProxy
 import ExactHoeffding.ThreePointTangent
 import ExactHoeffding.ThreePointRolle
