@@ -59,6 +59,7 @@ import ExactHoeffding.UniformLaplace
 import ExactHoeffding.HypergeometricTail
 import ExactHoeffding.VarianceOptimality
 import ExactHoeffding.ProxyQuotient
+import ExactHoeffding.OptimalProxy
 import ExactHoeffding.ThreePointTangent
 import ExactHoeffding.ThreePointRolle
 import ExactHoeffding.ThreePointHermite
