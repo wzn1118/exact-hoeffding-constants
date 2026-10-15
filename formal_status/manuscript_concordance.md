@@ -15,7 +15,7 @@ Scope: the 30 labelled `theorem`, `lemma`, `proposition`, and `corollary` enviro
 | 9 | `cor:mgf` | `UniformLaplace`: `hypergeom_uniform_log_laplace_domination`; `StrictUniformLaplace`: `hypergeom_uniform_log_laplace_domination_strict`, `hypergeom_uniform_log_laplace_domination_equality_iff` | Complete uniform domination and nonzero-tilt strictness. |
 | 10 | `cor:tail` | `SharpWeightedTail`: `sharp_weighted_exp_bound`, `sharp_weighted_tail_bound_all`, `sharp_weighted_confidence_bound`; `ProjectedWeights`: `centerContrast_sq_norm`, `centerContrast_linear_contrast`, `projectedWeightVariance_eq_zero_iff` | Complete actual-measure weighted tail and confidence bounds, including zero projected variance. |
 | 11 | `lem:PB` | `HypergeomBernoulliLaw`: `hypergeom_tilted_law_eq_shifted_independent_bernoulli`; `TiltedAdmissibilityDirect`: `hypergeomTiltVariance_admissible_of_margins`; `StrictAdmissibility`: `hypergeomTiltVariance_admissible_strict` | Complete actual-law Bernoulli representation and required mean–variance feasibility, rather than an assumed Bernoulli parameter interface. |
-| 12 | `lem:branch` | `StationaryCertificates`: `stationary_elimination`, `stationary_polynomial_constant`, `stationary_polynomial_quadratic`, `concave_quadratic_positive_root_bound` | Quadratic identity, actual stationary equation and root comparison complete. Literal existence and uniqueness of the positive root for every real admissible mean needs an additional declaration; see follow-up below. |
+| 12 | `lem:branch` | `StationaryCertificates`: `stationary_elimination`, `stationary_polynomial_constant`, `stationary_polynomial_quadratic`, `concave_quadratic_positive_root_bound`; `StationaryPositiveBranch`: `concave_quadratic_existsUnique_positive_root`, `stationaryPolynomial_existsUnique_positive_root` | Complete quadratic identity, actual stationary equation, existence and uniqueness of the positive branch for every admissible real mean, and root comparison. |
 | 13 | `lem:universal` | `StationaryCertificates`: `universal_stationary_comparison`; `StationaryEquality`: `universal_stationary_comparison_positive`, `universal_stationary_comparison_eq_zero_iff` | Complete real-parameter inequality and equality certificate. |
 | 14 | `lem:identity` | `StationaryCertificates`: `stationary_main_identity` | Complete polynomial identity, checked by Lean algebra. |
 | 15 | `prop:allinner` | `CanonicalCurvatureComplete`: `hypergeom_sharp_curvature_canonical_complete`, `hypergeom_sharp_curvature_canonical_min`; `StationaryCertificates`: `admissible_stationary_sharp_bound` | Complete all-degree actual curvature bound. |
@@ -47,10 +47,6 @@ The original proof introduced an analytic function in the squared coordinate, `A
 `JointLocalImbalanceMonotonicity.jointNormalizedValue_uniform_local_strictAnti` internally constructs the actual analytic global optimizer and proves precisely this uniform strict decrease. `source/uniform_results.tex` now uses this route. No assertion that an analytic squared-coordinate factor has been formalized is needed.
 
 ## Statements requiring additional consolidation or proofs
-
-### `lem:branch`
-
-The quadratic coefficients, actual stationary equation and comparison for a given positive root are proved. The printed statement also quantifies existence and uniqueness of that positive root at every admissible real mean. This follows from the positive constant term and negative leading coefficient, but needs a matching Lean declaration rather than relying on the comparison theorem alone.
 
 ### `prop:variance_parity`
 
