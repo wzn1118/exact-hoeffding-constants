@@ -41,8 +41,9 @@ the Riccati comparison gives the log-Laplace inequality, and finite
 exponential Markov plus the Bernoulli Fenchel identity gives the explicit upper
 tail bound.
 
-The remaining analytic input is deliberately exposed as theorem hypotheses:
-identifying the manuscript's finite-population rate and its derivatives with
-these branch functions requires the separate reciprocal-curvature integration
-bridge. The Lean module therefore records the exact algebraic and branch-level
-content without treating the numerical verifier as a proof of that bridge.
+The remaining analytic input is the outer tangent-branch identification:
+turning the reciprocal-curvature integral along the actual inverse tilted-mean
+coordinate into the closed tangent-corrected formula in `piecewiseKLRate`.
+The ordinary binomial branch and its actual hypergeometric tail bound are
+already proved in `PiecewiseKLEndToEnd.lean`; the numerical verifier is used
+only for reproducibility checks.
