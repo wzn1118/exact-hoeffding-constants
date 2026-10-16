@@ -95,6 +95,9 @@ def main():
         p=ROOT/f
         if p.exists():
             files_in(p,reproducer)
+    # Historical proof-check modules are part of the repository's Lean source inventory.
+    for historical_lean in (ROOT/"research/history").rglob("*.lean"):
+        files_in(historical_lean,reproducer)
     reproducer["submission/current/manuscript.pdf"]=pdf
     readme=(TITLE+"\nZinan Wang: The University of Manchester\n"
             "Xinhao Yang: University of Southern California\n\n"
@@ -122,7 +125,18 @@ def main():
     lean_count=sum(k=="ExactHoeffding.lean" or (k.startswith("ExactHoeffding/") and k.endswith(".lean")) for k in reproducer)
     expected=1+len(list((ROOT/"ExactHoeffding").rglob("*.lean")))
     if lean_count != expected:
-        raise RuntimeError(f"Incomplete Lean sources {lean_count}/{expected}")
+        raise RuntimeError(f"Incomplete core Lean sources {lean_count}/{expected}")
+    tracked_lean=set(subprocess.check_output(
+        ["git","ls-files","--","*.lean"],cwd=ROOT,text=True).splitlines())
+    archived_lean={key for key in reproducer if key.endswith(".lean")}
+    if archived_lean != tracked_lean:
+        raise RuntimeError("Lean file coverage failure: missing="+
+                           str(sorted(tracked_lean-archived_lean))+
+                           "; extra="+str(sorted(archived_lean-tracked_lean)))
+    mismatched=[key for key in sorted(tracked_lean)
+                if reproducer[key] != (ROOT/key).read_bytes()]
+    if mismatched:
+        raise RuntimeError("Lean source content differs from main: "+str(mismatched))
     writezip(CURRENT/"complete-reproducibility.zip",reproducer)
     (CURRENT/"README.md").write_text(
       "# Current paper and reproducibility release\n\n"+TITLE+"\n\n"
@@ -134,7 +148,7 @@ def main():
       f"{len(reproducer)} reproducibility files.\n"
       "Earlier paper releases remain archived under their original paths.\n")
     print(f"Release PASS: {pages} pages; {len(bib)} references; "
-          f"{lean_count} Lean source modules; {len(reproducer)} reproducibility members.")
+          f"{len(archived_lean)} Lean files (including {lean_count} core modules); {len(reproducer)} reproducibility members.")
 
 if __name__ == "__main__":
     main()
