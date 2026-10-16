@@ -34,14 +34,14 @@ All 30 named results in the main paper and supplement have complete entries in
 [the manuscript concordance](formal_status/manuscript_concordance.md), including
 the fourth-order optimized expansion, exact imbalance response, compact analytic
 contraction, actual variance supremum, and explicit Hamming-law extremizer.
-The integrated Lean kernel build and audit pass for **1518 public theorems in 252 project modules**. CI reproduces the build, manuscript-concordance check and transitive axiom audit.
+The integrated Lean kernel build and audit pass for **1637 public theorems in 258 project modules**. CI reproduces the build, manuscript-concordance check and transitive axiom audit.
 
 ## Current publication files
 
 - [Piecewise KL research note](research/tail_bounds/minimum_variance_tail.pdf):
   explicit nonquadratic tail bounds, switching points and comparison proofs.
-  [Reproduction and proof scope](research/tail_bounds/README.md) distinguish
-  the analytic theorem from its current Lean coverage.
+  [End-to-end Lean theorem and proof mapping](research/tail_bounds/lean_concordance.md)
+  cover both tails, closed support and strict piecewise-rate comparisons.
 
 - `manuscript.pdf`: the **28-page** principal paper, including the proofs of the sharp constants.
 - `supplementary_refinements.pdf`: the **6-page** standalone technical supplement.

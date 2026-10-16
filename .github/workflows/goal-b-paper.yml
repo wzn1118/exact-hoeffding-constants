@@ -1,0 +1,38 @@
+name: Goal B paper and independent certificates
+on:
+  push:
+    paths:
+      - 'goal_b/**'
+      - '.github/workflows/goal-b-paper.yml'
+  pull_request:
+    paths:
+      - 'goal_b/**'
+      - '.github/workflows/goal-b-paper.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reproducible-paper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Python verifier dependencies
+        run: python -m pip install -r goal_b/requirements.txt
+      - name: Install TeX environment
+        run: sudo apt-get update && sudo apt-get install -y texlive-latex-recommended texlive-latex-extra lmodern
+      - name: Verify finite inequalities, compile PDF, package source
+        run: bash goal_b/build.sh
+      - name: Archive paper, full source and numerical certificate
+        uses: actions/upload-artifact@v4
+        with:
+          name: goal-b-finite-sample-paper-source
+          path: |
+            goal_b/paper/main.pdf
+            goal_b/dist/GoalB_FixedSample_FiniteN_Research_Package.zip
+            goal_b/checks/verification.json
+            goal_b/SHA256SUMS.txt
+          if-no-files-found: error

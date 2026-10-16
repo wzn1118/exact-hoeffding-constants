@@ -7,3 +7,10 @@
 *.toc
 *.synctex.gz
 .DS_Store
+
+goal_b/paper/*.aux
+goal_b/paper/*.log
+goal_b/paper/*.pdf
+goal_b/checks/verification.json
+goal_b/SHA256SUMS.txt
+goal_b/dist/

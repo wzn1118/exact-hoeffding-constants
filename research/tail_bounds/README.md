@@ -27,8 +27,38 @@ The figure can be regenerated with `python3 checks/plot_piecewise_kl.py`
 (Matplotlib required). It reads the frozen CSV without recomputing results.
 The figure shows negative logarithms, so larger values are stronger bounds.
 
-The associated Lean additions prove finite Poisson--binomial variance algebra,
-reciprocal-envelope comparison and the three symmetry-envelope differences.
-The Jacobi factorization, sharp hypergeometric curvature, mean-dependent
-quadratic barrier and complete exchangeability theorem remain open Lean
-obligations. See `LEAN_PROOF_STATUS.md` and `proof_gap_register.md`.
+The associated Lean development now includes `ExactHoeffding/PiecewiseKL.lean`.
+It proves the full quadratic envelope difference, positivity and localization of
+both switching points on the stated parameter domain, the exact central-region
+iff, contact formulas, and the strict three-branch comparison theorem. The
+module is imported by `ExactHoeffding.lean`; its declarations are included in the full imported-closure axiom audit.
+
+`ExactHoeffding/PiecewiseKLEndToEnd.lean` closes the ordinary binomial KL
+branch for the actual canonical hypergeometric law: the tilted
+Poisson--binomial representation gives the true-support variance envelope,
+the Riccati comparison gives the log-Laplace inequality, and finite
+exponential Markov plus the Bernoulli Fenchel identity gives the explicit upper
+tail bound.
+
+`ExactHoeffding/PiecewiseKLFull.lean` proves the stitched Riccati comparison,
+its reflected lower-tail counterpart, both Fenchel contact identities, and
+the actual hypergeometric upper and lower piecewise KL tails on the closed
+support. The theorem domain is exactly `3 ≤ m ≤ k`, `2*k ≤ N`, `2*m < N`;
+both population parities are included. Endpoints use continuity of the explicit
+KL rate and monotonicity of finite tail events.
+
+`ExactHoeffding/PiecewiseKLComparison.lean` proves the first and second
+KL derivatives and instantiates the comparison for the actual envelopes:
+`J > I_B` away from the mean, `J ≥ I_P`, and `J = I_P` exactly on the closed
+central interval. The exterior strict inequalities include both support
+endpoints.
+
+`ExactHoeffding/PiecewiseKLStrict.lean` defines the actual finite-support
+Legendre supremum and retains a positive contact gap along each exterior
+branch. Its endpoint arguments compare the signed Fenchel expressions before
+taking one-sided limits. The public assembly theorem is
+`hypergeom_piecewise_kl_end_to_end`.
+
+The Lean development uses kernel-checked symbolic and analytic proofs.
+The Python matrix remains a separate reproducibility check. For exact
+statement-to-declaration coverage, see [the concordance](lean_concordance.md).

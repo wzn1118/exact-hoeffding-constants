@@ -1,7 +1,7 @@
 # Lean proof coverage
 
 Paper: **Exact Hoeffding Constants for Finite Exchangeable Sequences**.
-Author: **Zinan Wang**. Updated 15 October 2026.
+Author: **Zinan Wang**. Updated 16 October 2026.
 
 The current source branch is `formal/full-closure-20261015`, using Lean 4.33.0
 and pinned Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`.
@@ -49,7 +49,7 @@ The compact success-proportion argument now has both an independent finite compa
 
 All 30 named results in the principal paper and technical supplement have complete theorem mappings in [formal_status/manuscript_concordance.md](formal_status/manuscript_concordance.md). The actual variance supremum, its strict odd gap and fourth-order expansion, and the explicit Hamming-law extremizer with its full Bernoulli pushforward and both parity contact mechanisms are included.
 
-The complete integrated umbrella build and generated audit pass: **1518 public theorems in 252 project modules**. The audit reports only `propext`, `Classical.choice`, and `Quot.sound`. All project Lean modules are imported by the umbrella.
+The complete integrated umbrella build and generated audit pass: **1637 public theorems in 258 project modules**. The audit reports only `propext`, `Classical.choice`, and `Quot.sound`. All project Lean modules are imported by the umbrella.
 
 ## Verification
 
@@ -60,3 +60,12 @@ detailed inventory and `.github/workflows/lean4.yml`.
 
 `theorem_to_lean.csv` maps manuscript assertions to their precise Lean modules;
 the per-result concordance distinguishes assembled statements from their proved components.
+
+## Piecewise KL tail theorem
+
+`hypergeom_piecewise_kl_end_to_end` supplies the actual closed-support upper
+and lower tails on `3 ≤ m ≤ k`, `2*k ≤ N`, `2*m < N`. It proves
+`I > J > I_B` at every noncentral threshold and classifies `J = I_P` exactly
+on the central switching interval. See
+[the KL concordance](research/tail_bounds/lean_concordance.md) and
+[reproduction record](research/tail_bounds/lean_validation.md).

@@ -1,0 +1,372 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Hyp}{\operatorname{Hyp}}
+\newcommand{\artanh}{\operatorname{artanh}}
+\newcommand{\argmax}{\operatorname*{arg\,max}}
+\title{Balanced Populations Maximize the Optimal Sub-Gaussian Proxy\\for Hypergeometric Sampling at Every Finite Size}
+\author{Zinan Wang}
+\date{16 October 2026}
+\begin{document}\maketitle
+\begin{abstract}
+For every population size $N\ge2$ and every fixed draw count $1\le m<N$,
+we determine all marked-object counts $k$ maximizing the optimal centered
+sub-Gaussian variance proxy of the hypergeometric distribution.
+The complete set of maximizers is exactly
+$\{\lfloor N/2\rfloor,\lceil N/2\rceil\}$.
+Every noncentral success count lies strictly below the ordinary variance
+at a central count, and an explicit uniform finite-population separation
+is established. For even populations the maximal proxy is
+$m(N-m)/[4(N-1)]$. For odd populations the maximizing count is known
+exactly and its proxy exceeds the corresponding variance; an exact
+one-dimensional finite-sum characterization is given, with elementary
+closed forms for singleton and two-draw sampling.
+The argument combines a sharp all-tilt curvature bound with a scaled
+Bernoulli proxy inequality, in different sectors of the margin domain.
+The proof is analytical, accompanied by exact-rational and numerical audits.
+\end{abstract}
+\noindent\textbf{Keywords.} Hypergeometric distribution; optimal sub-Gaussian
+proxy; finite populations; exponential tilting; extremizer classification.
+
+\section{Introduction}
+Let $H_{N,k,m}$ count marked items in a size-$m$ sample without replacement
+from an $N$-element population containing $k$ marked items. Its variance is
+maximized at the central marked counts. It is not automatic that the same
+holds for the optimal centered sub-Gaussian variance proxy: skewed bounded
+distributions have optimal proxies strictly larger than their variances
+\cite{Arbel}. We establish this centrality for all finite sample and population
+sizes and give a strictly positive separation certificate for every off-center
+margin. In particular, the previous fixed-$m$ eventual result in the
+companion work \cite{Wang} is replaced by an all-$N$ theorem.
+
+The proof imports two already proved facts from \cite{Wang}: the all-tilt
+hypergeometric variance upper bound, and a scaled Bernoulli optimal-proxy
+comparison. The present manuscript supplies the discrete global argument
+linking these inputs, a quantitative margin gap, and its exact value consequences.
+The dependence on those theorems is explicit. Classical concentration results
+and optimal variance-proxy studies appear in \cite{Hoeffding,Serfling,GW,BM,Arbel,ThreeMass}.
+No unpublished collaboration manuscript is used or compared.
+
+\section{Distribution, proxy, and input bounds}
+For $N\ge2$ and $1\le k,m<N$, define
+\begin{equation}\label{pmf}
+\Pr(H_{N,k,m}=j)=
+ \frac{\binom{k}{j}\binom{N-k}{m-j}}{\binom{N}{m}},
+ \quad \max(0,k+m-N)\le j\le\min(k,m).
+\end{equation}
+The mean is $\mu=km/N$, with
+\begin{equation}\label{variance}
+\Var(H_{N,k,m})=
+M_{N,m}\frac{k(N-k)}{N^2},\qquad
+M_{N,m}:=\frac{m(N-m)}{N-1}.
+\end{equation}
+Let
+\begin{equation}\label{proxy}
+\psi_{N,k,m}(t)=\log\E e^{t(H_{N,k,m}-km/N)},\qquad
+S_{N,m}(k)=\sup_{t\in\mathbb R\setminus\{0\}}
+ \frac{2\psi_{N,k,m}(t)}{t^2}.
+\end{equation}
+The quotient extends continuously at $t=0$ with value
+$\Var(H_{N,k,m})$ and tends to zero at both infinite endpoints.
+Define $c_N=\lfloor N/2\rfloor$ and
+\begin{equation}\label{W}
+W_{N,m}=M_{N,m}\frac{c_N(N-c_N)}{N^2}
+=\begin{cases}M_{N,m}/4&N\text{ even},\\
+ M_{N,m}(1-N^{-2})/4&N\text{ odd}.
+\end{cases}
+\end{equation}
+
+\begin{proposition}[Proved analytic inputs from \cite{Wang}]\label{inputs}
+The actual hypergeometric optimal proxy satisfies
+\begin{equation}\label{C}
+S_{N,m}(k)\le
+\frac{\min\{k(N-k),m(N-m)\}}{4(N-1)}
+\quad (1\le k,m<N).
+\end{equation}
+For $1\le m\le k<N/2$,
+\begin{equation}\label{B}
+S_{N,m}(k)\le M_{N,m}\,\beta(k/N),\quad
+\beta(p)=\frac{1-2p}{2\log((1-p)/p)}.
+\end{equation}
+Equality holds in \eqref{B} if $m=1$; the underlying comparison
+for $m\ge2$ is strict. Success complementation $k\mapsto N-k$
+and sample complementation $m\mapsto N-m$ preserve $S$.
+\end{proposition}
+The upstream theorem names include
+\texttt{hypergeomTiltVariance\_sharp} and the actual-proxy
+curvature bridge, and the scaled Bernoulli bound in the
+\texttt{OddHypergeomExtremizers} module. The unnormalized proxy $S$
+is related to the companion normalized coefficient by multiplication
+by $m(N-m)/(4N)$. Thus no transposition of a normalized expression
+is required when invoking \eqref{C}--\eqref{B}.
+
+\section{The exact finite extremizer theorem}
+\begin{theorem}[All population sizes, all fixed sample sizes]\label{main}
+For every integer $N\ge2$ and every $1\le m<N$,
+\begin{equation}\label{argmax}
+\argmax_{1\le k<N}S_{N,m}(k)
+=\{\lfloor N/2\rfloor,\lceil N/2\rceil\}.
+\end{equation}
+Define the strictly positive quantity
+\begin{equation}\label{delta}
+\Delta_{N,m}=
+\begin{cases}
+\dfrac{M_{N,m}}{3N^2+4},& N\text{ even},\\[6pt]
+\dfrac{M_{N,m}(2N^2-3)}{4N^2(N^2+3)},& N\text{ odd}.
+\end{cases}
+\end{equation}
+Every noncentral count $k\notin\{c_N,N-c_N\}$ obeys
+\begin{equation}\label{strict}
+S_{N,m}(k)\le W_{N,m}-\Delta_{N,m}
+<W_{N,m}\le S_{N,m}(c_N).
+\end{equation}
+The noncentral assertion is vacuous for $N=2,3$.
+\end{theorem}
+
+\begin{lemma}[Cubic lower bound for the inverse hyperbolic tangent]\label{atanh}
+For $0<d<1$,
+\begin{equation}\label{Bdeficit}
+\artanh(d)\ge d+\frac{d^3}{3},\qquad
+\frac{d}{4\artanh(d)}
+\le\frac{1}{4(1+d^2/3)}.
+\end{equation}
+The first inequality is strict for $d>0$.
+\end{lemma}
+\begin{proof}
+The difference on the left vanishes at zero and has derivative
+$\frac{1}{1-d^2}-1-d^2=d^4/(1-d^2)>0$.
+The second inequality follows by taking reciprocals of positive quantities.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{main}]
+Complementation reduces the analysis to
+$\bar k=\min(k,N-k)$ and $\bar m=\min(m,N-m)$, both in
+$[1,\lfloor N/2\rfloor]$. Set $M=M_{N,m}$ and $W=W_{N,m}$,
+and assume $\bar k<c_N$.
+
+First suppose $\bar m\le\bar k$. Put $d=1-2\bar k/N>0$.
+By \eqref{B} and Lemma \ref{atanh},
+\begin{equation}\label{cap1}
+S_{N,m}(k)\le\frac{M}{4(1+d^2/3)}.
+\end{equation}
+If $N$ is even, offcenter $\bar k\le N/2-1$ entails
+$d\ge 2/N$, whence
+\[
+S_{N,m}(k)\le
+\frac{3MN^2}{4(3N^2+4)}
+=\frac{M}{4}-\frac{M}{3N^2+4}=W-\Delta_{N,m}.
+\]
+If $N$ is odd, $\bar k\le(N-3)/2$ entails $d\ge3/N$,
+and
+\[
+S_{N,m}(k)\le\frac{MN^2}{4(N^2+3)}
+=\frac{M(N^2-1)}{4N^2}
+-\frac{M(2N^2-3)}{4N^2(N^2+3)}
+=W-\Delta_{N,m}.
+\]
+
+Next suppose $\bar k<\bar m$. By the sharp curvature
+ceiling \eqref{C},
+\begin{equation}\label{cap2}
+S_{N,m}(k)\le
+\frac{\bar k(N-\bar k)}{4(N-1)}.
+\end{equation}
+The exact difference
+\begin{equation}\label{disc}
+\bar m(N-\bar m)-\bar k(N-\bar k)
+=(\bar m-\bar k)(N-\bar m-\bar k)
+\end{equation}
+is at least one for even $N$ and at least two for odd $N$.
+In the even case,
+\[
+W-S_{N,m}(k)\ge\frac{1}{4(N-1)}
+>\frac{M}{3N^2+4}=\Delta_{N,m},
+\]
+using $M\le N^2/[4(N-1)]$.
+In the odd case the central variance factor is $1-N^{-2}$, so
+\[
+W-S_{N,m}(k)\ge
+\frac{2-\bar m(N-\bar m)/N^2}{4(N-1)}
+\ge\frac{7}{16(N-1)}
+>\frac{M(2N^2-3)}{4N^2(N^2+3)}.
+\]
+Indeed, the final quantity is smaller than $1/[8(N-1)]$.
+Thus \eqref{strict} holds for every noncentral margin.
+
+At $\bar k=c_N$, the zero-tilt limit in \eqref{proxy} is
+$W_{N,m}$, proving $S_{N,m}(c_N)\ge W_{N,m}$.
+Success complementation gives
+$S_{N,m}(N-c_N)=S_{N,m}(c_N)$.
+All remaining $k$ have a strict deficit, completing the
+classification and the quantified bound.
+\end{proof}
+
+\begin{proposition}[Stronger individual-margin certificate]\label{individual}
+Let $k$ be noncentral, $\bar k=\min(k,N-k)$ and
+$\bar m=\min(m,N-m)$, and put $d=1-2\bar k/N$.
+The explicit bound
+\[
+G_{N,m}(k)=
+\begin{cases}
+W_{N,m}-\dfrac{M_{N,m}}{4(1+d^2/3)},&\bar m\le\bar k,\\[8pt]
+W_{N,m}-\dfrac{\bar k(N-\bar k)}{4(N-1)},&\bar k<\bar m
+\end{cases}
+\]
+satisfies $G_{N,m}(k)\ge\Delta_{N,m}$ and
+$S_{N,m}(k)\le W_{N,m}-G_{N,m}(k)$.
+In the first branch $G_{N,m}(k)$ increases with
+$|N-2k|$.
+\end{proposition}
+\begin{proof}
+Each branch is exactly the upper proxy used in
+\eqref{cap1} or \eqref{cap2}; the lower bounds were
+verified in the two cases of Theorem \ref{main}.
+\end{proof}
+
+\section{Value at the maximizing margin}
+\begin{proposition}[Even populations]\label{even}
+For every even $N\ge2$, the maximum has the closed form
+\[
+\max_{1\le k<N} S_{N,m}(k)=\frac{m(N-m)}{4(N-1)}
+\quad(1\le m<N).
+\]
+At $k=N/2$ the optimal proxy equals the ordinary variance.
+\end{proposition}
+\begin{proof}
+The maximizing $k$ follows from Theorem \ref{main}.
+The all-tilt ceiling \eqref{C} at this $k$ yields
+$S\le M/4=W$; the zero-tilt limit yields $S\ge W$.
+\end{proof}
+
+\begin{proposition}[Odd populations]\label{odd}
+For $N=2n+1\ge3$ and any $1\le m<N$,
+$\max_{1\le k<N}S_{N,m}(k)=S_{N,m}(n)>W_{N,m}$.
+Writing $\mu=mn/N$, this value is exactly the maximum
+over all real tilts of the continuous-at-zero function
+\[
+F_{N,m}(t)=
+\begin{cases}
+\displaystyle\frac{2}{t^2}\log\!
+\left(\sum_{j=\max(0,m-n-1)}^{\min(m,n)}
+\frac{\binom{n}{j}\binom{n+1}{m-j}}{\binom{2n+1}{m}}
+e^{t(j-\mu)}\right),&t\ne0,\\[10pt]
+W_{N,m},&t=0.
+\end{cases}
+\]
+Every maximizing nonzero tilt $t$ satisfies
+$t\psi_{N,n,m}'(t)=2\psi_{N,n,m}(t)$.
+No uniqueness or universal elementary closed form is asserted.
+\end{proposition}
+\begin{proof}
+By complementation assume $m\le n$. The exact third
+centered cumulant is
+\[
+\kappa_3=
+W_{N,m}\frac{(N-2n)(N-2m)}{N(N-2)}
+=W_{N,m}\frac{N-2m}{N(N-2)}>0.
+\]
+The Taylor formula
+$2\psi(t)/t^2=W_{N,m}+\kappa_3t/3+O(t^2)$
+is strictly above $W_{N,m}$ for small $t>0$.
+The displayed finite sum follows from the mass function.
+Its continuous extension tends to zero at both infinite ends,
+so a finite maximizer exists; strictness ensures it is nonzero.
+Differentiating there gives the stated necessary equation.
+\end{proof}
+
+\begin{corollary}[One- and two-draw closed forms]\label{small}
+For odd $N\ge3$, the maximizing proxy for $m=1$ or $m=N-1$ is
+\[
+\frac1{2N\log((N+1)/(N-1))}.
+\]
+For odd $N\ge5$, the maximizing proxy for $m=2$ or $m=N-2$ is
+\[
+\frac2{N\log((N+1)/(N-3))}.
+\]
+\end{corollary}
+\begin{proof}
+For one draw use the optimal Bernoulli proxy
+\cite{Arbel}. For two draws, specialize the exact three-mass
+hypergeometric proxy in \cite{Wang,ThreeMass} and the
+central success count established in Theorem \ref{main}.
+Complementation supplies the two remaining cases.
+\end{proof}
+
+\section{Interpretation, computational audit, and formalization}
+The theorem locates the maximum of the \emph{unnormalized}
+optimal proxy for fixed $m$, not the separately normalized
+coefficient in the global exchangeability optimization.
+A central maximum set is also weaker than discrete unimodality:
+no ordering of all consecutive success counts is claimed.
+The explicit separation is not asserted to be best possible.
+For odd $N$ and arbitrary $m\ge3$, Proposition \ref{odd}
+is a finite one-dimensional optimization, not a closed
+elementary evaluation or a theorem of uniqueness for the tilt.
+
+The accompanying source code checks the exact rational
+case inequalities independently of floating-point operations,
+then directly optimizes the finite centered MGF with
+log-sum-exp arithmetic. The frozen release passed 67,570
+exact rational offcenter comparisons for $N\le60$, and
+1,560 numerical proxy optimizations for $N\le18$.
+The one- and two-draw closed forms were separately checked.
+Numerical checks diagnose implementation errors; the
+unbounded parameter conclusion rests solely on the proof.
+
+The input results from \cite{Wang} and the present fixed-sample assembly
+are kernel-checked in the companion Lean project. The public endpoints
+\texttt{hypergeomOptimalProxy\_fixed\_sample\_extremizers},
+\texttt{hypergeomOptimalProxy\_fixed\_sample\_gap\_even}, and
+\texttt{hypergeomOptimalProxy\_fixed\_sample\_gap\_odd} cover the all-$N$ argmax and
+explicit parity gaps. The odd central value is retained in its exact
+finite-sum variational form; no elementary formula or uniqueness of the
+optimizing tilt is used.
+
+\section{Conclusion}
+For every finite population and every fixed nontrivial sample size,
+the closest-to-balanced success counts are exactly those
+maximizing the optimal hypergeometric sub-Gaussian variance proxy.
+An explicit positive gap excludes all other success counts
+even by comparison with the central ordinary variance.
+The classification is exact and uniform, whereas the general
+odd-population proxy value remains a separate analytic
+one-dimensional optimization.
+
+\begin{thebibliography}{9}
+\bibitem{Wang} Z.~Wang, \emph{Exact Hoeffding Constants for
+Finite Exchangeable Sequences}, 2026,
+\url{https://github.com/wzn1118/exact-hoeffding-constants}.
+Precise proof inputs: branch \texttt{formal/full-closure-20261015},
+commit \texttt{8687c3d}.
+\bibitem{Arbel} J.~Arbel, O.~Marchal and H.~D.~Nguyen,
+On strict sub-Gaussianity, optimal proxy variance and
+symmetry for bounded random variables,
+\emph{ESAIM: Probability and Statistics} \textbf{24}
+(2020), 39--55.
+\bibitem{ThreeMass} S.~Atouani, O.~Marchal and J.~Arbel,
+Optimal sub-Gaussian variance proxy for 3-mass
+distributions, arXiv:2510.06132 (2025).
+\bibitem{Hoeffding} W.~Hoeffding, Probability inequalities
+for sums of bounded random variables, \emph{JASA}
+\textbf{58} (1963), 13--30.
+\bibitem{Serfling} R.~Serfling, Probability inequalities
+for the sum in sampling without replacement,
+\emph{Ann. Statist.} \textbf{2} (1974), 39--48.
+\bibitem{GW} E.~Greene and J.~Wellner, Exponential bounds
+for the hypergeometric distribution, \emph{Bernoulli}
+\textbf{23} (2017), 1911--1950.
+\bibitem{BM} R.~Bardenet and O.-A.~Maillard,
+Concentration inequalities for sampling without
+replacement, \emph{Bernoulli} \textbf{21} (2015), 1361--1385.
+\end{thebibliography}
+\end{document}
