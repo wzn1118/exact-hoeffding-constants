@@ -1,0 +1,19 @@
+{
+  "title": "Sharp Hypergeometric Concentration: Exact Exchangeability Constants, Fixed-Sample Extremizers, and Piecewise KL Bounds",
+  "authors": [
+    {
+      "name": "Zinan Wang",
+      "affiliation": "The University of Manchester"
+    },
+    {
+      "name": "Xinhao Yang",
+      "affiliation": "University of Southern California"
+    }
+  ],
+  "date": "2026-10-16",
+  "primary_category": "math.PR",
+  "optional_cross_list": "math.ST",
+  "entry_point": "manuscript.tex",
+  "pages": 36,
+  "references": 19
+}
