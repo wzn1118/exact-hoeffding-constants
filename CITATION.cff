@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "Please cite the manuscript using this metadata."
-title: "Exact Hoeffding Constants for Finite Exchangeable Sequences"
+message: "Please cite the current unified mathematical manuscript."
+title: "Sharp Hypergeometric Concentration: Exact Exchangeability Constants, Fixed-Sample Extremizers, and Piecewise KL Bounds"
 authors:
   - family-names: Wang
     given-names: Zinan
@@ -9,30 +9,31 @@ authors:
     given-names: Xinhao
     affiliation: University of Southern California
 type: software
-version: "1.2.0"
+version: "2.0.0"
 date-released: "2026-10-16"
 repository-code: "https://github.com/wzn1118/exact-hoeffding-constants"
 preferred-citation:
   type: unpublished
-  title: "Exact Hoeffding Constants for Finite Exchangeable Sequences"
+  title: "Sharp Hypergeometric Concentration: Exact Exchangeability Constants, Fixed-Sample Extremizers, and Piecewise KL Bounds"
   authors:
     - family-names: Wang
       given-names: Zinan
-    affiliation: The University of Manchester
+      affiliation: The University of Manchester
     - family-names: Yang
       given-names: Xinhao
       affiliation: University of Southern California
   year: 2026
   date-published: "2026-10-16"
-  url: "https://github.com/wzn1118/exact-hoeffding-constants"
-  notes: "Revised manuscript. Copyright (c) 2026 Zinan Wang. All rights reserved."
+  url: "https://github.com/wzn1118/exact-hoeffding-constants/tree/main/submission/current"
+  notes: "Current Main+A+B unified manuscript. Copyright (c) 2026 Zinan Wang. All rights reserved."
 abstract: >-
-  Exact Hoeffding constants for centered linear contrasts of bounded finite
-  exchangeable sequences, with parity-dependent formulas, hypergeometric
-  tilted-variance bounds, a parity-uniform scaled Bernoulli Laplace envelope,
-  extremizer classification and higher-order optimized proxy expansions.
+  The sharp finite-population Hoeffding constants for centered contrasts
+  of bounded exchangeable sequences are combined with all-finite
+  hypergeometric fixed-sample extremizers and a piecewise relative-entropy
+  concentration bound on canonical interior margins.
 keywords:
   - finite exchangeability
   - concentration inequalities
   - hypergeometric distribution
   - optimal sub-Gaussian variance proxy
+  - piecewise relative entropy
