@@ -4,6 +4,7 @@ title: "Exact Hoeffding Constants for Finite Exchangeable Sequences"
 authors:
   - family-names: Wang
     given-names: Zinan
+    affiliation: The University of Manchester
   - family-names: Yang
     given-names: Xinhao
     affiliation: University of Southern California
@@ -17,6 +18,7 @@ preferred-citation:
   authors:
     - family-names: Wang
       given-names: Zinan
+    affiliation: The University of Manchester
     - family-names: Yang
       given-names: Xinhao
       affiliation: University of Southern California

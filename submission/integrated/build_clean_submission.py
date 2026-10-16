@@ -81,8 +81,8 @@ def polish_integrated(text):
     sub(r"\hypersetup{pdftitle={Exact Hoeffding Constants for Finite Exchangeable Sequences}",
         r"\hypersetup{pdftitle={Sharp Hypergeometric Concentration: Exact Exchangeability Constants, Fixed-Sample Extremizers, and Piecewise KL Bounds}")
     sub(r"\fancyhead[LO]",r"\fancyhead[L]")
-    sub(r"\author{Zinan Wang\thanks{Copyright \textcopyright\ 2026 Zinan Wang. All rights reserved.}}",
-        r"\author{Zinan Wang}")
+    sub(r"\author{Zinan Wang\thanks{Copyright \textcopyright\ 2026 Zinan Wang. All rights reserved.}\\{\small The University of Manchester}\and Xinhao Yang\\{\small University of Southern California}}",
+        r"\author{Zinan Wang\\{\small The University of Manchester}\and Xinhao Yang\\{\small University of Southern California}}")
     sub(r"\noindent\textbf{Additional results.} For every fixed sample size, the optimal hypergeometric sub-Gaussian proxy is attained exactly at central success counts. In the canonical interior range, a piecewise KL rate gives explicit upper and lower tails and improves the ordinary binomial rate at noncentral thresholds.",
         "For each fixed sample size, we identify the central success counts as the unique maximizers of the optimal hypergeometric sub-Gaussian proxy, up to complementation, and establish quantitative gaps for all other margins. On the canonical interior parameter domain, the two tilted-variance envelopes yield an explicit piecewise relative-entropy rate for both tails. The resulting rate strictly improves the binomial KL rate at every noncentral threshold.")
     sub(r"Jacobi polynomials; exponential tilting; Riccati equation.\\",
