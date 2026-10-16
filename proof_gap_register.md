@@ -1,6 +1,6 @@
 # Manuscript proof obligations
 
-Updated 16 October 2026. Current branch: `formal/full-closure-20261016`.
+Updated 16 October 2026. Canonical branch: `main`.
 
 ## Completed core obligations
 

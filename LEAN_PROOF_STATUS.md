@@ -1,9 +1,9 @@
 # Lean proof coverage
 
 Paper: **Exact Hoeffding Constants for Finite Exchangeable Sequences**.
-Author: **Zinan Wang**. Updated 16 October 2026.
+Authors: **Zinan Wang and Xinhao Yang**. Updated 16 October 2026.
 
-The current source branch is `formal/full-closure-20261016`, using Lean 4.33.0
+The canonical source branch is `main`, using Lean 4.33.0
 and pinned Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`.
 The detailed inventory is [formal_status/full_closure.md](formal_status/full_closure.md).
 

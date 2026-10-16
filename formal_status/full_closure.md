@@ -1,6 +1,6 @@
-# Formal proof coverage — 15 October 2026
+# Formal proof coverage — 16 October 2026
 
-Branch: `formal/full-closure-20261016`.
+Canonical branch: `main`.
 Lean 4.33.0; Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`.
 
 ## Exact constants and actual probability laws
