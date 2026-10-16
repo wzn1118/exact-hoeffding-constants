@@ -27,8 +27,15 @@ The figure can be regenerated with `python3 checks/plot_piecewise_kl.py`
 (Matplotlib required). It reads the frozen CSV without recomputing results.
 The figure shows negative logarithms, so larger values are stronger bounds.
 
-The associated Lean additions prove finite Poisson--binomial variance algebra,
-reciprocal-envelope comparison and the three symmetry-envelope differences.
-The Jacobi factorization, sharp hypergeometric curvature, mean-dependent
-quadratic barrier and complete exchangeability theorem remain open Lean
-obligations. See `LEAN_PROOF_STATUS.md` and `proof_gap_register.md`.
+The associated Lean development now includes `ExactHoeffding/PiecewiseKL.lean`.
+It proves the full quadratic envelope difference, positivity and localization of
+both switching points on the stated parameter domain, the exact central-region
+iff, contact formulas, and the strict three-branch comparison theorem. The
+module is imported by `ExactHoeffding.lean`; its declarations use only
+`propext`, `Classical.choice`, and `Quot.sound`.
+
+The remaining analytic input is deliberately exposed as theorem hypotheses:
+identifying the manuscript's finite-population rate and its derivatives with
+these branch functions requires the separate reciprocal-curvature integration
+bridge. The Lean module therefore records the exact algebraic and branch-level
+content without treating the numerical verifier as a proof of that bridge.

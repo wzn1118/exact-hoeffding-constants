@@ -220,3 +220,5 @@ import ExactHoeffding.ActualCompactFirstCorrectionAllSamples
 
 import ExactHoeffding.GeneralCGFCurvature
 import ExactHoeffding.GoalBFixedSample
+
+import ExactHoeffding.PiecewiseKL

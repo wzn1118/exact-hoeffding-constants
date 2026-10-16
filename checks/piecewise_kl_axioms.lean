@@ -1,0 +1,12 @@
+import ExactHoeffding.PiecewiseKL
+#print axioms ExactHoeffding.varianceEnvelopeDifference_factorization
+#print axioms ExactHoeffding.varianceEnvelopeDifference_sign_iff
+#print axioms ExactHoeffding.varianceSwitch_mem_interval
+#print axioms ExactHoeffding.piecewiseKLRate_strict_improves
+#print axioms ExactHoeffding.piecewiseKLRate_ge_quadratic
+#print axioms ExactHoeffding.kl_variance_envelope_difference
+#print axioms ExactHoeffding.klSwitchC_expansion
+#print axioms ExactHoeffding.klSwitchC_pos
+#print axioms ExactHoeffding.klSwitchB_pos
+#print axioms ExactHoeffding.kl_switching_points_full_domain
+#print axioms ExactHoeffding.kl_quadratic_envelope_le_binomial_iff
