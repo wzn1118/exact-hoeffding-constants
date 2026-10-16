@@ -34,6 +34,13 @@ iff, contact formulas, and the strict three-branch comparison theorem. The
 module is imported by `ExactHoeffding.lean`; its declarations use only
 `propext`, `Classical.choice`, and `Quot.sound`.
 
+`ExactHoeffding/PiecewiseKLEndToEnd.lean` closes the ordinary binomial KL
+branch for the actual canonical hypergeometric law: the tilted
+Poisson--binomial representation gives the true-support variance envelope,
+the Riccati comparison gives the log-Laplace inequality, and finite
+exponential Markov plus the Bernoulli Fenchel identity gives the explicit upper
+tail bound.
+
 The remaining analytic input is deliberately exposed as theorem hypotheses:
 identifying the manuscript's finite-population rate and its derivatives with
 these branch functions requires the separate reciprocal-curvature integration

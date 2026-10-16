@@ -222,3 +222,5 @@ import ExactHoeffding.GeneralCGFCurvature
 import ExactHoeffding.GoalBFixedSample
 
 import ExactHoeffding.PiecewiseKL
+
+import ExactHoeffding.PiecewiseKLEndToEnd

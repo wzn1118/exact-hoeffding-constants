@@ -1,0 +1,6 @@
+import ExactHoeffding.PiecewiseKLEndToEnd
+#print axioms ExactHoeffding.canonical_true_support_min_eq_m
+#print axioms ExactHoeffding.canonical_hypergeom_variance_le_binomial_envelope
+#print axioms ExactHoeffding.canonical_hypergeom_loglaplace_le_ordinary_bernoulli
+#print axioms ExactHoeffding.canonical_fenchel_tilt_nonneg
+#print axioms ExactHoeffding.hypergeom_upper_tail_ordinary_kl_canonical
