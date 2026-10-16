@@ -22,4 +22,4 @@ To reproduce the current submission after installing pdfLaTeX, latexmk, Python a
 
 The separate original main paper (28 pages), supplement (6 pages), and older combined_all.tex release have historical value, but are superseded for unified Main+A+B submissions. The legacy packaging script checks/package_submission.py is retained for reproducing that historical edition.
 
-The full reproducibility archive contains the mathematical and formal verification sources, check programs, frozen inputs and dependency pins, with a single disclosure of AI assistance in Lean 4 formalization and verification.
+The complete reproducibility archive contains mathematical proof sources, formal verification modules, test programs, frozen inputs and pinned dependencies.
