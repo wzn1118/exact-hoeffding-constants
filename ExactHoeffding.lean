@@ -221,6 +221,8 @@ import ExactHoeffding.ActualCompactFirstCorrectionAllSamples
 import ExactHoeffding.GeneralCGFCurvature
 import ExactHoeffding.GoalBFixedSample
 
+import ExactHoeffding.OddCentralStrict
+
 import ExactHoeffding.PiecewiseKL
 
 import ExactHoeffding.PiecewiseKLEndToEnd
@@ -229,3 +231,34 @@ import ExactHoeffding.PiecewiseKLFull
 
 import ExactHoeffding.PiecewiseKLComparison
 import ExactHoeffding.PiecewiseKLStrict
+import ExactHoeffding.ManuscriptIntegerTails
+import ExactHoeffding.GoalBOddVariation
+import ExactHoeffding.PiecewiseKLFourRates
+import ExactHoeffding.FiniteVarianceEnvelope
+import ExactHoeffding.FactorialChernoff
+
+import ExactHoeffding.HypergeomCenteredLogNonneg
+
+import ExactHoeffding.GoalBIndividual
+
+import ExactHoeffding.GoalBIndividualMargin
+
+import ExactHoeffding.HypergeomBennettBernstein
+
+import ExactHoeffding.GoalBOddGlobal
+
+import ExactHoeffding.FiniteLegendreEnvelope
+
+import ExactHoeffding.FactorialChernoffExact
+
+import ExactHoeffding.BernsteinKernel
+import ExactHoeffding.HypergeomBernsteinComparison
+
+import ExactHoeffding.FiniteMeanLegendre
+
+import ExactHoeffding.FiniteSupportMeanEnvelope
+import ExactHoeffding.FiniteSupportMeanEnvelopeStrict
+import ExactHoeffding.FiniteSupportEndpointEnvelope
+import ExactHoeffding.FiniteSupportChernoffEnvelope
+import ExactHoeffding.FiniteSupportRecurrenceBridge
+import ExactHoeffding.FiniteSupportTiltCurveOfLaw

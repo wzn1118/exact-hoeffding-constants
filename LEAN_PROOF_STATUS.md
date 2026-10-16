@@ -3,7 +3,7 @@
 Paper: **Exact Hoeffding Constants for Finite Exchangeable Sequences**.
 Author: **Zinan Wang**. Updated 16 October 2026.
 
-The current source branch is `formal/full-closure-20261015`, using Lean 4.33.0
+The current source branch is `formal/full-closure-20261016`, using Lean 4.33.0
 and pinned Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`.
 The detailed inventory is [formal_status/full_closure.md](formal_status/full_closure.md).
 
@@ -47,9 +47,9 @@ in `ExactOddGlobalTheorem.lean`.
 
 The compact success-proportion argument now has both an independent finite comparison and an analytic proof for the actual global optimum. The analytic development includes the full binomial axis, the exact continuous population/imbalance factor, its positive boundary value, and the explicit first population correction with a uniform quadratic remainder through balance. Exact finite-population imbalance response includes the actual optimizing tilt, explicit T/A coefficients, odd/even analytic remainders and strict Bernoulli comparison.
 
-All 30 named results in the principal paper and technical supplement have complete theorem mappings in [formal_status/manuscript_concordance.md](formal_status/manuscript_concordance.md). The actual variance supremum, its strict odd gap and fourth-order expansion, and the explicit Hamming-law extremizer with its full Bernoulli pushforward and both parity contact mechanisms are included.
+All 35 theorem-class environments and 2 supplementary claims in the current unified manuscript have complete mappings in [submission/current/theorem_lean_concordance.md](submission/current/theorem_lean_concordance.md). The actual variance supremum, its strict odd gap and fourth-order expansion, the finite-support mean-coordinate envelope, and the explicit Hamming-law extremizer with its full Bernoulli pushforward and both parity contact mechanisms are included.
 
-The complete integrated umbrella build and generated audit pass: **1637 public theorems in 258 project modules**. The audit reports only `propext`, `Classical.choice`, and `Quot.sound`. All project Lean modules are imported by the umbrella.
+The complete integrated umbrella build and generated audit pass: **1723 public theorems in 280 project modules**. The audit reports only `propext`, `Classical.choice`, and `Quot.sound`. All project Lean modules are imported by the umbrella.
 
 ## Verification
 
