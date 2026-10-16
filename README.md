@@ -27,12 +27,12 @@ The 36-page article has 19 references and presents three results:
 
 The project uses a pinned Lean 4 toolchain and Mathlib dependencies. The mathematical sources and check scripts are in [ExactHoeffding/](ExactHoeffding/) and [checks/](checks/). To reproduce the Lean build:
 
-\`\`\`bash
+```bash
 lake exe cache get
 lake build ExactHoeffding
 python3 checks/generate_axiom_audit.py --check
 lake env lean checks/full_closure_axioms.lean
-\`\`\`
+```
 
 The full reproducibility ZIP contains the formal modules, computational verifiers, frozen input files and pinned dependency manifest.
 
@@ -48,6 +48,6 @@ The full reproducibility ZIP contains the formal modules, computational verifier
 | [source/](source/) | Foundational manuscript source |
 | [research/history/](research/history/) | Historical independent checkpoints |
 
-The earlier 28-page foundational manuscript, separate supplement, and dated calculations remain available for provenance. The **only current unified submission** is maintained in \`submission/current/\`.
+The earlier 28-page foundational manuscript, separate supplement, and dated calculations remain available for provenance. The **only current unified submission** is maintained in `submission/current/`.
 
 [Submission guide](submission/README.md) · [Citation metadata](CITATION.cff) · [Formal theorem coverage](LEAN_PROOF_STATUS.md) · [License](LICENSE) · [Third-party notices](THIRD_PARTY_NOTICES.md)
