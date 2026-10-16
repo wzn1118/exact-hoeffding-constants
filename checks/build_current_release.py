@@ -39,6 +39,9 @@ def files_in(path, contents):
         if not p.is_file():
             continue
         rel=p.relative_to(ROOT)
+        # The release generator is a publisher utility, not a mathematical reproducer.
+        if rel.as_posix() == "checks/build_current_release.py":
+            continue
         if any(part in BLOCKED_DIRS for part in rel.parts):
             continue
         if p.suffix.lower() in BLOCKED_EXTS:
