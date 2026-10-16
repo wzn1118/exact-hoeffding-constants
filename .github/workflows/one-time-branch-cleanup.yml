@@ -1,0 +1,76 @@
+name: One-time cleanup of superseded research branches
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/one-time-branch-cleanup.yml']
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  remove-superseded-branches:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify all current releases and preserved research sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s submission/current/manuscript.pdf
+          test -s submission/current/manuscript.tex
+          test -s submission/current/complete-reproducibility.zip
+          test -f ExactHoeffding/GoalBFixedSample.lean
+          test -f ExactHoeffding/PiecewiseKLStrict.lean
+          test -f research/history/A-2026-10-15/checks/check_problem_a_matrix.py
+          test -f research/history/C-2026-10-14/checks/print_axioms_chernoff.lean
+          count=$(gh api "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" --jq 'length')
+          if [ "$count" != "0" ]; then
+            echo "::error::Open pull requests remain; branch cleanup refused."
+            exit 1
+          fi
+      - name: Delete only verified historical branch heads
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > /tmp/superseded-branches.txt <<'BRANCHES'
+edit/add-xinhao-yang-second-author-20261016 24157c018cb7112940c2c8e6ace253804a9b4a9d
+fix/gottschling-title-20261016 32122a93b10c0d7378dcb66720cc5eb149de9ea7
+formal/full-closure-20261015 baaafe4545c6b7f6ede55fd8a79834d55f0def6c
+formal/lean4-hoeffding 74f0db5f3bd41fc8cd72636cbc509b31d96034dd
+research/A-math-20261014 6ea3e674db84a4a0b739754f5668b55704072cc3
+research/B-finite-fixed-sample-20261016 bbfdd6d875e50293b47559a0315d429a668df8a1
+research/B-finite-fixed-sample-main-20261016 1bb8d8add63db01bbdad22f950618ff697d8a307
+research/B-jacobi-20261014 fccfe1f44775551eb4d5c3359e8baaf6faa2fb9a
+research/C-riccati-reductions-20261014 cb3be6bc4c9fe904008cb4c16066be192f75e196
+research/kl-control-20261015 e5621798df470fc7381a7462d377f8568b06c53c
+review/independent-certificates-priority-20261011 21ae345daed4c4e3fbabcd2c17adc87111af0ad6
+revision/compact-28p-full-ci-20261011 b400ee4c64c7ef953209d79a77c9c3ab900f4a5c
+revision/hoeffding-proof-editorial-2026-10-11 ef7a1d3b1b5ed2f4cdff08fce6dffc3f1080a61a
+BRANCHES
+          while IFS=' ' read -r branch expected; do
+            [ -n "$branch" ] || continue
+            actual="$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/$branch" --jq '.object.sha')"
+            if [ "$actual" != "$expected" ]; then
+              echo "::error::Branch moved: $branch expected $expected, observed $actual"
+              exit 1
+            fi
+          done </tmp/superseded-branches.txt
+          while IFS=' ' read -r branch expected; do
+            [ -n "$branch" ] || continue
+            gh api --method DELETE "repos/$GITHUB_REPOSITORY/git/refs/heads/$branch"
+            echo "Removed $branch ($expected)"
+          done </tmp/superseded-branches.txt
+      - name: Verify only main remains
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api "repos/$GITHUB_REPOSITORY/branches?per_page=100" --jq '.[].name' >/tmp/remaining-branches.txt
+          cat /tmp/remaining-branches.txt
+          test "$(wc -l </tmp/remaining-branches.txt)" -eq 1
+          test "$(cat /tmp/remaining-branches.txt)" = main
