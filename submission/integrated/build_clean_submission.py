@@ -78,6 +78,25 @@ def main():
     core,appendix=body.split(r"\appendix",1)
     ba,refs_a=extension(A.read_text(encoding="utf-8"),"A")
     bb,refs_b=extension(B.read_text(encoding="utf-8"),"B")
+    duplicates={
+        "B:Arbel":"ArbelMarchalNguyen",
+        "B:ThreeMass":"AtouaniMarchalArbel",
+        "B:Hoeffding":"Hoeffding",
+        "B:Serfling":"Serfling",
+        "B:GW":"GreeneWellner",
+        "B:BM":"BardenetMaillard",
+        "A:Hoeffding":"Hoeffding",
+        "A:GW":"GreeneWellner",
+        "A:BM":"BardenetMaillard",
+    }
+    def dedup_cites(text):
+        return re.sub(r"(\\cite(?:\[[^]]+\])?\{)([^}]+)(\})",
+            lambda m:m.group(1)+",".join(duplicates.get(k.strip(),k.strip())
+              for k in m.group(2).split(","))+m.group(3),text)
+    ba=dedup_cites(ba)
+    bb=dedup_cites(bb)
+    refs_a=[x for x in refs_a if not any(x.lstrip().startswith(r"\bibitem{"+k+"}") for k in duplicates)]
+    refs_b=[x for x in refs_b if not any(x.lstrip().startswith(r"\bibitem{"+k+"}") for k in duplicates)]
     bib=bib.replace(r"\end{thebibliography}",
         "\n".join(x.strip() for x in refs_b+refs_a)+"\n"+r"\end{thebibliography}")
     pre=re.sub(r"\\title\{.*?\\author\{",
@@ -85,6 +104,8 @@ def main():
         pre,count=1,flags=re.S)
     pre+="\n"+r"\DeclareMathOperator*{\argmax}{arg\,max}"+"\n"
     pre=re.sub(r"\\date\{[^}]+\}",r"\\date{16 October 2026}",pre,count=1)
+    pre=pre.replace(r"\fancyhead[LO]{\small WANG -- SHARP FINITE EXCHANGEABILITY}",
+                    r"\fancyhead[LO]{\small WANG -- HYPERGEOMETRIC CONCENTRATION}")
     add=("\n"+r"\noindent\textbf{Additional results.} "
          "For every fixed sample size, the optimal hypergeometric sub-Gaussian "
          "proxy is attained exactly at central success counts. In the canonical "
