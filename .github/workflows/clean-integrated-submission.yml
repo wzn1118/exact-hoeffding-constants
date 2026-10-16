@@ -1,0 +1,94 @@
+name: Build clean Main+A+B submission
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'submission/integrated/**'
+      - 'submission/manuscript.tex'
+      - 'research/tail_bounds/minimum_variance_tail.tex'
+      - 'goal_b/paper/main.tex'
+      - '.github/workflows/clean-integrated-submission.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  clean-submission:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install LaTeX and archive tools
+        run: |
+          sudo apt-get update
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+            texlive-latex-extra texlive-fonts-recommended texlive-science \
+            lmodern latexmk poppler-utils zip
+      - name: Generate unified single-file manuscript
+        run: python3 submission/integrated/build_clean_submission.py
+      - name: Compile unified manuscript
+        run: |
+          cd submission/integrated
+          latexmk -pdf -interaction=nonstopmode -halt-on-error combined_manuscript.tex
+          test -s combined_manuscript.pdf
+          pdfinfo combined_manuscript.pdf | grep '^Pages:'
+      - name: Prepare clean submission and full reproducibility archives
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist/clean-submission dist/reproducibility
+          cp submission/integrated/combined_manuscript.tex dist/clean-submission/
+          cp submission/integrated/combined_manuscript.pdf dist/clean-submission/
+          cat > dist/clean-submission/README.txt <<'EOF'
+          Sharp Hypergeometric Concentration:
+          Exact Exchangeability Constants, Fixed-Sample Extremizers,
+          and Piecewise KL Bounds
+          Zinan Wang (2026)
+
+          Submission archive contents:
+          combined_manuscript.tex -- single-file unified LaTeX source
+          combined_manuscript.pdf -- corresponding compiled paper
+          SHA256SUMS.txt -- source and PDF integrity checks
+
+          Compile: latexmk -pdf -halt-on-error combined_manuscript.tex
+          Original mathematical results are organized as Main, B, and A.
+          This archive contains the manuscript only. Formal sources and
+          their verification scripts are in the separate reproducibility archive.
+          EOF
+          (cd dist/clean-submission && sha256sum combined_manuscript.tex combined_manuscript.pdf > SHA256SUMS.txt)
+          cp submission/manuscript.tex dist/reproducibility/main_original.tex
+          cp research/tail_bounds/minimum_variance_tail.tex dist/reproducibility/A_original.tex
+          cp goal_b/paper/main.tex dist/reproducibility/B_original.tex
+          mkdir -p dist/reproducibility/lean
+          cp lean-toolchain lakefile.toml lake-manifest.json dist/reproducibility/lean/ 2>/dev/null || true
+          cp ExactHoeffding.lean dist/reproducibility/lean/
+          cp -a ExactHoeffding dist/reproducibility/lean/
+          cp -a checks/piecewise_kl_full_axioms.lean checks/goal_b_fixed_sample_axioms.lean \
+            checks/full_closure_axioms.lean dist/reproducibility/lean/
+          cp submission/integrated/build_clean_submission.py dist/reproducibility/
+          cat > dist/reproducibility/README.txt <<'EOF'
+          Exact mathematical sources and Lean 4 verification materials.
+          The three original paper sources retain their original proof text.
+          The clean submission archive contains the single-file unified article.
+          Lean project root: lean/
+          Toolchain: lean-toolchain; pinned dependencies: lake-manifest.json.
+          Build in lean/: lake exe cache get && lake build ExactHoeffding
+          Axiom audit: lake env lean full_closure_axioms.lean
+          GitHub PR #9 merge: 3e386f59130d3073db8158ff57578feea79732ec
+          EOF
+          (cd dist/reproducibility && find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt)
+          (cd dist/clean-submission && zip -q -r ../Main_A_B_Clean_Submission.zip .)
+          (cd dist/reproducibility && zip -q -r ../Main_A_B_Reproducibility.zip .)
+          test -s dist/Main_A_B_Clean_Submission.zip
+          test -s dist/Main_A_B_Reproducibility.zip
+      - name: Upload finished papers and archives
+        uses: actions/upload-artifact@v4
+        with:
+          name: Main-A-B-clean-submission-and-reproducibility
+          path: |
+            dist/Main_A_B_Clean_Submission.zip
+            dist/Main_A_B_Reproducibility.zip
+            submission/integrated/combined_manuscript.pdf
+          retention-days: 90
