@@ -1,0 +1,6 @@
+PASS: wrote 170 A1/A2/A5 matrix rows to checks/results/problem_a_tail_matrix.csv
+PASS: scaled KL rows: 89 quadratic-limit rows: 18 support-empty rows: 57
+PASS: no nonzero event used an invalid theta
+PASS: primal and symmetry-transposed dual KL rows dominate exact tails
+NOTE: fixed-parameter proxy is a high-precision diagnostic only
+NOTE: V_global uses the manuscript C_N^* formula conditionally

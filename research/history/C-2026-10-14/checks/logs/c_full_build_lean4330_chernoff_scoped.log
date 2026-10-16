@@ -1,0 +1,55 @@
+✔ [2162/2173] Built ExactHoeffding.Hypergeometric (16s)
+⚠ [2163/2173] Built ExactHoeffding.CurvatureBridge (17s)
+warning: ExactHoeffding/CurvatureBridge.lean:28:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [2164/2173] Built ExactHoeffding.Normalization (6.2s)
+warning: ExactHoeffding/Normalization.lean:73:17: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/Normalization.lean:73:17: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+✔ [2165/2173] Built ExactHoeffding.Sampling (7.1s)
+✔ [2166/2173] Built ExactHoeffding.FactorialMoments (7.6s)
+✔ [2167/2173] Built ExactHoeffding.MomentGenerating (7.6s)
+⚠ [2168/2173] Built ExactHoeffding.SharpExample (7.8s)
+warning: ExactHoeffding/SharpExample.lean:45:26: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/SharpExample.lean:56:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/SharpExample.lean:76:34: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/SharpExample.lean:76:34: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [2169/2173] Built ExactHoeffding.TiltedVariance (8.7s)
+warning: ExactHoeffding/TiltedVariance.lean:23:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [2170/2173] Built ExactHoeffding.OrdinaryMoments (10s)
+⚠ [2171/2173] Built ExactHoeffding.CurvatureNonnegative (6.3s)
+warning: ExactHoeffding/CurvatureNonnegative.lean:38:18: This simp argument is unused:
+  finiteTiltFirst
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [a]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/CurvatureNonnegative.lean:44:18: This simp argument is unused:
+  finiteTiltSecond
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [a]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [2172/2173] Built ExactHoeffding (5.3s)
+Build completed successfully (2173 jobs).
+full scoped lake build ExactHoeffding exit=0

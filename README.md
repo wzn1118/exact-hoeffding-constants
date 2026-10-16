@@ -1,94 +1,53 @@
-# Exact Hoeffding Constants for Finite Exchangeable Sequences
+# Sharp Hypergeometric Concentration
 
-**Zinan Wang — The University of Manchester**  
-**Xinhao Yang — University of Southern California**
+**Zinan Wang** — The University of Manchester  
+**Xinhao Yang** — University of Southern California
 
-## Current unified submission (Main + A + B)
+*Exact Exchangeability Constants, Fixed-Sample Extremizers, and Piecewise KL Bounds*
 
-The authoritative manuscript is **Sharp Hypergeometric Concentration: Exact Exchangeability Constants, Fixed-Sample Extremizers, and Piecewise KL Bounds**.
+This repository contains the unified mathematical article, its source and verifiable Lean 4 development. All current research is maintained on **main**.
 
-[Unified paper](submission/current/manuscript.pdf) · [Independent LaTeX source](submission/current/manuscript.tex) · [arXiv upload](submission/current/arxiv-source.zip) · [Clean submission package](submission/current/clean-submission.zip) · [Complete reproducibility archive](submission/current/complete-reproducibility.zip) · [Submission metadata](submission/current/metadata.json).
+## Current manuscript
 
-The historical 28-page main article, separate supplement, and earlier combined sources are retained for archival reproducibility. For **new submissions**, use only the documents under submission/current/. The integrated article covers the exact exchangeability constant, all-finite fixed-sample extremizers, and canonical piecewise KL upper/lower tails.
+**[Read the complete paper (PDF)](submission/current/manuscript.pdf)** · [LaTeX](submission/current/manuscript.tex) · [arXiv source](submission/current/arxiv-source.zip) · [Clean submission](submission/current/clean-submission.zip) · [Full reproducibility](submission/current/complete-reproducibility.zip)
 
-The paper determines the optimal Hoeffding coefficient for centered linear contrasts of bounded, finitely exchangeable sequences:
+The 36-page article has 19 references and presents three results:
 
-\[
-C_N^\star=\begin{cases}
-\displaystyle\frac{N}{N-1}, & N\text{ even},\\[4pt]
-\displaystyle\frac{1}{(N-1)\operatorname{artanh}(1/N)},&N\text{ odd}.
-\end{cases}
-\]
+1. **Exact Hoeffding constants.** For centered contrasts of bounded finitely exchangeable sequences,
+   \[
+   C_N^\star=\begin{cases}
+     N/(N-1), & N\ \text{even},\\
+     [(N-1)\operatorname{artanh}(1/N)]^{-1}, & N\ \text{odd}.
+   \end{cases}
+   \]
+2. **Fixed-sample extremizers.** The optimal hypergeometric sub-Gaussian proxy attains its maximum at the central marked counts, with complete equality classification and strict off-center gaps for all finite admissible parameters.
+3. **Piecewise KL tails.** In the domain \(3\le m\le k,\;2k\le N,\;2m<N\), the explicit rate provides upper and lower bounds and a strict improvement on ordinary binomial KL at every noncentral threshold.
 
-The main paper gives the two-level reduction, all-tilt hypergeometric curvature theorem, parity-uniform Laplace envelope, sharp constant and odd-population equality classification. Its appendix provides fixed-margin fourth-order expansions. The separate technical supplement contains the fixed-sample success-count maximum, analytic contraction and subsidiary curvature results with their proofs.
+## Formal verification
 
-## Lean formalization
+The project uses a pinned Lean 4 toolchain and Mathlib dependencies. The mathematical sources and check scripts are in [ExactHoeffding/](ExactHoeffding/) and [checks/](checks/). To reproduce the Lean build:
 
-The `formal/full-closure-20261015` development proves the sharp curvature
-bound, the strict Laplace comparison, the odd all-parameter proxy maximum
-with its exhaustive margin extremizers, the actual finite-exchangeability
-variational identity, and the exact coefficient for every population size
-`N ≥ 2`. The odd theorem includes every legal sample size, with no asymptotic
-restriction. Its coefficient is the least valid one for actual exchangeable
-probability measures on the real cube.
+\`\`\`bash
+lake exe cache get
+lake build ExactHoeffding
+python3 checks/generate_axiom_audit.py --check
+lake env lean checks/full_closure_axioms.lean
+\`\`\`
 
-[Proof coverage](LEAN_PROOF_STATUS.md),
-[theorem mapping](theorem_to_lean.csv), and
-[completed assertion inventory](proof_gap_register.md) give the precise statement domains.
-All 30 named results in the main paper and supplement have complete entries in
-[the manuscript concordance](formal_status/manuscript_concordance.md), including
-the fourth-order optimized expansion, exact imbalance response, compact analytic
-contraction, actual variance supremum, and explicit Hamming-law extremizer.
-The integrated Lean kernel build and audit pass for **1637 public theorems in 258 project modules**. CI reproduces the build, manuscript-concordance check and transitive axiom audit.
+The full reproducibility ZIP contains the formal modules, computational verifiers, frozen input files and pinned dependency manifest.
 
-## Current publication files
+## Repository guide
 
-- [Piecewise KL research note](research/tail_bounds/minimum_variance_tail.pdf):
-  explicit nonquadratic tail bounds, switching points and comparison proofs.
-  [End-to-end Lean theorem and proof mapping](research/tail_bounds/lean_concordance.md)
-  cover both tails, closed support and strict piecewise-rate comparisons.
+| Directory | Contents |
+| --- | --- |
+| [submission/current/](submission/current/) | Authoritative Main+A+B manuscript and submission archives |
+| [ExactHoeffding/](ExactHoeffding/) | Lean 4 mathematical definitions and proofs |
+| [goal_b/](goal_b/) | Fixed-sample extremizer research and checks |
+| [research/tail_bounds/](research/tail_bounds/) | Piecewise KL derivations and supporting computations |
+| [checks/](checks/) | Reproduction and verification utilities |
+| [source/](source/) | Foundational manuscript source |
+| [research/history/](research/history/) | Historical independent checkpoints |
 
-- `manuscript.pdf`: the **28-page** principal paper, including the proofs of the sharp constants.
-- `supplementary_refinements.pdf`: the **6-page** standalone technical supplement.
-- `source/manuscript.tex`: modular LaTeX paper entry point.
-- `source/supplement.tex`: supplement entry point.
-- `submission/manuscript.tex`: independently compilable, single-file version of the principal paper.
-- `checks/`: symbolic, exact-rational and numerical verification scripts.
-- `checks/logs/`: the individual mathematical test logs and both PDF build logs, regenerated by CI.
-- `SHA256SUMS.txt`: maintained-file integrity manifest.
+The earlier 28-page foundational manuscript, separate supplement, and dated calculations remain available for provenance. The **only current unified submission** is maintained in \`submission/current/\`.
 
-## arXiv submission
-
-The [submission guide](submission/README.md) identifies the single-entry source archive, the combined article, and the separate reference bundle. `submission/combined_all.tex` includes the principal paper and all technical refinements, with one bibliography. To regenerate the archives and compile the extracted upload source in an empty directory:
-
-```bash
-python3 checks/package_submission.py
-```
-
-The publication bundle contains the manuscript and reference materials. Lean source and its build evidence remain in the repository, with their own status records.
-
-## Reproduce all results
-
-Install a full `pdflatex` toolchain, Python 3.10 or later, and the requirements. The continuous integration pipeline runs the **complete** `run_all.sh` suite, including the even-population extension test, and checks both PDFs before publishing.
-
-```bash
-python3 -m pip install -r requirements.txt
-python3 checks/sync_submission.py
-bash run_all.sh
-python3 checks/refresh_checksums.py
-sha256sum -c SHA256SUMS.txt
-```
-
-The [CI publication workflow](.github/workflows/publish-manuscript.yml) writes verified PDF files and all mathematical logs back to the main branch only after a successful test run.
-
-## Citation and rights
-
-Zinan Wang and Xinhao Yang. *Exact Hoeffding Constants for Finite Exchangeable Sequences*. Revised manuscript, 16 October 2026.
-
-The author's original text, code and data remain all-rights-reserved. Licensed third-party documents retain their original licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-
-## Proof certificates and theorem provenance
-
-- [Global curvature and Laplace certificate](docs/proof_certification_2026-10-11.md)
-- [Theorem-level priority concordance](docs/theorem_priority_2026-10-11.md)
-- Independent verification: `python3 checks/verify_independent_certificates.py`. The complete test suite records its output in `checks/logs/verify_independent_certificates.log`.
+[Submission guide](submission/README.md) · [Citation metadata](CITATION.cff) · [Formal theorem coverage](LEAN_PROOF_STATUS.md) · [License](LICENSE) · [Third-party notices](THIRD_PARTY_NOTICES.md)

@@ -1,4 +1,4 @@
-name: Verify and publish exact Hoeffding manuscript
+name: Verify foundational article and supplement
 
 on:
   push:
@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   verify-and-publish:
@@ -68,15 +68,3 @@ jobs:
           python3 checks/refresh_checksums.py
           sha256sum -c SHA256SUMS.txt
 
-      - name: Publish verified PDFs and computation logs
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add manuscript.pdf supplementary_refinements.pdf docs/proof_certification_2026-10-11.pdf submission/manuscript.tex \
-            SHA256SUMS.txt checks/logs/*.log
-          if ! git diff --cached --quiet; then
-            git commit -m 'Publish verified 28-page manuscript, supplement and full test logs [skip ci]'
-            git push origin HEAD:main
-          fi
