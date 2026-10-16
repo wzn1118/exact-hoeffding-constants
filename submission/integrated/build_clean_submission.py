@@ -102,10 +102,12 @@ def main():
     pre=re.sub(r"\\title\{.*?\\author\{",
         r"\\title{\\bfseries Sharp Hypergeometric Concentration: Exact Exchangeability Constants,\\ Fixed-Sample Extremizers, and Piecewise KL Bounds}\n\\author{",
         pre,count=1,flags=re.S)
+    pre=re.sub(r"pdftitle=\{[^}]+\}",
+        "pdftitle={Sharp Hypergeometric Concentration: Exact Exchangeability Constants, Fixed-Sample Extremizers, and Piecewise KL Bounds}",pre,count=1)
     pre+="\n"+r"\DeclareMathOperator*{\argmax}{arg\,max}"+"\n"
     pre=re.sub(r"\\date\{[^}]+\}",r"\\date{16 October 2026}",pre,count=1)
-    pre=pre.replace(r"\fancyhead[LO]{\small WANG -- SHARP FINITE EXCHANGEABILITY}",
-                    r"\fancyhead[LO]{\small WANG -- HYPERGEOMETRIC CONCENTRATION}")
+    pre=pre.replace(r"\fancyhead[LO]{\small WANG AND YANG -- SHARP FINITE EXCHANGEABILITY}",
+                    r"\fancyhead[LO]{\small WANG AND YANG -- HYPERGEOMETRIC CONCENTRATION}")
     add=("\n"+r"\noindent\textbf{Additional results.} "
          "For every fixed sample size, the optimal hypergeometric sub-Gaussian "
          "proxy is attained exactly at central success counts. In the canonical "

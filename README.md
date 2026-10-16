@@ -1,6 +1,8 @@
 # Exact Hoeffding Constants for Finite Exchangeable Sequences
 
-**Zinan Wang** · Revised 15 October 2026
+**Zinan Wang and Xinhao Yang** · Revised 16 October 2026
+
+Xinhao Yang: University of Southern California.
 
 **Copyright © 2026 Zinan Wang. All rights reserved.** See [LICENSE](LICENSE) and [COPYRIGHT.md](COPYRIGHT.md).
 
@@ -78,7 +80,7 @@ The [CI publication workflow](.github/workflows/publish-manuscript.yml) writes v
 
 ## Citation and rights
 
-Zinan Wang. *Exact Hoeffding Constants for Finite Exchangeable Sequences*. Revised manuscript, 15 October 2026.
+Zinan Wang and Xinhao Yang. *Exact Hoeffding Constants for Finite Exchangeable Sequences*. Revised manuscript, 16 October 2026.
 
 The author's original text, code and data remain all-rights-reserved. Licensed third-party documents retain their original licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 

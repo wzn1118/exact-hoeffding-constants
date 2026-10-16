@@ -1,6 +1,8 @@
 # 有限交换序列的精确 Hoeffding 常数
 
-**Zinan Wang · 2026 年 10 月 15 日修订**
+**Zinan Wang、Xinhao Yang · 2026 年 10 月 16 日修订**
+
+第二作者 Xinhao Yang：University of Southern California（南加州大学）。
 
 [英文主论文（28 页）](manuscript.pdf) · [技术补充（6 页）](supplementary_refinements.pdf) · [完整论文与 arXiv 投稿包](submission/README.md)
 
