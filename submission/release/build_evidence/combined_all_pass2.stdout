@@ -98,6 +98,9 @@ dmap/pdftex.map}] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
 [30] [31] [32] (/usr/share/texmf/tex/latex/lm/t1lmtt.fd) [33] [34]
 (./combined_all.aux)
 
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
 Package rerunfilecheck Warning: File `combined_all.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
@@ -120,5 +123,5 @@ hare/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on combined_all.pdf (34 pages, 528479 bytes).
+Output written on combined_all.pdf (34 pages, 529281 bytes).
 Transcript written on combined_all.log.

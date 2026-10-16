@@ -4,9 +4,12 @@ title: "Exact Hoeffding Constants for Finite Exchangeable Sequences"
 authors:
   - family-names: Wang
     given-names: Zinan
+  - family-names: Yang
+    given-names: Xinhao
+    affiliation: University of Southern California
 type: software
 version: "1.2.0"
-date-released: "2026-10-15"
+date-released: "2026-10-16"
 repository-code: "https://github.com/wzn1118/exact-hoeffding-constants"
 preferred-citation:
   type: unpublished
@@ -14,8 +17,11 @@ preferred-citation:
   authors:
     - family-names: Wang
       given-names: Zinan
+    - family-names: Yang
+      given-names: Xinhao
+      affiliation: University of Southern California
   year: 2026
-  date-published: "2026-10-15"
+  date-published: "2026-10-16"
   url: "https://github.com/wzn1118/exact-hoeffding-constants"
   notes: "Revised manuscript. Copyright (c) 2026 Zinan Wang. All rights reserved."
 abstract: >-

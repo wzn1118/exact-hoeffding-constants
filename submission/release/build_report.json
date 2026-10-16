@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-15",
+  "date": "2026-10-16",
   "clean_directory_build": true,
   "publication_bundle_build_exit_code": 0,
   "publication_bundle_hash_check_exit_code": 0,
@@ -38,21 +38,21 @@
     "refs/papers/LeeKim2026.pdf"
   ],
   "artifacts": {
-    "Wang_Zinan_Exact_Hoeffding_arXiv_Source_2026-10-15.zip": {
-      "bytes": 29655,
-      "sha256": "18c558b1cefd351fa6f1b6b047c82ceb8a1761095510513699a67ff4f00b57f9"
+    "Wang_Zinan_Exact_Hoeffding_arXiv_Source_2026-10-16.zip": {
+      "bytes": 29707,
+      "sha256": "b5f542dc80712d99f7ead6da795cbe8f8ca6e1445fb073a89289fee5aff75f01"
     },
-    "Wang_Zinan_Exact_Hoeffding_References_2026-10-15.zip": {
-      "bytes": 2248817,
-      "sha256": "20d539c83672288a1ceeedae36d4087ca3a3ab3ff8baae444a3d60690760c6fe"
+    "Wang_Zinan_Exact_Hoeffding_References_2026-10-16.zip": {
+      "bytes": 2248823,
+      "sha256": "87ffcf1a9e059b2ac5e75272746dadbc4179e0f73997a22b72e630c333df9edf"
     },
-    "Wang_Zinan_Exact_Hoeffding_Publication_Bundle_2026-10-15.zip": {
-      "bytes": 3616815,
-      "sha256": "09cfeff2e6d4916e527b16a7895e0fee82a90cdb2df8b1224efe6d8538fcdd3e"
+    "Wang_Zinan_Exact_Hoeffding_Publication_Bundle_2026-10-16.zip": {
+      "bytes": 3619092,
+      "sha256": "2fc8e3fc1dc1994fae6c6e500650a899f3ce6f067aad159692302588735fcfb9"
     },
     "combined_all.pdf": {
-      "bytes": 528478,
-      "sha256": "a80ba90f4bcbd3f41e50cced222713ca858722fdb1ededa020b648760d85cd9d"
+      "bytes": 529282,
+      "sha256": "13ae0f3c6dd297ceef1fb4dfe4d83b5a1fea4e0442c89387302f8b80c89e0348"
     }
   }
 }

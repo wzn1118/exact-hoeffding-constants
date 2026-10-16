@@ -1,15 +1,17 @@
 # Submission files
 
-**Zinan Wang · 15 October 2026**
+**Zinan Wang and Xinhao Yang · 16 October 2026**
+
+Xinhao Yang: University of Southern California.
 
 The complete article combines the principal paper and all technical refinements in **34 pages**, with **30 theorem, proposition, lemma and corollary statements** and **16 references**. It uses one bibliography and resolves all cross-references internally.
 
 | File | Purpose |
 |---|---|
 | [Complete article](release/combined_all.pdf) | The full manuscript, including the technical refinements. |
-| [arXiv source archive](release/Wang_Zinan_Exact_Hoeffding_arXiv_Source_2026-10-15.zip) | Upload this ZIP in the arXiv source-upload step. It contains exactly one file, `combined_all.tex`, with no external input files. |
-| [Publication bundle](release/Wang_Zinan_Exact_Hoeffding_Publication_Bundle_2026-10-15.zip) | The full article, separate 28-page principal paper and 6-page supplement, modular sources, build script, reference materials and rights notices. |
-| [Reference companion](release/Wang_Zinan_Exact_Hoeffding_References_2026-10-15.zip) | Catalogue of all 16 cited works and four unchanged CC BY 4.0 reference PDFs, with source versions, licenses and checksums. |
+| [arXiv source archive](release/Wang_Zinan_Exact_Hoeffding_arXiv_Source_2026-10-16.zip) | Upload this ZIP in the arXiv source-upload step. It contains exactly one file, `combined_all.tex`, with no external input files. |
+| [Publication bundle](release/Wang_Zinan_Exact_Hoeffding_Publication_Bundle_2026-10-16.zip) | The full article, separate 28-page principal paper and 6-page supplement, modular sources, build script, reference materials and rights notices. |
+| [Reference companion](release/Wang_Zinan_Exact_Hoeffding_References_2026-10-16.zip) | Catalogue of all 16 cited works and four unchanged CC BY 4.0 reference PDFs, with source versions, licenses and checksums. |
 | [Abstract](release/abstract.txt) | Copyable arXiv abstract, using standard mathematical notation. |
 | [Submission metadata](release/arxiv_metadata.json) | Title, author, categories, MSC codes and comments. |
 | [Build report](release/build_report.json) | Clean-directory build results, article structure and artifact hashes. |
@@ -17,7 +19,7 @@ The complete article combines the principal paper and all technical refinements 
 
 For arXiv, select **Mathematics → Probability (`math.PR`)** as the primary category. `math.ST` is an optional cross-list. Enter the title and author from the metadata, paste the abstract, and upload the dedicated source ZIP. The archive has a single entry point, `combined_all.tex`, and needs pdfLaTeX with standard TeX Live packages. The reference companion and the larger publication bundle are separate reading and reproduction materials.
 
-The displayed revision date is **15 October 2026**. The PDF and TeX source retain **Copyright © 2026 Zinan Wang. All rights reserved.** The third-party reference PDFs retain their respective CC BY 4.0 licenses, recorded in `THIRD_PARTY_NOTICES.md` and `refs/SOURCES.json`.
+The displayed revision date is **16 October 2026**. The PDF and TeX source retain **Copyright © 2026 Zinan Wang. All rights reserved.** The third-party reference PDFs retain their respective CC BY 4.0 licenses, recorded in `THIRD_PARTY_NOTICES.md` and `refs/SOURCES.json`.
 
 ## Rebuild
 

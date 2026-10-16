@@ -1,7 +1,8 @@
 # Goal B: all-finite hypergeometric proxy extremizers
 
 Paper: **Balanced Populations Maximize the Optimal Sub-Gaussian Proxy for Hypergeometric Sampling at Every Finite Size**.
-Author: Zinan Wang, 16 October 2026.
+Authors: Zinan Wang and Xinhao Yang, 16 October 2026.
+Xinhao Yang: University of Southern California.
 
 This directory contains an English LaTeX research manuscript, an independently designed arithmetic and numerical verifier, reproduction scripts, and the corresponding Lean formalization. The paper proves that for every N>=2 and 1<=m<N, the maximizing marked count is exactly k=floor(N/2) or ceil(N/2), including an explicit universal positive separation from the ordinary central variance for all noncentral k.
 

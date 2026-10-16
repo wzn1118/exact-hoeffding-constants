@@ -94,7 +94,7 @@ python3 checks/check_manuscript_concordance.py
 lake env lean checks/full_closure_axioms.lean 2>&1 | tee build/formal/axioms.log
 python3 checks/check_axiom_output.py build/formal/axioms.log
 '''
-    members["README.md"] = (f"# Exact Hoeffding Constants for Finite Exchangeable Sequences\n\nZinan Wang · {DATE}\n\n"
+    members["README.md"] = (f"# Exact Hoeffding Constants for Finite Exchangeable Sequences\n\nZinan Wang and Xinhao Yang · {DATE}\n\nXinhao Yang: University of Southern California.\n\n"
         "This research bundle contains the complete article, its modular LaTeX source, all project Lean source, pinned toolchain and dependency metadata, reproduction scripts, theorem mapping, source and audit records, and the cited literature catalogue.\n\n"
         "## Article\n\nRead `article/combined_all.pdf`. The source `article/combined_all.tex` contains the principal paper and all technical refinements with one bibliography. The separate principal paper and supplement are `manuscript.pdf` and `supplementary_refinements.pdf`. Run `bash build_articles.sh` to rebuild the three PDFs.\n\n"
         f"For arXiv, use `{PREFIX}_arXiv_Source_{DATE}.zip`. The abstract and metadata are provided separately.\n\n"

@@ -15,10 +15,10 @@ import zipfile
 
 from sync_submission import ROOT, synchronize
 
-DATE = "2026-10-15"
+DATE = "2026-10-16"
 PREFIX = "Wang_Zinan_Exact_Hoeffding"
-STAMP = (2026, 10, 15, 0, 0, 0)
-ENV = {**os.environ, "SOURCE_DATE_EPOCH": "1792022400", "FORCE_SOURCE_DATE": "1", "TZ": "UTC"}
+STAMP = (2026, 10, 16, 0, 0, 0)
+ENV = {**os.environ, "SOURCE_DATE_EPOCH": "1792108800", "FORCE_SOURCE_DATE": "1", "TZ": "UTC"}
 
 
 def sha256(data: bytes) -> str:
@@ -55,7 +55,7 @@ def compile_tex(directory: Path, stem: str, evidence: Path) -> dict:
     info = run(["pdfinfo", stem + ".pdf"], directory).stdout
     write_evidence(evidence / (stem + ".pdfinfo"), info)
     pages = int(re.search(r"(?m)^Pages:\s+(\d+)", info).group(1))
-    if not re.search(r"(?m)^Author:\s+Zinan Wang\s*$", info):
+    if not re.search(r"(?m)^Author:\s+Zinan Wang and Xinhao Yang\s*$", info):
         raise RuntimeError("Unexpected PDF author in " + stem)
     return {"pages": pages, "passes": 3, "exit_code": 0, "final_diagnostics": []}
 
@@ -105,7 +105,7 @@ def main() -> None:
             verified.append(key)
     if len(verified) != 4:
         raise RuntimeError("Review the reference PDF inventory")
-    references["README.txt"] = ("Reference companion for Zinan Wang, Exact Hoeffding Constants for Finite Exchangeable Sequences.\n"
+    references["README.txt"] = ("Reference companion for Zinan Wang and Xinhao Yang, Exact Hoeffding Constants for Finite Exchangeable Sequences.\n"
         "The catalogue identifies all 16 cited works. Four unchanged CC BY 4.0 PDFs are included.\n"
         "See THIRD_PARTY_NOTICES.md and refs/SOURCES.json for authorship, source versions, licenses and hashes.\n"
         "Other references are supplied as bibliographic records and source links.\n").encode()
@@ -147,7 +147,8 @@ def main() -> None:
     pages = builds["combined_all"]["pages"]
     abstract = (r"We determine the least constant in the Hoeffding-type exponential-moment inequality for arbitrary centered linear contrasts of bounded exchangeable sequences of length $N$. The sharp coefficient is $C_N^\star=N/(N-1)$ for even $N$ and $C_N^\star=2/[(N-1)\log((N+1)/(N-1))]$ for odd $N$. The even coefficient coincides with the maximal normalized variance. In odd populations the optimal Laplace parameter is nonzero, and the sharp coefficient strictly exceeds the variance benchmark. We prove an all-tilt hypergeometric variance bound and a parity-uniform mean-dependent Laplace envelope, and determine all odd-population extremizers. Further results give fourth-order optimal-proxy expansions, fixed-sample success-count extremality, and analytic contraction on compact success-proportion intervals." + "\n")
     (output / "abstract.txt").write_text(abstract)
-    metadata = {"title": "Exact Hoeffding Constants for Finite Exchangeable Sequences", "authors": ["Zinan Wang"],
+    metadata = {"title": "Exact Hoeffding Constants for Finite Exchangeable Sequences", "authors": ["Zinan Wang", "Xinhao Yang"],
+                "affiliations": {"Xinhao Yang": "University of Southern California"},
                 "date": DATE, "primary_category": "math.PR", "optional_cross_list": "math.ST",
                 "comments": f"{pages} pages, including all technical refinements; no figures",
                 "msc_2020": ["60E15", "60F10", "33C45", "62E15"],
@@ -174,7 +175,7 @@ done
     article[upload_name] = upload.read_bytes()
     article["arxiv_metadata.json"] = (output / "arxiv_metadata.json").read_bytes()
     article["abstract.txt"] = (output / "abstract.txt").read_bytes()
-    article["README.md"] = (f"# Exact Hoeffding Constants for Finite Exchangeable Sequences\n\nZinan Wang · {DATE}\n\n"
+    article["README.md"] = (f"# Exact Hoeffding Constants for Finite Exchangeable Sequences\n\nZinan Wang and Xinhao Yang · {DATE}\n\nXinhao Yang: University of Southern California.\n\n"
         f"The complete article is `article/combined_all.pdf` ({pages} pages). Its single LaTeX entry point is `article/combined_all.tex`.\n\n"
         "The principal paper and technical supplement are also supplied separately as `manuscript.pdf` and `supplementary_refinements.pdf`. "
         "Their modular sources are in `source/`. Run `bash build_articles.sh` with pdfLaTeX to rebuild all three PDFs.\n\n"
