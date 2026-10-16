@@ -1,6 +1,6 @@
 # Goal B — finite-N fixed-sample hypergeometric extremizers
 
-**Research result, 16 October 2026.** This note derives an all-parameter maximizing-success-count theorem from analytic inequalities already present in the formal/full-closure-20261015 Lean branch. The NEW assembly and gap inequalities below have NOT yet been compiled in Lean. The odd-population value for arbitrary m is characterized by an exact one-variable optimization, not a general elementary closed form.
+**Research result, 16 October 2026.** This note derives an all-parameter maximizing-success-count theorem from analytic inequalities already present in the formal/full-closure-20261015 Lean branch. The assembly and gap inequalities are now compiled in `ExactHoeffding/GoalBFixedSample.lean`. The odd-population value for arbitrary m is characterized by an exact one-variable optimization, not a general elementary closed form.
 
 ## Theorem
 
@@ -93,6 +93,6 @@ Upstream inputs in formal/full-closure-20261015:
 - complement symmetries, NormalizedProxy and the ordinary variance identity;
 - EvenHypergeomExtremizers.even_normalized_proxy_all_equality.
 
-NEW Lean proof obligations: artanh cubic lower bound, scalar beta gap, the k<m curvature-to-central comparison, a uniform all-N theorem for the exact normalized or unnormalized proxy (track scaling carefully), and the quantitative separation. Run lake build ExactHoeffding and the transitive axiom audit before calling the new theorem kernel-certified. For odd m>=3, an elementary closed formula for the central value has NOT been established by this proof.
+The Lean implementation proves the artanh cubic lower bound, scalar beta gaps, the `k<m` curvature-to-central comparison, the uniform all-N normalized and unnormalized extremizer theorems, and the quantitative separation. The formal endpoints are `hypergeomOptimalProxy_fixed_sample_extremizers`, `hypergeomOptimalProxy_fixed_sample_gap_even`, and `hypergeomOptimalProxy_fixed_sample_gap_odd`; the transitive axiom audit reports only standard foundational axioms. For odd `m>=3`, an elementary closed formula for the central value is not asserted by this proof.
 
-**Provenance.** Original analytic deduction from the repo's previously established inequalities. This note is not independently peer-reviewed and does not claim publication priority. It should remain on its research branch pending independent mathematical and Lean checks.
+**Provenance.** Original analytic deduction from the repository's previously established inequalities. The formal source and independent arithmetic/numerical checks are shipped with the Goal B package.

@@ -302,7 +302,7 @@ central success count established in Theorem \ref{main}.
 Complementation supplies the two remaining cases.
 \end{proof}
 
-\section{Interpretation, computational audit, and formal boundaries}
+\section{Interpretation, computational audit, and formalization}
 The theorem locates the maximum of the \emph{unnormalized}
 optimal proxy for fixed $m$, not the separately normalized
 coefficient in the global exchangeability optimization.
@@ -323,13 +323,14 @@ The one- and two-draw closed forms were separately checked.
 Numerical checks diagnose implementation errors; the
 unbounded parameter conclusion rests solely on the proof.
 
-The input results from \cite{Wang} have been kernel-checked in
-the companion Lean project, but the new all-$N$ argmax and
-quantitative separation assembly must still be encoded and
-built as Lean theorems. The source package includes a
-theorem-dependency and auditing checklist. This manuscript
-has not yet undergone external peer review, and its
-literature audit is not an exhaustive priority claim.
+The input results from \cite{Wang} and the present fixed-sample assembly
+are kernel-checked in the companion Lean project. The public endpoints
+\texttt{hypergeomOptimalProxy\_fixed\_sample\_extremizers},
+\texttt{hypergeomOptimalProxy\_fixed\_sample\_gap\_even}, and
+\texttt{hypergeomOptimalProxy\_fixed\_sample\_gap\_odd} cover the all-$N$ argmax and
+explicit parity gaps. The odd central value is retained in its exact
+finite-sum variational form; no elementary formula or uniqueness of the
+optimizing tilt is used.
 
 \section{Conclusion}
 For every finite population and every fixed nontrivial sample size,

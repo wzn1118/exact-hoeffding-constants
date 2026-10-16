@@ -219,3 +219,4 @@ import ExactHoeffding.ExchangeableVarianceSupremum
 import ExactHoeffding.ActualCompactFirstCorrectionAllSamples
 
 import ExactHoeffding.GeneralCGFCurvature
+import ExactHoeffding.GoalBFixedSample
