@@ -1,12 +1,15 @@
 # Exact Hoeffding Constants for Finite Exchangeable Sequences
 
-**Zinan Wang and Xinhao Yang** · Revised 16 October 2026
+**Zinan Wang — The University of Manchester**  
+**Xinhao Yang — University of Southern California**
 
-Xinhao Yang: University of Southern California.
+## Current unified submission (Main + A + B)
 
-**Copyright © 2026 Zinan Wang. All rights reserved.** See [LICENSE](LICENSE) and [COPYRIGHT.md](COPYRIGHT.md).
+The authoritative manuscript is **Sharp Hypergeometric Concentration: Exact Exchangeability Constants, Fixed-Sample Extremizers, and Piecewise KL Bounds**.
 
-[Main paper — 28 pages](manuscript.pdf) · [Technical supplement — 6 pages](supplementary_refinements.pdf) · [Complete article and arXiv upload files](submission/README.md) · [Chinese guide](README_zh.md)
+[Unified paper](submission/current/manuscript.pdf) · [Independent LaTeX source](submission/current/manuscript.tex) · [arXiv upload](submission/current/arxiv-source.zip) · [Clean submission package](submission/current/clean-submission.zip) · [Complete reproducibility archive](submission/current/complete-reproducibility.zip) · [Submission metadata](submission/current/metadata.json).
+
+The historical 28-page main article, separate supplement, and earlier combined sources are retained for archival reproducibility. For **new submissions**, use only the documents under submission/current/. The integrated article covers the exact exchangeability constant, all-finite fixed-sample extremizers, and canonical piecewise KL upper/lower tails.
 
 The paper determines the optimal Hoeffding coefficient for centered linear contrasts of bounded, finitely exchangeable sequences:
 

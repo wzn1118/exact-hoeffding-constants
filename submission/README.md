@@ -1,47 +1,25 @@
-# Submission files
+# Authoritative Main+A+B submission
 
-**Zinan Wang and Xinhao Yang · 16 October 2026**
+**Zinan Wang** — The University of Manchester  
+**Xinhao Yang** — University of Southern California
 
-Xinhao Yang: University of Southern California.
+The only current unified submission is maintained in the [current release directory](current/README.md).
 
-The complete article combines the principal paper and all technical refinements in **34 pages**, with **30 theorem, proposition, lemma and corollary statements** and **16 references**. It uses one bibliography and resolves all cross-references internally.
+- [Current paper PDF](current/manuscript.pdf)
+- [Single-file LaTeX](current/manuscript.tex)
+- [arXiv source archive](current/arxiv-source.zip) (one TeX file)
+- [Clean paper submission archive](current/clean-submission.zip)
+- [Full formal and numerical reproducibility archive](current/complete-reproducibility.zip)
+- [Author and classification metadata](current/metadata.json)
 
-| File | Purpose |
-|---|---|
-| [Complete article](release/combined_all.pdf) | The full manuscript, including the technical refinements. |
-| [arXiv source archive](release/Wang_Zinan_Exact_Hoeffding_arXiv_Source_2026-10-16.zip) | Upload this ZIP in the arXiv source-upload step. It contains exactly one file, `combined_all.tex`, with no external input files. |
-| [Publication bundle](release/Wang_Zinan_Exact_Hoeffding_Publication_Bundle_2026-10-16.zip) | The full article, separate 28-page principal paper and 6-page supplement, modular sources, build script, reference materials and rights notices. |
-| [Reference companion](release/Wang_Zinan_Exact_Hoeffding_References_2026-10-16.zip) | Catalogue of all 16 cited works and four unchanged CC BY 4.0 reference PDFs, with source versions, licenses and checksums. |
-| [Abstract](release/abstract.txt) | Copyable arXiv abstract, using standard mathematical notation. |
-| [Submission metadata](release/arxiv_metadata.json) | Title, author, categories, MSC codes and comments. |
-| [Build report](release/build_report.json) | Clean-directory build results, article structure and artifact hashes. |
-| [SHA-256 manifest](release/SHA256SUMS.txt) | Checksums for the released files. |
+The corresponding LaTeX is assembled from submission/manuscript.tex, goal_b/paper/main.tex, and research/tail_bounds/minimum_variance_tail.tex. Each source retains its own full mathematical proof. The integrated PDF is checked for metadata, duplicate labels and unresolved citations.
 
-For arXiv, select **Mathematics → Probability (`math.PR`)** as the primary category. `math.ST` is an optional cross-list. Enter the title and author from the metadata, paste the abstract, and upload the dedicated source ZIP. The archive has a single entry point, `combined_all.tex`, and needs pdfLaTeX with standard TeX Live packages. The reference companion and the larger publication bundle are separate reading and reproduction materials.
+To reproduce the current submission after installing pdfLaTeX, latexmk, Python and the pinned Lean toolchain:
 
-The displayed revision date is **16 October 2026**. The PDF and TeX source retain **Copyright © 2026 Zinan Wang. All rights reserved.** The third-party reference PDFs retain their respective CC BY 4.0 licenses, recorded in `THIRD_PARTY_NOTICES.md` and `refs/SOURCES.json`.
+    python3 submission/integrated/build_clean_submission.py
+    (cd submission/integrated && latexmk -pdf -halt-on-error combined_manuscript.tex)
+    python3 checks/build_current_release.py
 
-## Rebuild
+The separate original main paper (28 pages), supplement (6 pages), and older combined_all.tex release have historical value, but are superseded for unified Main+A+B submissions. The legacy packaging script checks/package_submission.py is retained for reproducing that historical edition.
 
-From the repository root:
-
-```bash
-python3 checks/package_submission.py
-(cd submission/release && sha256sum -c SHA256SUMS.txt)
-```
-
-The script regenerates both flattened LaTeX sources, creates the upload archive, extracts it into a new temporary directory and runs pdfLaTeX three times. It also builds the modular principal paper and supplement in a separate clean directory, checks final-pass diagnostics, validates the 30 statements and 16 bibliography entries, and verifies the four included reference PDFs against their recorded hashes. The final TeX logs and compiler output are retained in `release/build_evidence/`.
-
-The publication bundle includes `build_articles.sh`; run `bash build_articles.sh` after extraction to rebuild all three PDFs. Lean source and formalization records are maintained in the repository alongside the manuscript.
-
-## Full research bundle
-
-After integrating the final Lean source, theorem mapping and public-theorem audit, create the research archive with:
-
-```bash
-python3 checks/package_research.py
-```
-
-The script packages the complete article and literature together with every project Lean source file, `lean-toolchain`, the exact Mathlib and transitive dependency pins from `lake-manifest.json`, `reproduce_formal.sh`, theorem mapping and audit records. It checks that the publication sources match the integrated sources and that the public-theorem audit matches the umbrella import closure. `RESEARCH_PROVENANCE.json` records the project commit, source inventory and dependency versions. The archive excludes compiled objects, external dependency caches and earlier delivery archives.
-
-For a separate integrated worktree, use `python3 checks/package_research.py --formal-root /path/to/integrated/repository`. The source snapshot and publication files must agree.
+The full reproducibility archive contains the mathematical and formal verification sources, check programs, frozen inputs and dependency pins, with a single disclosure of AI assistance in Lean 4 formalization and verification.
