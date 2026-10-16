@@ -78,8 +78,6 @@ def polish_integrated(text):
         if n != 1:
             raise RuntimeError("Language edit regex missing: " + pattern[:80])
 
-    sub(r"\hypersetup{pdftitle={Exact Hoeffding Constants for Finite Exchangeable Sequences}",
-        r"\hypersetup{pdftitle={Sharp Hypergeometric Concentration: Exact Exchangeability Constants, Fixed-Sample Extremizers, and Piecewise KL Bounds}")
     sub(r"\fancyhead[LO]",r"\fancyhead[L]")
     sub(r"\author{Zinan Wang\thanks{Copyright \textcopyright\ 2026 Zinan Wang. All rights reserved.}\\{\small The University of Manchester}\and Xinhao Yang\\{\small University of Southern California}}",
         r"\author{Zinan Wang\\{\small The University of Manchester}\and Xinhao Yang\\{\small University of Southern California}}")
