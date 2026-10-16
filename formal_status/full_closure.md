@@ -1,6 +1,6 @@
 # Formal proof coverage — 15 October 2026
 
-Branch: `formal/full-closure-20261015`.
+Branch: `formal/full-closure-20261016`.
 Lean 4.33.0; Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`.
 
 ## Exact constants and actual probability laws
@@ -108,7 +108,7 @@ The joint analytic optimizer and actual normalized supremum are proved in `Joint
 
 `CanonicalGapPopulationDerivative`, `CompactCanonicalContraction`, and `CompactAnalyticHypergeomContraction` prove the exact continuous factorization, its explicit boundary, uniform compact positivity, and strict actual hypergeometric comparison. `CanonicalOptimizedPopulationRemainder` and `ActualCompactFirstCorrection` prove the explicit first population correction and a uniform quadratic remainder on compact success-proportion intervals, including balance.
 
-`EvenHypergeomExtremizers` and `OddHypergeomExtremizers` classify all maximizing hypergeometric margin pairs. `ExchangeableVarianceSupremum` proves the actual variance supremum, nearest-balanced Hamming attainment, parity comparison, integral gap and fourth-order expansion. `ExplicitExtremizerTheorem` gives the actual single-coordinate sharpness witness, including the Bernoulli pushforward and both parity equality mechanisms. All 30 named manuscript results have complete entries in the concordance.
+`EvenHypergeomExtremizers` and `OddHypergeomExtremizers` classify all maximizing hypergeometric margin pairs. `ExchangeableVarianceSupremum` proves the actual variance supremum, nearest-balanced Hamming attainment, parity comparison, integral gap and fourth-order expansion. `ExplicitExtremizerTheorem` gives the actual single-coordinate sharpness witness, including the Bernoulli pushforward and both parity equality mechanisms. All 35 theorem-class environments and 2 supplementary claims in the current manuscript have complete entries in the generated concordance.
 
 ## Reproduction and evidence
 
@@ -126,14 +126,14 @@ The checker requires one result for every public theorem and accepts only
 performs this audit. Individual module evidence is retained under
 `checks/logs/full_closure/`; each log applies to its recorded source checkpoint.
 New modules under development are added to the umbrella after their successful
-kernel check. `proof_gap_register.md` records completed assertion coverage; `checks/check_manuscript_concordance.py` verifies all 30 named-result entries and their imported theorem references.
+kernel check. `proof_gap_register.md` records completed assertion coverage; `checks/check_full_manuscript_concordance.py` verifies every theorem-class environment and supplementary claim against the generated audit.
 
 ## Integrated verification checkpoint
 
 The control worktree independently recompiled the Jacobi, fixed-sample,
 real-margin, all-order derivative, jointly analytic global optimizer, and
 actual fourth-order expansion chains. Every integrated module passed its kernel check. The complete umbrella and
-generated audit pass: **1637 public theorems in 258 project modules**, with
+generated audit pass: **1723 public theorems in 280 project modules**, with
 only `propext`, `Classical.choice`, and `Quot.sound`.
 
 Evidence: `checks/logs/full_closure/jacobi_tilt_second_rootverify.log`,
@@ -151,3 +151,8 @@ central equality interval against `I_P`. The assembled theorem is
 `hypergeom_piecewise_kl_end_to_end`. The focused audit and exact statement
 coverage are recorded in `research/tail_bounds/lean_validation.md` and
 `research/tail_bounds/lean_concordance.md`.
+
+
+## 16 October 2026 closure additions
+
+The current umbrella adds the integer-tail, four-rate KL, Bennett/Bernstein, factorial-Chernoff, odd-global, and finite-support mean-coordinate modules. `FiniteSupportMeanEnvelope` proves the Legendre-to-envelope comparison by change of variables; its strict and endpoint variants cover strict gaps and one-sided endpoint continuation. `FiniteSupportTiltCurveOfLaw` realizes the interface from an actual normalized finite weighted law with ordered positive endpoint atoms and positive tilted variance, while `FiniteSupportRecurrenceBridge` specializes it to the paper's recurrence laws. The generated current concordance has 35 theorem-class rows and 2 supplementary claims.

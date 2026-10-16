@@ -1,6 +1,6 @@
 # Manuscript proof obligations
 
-Updated 15 October 2026. Current branch: `formal/full-closure-20261015`.
+Updated 16 October 2026. Current branch: `formal/full-closure-20261016`.
 
 ## Completed core obligations
 
@@ -34,12 +34,12 @@ These quantify over every legal sample size for each odd population.
 
 ## Completed proposition assembly
 
-All 30 named results in the principal manuscript and supplement have complete mappings in `formal_status/manuscript_concordance.md`.
+All 35 theorem-class environments and 2 supplementary claims in the current unified manuscript have complete mappings in `submission/current/theorem_lean_concordance.md`.
 
 - `ExchangeableVarianceSupremum` defines the actual variance supremum over exchangeable cube probability laws and nonzero zero-sum contrasts. It proves the floor and parity formulas, attainment under the nearest-balanced Hamming law for every contrast, the strict odd variance gap, its integral identity, and its fourth-order expansion with coefficient `26/45`.
 - `ExplicitExtremizerTheorem` assembles the nearest-balanced actual Hamming law, explicit coordinate contrast, full Bernoulli pushforward, odd nonzero-tilt contact, and even zero-tilt limiting equality for every population `N≥2`.
 
-The integrated kernel build and generated axiom audit pass for all 1518 public theorems in 252 imported project modules. All F-01–F-10 obligations and the two assembled parity propositions are completed.
+The integrated kernel build and generated axiom audit pass for all 1723 public theorems in 280 imported project modules. All F-01–F-10 obligations and the two assembled parity propositions are completed.
 
 An incorrect pointwise odd constant curvature shortcut remains excluded:
 the odd sharp quadratic proxy must follow from integrated mean-dependent
@@ -53,3 +53,8 @@ successful kernel check. No scalar inequality about a supplied Bernoulli list
 is counted as proof that a hypergeometric law has that representation.
 No symbolic script substitutes for a Lean proof term. The generated theorem
 audit records transitive axiom dependencies for the whole imported development.
+
+
+## 16 October closure additions
+
+A1 now has an actual finite-law realization: `FiniteSupportLawData` encodes a normalized finite weighted law with ordered positive endpoint atoms, and `finiteSupportLawData_toTiltCurve` constructs the mean-coordinate interface under the explicit positive tilted-variance condition. The generic Legendre/envelope comparison, strict gap, endpoint continuation, and Markov tail consequences are imported by the umbrella and included in the generated audit. A2, A3, A4, integer thresholds, and two-sided tail statements are represented by the modules listed in the current concordance.

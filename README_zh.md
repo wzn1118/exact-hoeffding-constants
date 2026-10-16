@@ -19,3 +19,6 @@ lake build ExactHoeffding
 较早的 28 页主论文、补充论文和分阶段研究记录属于历史材料，保留用于核对研究来源。**今后投稿请以 `submission/current/` 为唯一入口。**
 
 [英文仓库首页](README.md) · [投稿说明](submission/README.md) · [形式化证明范围](LEAN_PROOF_STATUS.md)
+
+
+完整定理—Lean 对应表：`submission/current/theorem_lean_concordance.md`。
