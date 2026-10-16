@@ -30,20 +30,35 @@ def extension(src, prefix):
                 nx=re.search(r"\\(?:section|subsection|appendix)\b",text[hit.end():])
                 cut=hit.end()+nx.start() if nx else len(text)
                 text=text[:hit.start()]+text[cut:]
+    if prefix=="B":
+        text=re.sub(r"\\section\{Interpretation, computational audit, and formalization\}.*?(?=\\section\{Conclusion\})",
+            r"\\section{Scope of the fixed-sample theorem}"+"\n"+
+            "The maximizing success counts are classified at every finite population size. "+
+            "The odd-population value at general fixed sample size has the exact "+
+            "one-dimensional variational expression obtained above.\n",
+            text,flags=re.S)
+        text=re.sub(r"\\section\{Conclusion\}.*?(?=\\appendix|\Z)","",text,flags=re.S)
+    if prefix=="A":
+        text=re.sub(r"We use the two inequalities established in the accompanying manuscript\s+\\cite\{Wang\}:",
+            "We use the two inequalities established in Part I:",text)
+        text=text.replace("Throughout Sections 1--4, assume","Throughout this part, assume")
+        text=re.sub(r"The results below are consequences and refinements of these established\s+inequalities; their proof does not assert a new Jacobi factorization or a\s+new two-level exchangeability reduction\.",
+            "",text)
     text=text.replace(r"\appendix",r"\section*{Additional derivations}")
     text=re.sub(r"(?m)^\\noindent\\textbf\{Keywords[^\n]*\n","",text)
     text=re.sub(r"\\(label|ref|eqref|autoref|pageref)\{([^{}]+)\}",
         lambda m:"\\"+m.group(1)+"{"+prefix+":"+m.group(2)+"}",text)
-    text=text.replace(r"\cite{Wang2026}","the preceding exact-curvature results")
-    text=text.replace(r"\cite{Wang}","the exact-curvature theorem above")
+
     bibkeys={}
     chunks=re.findall(r"(\\bibitem(?:\[[^]]*\])?\{([^}]+)\}.*?)(?=\\bibitem|\Z)",bib,flags=re.S)
     for entry,key in chunks:
         if key not in ("Wang","Wang2026"):
             bibkeys[key]=prefix+":"+key
     def rewrite_cite(m):
-        keys=[bibkeys.get(k.strip(),k.strip()) for k in m.group(2).split(",")]
-        return m.group(1)+",".join(keys)+m.group(3)
+        keys=[k.strip() for k in m.group(2).split(",")
+              if k.strip() not in ("Wang","Wang2026")]
+        if not keys:return "the preceding exact-curvature results"
+        return m.group(1)+",".join(bibkeys.get(k,k) for k in keys)+m.group(3)
     text=re.sub(r"(\\cite(?:\[[^]]+\])?\{)([^}]+)(\})",rewrite_cite,text)
     entries=[entry.replace("{"+key+"}","{"+bibkeys[key]+"}",1)
              for entry,key in chunks if key in bibkeys]
@@ -69,12 +84,13 @@ def main():
         r"\\title{\\bfseries Sharp Hypergeometric Concentration: Exact Exchangeability Constants,\\ Fixed-Sample Extremizers, and Piecewise KL Bounds}\n\\author{",
         pre,count=1,flags=re.S)
     pre+="\n"+r"\DeclareMathOperator*{\argmax}{arg\,max}"+"\n"
+    pre=re.sub(r"\\date\{[^}]+\}",r"\\date{16 October 2026}",pre,count=1)
     add=("\n"+r"\noindent\textbf{Additional results.} "
          "For every fixed sample size, the optimal hypergeometric sub-Gaussian "
          "proxy is attained exactly at central success counts. In the canonical "
          "interior range, a piecewise KL rate gives explicit upper and lower tails "
          "and improves the ordinary binomial rate at noncentral thresholds.\n")
-    core=core.replace(r"\end{abstract}",r"\end{abstract}"+add,1)
+    core=core.replace(r"\end{abstract}",add+r"\end{abstract}",1)
     intro=("\n\\clearpage\n\\part{Fixed-sample optimal sub-Gaussian proxies}\n"
            "The all-tilt curvature and scaled Bernoulli envelope established "
            "above are used to determine the exact maximizing success counts.\n")
@@ -91,6 +107,9 @@ def main():
     assert len(set(labels))==len(labels),"duplicate theorem/equation labels"
     refs=set(re.findall(r"\\(?:ref|eqref|autoref|pageref)\{([^{}]+)\}",tex))
     assert refs.issubset(set(labels)), "unresolved references: "+str(refs-set(labels))
+    citations={key.strip() for group in re.findall(r"\\cite(?:\[[^]]+\])?\{([^}]+)\}",tex) for key in group.split(",")}
+    bibitems=set(re.findall(r"\\bibitem(?:\[[^]]+\])?\{([^}]+)\}",tex))
+    assert citations.issubset(bibitems), "unresolved citations: "+str(citations-bibitems)
     print("Generated:",dest,"bytes:",dest.stat().st_size)
 
 if __name__=="__main__":
