@@ -224,3 +224,8 @@ import ExactHoeffding.GoalBFixedSample
 import ExactHoeffding.PiecewiseKL
 
 import ExactHoeffding.PiecewiseKLEndToEnd
+
+import ExactHoeffding.PiecewiseKLFull
+
+import ExactHoeffding.PiecewiseKLComparison
+import ExactHoeffding.PiecewiseKLStrict

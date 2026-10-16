@@ -133,7 +133,7 @@ kernel check. `proof_gap_register.md` records completed assertion coverage; `che
 The control worktree independently recompiled the Jacobi, fixed-sample,
 real-margin, all-order derivative, jointly analytic global optimizer, and
 actual fourth-order expansion chains. Every integrated module passed its kernel check. The complete umbrella and
-generated audit pass: **1518 public theorems in 252 project modules**, with
+generated audit pass: **1637 public theorems in 258 project modules**, with
 only `propext`, `Classical.choice`, and `Quot.sound`.
 
 Evidence: `checks/logs/full_closure/jacobi_tilt_second_rootverify.log`,
@@ -141,3 +141,13 @@ Evidence: `checks/logs/full_closure/jacobi_tilt_second_rootverify.log`,
 `optimized_third_rootverify.log`, `global_analytic_equality_rootverify.log`,
 `actual_joint_normalized_rootverify.log`, `actual_fourth_final_rootverify.log`, and `final_all_manuscript_umbrella_audit.log`.
 The audit source is `checks/full_closure_axioms.lean`.
+
+## Piecewise KL integration — 16 October 2026
+
+`PiecewiseKLFull`, `PiecewiseKLComparison`, and `PiecewiseKLStrict` complete
+the actual piecewise KL tail theorem on the note’s canonical domain, including
+both support endpoints, strict `I > J > I_B` away from the mean and the exact
+central equality interval against `I_P`. The assembled theorem is
+`hypergeom_piecewise_kl_end_to_end`. The focused audit and exact statement
+coverage are recorded in `research/tail_bounds/lean_validation.md` and
+`research/tail_bounds/lean_concordance.md`.
