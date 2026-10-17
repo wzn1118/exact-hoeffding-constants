@@ -9,14 +9,14 @@
 
 **[完整论文 PDF](submission/current/manuscript.pdf)** · [LaTeX 源码](submission/current/manuscript.tex) · [arXiv 上传包](submission/current/arxiv-source.zip) · [干净投稿包](submission/current/clean-submission.zip) · [完整复现包](submission/current/complete-reproducibility.zip)
 
-研究正文、形式化证明、计算测试与固定依赖均保存于当前主分支。Lean 4 的主要复现命令为：
+当前 `main` 包含 **303 个 Lean 文件**，其中 281 个为数学工程文件、21 个为公理审计文件，另有 1 个历史检查文件。完整复现包同时收录对应表、数值检验程序及固定依赖。Lean 4 的主要复现命令为：
 
 ```bash
 lake exe cache get
 lake build ExactHoeffding
 ```
 
-较早的 28 页主论文、补充论文和分阶段研究记录属于历史材料，保留用于核对研究来源。**今后投稿请以 `submission/current/` 为唯一入口。**
+统一投稿稿位于 [`submission/current/`](submission/current/)，早期论文与研究记录按原始目录保存。
 
 [英文仓库首页](README.md) · [投稿说明](submission/README.md) · [形式化证明范围](LEAN_PROOF_STATUS.md)
 

@@ -6,7 +6,7 @@
 
 `papers/` 收录 Arbel–Marchal–Nguyen、Atouani–Marchal–Arbel、Gottschling–Caprio、Lee–Kim 四篇 CC BY 4.0 全文；其余条目提供正式来源或公开版本入口。全文文件保持原始内容，授权与来源记录见 `SOURCES.json`。
 
-这些全文的权利归原作者所有，继续适用各自的 CC BY 4.0 许可，不受仓库中 Zinan Wang 的原创材料版权声明覆盖。逐项说明见根目录 `THIRD_PARTY_NOTICES.md`。
+收录全文的版权和 CC BY 4.0 许可按各原作者及出版方标注执行，具体来源与归属见根目录 `THIRD_PARTY_NOTICES.md`。
 
 | 引用键 | 文献 | 年份／版本 | 本文中的用途 | 阅读入口 |
 |---|---|---|---|---|
