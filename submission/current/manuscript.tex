@@ -1506,7 +1506,7 @@ Define
  [N\operatorname{artanh}(1/N)]^{-1},&N\text{ odd},\end{cases}
  \qquad V_* = M\kappa_N/4.
 \]
-The exact uniform exchangeability constant in Theorem~\ref{thm:exchange} gives this coefficient for $H-\mu$, with
+The exact uniform exchangeability constant in Theorem~\ref{thm:exchange} gives the variance coefficient $V_*$ for $H-\mu$, with
 $\log\E e^{t(H-\mu)}\le V_*t^2/2$.
 The optimal Bernoulli proxy is
 \[
@@ -1518,7 +1518,7 @@ Laplace envelope is bounded above by $M\beta(p)t^2/2$, and conjugation gives
  J(v)\ge I_P(v)\ge \frac{(v-\mu)^2}{2M\beta(p)}
  \ge\frac{(v-\mu)^2}{2V_*}.
 \end{equation}
-Both KL rates therefore improve the displayed uniform quadratic bound. The optimized quadratic proxy of an individual hypergeometric law may yield a stronger bound.
+Both $J(v)$ and $I_P(v)$ therefore dominate the displayed uniform quadratic rate $(v-\mu)^2/(2V_*)$. The optimized quadratic proxy of an individual hypergeometric law may yield a stronger bound.
 
 For $p<1/2$, equality in the middle inequality at a nonzero displacement
 requires $\theta=1-p$, hence $v-\mu=M(1-2p)/a>0$; this follows from the
@@ -1526,7 +1526,7 @@ unique nonzero equality in the Bernoulli proxy inequality.
 For odd $N$, equality with the final uniform rate additionally requires
 $k=(N-1)/2$. For even $N$, equality $M\beta(p)=V_*$ requires $p=1/2$,
 but the balanced Bernoulli quadratic inequality is strict at nonzero tilt.
-The inequality $J\ge I_P$ is an equality precisely in the central region.
+Equality $J(v)=I_P(v)$ holds precisely for $v\in[r_-,r_+]$.
 
 Writing $x=v-\mu$, the local expansion is
 \[
@@ -1534,17 +1534,17 @@ Writing $x=v-\mu$, the local expansion is
  -\frac{a(1-2p)x^3}{6M^2p^2q^2}
  +\frac{a^2(p^3+q^3)x^4}{12M^3p^3q^3}+O(x^5).
 \]
-This shows the directional asymmetry and the variance-scale improvement
+The cubic term in the expansion of $I_P$ determines the directional asymmetry, while the quadratic term shows the variance-scale improvement
 near the mean. Since $M<m$, $I_P>I_B$ locally, but the unspliced $I_P$
-can be smaller than $I_B$ in the tails. Theorem~\ref{A:piecewise} removes
-this loss relative to the four binomial bounds.
+can be smaller than $I_B$ in the tails. The piecewise rate $J$ in Theorem~\ref{A:piecewise} removes
+the tail-region deficit of the unspliced $I_P$ relative to the four binomial bounds.
 
 \subsubsection{Exact-variance Bennett and Bernstein bounds}
 Put $v_0=Mpq$ and $h_0(z)=(1+z)\log(1+z)-z$.
 The Bennett exponent in Greene--Wellner~\cite[Theorem 3]{GreeneWellner} is
 $v_0h_0(x/v_0)$; their Bernstein corollary replaces it by
-$x^2/[2(v_0+x/3)]$. For either tail, the scaled rate is strictly larger
-than the Bennett exponent at every nonzero supported deviation.
+$x^2/[2(v_0+x/3)]$. For either tail sign and every supported deviation $s>0$, the quadratic-envelope rate $I_P(\mu\pm s)$ is strictly larger
+than the Bennett exponent $v_0h_0(s/v_0)$; the piecewise rate $J(\mu\pm s)$ inherits this strict comparison.
 Indeed, for $s>0$,
 \[
  P(\mu+s)=v_0+ad s-a^2s^2/M<v_0+s,\qquad
@@ -1552,10 +1552,10 @@ Indeed, for $s>0$,
 \]
 because $0\le ad<1$. The second derivative of $v_0h_0(x/v_0)$ is
 $1/(v_0+x)$, while that of $I_P(\mu\pm x)$ is $1/P(\mu\pm x)$.
-Both rates and their first derivatives vanish at zero. Integrating the
-strict comparison twice, and then using $J\ge I_P$, proves the assertion.
-The standard inequality $h_0(z)\ge z^2/[2(1+z/3)]$ gives the Bernstein
-comparison as well. 
+For each tail sign, the functions $s\mapsto I_P(\mu\pm s)$ and $s\mapsto v_0h_0(s/v_0)$ and their first derivatives vanish at $s=0$. Integrating the
+strict second-derivative comparison twice proves $I_P(\mu\pm s)>v_0h_0(s/v_0)$, and $J\ge I_P$ transfers the bound to $J$.
+The standard inequality $h_0(z)\ge z^2/[2(1+z/3)]$ consequently gives the Bernstein
+comparison $J(\mu\pm s)>s^2/[2(v_0+s/3)]$ for every nonzero supported $s$. 
 \subsubsection{Optimized factorial moments}
 \begin{proposition}[A comparison with exact Chernoff]\label{A:factorial}
 Let $X$ be nonnegative and integer-valued with bounded support, and let
@@ -1592,12 +1592,12 @@ moments give the displayed ratio.
 \end{proof}
 
 Optimized hypergeometric factorial-moment bounds appear in \cite{A:MZC}. Comparisons of moment bounds with Chernoff bounds also appear in Philips and Nelson~\cite{A:PN}. Proposition~\ref{A:factorial} establishes the finite binomial-basis inequality used here.
-For $\mu<d\le\min(k,m)$, a valid minimizing index is
+For $\mu<d\le\min(k,m)$, a minimizing index for the factorial-moment ratio defining $F_d$ is
 \[
  j_* =\left\lceil\frac{Nd-km}{N+d-k-m}\right\rceil\in\{1,\ldots,d\}.
 \]
 Indeed the ratio of consecutive candidates is at most one exactly when
-$j\le(Nd-km)/(N+d-k-m)$. When this fraction is integral, the two adjacent
+$j\le(Nd-km)/(N+d-k-m)$. When $(Nd-km)/(N+d-k-m)$ is an integer, the two adjacent
 indices tie if both are admissible. At $d=\min(k,m)$ the admissible endpoint index is $j=d$. The piecewise KL rate improves the stated KL and uniform quadratic envelopes, while optimized factorial-moment bounds can be sharper at integer thresholds.
 
 
@@ -1607,7 +1607,7 @@ indices tie if both are admissible. At $d=\min(k,m)$ the admissible endpoint ind
 
 % begin new_results.tex
 \section{Optimal proxies for nearly balanced odd populations}\label{sec:odd_asym}
-The strict singleton comparison of Theorem \ref{odd:thm:odd} has a small gap for nearly balanced populations. This section determines that gap through fourth order and the location of the globally maximizing tilt through third order, for every fixed sample size and fixed success imbalance. The cases $m=1$ and $m=2$ agree with the Bernoulli formula \eqref{eq:bernproxy} and the three-point specialization in Section \ref{sec:twodraw}. The theorem gives the expansion for arbitrary fixed $m$, together with uniqueness of the global optimizer and analytic remainders.
+For fixed $m\ge2$ and nearly balanced odd populations, the strict singleton comparison in Theorem \ref{odd:thm:odd} has a gap $L_N-R_{N,1,m}$ of order $N^{-3}$. This section expands $L_N-R_{N,s,m}$ through fourth order and locates the globally maximizing tilt through third order, for every fixed sample size and fixed success imbalance. The cases $m=1$ and $m=2$ agree with the Bernoulli formula \eqref{eq:bernproxy} and the three-point specialization in Section \ref{sec:twodraw}. Theorem \ref{thm:odd_expansion} gives the expansion for arbitrary fixed $m$, together with uniqueness of the global optimizer and analytic remainders.
 
 Let $N$ be odd, let $s\ge1$ be a fixed odd integer, and put
 \begin{equation}\label{eq:oddparams}
@@ -1662,7 +1662,7 @@ Let
   \kappa_2(\varepsilon),&t=0.
  \end{cases}
 \]
-For every fixed $m,s$, the finite probability generating polynomial depends analytically on $(t,\varepsilon)$ near $(0,0)$, and its value at $(0,0)$ is one. Consequently $Q_\varepsilon$ is jointly real analytic in a neighborhood of $(0,0)$. At $\varepsilon=0$,
+For every fixed $m,s$, the finite probability generating polynomial depends analytically on $(t,\varepsilon)$ near $(0,0)$, and the finite probability generating polynomial equals one at $(t,\varepsilon)=(0,0)$. Consequently $Q_\varepsilon$ is jointly real analytic in a neighborhood of $(0,0)$. At $\varepsilon=0$,
 \begin{equation}\label{eq:q0}
  Q_0(t)=\frac{2m}{t^2}\log\cosh(t/2),\qquad Q_0(0)=m/4.
 \end{equation}
@@ -1670,7 +1670,7 @@ The strict inequality $\log\cosh x<x^2/2$ for $x\ne0$ implies
 \begin{equation}\label{eq:qstrict}
  Q_0(t)<Q_0(0)\qquad(t\ne0).
 \end{equation}
-Furthermore, $|H_N-\E H_N|\le m$ implies $0\le Q_\varepsilon(t)\le2m/|t|$ for $t\ne0$, uniformly in the admissible populations. On every compact interval, $Q_\varepsilon$ converges uniformly to $Q_0$, including at zero by analytic continuation. Combining this compact convergence with the uniform tail bound shows that every global maximizer of $Q_\varepsilon$ tends to zero as $\varepsilon\downarrow0$.
+Furthermore, $|H_N-\E H_N|\le m$ implies $0\le Q_\varepsilon(t)\le2m/|t|$ for $t\ne0$, uniformly in the admissible populations. On every compact interval, $Q_\varepsilon$ converges uniformly to $Q_0$, including at zero by analytic continuation. Combining this compact convergence with the estimate $Q_\varepsilon(t)\le2m/|t|$ shows that every global maximizer of $Q_\varepsilon$ tends to zero as $\varepsilon\downarrow0$.
 
 Near $(0,0)$, the cumulant expansion gives
 \begin{equation}\label{eq:Qexpand}
@@ -1684,7 +1684,7 @@ At the limiting law, $\kappa_5(0)=0$, and
 \[
  \partial_t^2Q_0(0)=\frac{\kappa_4(0)}6=-\frac m{48}<0.
 \]
-Thus $Q_\varepsilon$ is strictly concave on some fixed neighborhood of zero for all sufficiently small $\varepsilon$. The derivative at zero is $\kappa_3(\varepsilon)/3>0$ for $\varepsilon>0$ small. By the analytic implicit-function theorem, there exists a unique critical point $t(\varepsilon)$ in that neighborhood; it is analytic in $\varepsilon$, and the localization argument establishes that it is the unique global maximizer. Differentiation of the critical point equation at zero gives
+Thus $Q_\varepsilon$ is strictly concave on some fixed neighborhood of zero for all sufficiently small $\varepsilon$. The derivative at zero is $\kappa_3(\varepsilon)/3>0$ for $\varepsilon>0$ small. By the analytic implicit-function theorem, there exists a unique critical point $t(\varepsilon)$ in that neighborhood; it is analytic in $\varepsilon$, and the compact-convergence and uniform-tail localization shows that this critical point is the unique global maximizer. Differentiation of the critical point equation at zero gives
 \[
  t'(0)=-\frac{\partial_\varepsilon\partial_t Q(0,0)}{\partial_t^2Q(0,0)}
  =-\frac{ms/12}{-m/48}=4s.
@@ -1701,7 +1701,7 @@ Set $t=a e+b e^2+c e^3+O(e^4)$. The coefficients of $e,e^2,e^3$, in order, give
 \[
  a=4s,\qquad b=4s(m-1),\qquad c=\frac{4s(6m+s^2-6)}3.
 \]
-The terms omitted from the derivative contribute $O_{m,s}(e^4)$ because the cumulants are analytic and $t=O(e)$. This establishes the full tilt expansion in \eqref{eq:tiltexp}.
+The higher-order cumulant terms omitted from the displayed derivative expansion contribute $O_{m,s}(e^4)$ because the cumulants are analytic and $t=O(e)$. This establishes the full tilt expansion in \eqref{eq:tiltexp}.
 
 For the optimal value through order $e^4$, it suffices to use
 \[
@@ -1719,7 +1719,7 @@ Indeed $t_* -\widehat t=O(e^3)$ and $Q_e'(t_*)=0$, so Taylor's theorem around th
  &\hspace{14mm}+\{1-m-(2m^2-m-1)s^2/3-4s^4/45\}e^4\Bigr]
  +O_{m,s}(e^5).
 \end{align*}
-Multiplying by $4/[m(1-me)]$ proves the fourth-order proxy expansion \eqref{eq:Rexp}. The analytic global optimizer supplies the Taylor remainder for each fixed $m,s$.
+Multiplying by $4/[m(1-me)]$ proves the fourth-order proxy expansion \eqref{eq:Rexp}. The analytic implicit-function solution and the global-maximizer localization yield the Taylor remainder for each fixed $m,s$.
 
 The exact singleton benchmark is
 \begin{equation}\label{eq:singletonL}
@@ -1729,7 +1729,7 @@ The exact singleton benchmark is
 Subtracting \eqref{eq:Rexp} from this expression proves Corollary \ref{cor:fixedm_gap}.
 
 \subsection{Finite-size interpretation}
-The $N^{-1}$ coefficient in \eqref{eq:Rexp} is one. The $N^{-2}$ coefficient records the success imbalance through $-s^2/3$ and is common to all fixed sample sizes. For $s=1$, the first sample-size contribution is the order-$N^{-3}$ term $-2(m-1)/3$ relative to the singleton law. Thus \eqref{eq:fixedgap} quantifies the separation between the optimized proxies. The maximizing tilt has leading term $4s/N$.
+The $N^{-1}$ coefficient in \eqref{eq:Rexp} is one. The $N^{-2}$ coefficient records the success imbalance through $-s^2/3$ and is common to all fixed sample sizes. For $s=1$, the coefficient of $N^{-3}$ in $L_N-R_{N,1,m}$ is $2(m-1)/3$, which quantifies the first sample-size-dependent separation from the singleton law. Thus \eqref{eq:fixedgap} quantifies the separation between the optimized proxies. The maximizing tilt has leading term $4s/N$.
 
 % end new_results.tex
 
@@ -1748,7 +1748,7 @@ The ordinary moments up to order six are obtained by the Stirling transformation
  \E H_N^q=\sum_{r=0}^q\left\{\begin{matrix}q\\r\end{matrix}\right\}
  \E(H_N)_{\underline r}.
 \]
-The expressions remain valid when $r>m$, with zero falling factorials. Let $\kappa_j(\varepsilon)$ denote the $j$th cumulant of $H_N$. Elementary simplification of the first six moments yields
+The expressions remain valid when $r>m$, with zero falling factorials. Let $\kappa_j(\varepsilon)$ denote the $j$th cumulant of $H_N$. Applying the Stirling-number moment transformation and the cumulant recurrence below yields
 \begin{align}
  \kappa_2(e)&=\frac m4\left[1-(m-1)e-(m+s^2-1)e^2
  +(m-1)(s^2-1)(e^3+e^4)\right]+O_{m,s}(e^5),\label{eq:kappa2exp}\\
@@ -1777,7 +1777,7 @@ Formula \eqref{eq:kappa4exp} follows from \eqref{eq:factorial_moments} for $r=1,
 \[
  \kappa_4=\E(H-\E H)^4-3\kappa_2^2.
 \]
-All these identities are rational in $\varepsilon$ for fixed $m,s$ and are valid in a neighborhood of the origin. The zero-parameter limit is $H_0\sim\mathrm{Binomial}(m,1/2)$, for which odd cumulants vanish and $\kappa_4(0)=-m/8$.
+The displayed cumulant expansions for $\kappa_2$ through $\kappa_6$ are rational in $\varepsilon$ for fixed $m,s$ and are valid in a neighborhood of the origin. The zero-parameter limit is $H_0\sim\mathrm{Binomial}(m,1/2)$, for which odd cumulants vanish and $\kappa_4(0)=-m/8$.
 
 % end odd_cumulants.tex
 
@@ -1797,7 +1797,7 @@ For $0<u<j$, $c(u)>0$, so the positive stationary root is
 \begin{equation}\label{eq:vplus}
  v_+(u)=\frac{b(u)+\sqrt{b(u)^2+4(N-1)c(u)}}{2(N-1)}.
 \end{equation}
-The Bernoulli admissibility constraint restricts this root to $v_+(u)\le u(j-u)/j$ at an actual stationary tilt.
+At an actual stationary tilt, the Bernoulli admissibility constraint restricts the positive root $v_+(u)$ to $v_+(u)\le u(j-u)/j$ at an actual stationary tilt.
 
 For the identity in Lemma \ref{lem:identity}, substitute $u=(j+x)/2$, $B=j(L+1)/(4T)$, $T=N-1$, $L=N-j-1$, and $D=h-r$. Collecting powers of $D$ gives
 \begin{align*}
@@ -1808,7 +1808,7 @@ For the identity in Lemma \ref{lem:identity}, substitute $u=(j+x)/2$, $B=j(L+1)/
 where $A=j^2(j-1)-Tx^2$ and $E=L(L+1)-2j$.
 
 \subsection{The all-degree positivity polynomial}\label{app:poly}
-The coefficient identity \eqref{eq:Kpositive} follows by setting $a=j-3$ and $L=a+2+S$. The three factors become
+The coefficient identity \eqref{eq:Kpositive} follows by setting $a=j-3$ and $L=a+2+S$. The factors $E$, $(j-1)L-1$, and $L(L+j)$ become
 \[
  E=a(a+3)+(2a+5)S+S^2,\qquad
  (j-1)L-1=(a+1)(a+3)+(a+2)S,
@@ -1844,11 +1844,11 @@ follow by elementary logarithm algebra and the fact that $f'(\alpha)=1/2-p=(q-p)
 \begin{equation}\label{eq:bernsecond}
  G''(t)=c-\frac1{4\cosh^2((t-\alpha)/2)}.
 \end{equation}
-The second term on the right is strictly increasing for $t<\alpha$ and strictly decreasing for $t>\alpha$. Furthermore $G''(0)>0$, since with $y=\alpha/2$,
+The function $1/[4\cosh^2((t-\alpha)/2)]$ increases strictly for $t<\alpha$ and decreases strictly for $t>\alpha$. Furthermore $G''(0)>0$, since with $y=\alpha/2$,
 \[
  4c=\frac{\tanh y}{y}>\operatorname{sech}^2 y.
 \]
-(The latter inequality follows by integrating the strictly decreasing function $\operatorname{sech}^2$ on $[0,y]$.) Thus $G''$ has one zero on $(0,\alpha)$, is positive initially, and negative near $\alpha$. As $G'(0)=G'(\alpha)=0$, it follows that $G'(t)>0$ on $(0,\alpha)$ and therefore $G(t)>0$ there. Reflection \eqref{eq:bernref} gives $G\ge0$ on $[\alpha,2\alpha]$ as well. For $t<0$ the variance term in \eqref{eq:bernsecond} is smaller than at zero, hence $G''(t)>0$; together with $G(0)=G'(0)=0$, this yields $G(t)>0$. Reflection handles $t>2\alpha$. Therefore $G(t)\ge0$ for all $t$, establishing the upper bound.
+(The latter inequality follows by integrating the strictly decreasing function $\operatorname{sech}^2$ on $[0,y]$.) Thus $G''$ has one zero on $(0,\alpha)$, is positive initially, and negative near $\alpha$. As $G'(0)=G'(\alpha)=0$, it follows that $G'(t)>0$ on $(0,\alpha)$ and therefore $G(t)>0$ there. Reflection \eqref{eq:bernref} gives $G\ge0$ on $[\alpha,2\alpha]$ as well. For $t<0$ the function $1/[4\cosh^2((t-\alpha)/2)]$ is smaller than its value at $t=0`, hence $G''(t)>0$; together with $G(0)=G'(0)=0$, this yields $G(t)>0$. Reflection handles $t>2\alpha$. Therefore $G(t)\ge0$ for all $t$, establishing the upper bound.
 
 At $t=2\alpha$ equality holds, so $c$ is the least admissible variance proxy. Rewriting $c$ gives
 \[
