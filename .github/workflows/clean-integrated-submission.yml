@@ -35,6 +35,8 @@ jobs:
           cd submission/integrated
           latexmk -pdf -interaction=nonstopmode -halt-on-error combined_manuscript.tex
           test -s combined_manuscript.pdf
+      - name: Refresh theorem–Lean concordance for integrated source
+        run: python3 checks/render_full_manuscript_concordance.py
       - name: Assemble official submission and full reproducibility
         run: python3 checks/build_current_release.py
       - name: Verify three source and archive formats
