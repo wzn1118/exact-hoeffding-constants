@@ -818,7 +818,7 @@
       "line": 1619,
       "paper_environment": true,
       "status": "Complete",
-      "coverage": "Actual optimizer existence/uniqueness in the stated fixed-margin asymptotic regime and the fourth-order sharp-proxy expansion with remainder are proved.",
+      "coverage": "The actual fixed-margin unique global optimizing tilt is analytically parametrized, with its first three inverse-population coefficients and an analytic order-four remainder proved in ActualTiltThirdCoefficient.lean; the optimized value has a fourth-order expansion with remainder in OptimalProxyFourthExpansion.lean. The finite-law global uniqueness is separately checked in ActualUniqueOptimizer.lean.",
       "gap": null,
       "declarations": [
         {
@@ -828,6 +828,10 @@
         {
           "file": "ExactHoeffding/ActualUniqueOptimizer.lean",
           "name": "actualHypergeomProxy_eventually_exists_unique_global_max"
+        },
+        {
+          "file": "ExactHoeffding/ActualTiltThirdCoefficient.lean",
+          "name": "actualHypergeomProxy_tilt_third_analytic_expansion"
         }
       ]
     },
