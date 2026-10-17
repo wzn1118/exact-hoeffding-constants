@@ -1,6 +1,6 @@
 # Manuscript proof obligations
 
-Updated 16 October 2026. Canonical branch: `main`.
+Updated 17 October 2026. Canonical branch: `main`.
 
 ## Completed core obligations
 
@@ -34,12 +34,12 @@ These quantify over every legal sample size for each odd population.
 
 ## Completed proposition assembly
 
-All 35 theorem-class environments and 2 supplementary claims in the current unified manuscript have complete mappings in `submission/current/theorem_lean_concordance.md`.
+All 35 theorem-class environments and 6 supplementary claims in the current unified manuscript have complete mappings in `submission/current/theorem_lean_concordance.md`.
 
 - `ExchangeableVarianceSupremum` defines the actual variance supremum over exchangeable cube probability laws and nonzero zero-sum contrasts. It proves the floor and parity formulas, attainment under the nearest-balanced Hamming law for every contrast, the strict odd variance gap, its integral identity, and its fourth-order expansion with coefficient `26/45`.
 - `ExplicitExtremizerTheorem` assembles the nearest-balanced actual Hamming law, explicit coordinate contrast, full Bernoulli pushforward, odd nonzero-tilt contact, and even zero-tilt limiting equality for every population `N≥2`.
 
-The integrated kernel build and generated axiom audit pass for all 1723 public theorems in 280 imported project modules. All F-01–F-10 obligations and the two assembled parity propositions are completed.
+The integrated kernel build and generated axiom audit pass for all 1743 public theorems in 284 imported project modules. All F-01–F-10 obligations and the two assembled parity propositions are completed.
 
 An incorrect pointwise odd constant curvature shortcut remains excluded:
 the odd sharp quadratic proxy must follow from integrated mean-dependent

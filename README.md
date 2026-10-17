@@ -34,7 +34,7 @@ python3 checks/generate_axiom_audit.py --check
 lake env lean checks/full_closure_axioms.lean
 ```
 
-The full reproducibility ZIP contains all 281 tracked Lean source files, the generated theorem–Lean concordance, computational verifiers, frozen input files and the pinned dependency manifest.
+The full reproducibility ZIP contains all 285 core Lean source modules (307 tracked Lean files including historical checkpoints), the generated theorem–Lean concordance, computational verifiers, frozen input files and the pinned dependency manifest.
 
 ## Repository guide
 
