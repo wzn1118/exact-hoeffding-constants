@@ -1,5 +1,18 @@
 # Manuscript proof obligations
 
+## Current statement-scope audit — 17 October 2026
+
+The Main+A+B core results remain proved. This working extension is on
+`formal/end-to-end-scope-audit-20261017`. The frozen whole-paper gate is
+**not closed**: `A:factorial` has the two definition-domain qualifications
+recorded in `formal_status/a2_factorial_denominator_audit.md`. A1–A5 and B1–B2
+have current theorem mappings; the Q-expansion uniform remainder and B2
+deterministic boundary cases are now proved. Final build and audit counts are
+recorded after the last verification. The generated concordance overrides
+historical blanket-coverage statements below. The paper source and pinned
+dependencies are unchanged; no final-main merge has been performed.
+
+
 Updated 17 October 2026. Canonical branch: `main`.
 
 ## Completed core obligations
@@ -34,12 +47,12 @@ These quantify over every legal sample size for each odd population.
 
 ## Completed proposition assembly
 
-All 35 theorem-class environments and 6 supplementary claims in the current unified manuscript have complete mappings in `submission/current/theorem_lean_concordance.md`.
+The earlier baseline register listed complete mappings for all 35 theorem-class environments and 6 supplementary claims; the current scope audit and generated concordance supersede that blanket statement. Detailed mappings remain in `submission/current/theorem_lean_concordance.md`.
 
 - `ExchangeableVarianceSupremum` defines the actual variance supremum over exchangeable cube probability laws and nonzero zero-sum contrasts. It proves the floor and parity formulas, attainment under the nearest-balanced Hamming law for every contrast, the strict odd variance gap, its integral identity, and its fourth-order expansion with coefficient `26/45`.
 - `ExplicitExtremizerTheorem` assembles the nearest-balanced actual Hamming law, explicit coordinate contrast, full Bernoulli pushforward, odd nonzero-tilt contact, and even zero-tilt limiting equality for every population `N≥2`.
 
-The integrated kernel build and generated axiom audit pass for all 1743 public theorems in 284 imported project modules. All F-01–F-10 obligations and the two assembled parity propositions are completed.
+The 17 October integrated kernel build passed 3,435 jobs and the generated axiom audit passed for 1,945 public theorems in 314 imported project modules. The current 49-row concordance has 48 complete rows; A2 remains open only because the frozen manuscript omits two domain restrictions. All F-01–F-10 obligations and the two assembled parity propositions are completed.
 
 An incorrect pointwise odd constant curvature shortcut remains excluded:
 the odd sharp quadratic proxy must follow from integrated mean-dependent

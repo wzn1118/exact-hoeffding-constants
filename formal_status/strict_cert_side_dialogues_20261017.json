@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-17",
+  "remote_sync": "git fetch/ls-remote timed out; worktrees use last locally recorded origin/main a19cf61db4e46d436f426a7d994002e3c65e60b8",
+  "source_overlay": "/data/odd_proxy/github_publication/exact-hoeffding-constants/ExactHoeffding snapshot at thread creation",
+  "threads": [
+    {
+      "thread_id": "01a14a0f-60cc-79d2-a1fb-2621af5c9c30",
+      "turn_id": "01a14a0f-6382-7af0-8df1-33dcf0ded786",
+      "title": "A1｜有限支撑倾斜方差正性｜6.1sol max",
+      "model": "gpt-6.1-sol",
+      "effort": "max",
+      "worktree": "/data/lean_worktrees/strict-cert-01-a1-variance",
+      "branch": "detached at a19cf61 plus source overlay",
+      "owner": "A1 variance audit",
+      "status": "inProgress"
+    },
+    {
+      "thread_id": "01a14a0f-658b-7b50-9ee1-3a1bfa5a1ecc",
+      "turn_id": "01a14a0f-684c-7402-8ffe-9f225238028a",
+      "title": "A1｜有限律积分与端点接口审计｜6.1sol max",
+      "model": "gpt-6.1-sol",
+      "effort": "max",
+      "worktree": "/data/lean_worktrees/strict-cert-02-a1-integral",
+      "branch": "detached at a19cf61 plus source overlay",
+      "owner": "A1 integral audit",
+      "status": "inProgress"
+    },
+    {
+      "thread_id": "01a14a0f-68eb-7231-9228-985afa1565ee",
+      "turn_id": "01a14a0f-6bfc-76f3-a929-c41a555ed066",
+      "title": "两抽样｜奇数极值与渐近式缺口｜6.1sol max",
+      "model": "gpt-6.1-sol",
+      "effort": "max",
+      "worktree": "/data/lean_worktrees/strict-cert-03-twodraw",
+      "branch": "detached at a19cf61 plus source overlay",
+      "owner": "odd two-draw audit",
+      "status": "inProgress"
+    },
+    {
+      "thread_id": "01a14a0f-6cd7-79b1-ab60-fd64514b2f4f",
+      "turn_id": "01a14a0f-70a6-7a90-bffd-8442efbd200b",
+      "title": "逐项语义合同｜主文与 B 章节｜6.1sol max",
+      "model": "gpt-6.1-sol",
+      "effort": "max",
+      "worktree": "/data/lean_worktrees/strict-cert-04-semantic-map",
+      "branch": "detached at a19cf61 plus source overlay",
+      "owner": "contract coverage audit",
+      "status": "inProgress"
+    },
+    {
+      "thread_id": "01a14a0f-7173-7b23-b3b9-1dfc86c6d11f",
+      "turn_id": "01a14a0f-749b-7a32-8f17-8ce17d134705",
+      "title": "自动检查器｜语义覆盖与清单审计｜6.1sol max",
+      "model": "gpt-6.1-sol",
+      "effort": "max",
+      "worktree": "/data/lean_worktrees/strict-cert-05-checkers",
+      "branch": "detached at a19cf61 plus source overlay",
+      "owner": "checker audit",
+      "status": "inProgress"
+    }
+  ]
+}

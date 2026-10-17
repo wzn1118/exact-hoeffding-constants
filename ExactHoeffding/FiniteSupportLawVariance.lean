@@ -139,5 +139,12 @@ theorem FiniteSupportLawData.variance_pos
   have hnum' : 0 < S * M - F * F := by nlinarith [hnum]
   exact div_pos hnum' hden
 
+/-- Endpoint atoms already contained in `FiniteSupportLawData` supply the
+strict-variance hypothesis needed to build the tilt-curve interface. -/
+theorem finiteSupportLawData_toTiltCurve_of_endpoints
+    {ι : Type*} [DecidableEq ι] (L : FiniteSupportLawData ι) :
+    Nonempty FiniteSupportTiltCurve := by
+  exact ⟨L.toTiltCurve L.variance_pos⟩
+
 end
 end ExactHoeffding

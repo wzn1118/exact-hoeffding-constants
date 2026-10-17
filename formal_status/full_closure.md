@@ -1,5 +1,24 @@
 # Formal proof coverage — 16 October 2026
 
+## Current statement-scope audit — 17 October 2026
+
+The Main+A+B core results remain proved. This working extension is on
+`formal/end-to-end-scope-audit-20261017`. The frozen whole-paper gate is
+**not closed**: `A:factorial` has the two definition-domain qualifications
+recorded in `formal_status/a2_factorial_denominator_audit.md`. The requested
+A1–A5 and B1–B2 proof families are represented in the current concordance;
+only A2 remains scope-qualified. A1 endpoint extensions follow from the actual
+endpoint atom costs and finite one-sided integral limits. The actual proxy's
+joint local Taylor remainder and the odd-central variational boundary cases
+are now included. The current integrated build passed 3,445 jobs; the full
+axiom audit passed for 1,971 theorems in 324 modules; and the live manifest
+matched 339 distinct theorem declarations across 49 result rows. Ten rows
+have typed Lean proposition contracts. The manuscript and pinned dependencies
+are unchanged; no final-main merge has been performed. The other 39 rows still
+need standalone proposition contracts, separately from the A2 mathematical
+scope qualification.
+
+
 Canonical branch: `main`.
 Lean 4.33.0; Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`.
 
@@ -108,7 +127,7 @@ The joint analytic optimizer and actual normalized supremum are proved in `Joint
 
 `CanonicalGapPopulationDerivative`, `CompactCanonicalContraction`, and `CompactAnalyticHypergeomContraction` prove the exact continuous factorization, its explicit boundary, uniform compact positivity, and strict actual hypergeometric comparison. `CanonicalOptimizedPopulationRemainder` and `ActualCompactFirstCorrection` prove the explicit first population correction and a uniform quadratic remainder on compact success-proportion intervals, including balance.
 
-`EvenHypergeomExtremizers` and `OddHypergeomExtremizers` classify all maximizing hypergeometric margin pairs. `ExchangeableVarianceSupremum` proves the actual variance supremum, nearest-balanced Hamming attainment, parity comparison, integral gap and fourth-order expansion. `ExplicitExtremizerTheorem` gives the actual single-coordinate sharpness witness, including the Bernoulli pushforward and both parity equality mechanisms. All 35 theorem-class environments and 6 supplementary claims in the current manuscript have complete entries in the generated concordance.
+`EvenHypergeomExtremizers` and `OddHypergeomExtremizers` classify all maximizing hypergeometric margin pairs. `ExchangeableVarianceSupremum` proves the actual variance supremum, nearest-balanced Hamming attainment, parity comparison, integral gap and fourth-order expansion. `ExplicitExtremizerTheorem` gives the actual single-coordinate sharpness witness, including the Bernoulli pushforward and both parity equality mechanisms. The earlier baseline register listed all 35 theorem-class environments and 6 supplementary claims as complete. The current scope audit and generated concordance supersede that blanket statement.
 
 ## Reproduction and evidence
 
@@ -130,11 +149,10 @@ kernel check. `proof_gap_register.md` records completed assertion coverage; `che
 
 ## Integrated verification checkpoint
 
-The control worktree independently recompiled the Jacobi, fixed-sample,
-real-margin, all-order derivative, jointly analytic global optimizer, and
-actual fourth-order expansion chains. Every integrated module passed its kernel check. The complete umbrella and
-generated audit pass: **1743 public theorems in 284 project modules**, with
-only `propext`, `Classical.choice`, and `Quot.sound`.
+The following module-specific logs record the 16 October control-worktree
+checkpoint. The current integrated result is the 17 October audit recorded
+above: **1,971 public theorems in 324 project modules**, with only `propext`,
+`Classical.choice`, and `Quot.sound`.
 
 Evidence: `checks/logs/full_closure/jacobi_tilt_second_rootverify.log`,
 `fixed_sample_global_rootverify.log`, `real_recurrence_curvature.log`,
@@ -156,3 +174,54 @@ coverage are recorded in `research/tail_bounds/lean_validation.md` and
 ## 16 October 2026 closure additions
 
 The current umbrella adds the integer-tail, four-rate KL, Bennett/Bernstein, factorial-Chernoff, odd-global, and finite-support mean-coordinate modules. `FiniteSupportMeanEnvelope` proves the Legendre-to-envelope comparison by change of variables; its strict and endpoint variants cover strict gaps and one-sided endpoint continuation. `FiniteSupportTiltCurveOfLaw` realizes the interface from an actual normalized finite weighted law with ordered positive endpoint atoms and positive tilted variance, while `FiniteSupportRecurrenceBridge` specializes it to the paper's recurrence laws. The generated current concordance has 35 theorem-class rows and 6 supplementary claims.
+
+## Initial 17 October scope-audit snapshot (superseded by the latest results below)
+
+The independent A3, A4, A5, B1 and B2 review confirms the current exact
+statements, including closed supported thresholds and the stated strictness
+conditions. A2's factorial comparison uses the actual hypergeometric
+Legendre transform; it is not the binomial KL rate.
+
+A1 is being strengthened to the manuscript's open-support envelope domain
+and actual finite-law tail events. The new open-support comparison and
+finite-law endpoint rate bounds have passed focused kernel compilation;
+the raw-coordinate assembly, strict endpoints and final global audit remain
+in progress. This checkpoint does not supersede the final audit gate.
+
+A2's adjacent integer-cutoff tie and endpoint-cutoff theorems have passed
+focused kernel compilation. The reflected lower-tail chain is being checked.
+The unrestricted factorial-ratio display in the frozen manuscript needs an
+explicit denominator domain (`j ≤ N`) if thresholds are allowed beyond the
+population size. The source manuscript remains unchanged pending the
+scope decision. Consequently the full manuscript concordance gate is
+currently marked Partial at A:integration and A:factorial.
+
+
+## 17 October: proof extensions and frozen statement audit
+
+Work continues on branch `formal/end-to-end-scope-audit-20261017`; the local
+`main` reference and the remote `main` have not been advanced by this audit.
+The in-progress upstream merge and all existing verified sources are retained.
+No frozen manuscript source was edited (SHA-256
+`b1bb1e3df8d8b651c4872692a8b0f4424541b4e9b3a5576d39a2be485d26e23f`).
+
+The newly checked actual-law A1 interfaces require continuity and positivity
+only on the open support. They derive tilted-variance positivity from the
+finite law, prove the optimized Legendre comparison, and bound actual finite
+weighted tail events without a caller-supplied Markov inequality. Original
+mean coordinates, interval strictness, and non-strict finite-limit endpoints
+have compiled successfully. Strict finite-limit endpoints are under integration.
+
+The corrected A2 theorem family includes both supported tails, exact
+falling-factorial candidates on their nonzero-denominator domain, the separate
+zero branch above population degree, and adjacent integer minimizer ties.
+The unrestricted frozen wording has two domain qualifications described in
+`a2_factorial_denominator_audit.md`: ordinary division at `j>N`, and the stated
+support domain of `J` in the strict chain. These do not reverse the proved
+factorial–Chernoff comparison. The manuscript concordance gate remains open;
+no completion or final-main merge is asserted at this checkpoint.
+
+
+## 17 October typed-contract continuation
+
+The latest integrated build passed 3,445 jobs. The 1,971-declaration axiom audit and live 49-row manifest passed; 339 distinct declarations are mapped. Ten rows have Lean-proved statement transcriptions: A1, A3, A4, `thm:curvature`, `thm:main_laplace`, `cor:mgf`, integer tails, `thm:exchange`, `cor:tail`, and `prop:variational`. Their proof terms depend on the mapped underlying results, and the checker binds them to frozen TeX result hashes. The translation from TeX to each Lean proposition remains a reviewed mathematical encoding; it is not inferred from a hash. A1 positivity now follows from finite support, normalized nonnegative weights, distinct endpoint values, and positive endpoint masses, with no variance-positivity premise in the direct law interface. The full correspondence gate remains open only because A2's frozen statement omits its quotient and strict-rate domains.

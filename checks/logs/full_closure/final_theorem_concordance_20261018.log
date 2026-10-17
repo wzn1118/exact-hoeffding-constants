@@ -1,0 +1,6 @@
+PASS: 35 theorem-class environments and 14 supplementary claims are mapped to audited Lean declarations
+PASS: 49 of 49 result rows have explicit typed Lean statement contracts
+PASS: actual Lean #print axioms output checked for 2028 declarations; allowed set is ['Classical.choice', 'Quot.sound', 'propext']
+PASS: A1 finite-law statements omit a positive-variance premise; the no-premise curve adapter derives positivity from endpoint support assumptions
+NOTE: Typed contracts are kernel-checked Lean transcriptions; the TeX-to-Lean translation remains a mathematical review, not an automatic TeX equivalence proof.
+PASS: every mapped result has a typed Lean statement contract; contract types are kernel checked and axiom audited.

@@ -1,0 +1,1636 @@
+⚠ [1968/2014] Replayed ExactHoeffding.Normalization
+warning: ExactHoeffding/Normalization.lean:73:17: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/Normalization.lean:73:17: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [1969/2014] Replayed ExactHoeffding.SharpExample
+warning: ExactHoeffding/SharpExample.lean:45:26: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/SharpExample.lean:56:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/SharpExample.lean:76:34: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/SharpExample.lean:76:34: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [2128/2180] Replayed ExactHoeffding.CurvatureBridge
+warning: ExactHoeffding/CurvatureBridge.lean:28:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [2157/2180] Replayed ExactHoeffding.GeneralFactorialMoments
+warning: ExactHoeffding/GeneralFactorialMoments.lean:75:20: This simp argument is unused:
+  Nat.zero_descFactorial_succ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/GeneralFactorialMoments.lean:80:16: This simp argument is unused:
+  Nat.zero_descFactorial_succ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/GeneralFactorialMoments.lean:142:22: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Nat.cast_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [2171/2180] Replayed ExactHoeffding.Support
+warning: ExactHoeffding/Support.lean:91:34: This simp argument is unused:
+  hright
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hypergeomPMFValue, him]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [2172/2180] Replayed ExactHoeffding.Symmetries
+warning: ExactHoeffding/Symmetries.lean:108:18: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/Symmetries.lean:131:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2176/2232] Replayed ExactHoeffding.TiltedVariance
+warning: ExactHoeffding/TiltedVariance.lean:23:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [2177/2232] Replayed ExactHoeffding.CurvatureNonnegative
+warning: ExactHoeffding/CurvatureNonnegative.lean:38:18: This simp argument is unused:
+  finiteTiltFirst
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [a]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/CurvatureNonnegative.lean:44:18: This simp argument is unused:
+  finiteTiltSecond
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [a]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [2618/2668] Replayed ExactHoeffding.StationaryCertificates
+warning: ExactHoeffding/StationaryCertificates.lean:252:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2620/2668] Replayed ExactHoeffding.CanonicalCurvature
+warning: ExactHoeffding/CanonicalCurvature.lean:24:6: Unused tactic linter: `change Real.exp t * stationaryDen (m : ℝ) (k : ℝ) u v = v * ((r : ℝ) + 2 * u)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/CanonicalCurvature.lean:26:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/CanonicalCurvature.lean:39:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/CanonicalCurvature.lean:69:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2622/2668] Replayed ExactHoeffding.SmallSupportCurvature
+warning: ExactHoeffding/SmallSupportCurvature.lean:211:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2627/2668] Replayed ExactHoeffding.RiccatiCertificates
+warning: ExactHoeffding/RiccatiCertificates.lean:38:44: Variable name `hNm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hNm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/RiccatiCertificates.lean:56:34: Variable name `hN1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hN1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/RiccatiCertificates.lean:57:5: Variable name `hN2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hN2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/RiccatiCertificates.lean:57:19: Variable name `hNm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hNm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/RiccatiCertificates.lean:142:5: Variable name `hN` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hN
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/RiccatiCertificates.lean:150:40: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2632/2668] Replayed ExactHoeffding.OrdinaryMomentsComplete
+warning: ExactHoeffding/OrdinaryMomentsComplete.lean:82:18: Variable name `hmN` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hmN
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/OrdinaryMomentsComplete.lean:107:19: Variable name `hmN` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hmN
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/OrdinaryMomentsComplete.lean:120:60: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/OrdinaryMomentsComplete.lean:155:15: This simp argument is unused:
+  Nat.cast_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [zero_div]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/OrdinaryMomentsComplete.lean:212:10: This simp argument is unused:
+  Nat.succ_sub_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [2723/2755] Replayed ExactHoeffding.Jacobi
+info: ExactHoeffding/Jacobi.lean:300:0: 'ExactHoeffding.jacobiCoeff_scaled_hypergeomCount_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/Jacobi.lean:301:0: 'ExactHoeffding.jacobiCoeff_scaled_hypergeomCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/Jacobi.lean:302:0: 'ExactHoeffding.jacobiPGF_eval_eq_scaled_hypergeomPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2745/2822] Replayed ExactHoeffding.BernoulliKL
+warning: ExactHoeffding/BernoulliKL.lean:198:5: Variable name `hp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/BernoulliKL.lean:198:18: Variable name `hp1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/BernoulliKL.lean:203:5: Variable name `hp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/BernoulliKL.lean:203:18: Variable name `hp1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [2751/2822] Replayed ExactHoeffding.BernoulliProxy
+warning: ExactHoeffding/BernoulliProxy.lean:197:43: This simp argument is unused:
+  zero_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Pi.neg_apply, Real.tanh_zero, neg_zero, sub_zero, neg_div] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [2768/2822] Replayed ExactHoeffding.Cumulants
+warning: ExactHoeffding/Cumulants.lean:361:5: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/Cumulants.lean:361:18: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [2792/2849] Replayed ExactHoeffding.JacobiMobius
+info: ExactHoeffding/JacobiMobius.lean:295:0: 'ExactHoeffding.jacobiRodrigues_eq_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiMobius.lean:296:0: 'ExactHoeffding.jacobiRodrigues_natDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiMobius.lean:297:0: 'ExactHoeffding.jacobiPGF_eq_rodrigues_mobius' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2793/2849] Replayed ExactHoeffding.JacobiFactorization
+warning: ExactHoeffding/JacobiFactorization.lean:35:26: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/JacobiFactorization.lean:254:42: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/JacobiFactorization.lean:254:42: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+info: ExactHoeffding/JacobiFactorization.lean:259:0: 'ExactHoeffding.splits_reverse_of_splits' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiFactorization.lean:260:0: 'ExactHoeffding.jacobiPGF_splits' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiFactorization.lean:261:0: 'ExactHoeffding.jacobiPGF_natDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiFactorization.lean:262:0: 'ExactHoeffding.jacobiPGF_roots_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiFactorization.lean:263:0: 'ExactHoeffding.jacobiPGF_real_root_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiFactorization.lean:264:0: 'ExactHoeffding.splits_eq_eval_mul_rootNormalizedFactors' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiFactorization.lean:265:0: 'ExactHoeffding.jacobiPGF_root_normalized_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiFactorization.lean:266:0: 'ExactHoeffding.jacobiTiltedRootProbability_mem_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiFactorization.lean:267:0: 'ExactHoeffding.jacobiPGF_tilted_bernoulli_pgF' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiFactorization.lean:268:0: 'ExactHoeffding.jacobiPGF_roots_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2794/2849] Replayed ExactHoeffding.JacobiActualPGF
+info: ExactHoeffding/JacobiActualPGF.lean:126:0: 'ExactHoeffding.jacobiHypergeomPolynomial_zero_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiActualPGF.lean:127:0: 'ExactHoeffding.jacobiHypergeomPolynomial_root_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiActualPGF.lean:128:0: 'ExactHoeffding.jacobiHypergeomPolynomial_tilted_bernoulli_pgf' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ExactHoeffding/JacobiActualPGF.lean:129:0: 'ExactHoeffding.jacobiHypergeom_tilted_bernoulli_representation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ExactHoeffding/JacobiActualPGF.lean:130:0: 'ExactHoeffding.jacobiHypergeom_tilted_mass_pgf' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2821/2885] Replayed ExactHoeffding.UniformLaplace
+warning: ExactHoeffding/UniformLaplace.lean:19:75: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/UniformLaplace.lean:21:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [2825/2885] Replayed ExactHoeffding.HypergeometricTail
+info: ExactHoeffding/HypergeometricTail.lean:42:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [2826/2885] Replayed ExactHoeffding.HammingCoefficientLower
+warning: ExactHoeffding/HammingCoefficientLower.lean:30:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: ExactHoeffding/HammingCoefficientLower.lean:70:25: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: ExactHoeffding/HammingCoefficientLower.lean:70:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: ExactHoeffding/HammingCoefficientLower.lean:87:25: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: ExactHoeffding/HammingCoefficientLower.lean:87:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2831/2885] Replayed ExactHoeffding.ParityProxyComparison
+warning: ExactHoeffding/ParityProxyComparison.lean:41:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ParityProxyComparison.lean:61:29: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/ParityProxyComparison.lean:61:29: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ExactHoeffding/ParityProxyComparison.lean:73:29: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/ParityProxyComparison.lean:73:29: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [2832/2885] Replayed ExactHoeffding.SingletonOptimalProxy
+warning: ExactHoeffding/SingletonOptimalProxy.lean:47:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2833/2885] Replayed ExactHoeffding.OddHypergeomExtremizers
+warning: ExactHoeffding/OddHypergeomExtremizers.lean:14:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/OddHypergeomExtremizers.lean:31:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2834/2885] Replayed ExactHoeffding.TwoDrawSingletonComparison
+warning: ExactHoeffding/TwoDrawSingletonComparison.lean:65:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/TwoDrawSingletonComparison.lean:144:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2836/2885] Replayed ExactHoeffding.BernoulliOptimal
+warning: ExactHoeffding/BernoulliOptimal.lean:90:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/BernoulliOptimal.lean:116:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [2840/2885] Replayed ExactHoeffding.VariationalUpper
+info: ExactHoeffding/VariationalUpper.lean:103:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [2872/2885] Replayed ExactHoeffding.ConstantAsymptotics
+warning: ExactHoeffding/ConstantAsymptotics.lean:40:34: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ConstantAsymptotics.lean:64:31: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/ConstantAsymptotics.lean:64:31: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ExactHoeffding/ConstantAsymptotics.lean:70:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ConstantAsymptotics.lean:104:31: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/ConstantAsymptotics.lean:104:31: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ExactHoeffding/ConstantAsymptotics.lean:115:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2881/2930] Replayed ExactHoeffding.JacobiSimpleRoots
+warning: ExactHoeffding/JacobiSimpleRoots.lean:28:6: This simp argument is unused:
+  Nat.not_succ_le_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, zero_add, add_zero, sub_zero, zero_mul,
+    mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:28:38: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, Nat.not_succ_le_zero, zero_add,
+    sub_zero, zero_mul, mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:28:48: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, Nat.not_succ_le_zero, zero_add,
+    add_zero, zero_mul, mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:28:58: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, Nat.not_succ_le_zero, zero_add,
+    add_zero, sub_zero, mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:29:6: This simp argument is unused:
+  mul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, Nat.not_succ_le_zero, zero_add,
+    add_zero, sub_zero, zero_mul, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:29:16: This simp argument is unused:
+  one_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, Nat.not_succ_le_zero, zero_add,
+    add_zero, sub_zero, zero_mul, mul_zero, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:29:25: This simp argument is unused:
+  mul_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, Nat.not_succ_le_zero, zero_add,
+    add_zero, sub_zero, zero_mul, mul_zero, one_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:50:8: This simp argument is unused:
+  Nat.not_succ_le_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, zero_add, add_zero, sub_zero, zero_mul,
+    mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:50:30: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, Nat.not_succ_le_zero, add_zero,
+    sub_zero, zero_mul, mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:50:40: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, Nat.not_succ_le_zero, zero_add,
+    sub_zero, zero_mul, mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:50:50: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, Nat.not_succ_le_zero, zero_add,
+    add_zero, zero_mul, mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:50:60: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, Nat.not_succ_le_zero, zero_add,
+    add_zero, sub_zero, mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:51:8: This simp argument is unused:
+  mul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, Nat.not_succ_le_zero, zero_add,
+    add_zero, sub_zero, zero_mul, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:51:18: This simp argument is unused:
+  one_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, Nat.not_succ_le_zero, zero_add,
+    add_zero, sub_zero, zero_mul, mul_zero, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:51:27: This simp argument is unused:
+  mul_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, Nat.not_succ_le_zero, zero_add,
+    add_zero, sub_zero, zero_mul, mul_zero, one_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:76:33: This simp argument is unused:
+  jacobiCoeff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [jacobiPGF_coeff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:84:60: This simp argument is unused:
+  hn0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, hn1, show n - 1 + 1 = n by omega,
+    show n - 2 + 1 = n - 1 by omega, show n - 2 + 1 + 1 = n by omega, if_pos hn2, if_pos hn1', zero_add, add_zero,
+    sub_zero, zero_mul, mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:84:65: This simp argument is unused:
+  hn1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, hn0, show n - 1 + 1 = n by omega,
+    show n - 2 + 1 = n - 1 by omega, show n - 2 + 1 + 1 = n by omega, if_pos hn2, if_pos hn1', zero_add, add_zero,
+    sub_zero, zero_mul, mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:86:8: This simp argument is unused:
+  show n - 2 + 1 + 1 = n by omega
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, hn0, hn1, show n - 1 + 1 = n by omega,
+    show n - 2 + 1 = n - 1 by omega, if_pos hn2, if_pos hn1', zero_add, add_zero, sub_zero, zero_mul, mul_zero, one_mul,
+    mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:87:33: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, hn0, hn1, show n - 1 + 1 = n by omega,
+    show n - 2 + 1 = n - 1 by omega, show n - 2 + 1 + 1 = n by omega, if_pos hn2, if_pos hn1', add_zero, sub_zero,
+    zero_mul, mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:87:43: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, hn0, hn1, show n - 1 + 1 = n by omega,
+    show n - 2 + 1 = n - 1 by omega, show n - 2 + 1 + 1 = n by omega, if_pos hn2, if_pos hn1', zero_add, sub_zero,
+    zero_mul, mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:87:53: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, hn0, hn1, show n - 1 + 1 = n by omega,
+    show n - 2 + 1 = n - 1 by omega, show n - 2 + 1 + 1 = n by omega, if_pos hn2, if_pos hn1', zero_add, add_zero,
+    zero_mul, mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:87:63: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, hn0, hn1, show n - 1 + 1 = n by omega,
+    show n - 2 + 1 = n - 1 by omega, show n - 2 + 1 + 1 = n by omega, if_pos hn2, if_pos hn1', zero_add, add_zero,
+    sub_zero, mul_zero, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:88:8: This simp argument is unused:
+  mul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, hn0, hn1, show n - 1 + 1 = n by omega,
+    show n - 2 + 1 = n - 1 by omega, show n - 2 + 1 + 1 = n by omega, if_pos hn2, if_pos hn1', zero_add, add_zero,
+    sub_zero, zero_mul, one_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:88:18: This simp argument is unused:
+  one_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, hn0, hn1, show n - 1 + 1 = n by omega,
+    show n - 2 + 1 = n - 1 by omega, show n - 2 + 1 + 1 = n by omega, if_pos hn2, if_pos hn1', zero_add, add_zero,
+    sub_zero, zero_mul, mul_zero, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:88:27: This simp argument is unused:
+  mul_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jacobiPGFODE, Polynomial.coeff_sub, Polynomial.coeff_add, Polynomial.coeff_X_pow_mul',
+    Polynomial.coeff_C_mul, Polynomial.coeff_derivative, Polynomial.coeff_zero, hn0, hn1, show n - 1 + 1 = n by omega,
+    show n - 2 + 1 = n - 1 by omega, show n - 2 + 1 + 1 = n by omega, if_pos hn2, if_pos hn1', zero_add, add_zero,
+    sub_zero, zero_mul, mul_zero, one_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:109:19: This simp argument is unused:
+  hsub1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hsub2, hsub1', hsub2']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:109:26: This simp argument is unused:
+  hsub2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hsub1, hsub1', hsub2']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:139:42: This simp argument is unused:
+  if_false (show ¬n < n by omega)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hzero (n + 1) (by omega), jacobiPGF_coeff, if_pos (show n ≤ n by omega), hsub1, hsub2, hsub1',
+    hsub2']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:140:12: This simp argument is unused:
+  hsub1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hzero (n + 1) (by omega), jacobiPGF_coeff, if_pos (show n ≤ n by omega),
+    if_false (show ¬n < n by omega), hsub2, hsub1', hsub2']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:140:19: This simp argument is unused:
+  hsub2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hzero (n + 1) (by omega), jacobiPGF_coeff, if_pos (show n ≤ n by omega),
+    if_false (show ¬n < n by omega), hsub1, hsub1', hsub2']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:110:8: Unused tactic linter: `norm_num at hrec` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/JacobiSimpleRoots.lean:141:10: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2882/2930] Replayed ExactHoeffding.JacobiRootLocalization
+warning: ExactHoeffding/JacobiRootLocalization.lean:45:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: ExactHoeffding/JacobiRootLocalization.lean:92:0: 'ExactHoeffding.jacobiRodrigues_eval_zero_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiRootLocalization.lean:93:0: 'ExactHoeffding.jacobiRodrigues_root_transform' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ExactHoeffding/JacobiRootLocalization.lean:94:0: 'ExactHoeffding.jacobiRodrigues_root_mem_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2906/2930] Replayed ExactHoeffding.HighCumulants
+warning: ExactHoeffding/HighCumulants.lean:352:56: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/HighCumulants.lean:575:26: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3119/3152] Replayed ExactHoeffding.FinitePopulationBernoulliEnvelope
+warning: ExactHoeffding/FinitePopulationBernoulliEnvelope.lean:55:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/FinitePopulationBernoulliEnvelope.lean:55:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [3120/3152] Replayed ExactHoeffding.BernoulliMGFGeometry
+warning: ExactHoeffding/BernoulliMGFGeometry.lean:28:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3121/3152] Replayed ExactHoeffding.JacobiRootDispersion
+warning: ExactHoeffding/JacobiRootDispersion.lean:66:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/JacobiRootDispersion.lean:108:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3122/3152] Replayed ExactHoeffding.ExactImbalanceAlgebra
+warning: ExactHoeffding/ExactImbalanceAlgebra.lean:59:13: This simp argument is unused:
+  Finset.sum_range_succ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_range_zero, Nat.descFactorial_zero, Nat.cast_one, Finset.prod_range_succ,
+    Finset.prod_range_zero, mul_one, pow_zero, add_zero, Nat.descFactorial_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/ExactImbalanceAlgebra.lean:59:36: This simp argument is unused:
+  Finset.sum_range_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_range_succ, Nat.descFactorial_zero, Nat.cast_one, Finset.prod_range_succ,
+    Finset.prod_range_zero, mul_one, pow_zero, add_zero, Nat.descFactorial_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/ExactImbalanceAlgebra.lean:59:59: This simp argument is unused:
+  Nat.descFactorial_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_range_succ, Finset.sum_range_zero, Nat.cast_one, Finset.prod_range_succ,
+    Finset.prod_range_zero, mul_one, pow_zero, add_zero, Nat.descFactorial_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/ExactImbalanceAlgebra.lean:60:4: This simp argument is unused:
+  Nat.cast_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_range_succ, Finset.sum_range_zero, Nat.descFactorial_zero, Finset.prod_range_succ,
+    Finset.prod_range_zero, mul_one, pow_zero, add_zero, Nat.descFactorial_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/ExactImbalanceAlgebra.lean:60:66: This simp argument is unused:
+  mul_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_range_succ, Finset.sum_range_zero, Nat.descFactorial_zero, Nat.cast_one,
+    Finset.prod_range_succ, Finset.prod_range_zero, pow_zero, add_zero, Nat.descFactorial_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/ExactImbalanceAlgebra.lean:60:75: This simp argument is unused:
+  pow_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_range_succ, Finset.sum_range_zero, Nat.descFactorial_zero, Nat.cast_one,
+    Finset.prod_range_succ, Finset.prod_range_zero, mul_one, add_zero, Nat.descFactorial_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/ExactImbalanceAlgebra.lean:60:85: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_range_succ, Finset.sum_range_zero, Nat.descFactorial_zero, Nat.cast_one,
+    Finset.prod_range_succ, Finset.prod_range_zero, mul_one, pow_zero, Nat.descFactorial_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/ExactImbalanceAlgebra.lean:269:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [3124/3152] Replayed ExactHoeffding.BernoulliSharpBounds
+info: ExactHoeffding/BernoulliSharpBounds.lean:128:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: ExactHoeffding/BernoulliSharpBounds.lean:134:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [3125/3152] Replayed ExactHoeffding.AnalyticContractionCoefficient
+warning: ExactHoeffding/AnalyticContractionCoefficient.lean:58:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3209/3341] Replayed ExactHoeffding.RealRecurrenceCurvature
+warning: ExactHoeffding/RealRecurrenceCurvature.lean:553:6: Unused tactic linter: `change
+  Real.exp t * stationaryDen (L.degree : ℝ) L.marks u v = v * (L.remainder + 2 * u)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/RealRecurrenceCurvature.lean:556:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/RealRecurrenceCurvature.lean:568:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3213/3341] Replayed ExactHoeffding.CompactContractionBoundary
+warning: ExactHoeffding/CompactContractionBoundary.lean:36:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: ExactHoeffding/CompactContractionBoundary.lean:100:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [3234/3396] Replayed ExactHoeffding.RescaledQLimit
+warning: ExactHoeffding/RescaledQLimit.lean:45:22: This simp argument is unused:
+  Nat.cast_descFactorial_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rescaledMean]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/RescaledQLimit.lean:56:23: This simp argument is unused:
+  mul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [zero_mul, zero_add, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/RescaledQLimit.lean:56:33: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [zero_mul, mul_zero, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3267/3396] Replayed ExactHoeffding.ExplicitSingletonExtremizer
+warning: ExactHoeffding/ExplicitSingletonExtremizer.lean:23:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ExplicitSingletonExtremizer.lean:56:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ExplicitSingletonExtremizer.lean:94:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3268/3396] Replayed ExactHoeffding.ExplicitSingletonExtremizerLaw
+warning: ExactHoeffding/ExplicitSingletonExtremizerLaw.lean:48:33: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ExactHoeffding/ExplicitSingletonExtremizerLaw.lean:62:32: This simp argument is unused:
+  Finset.sum_const_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_const, nsmul_eq_mul, mul_one, mul_zero, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/ExplicitSingletonExtremizerLaw.lean:73:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ExactHoeffding/ExplicitSingletonExtremizerLaw.lean:94:11: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/ExplicitSingletonExtremizerLaw.lean:115:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ExplicitSingletonExtremizerLaw.lean:144:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3302/3454] Replayed ExactHoeffding.JointPopulationFirstCorrection
+warning: ExactHoeffding/JointPopulationFirstCorrection.lean:29:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/JointPopulationFirstCorrection.lean:45:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3313/3454] Replayed ExactHoeffding.PiecewiseKL
+warning: ExactHoeffding/PiecewiseKL.lean:323:18: Variable name `hN1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hN1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3314/3454] Replayed ExactHoeffding.PiecewiseKLEndToEnd
+warning: ExactHoeffding/PiecewiseKLEndToEnd.lean:35:66: Unused tactic linter: `field_simp` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/PiecewiseKLEndToEnd.lean:35:81: Unused tactic linter: `ring_nf` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/PiecewiseKLEndToEnd.lean:35:66: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ExactHoeffding/PiecewiseKLEndToEnd.lean:35:81: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ExactHoeffding/PiecewiseKLEndToEnd.lean:35:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLEndToEnd.lean:62:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLEndToEnd.lean:62:50: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLEndToEnd.lean:72:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLEndToEnd.lean:72:50: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLEndToEnd.lean:72:65: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLEndToEnd.lean:91:18: Variable name `hp1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/PiecewiseKLEndToEnd.lean:91:32: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3315/3454] Replayed ExactHoeffding.PiecewiseKLFull
+warning: ExactHoeffding/PiecewiseKLFull.lean:258:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:200:5: Variable name `hF0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hF0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:201:5: Variable name `hFglobal` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hFglobal
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:206:20: Variable name `hτB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hτB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:355:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:297:5: Variable name `hF0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hF0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:303:20: Variable name `hτB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hτB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:678:5: Variable name `hFstrict` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hFstrict
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:779:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:779:55: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:781:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:781:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:929:18: Variable name `hp1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:929:45: Variable name `hx1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:938:5: Variable name `hM` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hM
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:938:18: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:980:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:980:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:983:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:983:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:1286:39: This simp argument is unused:
+  rp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hu, not_le.mpr hu, IL, IP, IB, rm, sP, sB]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: ExactHoeffding/PiecewiseKLFull.lean:1313:0: Error in Linarith.normalizeDenominatorsLHS: Expr.rewrite may not produce subgoals.
+info: ExactHoeffding/PiecewiseKLFull.lean:1348:0: Error in Linarith.normalizeDenominatorsLHS: Expr.rewrite may not produce subgoals.
+warning: ExactHoeffding/PiecewiseKLFull.lean:1431:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:1431:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:1434:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:1434:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:1489:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:1489:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:1492:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLFull.lean:1492:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3316/3454] Replayed ExactHoeffding.PiecewiseKLComparison
+warning: ExactHoeffding/PiecewiseKLComparison.lean:53:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PiecewiseKLComparison.lean:64:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/PiecewiseKLComparison.lean:64:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ExactHoeffding/PiecewiseKLComparison.lean:75:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/PiecewiseKLComparison.lean:75:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ExactHoeffding/PiecewiseKLComparison.lean:85:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/PiecewiseKLComparison.lean:85:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ExactHoeffding/PiecewiseKLComparison.lean:95:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/PiecewiseKLComparison.lean:95:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ExactHoeffding/PiecewiseKLComparison.lean:152:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3321/3454] Replayed ExactHoeffding.FactorialChernoff
+warning: ExactHoeffding/FactorialChernoff.lean:216:6: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/FactorialChernoff.lean:322:31: Variable name `hjd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hjd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3324/3454] Replayed ExactHoeffding.FiniteMeanLegendre
+warning: ExactHoeffding/FiniteMeanLegendre.lean:239:29: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/FiniteMeanLegendre.lean:250:29: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3325/3454] Replayed ExactHoeffding.FiniteSupportMeanEnvelope
+warning: ExactHoeffding/FiniteSupportMeanEnvelope.lean:195:12: This simp argument is unused:
+  finiteSupportLegendreRate
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [D.logMGF_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/FiniteSupportMeanEnvelope.lean:213:12: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ExactHoeffding/FiniteSupportMeanEnvelope.lean:326:12: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3334/3454] Replayed ExactHoeffding.ScaledKLGaussian
+warning: ExactHoeffding/ScaledKLGaussian.lean:35:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLGaussian.lean:35:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLGaussian.lean:39:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLGaussian.lean:75:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLGaussian.lean:75:62: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLGaussian.lean:78:39: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLGaussian.lean:91:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLGaussian.lean:92:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLGaussian.lean:109:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLGaussian.lean:109:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLGaussian.lean:128:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLGaussian.lean:143:36: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLGaussian.lean:162:45: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLGaussian.lean:181:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3336/3454] Replayed ExactHoeffding.Cumulant23Taylor
+warning: ExactHoeffding/Cumulant23Taylor.lean:40:18: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/Cumulant23Taylor.lean:52:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/Cumulant23Taylor.lean:82:18: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/Cumulant23Taylor.lean:93:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3342/3454] Replayed ExactHoeffding.ManuscriptMGFContract
+warning: ExactHoeffding/ManuscriptMGFContract.lean:49:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3350/3454] Replayed ExactHoeffding.RescaledThirdMixedDerivative
+warning: ExactHoeffding/RescaledThirdMixedDerivative.lean:113:27: This simp argument is unused:
+  Pi.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Pi.add_apply, Pi.pow_apply, rescaledMean, rescaledFactorialMoment_at_zero,
+    Nat.cast_descFactorial_two, cast_descFactorial_three, cast_descFactorial_four]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3351/3454] Replayed ExactHoeffding.ActualTiltSecondCoefficient
+warning: ExactHoeffding/ActualTiltSecondCoefficient.lean:62:16: This simp argument is unused:
+  map_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [deriv_const, iteratedDeriv_const, show (2 : ℕ) ≠ 0 by omega, if_false, add_zero] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/ActualTiltSecondCoefficient.lean:62:26: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [deriv_const, iteratedDeriv_const, show (2 : ℕ) ≠ 0 by omega, if_false, map_zero] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3355/3454] Replayed ExactHoeffding.OptimalProxyAsymptotics
+warning: ExactHoeffding/OptimalProxyAsymptotics.lean:47:37: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [actualHypergeomProxy]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/OptimalProxyAsymptotics.lean:205:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/OptimalProxyAsymptotics.lean:229:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3358/3454] Replayed ExactHoeffding.JointOptimizedValue
+warning: ExactHoeffding/JointOptimizedValue.lean:54:18: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/JointOptimizedValue.lean:54:31: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3368/3454] Replayed ExactHoeffding.JointCoordinateFactor
+warning: ExactHoeffding/JointCoordinateFactor.lean:143:33: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/JointCoordinateFactor.lean:214:27: This simp argument is unused:
+  one_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.mk_add_mk, Prod.smul_mk, smul_eq_mul, mul_zero, zero_add, add_zero, Finset.sum_range_succ,
+    Finset.sum_range_zero, zero_add, Nat.factorial_zero, Nat.cast_one, inv_one, iteratedFDeriv_zero_apply,
+    Nat.factorial_one, iteratedFDeriv_one_apply, pow_one] at ht
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3374/3454] Replayed ExactHoeffding.JointPopulationEnvelope
+warning: ExactHoeffding/JointPopulationEnvelope.lean:123:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3375/3454] Replayed ExactHoeffding.JointPopulationBoundary
+warning: ExactHoeffding/JointPopulationBoundary.lean:26:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/JointPopulationBoundary.lean:57:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/JointPopulationBoundary.lean:74:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3382/3454] Replayed ExactHoeffding.HypergeomBennettBernstein
+warning: ExactHoeffding/HypergeomBennettBernstein.lean:336:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/HypergeomBennettBernstein.lean:372:47: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3383/3454] Replayed ExactHoeffding.FactorialChernoffExact
+warning: ExactHoeffding/FactorialChernoffExact.lean:10:5: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/FactorialChernoffExact.lean:10:18: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/FactorialChernoffExact.lean:29:61: This simp argument is unused:
+  Finset.sum_const_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.choose_zero_right, Nat.cast_one, one_mul, Finset.sum_ite_irrel, Finset.sum_const, nsmul_eq_mul,
+    mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/FactorialChernoffExact.lean:30:6: This simp argument is unused:
+  Finset.sum_ite_irrel
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.choose_zero_right, Nat.cast_one, one_mul, Finset.sum_const_zero, Finset.sum_const,
+    nsmul_eq_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/FactorialChernoffExact.lean:30:28: This simp argument is unused:
+  Finset.sum_const
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.choose_zero_right, Nat.cast_one, one_mul, Finset.sum_const_zero, Finset.sum_ite_irrel,
+    nsmul_eq_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/FactorialChernoffExact.lean:30:46: This simp argument is unused:
+  nsmul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.choose_zero_right, Nat.cast_one, one_mul, Finset.sum_const_zero, Finset.sum_ite_irrel,
+    Finset.sum_const, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/FactorialChernoffExact.lean:30:60: This simp argument is unused:
+  mul_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.choose_zero_right, Nat.cast_one, one_mul, Finset.sum_const_zero, Finset.sum_ite_irrel,
+    Finset.sum_const, nsmul_eq_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3386/3454] Replayed ExactHoeffding.FiniteSupportChernoffEnvelope
+warning: ExactHoeffding/FiniteSupportChernoffEnvelope.lean:26:10: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ExactHoeffding/FiniteSupportChernoffEnvelope.lean:45:12: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ExactHoeffding/FiniteSupportChernoffEnvelope.lean:66:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/FiniteSupportChernoffEnvelope.lean:66:35: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/FiniteSupportChernoffEnvelope.lean:79:12: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ExactHoeffding/FiniteSupportChernoffEnvelope.lean:100:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/FiniteSupportChernoffEnvelope.lean:100:35: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3388/3454] Replayed ExactHoeffding.FactorialMinimizer
+warning: ExactHoeffding/FactorialMinimizer.lean:84:33: Variable name `hdk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hdk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/FactorialMinimizer.lean:230:6: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ExactHoeffding/FactorialMinimizer.lean:304:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ExactHoeffding/FactorialMinimizer.lean:221:5: Variable name `hidxmem` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hidxmem
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3396/3454] Replayed ExactHoeffding.FactorialChernoffLower
+warning: ExactHoeffding/FactorialChernoffLower.lean:30:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ExactHoeffding/FactorialChernoffLower.lean:68:19: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/FactorialChernoffLower.lean:68:32: Variable name `hmk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hmk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3403/3454] Replayed ExactHoeffding.ManuscriptA2Contract
+warning: ExactHoeffding/ManuscriptA2Contract.lean:18:5: Variable name `htotal` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _htotal
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3405/3454] Replayed ExactHoeffding.ManuscriptA3Contract
+warning: ExactHoeffding/ManuscriptA3Contract.lean:20:8: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/ManuscriptA3Contract.lean:56:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3407/3454] Replayed ExactHoeffding.FixedMarginSeparation
+warning: ExactHoeffding/FixedMarginSeparation.lean:46:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3417/3454] Replayed ExactHoeffding.OptimalProxyFourthExpansion
+warning: ExactHoeffding/OptimalProxyFourthExpansion.lean:105:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3424/3454] Replayed ExactHoeffding.CompactAnalyticHypergeomContraction
+warning: ExactHoeffding/CompactAnalyticHypergeomContraction.lean:61:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3425/3454] Replayed ExactHoeffding.CanonicalOptimizedPopulationRemainder
+warning: ExactHoeffding/CanonicalOptimizedPopulationRemainder.lean:52:27: This simp argument is unused:
+  one_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Prod.mk_add_mk, Prod.smul_mk, smul_eq_mul, mul_zero, zero_add, add_zero, Finset.sum_range_succ,
+    Finset.sum_range_zero, zero_add, Nat.factorial_zero, Nat.cast_one, inv_one, iteratedFDeriv_zero_apply,
+    Nat.factorial_one, iteratedFDeriv_one_apply, pow_one, one_mul] at ht
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/CanonicalOptimizedPopulationRemainder.lean:104:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/CanonicalOptimizedPopulationRemainder.lean:109:14: Variable name `hd₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3431/3454] Replayed ExactHoeffding.OddCentralStrict
+warning: ExactHoeffding/OddCentralStrict.lean:46:43: Variable name `hmpos` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hmpos
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/OddCentralStrict.lean:110:26: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3432/3454] Replayed ExactHoeffding.GoalBOddVariation
+warning: ExactHoeffding/GoalBOddVariation.lean:92:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3433/3454] Replayed ExactHoeffding.GoalBIndividual
+warning: ExactHoeffding/GoalBIndividual.lean:59:30: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/GoalBIndividual.lean:92:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/GoalBIndividual.lean:94:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/GoalBIndividual.lean:94:52: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3434/3454] Replayed ExactHoeffding.GoalBIndividualMargin
+warning: ExactHoeffding/GoalBIndividualMargin.lean:30:17: Variable name `hN` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hN
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/GoalBIndividualMargin.lean:30:43: Variable name `hkN` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hkN
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/GoalBIndividualMargin.lean:94:17: Variable name `hN` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hN
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/GoalBIndividualMargin.lean:94:30: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/GoalBIndividualMargin.lean:95:5: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/GoalBIndividualMargin.lean:163:5: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/GoalBIndividualMargin.lean:286:5: Variable name `hk₁` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk₁
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/GoalBIndividualMargin.lean:381:12: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/GoalBIndividualMargin.lean:381:12: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ExactHoeffding/GoalBIndividualMargin.lean:411:16: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ExactHoeffding/GoalBIndividualMargin.lean:411:16: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ExactHoeffding/GoalBIndividualMargin.lean:417:34: Variable name `hM` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hM
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/GoalBIndividualMargin.lean:441:34: Variable name `hM` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hM
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/GoalBIndividualMargin.lean:643:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3439/3454] Replayed ExactHoeffding.PublicFormulaClosure
+warning: ExactHoeffding/PublicFormulaClosure.lean:28:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/PublicFormulaClosure.lean:80:46: Variable name `hN` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hN
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3441/3454] Replayed ExactHoeffding.ScaledKLTaylor
+warning: ExactHoeffding/ScaledKLTaylor.lean:27:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ExactHoeffding/ScaledKLTaylor.lean:71:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ExactHoeffding/ScaledKLTaylor.lean:88:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLTaylor.lean:93:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLTaylor.lean:99:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLTaylor.lean:126:8: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLTaylor.lean:131:8: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLTaylor.lean:143:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLTaylor.lean:148:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLTaylor.lean:153:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLTaylor.lean:175:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLTaylor.lean:176:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLTaylor.lean:176:33: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ScaledKLTaylor.lean:177:57: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3442/3454] Replayed ExactHoeffding.OddCentralVariationalMaximum
+warning: ExactHoeffding/OddCentralVariationalMaximum.lean:31:63: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [oddCentralSupportedProxy, actualHypergeomProxy]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3443/3454] Replayed ExactHoeffding.OddCentralVariationalBoundary
+warning: ExactHoeffding/OddCentralVariationalBoundary.lean:59:37: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [actualHypergeomProxy]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/OddCentralVariationalBoundary.lean:100:51: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3444/3454] Replayed ExactHoeffding.ActualProxyUniformTaylor
+warning: ExactHoeffding/ActualProxyUniformTaylor.lean:226:49: This simp argument is unused:
+  iteratedDeriv_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sub_zero, smul_eq_mul, hwithin, iteratedDeriv_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/ActualProxyUniformTaylor.lean:226:69: This simp argument is unused:
+  iteratedDeriv_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sub_zero, smul_eq_mul, hwithin, iteratedDeriv_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ExactHoeffding/ActualProxyUniformTaylor.lean:180:25: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ActualProxyUniformTaylor.lean:180:38: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ActualProxyUniformTaylor.lean:180:50: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ActualProxyUniformTaylor.lean:236:41: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3445/3454] Replayed ExactHoeffding.ManuscriptABContracts
+warning: ExactHoeffding/ManuscriptABContracts.lean:36:18: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/ManuscriptABContracts.lean:110:6: Variable name `hkc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hkc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/ManuscriptABContracts.lean:110:23: Variable name `hkc'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hkc'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ExactHoeffding/ManuscriptABContracts.lean:216:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ManuscriptABContracts.lean:230:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3449/3454] Replayed ExactHoeffding.ManuscriptTwoDrawContract
+warning: ExactHoeffding/ManuscriptTwoDrawContract.lean:220:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ExactHoeffding/ManuscriptTwoDrawContract.lean:227:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3450/3454] Built ExactHoeffding.ManuscriptA1Contract (72s)
+✔ [3451/3454] Built ExactHoeffding.ManuscriptSupplementContracts (91s)
+✔ [3452/3454] Built ExactHoeffding.ManuscriptSemanticAggregates (82s)
+✔ [3453/3454] Built ExactHoeffding (99s)
+Build completed successfully (3454 jobs).

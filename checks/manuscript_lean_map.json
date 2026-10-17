@@ -6,10 +6,10 @@
       "key": "thm:exchange",
       "kind": "theorem",
       "title": "Exact finite-exchangeability constants",
-      "line": 100,
+      "line": 103,
       "paper_environment": true,
       "status": "Complete",
-      "coverage": "The parity formula, validity, leastness, sharp examples, and odd global extremizers are assembled from actual finite exchangeability and hypergeometric proxies.",
+      "coverage": "The parity formula, validity and leastness, odd equality cases, an attained finite variational witness, strict odd comparison, and the first-order asymptotic are assembled from actual finite-exchangeability and hypergeometric proxies.",
       "gap": null,
       "declarations": [
         {
@@ -19,18 +19,35 @@
         {
           "file": "ExactHoeffding/ExactOddGlobalTheorem.lean",
           "name": "exact_odd_global_theorem"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptExchangeContract.lean",
+          "name": "manuscript_exchangeability_constants_contract"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptExchangeContract.lean",
+          "name": "manuscript_exchangeability_constant_formula"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptExchangeContract.lean",
+          "name": "manuscript_exchangeability_variational_max_attained"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptExchangeContract.lean",
+          "name": "manuscript_exchangeability_odd_extremizers"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_exchangeability_constants_contract"
     },
     {
       "index": 2,
       "key": "thm:main_laplace",
       "kind": "theorem",
       "title": "Uniform hypergeometric Laplace comparison",
-      "line": 125,
+      "line": 128,
       "paper_environment": true,
       "status": "Complete",
-      "coverage": "The stated parameter range, all real tilts, strict nonzero case, and balanced limiting cases are covered.",
+      "coverage": "A unified contract covers the m≥3 Laplace and proxy theorem and the separate m=2 proxy clause, with stated ranges, strictness, and balance equality.",
       "gap": null,
       "declarations": [
         {
@@ -44,15 +61,28 @@
         {
           "file": "ExactHoeffding/BernoulliBalancedLimit.lean",
           "name": "scaledBernoulliLogLaplace_continuous_extension_closed"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptLaplaceContract.lean",
+          "name": "manuscript_main_laplace_contract"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptLaplaceContract.lean",
+          "name": "manuscript_main_laplace_two_draw_contract"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSemanticAggregates.lean",
+          "name": "manuscript_main_laplace_full_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_main_laplace_full_contract"
     },
     {
       "index": 3,
       "key": "thm:curvature",
       "kind": "theorem",
       "title": "Universal hypergeometric curvature",
-      "line": 141,
+      "line": 144,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "All legal margins, all real tilts, sharp minimum-of-margin-products bound, and equality regimes are covered.",
@@ -65,15 +95,36 @@
         {
           "file": "ExactHoeffding/AllParameterCurvatureEquality.lean",
           "name": "hypergeomTiltVariance_interior_equality_iff"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCurvatureContract.lean",
+          "name": "manuscript_thm_curvature_contract"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCurvatureContract.lean",
+          "name": "manuscript_thm_curvature_bound"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCurvatureContract.lean",
+          "name": "manuscript_thm_curvature_singleton_mark_attainment"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCurvatureContract.lean",
+          "name": "manuscript_thm_curvature_balanced_zero_attainment"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCurvatureContract.lean",
+          "name": "manuscript_thm_curvature_interior_equality_iff"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_thm_curvature_contract"
     },
     {
       "index": 4,
       "key": "cor:mgf",
       "kind": "corollary",
       "title": "Uniform log-Laplace domination",
-      "line": 150,
+      "line": 153,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "Uniform centered log-Laplace domination follows from actual sharp curvature; strictness and equality cases are audited.",
@@ -86,18 +137,23 @@
         {
           "file": "ExactHoeffding/StrictUniformLaplace.lean",
           "name": "hypergeom_uniform_log_laplace_domination_equality_iff"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptMGFContract.lean",
+          "name": "manuscript_cor_mgf_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_cor_mgf_contract"
     },
     {
       "index": 5,
       "key": "cor:tail",
       "kind": "corollary",
       "title": "Weighted finite-exchangeability concentration",
-      "line": 168,
+      "line": 171,
       "paper_environment": true,
       "status": "Complete",
-      "coverage": "Actual finite exchangeable measures, projected weights, degenerate projected variance, and two-sided confidence form are covered.",
+      "coverage": "Actual finite exchangeable measures, zero-padded weights, the log-Laplace bound, the stated one-sided confidence bound, and the zero projected-variance case are covered.",
       "gap": null,
       "declarations": [
         {
@@ -107,15 +163,48 @@
         {
           "file": "ExactHoeffding/SharpWeightedTail.lean",
           "name": "sharp_weighted_confidence_bound"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptTailContract.lean",
+          "name": "manuscript_cor_tail_contract"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptTailContract.lean",
+          "name": "manuscript_tail_statistic_eq_padded"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptTailContract.lean",
+          "name": "manuscript_pad_weighted_sum_eq"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptTailContract.lean",
+          "name": "manuscript_parity_constant_closed_form"
+        },
+        {
+          "file": "ExactHoeffding/SharpWeightedTail.lean",
+          "name": "sharp_weighted_exp_bound"
+        },
+        {
+          "file": "ExactHoeffding/ExactParityConstants.lean",
+          "name": "paritySharpConstant_is_valid"
+        },
+        {
+          "file": "ExactHoeffding/ExactParityConstants.lean",
+          "name": "paritySharpConstant_is_least"
+        },
+        {
+          "file": "ExactHoeffding/SharpWeightedTail.lean",
+          "name": "weighted_tail_zero_of_projectedVariance_zero"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_cor_tail_contract"
     },
     {
       "index": 6,
       "key": "prop:two_level",
       "kind": "proposition",
       "title": "Two-level reduction; Lee--Kim",
-      "line": 191,
+      "line": 194,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "Compact constrained slice maximizers reduce to at most two levels, retaining zero sum and norm constraints.",
@@ -128,18 +217,23 @@
         {
           "file": "ExactHoeffding/ThreePointExclusion.lean",
           "name": "pairedExponential_no_three_distinct_max"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCoreContracts.lean",
+          "name": "manuscript_prop_two_level_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_prop_two_level_contract"
     },
     {
       "index": 7,
       "key": "prop:variational",
       "kind": "proposition",
       "title": "Exact variational identity; Lee--Kim",
-      "line": 230,
+      "line": 233,
       "paper_environment": true,
       "status": "Complete",
-      "coverage": "Exact variational identity for the actual exchangeable finite measures and zero-sum contrasts.",
+      "coverage": "The finite maximum and nonzero-tilt supremum identity, plus the equivalent least-coefficient criterion for actual exchangeable laws and zero-sum contrasts.",
       "gap": null,
       "declarations": [
         {
@@ -149,15 +243,28 @@
         {
           "file": "ExactHoeffding/VariationalIdentity.lean",
           "name": "exchangeable_coefficient_iff_variational"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptVariationalContract.lean",
+          "name": "manuscript_variational_full_contract"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptVariationalContract.lean",
+          "name": "manuscript_variational_contract"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptVariationalContract.lean",
+          "name": "manuscript_variational_coefficient_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_variational_full_contract"
     },
     {
       "index": 8,
       "key": "lem:PB",
       "kind": "lemma",
       "title": "Poisson--binomial admissibility",
-      "line": 336,
+      "line": 339,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "Actual tilted law and Bernoulli-sum representation yield the mean–variance feasibility condition.",
@@ -170,15 +277,20 @@
         {
           "file": "ExactHoeffding/TiltedAdmissibilityDirect.lean",
           "name": "hypergeomTiltVariance_admissible_of_margins"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCoreContracts.lean",
+          "name": "manuscript_lem_PB_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_lem_PB_contract"
     },
     {
       "index": 9,
       "key": "lem:branch",
       "kind": "lemma",
       "title": "The admissible stationary branch",
-      "line": 386,
+      "line": 389,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "Actual stationary polynomial identities and unique positive branch are formalized for admissible parameters.",
@@ -191,15 +303,54 @@
         {
           "file": "ExactHoeffding/StationaryPositiveBranch.lean",
           "name": "stationaryPolynomial_existsUnique_positive_root"
+        },
+        {
+          "file": "ExactHoeffding/PublicFormulaClosure.lean",
+          "name": "stationaryPolynomial_positive_root_eq_radical"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCoreContracts.lean",
+          "name": "manuscript_lem_branch_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_lem_branch_contract"
     },
     {
       "index": 10,
+      "key": "extra:stationary-q0-radicals",
+      "kind": "supplementary proof identity",
+      "title": "Auxiliary radical comparisons for q₀",
+      "line": 389,
+      "paper_environment": false,
+      "status": "Complete",
+      "coverage": "The three printed Case II auxiliary radical comparisons are proved on the manuscript real domain j≥3, L≥j−1: q strictly exceeds q₀ under the small-A condition; q₀≥j/L; and the E q₀ lower comparison, by the all-degree positivity polynomial.",
+      "gap": null,
+      "declarations": [
+        {
+          "file": "ExactHoeffding/StationaryRadicalComparisons.lean",
+          "name": "stationary_q_gt_qZero"
+        },
+        {
+          "file": "ExactHoeffding/StationaryRadicalComparisons.lean",
+          "name": "stationary_qZero_ge_div"
+        },
+        {
+          "file": "ExactHoeffding/StationaryRadicalComparisons.lean",
+          "name": "stationary_E_mul_qZero_ge"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSupplementContracts.lean",
+          "name": "manuscript_extra_stationary_q0_radicals_contract"
+        }
+      ],
+      "semantic_contract_declaration": "manuscript_extra_stationary_q0_radicals_contract"
+    },
+    {
+      "index": 11,
       "key": "lem:universal",
       "kind": "lemma",
       "title": "Universal stationary comparison",
-      "line": 413,
+      "line": 416,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "The universal stationary comparison includes strict positivity and the equality characterization.",
@@ -212,15 +363,20 @@
         {
           "file": "ExactHoeffding/StationaryEquality.lean",
           "name": "universal_stationary_comparison_eq_zero_iff"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCoreContracts.lean",
+          "name": "manuscript_lem_universal_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_lem_universal_contract"
     },
     {
-      "index": 11,
+      "index": 12,
       "key": "lem:identity",
       "kind": "lemma",
       "title": "Main algebraic identity",
-      "line": 501,
+      "line": 504,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "The displayed main algebraic identity is proved by Lean ring normalization.",
@@ -229,15 +385,20 @@
         {
           "file": "ExactHoeffding/StationaryCertificates.lean",
           "name": "stationary_main_identity"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCoreContracts.lean",
+          "name": "manuscript_lem_identity_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_lem_identity_contract"
     },
     {
-      "index": 12,
+      "index": 13,
       "key": "prop:allinner",
       "kind": "proposition",
       "title": "All-degree curvature domination",
-      "line": 518,
+      "line": 521,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "Canonical reduction and all-degree stationary certificates prove the full inner curvature bound.",
@@ -250,15 +411,20 @@
         {
           "file": "ExactHoeffding/StationaryCertificates.lean",
           "name": "admissible_stationary_sharp_bound"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCoreContracts.lean",
+          "name": "manuscript_prop_allinner_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_prop_allinner_contract"
     },
     {
-      "index": 13,
+      "index": 14,
       "key": "prop:variance_parity",
       "kind": "proposition",
       "title": "The variance constant and the parity gap",
-      "line": 585,
+      "line": 588,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "Actual finite exchangeable variance supremum, parity, sharp attainment, and stated expansion are covered.",
@@ -271,15 +437,20 @@
         {
           "file": "ExactHoeffding/ExchangeableVarianceSupremum.lean",
           "name": "exact_variance_gap_fourth_expansion_along"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptExtendedContracts.lean",
+          "name": "manuscript_prop_variance_parity_full_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_prop_variance_parity_full_contract"
     },
     {
-      "index": 14,
+      "index": 15,
       "key": "prop:explicit_extremizer",
       "kind": "proposition",
       "title": "A sharp single-coordinate contrast",
-      "line": 623,
+      "line": 626,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "The actual Hamming-slice law, coordinate contrast, Bernoulli pushforward, and contacts are proved.",
@@ -288,15 +459,20 @@
         {
           "file": "ExactHoeffding/ExplicitExtremizerTheorem.lean",
           "name": "explicit_single_coordinate_extremizer"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCoreContracts.lean",
+          "name": "manuscript_prop_explicit_extremizer_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_prop_explicit_extremizer_contract"
     },
     {
-      "index": 15,
+      "index": 16,
       "key": "lem:threemass",
       "kind": "lemma",
       "title": "Three-mass proxy formula; Atouani--Marchal--Arbel",
-      "line": 667,
+      "line": 670,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "The attributed three-point optimal proxy formula is proved in the stated positive-mass parameter domain.",
@@ -309,18 +485,23 @@
         {
           "file": "ExactHoeffding/TwoDrawProxyComplete.lean",
           "name": "threeMass_balanced_optimal_proxy"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCoreContracts.lean",
+          "name": "manuscript_lem_threemass_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_lem_threemass_contract"
     },
     {
-      "index": 16,
+      "index": 17,
       "key": "prop:odd2",
       "kind": "proposition",
       "title": "All two-draw laws for an odd population",
-      "line": 694,
+      "line": 697,
       "paper_environment": true,
       "status": "Complete",
-      "coverage": "Exact two-draw proxy, full success-count extremizers, strict singleton comparison, and closed value are covered.",
+      "coverage": "For every legal success count 0≤k≤N, the exact odd two-draw normalized proxy maximum, all equality cases, closed constant, strict singleton comparison, and the stated odd-population asymptotic gap L_N−L_N^(2)=2/(3N^3)+O(N^-4) are combined in the Lean contract.",
       "gap": null,
       "declarations": [
         {
@@ -334,15 +515,32 @@
         {
           "file": "ExactHoeffding/TwoDrawSingletonComparison.lean",
           "name": "oddTwoDrawConstant_lt_singleton"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptTwoDrawContract.lean",
+          "name": "manuscript_prop_odd2_contract"
+        },
+        {
+          "file": "ExactHoeffding/OptimalProxyAsymptotics.lean",
+          "name": "odd_nearly_balanced_gap_cubic_expansion_along"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptTwoDrawContract.lean",
+          "name": "oddSingletonConstant_eq_oddHypergeomConstant"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSemanticAggregates.lean",
+          "name": "manuscript_prop_odd2_semantic_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_prop_odd2_semantic_contract"
     },
     {
-      "index": 17,
+      "index": 18,
       "key": "cor:two_bern_envelope",
       "kind": "corollary",
       "title": "Two-draw Bernoulli envelope",
-      "line": 735,
+      "line": 738,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "Two-draw Bernoulli envelope and balanced equality are covered.",
@@ -351,15 +549,20 @@
         {
           "file": "ExactHoeffding/TwoDrawComparison.lean",
           "name": "hypergeom_two_draw_bernoulli_envelope"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSupplementContracts.lean",
+          "name": "manuscript_cor_two_bern_envelope_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_cor_two_bern_envelope_contract"
     },
     {
-      "index": 18,
+      "index": 19,
       "key": "odd:thm:envelope",
       "kind": "theorem",
       "title": "Parity-uniform Bernoulli envelope",
-      "line": 769,
+      "line": 772,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "Finite-population Laplace inequality, strictness, optimal Bernoulli proxy comparison, parity and endpoints are covered.",
@@ -376,15 +579,74 @@
         {
           "file": "ExactHoeffding/BernoulliOptimal.lean",
           "name": "bernoulli_sharp_quadratic_optimal"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptExtendedContracts.lean",
+          "name": "manuscript_odd_envelope_full_contract"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCoreContracts.lean",
+          "name": "manuscript_odd_envelope_contract"
+        },
+        {
+          "file": "ExactHoeffding/OddHypergeomExtremizers.lean",
+          "name": "normalizedHypergeomProxy_inner_lt_bernoulli"
+        },
+        {
+          "file": "ExactHoeffding/FinitePopulationBernoulliEnvelope.lean",
+          "name": "hypergeom_proxy_lt_scaled_bernoulli"
+        },
+        {
+          "file": "ExactHoeffding/FinitePopulationBernoulliEnvelope.lean",
+          "name": "hypergeom_proxy_eq_scaled_bernoulli_balanced"
+        },
+        {
+          "file": "ExactHoeffding/ParityProxyComparison.lean",
+          "name": "odd_imbalance_bound"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_odd_envelope_full_contract"
     },
     {
-      "index": 19,
+      "index": 20,
+      "key": "extra:Bernoulli-gap-display-identities",
+      "kind": "supplementary proof identity",
+      "title": "Fixed-parameter Bernoulli gap differential identities",
+      "line": 772,
+      "paper_environment": false,
+      "status": "Complete",
+      "coverage": "For 0<p<1/2, the actual Bernoulli sharp-proxy gap has the printed reflection symmetry; its derivative vanishes at 0 and the log-odds contact; and its second derivative equals beta(p)−1/[4 cosh²((t−log((1−p)/p))/2)]. The balanced limit and endpoint cases remain supplied by the existing Bernoulli optimality theorem.",
+      "gap": null,
+      "declarations": [
+        {
+          "file": "ExactHoeffding/BernoulliGapIdentities.lean",
+          "name": "bernoulliProxyGap_reflection"
+        },
+        {
+          "file": "ExactHoeffding/BernoulliGapIdentities.lean",
+          "name": "bernoulliProxyGap_deriv_zero"
+        },
+        {
+          "file": "ExactHoeffding/BernoulliGapIdentities.lean",
+          "name": "bernoulliProxyGap_deriv_logOdds"
+        },
+        {
+          "file": "ExactHoeffding/BernoulliGapIdentities.lean",
+          "name": "bernoulliProxyGap_second_derivative"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSupplementContracts.lean",
+          "name": "manuscript_extra_Bernoulli_gap_display_identities_contract"
+        }
+      ],
+      "semantic_contract_declaration": "manuscript_extra_Bernoulli_gap_display_identities_contract"
+    },
+    {
+      "index": 21,
       "key": "odd:lem:PB",
       "kind": "lemma",
       "title": "Real-root admissibility",
-      "line": 801,
+      "line": 804,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "Actual Jacobi roots are represented by the real Bernoulli product law, and tilted feasibility is proved.",
@@ -397,15 +659,28 @@
         {
           "file": "ExactHoeffding/TiltedAdmissibilityDirect.lean",
           "name": "hypergeomTiltVariance_admissible_of_margins"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptExtendedContracts.lean",
+          "name": "manuscript_odd_lem_PB_full_contract"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCoreContracts.lean",
+          "name": "manuscript_lem_PB_contract"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCoreContracts.lean",
+          "name": "manuscript_odd_lem_PB_mean_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_odd_lem_PB_full_contract"
     },
     {
-      "index": 20,
+      "index": 22,
       "key": "odd:lem:ode",
       "kind": "lemma",
       "title": "Differential identity",
-      "line": 825,
+      "line": 828,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "Differential identity for the true finite-law tilted variance curve is proved on the full interior.",
@@ -414,15 +689,20 @@
         {
           "file": "ExactHoeffding/HypergeometricODE.lean",
           "name": "hypergeomTiltVariance_curve_identity"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptMeanCurveContracts.lean",
+          "name": "manuscript_odd_lem_ode_mean_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_odd_lem_ode_mean_contract"
     },
     {
-      "index": 21,
+      "index": 23,
       "key": "odd:lem:barrier",
       "kind": "lemma",
       "title": "Quadratic variance envelope",
-      "line": 854,
+      "line": 857,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "The actual canonical variance barrier and equality iff zero tilt are proved.",
@@ -431,15 +711,20 @@
         {
           "file": "ExactHoeffding/HypergeometricBarrier.lean",
           "name": "hypergeomTiltVariance_barrier_canonical"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptMeanCurveContracts.lean",
+          "name": "manuscript_odd_lem_barrier_mean_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_odd_lem_barrier_mean_contract"
     },
     {
-      "index": 22,
+      "index": 24,
       "key": "odd:thm:odd",
       "kind": "theorem",
       "title": "Odd-population hypergeometric extremizers",
-      "line": 1007,
+      "line": 1010,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "Global odd margin extremizers, complete equality classification, and exact exchangeability constant are proved.",
@@ -456,15 +741,106 @@
         {
           "file": "ExactHoeffding/ExactOddGlobalTheorem.lean",
           "name": "exact_odd_global_theorem"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptCoreContracts.lean",
+          "name": "manuscript_odd_global_extremizer_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_odd_global_extremizer_contract"
     },
     {
-      "index": 23,
+      "index": 25,
+      "key": "extra:B2-odd-central-variational-stationarity",
+      "kind": "supplementary interface",
+      "title": "Odd central finite-sum variational formula and optimal-tilt contact",
+      "line": 1010,
+      "paper_environment": false,
+      "status": "Complete",
+      "coverage": "The support-truncated odd-central finite-sum proxy agrees pointwise, including the removable zero tilt, with the actual hypergeometric proxy and its variance value at zero. Every nondegenerate central law has an attained nonzero global maximizer tied to the actual least quadratic proxy, and every nonzero maximizer satisfies tψ′(t)=2ψ(t), without a uniqueness assumption. At m=0 or m=N the law is deterministic, the proxy and optimum are zero, and every nonzero tilt is a maximizer.",
+      "gap": null,
+      "declarations": [
+        {
+          "file": "ExactHoeffding/GoalBOddVariation.lean",
+          "name": "oddCentral_logMGF_eq_finite_sum"
+        },
+        {
+          "file": "ExactHoeffding/GoalBOddVariation.lean",
+          "name": "oddCentral_actualProxy_zero_is_variance"
+        },
+        {
+          "file": "ExactHoeffding/GoalBOddVariation.lean",
+          "name": "oddCentral_nonzero_maximizer_stationary"
+        },
+        {
+          "file": "ExactHoeffding/GoalBOddVariation.lean",
+          "name": "oddCentral_nonzero_maximizer_realizes_optimalProxy"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralOptimalTilt.lean",
+          "name": "oddCentral_exists_nonzero_optimal_tilt_stationary"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralOptimalTilt.lean",
+          "name": "oddCentral_every_nonzero_maximizer_stationary"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralSupportFormula.lean",
+          "name": "oddCentralFiniteTiltSum_eq_supported"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralSupportFormula.lean",
+          "name": "oddCentral_logMGF_eq_supported_sum"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralSupportFormula.lean",
+          "name": "hypergeomOptimalProxy_oddCentral_eq_supported_variation"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralVariationalMaximum.lean",
+          "name": "hypergeomCumulant2_oddCentral_eq_W"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralVariationalMaximum.lean",
+          "name": "oddCentralSupportedProxy_eq_actual"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralVariationalMaximum.lean",
+          "name": "oddCentral_supported_variational_maximum"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralVariationalBoundary.lean",
+          "name": "oddCentralSupportedProxy_zero_eq_variance"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralVariationalBoundary.lean",
+          "name": "oddCentralSupportedProxy_boundary_zero"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralVariationalBoundary.lean",
+          "name": "oddCentralOptimalProxy_boundary_zero"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralVariationalBoundary.lean",
+          "name": "oddCentral_boundary_every_nonzero_tilt_maximizes"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSupplementContracts.lean",
+          "name": "manuscript_extra_B2_odd_central_interior_contract"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSemanticAggregates.lean",
+          "name": "manuscript_extra_B2_odd_central_full_contract"
+        }
+      ],
+      "semantic_contract_declaration": "manuscript_extra_B2_odd_central_full_contract"
+    },
+    {
+      "index": 26,
       "key": "B:inputs",
       "kind": "proposition",
       "title": "Curvature and Bernoulli proxy bounds",
-      "line": 1102,
+      "line": 1105,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "Sharp curvature and finite-population Bernoulli proxy bounds, equality, strictness, and complement symmetries are covered.",
@@ -477,15 +853,20 @@
         {
           "file": "ExactHoeffding/FinitePopulationBernoulliEnvelope.lean",
           "name": "hypergeom_proxy_scaled_bernoulli_equality_iff"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptABContracts.lean",
+          "name": "manuscript_B_inputs_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_B_inputs_contract"
     },
     {
-      "index": 24,
+      "index": 27,
       "key": "B:main",
       "kind": "theorem",
       "title": "All population sizes, all fixed sample sizes",
-      "line": 1119,
+      "line": 1122,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "All fixed samples, exact central argmax set, and uniform even/odd quantitative gaps are proved.",
@@ -502,15 +883,20 @@
         {
           "file": "ExactHoeffding/GoalBFixedSample.lean",
           "name": "hypergeomOptimalProxy_fixed_sample_gap_odd"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptABContracts.lean",
+          "name": "manuscript_B_main_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_B_main_contract"
     },
     {
-      "index": 25,
+      "index": 28,
       "key": "B:atanh",
       "kind": "lemma",
       "title": "Cubic lower bound for the inverse hyperbolic tangent",
-      "line": 1141,
+      "line": 1144,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "The cubic artanh lower bound, strictness, and reciprocal proxy bound are proved.",
@@ -523,15 +909,28 @@
         {
           "file": "ExactHoeffding/GoalBFixedSample.lean",
           "name": "imbalanceFactor_cubic_upper"
+        },
+        {
+          "file": "ExactHoeffding/PublicFormulaClosure.lean",
+          "name": "real_artanh_cubic_strict_lower"
+        },
+        {
+          "file": "ExactHoeffding/PublicFormulaClosure.lean",
+          "name": "bernoulli_cubic_proxy_strict_upper"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptABContracts.lean",
+          "name": "manuscript_B_atanh_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_B_atanh_contract"
     },
     {
-      "index": 26,
+      "index": 29,
       "key": "B:individual",
       "kind": "proposition",
       "title": "Stronger individual-margin certificate",
-      "line": 1219,
+      "line": 1222,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "The exact two-branch individual margin certificate after sample and success complement reductions, both branch bounds, and the first-branch monotonicity are kernel proved for the full noncentral parameter domain.",
@@ -556,15 +955,66 @@
         {
           "file": "ExactHoeffding/GoalBIndividualMargin.lean",
           "name": "individualMargin_first_branch_gap_mono_reduced"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptABContracts.lean",
+          "name": "manuscript_B_individual_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_B_individual_contract"
     },
     {
-      "index": 27,
+      "index": 30,
+      "key": "extra:B1-individual-margin-quantified",
+      "kind": "supplementary interface",
+      "title": "Top-level individual-gap certificate and quantified margin deficit",
+      "line": 1222,
+      "paper_environment": false,
+      "status": "Complete",
+      "coverage": "The actual optimal hypergeometric proxy is bounded by the paper’s two-branch individual-margin certificate, and the certificate gap G_{N,m}(k) is proved to dominate the exact parity-dependent Δ_{N,m} for every interior population margin and every noncentral sample margin, in both even and odd parity branches.",
+      "gap": null,
+      "declarations": [
+        {
+          "file": "ExactHoeffding/GoalBIndividualMargin.lean",
+          "name": "hypergeomOptimalProxy_le_individualMarginGap"
+        },
+        {
+          "file": "ExactHoeffding/GoalBIndividualMargin.lean",
+          "name": "individualMarginGap_ge_parityDelta_all"
+        },
+        {
+          "file": "ExactHoeffding/IndividualMarginStrictMono.lean",
+          "name": "individualMargin_first_branch_gap_strict_mono"
+        },
+        {
+          "file": "ExactHoeffding/IndividualMarginStrictMono.lean",
+          "name": "individualMargin_first_branch_gap_strict_mono_reduced"
+        },
+        {
+          "file": "ExactHoeffding/IndividualMarginStrictMono.lean",
+          "name": "individualMarginGap_strict_mono_reduced"
+        },
+        {
+          "file": "ExactHoeffding/IndividualMarginEndToEnd.lean",
+          "name": "individualMarginDelta_pos"
+        },
+        {
+          "file": "ExactHoeffding/IndividualMarginEndToEnd.lean",
+          "name": "hypergeomOptimalProxy_individualMargin_end_to_end"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSupplementContracts.lean",
+          "name": "manuscript_extra_B1_individual_margin_contract"
+        }
+      ],
+      "semantic_contract_declaration": "manuscript_extra_B1_individual_margin_contract"
+    },
+    {
+      "index": 31,
       "key": "B:even",
       "kind": "proposition",
       "title": "Even populations",
-      "line": 1242,
+      "line": 1245,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "Exact even maximum and zero-tilt variance attainment for every legal sample size are proved.",
@@ -573,15 +1023,20 @@
         {
           "file": "ExactHoeffding/GoalBFixedSample.lean",
           "name": "hypergeomOptimalProxy_fixed_sample_extremizers_even"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptABContracts.lean",
+          "name": "manuscript_B_even_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_B_even_contract"
     },
     {
-      "index": 28,
+      "index": 32,
       "key": "B:odd",
       "kind": "proposition",
       "title": "Odd populations",
-      "line": 1256,
+      "line": 1259,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "The finite tilted-sum representation, continuous zero-tilt value, strict central value above the ordinary-variance benchmark, exact central maximizers for every legal fixed sample, existence of a nonzero maximizer, and the stationary equation are kernel proved for every nondegenerate odd population.",
@@ -606,15 +1061,24 @@
         {
           "file": "ExactHoeffding/GoalBOddVariation.lean",
           "name": "oddCentral_nonzero_maximizer_realizes_optimalProxy"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralSupportFormula.lean",
+          "name": "hypergeomOptimalProxy_oddCentral_eq_supported_variation"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptABContracts.lean",
+          "name": "manuscript_B_odd_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_B_odd_contract"
     },
     {
-      "index": 29,
+      "index": 33,
       "key": "B:small",
       "kind": "corollary",
       "title": "One- and two-draw closed forms",
-      "line": 1293,
+      "line": 1296,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "One- and two-draw odd closed forms and strict comparison are covered.",
@@ -627,18 +1091,23 @@
         {
           "file": "ExactHoeffding/TwoDrawComparison.lean",
           "name": "hypergeom_two_draw_odd_max_value"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptABContracts.lean",
+          "name": "manuscript_B_small_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_B_small_contract"
     },
     {
-      "index": 30,
+      "index": 34,
       "key": "A:integration",
       "kind": "theorem",
       "title": "Variance-envelope integration",
-      "line": 1349,
+      "line": 1352,
       "paper_environment": true,
       "status": "Complete",
-      "coverage": "The generic finite-support tilt-curve interface proves strict mean monotonicity, inverse tilted-mean parametrization, exact interior Legendre attainment, both left/right variance-envelope integrals, strict comparisons, endpoint continuation under explicit one-sided limits, and Chernoff tail consequences. The finite-support law realization constructs this interface from an actual normalized finite weighted law with ordered positive endpoint atoms and positive tilted variance; the recurrence bridge specializes it to the paper’s laws on 0,...,degree.",
+      "coverage": "The actual finite weighted law realizes the ordinary mean and raw log-MGF. Its tilted mean is strictly increasing with derivative equal to its positive actual variance; the inverse tilt and actual Legendre optimizer are differentiable on the true open support, giving I′=t(v), I″=1/V, and the two variance-envelope integrals. Positive-length variance gaps give strict comparison in the interior and, under finite one-sided integral limits, at either support endpoint. Actual finite weighted tail events follow by optimized Markov bounds. The typed contract includes endpoint-rate and endpoint-tail limits under the endpoint-atom assumptions.",
       "gap": null,
       "declarations": [
         {
@@ -694,17 +1163,542 @@
           "name": "RealRecurrenceLaw.toFiniteSupportTiltCurve_rate_eq"
         },
         {
-          "file": "ExactHoeffding/FiniteSupportTiltCurveOfLaw.lean",
-          "name": "finiteSupportLawData_toTiltCurve"
+          "file": "ExactHoeffding/FiniteSupportLawVariance.lean",
+          "name": "finiteSupportLawData_toTiltCurve_of_endpoints"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_legendreRate_le_hi"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_legendreRate_le_lo"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateRight_endpoint_of_limit"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateLeft_endpoint_of_limit"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportOpenEnvelope.lean",
+          "name": "finiteSupportLegendreRate_ge_meanEnvelopeRateRight_open"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportOpenEnvelope.lean",
+          "name": "finiteSupportLegendreRate_ge_meanEnvelopeRateLeft_open"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportOpenEnvelope.lean",
+          "name": "finiteSupportLegendreRate_gt_meanEnvelopeRateRight_of_strict_open"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportOpenEnvelope.lean",
+          "name": "finiteSupportLegendreRate_gt_meanEnvelopeRateLeft_of_strict_open"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawCentering.lean",
+          "name": "FiniteSupportLawData.rawLogMGF_eq_centered"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawCentering.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_eq_centered"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawCentering.lean",
+          "name": "FiniteSupportLawData.meanEnvelopeIntegralRight_shift"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawCentering.lean",
+          "name": "FiniteSupportLawData.meanEnvelopeIntegralLeft_shift"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.upperTail_nonneg"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.lowerTail_nonneg"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.upperTail_le_one"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.lowerTail_le_one"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.upperTail_le_exp"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.lowerTail_le_exp"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.upperTail_le_exp_neg_rate_interior"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.lowerTail_le_exp_neg_rate_interior"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.legendreRate_le_neg_log_weight"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.upperTail_at_hi"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.lowerTail_at_lo"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.upperTail_le_exp_neg_rate_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.lowerTail_le_exp_neg_rate_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.upperTail_le_exp_neg_rate"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawTails.lean",
+          "name": "FiniteSupportLawData.lowerTail_le_exp_neg_rate"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawIntegration.lean",
+          "name": "FiniteSupportLawData.rawUpperTail_eq_sum"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawIntegration.lean",
+          "name": "FiniteSupportLawData.rawLowerTail_eq_sum"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawIntegration.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_ge_meanEnvelopeRight"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawIntegration.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_ge_meanEnvelopeLeft"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawIntegration.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_gt_meanEnvelopeRight"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawIntegration.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_gt_meanEnvelopeLeft"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawIntegration.lean",
+          "name": "FiniteSupportLawData.rawUpperTail_le_exp_neg_rate_interior"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawIntegration.lean",
+          "name": "FiniteSupportLawData.rawLowerTail_le_exp_neg_rate_interior"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawIntegration.lean",
+          "name": "FiniteSupportLawData.rawUpperTail_le_exp_neg_meanEnvelope"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawIntegration.lean",
+          "name": "FiniteSupportLawData.rawLowerTail_le_exp_neg_meanEnvelope"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawIntegration.lean",
+          "name": "FiniteSupportLawData.rawUpperTail_lt_exp_neg_meanEnvelope"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawIntegration.lean",
+          "name": "FiniteSupportLawData.rawLowerTail_lt_exp_neg_meanEnvelope"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawMeanGap.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_gt_meanEnvelopeRight_of_mean_gap"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawMeanGap.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_gt_meanEnvelopeLeft_of_mean_gap"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawMeanGap.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_gt_meanEnvelopeRight_of_interval"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawMeanGap.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_gt_meanEnvelopeLeft_of_interval"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawMeanGap.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_hi"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawMeanGap.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_lo"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEndpointIntegration.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_ge_meanEnvelopeRight_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEndpointIntegration.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_ge_meanEnvelopeLeft_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEndpointIntegration.lean",
+          "name": "FiniteSupportLawData.rawUpperTail_le_meanEnvelope_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEndpointIntegration.lean",
+          "name": "FiniteSupportLawData.rawLowerTail_le_meanEnvelope_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEndpointRates.lean",
+          "name": "FiniteSupportLawData.rateCandidate_tendsto_atTop"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEndpointRates.lean",
+          "name": "FiniteSupportLawData.rateCandidate_tendsto_atBot"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEndpointRates.lean",
+          "name": "FiniteSupportLawData.legendreRate_hi"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEndpointRates.lean",
+          "name": "FiniteSupportLawData.legendreRate_lo"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportEndpointStrict.lean",
+          "name": "finiteSupportLegendreRate_sub_meanEnvelopeRateRight_eq_integral_open"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportEndpointStrict.lean",
+          "name": "finiteSupportLegendreRate_sub_meanEnvelopeRateLeft_eq_integral_open"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportEndpointStrict.lean",
+          "name": "finiteSupportLegendreRate_sub_meanEnvelopeRateRight_mono_open"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportEndpointStrict.lean",
+          "name": "finiteSupportLegendreRate_sub_meanEnvelopeRateLeft_mono_open"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEndpointStrict.lean",
+          "name": "finiteSupportLawData_rate_gt_meanEnvelopeRateRight_endpoint_of_limit_open"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEndpointStrict.lean",
+          "name": "finiteSupportLawData_rate_gt_meanEnvelopeRateLeft_endpoint_of_limit_open"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawRawCalculus.lean",
+          "name": "FiniteSupportLawData.rawLogMGF_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawRawCalculus.lean",
+          "name": "FiniteSupportLawData.rawTiltMean_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawRawCalculus.lean",
+          "name": "FiniteSupportLawData.rawLogMGF_second_deriv"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawRawCalculus.lean",
+          "name": "FiniteSupportLawData.rawTiltMean_strictMono"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawRawEndpointStrict.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_gt_meanEnvelopeRight_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawRawEndpointStrict.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_gt_meanEnvelopeLeft_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawRawEndpointStrict.lean",
+          "name": "FiniteSupportLawData.rawUpperTail_lt_meanEnvelope_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawRawEndpointStrict.lean",
+          "name": "FiniteSupportLawData.rawLowerTail_lt_meanEnvelope_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawRawEndpointStrict.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_gt_meanEnvelopeRight_endpoint_of_interval"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawRawEndpointStrict.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_gt_meanEnvelopeLeft_endpoint_of_interval"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawRawEndpointStrict.lean",
+          "name": "FiniteSupportLawData.rawUpperTail_lt_meanEnvelope_endpoint_of_interval"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawRawEndpointStrict.lean",
+          "name": "FiniteSupportLawData.rawLowerTail_lt_meanEnvelope_endpoint_of_interval"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportMeanInverse_continuousAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportMeanInverse_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportLegendreRate_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportLegendreRate_deriv"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportLegendreRate_deriv_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportLegendreRate_second_deriv"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportLegendreRate_at_mu"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportLegendreRate_deriv_at_mu"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawMeanInverse_spec"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawMeanInverse_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_deriv"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_deriv_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_second_deriv"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_at_mean0"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawMeanInverse_mean0"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_deriv_at_mean0"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptA1Contract.lean",
+          "name": "manuscript_A_integration_contract"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawVariance.lean",
+          "name": "FiniteSupportLawData.variance_pos"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "ExactHoeffding.manuscript_A_integration_contract"
     },
     {
-      "index": 31,
+      "index": 35,
+      "key": "extra:A-Legendre-derivatives",
+      "kind": "supplementary formal claim",
+      "title": "Interior Legendre rate first and second derivatives",
+      "line": 1352,
+      "paper_environment": false,
+      "status": "Complete",
+      "coverage": "The generic positive-variance tilt curve supplies the continuous inverse and inverse derivative, the Legendre rate derivatives and curvature, and mean-point zero identities without assuming inverse regularity.",
+      "gap": null,
+      "declarations": [
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportMeanInverse_continuousAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportMeanInverse_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportLegendreRate_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportLegendreRate_deriv"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportLegendreRate_deriv_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportLegendreRate_second_deriv"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportLegendreRate_at_mu"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLegendreCalculus.lean",
+          "name": "finiteSupportLegendreRate_deriv_at_mu"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawMeanInverse_spec"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawMeanInverse_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_deriv"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_deriv_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_second_deriv"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_at_mean0"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawMeanInverse_mean0"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawLegendreCalculus.lean",
+          "name": "FiniteSupportLawData.rawLegendreRate_deriv_at_mean0"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSupplementContracts.lean",
+          "name": "manuscript_extra_A_Legendre_derivatives_contract"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSemanticAggregates.lean",
+          "name": "manuscript_extra_A_Legendre_derivatives_full_contract"
+        }
+      ],
+      "semantic_contract_declaration": "manuscript_extra_A_Legendre_derivatives_full_contract"
+    },
+    {
+      "index": 36,
+      "key": "extra:A1-finite-law-interface",
+      "kind": "supplementary interface",
+      "title": "Direct finite-law variance-envelope interfaces",
+      "line": 1352,
+      "paper_environment": false,
+      "status": "Complete",
+      "coverage": "The variance-envelope comparison is instantiated from an actual normalized finite weighted law. Positive mass at distinct endpoint atoms proves strict positivity of the tilted variance internally, so callers provide no variance-positivity axiom or hypothesis. Right/left interior comparisons include strict-gap versions; endpoint continuation is supplied with the one-sided rate and envelope limits made explicit. The finite-law endpoint comparison also follows from interior optimizer monotonicity assuming only the finite one-sided limit of the envelope integral, with no Legendre-rate limit supplied by the caller.",
+      "gap": null,
+      "declarations": [
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateRight"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateLeft"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_gt_meanEnvelopeRateRight"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_gt_meanEnvelopeRateLeft"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportEndpointEnvelope.lean",
+          "name": "finiteSupportLegendreRate_ge_meanEnvelopeRateRight_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportEndpointEnvelope.lean",
+          "name": "finiteSupportLegendreRate_ge_meanEnvelopeRateLeft_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawVariance.lean",
+          "name": "FiniteSupportLawData.variance_pos"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateRight_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateLeft_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_legendreRate_le_hi"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_legendreRate_le_lo"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateRight_endpoint_of_limit"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateLeft_endpoint_of_limit"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportTiltCurveOfLaw.lean",
+          "name": "finiteSupportLawData_mean_mem_Ioo"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptA1Contract.lean",
+          "name": "manuscript_A_integration_contract"
+        }
+      ],
+      "semantic_contract_declaration": "manuscript_A_integration_contract"
+    },
+    {
+      "index": 37,
       "key": "A:piecewise",
       "kind": "theorem",
       "title": "Piecewise KL rate",
-      "line": 1420,
+      "line": 1423,
       "paper_environment": true,
       "status": "Complete",
       "coverage": "Actual hypergeometric finite-mass upper/lower tails, full closed support, strict I>J and J>I_B, quadratic comparison and equality region are proved in the exact stated domain.",
@@ -721,142 +1715,201 @@
         {
           "file": "ExactHoeffding/PiecewiseKLFull.lean",
           "name": "hypergeom_lower_tail_piecewise_kl"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptABContracts.lean",
+          "name": "manuscript_A_piecewise_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_A_piecewise_contract"
     },
     {
-      "index": 32,
-      "key": "unlabeled:Integer and two-sided events",
-      "kind": "corollary",
-      "title": "Integer and two-sided events",
-      "line": 1465,
-      "paper_environment": true,
+      "index": 38,
+      "key": "extra:A-piecewise-C2",
+      "kind": "supplementary formal claim",
+      "title": "Twice continuous differentiability at both KL switches",
+      "line": 1423,
+      "paper_environment": false,
       "status": "Complete",
-      "coverage": "The actual finite hypergeometric upper, lower and two-sided integer threshold events are reduced exactly to ceiling/floor tails, with support cutoff, and bounded by the verified piecewise KL tails.",
+      "coverage": "The manuscript piecewise rate is C² on its actual open support; exact two-switch matching supplies derivative continuity and J″=1/min(P,B), under the displayed 3≤m, m≤k, 2k≤N, 2m<N assumptions.",
       "gap": null,
       "declarations": [
         {
-          "file": "ExactHoeffding/ManuscriptIntegerTails.lean",
-          "name": "hypergeomUpperDeviationMass_eq_ceil_tail"
+          "file": "ExactHoeffding/PiecewiseKLRegularity.lean",
+          "name": "piecewiseKLRate_hasDerivAt"
         },
         {
-          "file": "ExactHoeffding/ManuscriptIntegerTails.lean",
-          "name": "hypergeomLowerDeviationMass_eq_floor_tail"
+          "file": "ExactHoeffding/PiecewiseKLRegularity.lean",
+          "name": "piecewiseKLSlope_hasDerivAt"
         },
         {
-          "file": "ExactHoeffding/ManuscriptIntegerTails.lean",
-          "name": "hypergeomTwoSidedDeviationMass_eq_sum"
+          "file": "ExactHoeffding/PiecewiseKLRegularity.lean",
+          "name": "klQuadraticEnvelope_eq_binomial_switchMinus"
         },
         {
-          "file": "ExactHoeffding/ManuscriptIntegerTails.lean",
-          "name": "hypergeom_integer_upper_deviation_piecewise_kl"
+          "file": "ExactHoeffding/PiecewiseKLRegularity.lean",
+          "name": "klQuadraticEnvelope_eq_binomial_switchPlus"
         },
         {
-          "file": "ExactHoeffding/ManuscriptIntegerTails.lean",
-          "name": "hypergeom_integer_lower_deviation_piecewise_kl"
+          "file": "ExactHoeffding/PiecewiseKLRegularity.lean",
+          "name": "canonicalPiecewiseRate_hasDerivAt"
         },
         {
-          "file": "ExactHoeffding/ManuscriptIntegerTails.lean",
-          "name": "hypergeom_integer_two_sided_deviation_piecewise_kl"
+          "file": "ExactHoeffding/PiecewiseKLRegularity.lean",
+          "name": "canonicalPiecewiseSlope_hasDerivAt"
+        },
+        {
+          "file": "ExactHoeffding/PiecewiseKLRegularity.lean",
+          "name": "canonicalPiecewiseRate_second_deriv"
+        },
+        {
+          "file": "ExactHoeffding/PiecewiseKLRegularity.lean",
+          "name": "canonicalPiecewiseCurvature_continuousOn"
+        },
+        {
+          "file": "ExactHoeffding/PiecewiseKLRegularity.lean",
+          "name": "canonicalPiecewiseRate_contDiffOn_two"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSupplementContracts.lean",
+          "name": "manuscript_extra_A_piecewise_C2_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_extra_A_piecewise_C2_contract"
     },
     {
-      "index": 33,
-      "key": "A:factorial",
-      "kind": "proposition",
-      "title": "A comparison with exact Chernoff",
-      "line": 1560,
-      "paper_environment": true,
+      "index": 39,
+      "key": "extra:A-quadratic-chain",
+      "kind": "supplementary formal claim",
+      "title": "Scaled KL and sharp uniform quadratic rates",
+      "line": 1423,
+      "paper_environment": false,
       "status": "Complete",
-      "coverage": "Finite-support factorial candidates, exact tail domination, nonnegative-tilt Chernoff comparison and its infimum form, exact hypergeometric factorial candidates, the actual hypergeometric KL comparison, and the strict piecewise-KL comparison are kernel proved on the supported canonical integer upper-tail domain d≤m with d>μ.",
+      "coverage": "The actual Bernoulli KL and scaled finite-population KL are bounded below by the sharp Gaussian quadratic rate; exact equality sets, strict balanced cases and uniform coefficient parity cases are proved, including support endpoints.",
       "gap": null,
       "declarations": [
         {
-          "file": "ExactHoeffding/FactorialChernoff.lean",
-          "name": "finiteIntegerTailMass_le_factorialBound"
+          "file": "ExactHoeffding/PiecewiseKLComparison.lean",
+          "name": "canonicalPiecewiseRate_quadratic_comparison"
         },
         {
-          "file": "ExactHoeffding/FactorialChernoff.lean",
-          "name": "finiteFactorialBound_le_chernoff_tilt"
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "bernoulliSharpBeta_pos_interior"
         },
         {
-          "file": "ExactHoeffding/FactorialChernoff.lean",
-          "name": "finiteFactorialBound_le_chernoff_inf"
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "bernoulliKL_ge_sharp_gaussian"
         },
         {
-          "file": "ExactHoeffding/FactorialChernoff.lean",
-          "name": "hypergeom_binomialMoment"
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "bernoulliKL_sharp_gaussian_eq_iff_subhalf"
         },
         {
-          "file": "ExactHoeffding/FactorialChernoff.lean",
-          "name": "hypergeomFactorialCandidate_eq"
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "bernoulliKL_sharp_gaussian_strict_half"
         },
         {
-          "file": "ExactHoeffding/FactorialChernoffExact.lean",
-          "name": "hypergeom_factorial_candidate_formula"
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "scaledKLRate_ge_sharp_gaussian"
         },
         {
-          "file": "ExactHoeffding/FactorialChernoffExact.lean",
-          "name": "hypergeomFactorialBound_le_exp_neg_KLRate"
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "scaledKLRate_sharp_gaussian_eq_iff_subhalf"
         },
         {
-          "file": "ExactHoeffding/FactorialChernoffExact.lean",
-          "name": "hypergeomFactorialBound_lt_exp_neg_piecewiseRate"
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "scaledKLRate_sharp_gaussian_strict_half"
         },
         {
-          "file": "ExactHoeffding/FactorialChernoffExact.lean",
-          "name": "hypergeomIntegerTail_le_exp_neg_piecewiseRate"
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "bernoulliSharpBeta_odd_lattice"
+        },
+        {
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "bernoulliSharpBeta_le_parityUniformKappa"
+        },
+        {
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "bernoulliSharpBeta_parityUniformKappa_eq_iff"
+        },
+        {
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "scaledBernoulliVariance_le_uniform"
+        },
+        {
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "scaledBernoulliVariance_eq_uniform_iff"
+        },
+        {
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "hypergeom_piecewise_gaussian_chain"
+        },
+        {
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "gaussianRates_eq_iff"
+        },
+        {
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "hypergeom_gaussian_uniform_eq_iff"
+        },
+        {
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "hypergeom_scaledKL_gaussian_eq_iff_subhalf"
+        },
+        {
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "hypergeom_scaledKL_gaussian_strict_balanced"
+        },
+        {
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "hypergeom_scaledKL_uniform_strict_even"
+        },
+        {
+          "file": "ExactHoeffding/ScaledKLGaussian.lean",
+          "name": "hypergeom_scaledKL_uniform_eq_iff_odd"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSupplementContracts.lean",
+          "name": "manuscript_extra_A_quadratic_chain_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_extra_A_quadratic_chain_contract"
     },
     {
-      "index": 34,
-      "key": "thm:odd_expansion",
-      "kind": "theorem",
-      "title": "Fourth-order sharp-proxy expansion",
-      "line": 1619,
-      "paper_environment": true,
+      "index": 40,
+      "key": "extra:A-scaled-rate-Taylor",
+      "kind": "supplementary formal claim",
+      "title": "Fourth-order scaled KL rate expansion",
+      "line": 1423,
+      "paper_environment": false,
       "status": "Complete",
-      "coverage": "Actual optimizer existence/uniqueness in the stated fixed-margin asymptotic regime and the fourth-order sharp-proxy expansion with remainder are proved.",
+      "coverage": "The actual scaled KL target-mean function has explicit derivatives through fourth order and an analytic fifth-order remainder, yielding the precise O(x^5) assertion for M>0, a>0, 0<p<1 and every real mean.",
       "gap": null,
       "declarations": [
         {
-          "file": "ExactHoeffding/OptimalProxyFourthExpansion.lean",
-          "name": "odd_singleton_gap_fourth_expansion_along"
+          "file": "ExactHoeffding/ScaledKLTaylor.lean",
+          "name": "scaledKLRate_target_mean_jets"
         },
         {
-          "file": "ExactHoeffding/ActualUniqueOptimizer.lean",
-          "name": "actualHypergeomProxy_eventually_exists_unique_global_max"
-        }
-      ]
-    },
-    {
-      "index": 35,
-      "key": "cor:fixedm_gap",
-      "kind": "corollary",
-      "title": "Fourth-order singleton dominance",
-      "line": 1637,
-      "paper_environment": true,
-      "status": "Complete",
-      "coverage": "The fourth-order singleton gap and remainder for each fixed m≥2 are proved.",
-      "gap": null,
-      "declarations": [
+          "file": "ExactHoeffding/ScaledKLTaylor.lean",
+          "name": "scaledKLRate_target_mean_quartic_expansion"
+        },
         {
-          "file": "ExactHoeffding/OptimalProxyFourthExpansion.lean",
-          "name": "odd_nearly_balanced_gap_fourth_expansion_along"
+          "file": "ExactHoeffding/ManuscriptSupplementContracts.lean",
+          "name": "manuscript_extra_A_scaled_rate_Taylor_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_extra_A_scaled_rate_Taylor_contract"
     },
     {
-      "index": 36,
+      "index": 41,
       "key": "extra:A3-four-binomial-KL",
       "kind": "supplementary comparison",
       "title": "Four symmetry-related binomial KL rates and strict piecewise improvement",
-      "line": 1475,
+      "line": 1423,
       "paper_environment": false,
       "status": "Complete",
-      "coverage": "The four actual sampling/complementation KL rates and their reciprocal variance envelopes are compared on the full supported canonical domain. Equality conditions include the k=m identity for rate two and mean-only equality for rates three and four; the piecewise rate is strictly larger away from the mean.",
+      "coverage": "The four actual sampling/complementation KL rates and reciprocal variance envelopes are compared on the full supported canonical domain. The contract records that all four rates and their first derivatives vanish at the common mean, the k=m identity for rate two, mean-only equality for rates three and four, and strict piecewise-rate improvement away from the mean.",
       "gap": null,
       "declarations": [
         {
@@ -870,15 +1923,24 @@
         {
           "file": "ExactHoeffding/PiecewiseKLFourRates.lean",
           "name": "canonicalPiecewiseRate_strict_improves_fourBinomialKLRateMax"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptA3Contract.lean",
+          "name": "manuscript_A3_four_symmetric_binomial_KL_contract"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptA3Contract.lean",
+          "name": "manuscript_A3_four_symmetric_binomial_KL_mean_contact"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_A3_four_symmetric_binomial_KL_contract"
     },
     {
-      "index": 37,
+      "index": 42,
       "key": "extra:A4-Bennett-Bernstein",
       "kind": "supplementary comparison",
       "title": "Exact-variance Bennett and Bernstein exponent comparisons",
-      "line": 1542,
+      "line": 1423,
       "paper_environment": false,
       "status": "Complete",
       "coverage": "The Bennett kernel comparison, standard Bernstein lower bound, actual upper and lower supported-tail transports, strict noncentral inequalities including support endpoints, and the zero-deviation equality at the mean are kernel proved.",
@@ -923,67 +1985,207 @@
         {
           "file": "ExactHoeffding/HypergeomBernsteinComparison.lean",
           "name": "hypergeomBernsteinRate_at_mean"
+        },
+        {
+          "file": "ExactHoeffding/BennettMeanEndpoint.lean",
+          "name": "bennettRate_contact_at_zero"
+        },
+        {
+          "file": "ExactHoeffding/BennettMeanEndpoint.lean",
+          "name": "scaledKLRate_contact_at_mean"
+        },
+        {
+          "file": "ExactHoeffding/BennettMeanEndpoint.lean",
+          "name": "hypergeomBennettRate_at_mean"
+        },
+        {
+          "file": "ExactHoeffding/BennettMeanEndpoint.lean",
+          "name": "hypergeomBennettBernsteinRates_at_mean"
+        },
+        {
+          "file": "ExactHoeffding/HypergeomBennettBernstein.lean",
+          "name": "hypergeomBennettRate_lt_scaledKLRate_upper"
+        },
+        {
+          "file": "ExactHoeffding/HypergeomBennettBernstein.lean",
+          "name": "hypergeomBennettRate_lt_scaledKLRate_lower"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptA4Contract.lean",
+          "name": "manuscript_A4_exact_variance_bennett_bernstein_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_A4_exact_variance_bennett_bernstein_contract"
     },
     {
-      "index": 38,
-      "key": "extra:A1-finite-law-interface",
-      "kind": "supplementary interface",
-      "title": "Direct finite-law variance-envelope interfaces",
-      "line": 1349,
-      "paper_environment": false,
+      "index": 43,
+      "key": "unlabeled:Integer and two-sided events",
+      "kind": "corollary",
+      "title": "Integer and two-sided events",
+      "line": 1467,
+      "paper_environment": true,
       "status": "Complete",
-      "coverage": "The variance-envelope comparison is instantiated from an actual normalized finite weighted law. Positive mass at distinct endpoint atoms proves strict positivity of the tilted variance internally, so callers provide no variance-positivity axiom or hypothesis. Right/left interior comparisons include strict-gap versions; endpoint continuation is supplied with the one-sided rate and envelope limits made explicit.",
+      "coverage": "The actual finite hypergeometric upper, lower and two-sided integer threshold events are reduced exactly to ceiling/floor tails, with support cutoff, and bounded by the verified piecewise KL tails.",
       "gap": null,
       "declarations": [
         {
-          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
-          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateRight"
+          "file": "ExactHoeffding/ManuscriptIntegerTails.lean",
+          "name": "hypergeomUpperDeviationMass_eq_ceil_tail"
         },
         {
-          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
-          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateLeft"
+          "file": "ExactHoeffding/ManuscriptIntegerTails.lean",
+          "name": "hypergeomLowerDeviationMass_eq_floor_tail"
         },
         {
-          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
-          "name": "finiteSupportLawData_rate_gt_meanEnvelopeRateRight"
+          "file": "ExactHoeffding/ManuscriptIntegerTails.lean",
+          "name": "hypergeomTwoSidedDeviationMass_eq_sum"
         },
         {
-          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
-          "name": "finiteSupportLawData_rate_gt_meanEnvelopeRateLeft"
+          "file": "ExactHoeffding/ManuscriptIntegerTails.lean",
+          "name": "hypergeom_integer_upper_deviation_piecewise_kl"
         },
         {
-          "file": "ExactHoeffding/FiniteSupportEndpointEnvelope.lean",
-          "name": "finiteSupportLegendreRate_ge_meanEnvelopeRateRight_endpoint"
+          "file": "ExactHoeffding/ManuscriptIntegerTails.lean",
+          "name": "hypergeom_integer_lower_deviation_piecewise_kl"
         },
         {
-          "file": "ExactHoeffding/FiniteSupportEndpointEnvelope.lean",
-          "name": "finiteSupportLegendreRate_ge_meanEnvelopeRateLeft_endpoint"
+          "file": "ExactHoeffding/ManuscriptIntegerTails.lean",
+          "name": "hypergeom_integer_two_sided_deviation_piecewise_kl"
         },
         {
-          "file": "ExactHoeffding/FiniteSupportLawVariance.lean",
-          "name": "FiniteSupportLawData.variance_pos"
-        },
-        {
-          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
-          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateRight_endpoint"
-        },
-        {
-          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
-          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateLeft_endpoint"
+          "file": "ExactHoeffding/ManuscriptIntegerContract.lean",
+          "name": "manuscript_integer_two_sided_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_integer_two_sided_contract"
     },
     {
-      "index": 39,
+      "index": 44,
+      "key": "A:factorial",
+      "kind": "proposition",
+      "title": "A comparison with exact Chernoff",
+      "line": 1568,
+      "paper_environment": true,
+      "status": "Complete",
+      "coverage": "The generic finite-support probability bound and Chernoff infimum comparison, positive-denominator hypergeometric falling-factorial identity, supported upper-tail exact-Chernoff and strict piecewise-rate comparison on μ<d≤m, reflected lower-tail chain, and zero tail/factorial/Chernoff branch for d>m are represented in one typed contract.",
+      "gap": null,
+      "declarations": [
+        {
+          "file": "ExactHoeffding/FactorialChernoff.lean",
+          "name": "finiteIntegerTailMass_le_factorialBound"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoff.lean",
+          "name": "finiteFactorialBound_le_chernoff_tilt"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoff.lean",
+          "name": "finiteFactorialBound_le_chernoff_inf"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoff.lean",
+          "name": "hypergeom_binomialMoment"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoff.lean",
+          "name": "hypergeomFactorialCandidate_eq"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoffExact.lean",
+          "name": "hypergeom_factorial_candidate_formula"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoffExact.lean",
+          "name": "hypergeomFactorialBound_le_exp_neg_KLRate"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoffExact.lean",
+          "name": "hypergeomFactorialBound_lt_exp_neg_piecewiseRate"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoffExact.lean",
+          "name": "hypergeomIntegerTail_le_exp_neg_piecewiseRate"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoffLower.lean",
+          "name": "hypergeomLowerTailMass_le_reflectedFactorialBound"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoffLower.lean",
+          "name": "hypergeomReflectedFactorialBound_le_chernoff_tilt"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoffLower.lean",
+          "name": "hypergeomReflectedFactorialBound_le_exp_neg_KLRate"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoffLower.lean",
+          "name": "hypergeomReflectedFactorialBound_lt_exp_neg_piecewiseRate"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoffLower.lean",
+          "name": "hypergeom_lower_factorial_chernoff_end_to_end"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoffExact.lean",
+          "name": "hypergeom_factorial_candidate_formula_of_degree_le_population"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoffExact.lean",
+          "name": "hypergeom_factorial_candidate_eq_zero_of_population_lt_degree"
+        },
+        {
+          "file": "ExactHoeffding/FactorialSupportExterior.lean",
+          "name": "hypergeomMass_eq_zero_of_supportUpper_lt"
+        },
+        {
+          "file": "ExactHoeffding/FactorialSupportExterior.lean",
+          "name": "hypergeomIntegerTailMass_eq_zero_of_supportUpper_lt"
+        },
+        {
+          "file": "ExactHoeffding/FactorialSupportExterior.lean",
+          "name": "hypergeomFactorialCandidate_eq_zero_of_supportUpper_lt"
+        },
+        {
+          "file": "ExactHoeffding/FactorialSupportExterior.lean",
+          "name": "hypergeomFactorialBound_eq_zero_of_supportUpper_lt"
+        },
+        {
+          "file": "ExactHoeffding/FactorialSupportExterior.lean",
+          "name": "hypergeomChernoffCandidate_nonneg"
+        },
+        {
+          "file": "ExactHoeffding/FactorialSupportExterior.lean",
+          "name": "hypergeomChernoffCandidate_le_supportGap"
+        },
+        {
+          "file": "ExactHoeffding/FactorialSupportExterior.lean",
+          "name": "hypergeomChernoffCandidate_arbitrarily_small_of_supportUpper_lt"
+        },
+        {
+          "file": "ExactHoeffding/FactorialSupportExterior.lean",
+          "name": "hypergeomChernoffInf_eq_zero_of_supportUpper_lt"
+        },
+        {
+          "file": "ExactHoeffding/FactorialSupportExterior.lean",
+          "name": "hypergeom_factorial_chernoff_support_exterior_end_to_end"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptA2Contract.lean",
+          "name": "manuscript_A_factorial_full_contract"
+        }
+      ],
+      "semantic_contract_declaration": "manuscript_A_factorial_full_contract"
+    },
+    {
+      "index": 45,
       "key": "extra:A2-factorial-index",
       "kind": "supplementary interface",
       "title": "Exact factorial candidate cutoff and optimized integer bound",
-      "line": 1597,
+      "line": 1568,
       "paper_environment": false,
       "status": "Complete",
-      "coverage": "The exact falling-factorial candidate has a proved adjacent ratio and ceiling cutoff; the ceiling index is the global minimizer over every admissible index (allowing the neighboring tie), and the optimized finite factorial bound equals that candidate. The existing theorem also compares this factorial bound in the correct direction, below the exact binomial-KL Chernoff exponential.",
+      "coverage": "The exact falling-factorial candidate has a proved adjacent ratio and ceiling cutoff; the ceiling index is the global minimizer over every admissible index (allowing the neighboring tie), and the optimized finite factorial bound equals that candidate. The existing theorem also compares this factorial bound in the correct direction, below the exact hypergeometric Chernoff exponential from the actual finite-support Legendre rate.",
       "gap": null,
       "declarations": [
         {
@@ -1013,66 +2215,214 @@
         {
           "file": "ExactHoeffding/FactorialChernoffExact.lean",
           "name": "hypergeomFactorialBound_lt_exp_neg_piecewiseRate"
+        },
+        {
+          "file": "ExactHoeffding/FactorialMinimizer.lean",
+          "name": "hypergeomFactorialValue_succ_eq_of_integral_cutoff"
+        },
+        {
+          "file": "ExactHoeffding/FactorialMinimizer.lean",
+          "name": "hypergeomFactorialIndex_eq_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FactorialMinimizer.lean",
+          "name": "hypergeomFactorialBound_eq_adjacent_candidates"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSupplementContracts.lean",
+          "name": "manuscript_extra_A2_factorial_index_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_extra_A2_factorial_index_contract"
     },
     {
-      "index": 40,
-      "key": "extra:B1-individual-margin-quantified",
-      "kind": "supplementary interface",
-      "title": "Top-level individual-gap certificate and quantified margin deficit",
-      "line": 1230,
-      "paper_environment": false,
+      "index": 46,
+      "key": "thm:odd_expansion",
+      "kind": "theorem",
+      "title": "Fourth-order sharp-proxy expansion",
+      "line": 1631,
+      "paper_environment": true,
       "status": "Complete",
-      "coverage": "The actual optimal hypergeometric proxy is bounded by the paper’s two-branch individual-margin certificate, and the certificate gap G_{N,m}(k) is proved to dominate the exact parity-dependent Δ_{N,m} for every interior population margin and every noncentral sample margin, in both even and odd parity branches.",
+      "coverage": "The actual analytic optimizer has the printed tilt expansion through N^-3 and normalized proxy expansion through N^-4, with analytic O(N^-4)/O(N^-5) remainders and eventual unique global maximality on every admissible sequence.",
       "gap": null,
       "declarations": [
         {
-          "file": "ExactHoeffding/GoalBIndividualMargin.lean",
-          "name": "hypergeomOptimalProxy_le_individualMarginGap"
+          "file": "ExactHoeffding/OptimalProxyFourthExpansion.lean",
+          "name": "odd_singleton_gap_fourth_expansion_along"
         },
         {
-          "file": "ExactHoeffding/GoalBIndividualMargin.lean",
-          "name": "individualMarginGap_ge_parityDelta_all"
+          "file": "ExactHoeffding/ActualUniqueOptimizer.lean",
+          "name": "actualHypergeomProxy_eventually_exists_unique_global_max"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptAsymptoticsContract.lean",
+          "name": "manuscript_thm_odd_expansion_contract"
+        },
+        {
+          "file": "ExactHoeffding/FourthOrderMainTheorem.lean",
+          "name": "actualHypergeomProxy_joint_fourth_order_main"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_thm_odd_expansion_contract"
     },
     {
-      "index": 41,
-      "key": "extra:B2-odd-central-variational-stationarity",
-      "kind": "supplementary interface",
-      "title": "Odd central finite-sum variational formula and optimal-tilt contact",
-      "line": 1230,
-      "paper_environment": false,
+      "index": 47,
+      "key": "cor:fixedm_gap",
+      "kind": "corollary",
+      "title": "Fourth-order singleton dominance",
+      "line": 1649,
+      "paper_environment": true,
       "status": "Complete",
-      "coverage": "The central log-MGF is identified with its finite hypergeometric sum. Every nonzero global maximizing tilt satisfies t ψ′(t)=2ψ(t); for every nondegenerate odd central law, a nonzero global maximizer exists, realizes the actual least proxy, and obeys the contact equation. Zero tilt is excluded using the strict proxy-over-variance result, while no uniqueness of the maximizing tilt is assumed.",
+      "coverage": "The fixed-m odd singleton-gap result includes the central expansion with O(N^-5) remainder, the fixed off-balance expansion with O(N^-3) remainder, and eventual strict proxy separation for every fixed s≥3.",
       "gap": null,
       "declarations": [
         {
-          "file": "ExactHoeffding/GoalBOddVariation.lean",
-          "name": "oddCentral_logMGF_eq_finite_sum"
+          "file": "ExactHoeffding/OptimalProxyFourthExpansion.lean",
+          "name": "odd_nearly_balanced_gap_fourth_expansion_along"
         },
         {
-          "file": "ExactHoeffding/GoalBOddVariation.lean",
-          "name": "oddCentral_actualProxy_zero_is_variance"
+          "file": "ExactHoeffding/ManuscriptABContracts.lean",
+          "name": "manuscript_cor_fixedm_gap_limit_contract"
         },
         {
-          "file": "ExactHoeffding/GoalBOddVariation.lean",
-          "name": "oddCentral_nonzero_maximizer_stationary"
+          "file": "ExactHoeffding/OptimalProxyAsymptotics.lean",
+          "name": "odd_singleton_gap_second_expansion_along"
         },
         {
-          "file": "ExactHoeffding/GoalBOddVariation.lean",
-          "name": "oddCentral_nonzero_maximizer_realizes_optimalProxy"
+          "file": "ExactHoeffding/OptimalProxyAsymptotics.lean",
+          "name": "odd_singleton_gap_eventually_pos_along"
         },
         {
-          "file": "ExactHoeffding/OddCentralOptimalTilt.lean",
-          "name": "oddCentral_exists_nonzero_optimal_tilt_stationary"
-        },
-        {
-          "file": "ExactHoeffding/OddCentralOptimalTilt.lean",
-          "name": "oddCentral_every_nonzero_maximizer_stationary"
+          "file": "ExactHoeffding/ManuscriptSemanticAggregates.lean",
+          "name": "manuscript_cor_fixedm_gap_full_contract"
         }
-      ]
+      ],
+      "semantic_contract_declaration": "manuscript_cor_fixedm_gap_full_contract"
+    },
+    {
+      "index": 48,
+      "key": "extra:appendix-cumulant23-remainders",
+      "kind": "supplementary proof identity",
+      "title": "Printed second/third cumulant asymptotic remainders",
+      "line": 1649,
+      "paper_environment": false,
+      "status": "Complete",
+      "coverage": "The exact rational κ₂ and κ₃ remainders factor as e⁵ and e⁴ times analytic functions near zero, giving the printed Big-O remainders. Both expansions are bridged to actual hypergeometric cumulants and to explicit positive finite real-margin laws.",
+      "gap": null,
+      "declarations": [
+        {
+          "file": "ExactHoeffding/Cumulant23Taylor.lean",
+          "name": "hypergeom_rescaled_cumulant2_closed"
+        },
+        {
+          "file": "ExactHoeffding/Cumulant23Taylor.lean",
+          "name": "hypergeom_rescaled_cumulant3_closed"
+        },
+        {
+          "file": "ExactHoeffding/Cumulant23Taylor.lean",
+          "name": "hypergeom_rescaled_cumulant2_remainder_identity"
+        },
+        {
+          "file": "ExactHoeffding/Cumulant23Taylor.lean",
+          "name": "hypergeom_rescaled_cumulant3_remainder_identity"
+        },
+        {
+          "file": "ExactHoeffding/Cumulant23Taylor.lean",
+          "name": "hypergeom_cumulant2_remainderFactor_analytic"
+        },
+        {
+          "file": "ExactHoeffding/Cumulant23Taylor.lean",
+          "name": "hypergeom_cumulant3_remainderFactor_analytic"
+        },
+        {
+          "file": "ExactHoeffding/Cumulant23Taylor.lean",
+          "name": "hypergeom_rescaled_cumulant2_remainder"
+        },
+        {
+          "file": "ExactHoeffding/Cumulant23Taylor.lean",
+          "name": "hypergeom_rescaled_cumulant3_remainder"
+        },
+        {
+          "file": "ExactHoeffding/Cumulant23Taylor.lean",
+          "name": "hypergeom_rescaled_moment_actual"
+        },
+        {
+          "file": "ExactHoeffding/Cumulant23Taylor.lean",
+          "name": "hypergeom_rescaled_cumulant2_actual"
+        },
+        {
+          "file": "ExactHoeffding/Cumulant23Taylor.lean",
+          "name": "hypergeom_rescaled_cumulant3_actual"
+        },
+        {
+          "file": "ExactHoeffding/Cumulant23Taylor.lean",
+          "name": "hypergeom_cumulant2_balanced_expansion"
+        },
+        {
+          "file": "ExactHoeffding/Cumulant23Taylor.lean",
+          "name": "hypergeom_cumulant3_balanced_expansion"
+        },
+        {
+          "file": "ExactHoeffding/ActualCumulant23Taylor.lean",
+          "name": "realMarginMass_rescaledFactorialMoment"
+        },
+        {
+          "file": "ExactHoeffding/ActualCumulant23Taylor.lean",
+          "name": "realMarginMass_rescaledMoment"
+        },
+        {
+          "file": "ExactHoeffding/ActualCumulant23Taylor.lean",
+          "name": "realMarginMass_cumulant2_rescaled"
+        },
+        {
+          "file": "ExactHoeffding/ActualCumulant23Taylor.lean",
+          "name": "realMarginMass_cumulant3_rescaled"
+        },
+        {
+          "file": "ExactHoeffding/ActualCumulant23Taylor.lean",
+          "name": "realMarginMass_denominator_near_zero"
+        },
+        {
+          "file": "ExactHoeffding/ActualCumulant23Taylor.lean",
+          "name": "realMarginMass_balanced_curve_eventually_probability"
+        },
+        {
+          "file": "ExactHoeffding/ActualCumulant23Taylor.lean",
+          "name": "realMarginMass_cumulant2_balanced_expansion"
+        },
+        {
+          "file": "ExactHoeffding/ActualCumulant23Taylor.lean",
+          "name": "realMarginMass_cumulant3_balanced_expansion"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSupplementContracts.lean",
+          "name": "manuscript_extra_appendix_cumulant23_remainders_contract"
+        }
+      ],
+      "semantic_contract_declaration": "manuscript_extra_appendix_cumulant23_remainders_contract"
+    },
+    {
+      "index": 49,
+      "key": "extra:appendix-proxy-uniform-Taylor",
+      "kind": "supplementary proof identity",
+      "title": "Uniform local proxy Taylor remainder",
+      "line": 1649,
+      "paper_environment": false,
+      "status": "Complete",
+      "coverage": "The actual finite-population proxy admits a jointly continuous local remainder in inverse population size and tilt; one positive radius works for both parameters, and the printed coefficients through the sixth cumulant are proved with an integral fifth-derivative remainder.",
+      "gap": null,
+      "declarations": [
+        {
+          "file": "ExactHoeffding/ActualProxyUniformTaylor.lean",
+          "name": "rescaledProxyExtension_joint_uniform_taylor"
+        },
+        {
+          "file": "ExactHoeffding/ManuscriptSupplementContracts.lean",
+          "name": "manuscript_extra_appendix_proxy_uniform_Taylor_contract"
+        }
+      ],
+      "semantic_contract_declaration": "manuscript_extra_appendix_proxy_uniform_Taylor_contract"
     }
-  ]
+  ],
+  "source_sha256": "617cce1f87272bd5d5d58e3d91342bba658bb490cb901643fb9436ecc6e2894b"
 }

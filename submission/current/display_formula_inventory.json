@@ -1,0 +1,2886 @@
+{
+  "source": "submission/current/manuscript.tex",
+  "source_sha256": "617cce1f87272bd5d5d58e3d91342bba658bb490cb901643fb9436ecc6e2894b",
+  "display_count": 240,
+  "policy": "Inventory and review routing only; no proof is certified by parsing TeX.",
+  "displays": [
+    {
+      "id": "D1",
+      "start_line": 31,
+      "end_line": 36,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n C_N^\\star=\\begin{cases}\n \\displaystyle N/(N-1),&N\\text{ even},\\\\[3pt]\n \\displaystyle[(N-1)\\operatorname{artanh}(1/N)]^{-1},&N\\text{ odd}.\n \\end{cases}\n\\]",
+      "sha256": "0314c4a390502b521a002a71ac79c0576447682d8a2621faf044bfc0c4ff5de2",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D2",
+      "start_line": 46,
+      "end_line": 50,
+      "environment": "equation",
+      "labels": [
+        "eq:exchange-intro"
+      ],
+      "tex": "\\begin{equation}\\label{eq:exchange-intro}\n \\E e^{\\lambda\\langle a,X\\rangle}\n \\le\\exp\\left(\\frac{\\lambda^2C_N^\\star}{2}\\|a\\|_2^2\\right),\n \\qquad \\lambda\\in\\R,\n\\end{equation}",
+      "sha256": "68ed7c6b8f3264f2cc32fca2ab48570569ee80c3e95bb40f8cc2c51aed869081",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D3",
+      "start_line": 56,
+      "end_line": 59,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n D_N:=\\sup_{X,a}\\frac{\\Var\\langle a,X\\rangle}{\\|a\\|_2^2}\n =\\frac{4\\lfloor N^2/4\\rfloor}{N(N-1)}.\n\\]",
+      "sha256": "e9997159aa579112a5c176843d39a1064f736fa57a3ccc1644daaccef7897357",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D4",
+      "start_line": 61,
+      "end_line": 64,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n D_N=\\frac{N+1}{N}<C_N^\\star<\\frac{N}{N-1},\n \\qquad C_N^\\star-D_N=\\frac{2}{3N^2}+O(N^{-3}).\n\\]",
+      "sha256": "14806310f262ca09d9c33906eb892ea45ac20a4e5dcbc3583f86c7adea89479d",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D5",
+      "start_line": 69,
+      "end_line": 72,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\text{exchangeable centered contrasts}\\ \\longrightarrow\\\n \\text{hypergeometric optimal variance proxies}.\n\\]",
+      "sha256": "552c952fd65c25b9e792ff28c8c752b809745b1934bce705002eabce6a7db89e",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D6",
+      "start_line": 91,
+      "end_line": 94,
+      "environment": "equation",
+      "labels": [
+        "eq:hypergeom"
+      ],
+      "tex": "\\begin{equation}\\label{eq:hypergeom}\n \\Pr\\{H=i\\}=\\frac{\\binom ki\\binom{N-k}{m-i}}{\\binom Nm},\n \\qquad \\max(0,m+k-N)\\le i\\le\\min(k,m).\n\\end{equation}",
+      "sha256": "aa27b98b9a6f706ef207f2e0fd3bfbe29ae523c5409c72c2f6f20529b23ceac3",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D7",
+      "start_line": 96,
+      "end_line": 99,
+      "environment": "equation",
+      "labels": [
+        "eq:psi"
+      ],
+      "tex": "\\begin{equation}\\label{eq:psi}\n \\psi_{N,k,m}(t)=\\log\\E e^{t(H-km/N)},\\qquad\n v_{N,k,m}(t)=\\psi_{N,k,m}''(t).\n\\end{equation}",
+      "sha256": "f85e0accdafa5ce2420ee38d85c78b241b2f30103c4c2ee4a0a2d8dc90d55e3e",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D8",
+      "start_line": 105,
+      "end_line": 110,
+      "environment": "equation",
+      "labels": [
+        "eq:CNexact"
+      ],
+      "tex": "\\begin{equation}\\label{eq:CNexact}\n \\boxed{\\quad C_N^\\star=\\begin{cases}\n \\displaystyle\\frac{N}{N-1},&N\\text{ even},\\\\[5pt]\n \\displaystyle\\frac{1}{(N-1)\\operatorname{artanh}(1/N)},&N\\text{ odd}.\n \\end{cases}\\quad}\n\\end{equation}",
+      "sha256": "99220814f3eb1e64ab82b6117717896ffc9aa230ac0ded659aaf32aaa4fbd4cd",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D9",
+      "start_line": 112,
+      "end_line": 114,
+      "environment": "equation",
+      "labels": [
+        "eq:CNupper"
+      ],
+      "tex": "\\begin{equation}\\label{eq:CNupper}\n C_N^\\star\\le\\frac{N}{N-1},\n\\end{equation}",
+      "sha256": "2fc303f446b7018c2094c97498cc0d179bc0621e83a8e9673c7d78869d9e9765",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D10",
+      "start_line": 116,
+      "end_line": 118,
+      "environment": "equation",
+      "labels": [
+        "eq:odd_extremizers"
+      ],
+      "tex": "\\begin{equation}\\label{eq:odd_extremizers}\n m\\in\\{1,N-1\\},\\qquad k\\in\\{(N-1)/2,(N+1)/2\\}.\n\\end{equation}",
+      "sha256": "cd2bd86a4f755d89ffb3d90edcb2093c5ca3e0b98f4f5fc742332e7e8ceee794",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D11",
+      "start_line": 120,
+      "end_line": 122,
+      "environment": "equation",
+      "labels": [
+        "eq:asymptotic"
+      ],
+      "tex": "\\begin{equation}\\label{eq:asymptotic}\n \\lim_{N\\to\\infty}N(C_N^\\star-1)=1.\n\\end{equation}",
+      "sha256": "8cd29cc8b6de13b7002fb0907074177ab395e464e395bbd6fc1f8f845da419a3",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D12",
+      "start_line": 130,
+      "end_line": 132,
+      "environment": "equation",
+      "labels": [
+        "eq:main_laplace"
+      ],
+      "tex": "\\begin{equation}\\label{eq:main_laplace}\n \\log\\E e^{t(H-mp)}\\le\\frac{M}{a^2}\\{\\log(1-p+pe^{at})-pat\\},\n\\end{equation}",
+      "sha256": "f41020a074601f1cc3d18002f5b8fefc3fb21074d8fb52537649a424b21d27a8",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D13",
+      "start_line": 134,
+      "end_line": 137,
+      "environment": "equation",
+      "labels": [
+        "eq:main_bern_envelope"
+      ],
+      "tex": "\\begin{equation}\\label{eq:main_bern_envelope}\n \\sigma^2_{\\mathrm{opt}}(H_{N,k,m})\n <\\frac{m(N-m)}{N-1}\\sigma^2_{\\mathrm{opt}}(\\Bern(k/N)),\n\\end{equation}",
+      "sha256": "fff2d965ced5c08c0355802b79de5279bdbeb38b2cd1de1fb24290ec9a9a676a",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D14",
+      "start_line": 146,
+      "end_line": 149,
+      "environment": "equation",
+      "labels": [
+        "eq:curvature"
+      ],
+      "tex": "\\begin{equation}\\label{eq:curvature}\n \\boxed{\\quad v_{N,k,m}(t)\\le\n \\frac{\\min\\{k(N-k),\\,m(N-m)\\}}{4(N-1)}.\\quad}\n\\end{equation}",
+      "sha256": "8fca9641e580c7f6b9b5c4f453ac9fc70fc8627d7eb6cda6279949fa2bdef0b3",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D15",
+      "start_line": 155,
+      "end_line": 158,
+      "environment": "equation",
+      "labels": [
+        "eq:mgf"
+      ],
+      "tex": "\\begin{equation}\\label{eq:mgf}\n \\log\\E e^{t(H-km/N)}\\le\n \\frac{t^2}{8(N-1)}\\min\\{k(N-k),m(N-m)\\}.\n\\end{equation}",
+      "sha256": "966522a211119e1860f67e2defc8cd0f67e09f005871692ce4cf517a4d1cf6a6",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D16",
+      "start_line": 160,
+      "end_line": 163,
+      "environment": "equation",
+      "labels": [
+        "eq:proxy"
+      ],
+      "tex": "\\begin{equation}\\label{eq:proxy}\n \\sigma^2_{\\mathrm{opt}}(H)\\le\n \\frac{\\min\\{k(N-k),m(N-m)\\}}{4(N-1)}.\n\\end{equation}",
+      "sha256": "f0a20c49228fffc7a346917c3984a2ca270bded08e08eaace6451706f0ccdddb",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D17",
+      "start_line": 173,
+      "end_line": 175,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n P=I-\\frac1N\\one\\one^\\top,\\qquad V=\\|P\\widetilde w\\|_2^2.\n\\]",
+      "sha256": "6f5787bf818625cf2c7376ffdb9b1179b27489b917126a1978802f9895e2cf76",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D18",
+      "start_line": 177,
+      "end_line": 180,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\E\\exp\\Bigl\\{\\lambda\\sum_{i=1}^nw_i(X_i-\\bar X_N)\\Bigr\\}\n \\le\\exp\\left\\{\\frac{\\lambda^2C_N^\\star V}{2}\\right\\}.\n\\]",
+      "sha256": "2e66018701c9bd0e6c88a72ddc9236e1eadb9615b6879e7292190350c7448491",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D19",
+      "start_line": 182,
+      "end_line": 185,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\Pr\\left\\{\\sum_{i=1}^nw_i(X_i-\\bar X_N)\\ge\n \\sqrt{2C_N^\\star V\\log\\frac1\\delta}\\right\\}\\le\\delta.\n\\]",
+      "sha256": "c7a6475343836e3bf4a1e3b429dbda8121f3d771f6047cae7a75fae5ce7e6a6c",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D20",
+      "start_line": 196,
+      "end_line": 200,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n y\\longmapsto e_k(e^{y_1},\\ldots,e^{y_N})\n \\quad\\text{on}\\quad\n \\left\\{y\\in\\R^N:\\sum_i y_i=0,\\ \\sum_i y_i^2=\\rho^2\\right\\}\n\\]",
+      "sha256": "5a5b92129bc80fae1b23ca5ea99b98c599dc8e395587c63735ad96ac17cc2214",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D21",
+      "start_line": 205,
+      "end_line": 208,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n A\\sum_{i=1}^3e^{x_i}+B\\sum_{i=1}^3e^{-x_i},\n \\qquad A=e_{k-1}(e^R),\\quad B=e^s e_{k-2}(e^R).\n\\]",
+      "sha256": "9c3f1405f9765503921fd0ae87d5dea684d7cdd5189646aae947706515f2e9cf",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D22",
+      "start_line": 212,
+      "end_line": 215,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n h(x)=\\phi'(x)-\\alpha-\\beta x,\\qquad p(x)=\\prod_{i=1}^3(x-x_i),\\qquad\n \\eta_i=\\frac1{p'(x_i)}.\n\\]",
+      "sha256": "05a41fd232aa7e4e84c7ca181af857363b85cf7f1e1625e0ca21029766ecb002",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D23",
+      "start_line": 217,
+      "end_line": 219,
+      "environment": "equation",
+      "labels": [
+        "eq:twolevel_second"
+      ],
+      "tex": "\\begin{equation}\\label{eq:twolevel_second}\n \\sum_{i=1}^3\\frac{h'(x_i)}{p'(x_i)^2}\\le0.\n\\end{equation}",
+      "sha256": "84283ad0e760788285a8a5b4516e6e85479c94a9a96ed3f908bf446d342d6492",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D24",
+      "start_line": 221,
+      "end_line": 224,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n H(x)=\\sum_{i=1}^3h'(x_i)(x-x_i)\n \\left[\\frac{p(x)}{(x-x_i)p'(x_i)}\\right]^2.\n\\]",
+      "sha256": "e5e7028671b809e062d9ceba5b02792ab7af11587040083fd0975c9963cc625a",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D25",
+      "start_line": 226,
+      "end_line": 229,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n 5!\\sum_{i=1}^3\\frac{h'(x_i)}{p'(x_i)^2}\n =H^{(5)}(\\xi)=h^{(5)}(\\xi)=Ae^\\xi+Be^{-\\xi}>0.\n\\]",
+      "sha256": "36b5c267d956be8ca28133ff524b1be23ad8b947fe6b5783faa30e2ae9ae46cd",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D26",
+      "start_line": 235,
+      "end_line": 239,
+      "environment": "equation",
+      "labels": [
+        "eq:LKidentity"
+      ],
+      "tex": "\\begin{equation}\\label{eq:LKidentity}\n \\boxed{\\quad C_N^\\star=\n \\max_{1\\le k,m<N}\\frac{8N}{m(N-m)}\n \\sup_{t\\ne0}\\frac{\\psi_{N,k,m}(t)}{t^2}.\\quad}\n\\end{equation}",
+      "sha256": "6afe71dfc787d4eb5ed4ba4106af66cd34d832a7e258a9d23a67a1f63025b016",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D27",
+      "start_line": 243,
+      "end_line": 246,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n F_{N,k}(y)=\\log\\E\\exp\\Bigl(\\sum_{i\\in S_k}y_i\\Bigr)\n =\\log\\frac{e_k(e^{y_1},\\ldots,e^{y_N})}{\\binom Nk}.\n\\]",
+      "sha256": "e20bbbfbeb3b74c455cfafd10ab9145251d7e1318ea0e026cb50458d481b355d",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D28",
+      "start_line": 248,
+      "end_line": 251,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\sum_{i\\in S_k}y_i=t(H_{N,k,m}-km/N),\\qquad\n \\|y\\|_2^2=\\frac{m(N-m)}N t^2.\n\\]",
+      "sha256": "c7cf831d9be21fabe2d8af4448b52f6e3559fe92ac2c18c51397160e6a463884",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D29",
+      "start_line": 255,
+      "end_line": 258,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\langle a,X\\rangle=t(H_{N,k,m}-km/N),\\qquad\n \\|a\\|_2^2=\\frac{m(N-m)}{4N}t^2.\n\\]",
+      "sha256": "2d828e725bde990185cd6f950d74ef66986be8413498ebd35054eac0ef51e53a",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D30",
+      "start_line": 263,
+      "end_line": 267,
+      "environment": "equation",
+      "labels": [
+        "eq:globalC"
+      ],
+      "tex": "\\begin{equation}\\label{eq:globalC}\n C_N^\\star\\le\\frac{N}{N-1}\n \\max_{k,m}\\frac{\\min\\{k(N-k),m(N-m)\\}}{m(N-m)}\n =\\frac{N}{N-1}.\n\\end{equation}",
+      "sha256": "a988dcd6ca72aeed8d9867c62e28eacbea895221c5361337cbeb32417b8c4cc7",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D31",
+      "start_line": 274,
+      "end_line": 279,
+      "environment": "align",
+      "labels": [
+        "eq:sym1",
+        "eq:sym2",
+        "eq:sym3",
+        "eq:sym4"
+      ],
+      "tex": "\\begin{align}\n H_{N,k,m}&\\stackrel d=H_{N,m,k},\\label{eq:sym1}\\\\\n H_{N,N-k,m}&\\stackrel d=m-H_{N,k,m},\\label{eq:sym2}\\\\\n H_{N,k,N-m}&\\stackrel d=k-H_{N,k,m},\\label{eq:sym3}\\\\\n H_{N,N-k,N-m}&\\stackrel d=N-k-m+H_{N,k,m}.\\label{eq:sym4}\n\\end{align}",
+      "sha256": "ff5f4a096b643eb5e489f6ca4501b159b42b379fd4d02a0d710f5976a53b8f4f",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D32",
+      "start_line": 281,
+      "end_line": 284,
+      "environment": "equation",
+      "labels": [
+        "eq:param"
+      ],
+      "tex": "\\begin{equation}\\label{eq:param}\n k=j,\\qquad m=j+h,\\qquad N=2j+h+r,\n \\qquad j\\ge1,\\ h,r\\in\\mathbb Z_{\\ge0}.\n\\end{equation}",
+      "sha256": "fce27406ca4b8ace1158fd9d5cd0cb7ae7156d10016107f3b131d8af0fd9c832",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D33",
+      "start_line": 286,
+      "end_line": 288,
+      "environment": "equation",
+      "labels": [
+        "eq:Bdef"
+      ],
+      "tex": "\\begin{equation}\\label{eq:Bdef}\n B=\\frac{j(N-j)}{4(N-1)}.\n\\end{equation}",
+      "sha256": "c21539bbd3115b9e24338e833a65bb2dfed492e41776d63a22a2c1f0caf93144",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D34",
+      "start_line": 293,
+      "end_line": 298,
+      "environment": "equation",
+      "labels": [
+        "eq:Q"
+      ],
+      "tex": "\\begin{equation}\\label{eq:Q}\n Q_j(z)=\\sum_{i=0}^j q_i z^i,\n \\qquad\n q_i=\\binom ji (j+h)_{\\underline i}\n \\frac{(r+j)!}{(r+i)!},\n\\end{equation}",
+      "sha256": "f216fe51c2d39b5f1d095d24ac847a117fcf66941d8bd3a4e4778fa47ee90095",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D35",
+      "start_line": 300,
+      "end_line": 304,
+      "environment": "equation",
+      "labels": [
+        "eq:tiltuv"
+      ],
+      "tex": "\\begin{equation}\\label{eq:tiltuv}\n u(z)=z\\frac{Q_j'(z)}{Q_j(z)}=\\E_{\\log z}H,\n \\qquad\n v(z)=z\\frac{d}{dz}u(z)=\\Var_{\\log z}(H).\n\\end{equation}",
+      "sha256": "1b9c46002c4772042b7b25b2cbe044d46e79d5ff414f9f9542a760204ace7e72",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D36",
+      "start_line": 307,
+      "end_line": 310,
+      "environment": "equation",
+      "labels": [
+        "eq:coeffratio"
+      ],
+      "tex": "\\begin{equation}\\label{eq:coeffratio}\n\\frac{q_{i+1}}{q_i}=\n\\frac{(j-i)(j+h-i)}{(i+1)(r+i+1)}.\n\\end{equation}",
+      "sha256": "52a0610a7acec1dea62336336215552f42357e767302e3a647e92402e9da287c",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D37",
+      "start_line": 312,
+      "end_line": 315,
+      "environment": "equation",
+      "labels": [
+        "eq:hyperode"
+      ],
+      "tex": "\\begin{equation}\\label{eq:hyperode}\n z(1-z)Q_j''(z)+\n \\bigl[r+1+(j+m-1)z\\bigr]Q_j'(z)-jm Q_j(z)=0.\n\\end{equation}",
+      "sha256": "f33a54f4f164b71b75912b6a3a4aadfc7d44338967abe0fd762348a38efe0088",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D38",
+      "start_line": 320,
+      "end_line": 322,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n Q_j(z)=(r+1)_j\\,{}_2F_1(-j,-m;r+1;z).\n\\]",
+      "sha256": "2a9b2c60eb457436b6e4610f1ad35c6bfbe4bd54450291fc9cec5bf2c074d67c",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D39",
+      "start_line": 324,
+      "end_line": 327,
+      "environment": "equation",
+      "labels": [
+        "eq:jacobi"
+      ],
+      "tex": "\\begin{equation}\\label{eq:jacobi}\n \\boxed{\\ Q_j(z)=j!(1-z)^j\n P_j^{(r,h)}\\!\\left(\\frac{1+z}{1-z}\\right).\\ }\n\\end{equation}",
+      "sha256": "c4314cc3e28fd0f4afea2e40b16294b724bda5986cc5df11f6f34a23e886e1aa",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D40",
+      "start_line": 331,
+      "end_line": 333,
+      "environment": "equation",
+      "labels": [
+        "eq:alphas"
+      ],
+      "tex": "\\begin{equation}\\label{eq:alphas}\n \\alpha_i=\\frac{1-\\xi_i}{1+\\xi_i}>0.\n\\end{equation}",
+      "sha256": "f8ad471ded2948f42f488936693ade74cf0b3124d5d2ab3d6b89bf35902ab848",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D41",
+      "start_line": 335,
+      "end_line": 337,
+      "environment": "equation",
+      "labels": [
+        "eq:factor"
+      ],
+      "tex": "\\begin{equation}\\label{eq:factor}\n Q_j(z)=Q_j(0)\\prod_{i=1}^j(1+z/\\alpha_i).\n\\end{equation}",
+      "sha256": "9d130ecb700bb06f49f9514dcfb247abd3ac9f4751065a0c7cc26760610419f0",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D42",
+      "start_line": 341,
+      "end_line": 343,
+      "environment": "equation",
+      "labels": [
+        "eq:PB"
+      ],
+      "tex": "\\begin{equation}\\label{eq:PB}\n \\boxed{\\quad 0<u<j,\\qquad 0<v\\le\\frac{u(j-u)}j.\\quad}\n\\end{equation}",
+      "sha256": "ae484f75da22aa7cf301bcfbe7c070a5c6d16e184807ed6a09b621188c0d7335",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D43",
+      "start_line": 347,
+      "end_line": 351,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\frac{Q_j(zy)}{Q_j(z)}=\n \\prod_{i=1}^j\\bigl[1-p_i(z)+p_i(z)y\\bigr],\n \\qquad p_i(z)=\\frac{z}{z+\\alpha_i}\\in(0,1).\n\\]",
+      "sha256": "73c132d29aaf3e6b806173e89ca6933fd6846e3091b6515b14e3738fc4d711d9",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D44",
+      "start_line": 361,
+      "end_line": 363,
+      "environment": "equation",
+      "labels": [
+        "eq:riccati"
+      ],
+      "tex": "\\begin{equation}\\label{eq:riccati}\n \\boxed{\\ (1-z)(v+u^2)+\\bigl[r+(j+m)z\\bigr]u-jmz=0.\\ }\n\\end{equation}",
+      "sha256": "d7cee4ecf41fe6b5908370a58a2da9a922091aff40d283328b068d52939f0fdd",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D45",
+      "start_line": 367,
+      "end_line": 370,
+      "environment": "align",
+      "labels": [
+        "eq:differentiated"
+      ],
+      "tex": "\\begin{align}\\label{eq:differentiated}\n &(1-z)w+\\bigl[r+2u+z(j+m-2u-1)\\bigr]v\\notag\\\\\n &\\hspace{35mm}-z(j-u)(m-u)=0.\n\\end{align}",
+      "sha256": "815b7f3bfdf9d1b340cbfb316deafdbc9bcdd086497ff3ebb26d7937400c458b",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D46",
+      "start_line": 372,
+      "end_line": 374,
+      "environment": "equation",
+      "labels": [
+        "eq:Dden"
+      ],
+      "tex": "\\begin{equation}\\label{eq:Dden}\n \\mathcal D(u,v)=(j-u)(m-u)-v(j+m-2u-1).\n\\end{equation}",
+      "sha256": "8da5fadbae691b4a4223191d0a382e0150de94e2471f6faaacdf0ae6ad9a345c",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D47",
+      "start_line": 376,
+      "end_line": 378,
+      "environment": "equation",
+      "labels": [
+        "eq:zfromuv"
+      ],
+      "tex": "\\begin{equation}\\label{eq:zfromuv}\n z\\mathcal D(u,v)=v(r+2u).\n\\end{equation}",
+      "sha256": "ea708aae3e43c2b02f568654ec0ad066d57a5d2aa57de3e6fb0f288069eb16b2",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D48",
+      "start_line": 380,
+      "end_line": 386,
+      "environment": "equation",
+      "labels": [
+        "eq:F"
+      ],
+      "tex": "\\begin{equation}\\label{eq:F}\n \\boxed{\\begin{aligned}\n \\mathcal F(u,v)={}&\\bigl[\\mathcal D-v(r+2u)\\bigr](v+u^2)\n +r\\mathcal D\\,u\\\\\n &+(j+m)v(r+2u)u-jmv(r+2u)=0.\n \\end{aligned}}\n\\end{equation}",
+      "sha256": "292c624fb203c697d7685f0bda0b1607bcab5070dbaae1f09d0e36db9591a77f",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D49",
+      "start_line": 391,
+      "end_line": 393,
+      "environment": "equation",
+      "labels": [
+        "eq:F0"
+      ],
+      "tex": "\\begin{equation}\\label{eq:F0}\n \\mathcal F(u,0)=u(j-u)(r+u)(m-u)>0.\n\\end{equation}",
+      "sha256": "35b17f066235fab78c358de35c1f9a6909a1626c2e9b231294a4d100cfc273f0",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D50",
+      "start_line": 403,
+      "end_line": 405,
+      "environment": "equation",
+      "labels": [
+        "eq:letters"
+      ],
+      "tex": "\\begin{equation}\\label{eq:letters}\n T=N-1,\\quad L=N-j-1,\\quad S=h+r=L-j+1,\\quad D=h-r,\n\\end{equation}",
+      "sha256": "ead9efcd867c4f73507bcbb6f318404a1252cc8196d812b6c3a7208d7eea5d92",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D51",
+      "start_line": 407,
+      "end_line": 409,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n B=\\frac{j(L+1)}{4T}.\n\\]",
+      "sha256": "414ac31218e4b1b95501be7b3f3a1bbbdd4804b06578c65e887277a1275117ba",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D52",
+      "start_line": 411,
+      "end_line": 414,
+      "environment": "equation",
+      "labels": [
+        "eq:AandE"
+      ],
+      "tex": "\\begin{equation}\\label{eq:AandE}\n x=2u-j,\\qquad A=j^2(j-1)-Tx^2,\n \\qquad E=L(L+1)-2j.\n\\end{equation}",
+      "sha256": "629a6d4842529800289890159a52b43e2763da88410c29468b5fc950d7e54e6e",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D53",
+      "start_line": 418,
+      "end_line": 420,
+      "environment": "equation",
+      "labels": [
+        "eq:masterpositive"
+      ],
+      "tex": "\\begin{equation}\\label{eq:masterpositive}\n \\boxed{\\quad A(D-x)^2+(L+1)(2jDx+Ex^2)\\ge0.\\quad}\n\\end{equation}",
+      "sha256": "1e00399073bffdba782142cdaf4b1dc58af1cfdf93b9391c94ea0dff0d024d96",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D54",
+      "start_line": 425,
+      "end_line": 427,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n E=L(L+1)-2j\\ge j(j-1)-2j=j(j-3)\\ge0.\n\\]",
+      "sha256": "c31d984a66832ed5f9553b543d32b0795ab0bb2a7766a18746eb17ea74a46152",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D55",
+      "start_line": 429,
+      "end_line": 431,
+      "environment": "equation",
+      "labels": [
+        "eq:g"
+      ],
+      "tex": "\\begin{equation}\\label{eq:g}\n g(d)=A(d+q)^2+(L+1)(Eq^2-2jqd).\n\\end{equation}",
+      "sha256": "003cc836b7531a184129ec70336de430d42194561a0ee85033970af6091aa1fa",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D56",
+      "start_line": 436,
+      "end_line": 439,
+      "environment": "align",
+      "labels": [
+        "eq:square1"
+      ],
+      "tex": "\\begin{align}\\label{eq:square1}\n g(d)&=A\\left(d+q-\\frac{j(L+1)q}{A}\\right)^2\\notag\\\\\n &\\quad+(L+1)q^2\\left[E+2j-\\frac{j^2(L+1)}{A}\\right].\n\\end{align}",
+      "sha256": "7806bff64bae045ad525d52cf91917ff37f46f4a8c52134f13b5b54fa42ac2f0",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D57",
+      "start_line": 444,
+      "end_line": 446,
+      "environment": "equation",
+      "labels": [
+        "eq:qmin"
+      ],
+      "tex": "\\begin{equation}\\label{eq:qmin}\n q>q_0:=j\\sqrt{\\frac{(j-1)L-1}{LT}}.\n\\end{equation}",
+      "sha256": "cfa8e596ff827f75c39613c800b872b724abf7b2891e1821e853ac26e37452da",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D58",
+      "start_line": 448,
+      "end_line": 450,
+      "environment": "equation",
+      "labels": [
+        "eq:qbound"
+      ],
+      "tex": "\\begin{equation}\\label{eq:qbound}\n q_0\\ge\\frac jL.\n\\end{equation}",
+      "sha256": "18ba9e43274c527259c69c1e6e024fefb77fff6c78eb37e5ceaf28e640a097bb",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D59",
+      "start_line": 452,
+      "end_line": 454,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n (j-1)^3-3j+2=j^2(j-3)+1>0.\n\\]",
+      "sha256": "9cdc2dd976b98649d99bdb5aec8fb53b6d976eae82f20bcde32e5626e3fbef2a",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D60",
+      "start_line": 458,
+      "end_line": 460,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n g'(d)=2A(d+q)-2j(L+1)q.\n\\]",
+      "sha256": "d0df3ae1bb8f5833d7e3f007659cc5719dd7bc6017da3915138e17a29b038df7",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D61",
+      "start_line": 462,
+      "end_line": 465,
+      "environment": "align*",
+      "labels": [],
+      "tex": "\\begin{align*}\n A(d+q)&\\le \\frac{j^2}{L}(S+q)\\\\\n &\\le j(L+1)q.\n\\end{align*}",
+      "sha256": "8b6d8aee9293cb4e973db486d9e87d83e782e9435657c13e63b3bf28ae042dbd",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D62",
+      "start_line": 467,
+      "end_line": 469,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n S=L-j+1\\le L+1-\\frac jL.\n\\]",
+      "sha256": "feb23424a4b86944691df2d66c1cadb1cd0502a3bdcdec6c694d0db912061c92",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D63",
+      "start_line": 471,
+      "end_line": 473,
+      "environment": "equation",
+      "labels": [
+        "eq:gS"
+      ],
+      "tex": "\\begin{equation}\\label{eq:gS}\n g(S)=A(S+q)^2+(L+1)q(Eq-2jS).\n\\end{equation}",
+      "sha256": "dddede7f25ef9e055b27a6f56cabc6b63744487cdf862a254c6a38f054e702bb",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D64",
+      "start_line": 475,
+      "end_line": 477,
+      "environment": "equation",
+      "labels": [
+        "eq:Eq"
+      ],
+      "tex": "\\begin{equation}\\label{eq:Eq}\n Eq_0\\ge2jS.\n\\end{equation}",
+      "sha256": "d9c3042ec873d3f936e4668fc4836440315fc6eeb63f2cf654537ebeb966dfbb",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D65",
+      "start_line": 479,
+      "end_line": 482,
+      "environment": "equation",
+      "labels": [
+        "eq:Kdef"
+      ],
+      "tex": "\\begin{equation}\\label{eq:Kdef}\n \\mathcal K_j(L,S):=\n E^2\\bigl((j-1)L-1\\bigr)-4S^2L(L+j)\\ge0.\n\\end{equation}",
+      "sha256": "98bb9c6aeeb3bc7cdaacc1d7935ef4cbfd1550d46d821cbd0f7acdd8afa4025c",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D66",
+      "start_line": 484,
+      "end_line": 486,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n a=j-3\\ge0,\\qquad L=j-1+S=a+2+S.\n\\]",
+      "sha256": "80080c721a5afc8e81304ccab611d7a497511d473d1eb823363a8a1c7ea80fa7",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D67",
+      "start_line": 488,
+      "end_line": 494,
+      "environment": "align",
+      "labels": [
+        "eq:Kpositive"
+      ],
+      "tex": "\\begin{align}\\label{eq:Kpositive}\n \\mathcal K_j(L,S)={}&a^2(a+1)(a+3)^3\\\\\n &+a(a+3)^2(5a^2+16a+10)S\\notag\\\\\n &+(10a^4+80a^3+213a^2+202a+35)S^2\\notag\\\\\n &+(10a^3+64a^2+117a+52)S^3\\notag\\\\\n &+(5a^2+22a+19)S^4+(a+2)S^5.\\notag\n\\end{align}",
+      "sha256": "eee5144196a97ede7d521a99025da283e366610f919756d32358eacab9896086",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D68",
+      "start_line": 506,
+      "end_line": 512,
+      "environment": "equation",
+      "labels": [
+        "eq:exactidentity"
+      ],
+      "tex": "\\begin{equation}\\label{eq:exactidentity}\n \\boxed{\\begin{aligned}\n -16T\\,\\mathcal F\\left(\\frac{j+x}{2},B\\right)\n & =A(D-x)^2\\\\\n &\\quad+(L+1)(2jDx+Ex^2).\n \\end{aligned}}\n\\end{equation}",
+      "sha256": "2faf0bb0a56c17616b8d8fd792f95a412abb987c8018ce65bddeb116f723ee76",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D69",
+      "start_line": 523,
+      "end_line": 525,
+      "environment": "equation",
+      "labels": [
+        "eq:allinner"
+      ],
+      "tex": "\\begin{equation}\\label{eq:allinner}\n \\sup_{t\\in\\R}\\Var_t(H_{N,j,j+h})\\le\\frac{j(N-j)}{4(N-1)}.\n\\end{equation}",
+      "sha256": "a1646aeaffeb4514929dfa80450e5970d3e734ede2c4c121474c8fadcff53dba",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D70",
+      "start_line": 531,
+      "end_line": 533,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n B<v_*\\le\\frac{u_*(j-u_*)}{j}.\n\\]",
+      "sha256": "00c04f4f76f5573dc89ac34516c9670a1681cf8f1e67b84d8a0fb0423d883be4",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D71",
+      "start_line": 535,
+      "end_line": 538,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n x_*^2<j^2\\frac{j-1}{T},\\qquad\n A_*=j^2(j-1)-Tx_*^2>0.\n\\]",
+      "sha256": "355ed3b074bbe4e22f51e0324a3cdf256ea4d5e99acc02f545909fffcbb6ec47",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D72",
+      "start_line": 540,
+      "end_line": 542,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\mathcal F(u_*,B)\\le0.\n\\]",
+      "sha256": "bc27ddbf330ede3406788f3c49ac5d337d29432f47415c397d936d688ac4db52",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D73",
+      "start_line": 551,
+      "end_line": 554,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\rho=\\frac b{\\sqrt{ac}}\n =\\sqrt{\\frac{m(N-m)}{(m-1)(N-m-1)}}.\n\\]",
+      "sha256": "a117ed7b340de7efa8d781ae6464137f57ac7ed703b41ee265d3122fa1376155",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D74",
+      "start_line": 556,
+      "end_line": 558,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\frac{N}{N-2}\\le\\rho\\le2\n\\]",
+      "sha256": "56bb8c76700f35b740874a706f4b138ba2ada321f1e8e258f4e1caa14eabe13b",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D75",
+      "start_line": 560,
+      "end_line": 563,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\rho^2=1+\\frac{N-1}{(m-1)(N-m-1)},\n \\quad (m-1)(N-m-1)\\le\\frac{(N-2)^2}4.\n\\]",
+      "sha256": "dad2bf436cf4dc16d72c0fc78e91db892daf9b2e511870a42dd97b58b6720a80",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D76",
+      "start_line": 566,
+      "end_line": 568,
+      "environment": "equation",
+      "labels": [
+        "eq:3pointvar"
+      ],
+      "tex": "\\begin{equation}\\label{eq:3pointvar}\n v(s)=\\frac{\\rho\\cosh s+1}{(\\rho+\\cosh s)^2}.\n\\end{equation}",
+      "sha256": "b77b0694821b0bebaddf2e63a76075ec912a3e103bcde2fe81bf2335229b9188",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D77",
+      "start_line": 570,
+      "end_line": 573,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\frac{d}{dq}\\frac{\\rho q+1}{(\\rho+q)^2}\n =\\frac{\\rho^2-\\rho q-2}{(\\rho+q)^3}\\le0\n\\]",
+      "sha256": "582168404722065987cd110a11569bd2cf0581b4c1468774bf0413ef96daeadb",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D78",
+      "start_line": 575,
+      "end_line": 579,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n v(s)\\le v(0)=\\frac1{1+\\rho}\n \\le\\frac{N-2}{2(N-1)}=\n \\frac{2(N-2)}{4(N-1)}.\n\\]",
+      "sha256": "d99d83805eef7d6c51ca36d838bbab391173ac86d33ed730149524dc5919cab4",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D79",
+      "start_line": 590,
+      "end_line": 593,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n D_N=\\sup_{\\substack{X\\in[-1,1]^N\\ \\mathrm{exchangeable}\\\\a\\ne0,\\ a\\perp\\one}}\n \\frac{\\Var\\langle a,X\\rangle}{\\|a\\|_2^2}.\n\\]",
+      "sha256": "26daa496ff19b41e185d291e0e424541208c17a658423c3c576b8b007a6ffd51",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D80",
+      "start_line": 595,
+      "end_line": 599,
+      "environment": "equation",
+      "labels": [
+        "eq:variance_constant"
+      ],
+      "tex": "\\begin{equation}\\label{eq:variance_constant}\n D_N=\\frac{4\\lfloor N^2/4\\rfloor}{N(N-1)}\n =\\begin{cases}N/(N-1),&N\\text{ even},\\\\(N+1)/N,&N\\text{ odd}.\n \\end{cases}\n\\end{equation}",
+      "sha256": "73ae24034e3ad283c945c574a8084853520d47c1b9fbb01919681d69a107d80c",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D81",
+      "start_line": 601,
+      "end_line": 606,
+      "environment": "align",
+      "labels": [
+        "eq:variance_gap_integral",
+        "eq:variance_gap_expansion"
+      ],
+      "tex": "\\begin{align}\n C_N^\\star-D_N\n &=\\frac{2\\int_0^x t\\operatorname{artanh}t\\,dt}\n {(1-x)\\operatorname{artanh}x}>0,\\label{eq:variance_gap_integral}\\\\\n &=\\frac{2}{3N^2}+\\frac{2}{3N^3}+\\frac{26}{45N^4}+O(N^{-5}).\\label{eq:variance_gap_expansion}\n\\end{align}",
+      "sha256": "6dcfe9f191c3eb70ad4cba4336646852a53569268bb3eda7b67df418c7694276",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D82",
+      "start_line": 610,
+      "end_line": 614,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\frac{\\Var\\langle a,X\\rangle}{\\|a\\|_2^2}\n =\\E(X_1^2-X_1X_2)\n =\\frac1{N-1}\\E\\sum_{i=1}^N(X_i-\\bar X_N)^2.\n\\]",
+      "sha256": "0e197439f2a76f994bf3c42ad3ce4fcc6943bbbd09358b4251b59845eac3a2f2",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D83",
+      "start_line": 618,
+      "end_line": 622,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n C_N^\\star-D_N\n =\\frac{x-(1-x^2)\\operatorname{artanh}x}\n {(1-x)\\operatorname{artanh}x}.\n\\]",
+      "sha256": "cc69a6146da8d596489adc672e65160db06dfb2a804a5b7857352a0e6a19bbf0",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D84",
+      "start_line": 628,
+      "end_line": 632,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\|a\\|_2^2=\\frac{N-1}{N},\\qquad\n \\langle a,X\\rangle=X_1-\\bar X_N=2(B-p),\n \\quad B\\sim\\Bern(p),\\quad p=\\frac{k}{N}.\n\\]",
+      "sha256": "c01d94793dc13b953e4ac64f121ba0ae406ee6d01754d9e1cd6617465e13bf28",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D85",
+      "start_line": 637,
+      "end_line": 641,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\log\\E e^{\\alpha\\langle a,X\\rangle}\n =(1-2p)\\alpha=\\frac\\alpha N\n =\\frac{\\alpha^2 L_N}{2}\\frac{N-1}{N}.\n\\]",
+      "sha256": "99c4b2077c97c52c70d3aeaa8f9c450f941be09296a9e381273c603d4e7e455a",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D86",
+      "start_line": 643,
+      "end_line": 648,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\lim_{\\lambda\\to0}\\frac{2\\log\\E e^{\\lambda\\langle a,X\\rangle}}\n {\\lambda^2\\|a\\|_2^2}\n =\\lim_{\\lambda\\to0}\\frac{2N\\log\\cosh\\lambda}{(N-1)\\lambda^2}\n =\\frac{N}{N-1}.\n\\]",
+      "sha256": "56cf47f41bb3ce21734994b1eea3772118ba710b5da72299b59bc1deed1f1dc2",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D87",
+      "start_line": 652,
+      "end_line": 656,
+      "environment": "equation",
+      "labels": [
+        "eq:bernproxy"
+      ],
+      "tex": "\\begin{equation}\\label{eq:bernproxy}\n \\sigma^2_{\\mathrm{opt}}(\\Bern(p))=\n \\begin{cases}\\displaystyle\\frac{1-2p}{2\\log((1-p)/p)},&p\\ne1/2,\\\\[5pt]1/4,&p=1/2.\n \\end{cases}\n\\end{equation}",
+      "sha256": "5c2f29bae1bffd1bca6256e2cb67986f82570ef9c348cc2da906a8a8797ba61c",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D88",
+      "start_line": 658,
+      "end_line": 660,
+      "environment": "equation",
+      "labels": [
+        "eq:oddL"
+      ],
+      "tex": "\\begin{equation}\\label{eq:oddL}\n C_N^\\star\\ge L_N=\\frac{2}{(N-1)\\log((N+1)/(N-1))},\n\\end{equation}",
+      "sha256": "baf47cda1e44d540a985cf5f92f048e5d13a50e85f9ab0cf67dad3ad6f412ecf",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D89",
+      "start_line": 672,
+      "end_line": 674,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\frac{p_1}{2\\sqrt{p_0p_2}}\\le2.\n\\]",
+      "sha256": "0341eb0cddb9d38123a0c80ffc180cf9721b4960cbb34e09d20dc3b78df69909",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D90",
+      "start_line": 676,
+      "end_line": 678,
+      "environment": "equation",
+      "labels": [
+        "eq:threeproxy"
+      ],
+      "tex": "\\begin{equation}\\label{eq:threeproxy}\n \\sigma^2_{\\mathrm{opt}}(X)=\\frac{2(p_0-p_2)}{\\log(p_0/p_2)}.\n\\end{equation}",
+      "sha256": "5d4f73cbebad61a519ef96864af0048349379f97206c79f72c69452d640aa8a0",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D91",
+      "start_line": 682,
+      "end_line": 685,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\E e^{tX}=e^t\\{A+B\\cosh(t-a)\\},\\qquad\n f'(a)=p_0-p_2.\n\\]",
+      "sha256": "daec0f275bf27d7b7fe1b1fefa93d805bd39910c4e8252f21ebd204e92d7c600",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D92",
+      "start_line": 687,
+      "end_line": 689,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n f'''(x)=\\frac{B\\sinh x\\,[A^2-AB\\cosh x-2B^2]}{(A+B\\cosh x)^3}\\le0,\n\\]",
+      "sha256": "810c9966f6983f66917d5fd2521840260ba8cb708b64bdda72a00c5bb89b069f",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D93",
+      "start_line": 691,
+      "end_line": 693,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n f(x)-f(a)\\le\\frac{f'(a)}{2a}(x^2-a^2),\\qquad x\\in\\mathbb R.\n\\]",
+      "sha256": "a91ac0107300779bcf9afd218cf48e83c7ded946198cdf6d881d7e8431545b66",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D94",
+      "start_line": 699,
+      "end_line": 701,
+      "environment": "equation",
+      "labels": [
+        "eq:Ltwo"
+      ],
+      "tex": "\\begin{equation}\\label{eq:Ltwo}\n L_N^{(2)}=\\frac{4}{(N-2)\\log\\frac{N+1}{N-3}},\n\\end{equation}",
+      "sha256": "4766486849d975dc6e000a13e1889ee8f50e36db2001a2933bc633a923f2db37",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D95",
+      "start_line": 703,
+      "end_line": 706,
+      "environment": "equation",
+      "labels": [
+        "eq:twostrict"
+      ],
+      "tex": "\\begin{equation}\\label{eq:twostrict}\n L_N^{(2)}<L_N,\n \\qquad L_N-L_N^{(2)}=\\frac{2}{3N^3}+O(N^{-4}).\n\\end{equation}",
+      "sha256": "62340074a64994b441d16debf0b83bc382406ca3ed14ab9fced2b353efe1f636",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D96",
+      "start_line": 710,
+      "end_line": 714,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n p_0=\\frac{(N-k)(N-k-1)}{N(N-1)},\\quad\n p_1=\\frac{2k(N-k)}{N(N-1)},\\quad\n p_2=\\frac{k(k-1)}{N(N-1)}.\n\\]",
+      "sha256": "51885e6e339f22e937bbc9e2370b659d07918fd86d0579fe0065d6aa3c12fbdc",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D97",
+      "start_line": 718,
+      "end_line": 721,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\sigma^2_{\\mathrm{opt}}(H)\n =\\frac{2(N-2k)}{N\\log\\frac{(N-k)(N-k-1)}{k(k-1)}}.\n\\]",
+      "sha256": "5ba4e41116196815684f00d81965f2aedc3d15f6693e9f9887eff5bf90913b94",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D98",
+      "start_line": 723,
+      "end_line": 726,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\log\\frac{(N-k)(N-k-1)}{k(k-1)}\n =2\\operatorname{artanh}(x/N)+2\\operatorname{artanh}(x/(N-2)).\n\\]",
+      "sha256": "ff840fac454735cb17affb6ed5a5a6e9a05b5a9bbd064ae1a83524ce0e85abbc",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D99",
+      "start_line": 730,
+      "end_line": 734,
+      "environment": "align*",
+      "labels": [],
+      "tex": "\\begin{align*}\n &(y-1)\\log\\frac{y+2}{y-2}-2y\\log\\frac{y+2}{y}\\\\\n &\\qquad=2y\\int_0^1(1-u)\n \\left[\\frac1{y^2-(2-u)^2}-\\frac1{y^2-u^2}\\right]du>0.\n\\end{align*}",
+      "sha256": "30c28f8f7ff5756a8ea2725bc29b029d8c0a0770b69fa428c2de2c3402bca9dc",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D100",
+      "start_line": 740,
+      "end_line": 743,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\sigma^2_{\\mathrm{opt}}(H_{N,k,2})\n \\le\\frac{2(N-2)}{N-1}\\sigma^2_{\\mathrm{opt}}(\\Bern(k/N)).\n\\]",
+      "sha256": "2776d9207c80e7c0e1586a7ac57afe56752d2962051f1bfe6c31f0360de28e43",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D101",
+      "start_line": 748,
+      "end_line": 751,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n A_1=2\\operatorname{artanh}d,\\qquad\n B_1=2\\operatorname{artanh}\\frac{Nd}{N-2}.\n\\]",
+      "sha256": "7fba36c52f9c761f792baeaa9d6d0d2c49bed55d00c7476330107678a5b273e6",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D102",
+      "start_line": 754,
+      "end_line": 756,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n B_1>\\frac{N}{N-2}A_1.\n\\]",
+      "sha256": "683c985418ef75e93c7ed686fcaa5ba42d6c02b7612e148b45b0f4b637318853",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D103",
+      "start_line": 758,
+      "end_line": 761,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\frac{2d}{A_1+B_1}<\\frac{(N-2)d}{(N-1)A_1}\n =\\frac{2(N-2)}{N-1}\\sigma^2_{\\mathrm{opt}}(\\Bern(k/N)),\n\\]",
+      "sha256": "05ef9b1491d041dd6ccc85e66fdbbb11d8693773d6401f707da30377814510bd",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D104",
+      "start_line": 774,
+      "end_line": 777,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n p=\\frac{k}{N},\\quad q=1-p,\\quad d=1-2p,\\quad\n M=\\frac{m(N-m)}{N-1},\\quad a=\\frac{N-2m}{N-2}>0.\n\\]",
+      "sha256": "b7ae956b3b5541fd046cff62df677e9f7e67151e5c0c1fa7f329e5e97f83d68f",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D105",
+      "start_line": 779,
+      "end_line": 782,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:laplace"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:laplace}\n \\boxed{\\quad\n \\psi(t)\\le\\frac{M}{a^2}\\bigl[\\log(q+pe^{at})-pat\\bigr].\\quad}\n\\end{equation}",
+      "sha256": "901d0c854758168e749c7d7a3cbd6e68691e34f019fd694287e3e42f14ff21c9",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D106",
+      "start_line": 784,
+      "end_line": 788,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:BernEnvelope"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:BernEnvelope}\n \\sigma^2_{\\rm opt}(H)<M\\sigma^2_{\\rm opt}(\\Bern(p)),\\qquad\n \\frac{4N}{m(N-m)}\\sigma^2_{\\rm opt}(H)\n <\\frac{N}{N-1}g(d).\n\\end{equation}",
+      "sha256": "4c29e3644032b049450e6de4d8a2f6a45adcee543b260ff35ff4a46efbb7735b",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D107",
+      "start_line": 796,
+      "end_line": 798,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n u(t)=\\E_tH,\\qquad v(t)=\\Var_t(H).\n\\]",
+      "sha256": "b8e5a3095e9e351787c9ce8cca75b2578468cd117820a70c894885ecfce1521e",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D108",
+      "start_line": 800,
+      "end_line": 802,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:variance0"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:variance0}\n V(\\mu)=Mpq=\\frac M4(1-d^2).\n\\end{equation}",
+      "sha256": "0f8bd3139923da06d9f1f969f392b7632e9bd3922ed8cdb96585be93a0760fe8",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D109",
+      "start_line": 806,
+      "end_line": 808,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:PB"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:PB}\n 0<V(u)\\le\\frac{u(m-u)}m.\n\\end{equation}",
+      "sha256": "ccb59b3674e46123688c23c2de3b1e94e58594fd89403b9939a129844d145b1c",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D110",
+      "start_line": 812,
+      "end_line": 815,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n u=\\sum_i p_i,\\qquad V=\\sum_i p_i(1-p_i)\n =u-\\sum_i p_i^2\\le u-\\frac{u^2}{m}.\n\\]",
+      "sha256": "997ed1bd5633510299d26adccb1406030985bd8a30887690a45055f307499d55",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D111",
+      "start_line": 819,
+      "end_line": 821,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n A(u)=u(u+N-k-m),\\qquad C(u)=(k-u)(m-u)\n\\]",
+      "sha256": "e797f4f0ffa65208f9e6c63e7566c003967e0eb348c2a4e5456f4746e7959d9d",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D112",
+      "start_line": 823,
+      "end_line": 825,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:F"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:F}\n F(u,v)=-(N-1)v^2+[A+C-A'C+C'A]v+AC.\n\\end{equation}",
+      "sha256": "e1f49647b71ab0234f3eb562da5eadb4960adeaec565e44462997adb2e274653",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D113",
+      "start_line": 830,
+      "end_line": 832,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:curveODE"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:curveODE}\n F(u,V(u))+NyV(u)V'(u)=0.\n\\end{equation}",
+      "sha256": "0b64bf0f21d62e0b53cb3e0ea1223d5aab4268936bb4279196f8bfeec8bdf677",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D114",
+      "start_line": 836,
+      "end_line": 838,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\E_t[H(H+N-k-m)]=z\\E_t[(k-H)(m-H)].\n\\]",
+      "sha256": "74f38b62529049c74d7fbc2ec6c7cf0bd117ca7c27896b1732601db93dd639d3",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D115",
+      "start_line": 840,
+      "end_line": 842,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n z=\\frac{A(u)+V(u)}{C(u)+V(u)}.\n\\]",
+      "sha256": "c5507aa1813a5d4914c29768673d0225bf16092cd4390b846272681812dd2265",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D116",
+      "start_line": 844,
+      "end_line": 846,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\frac{A'+V'}{A+V}-\\frac{C'+V'}{C+V}=\\frac1V.\n\\]",
+      "sha256": "e67384ebb65700529566b61fc5243883263c35a3e63d4bf409426566863e854d",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D117",
+      "start_line": 852,
+      "end_line": 854,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:P"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:P}\n P(u)=\\frac M4(1-d^2)+ad(u-\\mu)-\\frac{a^2}{M}(u-\\mu)^2.\n\\end{equation}",
+      "sha256": "35549bf1d24f2e80878a24bc9031e94f00ed7b80e2d83eb6c5eea0f1aa90dd46",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D118",
+      "start_line": 859,
+      "end_line": 861,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:barrier"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:barrier}\n \\boxed{\\quad V(u)\\le P(u),\\quad}\n\\end{equation}",
+      "sha256": "9dc478d2dda0f97094a9df99b01be0cc82b54d13c8dbc0e2f5d69109f87e1a45",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D119",
+      "start_line": 866,
+      "end_line": 869,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n z_0=\\frac{2(u-\\mu)}M,\\quad\n G=\\frac{N^2(m-1)(N-m-1)}{4(N-2)^2(N-1)}>0\n\\]",
+      "sha256": "845e52a96ff304e4b80490ad61be36737f5098b0065f4c513034a349554a78b8",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D120",
+      "start_line": 871,
+      "end_line": 873,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:W"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:W}\n W(d,z_0)=N-4+3Nd^2-4Nad z_0+[(N+1)a^2-M]z_0^2.\n\\end{equation}",
+      "sha256": "87f0fcfbe828fd8a7411fc937d38cdf50d2c256bbffd9447b2b3b94e33154178",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D121",
+      "start_line": 875,
+      "end_line": 878,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:residual"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:residual}\n \\boxed{\\quad F(u,P(u))+N(u-\\mu)P(u)P'(u)\n =-G(u-\\mu)^2W(d,z_0).\\quad}\n\\end{equation}",
+      "sha256": "a9122630a1b55ac9245e6a00cfae2ec0760ba05cf5b213535bb7f166b9c04a2b",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D122",
+      "start_line": 882,
+      "end_line": 887,
+      "environment": "align*",
+      "labels": [],
+      "tex": "\\begin{align*}\n \\delta&=\\frac{N-2m}{N},&\n b&=\\frac{N-m}{N-2},&\n c&=\\frac{(N-m)[3N^2-4N-4m(N-1)]}{(N-1)(N-2)^2},\\\\\n E(d,z_0)&=1-d^2+4bdz_0-cz_0^2.\n\\end{align*}",
+      "sha256": "01c3163a0d8f86bdc2d8b7a9bb33165572ea70b7d97dc2fc7b3ac68bd7ee4446",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D123",
+      "start_line": 889,
+      "end_line": 891,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:E"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:E}\n \\frac{u(m-u)}m-P(u)=\\frac{m(m-1)}{4(N-1)}E(d,z_0).\n\\end{equation}",
+      "sha256": "fc66039727fb8cd680f5efeb9f127bbf360a9e6d2ba570509477613f99248644",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D124",
+      "start_line": 896,
+      "end_line": 899,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:lambda"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:lambda}\n \\lambda=\\frac{m^2-mN+3m+N^2-4N}{2(N-m)},\\qquad\n \\alpha=\\frac{N-4-\\lambda}{\\delta^2},\n\\end{equation}",
+      "sha256": "1f73f7490e875d05228c03fd5c63a594f6cccd264d0a97b3a4eae57209245cca",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D125",
+      "start_line": 901,
+      "end_line": 905,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n A_0=3N+\\lambda+\\alpha,\\qquad\n B_0=-2Na-2\\lambda b,\\qquad\n C_0=(N+1)a^2-M+\\lambda c.\n\\]",
+      "sha256": "5788ca86519277730290f734b08a1d18a03a901f0bad2f511a3fb210090edee2",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D126",
+      "start_line": 907,
+      "end_line": 911,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:certificate"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:certificate}\n \\boxed{\\quad\n W=\\lambda E+\\alpha(\\delta^2-d^2)\n   +A_0d^2+2B_0dz_0+C_0z_0^2.\\quad}\n\\end{equation}",
+      "sha256": "a6c5c1a3998baa0130ddc0cfe695d7df7247a7e96c3c687dabed9273bce1c709",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D127",
+      "start_line": 913,
+      "end_line": 916,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:det"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:det}\n A_0C_0-B_0^2\n =\\frac{N^2U_0V_0}{(N-2m)^2(N-2)^2(N-1)},\n\\end{equation}",
+      "sha256": "de0955cca4af98b3affbd12c7ba801ca113d4ae2fe72c30d231a7fa6507db336",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D128",
+      "start_line": 918,
+      "end_line": 921,
+      "environment": "align*",
+      "labels": [],
+      "tex": "\\begin{align*}\n U_0&=N^2-2N-m^2-mN+3m,\\\\\n V_0&=m^3-6m^2-2mN^2+14mN-3m+N^3-7N^2+6N.\n\\end{align*}",
+      "sha256": "45f82b73ca9d87839a56d6f15af03a3af2e1a0ac15c8c127f9073e48b3e84cd9",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D129",
+      "start_line": 924,
+      "end_line": 926,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n j=m-3\\ge0,\\qquad r=N-2m\\ge1.\n\\]",
+      "sha256": "17673b6f58cf32e439dfb081dfee9320d557bcf3411c23c8c88396a15ddbe48e",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D130",
+      "start_line": 928,
+      "end_line": 935,
+      "environment": "align",
+      "labels": [
+        "odd:eq:lambda_pos",
+        "odd:eq:alpha_pos",
+        "odd:eq:U_pos",
+        "odd:eq:V_pos"
+      ],
+      "tex": "\\begin{align}\n 2(N-m)\\lambda\n &=3j^2+3jr+13j+r^2+5r+12>0,\\label{odd:eq:lambda_pos}\\\\\n 2(N-m)(N-4-\\lambda)\n &=j^2+3jr+3j+r^2+5r>0,\\label{odd:eq:alpha_pos}\\\\\n U_0&=j^2+3jr+5j+r^2+7r+6>0,\\label{odd:eq:U_pos}\\\\\n V_0&=j^3+4j^2r+3j^2+4jr^2+10jr+r^3+5r^2>0.\\label{odd:eq:V_pos}\n\\end{align}",
+      "sha256": "4636931b0c92ecedbc5432874066acaf1f439d775b91d870b6d80be2ad6ea1ba",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D131",
+      "start_line": 938,
+      "end_line": 940,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:Wpositive"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:Wpositive}\n E\\ge0,\\quad 0\\le d\\le\\delta\\quad\\Longrightarrow\\quad W(d,z_0)>0.\n\\end{equation}",
+      "sha256": "2d0113e8fc7d8c63fd4a0d086fcfff71b22411d976e8c2408683b82a6360ecd2",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D132",
+      "start_line": 945,
+      "end_line": 950,
+      "environment": "align",
+      "labels": [
+        "odd:eq:end0",
+        "odd:eq:endm"
+      ],
+      "tex": "\\begin{align}\n P(0)&=\\frac{km(m-1)[(N-m)(N-2)-k(m-1)]}\n {(N-m)(N-2)^2(N-1)}>0,\\label{odd:eq:end0}\\\\\n P(m)&=\\frac{m(N-k)(m-1)[k(m-1)+(N-2m)(N-1)]}\n {(N-m)(N-2)^2(N-1)}>0.\\label{odd:eq:endm}\n\\end{align}",
+      "sha256": "fd0812386cb72ff6bc693768f78c33e163f0a8912244c59855e694444a253d05",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D133",
+      "start_line": 958,
+      "end_line": 960,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:crossing"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:crossing}\n f'(u)=\\frac{G(u-\\mu)W(d,z_0)}{NP(u)}.\n\\end{equation}",
+      "sha256": "801aab212daa944d0e1d87b6c7e653c56e0bb8bb62aa3eccdcb273dc9259f154",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D134",
+      "start_line": 969,
+      "end_line": 972,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n y'(t)\\le \\mathcal P(y(t)),\\qquad\n \\mathcal P(y)=Mpq+ady-\\frac{a^2}{M}y^2,\n\\]",
+      "sha256": "8f632e5c3b4ccf97ea1b2474406c67ab8a999a20a0ab1e6a20d1b743fddf0353",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D135",
+      "start_line": 975,
+      "end_line": 977,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:Y"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:Y}\n Y(t)=\\frac{M}{a}\\left[\\frac{pe^{at}}{q+pe^{at}}-p\\right].\n\\end{equation}",
+      "sha256": "77e7cd59d40a44e1756b9dfd7e46beea9edab3b3df28c9bb0333c53f507087f8",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D136",
+      "start_line": 979,
+      "end_line": 982,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\Delta(t)=\\mathcal P(y(t))-y'(t),\\qquad\n h(t)=ad-\\frac{a^2}{M}(y(t)+Y(t)).\n\\]",
+      "sha256": "a1febc96004454435021c7446343cb76729b3549a524811550963557f8de1c7d",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D137",
+      "start_line": 984,
+      "end_line": 987,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n e'=he-\\Delta,\\quad e(0)=0,\\qquad\n e(t)=-e^{\\int_0^t h}\\int_0^t e^{-\\int_0^s h}\\Delta(s)\\,ds.\n\\]",
+      "sha256": "05b7417aa91417faf00b693dad37009cf340b7ba7034b777d183b373c5ac654a",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D138",
+      "start_line": 990,
+      "end_line": 993,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\psi(t)<\\int_0^tY(s)\\,ds\n =\\frac{M}{a^2}[\\log(q+pe^{at})-pat]\\quad(t\\ne0).\n\\]",
+      "sha256": "170a2baad887018e77adff840ad251561c8ab1265c502d6c06cfd4fad16829ae",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D139",
+      "start_line": 997,
+      "end_line": 1000,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:bern"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:bern}\n \\sigma^2_{\\rm opt}(\\Bern(p))=\\frac{q-p}{2\\log(q/p)}\n =\\frac{d}{4\\artanh d}.\n\\end{equation}",
+      "sha256": "13edd654c3bee15a12760fcf5f75f671d0902a77eeb0c483d1f2b525ea9124f7",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D140",
+      "start_line": 1004,
+      "end_line": 1006,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\artanh d=\\int_0^d\\frac{dx}{1-x^2}<\\frac{d}{1-d^2}\\qquad(0<d<1).\n\\]",
+      "sha256": "99ed2f55c5dbf69ff2235dbae12f5053ac475ae4590091a774ad3773fd3cccbc",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D141",
+      "start_line": 1012,
+      "end_line": 1016,
+      "environment": "equation",
+      "labels": [
+        "odd:eq:exact"
+      ],
+      "tex": "\\begin{equation}\\label{odd:eq:exact}\n \\boxed{\\quad\n \\max_{1\\le k,m<N}\\frac{4N}{m(N-m)}\\sigma^2_{\\mathrm{opt}}(H_{N,k,m})\n =\\frac{1}{(N-1)\\operatorname{artanh}(1/N)}.\\quad}\n\\end{equation}",
+      "sha256": "f0524d9d9eb72ef40ba3cb07d28217537aeaec52aefb425427f08b0502add3a1",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D142",
+      "start_line": 1023,
+      "end_line": 1026,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\frac{4N}{N-1}\\sigma^2_{\\mathrm{opt}}(H_{N,k,1})\n =\\frac{N}{N-1}g(1-2k/N)\\le L_N,\n\\]",
+      "sha256": "58172a9e34ef1b7625379cff6373532f6072f82e706375a9333372635cd8e7cb",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D143",
+      "start_line": 1030,
+      "end_line": 1034,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\frac{4N}{m(N-m)}\\sigma^2_{\\mathrm{opt}}(H_{N,k,m})\n =\\frac{k(N-k)}{m(N-m)}\n \\frac{4N}{k(N-k)}\\sigma^2_{\\mathrm{opt}}(H_{N,m,k})<L_N,\n\\]",
+      "sha256": "827ca4ba5f98f8a5bcbe388b2b3c0d30eca35740842d80d72deddc4b0149c1a9",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D144",
+      "start_line": 1045,
+      "end_line": 1048,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n v(\\log z)=\\sum_{i=1}^j\\frac{z\\alpha_i}{(z+\\alpha_i)^2}\n =\\frac14\\sum_{i=1}^j\\left[1-\\left(\\frac{z-\\alpha_i}{z+\\alpha_i}\\right)^2\\right],\n\\]",
+      "sha256": "a307d4df394cd90f7e211ff0927f7147000afe4ff877802caba6918f00160d6a",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D145",
+      "start_line": 1050,
+      "end_line": 1055,
+      "environment": "equation",
+      "labels": [
+        "eq:rootineq"
+      ],
+      "tex": "\\begin{equation}\\label{eq:rootineq}\n \\boxed{\\quad\n \\sum_{i=1}^j\\left(\\frac{z-\\alpha_i}{z+\\alpha_i}\\right)^2\n \\ge\\frac{j(j-1)}{N-1}\n \\quad(z>0),\\qquad N=2j+h+r.\\quad}\n\\end{equation}",
+      "sha256": "56c020777643fc5916fc024c9eaac1c0e66c3f51c2bcbf8f71913c3250c1e4c2",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D146",
+      "start_line": 1060,
+      "end_line": 1062,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\Var(H)=\\frac{km(N-k)(N-m)}{N^2(N-1)}.\n\\]",
+      "sha256": "72085b200e787d6021721e67910f6bad366639826e24bbdbd09341b52d0d57e0",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D147",
+      "start_line": 1064,
+      "end_line": 1066,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\frac{4\\max\\{k(N-k),m(N-m)\\}}{N^2}\\le1.\n\\]",
+      "sha256": "09d4f9c6a8111ffc0146bf532138a2d57b77fa161b2cc264f0d112eda2ede3e8",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D148",
+      "start_line": 1078,
+      "end_line": 1082,
+      "environment": "equation",
+      "labels": [
+        "B:pmf"
+      ],
+      "tex": "\\begin{equation}\\label{B:pmf}\n\\Pr(H_{N,k,m}=j)=\n \\frac{\\binom{k}{j}\\binom{N-k}{m-j}}{\\binom{N}{m}},\n \\quad \\max(0,k+m-N)\\le j\\le\\min(k,m).\n\\end{equation}",
+      "sha256": "e5aa0e0d3eb319d53f4f2620376bdcce37e61c59511b082e59a55d106e76b30f",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D149",
+      "start_line": 1084,
+      "end_line": 1088,
+      "environment": "equation",
+      "labels": [
+        "B:variance"
+      ],
+      "tex": "\\begin{equation}\\label{B:variance}\n\\Var(H_{N,k,m})=\nM_{N,m}\\frac{k(N-k)}{N^2},\\qquad\nM_{N,m}:=\\frac{m(N-m)}{N-1}.\n\\end{equation}",
+      "sha256": "3960cc976c3e28814e7338e1efc68ee3e89ec18288bcf3bb1614306ddd4afac5",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D150",
+      "start_line": 1090,
+      "end_line": 1094,
+      "environment": "equation",
+      "labels": [
+        "B:proxy"
+      ],
+      "tex": "\\begin{equation}\\label{B:proxy}\n\\psi_{N,k,m}(t)=\\log\\E e^{t(H_{N,k,m}-km/N)},\\qquad\nS_{N,m}(k)=\\sup_{t\\in\\mathbb R\\setminus\\{0\\}}\n \\frac{2\\psi_{N,k,m}(t)}{t^2}.\n\\end{equation}",
+      "sha256": "c90c1f28c71f79c7a690446085c1c9956c84e40d072fc29844d4f5c7c2420247",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D151",
+      "start_line": 1098,
+      "end_line": 1103,
+      "environment": "equation",
+      "labels": [
+        "B:W"
+      ],
+      "tex": "\\begin{equation}\\label{B:W}\nW_{N,m}=M_{N,m}\\frac{c_N(N-c_N)}{N^2}\n=\\begin{cases}M_{N,m}/4&N\\text{ even},\\\\\n M_{N,m}(1-N^{-2})/4&N\\text{ odd}.\n\\end{cases}\n\\end{equation}",
+      "sha256": "5f4200fe97c39ed6d80069105a928def167e2705ab4670876a95b24029d15255",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D152",
+      "start_line": 1107,
+      "end_line": 1111,
+      "environment": "equation",
+      "labels": [
+        "B:C"
+      ],
+      "tex": "\\begin{equation}\\label{B:C}\nS_{N,m}(k)\\le\n\\frac{\\min\\{k(N-k),m(N-m)\\}}{4(N-1)}\n\\quad (1\\le k,m<N).\n\\end{equation}",
+      "sha256": "a99caa652bdc9210593ab7bff2e3000347b01de3ecb6bf6ac92a845ca3713bb0",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D153",
+      "start_line": 1113,
+      "end_line": 1116,
+      "environment": "equation",
+      "labels": [
+        "B:B"
+      ],
+      "tex": "\\begin{equation}\\label{B:B}\nS_{N,m}(k)\\le M_{N,m}\\,\\beta(k/N),\\quad\n\\beta(p)=\\frac{1-2p}{2\\log((1-p)/p)}.\n\\end{equation}",
+      "sha256": "f267ccd5297703915e57fb00370927a6dce1c9a6c30cf8b6b2e66b163464fe2c",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D154",
+      "start_line": 1124,
+      "end_line": 1127,
+      "environment": "equation",
+      "labels": [
+        "B:argmax"
+      ],
+      "tex": "\\begin{equation}\\label{B:argmax}\n\\argmax_{1\\le k<N}S_{N,m}(k)\n=\\{\\lfloor N/2\\rfloor,\\lceil N/2\\rceil\\}.\n\\end{equation}",
+      "sha256": "6bd7faa53d1435ba64b62f7b10493a4ef05aa4cf865f0be834e3fe38ff3ce80b",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D155",
+      "start_line": 1129,
+      "end_line": 1135,
+      "environment": "equation",
+      "labels": [
+        "B:delta"
+      ],
+      "tex": "\\begin{equation}\\label{B:delta}\n\\Delta_{N,m}=\n\\begin{cases}\n\\dfrac{M_{N,m}}{3N^2+4},& N\\text{ even},\\\\[6pt]\n\\dfrac{M_{N,m}(2N^2-3)}{4N^2(N^2+3)},& N\\text{ odd}.\n\\end{cases}\n\\end{equation}",
+      "sha256": "b9550aa47f6b16e6470449161ff12d281a9bbce002d5f5905a077c33721124b2",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D156",
+      "start_line": 1137,
+      "end_line": 1140,
+      "environment": "equation",
+      "labels": [
+        "B:strict"
+      ],
+      "tex": "\\begin{equation}\\label{B:strict}\nS_{N,m}(k)\\le W_{N,m}-\\Delta_{N,m}\n<W_{N,m}\\le S_{N,m}(c_N).\n\\end{equation}",
+      "sha256": "457310e193d452fa5731e0d94b65cc26625197689d8b7d799574f131f3a5c77d",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D157",
+      "start_line": 1146,
+      "end_line": 1150,
+      "environment": "equation",
+      "labels": [
+        "B:Bdeficit"
+      ],
+      "tex": "\\begin{equation}\\label{B:Bdeficit}\n\\artanh(d)\\ge d+\\frac{d^3}{3},\\qquad\n\\frac{d}{4\\artanh(d)}\n\\le\\frac{1}{4(1+d^2/3)}.\n\\end{equation}",
+      "sha256": "f5c95739836b661b15a6402b1ec63c28f08515edad3871292faea8174b143b5b",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D158",
+      "start_line": 1167,
+      "end_line": 1169,
+      "environment": "equation",
+      "labels": [
+        "B:cap1"
+      ],
+      "tex": "\\begin{equation}\\label{B:cap1}\nS_{N,m}(k)\\le\\frac{M}{4(1+d^2/3)}.\n\\end{equation}",
+      "sha256": "a7659f1eb28e9a9cf1e86e9b0825c25eea6b5d43086a482a68ae6e1e09914cdf",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D159",
+      "start_line": 1172,
+      "end_line": 1176,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\nS_{N,m}(k)\\le\n\\frac{3MN^2}{4(3N^2+4)}\n=\\frac{M}{4}-\\frac{M}{3N^2+4}=W-\\Delta_{N,m}.\n\\]",
+      "sha256": "cc8744b3b59d1974231e8c6ed8f257bccd2f327e361c8e54ab6af05f7809ee5d",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D160",
+      "start_line": 1179,
+      "end_line": 1184,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\nS_{N,m}(k)\\le\\frac{MN^2}{4(N^2+3)}\n=\\frac{M(N^2-1)}{4N^2}\n-\\frac{M(2N^2-3)}{4N^2(N^2+3)}\n=W-\\Delta_{N,m}.\n\\]",
+      "sha256": "74a4cc2bdda50306acab75968912ce688006667c19d8f7bcd9e49a205deb68c0",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D161",
+      "start_line": 1188,
+      "end_line": 1191,
+      "environment": "equation",
+      "labels": [
+        "B:cap2"
+      ],
+      "tex": "\\begin{equation}\\label{B:cap2}\nS_{N,m}(k)\\le\n\\frac{\\bar k(N-\\bar k)}{4(N-1)}.\n\\end{equation}",
+      "sha256": "2359148eff4d8a103c5c12cf46bd72a4018251172a2406acea407cdbc9e14e30",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D162",
+      "start_line": 1193,
+      "end_line": 1196,
+      "environment": "equation",
+      "labels": [
+        "B:disc"
+      ],
+      "tex": "\\begin{equation}\\label{B:disc}\n\\bar m(N-\\bar m)-\\bar k(N-\\bar k)\n=(\\bar m-\\bar k)(N-\\bar m-\\bar k)\n\\end{equation}",
+      "sha256": "831928b7653c12525f6ffdc92834c52a585843cf723e20caaedede8ec6c66630",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D163",
+      "start_line": 1199,
+      "end_line": 1202,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\nW-S_{N,m}(k)\\ge\\frac{1}{4(N-1)}\n>\\frac{M}{3N^2+4}=\\Delta_{N,m},\n\\]",
+      "sha256": "d8a63151c57c4dd0765822618983cc8766e7a8ae54affa5a37f336b79d9d5a88",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D164",
+      "start_line": 1205,
+      "end_line": 1210,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\nW-S_{N,m}(k)\\ge\n\\frac{2-\\bar m(N-\\bar m)/N^2}{4(N-1)}\n\\ge\\frac{7}{16(N-1)}\n>\\frac{M(2N^2-3)}{4N^2(N^2+3)}.\n\\]",
+      "sha256": "7480b52c241bf29f03777ea66482e0fdc70821a471cc712027c2abada4317028",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D165",
+      "start_line": 1226,
+      "end_line": 1232,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\nG_{N,m}(k)=\n\\begin{cases}\nW_{N,m}-\\dfrac{M_{N,m}}{4(1+d^2/3)},&\\bar m\\le\\bar k,\\\\[8pt]\nW_{N,m}-\\dfrac{\\bar k(N-\\bar k)}{4(N-1)},&\\bar k<\\bar m\n\\end{cases}\n\\]",
+      "sha256": "aa1e662d8da9368f3456dd6cda49fc9ea7a95246792527858491858dee55a1fe",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D166",
+      "start_line": 1247,
+      "end_line": 1250,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n\\max_{1\\le k<N} S_{N,m}(k)=\\frac{m(N-m)}{4(N-1)}\n\\quad(1\\le m<N).\n\\]",
+      "sha256": "e69e1dcd297d844c9c72d95d899c76f3bb1d0f58d3589bf86bfd00235f336151",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D167",
+      "start_line": 1261,
+      "end_line": 1263,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n\\max_{1\\le k<N}S_{N,m}(k)=S_{N,m}(n)>W_{N,m}.\n\\]",
+      "sha256": "5f88210c1e56b72d60cba98553f9978636e9be5232f1bdd1750daa883511fe4f",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D168",
+      "start_line": 1266,
+      "end_line": 1275,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\nF_{N,m}(t)=\n\\begin{cases}\n\\displaystyle\\frac{2}{t^2}\\log\\!\n\\left(\\sum_{j=\\max(0,m-n-1)}^{\\min(m,n)}\n\\frac{\\binom{n}{j}\\binom{n+1}{m-j}}{\\binom{2n+1}{m}}\ne^{t(j-\\mu)}\\right),&t\\ne0,\\\\[10pt]\nW_{N,m},&t=0.\n\\end{cases}\n\\]",
+      "sha256": "cb3830c4e00a0365a5b17e1d03f02ef70522774597ca411e127386352ee72234",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D169",
+      "start_line": 1282,
+      "end_line": 1286,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n\\kappa_3=\nW_{N,m}\\frac{(N-2n)(N-2m)}{N(N-2)}\n=W_{N,m}\\frac{N-2m}{N(N-2)}>0.\n\\]",
+      "sha256": "1cce5d32e3bb39ed3a1c839fbfe85b7f82de7ea9a6baecd1e780c8f4e9adcbab",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D170",
+      "start_line": 1298,
+      "end_line": 1300,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n\\frac1{2N\\log((N+1)/(N-1))}.\n\\]",
+      "sha256": "911f074594fa1b8318de23c6a9b2393f03e27cfdebd4475e804927beaf88e174",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D171",
+      "start_line": 1302,
+      "end_line": 1304,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n\\frac2{N\\log((N+1)/(N-3))}.\n\\]",
+      "sha256": "97edca3a5f7bdb2d2c612991d51abf572c9a94aff62a0bb154bcc5a8fc7bbf55",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D172",
+      "start_line": 1319,
+      "end_line": 1321,
+      "environment": "equation",
+      "labels": [
+        "A:domain"
+      ],
+      "tex": "\\begin{equation}\\label{A:domain}\n N\\ge7,\\qquad 3\\le m\\le k\\le\\lfloor N/2\\rfloor,\\qquad N>2m.\n\\end{equation}",
+      "sha256": "c265ee7b382efa362f124f5732e6aa855191b263b220322c2cc00cd734f34be9",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D173",
+      "start_line": 1323,
+      "end_line": 1326,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n p=k/N,\\quad q=1-p,\\quad \\mu=mp,\\quad\n M=\\frac{m(N-m)}{N-1},\\quad a=\\frac{N-2m}{N-2},\\quad d=1-2p.\n\\]",
+      "sha256": "2378cc03879db090ac4821ae2b69084495e45b4e0a4dfa3056342c54d9af65e4",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D174",
+      "start_line": 1333,
+      "end_line": 1337,
+      "environment": "align",
+      "labels": [
+        "A:PB",
+        "A:barrier"
+      ],
+      "tex": "\\begin{align}\n V(u)&\\le B(u):=\\frac{u(m-u)}m,\\label{A:PB}\\\\\n V(u)&\\le P(u):=Mpq+ad(u-\\mu)-\\frac{a^2}{M}(u-\\mu)^2.\n \\label{A:barrier}\n\\end{align}",
+      "sha256": "cee4003ba4add222af74eb07a9660c58be37560f86b8a6417da1b721eb97bc72",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D175",
+      "start_line": 1346,
+      "end_line": 1348,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n D(z\\Vert p)=z\\log\\frac zp+(1-z)\\log\\frac{1-z}{1-p},\\qquad 0\\le z\\le1,\n\\]",
+      "sha256": "dff3e0b2f2158774995a07e00a354e09fff0c60d9aab070023161a0a46ae83be",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D176",
+      "start_line": 1358,
+      "end_line": 1364,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n J_Q(v)=\n \\begin{cases}\n \\displaystyle\\int_\\mu^v\\frac{v-u}{Q(u)}\\,du,&\\mu\\le v<h,\\\\[5pt]\n \\displaystyle\\int_v^\\mu\\frac{u-v}{Q(u)}\\,du,&l<v\\le\\mu.\n \\end{cases}\n\\]",
+      "sha256": "dcdd0b0253ec34e73da1d6ef73a7b51a1cb484d73833327867b68c36973975a2",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D177",
+      "start_line": 1366,
+      "end_line": 1369,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\Pr(X\\ge v)\\le e^{-J_Q(v)}\\quad(v\\ge\\mu),\\qquad\n \\Pr(X\\le v)\\le e^{-J_Q(v)}\\quad(v\\le\\mu).\n\\]",
+      "sha256": "58425780165d1500522d3cba78c40a2b30710ce9a003dec3496ade191045df0c",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D178",
+      "start_line": 1389,
+      "end_line": 1391,
+      "environment": "equation",
+      "labels": [
+        "A:IP"
+      ],
+      "tex": "\\begin{equation}\\label{A:IP}\n I_P(v)=\\frac M{a^2}D\\left(p+\\frac aM(v-\\mu)\\,\\middle\\Vert\\,p\\right).\n\\end{equation}",
+      "sha256": "5e40ad7bf74b7a77a7d1bcba8ed4ab4a09f7159521de77c8c619f70ebdfe13c9",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D179",
+      "start_line": 1394,
+      "end_line": 1397,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n 1-\\frac{am}{M}\n =\\frac{N(m-1)}{(N-2)(N-m)}>0.\n\\]",
+      "sha256": "baed9f9cca13144110f3d390245f390730570c617b764f026a246411a361e9a1",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D180",
+      "start_line": 1399,
+      "end_line": 1401,
+      "environment": "equation",
+      "labels": [
+        "A:IB"
+      ],
+      "tex": "\\begin{equation}\\label{A:IB}\n I_B(v)=mD(v/m\\Vert p).\n\\end{equation}",
+      "sha256": "1c2b8c00fc8c9df752728c07d3ee2d11e8d21b7ebb0b473694a42d3bdb3aa4bc",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D181",
+      "start_line": 1404,
+      "end_line": 1407,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\log\\E e^{t(H-\\mu)}\\le\n \\frac M{a^2}\\{\\log(q+pe^{at})-pat\\}\n\\]",
+      "sha256": "ae5a6c13e9ad1cfb23d56dce82c804d8fda5140b8b4939ed49efc4f2d3f95f1c",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D182",
+      "start_line": 1415,
+      "end_line": 1418,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n c=\\frac1m-\\frac{a^2}{M},\\qquad\n h=(1-a)d,\\qquad b=(m-M)pq,\n\\]",
+      "sha256": "0eb652c3be1558890ef2d5f4e72000e26b850c08c470f074bc443f09a2d4cb19",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D183",
+      "start_line": 1420,
+      "end_line": 1422,
+      "environment": "equation",
+      "labels": [
+        "A:switch"
+      ],
+      "tex": "\\begin{equation}\\label{A:switch}\n r_\\pm=\\mu+\\frac{h\\pm\\sqrt{h^2+4cb}}{2c}.\n\\end{equation}",
+      "sha256": "b49620329b7d045294435150bef043016830d2ef9462bbd6eafd0c176d6d3095",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D184",
+      "start_line": 1426,
+      "end_line": 1435,
+      "environment": "equation",
+      "labels": [
+        "A:J"
+      ],
+      "tex": "\\begin{equation}\\label{A:J}\n J(v)=\n \\begin{cases}\n I_B(v)+I_P(r_-)-I_B(r_-)\n +(v-r_-)[I_P'(r_-)-I_B'(r_-)],&0\\le v<r_-,\\\\\n I_P(v),&r_-\\le v\\le r_+,\\\\\n I_B(v)+I_P(r_+)-I_B(r_+)\n +(v-r_+)[I_P'(r_+)-I_B'(r_+)],&r_+<v\\le m.\n \\end{cases}\n\\end{equation}",
+      "sha256": "b6fb6e7353704792bdea098c82fff9ea423e29a963ff1c2b3bc43cede6606384",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D185",
+      "start_line": 1438,
+      "end_line": 1440,
+      "environment": "equation",
+      "labels": [
+        "A:strict"
+      ],
+      "tex": "\\begin{equation}\\label{A:strict}\n I(v)>J(v)>I_B(v),\\qquad J(v)\\ge I_P(v),\n\\end{equation}",
+      "sha256": "a8c7112e5e4e8969d8b7877ed336da515335e7707d1c5fe41372b5b7408d7493",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D186",
+      "start_line": 1446,
+      "end_line": 1449,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n c=\\frac{(m-1)\\{3N^2-4N-4m(N-1)\\}}\n {m(N-m)(N-2)^2}>0,\n\\]",
+      "sha256": "b485e09a9b358afdf6562e6bbac40c43a5343cc18afd4f1aa0d819a3848d1c5c",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D187",
+      "start_line": 1469,
+      "end_line": 1473,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n U_x=\\begin{cases}e^{-J(z_+)},&z_+\\le m,\\\\0,&z_+>m,\\end{cases}\n \\qquad\n L_x=\\begin{cases}e^{-J(z_-)},&z_-\\ge0,\\\\0,&z_-<0.\\end{cases}\n\\]",
+      "sha256": "6829d645c44d888738d1ff57549a22392c50dbc9fa379159ec1aaa2fedab6ecf",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D188",
+      "start_line": 1475,
+      "end_line": 1477,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\Pr(|H-\\mu|\\ge x)\\le\\min\\{1,U_x+L_x\\}.\n\\]",
+      "sha256": "891f5ac5b446c899eb4e6a628f01cdc925a12711e62341c2de565613f7e5a200",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D189",
+      "start_line": 1484,
+      "end_line": 1489,
+      "environment": "align*",
+      "labels": [],
+      "tex": "\\begin{align*}\n R_1(v)&=mD(v/m\\Vert k/N),&\n R_2(v)&=kD(v/k\\Vert m/N),\\\\\n R_3(v)&=(N-m)D((k-v)/(N-m)\\Vert k/N),&\n R_4(v)&=(N-k)D((m-v)/(N-k)\\Vert m/N).\n\\end{align*}",
+      "sha256": "ce20d8ff72908fd83d6faf385839e8a5bf9c2fd00291fef0fbf40c513e4a389b",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D190",
+      "start_line": 1492,
+      "end_line": 1496,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n B_1=B,\\quad B_2=\\frac{v(k-v)}k,\\quad\n B_3=\\frac{(k-v)(N-m-k+v)}{N-m},\\quad\n B_4=\\frac{(m-v)(N-k-m+v)}{N-k}.\n\\]",
+      "sha256": "5e86337f8d6ab991ff959ca6b0a8d335223b8ad8495c9d513c9afb29bf8fd6de",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D191",
+      "start_line": 1498,
+      "end_line": 1502,
+      "environment": "align*",
+      "labels": [],
+      "tex": "\\begin{align*}\n B_2-B&=\\frac{(k-m)v^2}{mk}\\ge0,\\\\\n B_4-B&=\\frac{(N-k-m)(m-v)^2}{m(N-k)}\\ge0,\\\\\n B_3-B&=\\frac{Lv^2+R(m-v)^2+mLR}{m(N-m)}\\ge0.\n\\end{align*}",
+      "sha256": "6270e92e13c6e187bace719dc54368f1aef59941fb9dffafdc9358102c28f466",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D192",
+      "start_line": 1511,
+      "end_line": 1515,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\kappa_N=\\begin{cases}1,&N\\text{ even},\\\\\n [N\\operatorname{artanh}(1/N)]^{-1},&N\\text{ odd},\\end{cases}\n \\qquad V_* = M\\kappa_N/4.\n\\]",
+      "sha256": "c4463b5d502b3e2c561bc6c51fa7f5b4712feaced1f5ff515d87f32e52965d3f",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D193",
+      "start_line": 1519,
+      "end_line": 1521,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\beta(p)=\\frac{1-2p}{2\\log((1-p)/p)},\\qquad \\beta(1/2)=1/4.\n\\]",
+      "sha256": "f1fd16d4143814781b63f7322eb0bf03098b18595d2710d83d1bf6fd97ae8de2",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D194",
+      "start_line": 1524,
+      "end_line": 1527,
+      "environment": "equation",
+      "labels": [
+        "A:quadratic"
+      ],
+      "tex": "\\begin{equation}\\label{A:quadratic}\n J(v)\\ge I_P(v)\\ge \\frac{(v-\\mu)^2}{2M\\beta(p)}\n \\ge\\frac{(v-\\mu)^2}{2V_*}.\n\\end{equation}",
+      "sha256": "4cb87e9ad66d0b9f89d11823f44da8e2ab5580fcb03d4521cb5a6a4dca8645b7",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D195",
+      "start_line": 1539,
+      "end_line": 1543,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n I_P(\\mu+x)=\\frac{x^2}{2Mpq}\n -\\frac{a(1-2p)x^3}{6M^2p^2q^2}\n +\\frac{a^2(p^3+q^3)x^4}{12M^3p^3q^3}+O(x^5).\n\\]",
+      "sha256": "6832b3e786f023e8e64e5ecb5d76f471e967b5fbc2cd3b8f4ae1f10834a761dc",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D196",
+      "start_line": 1555,
+      "end_line": 1558,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n P(\\mu+s)=v_0+ad s-a^2s^2/M<v_0+s,\\qquad\n P(\\mu-s)=v_0-ad s-a^2s^2/M<v_0+s,\n\\]",
+      "sha256": "a4216bfafcde0eda411f96724e9e540e78a52b253c38c175b6563e025172a62f",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D197",
+      "start_line": 1562,
+      "end_line": 1565,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n J(\\mu+s)>\\frac{s^2}{2(v_0+s/3)}\\quad(0<s\\le m-\\mu),\\qquad\n J(\\mu-s)>\\frac{s^2}{2(v_0+s/3)}\\quad(0<s\\le\\mu).\n\\]",
+      "sha256": "5f499b9050080758cdd4958f56aabb6041bd313282a5767f5e48bda2c860461a",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D198",
+      "start_line": 1571,
+      "end_line": 1573,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n F_d=\\min_{0\\le j\\le d}\\frac{\\E\\binom Xj}{\\binom dj}.\n\\]",
+      "sha256": "1b8c9b3452c82e252f39c2603cc57d4bcd7a7c5e845f240c39706c1c9ad8a44b",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D199",
+      "start_line": 1575,
+      "end_line": 1578,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\Pr(X\\ge d)\\le F_d\\le\n \\inf_{t\\ge0}\\E e^{t(X-d)}.\n\\]",
+      "sha256": "c2deb043648fd34e5d7239355ea73f7fa0d34d6ea5fb0350787e5c77c24bfb0d",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D200",
+      "start_line": 1580,
+      "end_line": 1584,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\frac{\\E\\binom Hj}{\\binom dj}\n =\\frac{(k)_{\\underline j}(m)_{\\underline j}}\n {(N)_{\\underline j}(d)_{\\underline j}}.\n\\]",
+      "sha256": "e8249658bae03255f7b785320f84a40434678cf428003b5f7ad8b5c5f64ad59f",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D201",
+      "start_line": 1586,
+      "end_line": 1588,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\Pr(H\\ge d)\\le F_d\\le e^{-I(d)}<e^{-J(d)}.\n\\]",
+      "sha256": "ea5e34565b1bb8bc686e3ef9285c66e7b1c75d56c77f92e2ef608e8d7b390fc0",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D202",
+      "start_line": 1594,
+      "end_line": 1597,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\E(1+z)^X=\\sum_{j\\ge0}\\E\\binom Xj z^j\n \\ge F_d\\sum_{j=0}^d\\binom dj z^j=F_d(1+z)^d.\n\\]",
+      "sha256": "4b8fcaba5281d393372380105dfeebdca8b193e6b4c79be7f84c7dcdf14db9c7",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D203",
+      "start_line": 1603,
+      "end_line": 1605,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n j_* =\\left\\lceil\\frac{Nd-km}{N+d-k-m}\\right\\rceil\\in\\{1,\\ldots,d\\}.\n\\]",
+      "sha256": "cc63c740a77f87fd86bc0ff9803711ac3ff5985864c50b405b4ae3d03059f2bf",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D204",
+      "start_line": 1607,
+      "end_line": 1612,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\frac{c_{j+1}}{c_j}=\\frac{(k-j)(m-j)}{(N-j)(d-j)},\\qquad\n \\frac{c_{j+1}}{c_j}\\le1\n \\quad\\Longleftrightarrow\\quad\n j\\le\\frac{Nd-km}{N+d-k-m}.\n\\]",
+      "sha256": "7204a93851e6bbc2682bd692eae63cf44621a4856a1458a79274afc466962c1f",
+      "scope_review": "formal_status/display_formula_audit_AB.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D205",
+      "start_line": 1625,
+      "end_line": 1628,
+      "environment": "equation",
+      "labels": [
+        "eq:oddparams"
+      ],
+      "tex": "\\begin{equation}\\label{eq:oddparams}\n k=\\frac{N-s}{2},\\qquad H_N\\sim\\Hyp(N,k,m),\\qquad\n R_{N,s,m}=\\frac{4N}{m(N-m)}\\sigma^2_{\\mathrm{opt}}(H_N).\n\\end{equation}",
+      "sha256": "b5159526b51ad554ad498f3704ff61dde3de1445723e05dd201f34238a21cca4",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D206",
+      "start_line": 1633,
+      "end_line": 1635,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n t\\longmapsto\\frac{2}{t^2}\\log\\E\\exp\\{t(H_N-mk/N)\\},\n\\]",
+      "sha256": "3ed67cabf4d7f574c76a1ccbbdb9db6fa8118e6c5ee7964d574eec988cb87a04",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D207",
+      "start_line": 1637,
+      "end_line": 1645,
+      "environment": "align",
+      "labels": [
+        "eq:tiltexp",
+        "eq:Rexp"
+      ],
+      "tex": "\\begin{align}\n t_{N,s,m}&=\\frac{4s}{N}+\\frac{4s(m-1)}{N^2}\n +\\frac{4s(6m+s^2-6)}{3N^3}+O_{m,s}(N^{-4}),\\label{eq:tiltexp}\\\\\n R_{N,s,m}\n &=1+\\frac1N+\\frac{1-s^2/3}{N^2}\n +\\frac{1-(2m-1)s^2/3}{N^3}\\notag\\\\\n &\\quad+\\frac{1-(4m^2-2m-1)s^2/3-4s^4/45}{N^4}\n +O_{m,s}(N^{-5}).\\label{eq:Rexp}\n\\end{align}",
+      "sha256": "6fa82b76d86f25ba6ae376af00d31be16f4e3c5834bee841cc1ef8b97c3b0b33",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D208",
+      "start_line": 1651,
+      "end_line": 1653,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n L_N=\\frac{1}{(N-1)\\operatorname{artanh}(1/N)}.\n\\]",
+      "sha256": "08af5c70d37685f59346170410ed4a19d5ca8d4bfcfbd42f19fb4e284c54ea81",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D209",
+      "start_line": 1655,
+      "end_line": 1659,
+      "environment": "equation",
+      "labels": [
+        "eq:fixedgap"
+      ],
+      "tex": "\\begin{equation}\\label{eq:fixedgap}\n \\boxed{\\quad L_N-R_{N,1,m}\n =\\frac{2(m-1)}{3N^3}\n +\\frac{2(m-1)(2m+1)}{3N^4}+O_m(N^{-5}).\\quad}\n\\end{equation}",
+      "sha256": "8ccfd93121d477c7070b77aeb6f575985d5d060eca3da8f546a8985d2f95f665",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D210",
+      "start_line": 1661,
+      "end_line": 1663,
+      "environment": "equation",
+      "labels": [
+        "eq:offs_gap"
+      ],
+      "tex": "\\begin{equation}\\label{eq:offs_gap}\n L_N-R_{N,s,m}=\\frac{s^2-1}{3N^2}+O_{m,s}(N^{-3})>0\n\\end{equation}",
+      "sha256": "672dc260b82c763b23edcf2e1021ddbb95ddb06d7e0c3911c3a5bae8e7989cdc",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D211",
+      "start_line": 1671,
+      "end_line": 1676,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n Q_\\varepsilon(t)=\\begin{cases}\n  2\\psi_\\varepsilon(t)/t^2,&t\\ne0,\\\\\n  \\kappa_2(\\varepsilon),&t=0.\n \\end{cases}\n\\]",
+      "sha256": "0d3b3aa3a15ce2543aa79f38dbee3f44b91656de42d4788b3b10066d41cd4f57",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D212",
+      "start_line": 1678,
+      "end_line": 1680,
+      "environment": "equation",
+      "labels": [
+        "eq:q0"
+      ],
+      "tex": "\\begin{equation}\\label{eq:q0}\n Q_0(t)=\\frac{2m}{t^2}\\log\\cosh(t/2),\\qquad Q_0(0)=m/4.\n\\end{equation}",
+      "sha256": "15b8c44fb7b55436a5424587d217266a202329fb04bc3e3ccc06b56ba8f904f8",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D213",
+      "start_line": 1682,
+      "end_line": 1684,
+      "environment": "equation",
+      "labels": [
+        "eq:qstrict"
+      ],
+      "tex": "\\begin{equation}\\label{eq:qstrict}\n Q_0(t)<Q_0(0)\\qquad(t\\ne0).\n\\end{equation}",
+      "sha256": "6734482cfa6bea0b90fcebb022524f56b99f8ab01762660d5897398f3811fb51",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D214",
+      "start_line": 1688,
+      "end_line": 1694,
+      "environment": "equation",
+      "labels": [
+        "eq:Qexpand"
+      ],
+      "tex": "\\begin{equation}\\label{eq:Qexpand}\n Q_\\varepsilon(t)=\\kappa_2(\\varepsilon)\n +\\frac{\\kappa_3(\\varepsilon)}3t\n +\\frac{\\kappa_4(\\varepsilon)}{12}t^2\n +\\frac{\\kappa_5(\\varepsilon)}{60}t^3\n +\\frac{\\kappa_6(\\varepsilon)}{360}t^4+O_{m,s}(t^5).\n\\end{equation}",
+      "sha256": "d6821a15442ee3fedd5e832639245d4f66302d9980316006461a6a09fb9300cc",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D215",
+      "start_line": 1696,
+      "end_line": 1698,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\partial_t^2Q_0(0)=\\frac{\\kappa_4(0)}6=-\\frac m{48}<0.\n\\]",
+      "sha256": "ee3241a772503676374781914fffd5678ed1d8c277227bed1f50e9901885aa01",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D216",
+      "start_line": 1700,
+      "end_line": 1703,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n t'(0)=-\\frac{\\partial_\\varepsilon\\partial_t Q(0,0)}{\\partial_t^2Q(0,0)}\n =-\\frac{ms/12}{-m/48}=4s.\n\\]",
+      "sha256": "d29020ad5ac4f2465b24ff2b606cd058365fa5a5ed0dc2046f005a5f28e6b601",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D217",
+      "start_line": 1708,
+      "end_line": 1711,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n 0=\\frac{\\kappa_3(e)}3+\\frac{\\kappa_4(e)}6t\n +\\frac{\\kappa_5(e)}{20}t^2+\\frac{\\kappa_6(e)}{90}t^3+O_{m,s}(t^4).\n\\]",
+      "sha256": "6f32e9a3dc7d905af1249c338e25e86b9fe46b1d71209e3f133197a7d5d6c792",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D218",
+      "start_line": 1713,
+      "end_line": 1715,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n a=4s,\\qquad b=4s(m-1),\\qquad c=\\frac{4s(6m+s^2-6)}3.\n\\]",
+      "sha256": "0a5b66ddd9325a72496f42f94e834e4b93dc4163ca472d01e8086ca0ddbb892c",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D219",
+      "start_line": 1719,
+      "end_line": 1721,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\widehat t=4se+4s(m-1)e^2.\n\\]",
+      "sha256": "1fe09c630a3df57361ab0863465f06e822e00f06b129a5ee0f5c34247a8e900f",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D220",
+      "start_line": 1723,
+      "end_line": 1733,
+      "environment": "align*",
+      "labels": [],
+      "tex": "\\begin{align*}\n \\sigma^2_{\\mathrm{opt}}(H_N)\n &=\\kappa_2+\\frac{\\kappa_3}3\\widehat t\n +\\frac{\\kappa_4}{12}\\widehat t^2\n +\\frac{\\kappa_5}{60}\\widehat t^3\n +\\frac{\\kappa_6}{360}\\widehat t^4+O_{m,s}(e^5)\\\\\n &=\\frac m4\\Bigl[1-(m-1)e+(1-m-s^2/3)e^2\\\\\n &\\hspace{14mm}-(m-1)(1+s^2/3)e^3\\\\\n &\\hspace{14mm}+\\{1-m-(2m^2-m-1)s^2/3-4s^4/45\\}e^4\\Bigr]\n +O_{m,s}(e^5).\n\\end{align*}",
+      "sha256": "73d9e74422ed6a9079dd55f64e5167c26aba37982e0b0a7ddc023116c11a5b85",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D221",
+      "start_line": 1737,
+      "end_line": 1740,
+      "environment": "equation",
+      "labels": [
+        "eq:singletonL"
+      ],
+      "tex": "\\begin{equation}\\label{eq:singletonL}\n L_N=\\frac{1}{(N-1)\\operatorname{artanh}(1/N)}\n =1+e+\\frac23e^2+\\frac23e^3+\\frac{26}{45}e^4+O(e^5).\n\\end{equation}",
+      "sha256": "e07b162d050a82e96ef5cb2d29363a784f929681042d00b8607b1997c4daf30c",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D222",
+      "start_line": 1753,
+      "end_line": 1757,
+      "environment": "equation",
+      "labels": [
+        "eq:factorial_moments"
+      ],
+      "tex": "\\begin{equation}\\label{eq:factorial_moments}\n \\E(H_N)_{\\underline r}\n =\\frac{(m)_{\\underline r}(k)_{\\underline r}}\n {(N)_{\\underline r}},\\qquad k=\\frac{N-s}{2}.\n\\end{equation}",
+      "sha256": "eab72f27e8e2f585b93ff2379021f56f1f92e9aaa317558760d499ffc3037bb0",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D223",
+      "start_line": 1759,
+      "end_line": 1762,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\E H_N^q=\\sum_{r=0}^q\\left\\{\\begin{matrix}q\\\\r\\end{matrix}\\right\\}\n \\E(H_N)_{\\underline r}.\n\\]",
+      "sha256": "da26691cd1d94f60cbcf1e600ab931771e9942adb43ef66bbd4a7e25a5ba4cf6",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D224",
+      "start_line": 1764,
+      "end_line": 1773,
+      "environment": "align",
+      "labels": [
+        "eq:kappa2exp",
+        "eq:kappa3exp",
+        "eq:kappa4exp",
+        "eq:kappa56exp"
+      ],
+      "tex": "\\begin{align}\n \\kappa_2(e)&=\\frac m4\\left[1-(m-1)e-(m+s^2-1)e^2\n +(m-1)(s^2-1)(e^3+e^4)\\right]+O_{m,s}(e^5),\\label{eq:kappa2exp}\\\\\n \\kappa_3(e)&=\\frac{ms}{4}\\left[e-3(m-1)e^2\n +(2m^2-9m-s^2+7)e^3\\right]+O_{m,s}(e^4),\\label{eq:kappa3exp}\\\\\n \\kappa_4(e)&=-\\frac m8+\\frac{m(m-1)}2e\n +\\frac{m(-6m^2+19m+4s^2-13)}8e^2+O_{m,s}(e^3),\\label{eq:kappa4exp}\\\\\n \\kappa_5(e)&=-\\frac{ms}{2}e+O_{m,s}(e^2),\\qquad\n \\kappa_6(e)=\\frac m4+O_{m,s}(e).\\label{eq:kappa56exp}\n\\end{align}",
+      "sha256": "477cc31c026c1c589b8da80921ec943db6df1cc1744ebec7b06e195a3033c9ba",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D225",
+      "start_line": 1775,
+      "end_line": 1778,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\kappa_r=\\mu_r-\\sum_{j=1}^{r-1}\\binom{r-1}{j-1}\\kappa_j\\mu_{r-j},\n \\qquad \\mu_r=\\E H^r.\n\\]",
+      "sha256": "b4f36726877441912f26c85b1e2fd8dd4effa0ce4f488d882125485c87224f41",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D226",
+      "start_line": 1780,
+      "end_line": 1787,
+      "environment": "align",
+      "labels": [
+        "eq:exactk2",
+        "eq:exactk3"
+      ],
+      "tex": "\\begin{align}\n \\kappa_2(\\varepsilon)\n &=\\frac m4(1-s^2\\varepsilon^2)\\frac{1-m\\varepsilon}{1-\\varepsilon},\\label{eq:exactk2}\\\\\n \\kappa_3(\\varepsilon)\n &=\\kappa_2(\\varepsilon)\\,s\\varepsilon\n \\frac{1-2m\\varepsilon}{1-2\\varepsilon}.\n \\label{eq:exactk3}\n\\end{align}",
+      "sha256": "909d40c092a84381cfc45b3aba0e8d8ba98a007ec8bac8881e7f254b7adc62ba",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D227",
+      "start_line": 1789,
+      "end_line": 1791,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\kappa_4=\\E(H-\\E H)^4-3\\kappa_2^2.\n\\]",
+      "sha256": "65f8e55392488a469d67bf8b2594a986a23b324dd840ff4a267d0f69c999bc25",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D228",
+      "start_line": 1800,
+      "end_line": 1802,
+      "environment": "equation",
+      "labels": [
+        "eq:explicitF"
+      ],
+      "tex": "\\begin{equation}\\label{eq:explicitF}\n \\mathcal F(u,v)=-(N-1)v^2+b(u)v+c(u),\n\\end{equation}",
+      "sha256": "e731cc053151087656424fec52808ffbb3331c578a26d560245159b644b28e62",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D229",
+      "start_line": 1804,
+      "end_line": 1807,
+      "environment": "align",
+      "labels": [
+        "eq:bc"
+      ],
+      "tex": "\\begin{align}\\label{eq:bc}\n b(u)&=(N+2)u^2+(-2jm-j-m+r)u+jm(1-r),\\\\\n c(u)&=u(j-u)(r+u)(m-u).\\notag\n\\end{align}",
+      "sha256": "4e4a83b770a7d3f9e909a05c558785a770a87a8c5a73d4f8440572b2a89e185c",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D230",
+      "start_line": 1809,
+      "end_line": 1811,
+      "environment": "equation",
+      "labels": [
+        "eq:vplus"
+      ],
+      "tex": "\\begin{equation}\\label{eq:vplus}\n v_+(u)=\\frac{b(u)+\\sqrt{b(u)^2+4(N-1)c(u)}}{2(N-1)}.\n\\end{equation}",
+      "sha256": "238706ff009aa3fb05955428ce2feba04c58b1f5861aed57ab4073e0dffa6376",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D231",
+      "start_line": 1815,
+      "end_line": 1819,
+      "environment": "align*",
+      "labels": [],
+      "tex": "\\begin{align*}\n 16T\\mathcal F((j+x)/2,B)\n &=-AD^2+2x[A-j(L+1)]D-x^2[A+(L+1)E]\\\\\n &=-A(D-x)^2-(L+1)(2jDx+Ex^2),\n\\end{align*}",
+      "sha256": "abc0c0ff823a5e16f74cf198f4ba7bc07b5b6b379b16a49431be7a53aa4f47f0",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D232",
+      "start_line": 1824,
+      "end_line": 1827,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n E=a(a+3)+(2a+5)S+S^2,\\qquad\n (j-1)L-1=(a+1)(a+3)+(a+2)S,\n\\]",
+      "sha256": "c2b4565987503fb7fc4f695d0556264bd4292c8b1ad48b12d2b259f8019d54be",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D233",
+      "start_line": 1828,
+      "end_line": 1830,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n L(L+j)=(a+2+S)(2a+5+S).\n\\]",
+      "sha256": "06de0f91ef05d8134dce67ac69f6f1e27483b2573e84a0d1cb9a95e8a623abfe",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D234",
+      "start_line": 1832,
+      "end_line": 1835,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n [a(a+3)+(2a+5)S+S^2]^2[(a+1)(a+3)+(a+2)S]\n -4S^2(a+2+S)(2a+5+S).\n\\]",
+      "sha256": "ab823717082e5134870aadac61e2971130c75efa8e82cb4abb35c88e3bc6cebd",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D235",
+      "start_line": 1842,
+      "end_line": 1845,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n f(t)=\\log(q+pe^t)-pt,\\qquad\n c=\\frac{q-p}{2\\alpha}.\n\\]",
+      "sha256": "f2fdccfc739fcabf54fbd9d3e407f1aeba672f7f8432ee34d4a5509af1874dec",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D236",
+      "start_line": 1847,
+      "end_line": 1849,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n G(t)=\\frac{ct^2}{2}-f(t).\n\\]",
+      "sha256": "8c3057d5c712d4ddd0f8a452e2a6c471366a7894e80a51e718f90927d414c6a2",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D237",
+      "start_line": 1851,
+      "end_line": 1854,
+      "environment": "equation",
+      "labels": [
+        "eq:bernref"
+      ],
+      "tex": "\\begin{equation}\\label{eq:bernref}\n G(2\\alpha-t)=G(t),\\qquad\n G'(0)=G'(\\alpha)=0\n\\end{equation}",
+      "sha256": "72aa9c357637aac15fe4fa3617313a65c720a9b15601edfefb8420f026c2faf2",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D238",
+      "start_line": 1856,
+      "end_line": 1858,
+      "environment": "equation",
+      "labels": [
+        "eq:bernsecond"
+      ],
+      "tex": "\\begin{equation}\\label{eq:bernsecond}\n G''(t)=c-\\frac1{4\\cosh^2((t-\\alpha)/2)}.\n\\end{equation}",
+      "sha256": "6c097889198ce3d6b4c372ef640c6791ff2c57eb9b36ebe91b4df5a6434a801a",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D239",
+      "start_line": 1860,
+      "end_line": 1862,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n 4c=\\frac{\\tanh y}{y}>\\operatorname{sech}^2 y.\n\\]",
+      "sha256": "6ede54a88be7922e164cd61f1a6afdaf009cf79fc79137e33b7d60f0ecc54b6b",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    },
+    {
+      "id": "D240",
+      "start_line": 1866,
+      "end_line": 1870,
+      "environment": "displaymath",
+      "labels": [],
+      "tex": "\\[\n \\sigma^2_{\\mathrm{opt}}(\\Bern(p))\n =\\frac{q-p}{2\\log(q/p)}=\n \\frac{1-2p}{2\\log((1-p)/p)}.\n\\]",
+      "sha256": "7ae70276fcb25bf15d8161a56941354c4ae46602ef6b8aef2d5a8f05f4a5fe81",
+      "scope_review": "formal_status/display_formula_audit_main_appendices.md",
+      "proof_status": "consult_exact_scope_review_and_concordance"
+    }
+  ]
+}

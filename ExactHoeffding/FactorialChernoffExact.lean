@@ -210,5 +210,47 @@ theorem hypergeom_factorial_candidate_formula
       rw [hdesc k, hdesc m, hdesc N, hdesc d]
       field_simp [hfac, hchooseN, hchooseD]
 
+
+/-- Exact factorial ratio on its full nonzero-denominator domain. -/
+theorem hypergeom_factorial_candidate_formula_of_degree_le_population
+    (N k m d j : ℕ) (hk : k ≤ N) (hm : m ≤ N)
+    (hjd : j ≤ d) (hjN : j ≤ N) :
+    finiteFactorialCandidate (Finset.range (m + 1)) (fun i => i)
+        (hypergeomMass N k m) d j =
+      ((Nat.descFactorial k j : ℝ) * (Nat.descFactorial m j : ℝ)) /
+        ((Nat.descFactorial N j : ℝ) * (Nat.descFactorial d j : ℝ)) := by
+  calc
+    finiteFactorialCandidate (Finset.range (m + 1)) (fun i => i)
+        (hypergeomMass N k m) d j =
+      (((Nat.choose m j : ℝ) * (Nat.choose k j : ℝ)) /
+          (Nat.choose N j : ℝ)) /
+        (Nat.choose d j : ℝ) :=
+      hypergeomFactorialCandidate_eq N k m d j hk hm hjd hjN
+    _ = ((Nat.descFactorial k j : ℝ) * (Nat.descFactorial m j : ℝ)) /
+        ((Nat.descFactorial N j : ℝ) * (Nat.descFactorial d j : ℝ)) := by
+      have hfac : (Nat.factorial j : ℝ) ≠ 0 := by
+        exact_mod_cast Nat.factorial_ne_zero j
+      have hchooseN : (Nat.choose N j : ℝ) ≠ 0 := by
+        exact_mod_cast (Nat.ne_of_gt (Nat.choose_pos hjN))
+      have hchooseD : (Nat.choose d j : ℝ) ≠ 0 := by
+        exact_mod_cast (Nat.ne_of_gt (Nat.choose_pos hjd))
+      have hdesc (r : ℕ) :
+          (Nat.descFactorial r j : ℝ) =
+            (Nat.factorial j : ℝ) * (Nat.choose r j : ℝ) := by
+        exact_mod_cast Nat.descFactorial_eq_factorial_mul_choose r j
+      rw [hdesc k, hdesc m, hdesc N, hdesc d]
+      field_simp [hfac, hchooseN, hchooseD]
+
+
+/-- Beyond the population degree the binomial-basis moment is zero. This is
+the separate zero branch of the ordinary (non-totalized) ratio formula. -/
+theorem hypergeom_factorial_candidate_eq_zero_of_population_lt_degree
+    (N k m d j : ℕ) (hk : k ≤ N) (hm : m ≤ N) (hjN : N < j) :
+    finiteFactorialCandidate (Finset.range (m + 1)) (fun i => i)
+      (hypergeomMass N k m) d j = 0 := by
+  unfold finiteFactorialCandidate
+  rw [hypergeom_binomialMoment N k m j hk hm, if_neg (by omega)]
+  exact zero_div _
+
 end
 end ExactHoeffding

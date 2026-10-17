@@ -1,0 +1,2 @@
+PASS: frozen source, locations, and hashes for 49 results / 313 Lean theorems
+PASS: live Lean environment metadata matches the frozen manifest

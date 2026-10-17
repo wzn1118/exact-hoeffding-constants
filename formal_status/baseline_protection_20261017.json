@@ -1,0 +1,16 @@
+{
+  "core_existing_module_count": 284,
+  "missing_modules": [],
+  "changed_existing_modules": [
+    "ExactHoeffding/FactorialChernoffExact.lean",
+    "ExactHoeffding/FactorialMinimizer.lean",
+    "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+    "ExactHoeffding/HypergeomBennettBernstein.lean"
+  ],
+  "deleted_existing_source_lines": [],
+  "manuscript_sha256": "617cce1f87272bd5d5d58e3d91342bba658bb490cb901643fb9436ecc6e2894b",
+  "statement": "Existing Lean modules and dependency versions remain protected against core baseline 8b75977b138205c4ba402000b25d226d55994682. The canonical article and PDF are the byte-identical files from GitHub main commit 91719272750df6103358d8daccc4de8526a0d101. Mathematical-source kernel and axiom checks are recorded separately.",
+  "core_baseline_commit": "8b75977b138205c4ba402000b25d226d55994682",
+  "paper_source_commit": "91719272750df6103358d8daccc4de8526a0d101",
+  "manuscript_pdf_sha256": "21e5bf768f0dc7f80d69904ec7a64642c4adacfaa04d9514ea83a0d4f32550e8"
+}

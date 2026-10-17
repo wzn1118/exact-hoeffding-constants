@@ -1,25 +1,28 @@
-# Authoritative Main+A+B submission
+# Main+A+B manuscript and submission materials
 
 **Zinan Wang** — The University of Manchester  
 **Xinhao Yang** — University of Southern California
 
-The only current unified submission is maintained in the [current release directory](current/README.md).
+The [current submission directory](current/) contains the 36-page unified paper, its standalone LaTeX source, arXiv upload archive and full formal/numerical reproducibility package.
 
-- [Current paper PDF](current/manuscript.pdf)
-- [Single-file LaTeX](current/manuscript.tex)
-- [arXiv source archive](current/arxiv-source.zip) (one TeX file)
-- [Clean paper submission archive](current/clean-submission.zip)
-- [Full formal and numerical reproducibility archive](current/complete-reproducibility.zip)
-- [Author and classification metadata](current/metadata.json)
+- [Paper PDF](current/manuscript.pdf)
+- [Standalone LaTeX](current/manuscript.tex)
+- [arXiv source ZIP](current/arxiv-source.zip)
+- [Clean submission ZIP](current/clean-submission.zip)
+- [Complete reproducibility ZIP](current/complete-reproducibility.zip)
+- [Submission metadata](current/metadata.json)
+- [Manuscript–Lean concordance](current/theorem_lean_concordance.md)
 
-The corresponding LaTeX is assembled from submission/manuscript.tex, goal_b/paper/main.tex, and research/tail_bounds/minimum_variance_tail.tex. Each source retains its own full mathematical proof. The integrated PDF is checked for metadata, duplicate labels and unresolved citations.
+The unified LaTeX is assembled from `submission/manuscript.tex`, `goal_b/paper/main.tex` and `research/tail_bounds/minimum_variance_tail.tex`.
 
-To reproduce the current submission after installing pdfLaTeX, latexmk, Python and the pinned Lean toolchain:
+## Rebuild
 
-    python3 submission/integrated/build_clean_submission.py
-    (cd submission/integrated && latexmk -pdf -halt-on-error combined_manuscript.tex)
-    python3 checks/build_current_release.py
+Install Python, pdfLaTeX, latexmk and the repository's pinned Lean toolchain, then run from the repository root:
 
-The separate original main paper (28 pages), supplement (6 pages), and older combined_all.tex release have historical value, but are superseded for unified Main+A+B submissions. The legacy packaging script checks/package_submission.py is retained for reproducing that historical edition.
+```bash
+python3 submission/integrated/build_clean_submission.py
+(cd submission/integrated && latexmk -pdf -halt-on-error combined_manuscript.tex)
+python3 checks/build_current_release.py
+```
 
-The complete reproducibility archive contains mathematical proof sources, formal verification modules, test programs, frozen inputs and pinned dependencies.
+The release builder checks PDF metadata, reference integrity, all tracked Lean source files and archive checksums. The older Main article, supplement and `combined_all.tex` edition remain in their original locations as dated research documents.

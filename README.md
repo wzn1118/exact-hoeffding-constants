@@ -34,7 +34,7 @@ python3 checks/generate_axiom_audit.py --check
 lake env lean checks/full_closure_axioms.lean
 ```
 
-The full reproducibility ZIP contains all 285 core Lean source modules (307 tracked Lean files including historical checkpoints), the generated theorem–Lean concordance, computational verifiers, frozen input files and the pinned dependency manifest.
+The reproducibility archive contains all **307 tracked Lean files**: **285** core mathematical source files (including the umbrella) and **22** audit/history files. It also includes the manuscript–theorem concordance, numerical verification programs, frozen data and pinned dependencies.
 
 ## Repository guide
 
@@ -48,6 +48,6 @@ The full reproducibility ZIP contains all 285 core Lean source modules (307 trac
 | [source/](source/) | Foundational manuscript source |
 | [research/history/](research/history/) | Historical independent checkpoints |
 
-The earlier 28-page foundational manuscript, separate supplement, and dated calculations remain available for provenance. The **only current unified submission** is maintained in `submission/current/`.
+The current Main+A+B submission is in [`submission/current/`](submission/current/). Earlier editions and research notes are preserved in their respective source and history directories.
 
 [Submission guide](submission/README.md) · [Citation metadata](CITATION.cff) · [Formal theorem coverage](LEAN_PROOF_STATUS.md) · [Current theorem–Lean concordance](submission/current/theorem_lean_concordance.md) · [License](LICENSE) · [Third-party notices](THIRD_PARTY_NOTICES.md)

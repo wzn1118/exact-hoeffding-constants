@@ -20,7 +20,7 @@
 \lstset{basicstyle=\ttfamily\scriptsize,breaklines=true,columns=fullflexible,frame=single,rulecolor=\color{black!20},keepspaces=true,showstringspaces=false}
 \title{\bfseries Sharp Hypergeometric Concentration: Exact Exchangeability Constants,\ Fixed-Sample Extremizers, and Piecewise KL Bounds}
 \author{Zinan Wang\\{\small The University of Manchester}\and Xinhao Yang\\{\small University of Southern California}}
-\date{16 October 2026}
+\date{17 October 2026}
 
 \DeclareMathOperator*{\argmax}{arg\,max}
 \begin{document}
@@ -34,9 +34,9 @@ We determine the least constant in the Hoeffding-type exponential-moment inequal
  \displaystyle[(N-1)\operatorname{artanh}(1/N)]^{-1},&N\text{ odd}.
  \end{cases}
 \]
-The even coefficient coincides with the maximal normalized variance. In odd populations the optimal Laplace parameter is nonzero, and the sharp coefficient strictly exceeds the variance benchmark. We obtain the result through a two-level reduction to hypergeometric laws, a global tilted-variance bound, and a mean-dependent quadratic envelope for their Laplace transforms. The envelope holds for both parities throughout the sub-half-population parameter range; parity enters when the remaining discrete margins are optimized. The proof also determines all odd-population extremizers.
+The even coefficient coincides with the maximal normalized variance. In odd populations the optimal Laplace parameter is nonzero, and the sharp coefficient strictly exceeds the variance benchmark. We obtain the result through a two-level reduction to hypergeometric laws, a global tilted-variance bound, and a mean-dependent quadratic envelope for tilted hypergeometric variance. The quadratic envelope holds for both parities when $3\le m\le k\le\lfloor N/2\rfloor$ and $2m<N$; parity enters when the remaining discrete margins are optimized. The proof also determines all odd-population extremizers.
 
-For each fixed sample size, we identify the central success counts as the unique maximizers of the optimal hypergeometric sub-Gaussian proxy, up to complementation, and establish quantitative gaps for all other margins. On the canonical interior parameter domain, the two tilted-variance envelopes yield an explicit piecewise relative-entropy rate for both tails. The resulting rate strictly improves the binomial KL rate at every noncentral threshold.
+For each fixed sample size, we identify the central success counts as the unique maximizers of the optimal hypergeometric sub-Gaussian proxy, up to complementation, and establish quantitative gaps for all other margins. For $3\le m\le k\le\lfloor N/2\rfloor$ and $2m<N$, the two tilted-variance envelopes yield an explicit piecewise relative-entropy rate for both tails. The resulting rate strictly improves the binomial KL rate at every noncentral threshold.
 \end{abstract}
 \noindent\textbf{Keywords.} Hypergeometric distribution; finite exchangeability; optimal sub-Gaussian proxy; Fisher noncentral hypergeometric law; Jacobi polynomials; exponential tilting; Riccati equation; fixed-sample extremizers; piecewise KL concentration.\\
 \textbf{MSC 2020.} 60E15, 60F10, 33C45, 62E15.
@@ -48,9 +48,9 @@ Let $X=(X_1,\ldots,X_N)\in[-1,1]^N$ be exchangeable and let $a\in\R^N$ satisfy $
  \le\exp\left(\frac{\lambda^2C_N^\star}{2}\|a\|_2^2\right),
  \qquad \lambda\in\R,
 \end{equation}
-uniformly over the law of $X$ and the contrast $a$. Zero padding and orthogonal projection give the equivalent formulation for $\sum_{i=1}^n w_i(X_i-\bar X_N)$, where $\bar X_N=N^{-1}\sum_iX_i$. This formulation includes arbitrary signed weights.
+uniformly over the law of $X$ and the contrast $a$. Zero padding and orthogonal projection give the equivalent formulation for $\sum_{i=1}^n w_i(X_i-\bar X_N)$, where $\bar X_N=N^{-1}\sum_iX_i$. The zero-padded weighted-contrast formulation permits arbitrary signed weights.
 
-For independent bounded variables the reference coefficient is one. Finite exchangeability introduces an exact population-dependent inflation. Barber \cite{Barber,BarberErratum} established weighted exchangeable Hoeffding bounds, and Lee and Kim \cite{LeeKim} obtained an upper coefficient $1+3/(2N)+O(N^{-2})$, a matching order-$N^{-1}$ lower bound, and an exact hypergeometric variational representation. We evaluate that representation for every $N$. The answer is $N/(N-1)$ when $N$ is even and $[(N-1)\operatorname{artanh}(1/N)]^{-1}$ when $N$ is odd.
+For independent bounded variables the reference coefficient is one. Finite exchangeability introduces an exact population-dependent inflation. Barber \cite{Barber,BarberErratum} established weighted exchangeable Hoeffding bounds, and Lee and Kim \cite{LeeKim} obtained an upper coefficient $1+3/(2N)+O(N^{-2})$, a matching order-$N^{-1}$ lower bound, and an exact hypergeometric variational representation. We evaluate that representation for every $N$. The resulting optimal constant is $N/(N-1)$ when $N$ is even and $[(N-1)\operatorname{artanh}(1/N)]^{-1}$ when $N$ is odd.
 
 Parity distinguishes two extremal mechanisms. The largest normalized variance is
 \[
@@ -62,26 +62,29 @@ For even populations, $C_N^\star=D_N$ and the sharp coefficient is determined at
  D_N=\frac{N+1}{N}<C_N^\star<\frac{N}{N-1},
  \qquad C_N^\star-D_N=\frac{2}{3N^2}+O(N^{-3}).
 \]
-Thus the odd coefficient measures a genuine exponential-moment effect beyond the largest variance. A single coordinate centered by the population mean, $X_1-\bar X_N$, attains the odd bound at the explicit nonzero argument $\log((N+1)/(N-1))$ on a nearest-balanced Hamming slice. Proposition \ref{prop:variance_parity} and Proposition \ref{prop:explicit_extremizer} make this distinction precise.
+Thus the odd coefficient measures a genuine exponential-moment effect beyond the largest variance. A single coordinate centered by the population mean, $X_1-\bar X_N$, attains the odd bound at the explicit nonzero argument $\log((N+1)/(N-1))$ on a nearest-balanced Hamming slice. Propositions \ref{prop:variance_parity} and \ref{prop:explicit_extremizer} distinguish the maximal variance from the nonzero-tilt Laplace optimum.
 
 \subsection{From exchangeable contrasts to finite-population sampling}
-The central reduction identifies the exact finite-population problem with an optimization over hypergeometric random variables. The convex reduction to Hamming slices is followed by the two-level extremal principle of Lee and Kim, giving
+The Lee--Kim two-level reduction converts the finite-exchangeability contrast problem into an optimization over hypergeometric moment generating functions. The convex reduction to Hamming slices is followed by the two-level extremal principle of Lee and Kim, giving
 \[
  \text{exchangeable centered contrasts}\ \longrightarrow\
  \text{hypergeometric optimal variance proxies}.
 \]
-We state and prove this variational identity immediately after the main results. In particular, a sharp estimate for each hypergeometric law can be transferred to every signed contrast of the original exchangeable sequence.
+We state and prove the Lee--Kim variational identity \eqref{eq:LKidentity} immediately after the main results. In particular, a sharp estimate for each hypergeometric law can be transferred to every signed contrast of the original exchangeable sequence.
 
-Two complementary estimates determine the optimum. First, a sharp bound on hypergeometric variance at every exponential tilt implies the universal coefficient $N/(N-1)$, which is attained for even populations. Second, a quadratic upper envelope for variance as a function of the tilted mean gives a scaled-Bernoulli Laplace comparison. The certificate for this envelope is valid in the sub-half-population regime for both parities. For odd $N$, all admissible success counts stay away from the exact half-population balance; optimizing the Bernoulli comparison then singles out the one-draw laws. For even $N$, the balanced zero-tilt equality accounts for the sharp constant. This separation of the continuous Laplace comparison from the discrete optimization isolates the role of parity.
+Two complementary estimates determine the optimum. First, a sharp bound on hypergeometric variance at every exponential tilt implies the universal coefficient $N/(N-1)$, which is attained for even populations. Second, a quadratic upper envelope for variance as a function of the tilted mean gives a scaled-Bernoulli Laplace comparison. The positive-definite certificate proves the mean-dependent quadratic bound on tilted variance for both parities in the stated sub-half-population regime. For odd $N$, all admissible success counts stay away from the exact half-population balance; optimizing the Bernoulli comparison then singles out the one-draw laws. For even $N$, the balanced zero-tilt equality accounts for the sharp constant. Separating the continuous Laplace comparison from the discrete margin optimization isolates the role of parity.
 
 \subsection{Relation to prior work and further refinements}
-The proof of the sharp constant rests on two global ingredients: the all-tilt hypergeometric curvature bound and the parity-uniform quadratic Laplace envelope. The complete classification of odd-population equality cases is part of the central theorem. Appendix \ref{sec:odd_asym} records fourth-order expansions for fixed margins. The fixed-sample success-count extremality theorem appears in Section \ref{sec:fixedsample}, while the piecewise relative-entropy tail bound is proved in Section \ref{sec:piecewise}.
+The proof of the sharp constant rests on two global ingredients: the all-tilt hypergeometric curvature bound and the parity-uniform quadratic Laplace envelope. The complete classification of odd-population equality cases is part of Theorem \ref{thm:exchange}. Appendix \ref{sec:odd_asym} records fourth-order expansions for fixed margins. The fixed-sample success-count extremality theorem appears in Section \ref{sec:fixedsample}, while the piecewise relative-entropy tail bound is proved in Section \ref{sec:piecewise}.
 
 Hoeffding \cite{Hoeffding}, Serfling \cite{Serfling}, Bardenet and Maillard \cite{BardenetMaillard}, and Greene and Wellner \cite{GreeneWellner} develop exponential inequalities and finite-sampling corrections. Diaconis and Freedman \cite{DiaconisFreedman} provide the classical finite-exchangeability framework. Gottschling and Caprio \cite{GottschlingCaprio} bound tails of sample means of bounded infinitely exchangeable sequences relative to the extremal means in the support of the de Finetti mixing measure. Equation \eqref{eq:exchange-intro} concerns finite sequences and arbitrary zero-sum contrasts. Fisher's noncentral hypergeometric family describes the exponential tilts used here \cite{Fog}.
 
-Kou and Ying \cite{Kou} connect fixed-margin laws with Jacobi polynomials and sums of independent Bernoulli variables; Borcea, Br\"and\'en, and Liggett \cite{BBL} develop the broader stability framework. The Jacobi identities and zero-location theorem are classical \cite[Chapter IV and Section 6.7]{Szego}. Arbel, Marchal, and Nguyen \cite{ArbelMarchalNguyen} study optimal variance proxies and strict sub-Gaussianity, and Marchal and Arbel \cite{MarchalArbel} use differential equations for Beta and Dirichlet proxies. Atouani, Marchal, and Arbel \cite[Theorem 3.2 and Corollary 3.3]{AtouaniMarchalArbel} give the three-mass proxy formula specialized in Section \ref{sec:twodraw}. That section applies their formula to two draws and evaluates the resulting success-count extremum and singleton comparison. The all-degree variance certificates, the parity-uniform Laplace envelope, the classification of odd-population extremizers, and the optimized expansions for each fixed sample size are the hypergeometric results developed here. The fourth-order local moment expansion in \cite[Remark 3.6]{AtouaniMarchalArbel} is in the Laplace argument; our expansion is in $N^{-1}$ at the globally optimizing argument, and is accompanied by an extremum theorem over all success counts.
+Kou and Ying \cite{Kou} connect fixed-margin laws with Jacobi polynomials and sums of independent Bernoulli variables; Borcea, Br\"and\'en, and Liggett \cite{BBL} develop the broader stability framework. The Jacobi identities and zero-location theorem are classical \cite[Chapter IV and Section 6.7]{Szego}. Arbel, Marchal, and Nguyen \cite{ArbelMarchalNguyen} study optimal variance proxies and strict sub-Gaussianity, and Marchal and Arbel \cite{MarchalArbel} use differential equations for Beta and Dirichlet proxies. Atouani, Marchal, and Arbel \cite[Theorem 3.2 and Corollary 3.3]{AtouaniMarchalArbel} give the three-mass proxy formula specialized in Section \ref{sec:twodraw}. Section \ref{sec:twodraw} applies the Atouani--Marchal--Arbel formula to two draws and evaluates the resulting success-count extremum and singleton comparison. The all-degree variance certificates, the parity-uniform Laplace envelope, the classification of odd-population extremizers, and the optimized expansions for each fixed sample size are the hypergeometric results developed here. The fourth-order local moment expansion of Atouani, Marchal, and Arbel \cite[Remark 3.6]{AtouaniMarchalArbel} concerns the Laplace argument. Theorem \ref{thm:odd_expansion} gives an inverse-population expansion at the globally maximizing tilt.
 
-The two-level exchangeability reduction leads to the curvature theorem, parity-dependent sharp constants, and quadratic Laplace envelope. The subsequent fixed-sample extremizer theorem and piecewise KL bounds develop their finite-sample consequences. Fourth-order asymptotics and supporting algebraic calculations appear in the appendices.
+\paragraph{Contemporaneous sharp-constant results.}
+Lee and Kim \cite{LeeKimSerfling} obtain the same parity-dependent coefficient $C_N^\star$ through a hypergeometric generating-function recurrence and derive a variance-scale refinement of Serfling's inequality. The Jacobi-root and Riccati analysis here establishes all-tilt variance certificates, identifies central success-count maximizers and their quantitative gaps for each fixed sample size, and yields piecewise KL concentration in the domain \eqref{A:domain}.
+
+The two-level exchangeability reduction leads to the curvature theorem, parity-dependent sharp constants, and quadratic Laplace envelope. The fixed-sample extremizer theorem sharpens the success-count proxy maximization, and the piecewise KL theorem converts the tilted-variance envelopes into finite-sample tail rates. Fourth-order asymptotics and supporting algebraic calculations appear in the appendices.
 
 \section{Statements of the main results}\label{sec:main}
 For $N\ge2$ and $1\le k,m<N$, write
@@ -94,7 +97,7 @@ Define the centered log-Laplace transform and its tilted variance by
  \psi_{N,k,m}(t)=\log\E e^{t(H-km/N)},\qquad
  v_{N,k,m}(t)=\psi_{N,k,m}''(t).
 \end{equation}
-The second derivative is the variance of $H$ under the probability law having Radon--Nikodym derivative proportional to $e^{tH}$. The centering has no effect on this second derivative. Define $\sigma^2_{\mathrm{opt}}(H)=\sup_{t\ne0}2\psi_{N,k,m}(t)/t^2$. The quotient $2\psi_{N,k,m}(t)/t^2$ is assigned its continuous value $\Var(H)$ at $t=0$.
+The second derivative is the variance of $H$ under the probability law having Radon--Nikodym derivative proportional to $e^{tH}$. Subtracting the hypergeometric mean from $H$ leaves the tilted variance unchanged. Define $\sigma^2_{\mathrm{opt}}(H)=\sup_{t\ne0}2\psi_{N,k,m}(t)/t^2$. The quotient $2\psi_{N,k,m}(t)/t^2$ is assigned its continuous value $\Var(H)$ at $t=0$.
 
 Denote by $\CN$ the least constant in \eqref{eq:exchange-intro} as the law of $X$, the centered vector $a$, and $\lambda$ all vary.
 \begin{theorem}[Exact finite-exchangeability constants]\label{thm:exchange}
@@ -132,7 +135,7 @@ with strict inequality for $t\ne0$. For $k<N/2$,
  \sigma^2_{\mathrm{opt}}(H_{N,k,m})
  <\frac{m(N-m)}{N-1}\sigma^2_{\mathrm{opt}}(\Bern(k/N)),
 \end{equation}
-while for $N$ even and $k=N/2$ equality holds in the optimal-proxy comparison. The same proxy comparison and its equality classification hold for $m=2$ and $2\le k\le\lfloor N/2\rfloor$, $N\ge5$.
+while for $N$ even and $k=N/2$ equality holds in the optimal-proxy comparison. The scaled-Bernoulli optimal-proxy comparison and its equality classification hold for $m=2$ and $2\le k\le\lfloor N/2\rfloor$, $N\ge5$.
 \end{theorem}
 \begin{proof}
 Theorem \ref{odd:thm:envelope} proves the Laplace comparison and the proxy assertions for $m\ge3$; Corollary \ref{cor:two_bern_envelope} treats $m=2$, including the balanced endpoint.
@@ -144,7 +147,7 @@ For all integers $N\ge2$, $1\le k,m<N$, and all $t\in\R$,
  \boxed{\quad v_{N,k,m}(t)\le
  \frac{\min\{k(N-k),\,m(N-m)\}}{4(N-1)}.\quad}
 \end{equation}
-The bound is sharp over the indicated parameter family. Equality occurs for a singleton marked margin after a suitable exponential tilt, and at zero tilt when both margin products are maximal and $N$ is even.
+The curvature bound \eqref{eq:curvature} is sharp over the indicated parameter family. Equality occurs for a singleton marked margin after a suitable exponential tilt, and at zero tilt when both margin products are maximal and $N$ is even.
 \end{theorem}
 
 \begin{corollary}[Uniform log-Laplace domination]\label{cor:mgf}
@@ -198,7 +201,7 @@ Fix $1\le k<N$ and $\rho\ge0$. Every maximizer of
 has at most two distinct coordinate values.
 \end{proposition}
 \begin{proof}
-Compactness gives a maximizer. The claims for $\rho=0$ and $N=2$ are immediate. Suppose that a maximizer has three distinct coordinates $x_1,x_2,x_3$. Fix all other coordinates $R$ and set $s=x_1+x_2+x_3$, $q=x_1^2+x_2^2+x_3^2$. On the circle defined by these two constraints, the part of the objective depending on the triple is
+Compactness gives a maximizer. When $\rho=0$, the feasible set consists only of the zero vector; when $N=2$, every coefficient vector has at most two coordinate values. Suppose that a maximizer has three distinct coordinates $x_1,x_2,x_3$. Fix all other coordinates $R$ and set $s=x_1+x_2+x_3$, $q=x_1^2+x_2^2+x_3^2$. On the circle defined by these two constraints, the part of the objective depending on the triple is
 \[
  A\sum_{i=1}^3e^{x_i}+B\sum_{i=1}^3e^{-x_i},
  \qquad A=e_{k-1}(e^R),\quad B=e^s e_{k-2}(e^R).
@@ -219,12 +222,12 @@ Consider the Hermite interpolation polynomial
  H(x)=\sum_{i=1}^3h'(x_i)(x-x_i)
  \left[\frac{p(x)}{(x-x_i)p'(x_i)}\right]^2.
 \]
-It satisfies $H(x_i)=h(x_i)=0$ and $H'(x_i)=h'(x_i)$. Repeated Rolle's theorem applied to these three double zeros gives a point $\xi$ between the smallest and largest $x_i$ such that
+The Hermite interpolant $H$ satisfies $H(x_i)=h(x_i)=0$ and $H'(x_i)=h'(x_i)$. Repeated Rolle's theorem applied to these three double zeros gives a point $\xi$ between the smallest and largest $x_i$ such that
 \[
  5!\sum_{i=1}^3\frac{h'(x_i)}{p'(x_i)^2}
  =H^{(5)}(\xi)=h^{(5)}(\xi)=Ae^\xi+Be^{-\xi}>0.
 \]
-This contradicts \eqref{eq:twolevel_second}.
+The positive sign forced by the Hermite interpolation remainder contradicts the nonpositivity required by \eqref{eq:twolevel_second}.
 \end{proof}
 
 \begin{proposition}[Exact variational identity; Lee--Kim]\label{prop:variational}
@@ -236,12 +239,12 @@ The constant in \eqref{eq:exchange-intro} satisfies
 \end{equation}
 \end{proposition}
 \begin{proof}
-For $a\perp\one$, average $\exp(\lambda\langle a,x\rangle)$ over coordinate permutations and denote the resulting convex function on $[-1,1]^N$ by $\Phi(x)$. Exchangeability gives $\E e^{\lambda\langle a,X\rangle}=\E\Phi(X)$. Convexity bounds this by the largest value at a cube vertex. A vertex with $k$ positive coordinates, uniformly permuted, is the $k$th Hamming slice. If $S_k$ is a uniform $k$-subset and $y_i=2\lambda a_i$, its log-MGF is
+For $a\perp\one$, average $\exp(\lambda\langle a,x\rangle)$ over coordinate permutations and denote the resulting convex function on $[-1,1]^N$ by $\Phi(x)$. Exchangeability gives $\E e^{\lambda\langle a,X\rangle}=\E\Phi(X)$. Convexity bounds $\E\Phi(X)$ by the largest value of $\Phi$ at a cube vertex. Uniformly permuting a vertex with $k$ positive coordinates produces the uniform law on the $k$th Hamming slice. If $S_k$ is a uniform $k$-subset and $y_i=2\lambda a_i$, the log-MGF of the random subset sum $\sum_{i\in S_k}y_i$ is
 \[
  F_{N,k}(y)=\log\E\exp\Bigl(\sum_{i\in S_k}y_i\Bigr)
  =\log\frac{e_k(e^{y_1},\ldots,e^{y_N})}{\binom Nk}.
 \]
-For $\lambda a\ne0$, Proposition \ref{prop:two_level} bounds this objective by that of a vector of the same norm with values $(N-m)t/N$ on $m$ coordinates and $-mt/N$ on the others. Its slice sum and squared norm are
+For $\lambda a\ne0$, Proposition \ref{prop:two_level} bounds $F_{N,k}(y)$ by its value at a vector of the same norm with values $(N-m)t/N$ on $m$ coordinates and $-mt/N$ on the others. Its slice sum and squared norm are
 \[
  \sum_{i\in S_k}y_i=t(H_{N,k,m}-km/N),\qquad
  \|y\|_2^2=\frac{m(N-m)}N t^2.
@@ -262,7 +265,7 @@ Applying Corollary \ref{cor:mgf} in \eqref{eq:LKidentity} gives
  \max_{k,m}\frac{\min\{k(N-k),m(N-m)\}}{m(N-m)}
  =\frac{N}{N-1}.
 \end{equation}
-Theorem \ref{odd:thm:odd} supplies the exact odd value. Together with the sharp examples below, these results prove Theorem \ref{thm:exchange}. Substituting the projected, zero-padded weights into \eqref{eq:exchange-intro} proves Corollary \ref{cor:tail}; its tail bound follows by minimizing the Chernoff exponent.
+Theorem \ref{odd:thm:odd} supplies the exact odd value. The curvature upper bound, the odd-population theorem, and the sharp examples together prove Theorem \ref{thm:exchange}. Substituting the projected, zero-padded weights into \eqref{eq:exchange-intro} proves Corollary \ref{cor:tail}; the probability bound in that corollary follows by optimizing the Chernoff exponent.
 
 % end exchangeability.tex
 
@@ -274,7 +277,7 @@ Four complement and transposition identities are fundamental:
  H_{N,k,N-m}&\stackrel d=k-H_{N,k,m},\label{eq:sym3}\\
  H_{N,N-k,N-m}&\stackrel d=N-k-m+H_{N,k,m}.\label{eq:sym4}
 \end{align}
-For exponential-tilt variances, reflection $H\mapsto c-H$ simply replaces $t$ by $-t$. Both $k(N-k)$ and $m(N-m)$ remain invariant under their respective complementation, while the minimum of these products is invariant under exchanging $k$ and $m$. Therefore it suffices to prove the curvature theorem under the normalization
+For exponential-tilt variances, reflection $H\mapsto c-H$ simply replaces $t$ by $-t$. Both $k(N-k)$ and $m(N-m)$ remain invariant under their respective complementation, while the minimum of these products is invariant under exchanging $k$ and $m$. The four complement and transposition symmetries thus reduce the curvature theorem to the normalization
 \begin{equation}\label{eq:param}
  k=j,\qquad m=j+h,\qquad N=2j+h+r,
  \qquad j\ge1,\ h,r\in\mathbb Z_{\ge0}.
@@ -350,7 +353,7 @@ The tilted $H$ is consequently equal in law to a sum of $j$ independent Bernoull
 \end{proof}
 
 \begin{remark}[Admissible stationary pairs]
-Real-rootedness gives the mean--variance constraint \eqref{eq:PB}. At a stationary tilt, the pair $(u,v)$ belongs to the intersection of this region and the algebraic curve derived below.
+Real-rootedness gives the mean--variance constraint \eqref{eq:PB}. At a stationary tilt, the pair $(u,v)$ belongs to the intersection of the admissible region $0<v\le u(j-u)/j$ and the algebraic curve derived below.
 \end{remark}
 
 \section{The Riccati equation and stationary variance geometry}\label{sec:stationary}
@@ -381,17 +384,17 @@ Since $r\ge0$ and $u,v>0$, the right side is positive; in particular $\mathcal D
  &+(j+m)v(r+2u)u-jmv(r+2u)=0.
  \end{aligned}}
 \end{equation}
-This eliminates the exponential tilt exactly.
+Eliminating $z$ between \eqref{eq:riccati} and \eqref{eq:zfromuv} yields the stationary relation $\mathcal F(u,v)=0$.
 
 \begin{lemma}[The admissible stationary branch]\label{lem:branch}
 For each fixed $0<u<j$, $\mathcal F(u,v)$ is a quadratic polynomial in $v$ with leading coefficient $-(N-1)$ and constant term
 \begin{equation}\label{eq:F0}
  \mathcal F(u,0)=u(j-u)(r+u)(m-u)>0.
 \end{equation}
-Consequently it has exactly one positive real zero, denoted $v_+(u)$. At any stationary point of the actual tilted variance, $v=v_+(u)$. Moreover, for any $B>0$, if $\mathcal F(u,B)\le0$ then $v_+(u)\le B$.
+Consequently the polynomial $v\mapsto\mathcal F(u,v)$ has exactly one positive real zero, denoted $v_+(u)$. At any stationary point of the actual tilted variance, $v=v_+(u)$. Moreover, for any $B>0$, if $\mathcal F(u,B)\le0$ then $v_+(u)\le B$.
 \end{lemma}
 \begin{proof}
-Collecting powers of $v$ in \eqref{eq:F} gives the asserted leading coefficient and constant term. Since $\mathcal F(u,0)>0$ and its leading coefficient is negative, the two real roots have opposite signs. The positive root is unique. The polynomial is positive strictly between its two roots and negative to the right of the positive root, proving the last assertion.
+Collecting powers of $v$ in \eqref{eq:F} gives the asserted leading coefficient and constant term. Since $\mathcal F(u,0)>0$ and its leading coefficient is negative, the two real roots have opposite signs. The positive root is unique. The polynomial is positive strictly between its two roots and negative to the right of the positive root, proving that $\mathcal F(u,B)\le0$ implies $v_+(u)\le B$.
 \end{proof}
 
 Thus a global curvature proof reduces to excluding $v_+(u)>B$ within the admissibility region \eqref{eq:PB}. The polynomial comparison below applies uniformly in $j$.
@@ -422,7 +425,7 @@ The condition on $x$ says $A>0$. Furthermore $E\ge0$, because
 \[
  E=L(L+1)-2j\ge j(j-1)-2j=j(j-3)\ge0.
 \]
-If $xD\ge0$, then each of the two terms in \eqref{eq:masterpositive} is nonnegative. We may therefore assume $xD<0$. Write $q=|x|>0$ and $d=|D|\in(0,S]$. The expression to be bounded becomes
+If $xD\ge0$, then each of the two terms in \eqref{eq:masterpositive} is nonnegative. We may therefore assume $xD<0$. Write $q=|x|>0$ and $d=|D|\in(0,S]$. The polynomial on the left of \eqref{eq:masterpositive} becomes
 \begin{equation}\label{eq:g}
  g(d)=A(d+q)^2+(L+1)(Eq^2-2jqd).
 \end{equation}
@@ -437,7 +440,7 @@ Completing the square gives
 Here $E+2j=L(L+1)$. By $A\ge j^2/L$, the bracket in the second line is nonnegative. Thus $g(d)\ge0$.
 
 \smallskip\noindent\emph{Case II: $0<A<j^2/L$.}
-Since $A=j^2(j-1)-Tq^2$, this assumption implies
+Since $A=j^2(j-1)-Tq^2$, the Case II assumption $A<j^2/L$ implies
 \begin{equation}\label{eq:qmin}
  q>q_0:=j\sqrt{\frac{(j-1)L-1}{LT}}.
 \end{equation}
@@ -472,7 +475,7 @@ The final comparison is
 \begin{equation}\label{eq:Eq}
  Eq_0\ge2jS.
 \end{equation}
-Both sides are nonnegative, since $E\ge0$. Squaring \eqref{eq:Eq} and using the definition of $q_0$ shows that it is equivalent to
+Both sides are nonnegative, since $E\ge0$. Squaring \eqref{eq:Eq} and using the definition of $q_0$ shows that inequality \eqref{eq:Eq} is equivalent to
 \begin{equation}\label{eq:Kdef}
  \mathcal K_j(L,S):=
  E^2\bigl((j-1)L-1\bigr)-4S^2L(L+j)\ge0.
@@ -493,7 +496,7 @@ Every coefficient displayed here is nonnegative for $a,S\ge0$. Therefore \eqref{
 \end{proof}
 
 \begin{remark}[An all-degree coefficient identity]
-The expression in \eqref{eq:Kpositive} is a polynomial in $a=j-3$ and $S$ with nonnegative coefficients. Its six powers of $S$ establish the comparison on the entire quadrant $a,S\ge0$.
+The expression in \eqref{eq:Kpositive} is a polynomial in $a=j-3$ and $S$ with nonnegative coefficients. Its six coefficients, for powers $S^0$ through $S^5$, establish the comparison throughout the quadrant $a,S\ge0$.
 \end{remark}
 
 \subsection{Connecting the positive expression to the stationary equation}
@@ -510,7 +513,7 @@ With the notation \eqref{eq:param}, \eqref{eq:letters}, and \eqref{eq:AandE}, an
 The identity holds as a rational-polynomial identity in the unrestricted indeterminates $j,h,r,x$ whenever $T\ne0$.
 \end{lemma}
 \begin{proof}
-Insert $m=j+h$ and $N=2j+h+r$ into \eqref{eq:F}, substitute $u=(j+x)/2$ and $v=j(N-j)/(4(N-1))$, and multiply by $16(N-1)$. Group the resulting polynomial by powers of $D=h-r$. Its coefficient of $D^2$ is $-A$ before changing the overall sign; the coefficient of $D$ is $2x(A-j(L+1))$; and the $D$-free part is $-Ax^2-(L+1)Ex^2$. These three coefficients coincide with expansion of the right side after the overall sign. The coefficient form is recorded in Appendix \ref{app:algebra}.
+Insert $m=j+h$ and $N=2j+h+r$ into \eqref{eq:F}, substitute $u=(j+x)/2$ and $v=j(N-j)/(4(N-1))$, and multiply by $16(N-1)$. Group the resulting polynomial by powers of $D=h-r$. The coefficient of $D^2$ in the expanded polynomial is $-A$ before changing the overall sign; the coefficient of $D$ is $2x(A-j(L+1))$; and the $D$-free part is $-Ax^2-(L+1)Ex^2$. These three coefficients coincide with expansion of the right side after the overall sign. The coefficient form is recorded in Appendix \ref{app:algebra}.
 \end{proof}
 
 \section{Proof of the curvature theorem}\label{sec:proof}
@@ -537,7 +540,7 @@ Lemma \ref{lem:universal} applies to $x=x_*$ and $D=h-r$, because $L=N-j-1\ge j-
 \[
  \mathcal F(u_*,B)\le0.
 \]
-On the other hand $w(t_*)=0$, so the stationary elimination in \eqref{eq:F} shows $\mathcal F(u_*,v_*)=0$. Lemma \ref{lem:branch} states that this zero is the unique positive root of the concave quadratic and that $\mathcal F(u_*,B)\le0$ forces $v_*\le B$, a contradiction. Hence $\sup_t v(t)\le B$.
+On the other hand $w(t_*)=0$, so the stationary elimination in \eqref{eq:F} shows $\mathcal F(u_*,v_*)=0$. Lemma \ref{lem:branch} states that $v_*$ is the unique positive root of the concave quadratic $v\mapsto\mathcal F(u_*,v)$ and that $\mathcal F(u_*,B)\le0$ forces $v_*\le B$, a contradiction. Hence $\sup_t v(t)\le B$.
 \end{proof}
 
 \subsection{The singleton layer \texorpdfstring{$j=1$}{j = 1}}
@@ -553,7 +556,7 @@ The polynomial is proportional to $1+2\rho y+y^2$. Since $2\le m,N-m$, the eleme
 \[
  \frac{N}{N-2}\le\rho\le2
 \]
-hold. The upper bound follows by multiplying $m/(m-1)\le2$ and $(N-m)/(N-m-1)\le2$. For the lower bound, observe that
+hold. The inequality $\rho\le2$ follows by multiplying $m/(m-1)\le2$ and $(N-m)/(N-m-1)\le2$. For the lower bound, observe that
 \[
  \rho^2=1+\frac{N-1}{(m-1)(N-m-1)},
  \quad (m-1)(N-m-1)\le\frac{(N-2)^2}4.
@@ -574,7 +577,7 @@ because $\rho\le2$. Therefore
  \le\frac{N-2}{2(N-1)}=
  \frac{2(N-2)}{4(N-1)}.
 \]
-This is the desired symmetric curvature envelope for $j=2$. The cases with another margin equal to one were handled in the preceding subsection.
+Thus $\sup_t\Var_t(H)\le j(N-j)/[4(N-1)]$ for the two-mark layer $j=2$. The cases with another margin equal to one were handled in the preceding subsection.
 
 \subsection{Completion of Theorem \ref{thm:curvature}}
 Every admissible $(N,k,m)$ is carried by the complement/transposition symmetries \eqref{eq:sym1}--\eqref{eq:sym4} to the normal form \eqref{eq:param}, where $j$ equals the smallest margin. The case $j=1$ follows from Bernoulli variance; the case $j=2$ from \eqref{eq:3pointvar}; and all $j\ge3$ from Proposition \ref{prop:allinner}. The right side of \eqref{eq:curvature} is invariant under every transformation. This proves Theorem \ref{thm:curvature}.\qed
@@ -611,7 +614,7 @@ Exchangeability and $a\perp\one$ give
 \]
 The sum $\sum_i(x_i-\bar x)^2$ is a convex function on the cube. At a vertex with $k$ positive coordinates it equals $4k(N-k)/N$, whose maximum is $4\lfloor N^2/4\rfloor/N$. A uniformly permuted nearest-balanced vertex attains the maximum for every nonzero $a\perp\one$. This proves \eqref{eq:variance_constant}.
 
-For even $N$, \eqref{eq:globalC} and the variance lower bound prove equality. For odd $N$, use the value established in Theorem \ref{odd:thm:odd}:
+For even $N$, \eqref{eq:globalC} and the variance lower bound give $C_N^\star=D_N$. For odd $N$, use the value established in Theorem \ref{odd:thm:odd}:
 \[
  C_N^\star-D_N
  =\frac{x-(1-x^2)\operatorname{artanh}x}
@@ -662,7 +665,7 @@ while \eqref{eq:globalC} gives the upper bound for all $N$. Since $L_N=1+N^{-1}+
 
 % begin two_draws.tex
 \section{The exact two-draw benchmark}\label{sec:twodraw}
-For two draws with $2\le k\le N-2$, the hypergeometric law has three support points. The optimal-proxy formula is the specialization of Atouani, Marchal, and Arbel \cite[Theorem 3.2 and Corollary 3.3]{AtouaniMarchalArbel} under a shift of the support. We give its calculus proof and then optimize the resulting expression over the hypergeometric success count.
+For two draws with $2\le k\le N-2$, the hypergeometric law has three support points. The optimal-proxy formula is the specialization of Atouani, Marchal, and Arbel \cite[Theorem 3.2 and Corollary 3.3]{AtouaniMarchalArbel} under a shift of the support. We derive the three-mass optimal-proxy formula by calculus and then optimize it over the hypergeometric success count.
 
 \begin{lemma}[Three-mass proxy formula; Atouani--Marchal--Arbel]\label{lem:threemass}
 Let $X$ take values $0,1,2$ with strictly positive masses $p_0,p_1,p_2$, and suppose
@@ -688,7 +691,7 @@ since $A\le2B$. Thus $f'(x)/x$ decreases on $(0,\infty)$, and $f$ is even. For $
 \[
  f(x)-f(a)\le\frac{f'(a)}{2a}(x^2-a^2),\qquad x\in\mathbb R.
 \]
-After substituting $x=t-a$ and centering $X$, this gives the optimal quadratic bound with equality at $t=2a$. When $a=0$, the same derivative argument gives the optimal coefficient $f''(0)=2p_0$, equal to the continuous limit of \eqref{eq:threeproxy}.
+After substituting $x=t-a$ and centering $X$, the integrated inequality gives the optimal quadratic bound with equality at $t=2a$. When $a=0$, the same derivative argument gives the optimal coefficient $f''(0)=2p_0$, equal to the continuous limit of \eqref{eq:threeproxy}.
 \end{proof}
 
 \begin{proposition}[All two-draw laws for an odd population]\label{prop:odd2}
@@ -721,7 +724,7 @@ On replacing $k$ by $N-k$ if necessary, put $x=N-2k>0$. Then
  \log\frac{(N-k)(N-k-1)}{k(k-1)}
  =2\operatorname{artanh}(x/N)+2\operatorname{artanh}(x/(N-2)).
 \]
-As $\operatorname{artanh}(x/b)/x$ is strictly increasing for $0<x<b$, the normalized proxy is largest when $x=1$. The endpoint laws $k=1,N-1$ are Bernoulli; Hoeffding's lemma bounds their normalized contributions by $N/[2(N-2)]<1$, whereas the central two-draw contribution exceeds one. This proves \eqref{eq:Ltwo}.
+As $\operatorname{artanh}(x/b)/x$ is strictly increasing for $0<x<b$, the normalized proxy is largest when $x=1$. The endpoint laws $k=1,N-1$ are Bernoulli; Hoeffding's lemma bounds their normalized optimal-proxy values by $N/[2(N-2)]<1$, whereas the central two-draw contribution exceeds one. This proves \eqref{eq:Ltwo}.
 
 Set $y=N-1$. A direct integral identity gives
 \begin{align*}
@@ -729,7 +732,7 @@ Set $y=N-1$. A direct integral identity gives
  &\qquad=2y\int_0^1(1-u)
  \left[\frac1{y^2-(2-u)^2}-\frac1{y^2-u^2}\right]du>0.
 \end{align*}
-This is equivalent to $L_N^{(2)}<L_N$. The asymptotic difference follows by expanding $\operatorname{artanh}x=x+x^3/3+x^5/5+O(x^7)$ in both exact formulas.
+The resulting integral inequality is equivalent to $L_N^{(2)}<L_N$. The asymptotic difference follows by expanding $\operatorname{artanh}x=x+x^3/3+x^5/5+O(x^7)$ in both exact formulas.
 \end{proof}
 
 \begin{corollary}[Two-draw Bernoulli envelope]\label{cor:two_bern_envelope}
@@ -784,7 +787,7 @@ The Laplace inequality is strict for $t\ne0$. If $k<N/2$, then
  <\frac{N}{N-1}g(d).
 \end{equation}
 If $N$ is even and $k=N/2$, the two optimal proxies are equal: both sides of the first comparison equal $M/4$, and both sides of the normalized comparison equal $N/(N-1)$. For odd $N$, $d\ge 1/N$, so the last expression in \eqref{odd:eq:BernEnvelope} is at most $L_N$.
-All these estimates are finite-population statements.
+
 \end{theorem}
 
 \subsection{Tilted mean and variance as a curve}
@@ -849,7 +852,7 @@ Define a quadratic polynomial in $u$ by
 \begin{equation}\label{odd:eq:P}
  P(u)=\frac M4(1-d^2)+ad(u-\mu)-\frac{a^2}{M}(u-\mu)^2.
 \end{equation}
-The envelope depends quadratically on the tilted mean.
+The polynomial $P(u)$ is quadratic in the tilted mean $u$.
 
 \begin{lemma}[Quadratic variance envelope]\label{odd:lem:barrier}
 For every $0<u<m$,
@@ -873,7 +876,7 @@ An exact substitution into \eqref{odd:eq:F} gives
  \boxed{\quad F(u,P(u))+N(u-\mu)P(u)P'(u)
  =-G(u-\mu)^2W(d,z_0).\quad}
 \end{equation}
-At a noncentral contact $V=P$, the sign of the residual is determined by $W$.
+At a noncentral contact $V=P$, the sign of the residual $\mathcal F(u,P(u))$ is determined by $W(d,z_0)$.
 
 Set
 \begin{align*}
@@ -935,10 +938,10 @@ The quadratic form in \eqref{odd:eq:certificate} is positive definite. Therefore
 \begin{equation}\label{odd:eq:Wpositive}
  E\ge0,\quad 0\le d\le\delta\quad\Longrightarrow\quad W(d,z_0)>0.
 \end{equation}
-The coefficient identities establish strict positivity for every allowed $N,m$.
+The displayed coefficient identities establish $W(d,z_0)>0$ throughout the admissible region for every allowed $N,m$.
 
 \begin{proof}[Proof of Lemma~\ref{odd:lem:barrier}]
-At the two endpoints the envelope is positive. Explicitly,
+The quadratic polynomial $P$ satisfies $P(0)>0$ and $P(m)>0$. Explicitly,
 \begin{align}
  P(0)&=\frac{km(m-1)[(N-m)(N-2)-k(m-1)]}
  {(N-m)(N-2)^2(N-1)}>0,\label{odd:eq:end0}\\
@@ -955,7 +958,7 @@ At any zero $u\ne\mu$ of $f$, we have $P=V>0$. Combining
 \begin{equation}\label{odd:eq:crossing}
  f'(u)=\frac{G(u-\mu)W(d,z_0)}{NP(u)}.
 \end{equation}
-At this zero, \eqref{odd:eq:E} and \eqref{odd:eq:PB} imply $E\ge0$, so
+At each noncentral zero $u$ of $f(u)=V(u)-P(u)$, \eqref{odd:eq:E} and \eqref{odd:eq:PB} imply $E\ge0$, so
 \eqref{odd:eq:Wpositive} applies. Thus every zero left of $\mu$ has strictly negative derivative, and every zero right of $\mu$ has strictly positive derivative.
 
 If $f$ were positive somewhere in $(0,\mu)$, the left endpoint of a component of $\{f>0\}$ would lie in $(0,\mu)$, and would be a zero with nonnegative derivative, a contradiction. If $f$ were positive somewhere in $(\mu,m)$, the right endpoint of a positive component would give a zero with nonpositive derivative, again a contradiction. Hence $f\le0$ everywhere. Any additional interior zero would be a local maximum of $f$ and have derivative zero, contradicting \eqref{odd:eq:crossing}. This proves \eqref{odd:eq:barrier} and its equality statement.
@@ -997,11 +1000,11 @@ The exact Bernoulli proxy is
 \end{equation}
 On substituting $s=at$ in the supremum, \eqref{odd:eq:laplace} implies
 $\sigma^2_{\rm opt}(H)\le M\sigma^2_{\rm opt}(\Bern(p))$.
-To optimize the comparison, extend the hypergeometric quotient continuously to zero. It tends to zero at either infinity, so its maximum is attained at a finite point. At every nonzero tilt it is strictly below the Bernoulli upper envelope. If $d>0$, its value at zero is $Mpq$, strictly below $M\sigma^2_{\rm opt}(\Bern(p))=Md/(4\artanh d)$, because
+To optimize the comparison, define the proxy quotient $Q(t)=2\psi(t)/t^2$ for $t\ne0$ and $Q(0)=\Var(H)$. The quotient $Q(t)$ tends to zero at either infinity, so its maximum is attained at a finite point. At every nonzero tilt $t$, the quotient $Q(t)$ is strictly below the scaled Bernoulli proxy quotient at the same tilt. If $d>0$, its value at zero is $Mpq$, strictly below $M\sigma^2_{\rm opt}(\Bern(p))=Md/(4\artanh d)$, because
 \[
  \artanh d=\int_0^d\frac{dx}{1-x^2}<\frac{d}{1-d^2}\qquad(0<d<1).
 \]
-Thus the proxy comparison is strict for $k<N/2$. If $d=0$, the integrated Laplace bound and $\log\cosh x\le x^2/2$ give $\sigma^2_{\rm opt}(H)\le M/4$. The variance at zero tilt is $Mpq=M/4$, so equality holds in the optimal-proxy comparison. Finally, $g(d)$ strictly decreases for $d>0$ by the same integral inequality. In the odd case $d\ge1/N$, and hence $g(d)\le g(1/N)$. This completes Theorem~\ref{odd:thm:envelope} for both parities.
+Thus the proxy comparison is strict for $k<N/2$. If $d=0$, the integrated Laplace bound and $\log\cosh x\le x^2/2$ give $\sigma^2_{\rm opt}(H)\le M/4$. The variance at zero tilt is $Mpq=M/4$, so equality holds in the optimal-proxy comparison. Finally, $g(d)$ strictly decreases for $d>0$ because $\operatorname{artanh}(d)/d=\int_0^1(1-d^2s^2)^{-1}\,ds$ increases strictly for $d\in(0,1)$. In the odd case $d\ge1/N$, and hence $g(d)\le g(1/N)$. This completes Theorem~\ref{odd:thm:envelope} for both parities.
 
 \subsection{Exact odd-population extremizers}
 \begin{theorem}[Odd-population hypergeometric extremizers]\label{odd:thm:odd}
@@ -1014,7 +1017,7 @@ For every odd $N\ge3$,
 Equality holds precisely for $m\in\{1,N-1\}$ and $k\in\{(N-1)/2,(N+1)/2\}$.
 \end{theorem}
 \begin{proof}
-Complementation of either margin replaces the centered variable by its negative. It leaves the optimal proxy unchanged, and sample complementation preserves $m(N-m)$. Reduce first to $1\le k,m\le(N-1)/2$.
+Complementation of either margin replaces the centered variable by its negative. Each margin-complement transformation preserves the optimal proxy, and sample complementation also preserves $m(N-m)$. Reduce first to $1\le k,m\le(N-1)/2$.
 
 For $m=1$, the Bernoulli formula \eqref{eq:bernproxy} gives
 \[
@@ -1032,7 +1035,7 @@ If $k<m$, transposition gives
 because the first factor is strictly below one and the transposed law is in the canonical triangle. Restoring the complements gives the stated equality cases. For $N=3$ only the singleton layer occurs; for $N=5$ the singleton and two-draw layers exhaust the canonical triangle.
 \end{proof}
 
-Applying \eqref{eq:LKidentity} proves the odd formula in Theorem \ref{thm:exchange}. The comparison is finite-population and covers every sample size, including sequences with $m_N\to\infty$, whether $m_N=o(N)$ or $m_N/N$ stays bounded away from zero.
+Applying \eqref{eq:LKidentity} proves the odd formula in Theorem \ref{thm:exchange}. The bound holds for every finite $N$ and every $1\le m<N$, including sequences with $m_N\to\infty$, whether $m_N=o(N)$ or $m_N/N$ stays bounded away from zero.
 
 % end odd_uniform.tex
 
@@ -1068,7 +1071,7 @@ The Poisson--binomial bound $v\le u(j-u)/j$ defines a region in the mean--varian
 
 
 \section{Fixed-sample optimal sub-Gaussian proxies}\label{sec:fixedsample}
-For a sample of fixed size $m$, the hypergeometric variance is maximized at the central success counts. Skewed bounded laws can have optimal centered sub-Gaussian proxies strictly larger than their variances \cite{ArbelMarchalNguyen}. We prove that central success counts also maximize the optimal proxy for every finite population size and quantify the deficit at every noncentral margin. The proof combines the curvature bound and scaled Bernoulli comparison established above.
+For a sample of fixed size $m$, the hypergeometric variance is maximized at the central success counts. Skewed bounded laws can have optimal centered sub-Gaussian proxies strictly larger than their variances \cite{ArbelMarchalNguyen}. We prove that central success counts also maximize the optimal proxy for every finite population size and quantify the deficit at every noncentral margin. The proof combines Theorem \ref{thm:curvature} with the scaled-Bernoulli comparison in Theorem \ref{odd:thm:envelope} and Corollary \ref{cor:two_bern_envelope}.
 
 \subsection{Distribution, proxy, and input bounds}
 For $N\ge2$ and $1\le k,m<N$, define
@@ -1112,7 +1115,7 @@ S_{N,m}(k)\le M_{N,m}\,\beta(k/N),\quad
 \beta(p)=\frac{1-2p}{2\log((1-p)/p)}.
 \end{equation}
 Equality holds in \eqref{B:B} if $m=1$; the underlying comparison
-for $m\ge2$ is strict. Success complementation $k\mapsto N-k$
+for $m\ge2$ and $k<N/2$ is strict. Success complementation $k\mapsto N-k$
 and sample complementation $m\mapsto N-m$ preserve $S$.
 \end{proposition}
 \subsection{The exact finite extremizer theorem}
@@ -1148,9 +1151,9 @@ For $0<d<1$,
 The first inequality is strict for $d>0$.
 \end{lemma}
 \begin{proof}
-The difference on the left vanishes at zero and has derivative
+The difference between the two sides of the first inequality vanishes at zero and has derivative
 $\frac{1}{1-d^2}-1-d^2=d^4/(1-d^2)>0$.
-The second inequality follows by taking reciprocals of positive quantities.
+The upper bound for $d/[4\operatorname{artanh}(d)]$ follows by taking reciprocals of the positive sides of the first inequality.
 \end{proof}
 
 \begin{proof}[Proof of Theorem \ref{B:main}]
@@ -1164,7 +1167,7 @@ By \eqref{B:B} and Lemma \ref{B:atanh},
 \begin{equation}\label{B:cap1}
 S_{N,m}(k)\le\frac{M}{4(1+d^2/3)}.
 \end{equation}
-If $N$ is even, offcenter $\bar k\le N/2-1$ entails
+If $N$ is even, off-center $\bar k\le N/2-1$ entails
 $d\ge 2/N$, whence
 \[
 S_{N,m}(k)\le
@@ -1186,7 +1189,7 @@ ceiling \eqref{B:C},
 S_{N,m}(k)\le
 \frac{\bar k(N-\bar k)}{4(N-1)}.
 \end{equation}
-The exact difference
+The exact difference between the two margin products
 \begin{equation}\label{B:disc}
 \bar m(N-\bar m)-\bar k(N-\bar k)
 =(\bar m-\bar k)(N-\bar m-\bar k)
@@ -1205,7 +1208,7 @@ W-S_{N,m}(k)\ge
 \ge\frac{7}{16(N-1)}
 >\frac{M(2N^2-3)}{4N^2(N^2+3)}.
 \]
-Indeed, the final quantity is smaller than $1/[8(N-1)]$.
+Indeed, the gap threshold $\Delta_{N,m}$ is smaller than $1/[8(N-1)]$.
 Thus \eqref{B:strict} holds for every noncentral margin.
 
 At $\bar k=c_N$, the zero-tilt limit in \eqref{B:proxy} is
@@ -1219,7 +1222,7 @@ classification and the quantified bound.
 \begin{proposition}[Stronger individual-margin certificate]\label{B:individual}
 Let $k$ be noncentral, $\bar k=\min(k,N-k)$ and
 $\bar m=\min(m,N-m)$, and put $d=1-2\bar k/N$.
-The explicit bound
+The explicit deficit certificate
 \[
 G_{N,m}(k)=
 \begin{cases}
@@ -1233,7 +1236,7 @@ In the first branch $G_{N,m}(k)$ increases with
 $|N-2k|$.
 \end{proposition}
 \begin{proof}
-Each branch is exactly the upper proxy used in
+Each branch of $G_{N,m}(k)$ equals $W_{N,m}$ minus the corresponding upper bound for $S_{N,m}(k)$ used in
 \eqref{B:cap1} or \eqref{B:cap2}; the lower bounds were
 verified in the two cases of Theorem \ref{B:main}.
 \end{proof}
@@ -1249,7 +1252,7 @@ At $k=N/2$ the optimal proxy equals the ordinary variance.
 \end{proposition}
 \begin{proof}
 The maximizing $k$ follows from Theorem \ref{B:main}.
-The all-tilt ceiling \eqref{B:C} at this $k$ yields
+The all-tilt ceiling \eqref{B:C} at $k=N/2$ yields
 $S\le M/4=W$; the zero-tilt limit yields $S\ge W$.
 \end{proof}
 
@@ -1286,7 +1289,7 @@ $2\psi(t)/t^2=W_{N,m}+\kappa_3t/3+O(t^2)$
 is strictly above $W_{N,m}$ for small $t>0$.
 The displayed finite sum follows from the mass function.
 Its continuous extension tends to zero at both infinite ends,
-so a finite maximizer exists; strictness ensures it is nonzero.
+so a finite maximizer exists; the strict increase above the zero-tilt proxy for small positive $t$ ensures that the maximizer is nonzero.
 Differentiating there gives the stated necessary equation.
 \end{proof}
 
@@ -1309,7 +1312,7 @@ Complementation supplies the two remaining cases.
 \end{proof}
 
 \section{Piecewise relative-entropy concentration}\label{sec:piecewise}
-The two hypergeometric tilted-variance envelopes yield an explicit piecewise relative-entropy rate for both tails.
+The hypergeometric tilted-variance bounds $V(u)\le B(u)$ and $V(u)\le P(u)$ yield an explicit piecewise relative-entropy rate for both tails.
 
 \subsection{Parameters and variance inequalities}
 Throughout this part, assume
@@ -1332,11 +1335,11 @@ The preceding variance and Laplace comparison results give
  V(u)&\le P(u):=Mpq+ad(u-\mu)-\frac{a^2}{M}(u-\mu)^2.
  \label{A:barrier}
 \end{align}
-The first follows from the classical Jacobi real-root representation as a
-sum of independent Bernoulli variables; the second is its quadratic
-variance-envelope refinement. In \eqref{A:barrier}, equality holds exactly
-at $u=\mu$. In particular, $P(\mu)=Mpq>0$, and the endpoint calculations in
-explicit endpoint evaluations give $P(0)>0$ and $P(m)>0$. Concavity implies $P>0$ on $[0,m]$.
+The Poisson--binomial representation proves $V\le B$ by expressing the tilted hypergeometric law as a
+sum of independent Bernoulli variables; Lemma \ref{odd:lem:barrier} establishes the quadratic
+tilted-variance envelope $V(u)\le P(u)$. In \eqref{A:barrier}, equality holds exactly
+at $u=\mu$. In particular, $P(\mu)=Mpq>0$, and the endpoint evaluations in
+the proof of Lemma \ref{odd:lem:barrier} show $P(0)>0$ and $P(m)>0$. Concavity implies $P>0$ on $[0,m]$.
 
 
 Define binary relative entropy by
@@ -1370,10 +1373,10 @@ $\mu$ and $v$, then $I(v)>J_Q(v)$.
 \end{theorem}
 \begin{proof}
 The tilted-mean map is strictly increasing, with derivative $V>0$.
-For $v\in(l,h)$, differentiation of its Legendre transform gives
+For $v\in(l,h)$, differentiation of the Legendre transform $I$ of $\log\E e^{tX}$ gives
 $I'(v)=t(v)$, $I''(v)=1/V(v)$, and $I(\mu)=I'(\mu)=0$.
 Integrating twice gives exactly the displayed integrals with $V$ in place
-of $Q$. Their kernels are nonnegative on the respective integration
+of $Q$. The integral kernels $(v-u)$ and $(u-v)$ are nonnegative on the respective integration
 intervals, proving both the comparison and its strict version.
 Markov's inequality, optimized over $t\ge0$ for the upper tail and
 $t\le0$ for the lower tail, proves the tail assertions.
@@ -1405,7 +1408,7 @@ Direct optimization of the Laplace envelope
 at threshold $v$ gives
 $t_*=a^{-1}\log[\theta q/(p(1-\theta))]$,
 where $\theta=p+a(v-\mu)/M$, and exponent $I_P(v)$.
-This is the ordinary Bernoulli Chernoff transform. At $\theta=0$ or $1$, the Bernoulli transform is defined by the limits $t\to\mp\infty$. The relative entropy $D(\theta\Vert p)$ has domain $0\le\theta\le1$.
+The explicit optimizer is the standard Bernoulli Chernoff optimizer for the scaled envelope. At $\theta=0$ or $1$, the Bernoulli transform is defined by the limits $t\to\mp\infty$. The relative entropy $D(\theta\Vert p)$ has domain $0\le\theta\le1$.
 
 \subsection{The piecewise KL rate}
 Put
@@ -1430,7 +1433,7 @@ $1/\min(P,B)$ is
  +(v-r_+)[I_P'(r_+)-I_B'(r_+)],&r_+<v\le m.
  \end{cases}
 \end{equation}
-It gives valid upper and lower tail bounds as in Theorem~\ref{A:integration}.
+The piecewise rate $J$ gives valid upper and lower tail bounds as in Theorem~\ref{A:integration}.
 For every $v\ne\mu$ in $[0,m]$,
 \begin{equation}\label{A:strict}
  I(v)>J(v)>I_B(v),\qquad J(v)\ge I_P(v),
@@ -1454,20 +1457,24 @@ first derivative at each root. In fact $J$ is twice continuously
 differentiable at the roots because $P=B$ there.
 
 Comparison of the nonnegative integration kernels gives $J\ge I_P,I_B$.
-On every noncentral path the interval near $\mu$ has $P<B$, proving
-$J>I_B$. A path leaving $[r_-,r_+]$ also crosses an interval where $B<P$,
-proving the characterization of $J>I_P$. Finally, $V<P$ except at $\mu$,
-so the central interval gives $I>J$ on every noncentral path.
+For every $v\ne\mu$, the integration interval between $\mu$ and $v$ contains points near $\mu$ where $P<B$, proving
+$J(v)>I_B(v)$. If $v<r_-$ or $v>r_+$, the integration interval between $\mu$ and $v$ contains a nonempty open subinterval where $B(u)<P(u)$, and therefore $J(v)>I_P(v)$. For $v\in[r_-,r_+]$, the entire integration interval uses $P$, giving $J(v)=I_P(v)$. Finally, $V(u)<P(u)$ for every $u\ne\mu$,
+so the positive-length central portion of each nontrivial integration interval gives $I(v)>J(v)$.
 At $0,m$, $1/B$ has simple poles, canceled by the endpoint integration
 kernels; the limits are finite and the same strict arguments apply.
 \end{proof}
 
 \begin{corollary}[Integer and two-sided events]
-For real $x>0$, set
-$z_+=\lceil\mu+x\rceil$ and $z_-=\lfloor\mu-x\rfloor$.
-Use $e^{-J(z_+)}$ for the upper event when $z_+\le m$, and zero otherwise;
-use $e^{-J(z_-)}$ for the lower event when $z_-\ge0$, and zero otherwise.
-Their sum, capped at one, bounds $\Pr(|H-\mu|\ge x)$.
+For $x>0$, let $z_+=\lceil\mu+x\rceil$ and $z_-=\lfloor\mu-x\rfloor$. Define
+\[
+ U_x=\begin{cases}e^{-J(z_+)},&z_+\le m,\\0,&z_+>m,\end{cases}
+ \qquad
+ L_x=\begin{cases}e^{-J(z_-)},&z_-\ge0,\\0,&z_-<0.\end{cases}
+\]
+Then $\Pr(H-\mu\ge x)\le U_x$, $\Pr(H-\mu\le-x)\le L_x$, and
+\[
+ \Pr(|H-\mu|\ge x)\le\min\{1,U_x+L_x\}.
+\]
 \end{corollary}
 
 \subsection{Comparison with classical and optimized bounds}
@@ -1493,11 +1500,11 @@ With $L=k-m\ge0$ and $R=N-m-k\ge0$,
  B_4-B&=\frac{(N-k-m)(m-v)^2}{m(N-k)}\ge0,\\
  B_3-B&=\frac{Lv^2+R(m-v)^2+mLR}{m(N-m)}\ge0.
 \end{align*}
-Therefore $R_1=I_B\ge R_j$ for $j=2,3,4$ on $[0,m]$, and
-Theorem~\ref{A:piecewise} strictly improves their maximum at every
-noncentral threshold. Duality itself is classical and is explicitly used
-by Mannalath, Zapatero and Curty~\cite{A:MZC}; the improvement here comes
-from integrating the smaller mean-dependent variance bound.
+Therefore $\max_{1\le j\le4}R_j=R_1=I_B$ on $[0,m]$, and
+Theorem~\ref{A:piecewise} gives $J(v)>\max_{1\le j\le4}R_j(v)$ at every
+noncentral threshold. The sampling-duality bounds also appear in
+Mannalath, Zapatero, and Curty~\cite{A:MZC}. Integrating the smaller
+mean-dependent variance envelope gives the strict inequality $J>I_B$.
 
 \subsubsection{The optimal uniform quadratic coefficient}
 Define
@@ -1506,7 +1513,7 @@ Define
  [N\operatorname{artanh}(1/N)]^{-1},&N\text{ odd},\end{cases}
  \qquad V_* = M\kappa_N/4.
 \]
-The exact uniform exchangeability constant in Theorem~\ref{thm:exchange} gives this coefficient for $H-\mu$, with
+The exact uniform exchangeability constant in Theorem~\ref{thm:exchange} gives the variance coefficient $V_*$ for $H-\mu$, with
 $\log\E e^{t(H-\mu)}\le V_*t^2/2$.
 The optimal Bernoulli proxy is
 \[
@@ -1518,7 +1525,7 @@ Laplace envelope is bounded above by $M\beta(p)t^2/2$, and conjugation gives
  J(v)\ge I_P(v)\ge \frac{(v-\mu)^2}{2M\beta(p)}
  \ge\frac{(v-\mu)^2}{2V_*}.
 \end{equation}
-Both KL rates therefore improve the displayed uniform quadratic bound. The optimized quadratic proxy of an individual hypergeometric law may yield a stronger bound.
+Equation \eqref{A:quadratic} holds for every $v\in[0,m]$, with equality at $v=\mu$ throughout the chain.
 
 For $p<1/2$, equality in the middle inequality at a nonzero displacement
 requires $\theta=1-p$, hence $v-\mu=M(1-2p)/a>0$; this follows from the
@@ -1526,7 +1533,7 @@ unique nonzero equality in the Bernoulli proxy inequality.
 For odd $N$, equality with the final uniform rate additionally requires
 $k=(N-1)/2$. For even $N$, equality $M\beta(p)=V_*$ requires $p=1/2$,
 but the balanced Bernoulli quadratic inequality is strict at nonzero tilt.
-The inequality $J\ge I_P$ is an equality precisely in the central region.
+Equality $J(v)=I_P(v)$ holds precisely for $v\in[r_-,r_+]$.
 
 Writing $x=v-\mu$, the local expansion is
 \[
@@ -1534,28 +1541,29 @@ Writing $x=v-\mu$, the local expansion is
  -\frac{a(1-2p)x^3}{6M^2p^2q^2}
  +\frac{a^2(p^3+q^3)x^4}{12M^3p^3q^3}+O(x^5).
 \]
-This shows the directional asymmetry and the variance-scale improvement
+The cubic term in the expansion of $I_P$ determines the directional asymmetry, while the quadratic term shows the variance-scale improvement
 near the mean. Since $M<m$, $I_P>I_B$ locally, but the unspliced $I_P$
-can be smaller than $I_B$ in the tails. Theorem~\ref{A:piecewise} removes
-this loss relative to the four binomial bounds.
+can be smaller than $I_B$ in the tails. The piecewise rate $J$ in Theorem~\ref{A:piecewise} removes
+the tail-region deficit of the unspliced $I_P$ relative to the four binomial bounds.
 
 \subsubsection{Exact-variance Bennett and Bernstein bounds}
 Put $v_0=Mpq$ and $h_0(z)=(1+z)\log(1+z)-z$.
 The Bennett exponent in Greene--Wellner~\cite[Theorem 3]{GreeneWellner} is
 $v_0h_0(x/v_0)$; their Bernstein corollary replaces it by
-$x^2/[2(v_0+x/3)]$. For either tail, the scaled rate is strictly larger
-than the Bennett exponent at every nonzero supported deviation.
-Indeed, for $s>0$,
+$x^2/[2(v_0+x/3)]$. For an upper-tail deviation $0<s\le m-\mu$, the rate $I_P(\mu+s)$ strictly exceeds $v_0h_0(s/v_0)$. For a lower-tail deviation $0<s\le\mu$, the same comparison holds for $I_P(\mu-s)$. Both statements compare exponents at thresholds within the support $[0,m]$.
+Indeed, for $s>0$ in the respective support ranges,
 \[
  P(\mu+s)=v_0+ad s-a^2s^2/M<v_0+s,\qquad
  P(\mu-s)=v_0-ad s-a^2s^2/M<v_0+s,
 \]
 because $0\le ad<1$. The second derivative of $v_0h_0(x/v_0)$ is
 $1/(v_0+x)$, while that of $I_P(\mu\pm x)$ is $1/P(\mu\pm x)$.
-Both rates and their first derivatives vanish at zero. Integrating the
-strict comparison twice, and then using $J\ge I_P$, proves the assertion.
-The standard inequality $h_0(z)\ge z^2/[2(1+z/3)]$ gives the Bernstein
-comparison as well. 
+For each tail sign, the functions $s\mapsto I_P(\mu\pm s)$ and $s\mapsto v_0h_0(s/v_0)$, together with their first derivatives, vanish at $s=0$. Twice integrating the strict second-derivative comparison proves the Bennett improvement for each supported tail. Since $J(v)\ge I_P(v)$ on $[0,m]$, the same strict improvement holds for $J$. Finally, the inequality $h_0(z)\ge z^2/[2(1+z/3)]$ implies
+\[
+ J(\mu+s)>\frac{s^2}{2(v_0+s/3)}\quad(0<s\le m-\mu),\qquad
+ J(\mu-s)>\frac{s^2}{2(v_0+s/3)}\quad(0<s\le\mu).
+\]
+
 \subsubsection{Optimized factorial moments}
 \begin{proposition}[A comparison with exact Chernoff]\label{A:factorial}
 Let $X$ be nonnegative and integer-valued with bounded support, and let
@@ -1568,17 +1576,17 @@ Then
  \Pr(X\ge d)\le F_d\le
  \inf_{t\ge0}\E e^{t(X-d)}.
 \]
-For the hypergeometric law,
+For $H\sim\Hyp(N,k,m)$ and integers $1\le d\le\min(k,m)$ and $0\le j\le d$, all denominators in the falling-factorial identity are positive and
 \[
  \frac{\E\binom Hj}{\binom dj}
  =\frac{(k)_{\underline j}(m)_{\underline j}}
- {(N)_{\underline j}(d)_{\underline j}},\qquad 0\le j\le d.
+ {(N)_{\underline j}(d)_{\underline j}}.
 \]
-In particular, at integer upper thresholds $d>\mu$ in \eqref{A:domain},
+In particular, under \eqref{A:domain}, for every integer $\mu<d\le m$,
 \[
  \Pr(H\ge d)\le F_d\le e^{-I(d)}<e^{-J(d)}.
 \]
-The lower-tail version follows by applying the result to $m-H$.
+For integer $d>m$, the event $\{H\ge d\}$ is empty and $F_d=0$, so $I(d)$ and $J(d)$ are not invoked outside $[0,m]$. The analogous lower-tail factorial-moment bound follows by applying the generic inequality to $m-H$.
 \end{proposition}
 \begin{proof}
 For $j\le d$, $\binom Xj\ge\binom dj$ on $\{X\ge d\}$, which proves
@@ -1587,18 +1595,22 @@ the first inequality. For $z=e^t-1\ge0$, the binomial theorem gives
  \E(1+z)^X=\sum_{j\ge0}\E\binom Xj z^j
  \ge F_d\sum_{j=0}^d\binom dj z^j=F_d(1+z)^d.
 \]
-Divide by $e^{td}$ and take the infimum. Hypergeometric factorial
-moments give the displayed ratio.
+Dividing by $e^{td}$ and taking the infimum over $t\ge0$ gives the Chernoff comparison. For $j\le d\le\min(k,m)\le N$, the hypergeometric identity $\E\binom Hj=\binom mj(k)_{\underline j}/(N)_{\underline j}$ gives the stated falling-factorial ratio; every denominator is nonzero. When $d>m$, choosing $j=m+1$ gives $F_d=0$.
 \end{proof}
 
 Optimized hypergeometric factorial-moment bounds appear in \cite{A:MZC}. Comparisons of moment bounds with Chernoff bounds also appear in Philips and Nelson~\cite{A:PN}. Proposition~\ref{A:factorial} establishes the finite binomial-basis inequality used here.
-For $\mu<d\le\min(k,m)$, a valid minimizing index is
+For $\mu<d\le\min(k,m)$, a minimizing index for the factorial-moment ratio defining $F_d$ is
 \[
  j_* =\left\lceil\frac{Nd-km}{N+d-k-m}\right\rceil\in\{1,\ldots,d\}.
 \]
-Indeed the ratio of consecutive candidates is at most one exactly when
-$j\le(Nd-km)/(N+d-k-m)$. When this fraction is integral, the two adjacent
-indices tie if both are admissible. At $d=\min(k,m)$ the admissible endpoint index is $j=d$. The piecewise KL rate improves the stated KL and uniform quadratic envelopes, while optimized factorial-moment bounds can be sharper at integer thresholds.
+To verify this minimizer directly, write $c_j=(k)_{\underline j}(m)_{\underline j}/[(N)_{\underline j}(d)_{\underline j}]$ for $0\le j\le d$. For every $j<d$,
+\[
+ \frac{c_{j+1}}{c_j}=\frac{(k-j)(m-j)}{(N-j)(d-j)},\qquad
+ \frac{c_{j+1}}{c_j}\le1
+ \quad\Longleftrightarrow\quad
+ j\le\frac{Nd-km}{N+d-k-m}.
+\]
+The assumption $d>km/N$ makes $Nd-km>0$ and $N+d-k-m>0$, because $km/N\ge k+m-N$. Moreover, $d\le\min(k,m)$ implies $(d-k)(d-m)\ge0$, so the threshold lies in $(0,d]$. The candidates decrease until $j_*$ and increase thereafter. When the threshold is an integer smaller than $d$, $c_{j_*}=c_{j_*+1}$; when $d=\min(k,m)$, the admissible endpoint minimizer is $j_*=d$. Thus the displayed index minimizes the exact finite factorial-moment candidates . The piecewise KL rate improves the stated KL and uniform quadratic envelopes, while optimized factorial-moment bounds can be sharper at integer thresholds.
 
 
 
@@ -1607,14 +1619,14 @@ indices tie if both are admissible. At $d=\min(k,m)$ the admissible endpoint ind
 
 % begin new_results.tex
 \section{Optimal proxies for nearly balanced odd populations}\label{sec:odd_asym}
-The strict singleton comparison of Theorem \ref{odd:thm:odd} has a small gap for nearly balanced populations. This section determines that gap through fourth order and the location of the globally maximizing tilt through third order, for every fixed sample size and fixed success imbalance. The cases $m=1$ and $m=2$ agree with the Bernoulli formula \eqref{eq:bernproxy} and the three-point specialization in Section \ref{sec:twodraw}. The theorem gives the expansion for arbitrary fixed $m$, together with uniqueness of the global optimizer and analytic remainders.
+Fix a positive integer $m$ and a positive odd integer $s$. This section studies the optimal proxy and globally maximizing tilt for hypergeometric populations of odd size $N>s+2m$, expanded in powers of $N^{-1}$. The one- and two-draw cases agree with the Bernoulli proxy \eqref{eq:bernproxy} and the three-mass formula in Section \ref{sec:twodraw}. Theorem \ref{thm:odd_expansion} establishes an analytic fourth-order proxy expansion and a third-order tilt expansion, together with global uniqueness.
 
 Let $N$ be odd, let $s\ge1$ be a fixed odd integer, and put
 \begin{equation}\label{eq:oddparams}
  k=\frac{N-s}{2},\qquad H_N\sim\Hyp(N,k,m),\qquad
  R_{N,s,m}=\frac{4N}{m(N-m)}\sigma^2_{\mathrm{opt}}(H_N).
 \end{equation}
-Here $m\ge1$ is fixed while $N\to\infty$ runs through odd integers larger than $s+2m$. The prescribed centering gives a Bernoulli-success fraction $p=(1-s/N)/2$. The regime includes the most nearly balanced success count when $s=1$.
+Here $m,s$ are held fixed as $N\to\infty$ through admissible odd integers, and $p=(1-s/N)/2$. For $s=1$ and $m\ge2$, the singleton gap $L_N-R_{N,1,m}$ begins at order $N^{-3}$; Corollary \ref{cor:fixedm_gap} determines its first two nonzero coefficients.
 
 \begin{theorem}[Fourth-order sharp-proxy expansion]\label{thm:odd_expansion}
 Fix $m\ge1$ and a positive odd integer $s$. For all sufficiently large odd $N$, the function
@@ -1662,7 +1674,7 @@ Let
   \kappa_2(\varepsilon),&t=0.
  \end{cases}
 \]
-For every fixed $m,s$, the finite probability generating polynomial depends analytically on $(t,\varepsilon)$ near $(0,0)$, and its value at $(0,0)$ is one. Consequently $Q_\varepsilon$ is jointly real analytic in a neighborhood of $(0,0)$. At $\varepsilon=0$,
+For every fixed $m,s$, the finite probability generating polynomial is analytic in $(t,\varepsilon)$ near $(0,0)$ and equals one at $(t,\varepsilon)=(0,0)$. Consequently $Q_\varepsilon$ is jointly real analytic in a neighborhood of $(0,0)$. At $\varepsilon=0$,
 \begin{equation}\label{eq:q0}
  Q_0(t)=\frac{2m}{t^2}\log\cosh(t/2),\qquad Q_0(0)=m/4.
 \end{equation}
@@ -1670,7 +1682,7 @@ The strict inequality $\log\cosh x<x^2/2$ for $x\ne0$ implies
 \begin{equation}\label{eq:qstrict}
  Q_0(t)<Q_0(0)\qquad(t\ne0).
 \end{equation}
-Furthermore, $|H_N-\E H_N|\le m$ implies $0\le Q_\varepsilon(t)\le2m/|t|$ for $t\ne0$, uniformly in the admissible populations. On every compact interval, $Q_\varepsilon$ converges uniformly to $Q_0$, including at zero by analytic continuation. Combining this compact convergence with the uniform tail bound shows that every global maximizer of $Q_\varepsilon$ tends to zero as $\varepsilon\downarrow0$.
+Furthermore, $|H_N-\E H_N|\le m$ implies $0\le Q_\varepsilon(t)\le2m/|t|$ for $t\ne0$, uniformly in the admissible populations. On every compact interval, $Q_\varepsilon$ converges uniformly to $Q_0$, including at zero by analytic continuation. Combining this compact convergence with the estimate $Q_\varepsilon(t)\le2m/|t|$ shows that every global maximizer of $Q_\varepsilon$ tends to zero as $\varepsilon\downarrow0$.
 
 Near $(0,0)$, the cumulant expansion gives
 \begin{equation}\label{eq:Qexpand}
@@ -1684,7 +1696,7 @@ At the limiting law, $\kappa_5(0)=0$, and
 \[
  \partial_t^2Q_0(0)=\frac{\kappa_4(0)}6=-\frac m{48}<0.
 \]
-Thus $Q_\varepsilon$ is strictly concave on some fixed neighborhood of zero for all sufficiently small $\varepsilon$. The derivative at zero is $\kappa_3(\varepsilon)/3>0$ for $\varepsilon>0$ small. By the analytic implicit-function theorem, there exists a unique critical point $t(\varepsilon)$ in that neighborhood; it is analytic in $\varepsilon$, and the localization argument establishes that it is the unique global maximizer. Differentiation of the critical point equation at zero gives
+Thus $Q_\varepsilon$ is strictly concave on some fixed neighborhood of zero for all sufficiently small $\varepsilon$. The derivative at zero is $\kappa_3(\varepsilon)/3>0$ for $\varepsilon>0$ small. By the analytic implicit-function theorem, there exists a unique critical point $t(\varepsilon)$ in that neighborhood; it is analytic in $\varepsilon$, and the compact-convergence and uniform-tail localization shows that this critical point is the unique global maximizer. Differentiation of the critical point equation at zero gives
 \[
  t'(0)=-\frac{\partial_\varepsilon\partial_t Q(0,0)}{\partial_t^2Q(0,0)}
  =-\frac{ms/12}{-m/48}=4s.
@@ -1701,7 +1713,7 @@ Set $t=a e+b e^2+c e^3+O(e^4)$. The coefficients of $e,e^2,e^3$, in order, give
 \[
  a=4s,\qquad b=4s(m-1),\qquad c=\frac{4s(6m+s^2-6)}3.
 \]
-The terms omitted from the derivative contribute $O_{m,s}(e^4)$ because the cumulants are analytic and $t=O(e)$. This establishes the full tilt expansion in \eqref{eq:tiltexp}.
+The higher-order cumulant terms omitted from the displayed derivative expansion contribute $O_{m,s}(e^4)$ because the cumulants are analytic and $t=O(e)$. This establishes the full tilt expansion in \eqref{eq:tiltexp}.
 
 For the optimal value through order $e^4$, it suffices to use
 \[
@@ -1719,7 +1731,7 @@ Indeed $t_* -\widehat t=O(e^3)$ and $Q_e'(t_*)=0$, so Taylor's theorem around th
  &\hspace{14mm}+\{1-m-(2m^2-m-1)s^2/3-4s^4/45\}e^4\Bigr]
  +O_{m,s}(e^5).
 \end{align*}
-Multiplying by $4/[m(1-me)]$ proves the fourth-order proxy expansion \eqref{eq:Rexp}. The analytic global optimizer supplies the Taylor remainder for each fixed $m,s$.
+Multiplying by $4/[m(1-me)]$ proves the fourth-order proxy expansion \eqref{eq:Rexp}. The analytic implicit-function solution and the global-maximizer localization yield the Taylor remainder for each fixed $m,s$.
 
 The exact singleton benchmark is
 \begin{equation}\label{eq:singletonL}
@@ -1729,7 +1741,7 @@ The exact singleton benchmark is
 Subtracting \eqref{eq:Rexp} from this expression proves Corollary \ref{cor:fixedm_gap}.
 
 \subsection{Finite-size interpretation}
-The $N^{-1}$ coefficient in \eqref{eq:Rexp} is one. The $N^{-2}$ coefficient records the success imbalance through $-s^2/3$ and is common to all fixed sample sizes. For $s=1$, the first sample-size contribution is the order-$N^{-3}$ term $-2(m-1)/3$ relative to the singleton law. Thus \eqref{eq:fixedgap} quantifies the separation between the optimized proxies. The maximizing tilt has leading term $4s/N$.
+The $N^{-1}$ coefficient in \eqref{eq:Rexp} is one. The $N^{-2}$ coefficient records the success imbalance through $-s^2/3$ and is common to all fixed sample sizes. For $s=1$, the coefficient of $N^{-3}$ in $L_N-R_{N,1,m}$ is $2(m-1)/3$, which quantifies the first sample-size-dependent separation from the singleton law. Thus \eqref{eq:fixedgap} quantifies the separation between the optimized proxies. The maximizing tilt has leading term $4s/N$.
 
 % end new_results.tex
 
@@ -1748,7 +1760,7 @@ The ordinary moments up to order six are obtained by the Stirling transformation
  \E H_N^q=\sum_{r=0}^q\left\{\begin{matrix}q\\r\end{matrix}\right\}
  \E(H_N)_{\underline r}.
 \]
-The expressions remain valid when $r>m$, with zero falling factorials. Let $\kappa_j(\varepsilon)$ denote the $j$th cumulant of $H_N$. Elementary simplification of the first six moments yields
+The expressions remain valid when $r>m$, with zero falling factorials. Let $\kappa_j(\varepsilon)$ denote the $j$th cumulant of $H_N$. Applying the Stirling-number moment transformation and the cumulant recurrence below yields
 \begin{align}
  \kappa_2(e)&=\frac m4\left[1-(m-1)e-(m+s^2-1)e^2
  +(m-1)(s^2-1)(e^3+e^4)\right]+O_{m,s}(e^5),\label{eq:kappa2exp}\\
@@ -1777,7 +1789,7 @@ Formula \eqref{eq:kappa4exp} follows from \eqref{eq:factorial_moments} for $r=1,
 \[
  \kappa_4=\E(H-\E H)^4-3\kappa_2^2.
 \]
-All these identities are rational in $\varepsilon$ for fixed $m,s$ and are valid in a neighborhood of the origin. The zero-parameter limit is $H_0\sim\mathrm{Binomial}(m,1/2)$, for which odd cumulants vanish and $\kappa_4(0)=-m/8$.
+The displayed cumulant expansions for $\kappa_2$ through $\kappa_6$ are rational in $\varepsilon$ for fixed $m,s$ and are valid in a neighborhood of the origin. The zero-parameter limit is $H_0\sim\mathrm{Binomial}(m,1/2)$, for which odd cumulants vanish and $\kappa_4(0)=-m/8$.
 
 % end odd_cumulants.tex
 
@@ -1797,7 +1809,7 @@ For $0<u<j$, $c(u)>0$, so the positive stationary root is
 \begin{equation}\label{eq:vplus}
  v_+(u)=\frac{b(u)+\sqrt{b(u)^2+4(N-1)c(u)}}{2(N-1)}.
 \end{equation}
-The Bernoulli admissibility constraint restricts this root to $v_+(u)\le u(j-u)/j$ at an actual stationary tilt.
+At an actual stationary tilt, the Bernoulli admissibility constraint restricts the positive root $v_+(u)$ to $v_+(u)\le u(j-u)/j$ at an actual stationary tilt.
 
 For the identity in Lemma \ref{lem:identity}, substitute $u=(j+x)/2$, $B=j(L+1)/(4T)$, $T=N-1$, $L=N-j-1$, and $D=h-r$. Collecting powers of $D$ gives
 \begin{align*}
@@ -1808,7 +1820,7 @@ For the identity in Lemma \ref{lem:identity}, substitute $u=(j+x)/2$, $B=j(L+1)/
 where $A=j^2(j-1)-Tx^2$ and $E=L(L+1)-2j$.
 
 \subsection{The all-degree positivity polynomial}\label{app:poly}
-The coefficient identity \eqref{eq:Kpositive} follows by setting $a=j-3$ and $L=a+2+S$. The three factors become
+The coefficient identity \eqref{eq:Kpositive} follows by setting $a=j-3$ and $L=a+2+S$. The factors $E$, $(j-1)L-1$, and $L(L+j)$ become
 \[
  E=a(a+3)+(2a+5)S+S^2,\qquad
  (j-1)L-1=(a+1)(a+3)+(a+2)S,
@@ -1844,11 +1856,11 @@ follow by elementary logarithm algebra and the fact that $f'(\alpha)=1/2-p=(q-p)
 \begin{equation}\label{eq:bernsecond}
  G''(t)=c-\frac1{4\cosh^2((t-\alpha)/2)}.
 \end{equation}
-The second term on the right is strictly increasing for $t<\alpha$ and strictly decreasing for $t>\alpha$. Furthermore $G''(0)>0$, since with $y=\alpha/2$,
+The function $1/[4\cosh^2((t-\alpha)/2)]$ increases strictly for $t<\alpha$ and decreases strictly for $t>\alpha$. Furthermore $G''(0)>0$, since with $y=\alpha/2$,
 \[
  4c=\frac{\tanh y}{y}>\operatorname{sech}^2 y.
 \]
-(The latter inequality follows by integrating the strictly decreasing function $\operatorname{sech}^2$ on $[0,y]$.) Thus $G''$ has one zero on $(0,\alpha)$, is positive initially, and negative near $\alpha$. As $G'(0)=G'(\alpha)=0$, it follows that $G'(t)>0$ on $(0,\alpha)$ and therefore $G(t)>0$ there. Reflection \eqref{eq:bernref} gives $G\ge0$ on $[\alpha,2\alpha]$ as well. For $t<0$ the variance term in \eqref{eq:bernsecond} is smaller than at zero, hence $G''(t)>0$; together with $G(0)=G'(0)=0$, this yields $G(t)>0$. Reflection handles $t>2\alpha$. Therefore $G(t)\ge0$ for all $t$, establishing the upper bound.
+(The latter inequality follows by integrating the strictly decreasing function $\operatorname{sech}^2$ on $[0,y]$.) Thus $G''$ has one zero on $(0,\alpha)$, is positive initially, and negative near $\alpha$. As $G'(0)=G'(\alpha)=0$, it follows that $G'(t)>0$ on $(0,\alpha)$ and therefore $G(t)>0$ there. Reflection \eqref{eq:bernref} gives $G\ge0$ on $[\alpha,2\alpha]$ as well. For $t<0$ the function $1/[4\cosh^2((t-\alpha)/2)]$ is smaller than its value at $t=0$, hence $G''(t)>0$; together with $G(0)=G'(0)=0$, this yields $G(t)>0$. Reflection handles $t>2\alpha$. Therefore $G(t)\ge0$ for all $t$, establishing the upper bound.
 
 At $t=2\alpha$ equality holds, so $c$ is the least admissible variance proxy. Rewriting $c$ gives
 \[
@@ -1879,6 +1891,7 @@ This proves \eqref{eq:bernproxy}. The limit as $p\to1/2$ is $1/4$ by l'H\^opital
 \bibitem{Hoeffding} W. Hoeffding, Probability inequalities for sums of bounded random variables, \emph{Journal of the American Statistical Association} \textbf{58} (1963), 13--30. \url{https://doi.org/10.1080/01621459.1963.10500830}.
 \bibitem{Kou} S. G. Kou and Z. Ying, Asymptotics for a $2\times2$ table with fixed margins, \emph{Statistica Sinica} \textbf{6} (1996), 809--829. \url{https://www3.stat.sinica.edu.tw/statistica/oldpdf/A6n42.pdf}.
 \bibitem{LeeKim} S. Lee and I. Kim, A sharper Hoeffding bound for weighted sums of exchangeable random variables, arXiv:2608.04900v2 (2026). \url{https://arxiv.org/abs/2608.04900v2}.
+\bibitem{LeeKimSerfling} S. Lee and I. Kim, A sharp variance-scale refinement of Serfling's inequality, unpublished manuscript dated 14 October 2026.
 \bibitem{MarchalArbel} O. Marchal and J. Arbel, On the sub-Gaussianity of the Beta and Dirichlet distributions, \emph{Electronic Communications in Probability} \textbf{22} (2017), 1--14. \url{https://doi.org/10.1214/17-ECP92}.
 \bibitem{Serfling} R. J. Serfling, Probability inequalities for the sum in sampling without replacement, \emph{Annals of Statistics} \textbf{2} (1974), 39--48. \url{https://doi.org/10.1214/aos/1176342611}.
 \bibitem{Szego} G. Szeg\H{o}, Orthogonal Polynomials, \emph{American Mathematical Society Colloquium Publications}, vol. 23, fourth edition, AMS, 1975. \url{https://doi.org/10.1090/coll/023}.

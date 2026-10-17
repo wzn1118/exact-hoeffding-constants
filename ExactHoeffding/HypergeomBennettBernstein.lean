@@ -473,3 +473,130 @@ theorem hypergeomBennettRate_lt_canonicalPiecewiseRate_lower (N k m : ℕ)
 
 end
 end ExactHoeffding
+
+namespace ExactHoeffding
+noncomputable section
+
+/-- The actual scaled Bernoulli KL rate strictly improves the exact-variance
+Bennett exponent on the supported upper tail, including the support endpoint. -/
+theorem hypergeomBennettRate_lt_scaledKLRate_upper (N k m : ℕ)
+    (hm : 3 ≤ m) (hmk : m ≤ k) (hk : 2*k ≤ N) (hhalf : 2*m < N)
+    (v : ℝ) (hvμ : (m:ℝ)*k/N < v) (hvm : v ≤ m) :
+    hypergeomBennettRate N k m v <
+      scaledKLRate (envelopeM (N : ℝ) (m : ℝ)) ((k : ℝ) / N)
+        (envelopeScale (N : ℝ) (m : ℝ)) ((m : ℝ) * k / N) v := by
+  have hv0 : 0 ≤ v := by
+    have hN : (0:ℝ) < N := by exact_mod_cast (show 0 < N by omega)
+    have hm0 : (0:ℝ) < m := by exact_mod_cast (show 0 < m by omega)
+    have hk0 : (0:ℝ) < k := by exact_mod_cast (show 0 < k by omega)
+    have : 0 < (m:ℝ)*k/N := by positivity
+    linarith
+  have hmR : (3:ℝ) ≤ m := by exact_mod_cast hm
+  have hmkR : (m:ℝ) ≤ k := by exact_mod_cast hmk
+  have hkR : 2*(k:ℝ) ≤ N := by exact_mod_cast hk
+  have hhR : 2*(m:ℝ) < N := by exact_mod_cast hhalf
+  have hM : 0 < envelopeM (N:ℝ) (m:ℝ) := envelopeM_positive _ _ hmR hhR
+  have ha : 0 < envelopeScale (N:ℝ) (m:ℝ) := by
+    unfold envelopeScale
+    apply div_pos
+    · have hcast : (2:ℝ)*(m:ℝ) < N := by exact_mod_cast hhalf
+      nlinarith
+    · have : 2 < N := by omega
+      linarith
+  have hp : 0 < (k:ℝ)/N := by
+    have hN : (0:ℝ) < N := by exact_mod_cast (show 0 < N by omega)
+    have hk0 : (0:ℝ) < k := by exact_mod_cast (show 0 < k by omega)
+    positivity
+  have hp1 : (k:ℝ)/N < 1 := by
+    have hN : (0:ℝ) < N := by exact_mod_cast (show 0 < N by omega)
+    apply (div_lt_one hN).2
+    have : k < N := by omega
+    exact_mod_cast this
+  let μ : ℝ := (m:ℝ)*(k:ℝ)/(N:ℝ)
+  let y : ℝ := v-μ
+  have hy : 0 < y := by dsimp [y,μ]; linarith
+  have hθ0 := scaledKL_argument_mem_Ioo hmR hmkR hkR hhR hv0 hvm
+  have hθ : (k:ℝ)/(N:ℝ) + envelopeScale (N:ℝ) (m:ℝ)*y/
+      envelopeM (N:ℝ) (m:ℝ) ∈ Ioo 0 1 := by
+    simpa [μ, y] using hθ0
+  have hb := scaledKLRate_strict_bennett_right (μ := μ) hM ha hp hp1
+    (hypergeom_ad_lt_one N k m hm hmk hk hhalf) hy hθ
+  have hb' : hypergeomBennettRate N k m v <
+      scaledKLRate (envelopeM (N:ℝ) (m:ℝ)) ((k:ℝ)/N)
+        (envelopeScale (N:ℝ) (m:ℝ)) ((m:ℝ)*k/N) v := by
+    simpa [hypergeomBennettRate, y, μ, abs_of_pos (sub_pos.mpr hvμ)] using hb
+  exact hb'
+
+
+/-- The actual scaled Bernoulli KL rate strictly improves the exact-variance
+Bennett exponent on the supported lower tail, including the support endpoint. -/
+theorem hypergeomBennettRate_lt_scaledKLRate_lower (N k m : ℕ)
+    (hm : 3 ≤ m) (hmk : m ≤ k) (hk : 2*k ≤ N) (hhalf : 2*m < N)
+    (v : ℝ) (hv0 : 0 ≤ v) (hvμ : v < (m:ℝ)*k/N) :
+    hypergeomBennettRate N k m v <
+      scaledKLRate (envelopeM (N : ℝ) (m : ℝ)) ((k : ℝ) / N)
+        (envelopeScale (N : ℝ) (m : ℝ)) ((m : ℝ) * k / N) v := by
+  have hmR : (3:ℝ) ≤ m := by exact_mod_cast hm
+  have hmkR : (m:ℝ) ≤ k := by exact_mod_cast hmk
+  have hkR : 2*(k:ℝ) ≤ N := by exact_mod_cast hk
+  have hhR : 2*(m:ℝ) < N := by exact_mod_cast hhalf
+  have hM : 0 < envelopeM (N:ℝ) (m:ℝ) := envelopeM_positive _ _ hmR hhR
+  have ha : 0 < envelopeScale (N:ℝ) (m:ℝ) := by
+    unfold envelopeScale
+    apply div_pos
+    · have hcast : (2:ℝ)*(m:ℝ) < N := by exact_mod_cast hhalf
+      nlinarith
+    · have hcast : (2:ℝ) < N := by exact_mod_cast (show 2 < N by omega)
+      nlinarith
+  have hp : 0 < (k:ℝ)/N := by
+    have hN : (0:ℝ) < N := by exact_mod_cast (show 0 < N by omega)
+    have hk0 : (0:ℝ) < k := by exact_mod_cast (show 0 < k by omega)
+    positivity
+  have hp1 : (k:ℝ)/N < 1 := by
+    have hN : (0:ℝ) < N := by exact_mod_cast (show 0 < N by omega)
+    apply (div_lt_one hN).2
+    have : k < N := by omega
+    exact_mod_cast this
+  let μ : ℝ := (m:ℝ)*(k:ℝ)/(N:ℝ)
+  let y : ℝ := μ-v
+  have hy : 0 < y := by dsimp [y, μ]; linarith
+  have hμm : μ ≤ (m:ℝ) := by
+    dsimp [μ]
+    have hmpos : (0:ℝ) < m := by exact_mod_cast (show 0 < m by omega)
+    have hmul : (m:ℝ)*((k:ℝ)/N) ≤ m := by nlinarith [hp1]
+    calc
+      (m:ℝ)*(k:ℝ)/(N:ℝ) = (m:ℝ)*((k:ℝ)/N) := by ring
+      _ ≤ m := hmul
+  have hv_le_m : v ≤ (m:ℝ) := le_trans (le_of_lt hvμ) hμm
+  have hθ0 := scaledKL_argument_mem_Ioo hmR hmkR hkR hhR hv0 hv_le_m
+  have hθ : (k:ℝ)/(N:ℝ) - envelopeScale (N:ℝ) (m:ℝ)*y/
+      envelopeM (N:ℝ) (m:ℝ) ∈ Ioo 0 1 := by
+    have heq : (k:ℝ)/(N:ℝ) - envelopeScale (N:ℝ) (m:ℝ)*y/
+        envelopeM (N:ℝ) (m:ℝ) =
+        (k:ℝ)/(N:ℝ) + envelopeScale (N:ℝ) (m:ℝ) *
+          (v-(m:ℝ)*(k:ℝ)/(N:ℝ)) / envelopeM (N:ℝ) (m:ℝ) := by
+      dsimp [y, μ]
+      ring
+    rw [heq]
+    exact hθ0
+  have had0 : 0 ≤ envelopeScale (N:ℝ) (m:ℝ) *
+      (1-2*((k:ℝ)/(N:ℝ))) := by
+    have hd0 : 0 ≤ 1-2*((k:ℝ)/(N:ℝ)) := by
+      apply sub_nonneg.mpr
+      have hN : (0:ℝ) < N := by exact_mod_cast (show 0 < N by omega)
+      have hrewrite : (2:ℝ)*((k:ℝ)/N) = (2*(k:ℝ))/N := by ring
+      rw [hrewrite]
+      apply (div_le_iff₀ hN).2
+      norm_num
+      exact_mod_cast hk
+    exact mul_nonneg ha.le hd0
+  have hb := scaledKLRate_strict_bennett_left (μ := μ) hM ha hp hp1 had0 hy hθ
+  have hb' : hypergeomBennettRate N k m v <
+      scaledKLRate (envelopeM (N:ℝ) (m:ℝ)) ((k:ℝ)/N)
+        (envelopeScale (N:ℝ) (m:ℝ)) ((m:ℝ)*(k:ℝ)/(N:ℝ)) v := by
+    simpa [hypergeomBennettRate, y, μ, abs_of_neg (sub_neg.mpr hvμ)] using hb
+  exact hb'
+
+
+end
+end ExactHoeffding

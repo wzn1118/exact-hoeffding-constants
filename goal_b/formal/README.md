@@ -1,14 +1,13 @@
-# Formal source snapshot
+# Goal B Lean 4 source snapshot
 
-This directory is a complete source snapshot of the Lean project used for the
-Goal B theorem. From this directory, with Lean 4.33.0 and the pinned
-`lake-manifest.json`, run:
+The snapshot contains the Lean 4 formalization of the finite-sample extremizer theorem. The toolchain and Mathlib version are pinned in `lean-toolchain` and `lake-manifest.json`.
 
-```text
+```bash
 lake exe cache get
 lake build ExactHoeffding
 lake env lean checks/full_closure_axioms.lean
 ```
 
-The Goal B assembly is in `ExactHoeffding/GoalBFixedSample.lean`; its dedicated
-axiom audit is `checks/goal_b_fixed_sample_axioms.lean`.
+The main Goal B theorem is in `ExactHoeffding/GoalBFixedSample.lean`. The project-wide theorem audit is in `checks/full_closure_axioms.lean`, and the Goal B-specific audit is in `checks/goal_b_fixed_sample_axioms.lean`.
+
+[Unified paper](../../submission/current/manuscript.pdf) · [Current theorem–Lean correspondence](../../submission/current/theorem_lean_concordance.md)

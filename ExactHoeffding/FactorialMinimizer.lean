@@ -363,5 +363,69 @@ theorem hypergeomFactorialBound_eq_ceiling_candidate (N k m d : ℕ)
     rw [← hvalue, hypergeomFactorialCandidate_eq_value N k m d j hk hm hdm hjd]
     exact hypergeomFactorialValue_index_min N k m d hmean hd0 hdm hdk hmkN j hjd
 
+
+/-- The consecutive candidates tie at an integral ratio cutoff. -/
+theorem hypergeomFactorialValue_succ_eq_of_integral_cutoff (N k m d j : ℕ)
+    (hjd : j + 1 ≤ d) (hdm : d ≤ m) (hdk : d ≤ k)
+    (hmkN : k + m ≤ N)
+    (hcut : (j : ℝ) = ((N : ℝ) * d - (k : ℝ) * m) /
+      ((N : ℝ) + d - k - m)) :
+    hypergeomFactorialValue N k m d (j + 1) =
+      hypergeomFactorialValue N k m d j := by
+  have hB := hypergeomFactorialIndex_denominator_pos N k m d
+    (by omega : 0 < d) hdm hdk hmkN
+  have hpos := hypergeomFactorialValue_pos N k m d j
+    (by omega) hdm hdk hmkN
+  have hratio := hypergeomFactorialValue_succ_ratio N k m d j hjd hdm hdk hmkN
+  have hden : 0 < ((N : ℝ) - j) * ((d : ℝ) - j) := by
+    have hjN : (j : ℝ) < N := by exact_mod_cast (show j < N by omega)
+    have hjd' : (j : ℝ) < d := by exact_mod_cast (show j < d by omega)
+    exact mul_pos (sub_pos.mpr hjN) (sub_pos.mpr hjd')
+  have hpoly : (j : ℝ) * ((N : ℝ) + d - k - m) =
+      (N : ℝ) * d - (k : ℝ) * m := (eq_div_iff hB.ne').mp hcut
+  apply (div_eq_one_iff_eq hpos.ne').mp
+  rw [hratio]
+  apply (div_eq_one_iff_eq hden.ne').2
+  nlinarith
+
+/-- At the supported maximum threshold, the ceiling cutoff is the endpoint. -/
+theorem hypergeomFactorialIndex_eq_endpoint (N k m d : ℕ)
+    (hd0 : 0 < d) (hdm : d ≤ m) (hdk : d ≤ k) (hmkN : k + m ≤ N)
+    (hend : d = min k m) :
+    hypergeomFactorialIndex N k m d = d := by
+  have hB := hypergeomFactorialIndex_denominator_pos N k m d hd0 hdm hdk hmkN
+  have hprod : ((N : ℝ) * d - (k : ℝ) * m) /
+      ((N : ℝ) + d - k - m) = (d : ℝ) := by
+    apply (div_eq_iff hB.ne').2
+    rcases le_total k m with hkm | hmk
+    · have hd : d = k := by simpa [min_eq_left hkm] using hend
+      rw [hd]
+      ring
+    · have hd : d = m := by simpa [min_eq_right hmk] using hend
+      rw [hd]
+      ring
+  simp [hypergeomFactorialIndex, hprod]
+
+/-- If the continuous cutoff is an admissible integer, both neighboring
+candidates attain the optimized factorial bound. -/
+theorem hypergeomFactorialBound_eq_adjacent_candidates (N k m d j : ℕ)
+    (hk : k ≤ N) (hm : m ≤ N)
+    (hmean : (k : ℝ) * m < (N : ℝ) * d)
+    (hd0 : 0 < d) (hdm : d ≤ m) (hdk : d ≤ k) (hmkN : k + m ≤ N)
+    (hjd : j + 1 ≤ d)
+    (hcut : (j : ℝ) = ((N : ℝ) * d - (k : ℝ) * m) /
+      ((N : ℝ) + d - k - m)) :
+    finiteFactorialBound (Finset.range (m + 1)) (fun i => i)
+      (hypergeomMass N k m) d = hypergeomFactorialValue N k m d j ∧
+    finiteFactorialBound (Finset.range (m + 1)) (fun i => i)
+      (hypergeomMass N k m) d = hypergeomFactorialValue N k m d (j + 1) := by
+  have hindex : hypergeomFactorialIndex N k m d = j := by
+    simp [hypergeomFactorialIndex, ← hcut]
+  have hmin := hypergeomFactorialBound_eq_ceiling_candidate N k m d hk hm
+    hmean hd0 hdm hdk hmkN
+  rw [hindex] at hmin
+  exact ⟨hmin, hmin.trans (hypergeomFactorialValue_succ_eq_of_integral_cutoff
+    N k m d j hjd hdm hdk hmkN hcut).symm⟩
+
 end
 end ExactHoeffding
