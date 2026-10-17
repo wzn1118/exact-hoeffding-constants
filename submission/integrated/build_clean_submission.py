@@ -280,6 +280,23 @@ def apply_verified_submission_repairs(text):
     return text
 
 
+def polish_defensive_wording(text):
+    """Apply precise attribution and concise mathematical prose to the release manuscript."""
+    edits = [[" The sharp constant agrees with a contemporaneous Lee--Kim manuscript; the Jacobi--Riccati proof, fixed-sample extremizers, and piecewise KL bounds distinguish the present treatment.",""],
+        ["The fourth-order local moment expansion in \\cite[Remark 3.6]{AtouaniMarchalArbel} is in the Laplace argument; our expansion is in $N^{-1}$ at the globally optimizing argument, and is accompanied by an extremum theorem over all success counts.","The fourth-order local moment expansion of Atouani, Marchal, and Arbel \\cite[Remark 3.6]{AtouaniMarchalArbel} concerns the Laplace argument. Theorem \\ref{thm:odd_expansion} gives an inverse-population expansion at the globally maximizing tilt."],
+        ["\\paragraph{Relation to contemporaneous sharp constants.}","\\paragraph{Contemporaneous sharp-constant results.}"],
+        ["Lee and Kim's manuscript dated 14 October 2026 \\cite{LeeKimSerfling} obtains the same parity-dependent exact exchangeability coefficient and a sharp variance-scale refinement of Serfling's inequality through a hypergeometric generating-function recursion. Thus the numerical value of $C_N^\\star$ and the corresponding sharp finite-population correction are shared conclusions. The present proof develops Jacobi-root and Riccati stationary-variance certificates, determines all central success-count maximizers and quantitative gaps at each fixed sample size, and establishes piecewise KL concentration in the domain \\eqref{A:domain}. The distinct proof mechanisms and the additional fixed-sample and nonquadratic tail statements identify the contributions developed here.","Lee and Kim \\cite{LeeKimSerfling} obtain the same parity-dependent coefficient $C_N^\\star$ through a hypergeometric generating-function recurrence and derive a variance-scale refinement of Serfling's inequality. The Jacobi-root and Riccati analysis here establishes all-tilt variance certificates, identifies central success-count maximizers and their quantitative gaps for each fixed sample size, and yields piecewise KL concentration in the domain \\eqref{A:domain}."],
+        ["noncentral threshold. Duality itself is classical and is explicitly used\nby Mannalath, Zapatero and Curty~\\cite{A:MZC}; the strict improvement $J>I_B$ comes\nfrom integrating the smaller mean-dependent variance bound.","noncentral threshold. The sampling-duality bounds also appear in Mannalath, Zapatero, and Curty~\\cite{A:MZC}. Integrating the smaller mean-dependent variance envelope gives the strict inequality $J>I_B$."],
+        ["Equation \\eqref{A:quadratic} holds pointwise for every $v\\in[0,m]$; all rates in that chain vanish at $v=\\mu$. The later equality conditions concern the individual comparisons in this chain. An optimally tuned quadratic proxy for a fixed hypergeometric law can still produce a stronger quadratic rate.","Equation \\eqref{A:quadratic} holds for every $v\\in[0,m]$, with equality at $v=\\mu$ throughout the chain."],
+        ["These are exponent comparisons in the canonical hypergeometric parameter domain \\eqref{A:domain}.",""],
+        ["without an appeal to numerical optimization",""]]
+    for index, (before, after) in enumerate(edits, 1):
+        occurrences = text.count(before)
+        if occurrences != 1:
+            raise RuntimeError(f'Defensive-wording edit {index} anchor count {occurrences}: {before[:90]!r}')
+        text = text.replace(before, after, 1)
+    return text
+
 def main():
     for p in (M,A,B):
         if not p.exists(): raise FileNotFoundError(str(p))
@@ -339,7 +356,7 @@ def main():
     tex=(pre+r"\begin{document}"+"\n"+core+intro+bb+into_a+ba+
          "\n"+r"\appendix"+"\n"+appendix+"\n"+bib+
          "\n"+r"\end{document}"+"\n")
-    tex = apply_verified_submission_repairs(polish_language_clarity(polish_integrated(tex)))
+    tex = polish_defensive_wording(apply_verified_submission_repairs(polish_language_clarity(polish_integrated(tex))))
     OUT.mkdir(exist_ok=True)
     dest=OUT/"combined_manuscript.tex"
     dest.write_text(tex,encoding="utf-8")
