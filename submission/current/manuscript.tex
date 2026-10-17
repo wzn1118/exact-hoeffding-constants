@@ -34,7 +34,7 @@ We determine the least constant in the Hoeffding-type exponential-moment inequal
  \displaystyle[(N-1)\operatorname{artanh}(1/N)]^{-1},&N\text{ odd}.
  \end{cases}
 \]
-The even coefficient coincides with the maximal normalized variance. In odd populations the optimal Laplace parameter is nonzero, and the sharp coefficient strictly exceeds the variance benchmark. We obtain the result through a two-level reduction to hypergeometric laws, a global tilted-variance bound, and a mean-dependent quadratic envelope for the centered log-Laplace transforms of the hypergeometric laws. The quadratic envelope holds for both parities when $3\le m\le k\le\lfloor N/2\rfloor$ and $2m<N$; parity enters when the remaining discrete margins are optimized. The proof also determines all odd-population extremizers.
+The even coefficient coincides with the maximal normalized variance. In odd populations the optimal Laplace parameter is nonzero, and the sharp coefficient strictly exceeds the variance benchmark. We obtain the result through a two-level reduction to hypergeometric laws, a global tilted-variance bound, and a mean-dependent quadratic envelope for tilted hypergeometric variance. The quadratic envelope holds for both parities when $3\le m\le k\le\lfloor N/2\rfloor$ and $2m<N$; parity enters when the remaining discrete margins are optimized. The proof also determines all odd-population extremizers.
 
 For each fixed sample size, we identify the central success counts as the unique maximizers of the optimal hypergeometric sub-Gaussian proxy, up to complementation, and establish quantitative gaps for all other margins. For $3\le m\le k\le\lfloor N/2\rfloor$ and $2m<N$, the two tilted-variance envelopes yield an explicit piecewise relative-entropy rate for both tails. The resulting rate strictly improves the binomial KL rate at every noncentral threshold.
 \end{abstract}
@@ -1662,7 +1662,7 @@ Let
   \kappa_2(\varepsilon),&t=0.
  \end{cases}
 \]
-For every fixed $m,s$, the finite probability generating polynomial depends analytically on $(t,\varepsilon)$ near $(0,0)$, and the finite probability generating polynomial equals one at $(t,\varepsilon)=(0,0)$. Consequently $Q_\varepsilon$ is jointly real analytic in a neighborhood of $(0,0)$. At $\varepsilon=0$,
+For every fixed $m,s$, the finite probability generating polynomial is analytic in $(t,\varepsilon)$ near $(0,0)$ and equals one at $(t,\varepsilon)=(0,0)$. Consequently $Q_\varepsilon$ is jointly real analytic in a neighborhood of $(0,0)$. At $\varepsilon=0$,
 \begin{equation}\label{eq:q0}
  Q_0(t)=\frac{2m}{t^2}\log\cosh(t/2),\qquad Q_0(0)=m/4.
 \end{equation}
@@ -1848,7 +1848,7 @@ The function $1/[4\cosh^2((t-\alpha)/2)]$ increases strictly for $t<\alpha$ and 
 \[
  4c=\frac{\tanh y}{y}>\operatorname{sech}^2 y.
 \]
-(The latter inequality follows by integrating the strictly decreasing function $\operatorname{sech}^2$ on $[0,y]$.) Thus $G''$ has one zero on $(0,\alpha)$, is positive initially, and negative near $\alpha$. As $G'(0)=G'(\alpha)=0$, it follows that $G'(t)>0$ on $(0,\alpha)$ and therefore $G(t)>0$ there. Reflection \eqref{eq:bernref} gives $G\ge0$ on $[\alpha,2\alpha]$ as well. For $t<0$ the function $1/[4\cosh^2((t-\alpha)/2)]$ is smaller than its value at $t=0`, hence $G''(t)>0$; together with $G(0)=G'(0)=0$, this yields $G(t)>0$. Reflection handles $t>2\alpha$. Therefore $G(t)\ge0$ for all $t$, establishing the upper bound.
+(The latter inequality follows by integrating the strictly decreasing function $\operatorname{sech}^2$ on $[0,y]$.) Thus $G''$ has one zero on $(0,\alpha)$, is positive initially, and negative near $\alpha$. As $G'(0)=G'(\alpha)=0$, it follows that $G'(t)>0$ on $(0,\alpha)$ and therefore $G(t)>0$ there. Reflection \eqref{eq:bernref} gives $G\ge0$ on $[\alpha,2\alpha]$ as well. For $t<0$ the function $1/[4\cosh^2((t-\alpha)/2)]$ is smaller than its value at $t=0$, hence $G''(t)>0$; together with $G(0)=G'(0)=0$, this yields $G(t)>0$. Reflection handles $t>2\alpha$. Therefore $G(t)\ge0$ for all $t$, establishing the upper bound.
 
 At $t=2\alpha$ equality holds, so $c$ is the least admissible variance proxy. Rewriting $c$ gives
 \[
