@@ -57,6 +57,26 @@ for item in items:
         raise SystemExit(f"title changed at {item['key']}: {item['title']!r} != {row['title']!r}")
     if row["kind"] != item["kind"]:
         raise SystemExit(f"environment kind changed at {item['key']}")
+    if row["line"] != item["line"]:
+        raise SystemExit(
+            f"manuscript line changed at {item['key']}: "
+            f"actual={item['line']} mapped={row['line']}"
+        )
+
+for key, heading in {
+    "extra:A3-four-binomial-KL": r"\subsubsection{Four binomial KL bounds}",
+    "extra:A4-Bennett-Bernstein": r"\subsubsection{Exact-variance Bennett and Bernstein bounds}",
+}.items():
+    offset = source.find(heading)
+    if offset < 0 or key not in by_key:
+        raise SystemExit(f"supplementary result section missing: {key}")
+    actual_line = source.count("\n", 0, offset) + 1
+    if by_key[key]["line"] != actual_line:
+        raise SystemExit(
+            f"supplementary result line changed at {key}: "
+            f"actual={actual_line} mapped={by_key[key]['line']}"
+        )
+
 
 # The names printed by `#print axioms` are independently parsed from the
 # generated audit source, so misspellings and unimported declarations fail.
