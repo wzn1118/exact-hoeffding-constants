@@ -1068,7 +1068,7 @@ The Poisson--binomial bound $v\le u(j-u)/j$ defines a region in the mean--varian
 
 
 \section{Fixed-sample optimal sub-Gaussian proxies}\label{sec:fixedsample}
-For a sample of fixed size $m$, the hypergeometric variance is maximized at the central success counts. Skewed bounded laws can have optimal centered sub-Gaussian proxies strictly larger than their variances \cite{ArbelMarchalNguyen}. We prove that central success counts also maximize the optimal proxy for every finite population size and quantify the deficit at every noncentral margin. The proof combines the curvature bound and scaled Bernoulli comparison established above.
+For a sample of fixed size $m$, the hypergeometric variance is maximized at the central success counts. Skewed bounded laws can have optimal centered sub-Gaussian proxies strictly larger than their variances \cite{ArbelMarchalNguyen}. We prove that central success counts also maximize the optimal proxy for every finite population size and quantify the deficit at every noncentral margin. The proof combines Theorem \ref{thm:curvature} with the scaled-Bernoulli comparison in Theorem \ref{odd:thm:envelope} and Corollary \ref{cor:two_bern_envelope}.
 
 \subsection{Distribution, proxy, and input bounds}
 For $N\ge2$ and $1\le k,m<N$, define
@@ -1112,7 +1112,7 @@ S_{N,m}(k)\le M_{N,m}\,\beta(k/N),\quad
 \beta(p)=\frac{1-2p}{2\log((1-p)/p)}.
 \end{equation}
 Equality holds in \eqref{B:B} if $m=1$; the underlying comparison
-for $m\ge2$ is strict. Success complementation $k\mapsto N-k$
+for $m\ge2$ and $k<N/2$ is strict. Success complementation $k\mapsto N-k$
 and sample complementation $m\mapsto N-m$ preserve $S$.
 \end{proposition}
 \subsection{The exact finite extremizer theorem}
@@ -1148,9 +1148,9 @@ For $0<d<1$,
 The first inequality is strict for $d>0$.
 \end{lemma}
 \begin{proof}
-The difference on the left vanishes at zero and has derivative
+The difference between the two sides of the first inequality vanishes at zero and has derivative
 $\frac{1}{1-d^2}-1-d^2=d^4/(1-d^2)>0$.
-The second inequality follows by taking reciprocals of positive quantities.
+The claimed lower bound for $\operatorname{artanh}(d)$ follows by taking reciprocals of positive quantities.
 \end{proof}
 
 \begin{proof}[Proof of Theorem \ref{B:main}]
@@ -1164,7 +1164,7 @@ By \eqref{B:B} and Lemma \ref{B:atanh},
 \begin{equation}\label{B:cap1}
 S_{N,m}(k)\le\frac{M}{4(1+d^2/3)}.
 \end{equation}
-If $N$ is even, offcenter $\bar k\le N/2-1$ entails
+If $N$ is even, off-center $\bar k\le N/2-1$ entails
 $d\ge 2/N$, whence
 \[
 S_{N,m}(k)\le
@@ -1186,7 +1186,7 @@ ceiling \eqref{B:C},
 S_{N,m}(k)\le
 \frac{\bar k(N-\bar k)}{4(N-1)}.
 \end{equation}
-The exact difference
+The exact difference between the two margin products
 \begin{equation}\label{B:disc}
 \bar m(N-\bar m)-\bar k(N-\bar k)
 =(\bar m-\bar k)(N-\bar m-\bar k)
@@ -1205,7 +1205,7 @@ W-S_{N,m}(k)\ge
 \ge\frac{7}{16(N-1)}
 >\frac{M(2N^2-3)}{4N^2(N^2+3)}.
 \]
-Indeed, the final quantity is smaller than $1/[8(N-1)]$.
+Indeed, the gap threshold $\Delta_{N,m}$ is smaller than $1/[8(N-1)]$.
 Thus \eqref{B:strict} holds for every noncentral margin.
 
 At $\bar k=c_N$, the zero-tilt limit in \eqref{B:proxy} is
@@ -1219,7 +1219,7 @@ classification and the quantified bound.
 \begin{proposition}[Stronger individual-margin certificate]\label{B:individual}
 Let $k$ be noncentral, $\bar k=\min(k,N-k)$ and
 $\bar m=\min(m,N-m)$, and put $d=1-2\bar k/N$.
-The explicit bound
+The explicit deficit certificate
 \[
 G_{N,m}(k)=
 \begin{cases}
@@ -1233,7 +1233,7 @@ In the first branch $G_{N,m}(k)$ increases with
 $|N-2k|$.
 \end{proposition}
 \begin{proof}
-Each branch is exactly the upper proxy used in
+Each branch of $G_{N,m}(k)$ equals $W_{N,m}$ minus the corresponding upper bound for $S_{N,m}(k)$ used in
 \eqref{B:cap1} or \eqref{B:cap2}; the lower bounds were
 verified in the two cases of Theorem \ref{B:main}.
 \end{proof}
@@ -1249,7 +1249,7 @@ At $k=N/2$ the optimal proxy equals the ordinary variance.
 \end{proposition}
 \begin{proof}
 The maximizing $k$ follows from Theorem \ref{B:main}.
-The all-tilt ceiling \eqref{B:C} at this $k$ yields
+The all-tilt ceiling \eqref{B:C} at $k=N/2$ yields
 $S\le M/4=W$; the zero-tilt limit yields $S\ge W$.
 \end{proof}
 
@@ -1286,7 +1286,7 @@ $2\psi(t)/t^2=W_{N,m}+\kappa_3t/3+O(t^2)$
 is strictly above $W_{N,m}$ for small $t>0$.
 The displayed finite sum follows from the mass function.
 Its continuous extension tends to zero at both infinite ends,
-so a finite maximizer exists; strictness ensures it is nonzero.
+so a finite maximizer exists; the strict increase above the zero-tilt proxy for small positive $t$ ensures that the maximizer is nonzero.
 Differentiating there gives the stated necessary equation.
 \end{proof}
 
@@ -1309,7 +1309,7 @@ Complementation supplies the two remaining cases.
 \end{proof}
 
 \section{Piecewise relative-entropy concentration}\label{sec:piecewise}
-The two hypergeometric tilted-variance envelopes yield an explicit piecewise relative-entropy rate for both tails.
+The hypergeometric tilted-variance bounds $V(u)\le B(u)$ and $V(u)\le P(u)$ yield an explicit piecewise relative-entropy rate for both tails.
 
 \subsection{Parameters and variance inequalities}
 Throughout this part, assume
@@ -1332,11 +1332,11 @@ The preceding variance and Laplace comparison results give
  V(u)&\le P(u):=Mpq+ad(u-\mu)-\frac{a^2}{M}(u-\mu)^2.
  \label{A:barrier}
 \end{align}
-The first follows from the classical Jacobi real-root representation as a
-sum of independent Bernoulli variables; the second is its quadratic
+The Poisson--binomial representation proves $V\le B$ by expressing the tilted hypergeometric law as a
+sum of independent Bernoulli variables; Theorem \ref{odd:thm:envelope} supplies the quadratic
 variance-envelope refinement. In \eqref{A:barrier}, equality holds exactly
-at $u=\mu$. In particular, $P(\mu)=Mpq>0$, and the endpoint calculations in
-explicit endpoint evaluations give $P(0)>0$ and $P(m)>0$. Concavity implies $P>0$ on $[0,m]$.
+at $u=\mu$. In particular, $P(\mu)=Mpq>0$, and the endpoint evaluations in
+the proof of Lemma \ref{odd:lem:barrier} show $P(0)>0$ and $P(m)>0$. Concavity implies $P>0$ on $[0,m]$.
 
 
 Define binary relative entropy by
@@ -1370,10 +1370,10 @@ $\mu$ and $v$, then $I(v)>J_Q(v)$.
 \end{theorem}
 \begin{proof}
 The tilted-mean map is strictly increasing, with derivative $V>0$.
-For $v\in(l,h)$, differentiation of its Legendre transform gives
+For $v\in(l,h)$, differentiation of the Legendre transform $I$ of $\log\E e^{tX}$ gives
 $I'(v)=t(v)$, $I''(v)=1/V(v)$, and $I(\mu)=I'(\mu)=0$.
 Integrating twice gives exactly the displayed integrals with $V$ in place
-of $Q$. Their kernels are nonnegative on the respective integration
+of $Q$. The integral kernels $(v-u)$ and $(u-v)$ are nonnegative on the respective integration
 intervals, proving both the comparison and its strict version.
 Markov's inequality, optimized over $t\ge0$ for the upper tail and
 $t\le0$ for the lower tail, proves the tail assertions.
@@ -1405,7 +1405,7 @@ Direct optimization of the Laplace envelope
 at threshold $v$ gives
 $t_*=a^{-1}\log[\theta q/(p(1-\theta))]$,
 where $\theta=p+a(v-\mu)/M$, and exponent $I_P(v)$.
-This is the ordinary Bernoulli Chernoff transform. At $\theta=0$ or $1$, the Bernoulli transform is defined by the limits $t\to\mp\infty$. The relative entropy $D(\theta\Vert p)$ has domain $0\le\theta\le1$.
+The explicit optimizer is the standard Bernoulli Chernoff optimizer for the scaled envelope. At $\theta=0$ or $1$, the Bernoulli transform is defined by the limits $t\to\mp\infty$. The relative entropy $D(\theta\Vert p)$ has domain $0\le\theta\le1$.
 
 \subsection{The piecewise KL rate}
 Put
@@ -1430,7 +1430,7 @@ $1/\min(P,B)$ is
  +(v-r_+)[I_P'(r_+)-I_B'(r_+)],&r_+<v\le m.
  \end{cases}
 \end{equation}
-It gives valid upper and lower tail bounds as in Theorem~\ref{A:integration}.
+The piecewise rate $J$ gives valid upper and lower tail bounds as in Theorem~\ref{A:integration}.
 For every $v\ne\mu$ in $[0,m]$,
 \begin{equation}\label{A:strict}
  I(v)>J(v)>I_B(v),\qquad J(v)\ge I_P(v),
@@ -1454,10 +1454,10 @@ first derivative at each root. In fact $J$ is twice continuously
 differentiable at the roots because $P=B$ there.
 
 Comparison of the nonnegative integration kernels gives $J\ge I_P,I_B$.
-On every noncentral path the interval near $\mu$ has $P<B$, proving
+For every $v\ne\mu$, the integration interval between $\mu$ and $v$ contains points near $\mu$ where $P<B$, proving
 $J>I_B$. A path leaving $[r_-,r_+]$ also crosses an interval where $B<P$,
-proving the characterization of $J>I_P$. Finally, $V<P$ except at $\mu$,
-so the central interval gives $I>J$ on every noncentral path.
+proving the characterization of $J>I_P$. Finally, $V(u)<P(u)$ for every $u\ne\mu$,
+so the positive-length central portion of each nontrivial integration interval gives $I(v)>J(v)$.
 At $0,m$, $1/B$ has simple poles, canceled by the endpoint integration
 kernels; the limits are finite and the same strict arguments apply.
 \end{proof}
@@ -1465,9 +1465,9 @@ kernels; the limits are finite and the same strict arguments apply.
 \begin{corollary}[Integer and two-sided events]
 For real $x>0$, set
 $z_+=\lceil\mu+x\rceil$ and $z_-=\lfloor\mu-x\rfloor$.
-Use $e^{-J(z_+)}$ for the upper event when $z_+\le m$, and zero otherwise;
-use $e^{-J(z_-)}$ for the lower event when $z_-\ge0$, and zero otherwise.
-Their sum, capped at one, bounds $\Pr(|H-\mu|\ge x)$.
+If $z_+\le m$, then $\Pr(H-\mu\ge x)=\Pr(H\ge z_+)\le e^{-J(z_+)}$; if $z_+>m$, this probability is zero.
+Likewise, if $z_-\ge0$, then $\Pr(H-\mu\le -x)=\Pr(H\le z_-)\le e^{-J(z_-)}$; if $z_-<0$, this probability is zero.
+The sum of the two one-sided bounds, capped at one, bounds $\Pr(|H-\mu|\ge x)$.
 \end{corollary}
 
 \subsection{Comparison with classical and optimized bounds}
@@ -1493,10 +1493,10 @@ With $L=k-m\ge0$ and $R=N-m-k\ge0$,
  B_4-B&=\frac{(N-k-m)(m-v)^2}{m(N-k)}\ge0,\\
  B_3-B&=\frac{Lv^2+R(m-v)^2+mLR}{m(N-m)}\ge0.
 \end{align*}
-Therefore $R_1=I_B\ge R_j$ for $j=2,3,4$ on $[0,m]$, and
-Theorem~\ref{A:piecewise} strictly improves their maximum at every
+Therefore $\max_{1\le j\le4}R_j=R_1=I_B$ on $[0,m]$, and
+Theorem~\ref{A:piecewise} gives $J(v)>\max_{1\le j\le4}R_j(v)$ at every
 noncentral threshold. Duality itself is classical and is explicitly used
-by Mannalath, Zapatero and Curty~\cite{A:MZC}; the improvement here comes
+by Mannalath, Zapatero and Curty~\cite{A:MZC}; the strict improvement $J>I_B$ comes
 from integrating the smaller mean-dependent variance bound.
 
 \subsubsection{The optimal uniform quadratic coefficient}
