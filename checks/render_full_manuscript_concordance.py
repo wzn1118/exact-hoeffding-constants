@@ -15,15 +15,15 @@ pattern = re.compile(r"\\\\begin\\{(theorem|lemma|proposition|corollary)\\}(?:\\
 for match in pattern.finditer(source):
     kind, title, body = match.groups()
     label = re.search(r"\\\\label\\{([^}]+)\\}", body)
-    name = label.group(1) if label else 'unlabeled:' + re.sub(r'\\s+', ' ', title or '').strip()
-    locations[name] = source.count('\\n', 0, match.start()) + 1
+    name = label.group(1) if label else 'unlabeled:' + re.sub(r'\s+', ' ', title or '').strip()
+    locations[name] = source.count('\n', 0, match.start()) + 1
 for name, marker in {
-    'extra:A3-four-binomial-KL': r'\\subsubsection{Four binomial KL bounds}',
-    'extra:A4-Bennett-Bernstein': r'\\subsubsection{Exact-variance Bennett and Bernstein bounds}',
+    'extra:A3-four-binomial-KL': r'\subsubsection{Four binomial KL bounds}',
+    'extra:A4-Bennett-Bernstein': r'\subsubsection{Exact-variance Bennett and Bernstein bounds}',
 }.items():
     offset = source.find(marker)
     if offset < 0: raise RuntimeError('Missing supplementary claim section: ' + name)
-    locations[name] = source.count('\\n', 0, offset) + 1
+    locations[name] = source.count('\n', 0, offset) + 1
 
 out = [
     '# Unified manuscript theorem–Lean concordance',
