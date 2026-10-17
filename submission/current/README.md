@@ -2,10 +2,10 @@
 
 Sharp Hypergeometric Concentration: Exact Exchangeability Constants, Fixed-Sample Extremizers, and Piecewise KL Bounds
 
-**Zinan Wang** — The University of Manchester  
-**Xinhao Yang** — University of Southern California
+Zinan Wang — The University of Manchester  
+Xinhao Yang — University of Southern California
 
-**36 pages · 19 references · 303 Lean files** (281 core; 22 audit/history) · 375 reproducibility archive members.
+**36 pages · 19 references · 303 Lean files** (281 core; 22 audit/history) · 375 reproduction archive members.
 
 - [Paper PDF](manuscript.pdf)
 - [LaTeX source](manuscript.tex)
