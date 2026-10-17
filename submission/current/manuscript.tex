@@ -36,7 +36,7 @@ We determine the least constant in the Hoeffding-type exponential-moment inequal
 \]
 The even coefficient coincides with the maximal normalized variance. In odd populations the optimal Laplace parameter is nonzero, and the sharp coefficient strictly exceeds the variance benchmark. We obtain the result through a two-level reduction to hypergeometric laws, a global tilted-variance bound, and a mean-dependent quadratic envelope for tilted hypergeometric variance. The quadratic envelope holds for both parities when $3\le m\le k\le\lfloor N/2\rfloor$ and $2m<N$; parity enters when the remaining discrete margins are optimized. The proof also determines all odd-population extremizers.
 
-For each fixed sample size, we identify the central success counts as the unique maximizers of the optimal hypergeometric sub-Gaussian proxy, up to complementation, and establish quantitative gaps for all other margins. For $3\le m\le k\le\lfloor N/2\rfloor$ and $2m<N$, the two tilted-variance envelopes yield an explicit piecewise relative-entropy rate for both tails. The resulting rate strictly improves the binomial KL rate at every noncentral threshold. The sharp constant agrees with a contemporaneous Lee--Kim manuscript; the Jacobi--Riccati proof, fixed-sample extremizers, and piecewise KL bounds distinguish the present treatment.
+For each fixed sample size, we identify the central success counts as the unique maximizers of the optimal hypergeometric sub-Gaussian proxy, up to complementation, and establish quantitative gaps for all other margins. For $3\le m\le k\le\lfloor N/2\rfloor$ and $2m<N$, the two tilted-variance envelopes yield an explicit piecewise relative-entropy rate for both tails. The resulting rate strictly improves the binomial KL rate at every noncentral threshold.
 \end{abstract}
 \noindent\textbf{Keywords.} Hypergeometric distribution; finite exchangeability; optimal sub-Gaussian proxy; Fisher noncentral hypergeometric law; Jacobi polynomials; exponential tilting; Riccati equation; fixed-sample extremizers; piecewise KL concentration.\\
 \textbf{MSC 2020.} 60E15, 60F10, 33C45, 62E15.
@@ -79,10 +79,10 @@ The proof of the sharp constant rests on two global ingredients: the all-tilt hy
 
 Hoeffding \cite{Hoeffding}, Serfling \cite{Serfling}, Bardenet and Maillard \cite{BardenetMaillard}, and Greene and Wellner \cite{GreeneWellner} develop exponential inequalities and finite-sampling corrections. Diaconis and Freedman \cite{DiaconisFreedman} provide the classical finite-exchangeability framework. Gottschling and Caprio \cite{GottschlingCaprio} bound tails of sample means of bounded infinitely exchangeable sequences relative to the extremal means in the support of the de Finetti mixing measure. Equation \eqref{eq:exchange-intro} concerns finite sequences and arbitrary zero-sum contrasts. Fisher's noncentral hypergeometric family describes the exponential tilts used here \cite{Fog}.
 
-Kou and Ying \cite{Kou} connect fixed-margin laws with Jacobi polynomials and sums of independent Bernoulli variables; Borcea, Br\"and\'en, and Liggett \cite{BBL} develop the broader stability framework. The Jacobi identities and zero-location theorem are classical \cite[Chapter IV and Section 6.7]{Szego}. Arbel, Marchal, and Nguyen \cite{ArbelMarchalNguyen} study optimal variance proxies and strict sub-Gaussianity, and Marchal and Arbel \cite{MarchalArbel} use differential equations for Beta and Dirichlet proxies. Atouani, Marchal, and Arbel \cite[Theorem 3.2 and Corollary 3.3]{AtouaniMarchalArbel} give the three-mass proxy formula specialized in Section \ref{sec:twodraw}. Section \ref{sec:twodraw} applies the Atouani--Marchal--Arbel formula to two draws and evaluates the resulting success-count extremum and singleton comparison. The all-degree variance certificates, the parity-uniform Laplace envelope, the classification of odd-population extremizers, and the optimized expansions for each fixed sample size are the hypergeometric results developed here. The fourth-order local moment expansion in \cite[Remark 3.6]{AtouaniMarchalArbel} is in the Laplace argument; our expansion is in $N^{-1}$ at the globally optimizing argument, and is accompanied by an extremum theorem over all success counts.
+Kou and Ying \cite{Kou} connect fixed-margin laws with Jacobi polynomials and sums of independent Bernoulli variables; Borcea, Br\"and\'en, and Liggett \cite{BBL} develop the broader stability framework. The Jacobi identities and zero-location theorem are classical \cite[Chapter IV and Section 6.7]{Szego}. Arbel, Marchal, and Nguyen \cite{ArbelMarchalNguyen} study optimal variance proxies and strict sub-Gaussianity, and Marchal and Arbel \cite{MarchalArbel} use differential equations for Beta and Dirichlet proxies. Atouani, Marchal, and Arbel \cite[Theorem 3.2 and Corollary 3.3]{AtouaniMarchalArbel} give the three-mass proxy formula specialized in Section \ref{sec:twodraw}. Section \ref{sec:twodraw} applies the Atouani--Marchal--Arbel formula to two draws and evaluates the resulting success-count extremum and singleton comparison. The all-degree variance certificates, the parity-uniform Laplace envelope, the classification of odd-population extremizers, and the optimized expansions for each fixed sample size are the hypergeometric results developed here. The fourth-order local moment expansion of Atouani, Marchal, and Arbel \cite[Remark 3.6]{AtouaniMarchalArbel} concerns the Laplace argument. Theorem \ref{thm:odd_expansion} gives an inverse-population expansion at the globally maximizing tilt.
 
-\paragraph{Relation to contemporaneous sharp constants.}
-Lee and Kim's manuscript dated 14 October 2026 \cite{LeeKimSerfling} obtains the same parity-dependent exact exchangeability coefficient and a sharp variance-scale refinement of Serfling's inequality through a hypergeometric generating-function recursion. Thus the numerical value of $C_N^\star$ and the corresponding sharp finite-population correction are shared conclusions. The present proof develops Jacobi-root and Riccati stationary-variance certificates, determines all central success-count maximizers and quantitative gaps at each fixed sample size, and establishes piecewise KL concentration in the domain \eqref{A:domain}. The distinct proof mechanisms and the additional fixed-sample and nonquadratic tail statements identify the contributions developed here.
+\paragraph{Contemporaneous sharp-constant results.}
+Lee and Kim \cite{LeeKimSerfling} obtain the same parity-dependent coefficient $C_N^\star$ through a hypergeometric generating-function recurrence and derive a variance-scale refinement of Serfling's inequality. The Jacobi-root and Riccati analysis here establishes all-tilt variance certificates, identifies central success-count maximizers and their quantitative gaps for each fixed sample size, and yields piecewise KL concentration in the domain \eqref{A:domain}.
 
 The two-level exchangeability reduction leads to the curvature theorem, parity-dependent sharp constants, and quadratic Laplace envelope. The fixed-sample extremizer theorem sharpens the success-count proxy maximization, and the piecewise KL theorem converts the tilted-variance envelopes into finite-sample tail rates. Fourth-order asymptotics and supporting algebraic calculations appear in the appendices.
 
@@ -1502,9 +1502,9 @@ With $L=k-m\ge0$ and $R=N-m-k\ge0$,
 \end{align*}
 Therefore $\max_{1\le j\le4}R_j=R_1=I_B$ on $[0,m]$, and
 Theorem~\ref{A:piecewise} gives $J(v)>\max_{1\le j\le4}R_j(v)$ at every
-noncentral threshold. Duality itself is classical and is explicitly used
-by Mannalath, Zapatero and Curty~\cite{A:MZC}; the strict improvement $J>I_B$ comes
-from integrating the smaller mean-dependent variance bound.
+noncentral threshold. The sampling-duality bounds also appear in
+Mannalath, Zapatero, and Curty~\cite{A:MZC}. Integrating the smaller
+mean-dependent variance envelope gives the strict inequality $J>I_B$.
 
 \subsubsection{The optimal uniform quadratic coefficient}
 Define
@@ -1525,7 +1525,7 @@ Laplace envelope is bounded above by $M\beta(p)t^2/2$, and conjugation gives
  J(v)\ge I_P(v)\ge \frac{(v-\mu)^2}{2M\beta(p)}
  \ge\frac{(v-\mu)^2}{2V_*}.
 \end{equation}
-Equation \eqref{A:quadratic} holds pointwise for every $v\in[0,m]$; all rates in that chain vanish at $v=\mu$. The later equality conditions concern the individual comparisons in this chain. An optimally tuned quadratic proxy for a fixed hypergeometric law can still produce a stronger quadratic rate.
+Equation \eqref{A:quadratic} holds for every $v\in[0,m]$, with equality at $v=\mu$ throughout the chain.
 
 For $p<1/2$, equality in the middle inequality at a nonzero displacement
 requires $\theta=1-p$, hence $v-\mu=M(1-2p)/a>0$; this follows from the
@@ -1563,7 +1563,7 @@ For each tail sign, the functions $s\mapsto I_P(\mu\pm s)$ and $s\mapsto v_0h_0(
  J(\mu+s)>\frac{s^2}{2(v_0+s/3)}\quad(0<s\le m-\mu),\qquad
  J(\mu-s)>\frac{s^2}{2(v_0+s/3)}\quad(0<s\le\mu).
 \]
-These are exponent comparisons in the canonical hypergeometric parameter domain \eqref{A:domain}.
+
 \subsubsection{Optimized factorial moments}
 \begin{proposition}[A comparison with exact Chernoff]\label{A:factorial}
 Let $X$ be nonnegative and integer-valued with bounded support, and let
@@ -1610,7 +1610,7 @@ To verify this minimizer directly, write $c_j=(k)_{\underline j}(m)_{\underline 
  \quad\Longleftrightarrow\quad
  j\le\frac{Nd-km}{N+d-k-m}.
 \]
-The assumption $d>km/N$ makes $Nd-km>0$ and $N+d-k-m>0$, because $km/N\ge k+m-N$. Moreover, $d\le\min(k,m)$ implies $(d-k)(d-m)\ge0$, so the threshold lies in $(0,d]$. The candidates decrease until $j_*$ and increase thereafter. When the threshold is an integer smaller than $d$, $c_{j_*}=c_{j_*+1}$; when $d=\min(k,m)$, the admissible endpoint minimizer is $j_*=d$. Thus the displayed index minimizes the exact finite factorial-moment candidates without an appeal to numerical optimization. The piecewise KL rate improves the stated KL and uniform quadratic envelopes, while optimized factorial-moment bounds can be sharper at integer thresholds.
+The assumption $d>km/N$ makes $Nd-km>0$ and $N+d-k-m>0$, because $km/N\ge k+m-N$. Moreover, $d\le\min(k,m)$ implies $(d-k)(d-m)\ge0$, so the threshold lies in $(0,d]$. The candidates decrease until $j_*$ and increase thereafter. When the threshold is an integer smaller than $d$, $c_{j_*}=c_{j_*+1}$; when $d=\min(k,m)$, the admissible endpoint minimizer is $j_*=d$. Thus the displayed index minimizes the exact finite factorial-moment candidates . The piecewise KL rate improves the stated KL and uniform quadratic envelopes, while optimized factorial-moment bounds can be sharper at integer thresholds.
 
 
 
