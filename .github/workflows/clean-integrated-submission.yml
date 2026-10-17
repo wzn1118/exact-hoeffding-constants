@@ -14,6 +14,10 @@ on:
       - '.github/workflows/clean-integrated-submission.yml'
   workflow_dispatch:
 
+concurrency:
+  group: canonical-main-manuscript-release
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
