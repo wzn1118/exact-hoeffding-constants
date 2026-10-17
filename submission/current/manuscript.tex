@@ -36,7 +36,7 @@ We determine the least constant in the Hoeffding-type exponential-moment inequal
 \]
 The even coefficient coincides with the maximal normalized variance. In odd populations the optimal Laplace parameter is nonzero, and the sharp coefficient strictly exceeds the variance benchmark. We obtain the result through a two-level reduction to hypergeometric laws, a global tilted-variance bound, and a mean-dependent quadratic envelope for tilted hypergeometric variance. The quadratic envelope holds for both parities when $3\le m\le k\le\lfloor N/2\rfloor$ and $2m<N$; parity enters when the remaining discrete margins are optimized. The proof also determines all odd-population extremizers.
 
-For each fixed sample size, we identify the central success counts as the unique maximizers of the optimal hypergeometric sub-Gaussian proxy, up to complementation, and establish quantitative gaps for all other margins. For $3\le m\le k\le\lfloor N/2\rfloor$ and $2m<N$, the two tilted-variance envelopes yield an explicit piecewise relative-entropy rate for both tails. The resulting rate strictly improves the binomial KL rate at every noncentral threshold.
+For each fixed sample size, we identify the central success counts as the unique maximizers of the optimal hypergeometric sub-Gaussian proxy, up to complementation, and establish quantitative gaps for all other margins. For $3\le m\le k\le\lfloor N/2\rfloor$ and $2m<N$, the two tilted-variance envelopes yield an explicit piecewise relative-entropy rate for both tails. The resulting rate strictly improves the binomial KL rate at every noncentral threshold. The sharp constant agrees with a contemporaneous Lee--Kim manuscript; the Jacobi--Riccati proof, fixed-sample extremizers, and piecewise KL bounds distinguish the present treatment.
 \end{abstract}
 \noindent\textbf{Keywords.} Hypergeometric distribution; finite exchangeability; optimal sub-Gaussian proxy; Fisher noncentral hypergeometric law; Jacobi polynomials; exponential tilting; Riccati equation; fixed-sample extremizers; piecewise KL concentration.\\
 \textbf{MSC 2020.} 60E15, 60F10, 33C45, 62E15.
@@ -80,6 +80,9 @@ The proof of the sharp constant rests on two global ingredients: the all-tilt hy
 Hoeffding \cite{Hoeffding}, Serfling \cite{Serfling}, Bardenet and Maillard \cite{BardenetMaillard}, and Greene and Wellner \cite{GreeneWellner} develop exponential inequalities and finite-sampling corrections. Diaconis and Freedman \cite{DiaconisFreedman} provide the classical finite-exchangeability framework. Gottschling and Caprio \cite{GottschlingCaprio} bound tails of sample means of bounded infinitely exchangeable sequences relative to the extremal means in the support of the de Finetti mixing measure. Equation \eqref{eq:exchange-intro} concerns finite sequences and arbitrary zero-sum contrasts. Fisher's noncentral hypergeometric family describes the exponential tilts used here \cite{Fog}.
 
 Kou and Ying \cite{Kou} connect fixed-margin laws with Jacobi polynomials and sums of independent Bernoulli variables; Borcea, Br\"and\'en, and Liggett \cite{BBL} develop the broader stability framework. The Jacobi identities and zero-location theorem are classical \cite[Chapter IV and Section 6.7]{Szego}. Arbel, Marchal, and Nguyen \cite{ArbelMarchalNguyen} study optimal variance proxies and strict sub-Gaussianity, and Marchal and Arbel \cite{MarchalArbel} use differential equations for Beta and Dirichlet proxies. Atouani, Marchal, and Arbel \cite[Theorem 3.2 and Corollary 3.3]{AtouaniMarchalArbel} give the three-mass proxy formula specialized in Section \ref{sec:twodraw}. Section \ref{sec:twodraw} applies the Atouani--Marchal--Arbel formula to two draws and evaluates the resulting success-count extremum and singleton comparison. The all-degree variance certificates, the parity-uniform Laplace envelope, the classification of odd-population extremizers, and the optimized expansions for each fixed sample size are the hypergeometric results developed here. The fourth-order local moment expansion in \cite[Remark 3.6]{AtouaniMarchalArbel} is in the Laplace argument; our expansion is in $N^{-1}$ at the globally optimizing argument, and is accompanied by an extremum theorem over all success counts.
+
+\paragraph{Relation to contemporaneous sharp constants.}
+Lee and Kim's manuscript dated 14 October 2026 \cite{LeeKimSerfling} obtains the same parity-dependent exact exchangeability coefficient and a sharp variance-scale refinement of Serfling's inequality through a hypergeometric generating-function recursion. Thus the numerical value of $C_N^\star$ and the corresponding sharp finite-population correction are shared conclusions. The present proof develops Jacobi-root and Riccati stationary-variance certificates, determines all central success-count maximizers and quantitative gaps at each fixed sample size, and establishes piecewise KL concentration in the domain \eqref{A:domain}. The distinct proof mechanisms and the additional fixed-sample and nonquadratic tail statements identify the contributions developed here.
 
 The two-level exchangeability reduction leads to the curvature theorem, parity-dependent sharp constants, and quadratic Laplace envelope. The fixed-sample extremizer theorem sharpens the success-count proxy maximization, and the piecewise KL theorem converts the tilted-variance envelopes into finite-sample tail rates. Fourth-order asymptotics and supporting algebraic calculations appear in the appendices.
 
@@ -1333,8 +1336,8 @@ The preceding variance and Laplace comparison results give
  \label{A:barrier}
 \end{align}
 The Poisson--binomial representation proves $V\le B$ by expressing the tilted hypergeometric law as a
-sum of independent Bernoulli variables; Theorem \ref{odd:thm:envelope} supplies the quadratic
-variance-envelope refinement. In \eqref{A:barrier}, equality holds exactly
+sum of independent Bernoulli variables; Lemma \ref{odd:lem:barrier} establishes the quadratic
+tilted-variance envelope $V(u)\le P(u)$. In \eqref{A:barrier}, equality holds exactly
 at $u=\mu$. In particular, $P(\mu)=Mpq>0$, and the endpoint evaluations in
 the proof of Lemma \ref{odd:lem:barrier} show $P(0)>0$ and $P(m)>0$. Concavity implies $P>0$ on $[0,m]$.
 
@@ -1455,19 +1458,23 @@ differentiable at the roots because $P=B$ there.
 
 Comparison of the nonnegative integration kernels gives $J\ge I_P,I_B$.
 For every $v\ne\mu$, the integration interval between $\mu$ and $v$ contains points near $\mu$ where $P<B$, proving
-$J>I_B$. A path leaving $[r_-,r_+]$ also crosses an interval where $B<P$,
-proving the characterization of $J>I_P$. Finally, $V(u)<P(u)$ for every $u\ne\mu$,
+$J(v)>I_B(v)$. If $v<r_-$ or $v>r_+$, the integration interval between $\mu$ and $v$ contains a nonempty open subinterval where $B(u)<P(u)$, and therefore $J(v)>I_P(v)$. For $v\in[r_-,r_+]$, the entire integration interval uses $P$, giving $J(v)=I_P(v)$. Finally, $V(u)<P(u)$ for every $u\ne\mu$,
 so the positive-length central portion of each nontrivial integration interval gives $I(v)>J(v)$.
 At $0,m$, $1/B$ has simple poles, canceled by the endpoint integration
 kernels; the limits are finite and the same strict arguments apply.
 \end{proof}
 
 \begin{corollary}[Integer and two-sided events]
-For real $x>0$, set
-$z_+=\lceil\mu+x\rceil$ and $z_-=\lfloor\mu-x\rfloor$.
-If $z_+\le m$, then $\Pr(H-\mu\ge x)=\Pr(H\ge z_+)\le e^{-J(z_+)}$; if $z_+>m$, this probability is zero.
-Likewise, if $z_-\ge0$, then $\Pr(H-\mu\le -x)=\Pr(H\le z_-)\le e^{-J(z_-)}$; if $z_-<0$, this probability is zero.
-The sum of the two one-sided bounds, capped at one, bounds $\Pr(|H-\mu|\ge x)$.
+For $x>0$, let $z_+=\lceil\mu+x\rceil$ and $z_-=\lfloor\mu-x\rfloor$. Define
+\[
+ U_x=\begin{cases}e^{-J(z_+)},&z_+\le m,\\0,&z_+>m,\end{cases}
+ \qquad
+ L_x=\begin{cases}e^{-J(z_-)},&z_-\ge0,\\0,&z_-<0.\end{cases}
+\]
+Then $\Pr(H-\mu\ge x)\le U_x$, $\Pr(H-\mu\le-x)\le L_x$, and
+\[
+ \Pr(|H-\mu|\ge x)\le\min\{1,U_x+L_x\}.
+\]
 \end{corollary}
 
 \subsection{Comparison with classical and optimized bounds}
@@ -1518,7 +1525,7 @@ Laplace envelope is bounded above by $M\beta(p)t^2/2$, and conjugation gives
  J(v)\ge I_P(v)\ge \frac{(v-\mu)^2}{2M\beta(p)}
  \ge\frac{(v-\mu)^2}{2V_*}.
 \end{equation}
-Both $J(v)$ and $I_P(v)$ therefore dominate the displayed uniform quadratic rate $(v-\mu)^2/(2V_*)$. The optimized quadratic proxy of an individual hypergeometric law may yield a stronger bound.
+Equation \eqref{A:quadratic} holds pointwise for every $v\in[0,m]$; all rates in that chain vanish at $v=\mu$. The later equality conditions concern the individual comparisons in this chain. An optimally tuned quadratic proxy for a fixed hypergeometric law can still produce a stronger quadratic rate.
 
 For $p<1/2$, equality in the middle inequality at a nonzero displacement
 requires $\theta=1-p$, hence $v-\mu=M(1-2p)/a>0$; this follows from the
@@ -1543,19 +1550,20 @@ the tail-region deficit of the unspliced $I_P$ relative to the four binomial bou
 Put $v_0=Mpq$ and $h_0(z)=(1+z)\log(1+z)-z$.
 The Bennett exponent in Greene--Wellner~\cite[Theorem 3]{GreeneWellner} is
 $v_0h_0(x/v_0)$; their Bernstein corollary replaces it by
-$x^2/[2(v_0+x/3)]$. For either tail sign and every supported deviation $s>0$, the quadratic-envelope rate $I_P(\mu\pm s)$ is strictly larger
-than the Bennett exponent $v_0h_0(s/v_0)$; the piecewise rate $J(\mu\pm s)$ inherits this strict comparison.
-Indeed, for $s>0$,
+$x^2/[2(v_0+x/3)]$. For an upper-tail deviation $0<s\le m-\mu$, the rate $I_P(\mu+s)$ strictly exceeds $v_0h_0(s/v_0)$. For a lower-tail deviation $0<s\le\mu$, the same comparison holds for $I_P(\mu-s)$. Both statements compare exponents at thresholds within the support $[0,m]$.
+Indeed, for $s>0$ in the respective support ranges,
 \[
  P(\mu+s)=v_0+ad s-a^2s^2/M<v_0+s,\qquad
  P(\mu-s)=v_0-ad s-a^2s^2/M<v_0+s,
 \]
 because $0\le ad<1$. The second derivative of $v_0h_0(x/v_0)$ is
 $1/(v_0+x)$, while that of $I_P(\mu\pm x)$ is $1/P(\mu\pm x)$.
-For each tail sign, the functions $s\mapsto I_P(\mu\pm s)$ and $s\mapsto v_0h_0(s/v_0)$ and their first derivatives vanish at $s=0$. Integrating the
-strict second-derivative comparison twice proves $I_P(\mu\pm s)>v_0h_0(s/v_0)$, and $J\ge I_P$ transfers the bound to $J$.
-The standard inequality $h_0(z)\ge z^2/[2(1+z/3)]$ consequently gives the Bernstein
-comparison $J(\mu\pm s)>s^2/[2(v_0+s/3)]$ for every nonzero supported $s$. 
+For each tail sign, the functions $s\mapsto I_P(\mu\pm s)$ and $s\mapsto v_0h_0(s/v_0)$, together with their first derivatives, vanish at $s=0$. Twice integrating the strict second-derivative comparison proves the Bennett improvement for each supported tail. Since $J(v)\ge I_P(v)$ on $[0,m]$, the same strict improvement holds for $J$. Finally, the inequality $h_0(z)\ge z^2/[2(1+z/3)]$ implies
+\[
+ J(\mu+s)>\frac{s^2}{2(v_0+s/3)}\quad(0<s\le m-\mu),\qquad
+ J(\mu-s)>\frac{s^2}{2(v_0+s/3)}\quad(0<s\le\mu).
+\]
+These are exponent comparisons in the canonical hypergeometric parameter domain \eqref{A:domain}.
 \subsubsection{Optimized factorial moments}
 \begin{proposition}[A comparison with exact Chernoff]\label{A:factorial}
 Let $X$ be nonnegative and integer-valued with bounded support, and let
@@ -1568,17 +1576,17 @@ Then
  \Pr(X\ge d)\le F_d\le
  \inf_{t\ge0}\E e^{t(X-d)}.
 \]
-For the hypergeometric law,
+For $H\sim\Hyp(N,k,m)$ and integers $1\le d\le\min(k,m)$ and $0\le j\le d$, all denominators in the falling-factorial identity are positive and
 \[
  \frac{\E\binom Hj}{\binom dj}
  =\frac{(k)_{\underline j}(m)_{\underline j}}
- {(N)_{\underline j}(d)_{\underline j}},\qquad 0\le j\le d.
+ {(N)_{\underline j}(d)_{\underline j}}.
 \]
-In particular, at integer upper thresholds $d>\mu$ in \eqref{A:domain},
+In particular, under \eqref{A:domain}, for every integer $\mu<d\le m$,
 \[
  \Pr(H\ge d)\le F_d\le e^{-I(d)}<e^{-J(d)}.
 \]
-The lower-tail version follows by applying the result to $m-H$.
+For integer $d>m$, the event $\{H\ge d\}$ is empty and $F_d=0$, so $I(d)$ and $J(d)$ are not invoked outside $[0,m]$. The analogous lower-tail factorial-moment bound follows by applying the generic inequality to $m-H$.
 \end{proposition}
 \begin{proof}
 For $j\le d$, $\binom Xj\ge\binom dj$ on $\{X\ge d\}$, which proves
@@ -1587,8 +1595,7 @@ the first inequality. For $z=e^t-1\ge0$, the binomial theorem gives
  \E(1+z)^X=\sum_{j\ge0}\E\binom Xj z^j
  \ge F_d\sum_{j=0}^d\binom dj z^j=F_d(1+z)^d.
 \]
-Divide by $e^{td}$ and take the infimum. Hypergeometric factorial
-moments give the displayed ratio.
+Dividing by $e^{td}$ and taking the infimum over $t\ge0$ gives the Chernoff comparison. For $j\le d\le\min(k,m)\le N$, the hypergeometric identity $\E\binom Hj=\binom mj(k)_{\underline j}/(N)_{\underline j}$ gives the stated falling-factorial ratio; every denominator is nonzero. When $d>m$, choosing $j=m+1$ gives $F_d=0$.
 \end{proof}
 
 Optimized hypergeometric factorial-moment bounds appear in \cite{A:MZC}. Comparisons of moment bounds with Chernoff bounds also appear in Philips and Nelson~\cite{A:PN}. Proposition~\ref{A:factorial} establishes the finite binomial-basis inequality used here.
@@ -1596,9 +1603,14 @@ For $\mu<d\le\min(k,m)$, a minimizing index for the factorial-moment ratio defin
 \[
  j_* =\left\lceil\frac{Nd-km}{N+d-k-m}\right\rceil\in\{1,\ldots,d\}.
 \]
-Indeed the ratio of consecutive candidates is at most one exactly when
-$j\le(Nd-km)/(N+d-k-m)$. When $(Nd-km)/(N+d-k-m)$ is an integer, the two adjacent
-indices tie if both are admissible. At $d=\min(k,m)$ the admissible endpoint index is $j=d$. The piecewise KL rate improves the stated KL and uniform quadratic envelopes, while optimized factorial-moment bounds can be sharper at integer thresholds.
+To verify this minimizer directly, write $c_j=(k)_{\underline j}(m)_{\underline j}/[(N)_{\underline j}(d)_{\underline j}]$ for $0\le j\le d$. For every $j<d$,
+\[
+ \frac{c_{j+1}}{c_j}=\frac{(k-j)(m-j)}{(N-j)(d-j)},\qquad
+ \frac{c_{j+1}}{c_j}\le1
+ \quad\Longleftrightarrow\quad
+ j\le\frac{Nd-km}{N+d-k-m}.
+\]
+The assumption $d>km/N$ makes $Nd-km>0$ and $N+d-k-m>0$, because $km/N\ge k+m-N$. Moreover, $d\le\min(k,m)$ implies $(d-k)(d-m)\ge0$, so the threshold lies in $(0,d]$. The candidates decrease until $j_*$ and increase thereafter. When the threshold is an integer smaller than $d$, $c_{j_*}=c_{j_*+1}$; when $d=\min(k,m)$, the admissible endpoint minimizer is $j_*=d$. Thus the displayed index minimizes the exact finite factorial-moment candidates without an appeal to numerical optimization. The piecewise KL rate improves the stated KL and uniform quadratic envelopes, while optimized factorial-moment bounds can be sharper at integer thresholds.
 
 
 
@@ -1607,14 +1619,14 @@ indices tie if both are admissible. At $d=\min(k,m)$ the admissible endpoint ind
 
 % begin new_results.tex
 \section{Optimal proxies for nearly balanced odd populations}\label{sec:odd_asym}
-For fixed $m\ge2$ and nearly balanced odd populations, the strict singleton comparison in Theorem \ref{odd:thm:odd} has a gap $L_N-R_{N,1,m}$ of order $N^{-3}$. This section expands $L_N-R_{N,s,m}$ through fourth order and locates the globally maximizing tilt through third order, for every fixed sample size and fixed success imbalance. The cases $m=1$ and $m=2$ agree with the Bernoulli formula \eqref{eq:bernproxy} and the three-point specialization in Section \ref{sec:twodraw}. Theorem \ref{thm:odd_expansion} gives the expansion for arbitrary fixed $m$, together with uniqueness of the global optimizer and analytic remainders.
+Fix a positive integer $m$ and a positive odd integer $s$. This section studies the optimal proxy and globally maximizing tilt for hypergeometric populations of odd size $N>s+2m$, expanded in powers of $N^{-1}$. The one- and two-draw cases agree with the Bernoulli proxy \eqref{eq:bernproxy} and the three-mass formula in Section \ref{sec:twodraw}. Theorem \ref{thm:odd_expansion} establishes an analytic fourth-order proxy expansion and a third-order tilt expansion, together with global uniqueness.
 
 Let $N$ be odd, let $s\ge1$ be a fixed odd integer, and put
 \begin{equation}\label{eq:oddparams}
  k=\frac{N-s}{2},\qquad H_N\sim\Hyp(N,k,m),\qquad
  R_{N,s,m}=\frac{4N}{m(N-m)}\sigma^2_{\mathrm{opt}}(H_N).
 \end{equation}
-Here $m\ge1$ is fixed while $N\to\infty$ runs through odd integers larger than $s+2m$. The prescribed centering gives a Bernoulli-success fraction $p=(1-s/N)/2$. The regime includes the most nearly balanced success count when $s=1$.
+Here $m,s$ are held fixed as $N\to\infty$ through admissible odd integers, and $p=(1-s/N)/2$. For $s=1$ and $m\ge2$, the singleton gap $L_N-R_{N,1,m}$ begins at order $N^{-3}$; Corollary \ref{cor:fixedm_gap} determines its first two nonzero coefficients.
 
 \begin{theorem}[Fourth-order sharp-proxy expansion]\label{thm:odd_expansion}
 Fix $m\ge1$ and a positive odd integer $s$. For all sufficiently large odd $N$, the function
@@ -1879,6 +1891,7 @@ This proves \eqref{eq:bernproxy}. The limit as $p\to1/2$ is $1/4$ by l'H\^opital
 \bibitem{Hoeffding} W. Hoeffding, Probability inequalities for sums of bounded random variables, \emph{Journal of the American Statistical Association} \textbf{58} (1963), 13--30. \url{https://doi.org/10.1080/01621459.1963.10500830}.
 \bibitem{Kou} S. G. Kou and Z. Ying, Asymptotics for a $2\times2$ table with fixed margins, \emph{Statistica Sinica} \textbf{6} (1996), 809--829. \url{https://www3.stat.sinica.edu.tw/statistica/oldpdf/A6n42.pdf}.
 \bibitem{LeeKim} S. Lee and I. Kim, A sharper Hoeffding bound for weighted sums of exchangeable random variables, arXiv:2608.04900v2 (2026). \url{https://arxiv.org/abs/2608.04900v2}.
+\bibitem{LeeKimSerfling} S. Lee and I. Kim, A sharp variance-scale refinement of Serfling's inequality, unpublished manuscript dated 14 October 2026.
 \bibitem{MarchalArbel} O. Marchal and J. Arbel, On the sub-Gaussianity of the Beta and Dirichlet distributions, \emph{Electronic Communications in Probability} \textbf{22} (2017), 1--14. \url{https://doi.org/10.1214/17-ECP92}.
 \bibitem{Serfling} R. J. Serfling, Probability inequalities for the sum in sampling without replacement, \emph{Annals of Statistics} \textbf{2} (1974), 39--48. \url{https://doi.org/10.1214/aos/1176342611}.
 \bibitem{Szego} G. Szeg\H{o}, Orthogonal Polynomials, \emph{American Mathematical Society Colloquium Publications}, vol. 23, fourth edition, AMS, 1975. \url{https://doi.org/10.1090/coll/023}.
