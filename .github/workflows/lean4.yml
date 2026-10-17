@@ -13,6 +13,9 @@ on:
       - 'checks/generate_axiom_audit.py'
       - 'checks/check_axiom_output.py'
       - 'checks/check_manuscript_concordance.py'
+      - 'checks/check_full_manuscript_concordance.py'
+      - 'checks/manuscript_lean_map.json'
+      - 'submission/current/manuscript.tex'
       - 'formal_status/manuscript_concordance.md'
       - 'source/**'
       - '.github/workflows/lean4.yml'
@@ -28,6 +31,9 @@ on:
       - 'checks/generate_axiom_audit.py'
       - 'checks/check_axiom_output.py'
       - 'checks/check_manuscript_concordance.py'
+      - 'checks/check_full_manuscript_concordance.py'
+      - 'checks/manuscript_lean_map.json'
+      - 'submission/current/manuscript.tex'
       - 'formal_status/manuscript_concordance.md'
       - 'source/**'
       - '.github/workflows/lean4.yml'
@@ -67,6 +73,7 @@ jobs:
           set -euo pipefail
           python3 checks/generate_axiom_audit.py --check
           python3 checks/check_manuscript_concordance.py
+          python3 checks/check_full_manuscript_concordance.py
           lake env lean checks/full_closure_axioms.lean | tee lean_axioms.log
           python3 checks/check_axiom_output.py lean_axioms.log
       - uses: actions/upload-artifact@v4
