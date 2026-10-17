@@ -9,6 +9,8 @@ on:
       - 'research/tail_bounds/minimum_variance_tail.tex'
       - 'goal_b/paper/main.tex'
       - 'checks/build_current_release.py'
+      - 'checks/render_full_manuscript_concordance.py'
+      - 'checks/manuscript_lean_map.json'
       - '.github/workflows/clean-integrated-submission.yml'
   workflow_dispatch:
 
