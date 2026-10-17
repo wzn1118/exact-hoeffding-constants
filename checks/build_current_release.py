@@ -51,6 +51,16 @@ def main():
     tex = PAPER.read_bytes()
     pdf = PDF.read_bytes()
     src = tex.decode("utf-8")
+    required_publication_fixes = {
+        "Lee-Kim contemporaneous attribution": r"\bibitem{LeeKimSerfling}",
+        "supported factorial threshold": r"for every integer $\mu<d\le m$",
+        "outside-support factorial event": r"For integer $d>m$",
+        "explicit consecutive candidate ratio": r"\frac{c_{j+1}}{c_j}",
+        "actual tilted-variance barrier lemma": r"Lemma \ref{odd:lem:barrier} establishes",
+    }
+    missing_fixes = [name for name, marker in required_publication_fixes.items() if marker not in src]
+    if missing_fixes:
+        raise RuntimeError("Mathematical manuscript repair regression: " + ", ".join(missing_fixes))
     if r"\author{Zinan Wang" not in src or r"\and Xinhao Yang" not in src:
         raise RuntimeError("Author order in official manuscript incorrect")
     if "The University of Manchester" not in src or "University of Southern California" not in src:
@@ -72,7 +82,7 @@ def main():
     (CURRENT/"manuscript.pdf").write_bytes(pdf)
     meta={"title":TITLE,"authors":[{"name":"Zinan Wang","affiliation":"The University of Manchester"},
            {"name":"Xinhao Yang","affiliation":"University of Southern California"}],
-          "date":"2026-10-16","primary_category":"math.PR","optional_cross_list":"math.ST",
+          "date":"2026-10-17","primary_category":"math.PR","optional_cross_list":"math.ST",
           "entry_point":"manuscript.tex","pages":pages,"references":len(bib)}
     (CURRENT/"metadata.json").write_text(json.dumps(meta,indent=2,ensure_ascii=False)+"\n")
     writezip(CURRENT/"arxiv-source.zip",{"manuscript.tex":tex})
