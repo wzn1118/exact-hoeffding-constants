@@ -229,6 +229,14 @@ private theorem law_mean_range
     dsimp [FiniteSupportLawData.centeredValue] at h ⊢
     exact h
 
+/-- Every exponential tilt of a finite law with positive mass at distinct
+support endpoints has mean strictly between those endpoint values. -/
+theorem finiteSupportLawData_mean_mem_Ioo
+    {ι : Type*} [DecidableEq ι] (L : FiniteSupportLawData ι) (t : ℝ) :
+    L.value L.loIndex - L.mean0 < L.mean t ∧
+      L.mean t < L.value L.hiIndex - L.mean0 :=
+  law_mean_range L t
+
 private theorem law_mean_atBot
     {ι : Type*} [DecidableEq ι] (L : FiniteSupportLawData ι) :
     Tendsto L.mean atBot

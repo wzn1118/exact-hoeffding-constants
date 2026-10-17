@@ -9,7 +9,7 @@ out = [
     '',
     'Source of truth: frozen `submission/current/manuscript.tex` on current `main`. The body and labels are checked byte-for-byte by the repository release workflow; this table does not edit the manuscript.',
     '',
-    f"The parser found **{sum(r.get('paper_environment', False) for r in data['results'])} theorem-class environments** and this map separately records **{sum(not r.get('paper_environment', False) for r in data['results'])} supplementary formal claims** (the four-KL and Bennett/Bernstein comparisons are equations/prose, not theorem environments). The exact theorem names are checked against `checks/full_closure_axioms.lean`; a `Complete` row must name an existing declaration, source file, and `#print axioms` entry. The gate fails while any row is `Partial`.",
+    f"The parser found **{sum(r.get('paper_environment', False) for r in data['results'])} theorem-class environments** and this map separately records **{sum(not r.get('paper_environment', False) for r in data['results'])} supplementary formal claims** (supplementary rows cover formalized displayed equations and direct interfaces that are not standalone theorem environments). The exact theorem names are checked against `checks/full_closure_axioms.lean`; a `Complete` row must name an existing declaration, source file, and `#print axioms` entry. The gate fails while any row is `Partial`.",
     '',
     '| # | Paper location / result | Lean declaration(s) and source | Scope and correspondence | Kernel/audit status |',
     '|---:|---|---|---|---|',

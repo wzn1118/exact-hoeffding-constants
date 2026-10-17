@@ -317,3 +317,401 @@ theorem individualMargin_first_branch_gap_mono_reduced
 
 end
 end ExactHoeffding
+
+namespace ExactHoeffding
+noncomputable section
+
+/-- The branchwise certificate in `individualMarginGap` applies directly to the
+actual optimal hypergeometric proxy after the population and sample
+complement reductions. -/
+theorem hypergeomOptimalProxy_le_individualMarginGap
+    (N k m : ℕ) (hN : 2 ≤ N) (hk : 0 < k) (hkN : k < N)
+    (hm : 0 < m) (hmN : m < N)
+    (hkc : k ≠ N / 2) (hkc' : k ≠ N - N / 2) :
+    hypergeomOptimalProxy N k m ≤
+      individualMarginW N m - individualMarginGap N k m := by
+  have hcap := hypergeomOptimalProxy_le_individualMargin_cap N k m hN hk hkN
+    hm hmN hkc hkc'
+  unfold individualMarginGap
+  dsimp
+  by_cases hbranch :
+      (min m (N - m) ≤ min k (N - k))
+  · rw [if_pos hbranch] at hcap ⊢
+    simpa [individualMarginW, individualMarginM, Nat.cast_sub hkN.le] using hcap
+  · rw [if_neg hbranch] at hcap ⊢
+    simpa [individualMarginW, individualMarginM, Nat.cast_sub hkN.le] using hcap
+
+end
+end ExactHoeffding
+
+namespace ExactHoeffding
+noncomputable section
+
+/-- The parity-dependent uniform margin gap from the fixed-sample theorem. -/
+def individualMarginDelta (N m : ℕ) : ℝ :=
+  if N % 2 = 0 then
+    individualMarginM N m / (3 * (N : ℝ) ^ 2 + 4)
+  else
+    individualMarginM N m * (2 * (N : ℝ) ^ 2 - 3) /
+      (4 * (N : ℝ) ^ 2 * ((N : ℝ) ^ 2 + 3))
+
+private theorem individualGap_even_first_algebra (N M d : ℝ)
+    (hN : 0 < N) (hM : 0 ≤ M) (hd : 2 / N ≤ d) :
+    M / 4 - M / (4 * (1 + d ^ 2 / 3)) ≥ M / (3 * N ^ 2 + 4) := by
+  have hd0 : 0 ≤ 2 / N := by positivity
+  have hd1 : 0 ≤ d := hd0.trans hd
+  have hsq : (2 / N) ^ 2 ≤ d ^ 2 := by
+    have hprod := mul_nonneg (sub_nonneg.mpr hd) (add_nonneg hd1 hd0)
+    nlinarith
+  have hden0 : 0 < 1 + (2 / N) ^ 2 / 3 := by positivity
+  have hden1 : 0 < 1 + d ^ 2 / 3 := by positivity
+  have hrecip : 1 / (1 + d ^ 2 / 3) ≤ 1 / (1 + (2 / N) ^ 2 / 3) := by
+    apply (div_le_div_iff₀ hden1 hden0).2
+    nlinarith
+  have hscale : 0 ≤ M / 4 := by positivity
+  have hmul := mul_le_mul_of_nonneg_left hrecip hscale
+  have htarget : M / 4 * (1 - 1 / (1 + (2 / N) ^ 2 / 3)) =
+      M / (3 * N ^ 2 + 4) := by
+    field_simp [ne_of_gt hN]
+    ring
+  calc
+    M / 4 - M / (4 * (1 + d ^ 2 / 3)) =
+        M / 4 * (1 - 1 / (1 + d ^ 2 / 3)) := by
+        field_simp [ne_of_gt (show 0 < 4 * (1 + d ^ 2 / 3) by positivity)]
+        <;> ring
+    _ ≥ M / 4 * (1 - 1 / (1 + (2 / N) ^ 2 / 3)) := by linarith
+    _ = M / (3 * N ^ 2 + 4) := htarget
+
+private theorem individualGap_odd_first_algebra (N M d : ℝ)
+    (hN : 0 < N) (hM : 0 ≤ M) (hd : 3 / N ≤ d) :
+    M * (N ^ 2 - 1) / (4 * N ^ 2) - M / (4 * (1 + d ^ 2 / 3)) ≥
+      M * (2 * N ^ 2 - 3) / (4 * N ^ 2 * (N ^ 2 + 3)) := by
+  have hd0 : 0 ≤ 3 / N := by positivity
+  have hd1 : 0 ≤ d := hd0.trans hd
+  have hsq : (3 / N) ^ 2 ≤ d ^ 2 := by
+    have hprod := mul_nonneg (sub_nonneg.mpr hd) (add_nonneg hd1 hd0)
+    nlinarith
+  have hden0 : 0 < 1 + (3 / N) ^ 2 / 3 := by positivity
+  have hden1 : 0 < 1 + d ^ 2 / 3 := by positivity
+  have hrecip : 1 / (1 + d ^ 2 / 3) ≤ 1 / (1 + (3 / N) ^ 2 / 3) := by
+    apply (div_le_div_iff₀ hden1 hden0).2
+    nlinarith
+  have hscale : 0 ≤ M / 4 := by positivity
+  have hmul := mul_le_mul_of_nonneg_left hrecip hscale
+  have htarget : M * (N ^ 2 - 1) / (4 * N ^ 2) -
+      M / 4 * (1 / (1 + (3 / N) ^ 2 / 3)) =
+      M * (2 * N ^ 2 - 3) / (4 * N ^ 2 * (N ^ 2 + 3)) := by
+    field_simp [ne_of_gt hN]
+    ring
+  calc
+    M * (N ^ 2 - 1) / (4 * N ^ 2) - M / (4 * (1 + d ^ 2 / 3)) =
+        M * (N ^ 2 - 1) / (4 * N ^ 2) - M / 4 *
+          (1 / (1 + d ^ 2 / 3)) := by
+            field_simp [ne_of_gt (show 0 < 4 * (1 + d ^ 2 / 3) by positivity)]
+            <;> ring
+    _ ≥ M * (N ^ 2 - 1) / (4 * N ^ 2) - M / 4 *
+          (1 / (1 + (3 / N) ^ 2 / 3)) := by linarith
+    _ = M * (2 * N ^ 2 - 3) / (4 * N ^ 2 * (N ^ 2 + 3)) := htarget
+
+private theorem individualGap_even_second_algebra
+    (N M Pm Pk : ℝ) (hN : 1 < N) (hM : 0 ≤ M)
+    (hMbound : M ≤ N ^ 2 / (4 * (N - 1)))
+    (hMrepr : M = Pm / (N - 1)) (hprod : 1 ≤ Pm - Pk) :
+    M / 4 - Pk / (4 * (N - 1)) ≥ M / (3 * N ^ 2 + 4) := by
+  have hNm1 : 0 < N - 1 := by linarith
+  have hden : 0 < 3 * N ^ 2 + 4 := by positivity
+  have hN2 : 0 < N ^ 2 := by positivity
+  have hsimple : 1 / (4 * (N - 1)) ≥ M / (3 * N ^ 2 + 4) := by
+    change M / (3 * N ^ 2 + 4) ≤ 1 / (4 * (N - 1))
+    have hMscaled : M * (4 * (N - 1)) ≤ N ^ 2 :=
+      (le_div_iff₀ (by positivity : 0 < 4 * (N - 1))).1 hMbound
+    apply (div_le_div_iff₀ (by positivity : 0 < 3 * N ^ 2 + 4)
+      (by positivity : 0 < 4 * (N - 1))).2
+    nlinarith [hMscaled, sq_nonneg N]
+  have hgap : M / 4 - Pk / (4 * (N - 1)) =
+      (Pm - Pk) / (4 * (N - 1)) := by
+    rw [hMrepr]
+    field_simp [ne_of_gt hNm1]
+  rw [hgap]
+  have hprod' : 1 / (4 * (N - 1)) ≤ (Pm - Pk) / (4 * (N - 1)) := by
+    exact div_le_div_of_nonneg_right hprod (by positivity)
+  exact hsimple.trans hprod'
+
+private theorem individualGap_odd_second_algebra
+    (N M Pm Pk : ℝ) (hN : 2 ≤ N) (hM : 0 ≤ M)
+    (hMbound : M ≤ N ^ 2 / (4 * (N - 1)))
+    (hMrepr : M = Pm / (N - 1)) (hprod : 2 ≤ Pm - Pk) :
+    M * (N ^ 2 - 1) / (4 * N ^ 2) - Pk / (4 * (N - 1)) ≥
+      M * (2 * N ^ 2 - 3) / (4 * N ^ 2 * (N ^ 2 + 3)) := by
+  have hNm1 : 0 < N - 1 := by linarith
+  have hN2 : 0 < N ^ 2 := by positivity
+  have hden : 0 < 4 * N ^ 2 * (N ^ 2 + 3) := by positivity
+  have hdelta : M * (2 * N ^ 2 - 3) / (4 * N ^ 2 * (N ^ 2 + 3)) ≤
+      1 / (8 * (N - 1)) := by
+    have hMscaled : M * (4 * (N - 1)) ≤ N ^ 2 :=
+      (le_div_iff₀ (by positivity : 0 < 4 * (N - 1))).1 hMbound
+    have hfac : 0 ≤ 2 * N ^ 2 - 3 := by nlinarith [sq_nonneg N]
+    have hMscaled' := mul_le_mul_of_nonneg_right hMscaled hfac
+    apply (div_le_div_iff₀ hden (by positivity : 0 < 8 * (N - 1))).2
+    nlinarith [hMscaled']
+  have hgap : M * (N ^ 2 - 1) / (4 * N ^ 2) - Pk / (4 * (N - 1)) =
+      (Pm - Pk - Pm / N ^ 2) / (4 * (N - 1)) := by
+    rw [hMrepr]
+    field_simp [ne_of_gt hNm1, ne_of_gt hN2]
+    ring
+  rw [hgap]
+  have hpm : Pm / N ^ 2 ≤ 1 / 4 := by
+    have hreprbound : Pm / (N - 1) ≤ (N ^ 2 / 4) / (N - 1) := by
+      rw [← hMrepr]
+      calc
+        M ≤ N ^ 2 / (4 * (N - 1)) := hMbound
+        _ = (N ^ 2 / 4) / (N - 1) := by
+          field_simp [ne_of_gt hNm1]
+    have hPm : Pm ≤ N ^ 2 / 4 := by
+      have hcross := (div_le_div_iff₀ hNm1 hNm1).1 hreprbound
+      exact (mul_le_mul_iff_of_pos_right hNm1).1 hcross
+    apply (div_le_iff₀ hN2).2
+    nlinarith [hPm]
+  have hgap' : 7 / (16 * (N - 1)) ≤
+      (Pm - Pk - Pm / N ^ 2) / (4 * (N - 1)) := by
+    apply (div_le_div_iff₀ (by positivity : 0 < 16 * (N - 1))
+      (by positivity : 0 < 4 * (N - 1))).2
+    nlinarith [hprod, hpm]
+  have hsmall : 1 / (8 * (N - 1)) ≤ 7 / (16 * (N - 1)) := by
+    apply (div_le_div_iff₀ (by positivity : 0 < 8 * (N - 1))
+      (by positivity : 0 < 16 * (N - 1))).2
+    nlinarith [hNm1]
+  exact hdelta.trans (hsmall.trans hgap')
+
+/-- The full noncentral individual-margin gap dominates the paper's
+parity-dependent uniform gap, in both branches and for every admissible sample
+and success count. -/
+theorem individualMarginGap_ge_parityDelta_all
+    (N k m : ℕ) (hN : 2 ≤ N) (hk : 0 < k) (hkN : k < N)
+    (hm : 0 < m) (hmN : m < N)
+    (hkc : k ≠ N / 2) (hkc' : k ≠ N - N / 2) :
+    individualMarginGap N k m ≥ individualMarginDelta N m := by
+  let kb := min k (N - k)
+  let mb := min m (N - m)
+  have hkbData := individualMargin_sample_reduced N k hk hkN
+  have hmbData := individualMargin_sample_reduced N m hm hmN
+  have hcenter := individualMargin_center_reduced N k hk hkN hkc hkc'
+  have hMnonneg : 0 ≤ individualMarginM N m := by
+    unfold individualMarginM
+    rw [Nat.cast_sub hmN.le]
+    have hden : 0 < (N : ℝ) - 1 := by
+      have : (1 : ℝ) < N := by exact_mod_cast (by omega : 1 < N)
+      linarith
+    have hmNreal : (m : ℝ) ≤ (N : ℝ) := by exact_mod_cast hmN.le
+    apply div_nonneg
+    · exact mul_nonneg (by positivity) (sub_nonneg.mpr hmNreal)
+    · exact le_of_lt hden
+  have hMreduce : individualMarginM N mb = individualMarginM N m :=
+    individualMarginM_reduce_sample N m hmN.le
+  have hMbound : individualMarginM N m ≤
+      (N : ℝ) ^ 2 / (4 * ((N : ℝ) - 1)) := by
+    have hden : 0 < (N : ℝ) - 1 := by
+      have : (1 : ℝ) < N := by exact_mod_cast (by omega : 1 < N)
+      linarith
+    have hprod : (m : ℝ) * ((N : ℝ) - m) ≤ (N : ℝ) ^ 2 / 4 := by
+      nlinarith [sq_nonneg ((m : ℝ) - (N : ℝ) / 2)]
+    unfold individualMarginM
+    rw [Nat.cast_sub hmN.le]
+    field_simp [ne_of_gt hden]
+    nlinarith
+  have hMrepr : individualMarginM N m =
+      (mb : ℝ) * ((N - mb : ℕ) : ℝ) / ((N : ℝ) - 1) := by
+    rw [← hMreduce]
+    unfold individualMarginM
+    rw [Nat.cast_sub (by omega : mb ≤ N)]
+  let Pm : ℝ := (mb : ℝ) * ((N - mb : ℕ) : ℝ)
+  let Pk : ℝ := (kb : ℝ) * ((N - kb : ℕ) : ℝ)
+  have hMrepr' : individualMarginM N m = Pm / ((N : ℝ) - 1) := by
+    simpa [Pm] using hMrepr
+  obtain ⟨q, hq | hq⟩ := Nat.even_or_odd' N
+  · subst N
+    have hqpos : 0 < q := by omega
+    have hNreal : (0 : ℝ) < (2 * q : ℕ) := by exact_mod_cast (by omega : 0 < 2 * q)
+    have hmod : (2 * q) % 2 = 0 := by omega
+    have hkb_lt : kb < q := by omega
+    have hmb_le : mb ≤ q := by omega
+    have hMscale : 0 ≤ individualMarginM (2 * q) m := hMnonneg
+    have hW : individualMarginW (2 * q) m =
+        individualMarginM (2 * q) m / 4 := by
+      unfold individualMarginW
+      have hhalf : (2 * q) / 2 = q := by omega
+      have hcompl : 2 * q - q = q := by omega
+      rw [hhalf, hcompl]
+      push_cast
+      field_simp [ne_of_gt hNreal]
+      ring
+    have hNbound : (1 : ℝ) ≤ ((2 * q : ℕ) : ℝ) - (mb : ℝ) - (kb : ℝ) := by
+      have hNat : 1 ≤ 2 * q - mb - kb := by omega
+      have hcast : ((2 * q - mb - kb : ℕ) : ℝ) =
+          ((2 * q : ℕ) : ℝ) - (mb : ℝ) - (kb : ℝ) := by
+        rw [Nat.cast_sub (by omega : kb ≤ 2 * q - mb),
+          Nat.cast_sub (by omega : mb ≤ 2 * q)]
+      rw [← hcast]
+      exact_mod_cast hNat
+    by_cases hbranch : mb ≤ kb
+    · have hdelta : individualMarginDelta (2 * q) m =
+          individualMarginM (2 * q) m /
+            (3 * ((2 * q : ℕ) : ℝ) ^ 2 + 4) := by
+        simp [individualMarginDelta, hmod]
+      have hd : 2 / ((2 * q : ℕ) : ℝ) ≤
+          1 - 2 * (kb : ℝ) / ((2 * q : ℕ) : ℝ) := by
+        apply (div_le_iff₀ hNreal).2
+        have hNat : 2 * kb + 2 ≤ 2 * q := by omega
+        have hNatR : (2 : ℝ) * (kb : ℝ) + 2 ≤ ((2 * q : ℕ) : ℝ) := by
+          exact_mod_cast hNat
+        field_simp [ne_of_gt hNreal]
+        nlinarith
+      have hfirst := individualGap_even_first_algebra
+        ((2 * q : ℕ) : ℝ) (individualMarginM (2 * q) m)
+        (1 - 2 * (kb : ℝ) / ((2 * q : ℕ) : ℝ)) hNreal hMscale hd
+      have hgoal : individualMarginW (2 * q) m -
+          individualMarginM (2 * q) m /
+            (4 * (1 + (1 - 2 * (kb : ℝ) / ((2 * q : ℕ) : ℝ)) ^ 2 / 3)) ≥
+          individualMarginDelta (2 * q) m := by
+        rw [hW, hdelta]
+        exact hfirst
+      simpa [individualMarginGap, kb, mb, hbranch] using hgoal
+    · have hdiff : 1 ≤ (mb : ℝ) - (kb : ℝ) := by
+        have hNat : kb + 1 ≤ mb := by omega
+        have hcast : ((mb - kb : ℕ) : ℝ) = (mb : ℝ) - (kb : ℝ) := by
+          rw [Nat.cast_sub (by omega : kb ≤ mb)]
+        rw [← hcast]
+        exact_mod_cast (show 1 ≤ mb - kb by omega)
+      have hid : Pm - Pk = ((mb : ℝ) - (kb : ℝ)) *
+          (((2 * q : ℕ) : ℝ) - (mb : ℝ) - (kb : ℝ)) := by
+        dsimp [Pm, Pk]
+        rw [Nat.cast_sub (by omega : mb ≤ 2 * q),
+          Nat.cast_sub (by omega : kb ≤ 2 * q)]
+        push_cast
+        ring
+      have hprod : 1 ≤ Pm - Pk := by
+        rw [hid]
+        have hmul := mul_le_mul hdiff hNbound (by norm_num)
+          (by linarith : 0 ≤ (mb : ℝ) - (kb : ℝ))
+        nlinarith [hmul]
+      have hsecond := individualGap_even_second_algebra
+        ((2 * q : ℕ) : ℝ) (individualMarginM (2 * q) m) Pm Pk
+        (by exact_mod_cast (show 1 < 2 * q by omega)) hMscale
+        (by simpa using hMbound) hMrepr' hprod
+      have hdelta : individualMarginDelta (2 * q) m =
+          individualMarginM (2 * q) m /
+            (3 * ((2 * q : ℕ) : ℝ) ^ 2 + 4) := by
+        simp [individualMarginDelta, hmod]
+      have hgoal : individualMarginW (2 * q) m -
+          (kb : ℝ) * ((2 * q - kb : ℕ) : ℝ) /
+            (4 * (((2 * q : ℕ) : ℝ) - 1)) ≥
+          individualMarginDelta (2 * q) m := by
+        rw [hW, hdelta]
+        have hPkcast : Pk = (kb : ℝ) * ((2 * q - kb : ℕ) : ℝ) := by rfl
+        rw [← hPkcast]
+        exact hsecond
+      simpa [individualMarginGap, kb, mb, hbranch] using hgoal
+  · subst N
+    have hqpos : 0 < q := by omega
+    have hNreal : (0 : ℝ) < (2 * q + 1 : ℕ) := by exact_mod_cast (by omega : 0 < 2 * q + 1)
+    have hmod : (2 * q + 1) % 2 = 1 := by omega
+    have hkb_le : kb ≤ q := by omega
+    have hkb_lt : kb < q := by
+      by_contra hnot
+      have hEq : kb = q := by omega
+      dsimp [kb] at hEq
+      by_cases hkle : k ≤ 2 * q + 1 - k
+      · rw [Nat.min_eq_left hkle] at hEq
+        have hcenter : k = (2 * q + 1) / 2 := by omega
+        exact hkc hcenter
+      · have hkle' : 2 * q + 1 - k ≤ k := by omega
+        rw [Nat.min_eq_right hkle'] at hEq
+        have hcenter : k = (2 * q + 1) - (2 * q + 1) / 2 := by omega
+        exact hkc' hcenter
+    have hmb_le : mb ≤ q := by omega
+    have hMscale : 0 ≤ individualMarginM (2 * q + 1) m := hMnonneg
+    have hW : individualMarginW (2 * q + 1) m =
+        individualMarginM (2 * q + 1) m *
+          (((2 * q + 1 : ℕ) : ℝ) ^ 2 - 1) /
+            (4 * ((2 * q + 1 : ℕ) : ℝ) ^ 2) := by
+      unfold individualMarginW
+      have hhalf : (2 * q + 1) / 2 = q := by omega
+      have hcompl : 2 * q + 1 - q = q + 1 := by omega
+      rw [hhalf, hcompl]
+      push_cast
+      field_simp [ne_of_gt hNreal]
+      <;> ring
+    have hNbound : (2 : ℝ) ≤ ((2 * q + 1 : ℕ) : ℝ) - (mb : ℝ) - (kb : ℝ) := by
+      have hNat : 2 ≤ 2 * q + 1 - mb - kb := by omega
+      have hcast : ((2 * q + 1 - mb - kb : ℕ) : ℝ) =
+          ((2 * q + 1 : ℕ) : ℝ) - (mb : ℝ) - (kb : ℝ) := by
+        rw [Nat.cast_sub (by omega : kb ≤ 2 * q + 1 - mb),
+          Nat.cast_sub (by omega : mb ≤ 2 * q + 1)]
+      rw [← hcast]
+      exact_mod_cast hNat
+    by_cases hbranch : mb ≤ kb
+    · have hdelta : individualMarginDelta (2 * q + 1) m =
+          individualMarginM (2 * q + 1) m *
+            (2 * ((2 * q + 1 : ℕ) : ℝ) ^ 2 - 3) /
+              (4 * ((2 * q + 1 : ℕ) : ℝ) ^ 2 *
+                (((2 * q + 1 : ℕ) : ℝ) ^ 2 + 3)) := by
+        simp [individualMarginDelta, hmod]
+      have hd : 3 / ((2 * q + 1 : ℕ) : ℝ) ≤
+          1 - 2 * (kb : ℝ) / ((2 * q + 1 : ℕ) : ℝ) := by
+        apply (div_le_iff₀ hNreal).2
+        have hNat : 2 * kb + 3 ≤ 2 * q + 1 := by omega
+        have hNatR : (2 : ℝ) * (kb : ℝ) + 3 ≤ ((2 * q + 1 : ℕ) : ℝ) := by
+          exact_mod_cast hNat
+        field_simp [ne_of_gt hNreal]
+        nlinarith
+      have hfirst := individualGap_odd_first_algebra
+        ((2 * q + 1 : ℕ) : ℝ) (individualMarginM (2 * q + 1) m)
+        (1 - 2 * (kb : ℝ) / ((2 * q + 1 : ℕ) : ℝ)) hNreal hMscale hd
+      have hgoal : individualMarginW (2 * q + 1) m -
+          individualMarginM (2 * q + 1) m /
+            (4 * (1 + (1 - 2 * (kb : ℝ) / ((2 * q + 1 : ℕ) : ℝ)) ^ 2 / 3)) ≥
+          individualMarginDelta (2 * q + 1) m := by
+        rw [hW, hdelta]
+        exact hfirst
+      simpa [individualMarginGap, kb, mb, hbranch] using hgoal
+    · have hdiff : 1 ≤ (mb : ℝ) - (kb : ℝ) := by
+        have hNat : kb + 1 ≤ mb := by omega
+        have hcast : ((mb - kb : ℕ) : ℝ) = (mb : ℝ) - (kb : ℝ) := by
+          rw [Nat.cast_sub (by omega : kb ≤ mb)]
+        rw [← hcast]
+        exact_mod_cast (show 1 ≤ mb - kb by omega)
+      have hid : Pm - Pk = ((mb : ℝ) - (kb : ℝ)) *
+          (((2 * q + 1 : ℕ) : ℝ) - (mb : ℝ) - (kb : ℝ)) := by
+        dsimp [Pm, Pk]
+        rw [Nat.cast_sub (by omega : mb ≤ 2 * q + 1),
+          Nat.cast_sub (by omega : kb ≤ 2 * q + 1)]
+        push_cast
+        ring
+      have hprod : 2 ≤ Pm - Pk := by
+        rw [hid]
+        have hdiff2 : 1 ≤ (mb : ℝ) - (kb : ℝ) := hdiff
+        have hmul := mul_le_mul hdiff2 hNbound (by norm_num)
+          (by linarith : 0 ≤ (mb : ℝ) - (kb : ℝ))
+        nlinarith [hmul]
+      have hsecond := individualGap_odd_second_algebra
+        ((2 * q + 1 : ℕ) : ℝ) (individualMarginM (2 * q + 1) m) Pm Pk
+        (by exact_mod_cast (show 2 ≤ 2 * q + 1 by omega)) hMscale
+        (by simpa using hMbound) hMrepr' hprod
+      have hdelta : individualMarginDelta (2 * q + 1) m =
+          individualMarginM (2 * q + 1) m *
+            (2 * ((2 * q + 1 : ℕ) : ℝ) ^ 2 - 3) /
+              (4 * ((2 * q + 1 : ℕ) : ℝ) ^ 2 *
+                (((2 * q + 1 : ℕ) : ℝ) ^ 2 + 3)) := by
+        simp [individualMarginDelta, hmod]
+      have hgoal : individualMarginW (2 * q + 1) m -
+          (kb : ℝ) * ((2 * q + 1 - kb : ℕ) : ℝ) /
+            (4 * (((2 * q + 1 : ℕ) : ℝ) - 1)) ≥
+          individualMarginDelta (2 * q + 1) m := by
+        rw [hW, hdelta]
+        have hPkcast : Pk = (kb : ℝ) * ((2 * q + 1 - kb : ℕ) : ℝ) := by rfl
+        rw [← hPkcast]
+        exact hsecond
+      simpa [individualMarginGap, kb, mb, hbranch] using hgoal
+
+end
+end ExactHoeffding

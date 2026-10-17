@@ -262,3 +262,7 @@ import ExactHoeffding.FiniteSupportEndpointEnvelope
 import ExactHoeffding.FiniteSupportChernoffEnvelope
 import ExactHoeffding.FiniteSupportRecurrenceBridge
 import ExactHoeffding.FiniteSupportTiltCurveOfLaw
+
+import ExactHoeffding.FactorialMinimizer
+import ExactHoeffding.FiniteSupportLawEnvelope
+import ExactHoeffding.OddCentralOptimalTilt

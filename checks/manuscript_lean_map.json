@@ -925,6 +925,154 @@
           "name": "hypergeomBernsteinRate_at_mean"
         }
       ]
+    },
+    {
+      "index": 38,
+      "key": "extra:A1-finite-law-interface",
+      "kind": "supplementary interface",
+      "title": "Direct finite-law variance-envelope interfaces",
+      "line": 1349,
+      "paper_environment": false,
+      "status": "Complete",
+      "coverage": "The variance-envelope comparison is instantiated from an actual normalized finite weighted law. Positive mass at distinct endpoint atoms proves strict positivity of the tilted variance internally, so callers provide no variance-positivity axiom or hypothesis. Right/left interior comparisons include strict-gap versions; endpoint continuation is supplied with the one-sided rate and envelope limits made explicit.",
+      "gap": null,
+      "declarations": [
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateRight"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateLeft"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_gt_meanEnvelopeRateRight"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_gt_meanEnvelopeRateLeft"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportEndpointEnvelope.lean",
+          "name": "finiteSupportLegendreRate_ge_meanEnvelopeRateRight_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportEndpointEnvelope.lean",
+          "name": "finiteSupportLegendreRate_ge_meanEnvelopeRateLeft_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawVariance.lean",
+          "name": "FiniteSupportLawData.variance_pos"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateRight_endpoint"
+        },
+        {
+          "file": "ExactHoeffding/FiniteSupportLawEnvelope.lean",
+          "name": "finiteSupportLawData_rate_ge_meanEnvelopeRateLeft_endpoint"
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "key": "extra:A2-factorial-index",
+      "kind": "supplementary interface",
+      "title": "Exact factorial candidate cutoff and optimized integer bound",
+      "line": 1597,
+      "paper_environment": false,
+      "status": "Complete",
+      "coverage": "The exact falling-factorial candidate has a proved adjacent ratio and ceiling cutoff; the ceiling index is the global minimizer over every admissible index (allowing the neighboring tie), and the optimized finite factorial bound equals that candidate. The existing theorem also compares this factorial bound in the correct direction, below the exact binomial-KL Chernoff exponential.",
+      "gap": null,
+      "declarations": [
+        {
+          "file": "ExactHoeffding/FactorialMinimizer.lean",
+          "name": "hypergeomFactorialIndex_mem"
+        },
+        {
+          "file": "ExactHoeffding/FactorialMinimizer.lean",
+          "name": "hypergeomFactorialValue_succ_le_iff"
+        },
+        {
+          "file": "ExactHoeffding/FactorialMinimizer.lean",
+          "name": "hypergeomFactorialValue_index_min"
+        },
+        {
+          "file": "ExactHoeffding/FactorialMinimizer.lean",
+          "name": "hypergeomFactorialCandidate_eq_value"
+        },
+        {
+          "file": "ExactHoeffding/FactorialMinimizer.lean",
+          "name": "hypergeomFactorialBound_eq_ceiling_candidate"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoffExact.lean",
+          "name": "hypergeomFactorialBound_le_exp_neg_KLRate"
+        },
+        {
+          "file": "ExactHoeffding/FactorialChernoffExact.lean",
+          "name": "hypergeomFactorialBound_lt_exp_neg_piecewiseRate"
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "key": "extra:B1-individual-margin-quantified",
+      "kind": "supplementary interface",
+      "title": "Top-level individual-gap certificate and quantified margin deficit",
+      "line": 1230,
+      "paper_environment": false,
+      "status": "Complete",
+      "coverage": "The actual optimal hypergeometric proxy is bounded by the paper’s two-branch individual-margin certificate, and the certificate gap G_{N,m}(k) is proved to dominate the exact parity-dependent Δ_{N,m} for every interior population margin and every noncentral sample margin, in both even and odd parity branches.",
+      "gap": null,
+      "declarations": [
+        {
+          "file": "ExactHoeffding/GoalBIndividualMargin.lean",
+          "name": "hypergeomOptimalProxy_le_individualMarginGap"
+        },
+        {
+          "file": "ExactHoeffding/GoalBIndividualMargin.lean",
+          "name": "individualMarginGap_ge_parityDelta_all"
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "key": "extra:B2-odd-central-variational-stationarity",
+      "kind": "supplementary interface",
+      "title": "Odd central finite-sum variational formula and optimal-tilt contact",
+      "line": 1230,
+      "paper_environment": false,
+      "status": "Complete",
+      "coverage": "The central log-MGF is identified with its finite hypergeometric sum. Every nonzero global maximizing tilt satisfies t ψ′(t)=2ψ(t); for every nondegenerate odd central law, a nonzero global maximizer exists, realizes the actual least proxy, and obeys the contact equation. Zero tilt is excluded using the strict proxy-over-variance result, while no uniqueness of the maximizing tilt is assumed.",
+      "gap": null,
+      "declarations": [
+        {
+          "file": "ExactHoeffding/GoalBOddVariation.lean",
+          "name": "oddCentral_logMGF_eq_finite_sum"
+        },
+        {
+          "file": "ExactHoeffding/GoalBOddVariation.lean",
+          "name": "oddCentral_actualProxy_zero_is_variance"
+        },
+        {
+          "file": "ExactHoeffding/GoalBOddVariation.lean",
+          "name": "oddCentral_nonzero_maximizer_stationary"
+        },
+        {
+          "file": "ExactHoeffding/GoalBOddVariation.lean",
+          "name": "oddCentral_nonzero_maximizer_realizes_optimalProxy"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralOptimalTilt.lean",
+          "name": "oddCentral_exists_nonzero_optimal_tilt_stationary"
+        },
+        {
+          "file": "ExactHoeffding/OddCentralOptimalTilt.lean",
+          "name": "oddCentral_every_nonzero_maximizer_stationary"
+        }
+      ]
     }
   ]
 }
