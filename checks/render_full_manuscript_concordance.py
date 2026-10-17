@@ -11,10 +11,10 @@ if not MANUSCRIPT.exists():
 source = MANUSCRIPT.read_text(encoding='utf-8')
 import re
 locations = {}
-pattern = re.compile(r"\\\\begin\\{(theorem|lemma|proposition|corollary)\\}(?:\\[(.*?)\\])?(.*?)\\\\end\\{\\1\\}", re.S)
+pattern = re.compile(r"\\begin\{(theorem|lemma|proposition|corollary)\}(?:\[(.*?)\])?(.*?)\\end\{\1\}", re.S)
 for match in pattern.finditer(source):
     kind, title, body = match.groups()
-    label = re.search(r"\\\\label\\{([^}]+)\\}", body)
+    label = re.search(r"\\label\{([^}]+)\}", body)
     name = label.group(1) if label else 'unlabeled:' + re.sub(r'\s+', ' ', title or '').strip()
     locations[name] = source.count('\n', 0, match.start()) + 1
 for name, marker in {
