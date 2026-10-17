@@ -39,6 +39,8 @@ jobs:
         run: python3 checks/render_full_manuscript_concordance.py
       - name: Assemble official submission and full reproducibility
         run: python3 checks/build_current_release.py
+      - name: Audit manuscript theorem-to-Lean correspondence
+        run: python3 checks/check_full_manuscript_concordance.py
       - name: Verify three source and archive formats
         run: |
           python3 - <<'PY'
