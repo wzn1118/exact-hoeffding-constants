@@ -6,6 +6,7 @@ import hashlib
 import json
 import re
 import subprocess
+from current_publication_fingerprints import sync_pdf_fingerprints
 
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT = ROOT / "submission/current"
@@ -22,6 +23,8 @@ BLOCKED_FILES = {
     "checks/package_research.py", "checks/sync_submission.py",
     "checks/refresh_checksums.py", "checks/check_baseline_protection.py",
     "checks/build_current_release.py",
+    "goal_b/build.sh", "checks/write_test_report.py",
+    "checks/plot_piecewise_kl.py",
 }
 
 def sha(data):
@@ -91,6 +94,7 @@ def main():
     CURRENT.mkdir(parents=True,exist_ok=True)
     (CURRENT/"manuscript.tex").write_bytes(tex)
     (CURRENT/"manuscript.pdf").write_bytes(pdf)
+    sync_pdf_fingerprints(ROOT, sha(pdf))
     meta={"title":TITLE,"authors":[{"name":"Zinan Wang","affiliation":"The University of Manchester"},
            {"name":"Xinhao Yang","affiliation":"University of Southern California"}],
           "date":"2026-10-18","primary_category":"math.PR","optional_cross_list":"math.ST",

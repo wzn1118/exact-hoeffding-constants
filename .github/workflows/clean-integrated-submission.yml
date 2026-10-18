@@ -12,6 +12,7 @@ on:
       - 'research/tail_bounds/minimum_variance_tail.tex'
       - 'goal_b/paper/main.tex'
       - 'checks/**'
+      - 'formal_status/**'
       - 'requirements.txt'
       - 'goal_b/requirements.txt'
       - '.github/workflows/clean-integrated-submission.yml'
@@ -48,8 +49,6 @@ jobs:
         run: python3 checks/verify_factorial_minimizer.py
       - name: Refresh theorem–Lean concordance for integrated source
         run: python3 checks/render_full_manuscript_concordance.py
-      - name: Assemble official submission and full reproducibility
-        run: python3 checks/build_current_release.py
       - name: Install pinned Lean toolchain for the kernel audit
         run: |
           curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
@@ -63,6 +62,32 @@ jobs:
         run: |
           python3 checks/check_full_manuscript_concordance.py
           python3 checks/check_semantic_contract_integrity.py --require-contracts
+      - name: Assemble synchronized official submission and full reproducibility
+        run: |
+          python3 checks/build_current_release.py
+          python3 checks/refresh_checksums.py
+          sha256sum -c SHA256SUMS.txt
+      - name: Verify independent extraction and repeat-run regression cases
+        run: |
+          python3 checks/test_reproducibility_bundle.py
+          python3 - <<'PY'
+          from pathlib import Path
+          from tempfile import TemporaryDirectory
+          from zipfile import ZipFile
+          import subprocess
+          import sys
+          with TemporaryDirectory() as directory:
+              with ZipFile("submission/current/complete-reproducibility.zip") as archive:
+                  archive.extractall(directory)
+              for script, args in (
+                  ("manuscript_display_inventory.py", ["--check"]),
+                  ("check_display_formula_review_binding.py", []),
+                  ("check_semantic_contract_integrity.py", ["--require-contracts"]),
+                  ("check_theorem_manifest.py", ["--check"]),
+                  ("generate_axiom_audit.py", ["--check"]),
+              ):
+                  subprocess.run([sys.executable, "checks/" + script, *args], cwd=directory, check=True)
+          PY
       - name: Verify three source and archive formats
         run: |
           python3 - <<'PY'
@@ -89,13 +114,15 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add submission/current/
+          git add submission/current/ SHA256SUMS.txt \
+            formal_status/current_pdf_lean_reconciliation_20261018.md \
+            formal_status/manuscript_concordance.md \
+            formal_status/semantic_contract_audit_20261017.md \
+            formal_status/baseline_protection_20261017.json
           if ! git diff --cached --quiet; then
             git commit -m 'Publish current unified manuscript and complete clean reproducibility [skip ci]'
-            # The concordance and Lean audit may regenerate tracked evidence outside
-            # submission/current. Preserve those working-tree changes while
-            # rebasing the generated publication commit onto the latest main.
-            git pull --rebase --autostash origin main
+            # Never rebase a generated publication onto unverified new inputs.
+            # A newer main run will rebuild and publish from its own checkout.
             git push origin HEAD:main
           fi
       - name: Upload release archives

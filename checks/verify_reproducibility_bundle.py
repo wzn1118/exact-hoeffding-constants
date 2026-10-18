@@ -3,9 +3,10 @@
 from __future__ import annotations
 
 import hashlib
+import os
 from pathlib import Path, PurePosixPath
 import re
-import sys
+from current_publication_fingerprints import validate_pdf_fingerprints
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "SHA256SUMS.txt"
@@ -21,7 +22,7 @@ def sha(path: Path) -> str:
 
 
 def main() -> None:
-    if not CURRENT_SOURCE.is_file():
+    if not CURRENT_SOURCE.is_file() or not (ROOT / "README.txt").is_file():
         fail("run this checker from the extracted bundle root")
     if not MANIFEST.is_file():
         fail("SHA256SUMS.txt is missing")
@@ -39,14 +40,21 @@ def main() -> None:
     generated_roots = {"submission/integrated/combined_manuscript.tex",
                        "submission/integrated/combined_manuscript.pdf"}
     actual_files = set()
-    for path in ROOT.rglob("*"):
-        if not path.is_file() or path == MANIFEST or "__pycache__" in path.parts or path.suffix == ".pyc":
-            continue
-        relative = path.relative_to(ROOT).as_posix()
-        in_build_dir = relative.startswith("submission/integrated/")
-        if relative in generated_roots or (in_build_dir and any(path.name.endswith(ext) for ext in generated_suffixes)):
-            continue
-        actual_files.add(relative)
+    # Prune only the archive-root Lake cache; do not traverse Mathlib's many
+    # generated files on subsequent runs. All distributed files remain hashed.
+    for directory, subdirs, filenames in os.walk(ROOT):
+        parent = Path(directory)
+        subdirs[:] = [name for name in subdirs
+                      if name != "__pycache__" and not (parent == ROOT and name == ".lake")]
+        for name in filenames:
+            path = parent / name
+            if path == MANIFEST or path.suffix == ".pyc":
+                continue
+            relative = path.relative_to(ROOT).as_posix()
+            in_build_dir = relative.startswith("submission/integrated/")
+            if relative in generated_roots or (in_build_dir and any(path.name.endswith(ext) for ext in generated_suffixes)):
+                continue
+            actual_files.add(relative)
     if actual_files != set(expected):
         fail("checksum manifest does not enumerate exactly the extracted file set; "
              f"missing={sorted(set(expected) - actual_files)}, "
@@ -67,7 +75,8 @@ def main() -> None:
     for obsolete in ("run_all.sh", "build_manuscript.sh", "checks/validate_package.py",
                      "checks/package_submission.py", "checks/package_research.py",
                      "checks/sync_submission.py", "checks/refresh_checksums.py",
-                     "checks/check_baseline_protection.py", "checks/build_current_release.py"):
+                     "checks/check_baseline_protection.py", "checks/build_current_release.py",
+                     "goal_b/build.sh", "checks/write_test_report.py", "checks/plot_piecewise_kl.py"):
         if (ROOT / obsolete).exists():
             fail(f"legacy release entrypoint was included in the current bundle: {obsolete}")
     for readme in (ROOT / "README.txt", ROOT / "submission/current/README.md"):
@@ -76,6 +85,11 @@ def main() -> None:
     pdf_path = ROOT / "submission/current/manuscript.pdf"
     if not pdf_path.read_bytes().startswith(b"%PDF-"):
         fail("current manuscript PDF is missing or invalid")
+    try:
+        validate_pdf_fingerprints(ROOT, sha(pdf_path))
+    except ValueError as error:
+        fail(str(error))
+    print("PASS: current PDF fingerprints agree in all four audit records")
     print(f"PASS: {len(expected)} extracted files match SHA256SUMS.txt (no Git metadata required)")
     print(f"PASS: current paper source SHA-256 {source_hash}")
 
