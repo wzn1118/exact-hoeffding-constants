@@ -87,6 +87,138 @@ REQUIRED_TYPE_MARKERS: dict[str, tuple[str, ...]] = {
         "canonicalPiecewiseRate", "hypergeomUpperDeviationMass",
         "hypergeomLowerDeviationMass", "hypergeomTwoSidedDeviationMass",
     ),
+
+    # The following profiles were individually checked against the frozen
+    # manuscript environments and the corresponding aggregate contract types.
+    # They deliberately use symbols present in the proposition type; proof
+    # helper names remain in REQUIRED_PROOF_DEPENDENCIES below.
+    "manuscript_main_laplace_full_contract": (
+        "hypergeomCenteredLogMGF", "scaledBernoulliLogLaplace", "envelopeM",
+        "envelopeScale", "hypergeomOptimalProxy", "bernoulliSharpBeta",
+        "normalizedHypergeomProxy",
+    ),
+    "manuscript_prop_two_level_contract": (
+        "sliceExponential", "Finset.image", "Finset.card",
+    ),
+    "manuscript_lem_PB_contract": (
+        "hypergeomMGF", "hypergeomTiltMean", "hypergeomTiltVariance",
+        "independentBernoulliMeasure",
+    ),
+    "manuscript_lem_branch_contract": (
+        "stationaryPolynomial", "stationaryDen",
+    ),
+    "manuscript_extra_stationary_q0_radicals_contract": (
+        "stationaryQZero",
+    ),
+    "manuscript_lem_universal_contract": ("sqrt", "abs"),
+    "manuscript_lem_identity_contract": ("stationaryPolynomial",),
+    "manuscript_prop_allinner_contract": (
+        "hypergeomTiltVariance", "SupSet.sSup",
+    ),
+    "manuscript_prop_variance_parity_full_contract": (
+        "exactExchangeableVarianceConstant", "parityVarianceConstant",
+        "exactExchangeableConstant", "Even", "intervalIntegral",
+    ),
+    "manuscript_prop_explicit_extremizer_contract": (
+        "uniformHammingMeasure", "FiniteExchangeableMeasure",
+        "singleCoordinateContrast", "singleCoordinateBernoulli",
+        "paritySharpConstant", "Tendsto",
+    ),
+    "manuscript_lem_threemass_contract": (
+        "IsOptimalQuadraticProxy", "threeMassCenteredLog",
+    ),
+    "manuscript_prop_odd2_semantic_contract": (
+        "manuscriptPropOdd2FiniteStatement", "manuscriptPropOdd2GapStatement",
+    ),
+    "manuscript_cor_two_bern_envelope_contract": (
+        "hypergeomOptimalProxy", "bernoulliSharpBeta", "Real.instLT",
+    ),
+    "manuscript_odd_envelope_full_contract": (
+        "hypergeomCenteredLogMGF", "scaledBernoulliLogLaplace", "envelopeM",
+        "envelopeScale", "hypergeomOptimalProxy", "bernoulliSharpBeta",
+        "imbalanceFactor", "oddHypergeomConstant",
+    ),
+    "manuscript_extra_Bernoulli_gap_display_identities_contract": (
+        "bernoulliProxyGap", "bernoulliSharpBeta", "deriv", "Real.log",
+    ),
+    "manuscript_odd_lem_PB_full_contract": (
+        "hypergeomTiltMeasure", "independentBernoulliMeasure",
+        "hypergeomTiltMean", "hypergeomTiltVariance",
+        "manuscriptHypergeomVarianceAtMean",
+    ),
+    "manuscript_odd_lem_ode_mean_contract": (
+        "meanCurveHypergeomVarianceAtMean", "riccatiF", "deriv",
+    ),
+    "manuscript_odd_lem_barrier_mean_contract": (
+        "meanCurveHypergeomVarianceAtMean", "varianceBarrier",
+    ),
+    "manuscript_odd_global_extremizer_contract": (
+        "normalizedHypergeomProxy", "hypergeomVariationalConstant",
+        "exactExchangeableConstant", "IsLeast", "Real.artanh",
+    ),
+    "manuscript_extra_B2_odd_central_full_contract": (
+        "hypergeomCenteredLogMGF", "oddCentralSupportedTiltSum",
+        "oddCentralSupportedProxy", "hypergeomOptimalProxy", "deriv",
+    ),
+    "manuscript_B_inputs_contract": (
+        "hypergeomTiltVariance", "sharpCurvatureConstant",
+        "hypergeomOptimalProxy", "envelopeM", "bernoulliSharpBeta",
+    ),
+    "manuscript_B_main_contract": (
+        "hypergeomOptimalProxy", "individualMarginDelta",
+        "individualMarginGap", "individualMarginW", "Iff",
+    ),
+    "manuscript_B_atanh_contract": ("Real.artanh", "Real.instLT"),
+    "manuscript_B_individual_contract": (
+        "hypergeomOptimalProxy", "individualMarginDelta",
+        "individualMarginGap", "individualMarginW",
+    ),
+    "manuscript_extra_B1_individual_margin_contract": (
+        "hypergeomOptimalProxy", "individualMarginDelta",
+        "individualMarginGap", "individualMarginW",
+    ),
+    "manuscript_B_even_contract": (
+        "hypergeomOptimalProxy", "hypergeomTiltVariance", "Iff",
+    ),
+    "manuscript_B_odd_contract": (
+        "actualHypergeomProxy", "hypergeomCenteredLogMGF",
+        "hypergeomCumulant2", "oddCentralSupportedProxy",
+    ),
+    "manuscript_B_small_contract": (
+        "hypergeomOptimalProxy", "Real.log", "Iff",
+    ),
+    "manuscript_extra_A_Legendre_derivatives_full_contract": (
+        "FiniteSupportLawData", "rawMeanInverse", "rawLegendreRate",
+        "HasDerivAt", "deriv",
+    ),
+    "manuscript_extra_A_quadratic_chain_contract": (
+        "canonicalPiecewiseRate", "scaledKLRate",
+        "hypergeomUniformQuadraticVariance", "envelopeM", "envelopeScale",
+    ),
+    "manuscript_extra_A_scaled_rate_Taylor_contract": (
+        "scaledKLRate", "AnalyticAt", "iteratedDeriv",
+        "Asymptotics.IsBigO",
+    ),
+    "manuscript_thm_odd_expansion_contract": (
+        "actualHypergeomProxy", "fixedImbalanceProxyTaylor4",
+        "fixedImbalanceTiltTaylor3", "rescaledProxyExtension",
+        "Asymptotics.IsBigO",
+    ),
+    "manuscript_cor_fixedm_gap_full_contract": (
+        "oddHypergeomConstant", "normalizedHypergeomProxy",
+        "Asymptotics.IsBigO", "Tendsto",
+    ),
+    "manuscript_extra_appendix_cumulant23_remainders_contract": (
+        "hypergeomCumulant2", "hypergeomCumulant3",
+        "hypergeomCumulant2Taylor", "hypergeomCumulant3Taylor",
+        "realMarginMass", "scaledFalling", "Asymptotics.IsBigO",
+    ),
+    "manuscript_extra_appendix_proxy_uniform_Taylor_contract": (
+        "rescaledProxyExtension", "hypergeomRescaledCumulant2",
+        "hypergeomRescaledCumulant3", "hypergeomRescaledCumulant4",
+        "hypergeomRescaledCumulant5", "hypergeomRescaledCumulant6",
+        "Continuous",
+    ),
 }
 
 

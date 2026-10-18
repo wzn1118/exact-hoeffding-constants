@@ -26,7 +26,7 @@ The theorem map and live manifest bind this source to 49 rows: 35 theorem-class 
 - The previous 46/49 status, the old 37-item register, the old 377-declaration count, the old 3,445-job audit, and the old manuscript SHA are historical records. They do not describe the current GitHub paper.
 - The old baseline check that compared the paper to commit `8b75977b138205c4ba402000b25d226d55994682` was invalid after the GitHub paper publication. The baseline now protects Lean sources and pinned dependencies against that core commit while separately pinning the canonical paper to `91719272750df6103358d8daccc4de8526a0d101`.
 - The seven earlier “direct dependency” failures were checker artifacts. A typed contract may prove its proposition through an inline proof or a shared helper; the revised checker audits the transitive kernel dependency closure and does not require an arbitrary same-row sibling edge.
-- A source hash, a declaration name, or a token marker cannot decide TeX-to-Lean semantic equivalence. The ordinary checker therefore reports the exact structural result and leaves 35 contracts without individually reviewed marker profiles as an explicit review queue. The strict `--require-contracts` mode is not a theorem-completion claim.
+- A source hash, a declaration name, or a token marker cannot decide TeX-to-Lean semantic equivalence. The 35 previously open marker profiles were individually reviewed against their frozen Lean contract types and are now registered in `checks/check_semantic_contract_integrity.py`; strict structural coverage is 49/49. The marker gate records reviewed type features and does not replace the mathematical statement review.
 
 ## Verification record
 
@@ -44,4 +44,4 @@ python3 checks/check_full_manuscript_concordance.py \
   --lean-command '/data/.toolchains/lean-4.33.0-linux/bin/lake env lean'
 ```
 
-It reports 35 theorem-class environments, 14 supplementary claims, 49 typed contracts, and 2,028 kernel-side `#print axioms` records. The result is a structural and kernel audit; mathematical statement-level equivalence remains the reviewed contract listed above. The stricter `check_semantic_contract_integrity.py --require-contracts` mode remains open for the 35 contracts without individually reviewed marker profiles.
+It reports 35 theorem-class environments, 14 supplementary claims, 49 typed contracts, and 2,028 kernel-side `#print axioms` records. The result is a structural and kernel audit; mathematical statement-level equivalence remains the reviewed contract listed above. The stricter `check_semantic_contract_integrity.py --require-contracts` mode now passes with 49/49 marker-checked contracts.
