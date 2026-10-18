@@ -9,8 +9,14 @@ on:
       - 'research/tail_bounds/minimum_variance_tail.tex'
       - 'goal_b/paper/main.tex'
       - 'checks/build_current_release.py'
+      - 'checks/render_full_manuscript_concordance.py'
+      - 'checks/manuscript_lean_map.json'
       - '.github/workflows/clean-integrated-submission.yml'
   workflow_dispatch:
+
+concurrency:
+  group: canonical-main-manuscript-release
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -18,7 +24,7 @@ permissions:
 jobs:
   clean-submission:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
         with:
@@ -35,8 +41,25 @@ jobs:
           cd submission/integrated
           latexmk -pdf -interaction=nonstopmode -halt-on-error combined_manuscript.tex
           test -s combined_manuscript.pdf
+      - name: Verify exact-rational factorial minimizer and endpoint ties
+        run: python3 checks/verify_factorial_minimizer.py
+      - name: Refresh theorem–Lean concordance for integrated source
+        run: python3 checks/render_full_manuscript_concordance.py
       - name: Assemble official submission and full reproducibility
         run: python3 checks/build_current_release.py
+      - name: Install pinned Lean toolchain for the kernel audit
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Fetch pinned Mathlib artifacts and build formal development
+        run: |
+          lake exe cache get
+          git diff --exit-code -- lean-toolchain lakefile.toml lake-manifest.json
+          lake build ExactHoeffding
+      - name: Audit manuscript theorem-to-Lean correspondence
+        run: |
+          python3 checks/check_full_manuscript_concordance.py
+          python3 checks/check_semantic_contract_integrity.py
       - name: Verify three source and archive formats
         run: |
           python3 - <<'PY'

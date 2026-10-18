@@ -34,7 +34,7 @@ python3 checks/generate_axiom_audit.py --check
 lake env lean checks/full_closure_axioms.lean
 ```
 
-The reproducibility archive contains all **307 tracked Lean files**: **285** core mathematical source files (including the umbrella) and **22** audit/history files. It also includes the manuscript–theorem concordance, numerical verification programs, frozen data and pinned dependencies.
+The reproducibility archive contains all **357 tracked Lean files**: **334** core mathematical source files (including the umbrella) and **23** audit/history files. It also includes the manuscript–theorem concordance, numerical verification programs, frozen data and pinned dependencies.
 
 ## Repository guide
 

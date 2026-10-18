@@ -5,7 +5,7 @@ Sharp Hypergeometric Concentration: Exact Exchangeability Constants, Fixed-Sampl
 Zinan Wang — The University of Manchester<br>
 Xinhao Yang — University of Southern California
 
-**37 pages · 20 references · 357 Lean files** (334 core; 23 audit/history) · 468 reproduction archive members.
+**37 pages · 20 references · 357 Lean files** (334 core; 23 audit/history) · 469 reproduction archive members.
 
 - [Paper PDF](manuscript.pdf)
 - [LaTeX source](manuscript.tex)
