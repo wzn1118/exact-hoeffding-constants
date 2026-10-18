@@ -12,5 +12,5 @@
   "statement": "Existing Lean modules and dependency versions remain protected against core baseline 8b75977b138205c4ba402000b25d226d55994682. The canonical TeX source is byte-identical to GitHub main commit 91719272750df6103358d8daccc4de8526a0d101. The separately built current PDF is identified by manuscript_pdf_sha256. Mathematical-source kernel and axiom checks are recorded separately.",
   "core_baseline_commit": "8b75977b138205c4ba402000b25d226d55994682",
   "paper_source_commit": "91719272750df6103358d8daccc4de8526a0d101",
-  "manuscript_pdf_sha256": "a98a31c380e152a7213676c6c72836ecd9497f288c911c5d6315aadecd5d5aac"
+  "manuscript_pdf_sha256": "8ec4165afbfd04d34b0493ec32ef972cec5d7fa717dbfec7ecd36ae67a828465"
 }
