@@ -76,7 +76,8 @@ def main() -> None:
                      "checks/package_submission.py", "checks/package_research.py",
                      "checks/sync_submission.py", "checks/refresh_checksums.py",
                      "checks/check_baseline_protection.py", "checks/build_current_release.py",
-                     "goal_b/build.sh", "checks/write_test_report.py", "checks/plot_piecewise_kl.py"):
+                     "goal_b/build.sh", "checks/write_test_report.py", "checks/plot_piecewise_kl.py",
+                     "checks/test_reproducibility_bundle.py"):
         if (ROOT / obsolete).exists():
             fail(f"legacy release entrypoint was included in the current bundle: {obsolete}")
     for readme in (ROOT / "README.txt", ROOT / "submission/current/README.md"):

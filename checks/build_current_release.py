@@ -24,7 +24,7 @@ BLOCKED_FILES = {
     "checks/refresh_checksums.py", "checks/check_baseline_protection.py",
     "checks/build_current_release.py",
     "goal_b/build.sh", "checks/write_test_report.py",
-    "checks/plot_piecewise_kl.py",
+    "checks/plot_piecewise_kl.py", "checks/test_reproducibility_bundle.py",
 }
 
 def sha(data):
