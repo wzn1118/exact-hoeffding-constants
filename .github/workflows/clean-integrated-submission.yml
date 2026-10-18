@@ -6,6 +6,7 @@ on:
     paths:
       - 'submission/integrated/build_clean_submission.py'
       - 'submission/current/manuscript.tex'
+      - 'submission/current/README.md'
       - 'submission/current/display_formula_inventory.json'
       - 'submission/current/display_formula_review_bindings.json'
       - 'submission/manuscript.tex'
