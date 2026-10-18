@@ -23,9 +23,9 @@ tracked.update({
     'theorem_to_lean.csv','checks/lean_axioms.lean','checks/verify_research.sh',
     '.github/workflows/lean4.yml','.github/workflows/research-validation.yml',
 })
-for group in ['source/*.tex','submission/*.tex','submission/*.md','submission/release/*','checks/*.py','checks/logs/*.log','docs/*.md','docs/*.tex','docs/proof_certification_2026-10-11.pdf']:
+for group in ['source/*.tex','submission/*.tex','submission/*.md','submission/release/*','research/history/release-archives/**/*','checks/*.py','checks/logs/*.log','docs/*.md','docs/*.tex','docs/proof_certification_2026-10-11.pdf']:
     tracked.update(p.relative_to(root).as_posix() for p in root.glob(group) if p.is_file())
-for group in ['ExactHoeffding/*.lean','formal_status/*.md','checks/*.lean','checks/logs/full_closure/*.log','submission/release/build_evidence/*','research/tail_bounds/**/*','checks/results/piecewise_kl_*']:
+for group in ['ExactHoeffding/*.lean','formal_status/*.md','checks/*.lean','checks/logs/full_closure/*.log','submission/release/build_evidence/*','research/history/release-archives/**/*','research/tail_bounds/**/*','checks/results/piecewise_kl_*']:
     tracked.update(p.relative_to(root).as_posix() for p in root.glob(group) if p.is_file())
 lines=[]
 for name in sorted(tracked):

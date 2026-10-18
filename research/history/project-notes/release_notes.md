@@ -7,7 +7,7 @@ The publication release includes a 34-page combined article, preserving all 30 t
 
 The arXiv upload ZIP contains one standalone LaTeX file, `combined_all.tex`. Its internal references and bibliography require no accompanying files. The full publication bundle additionally supplies modular source, a three-PDF build script, copyright notices and a reference catalogue. The separate reference companion contains four unchanged CC BY 4.0 papers and the source and license records for the cited literature.
 
-All three PDFs compile from clean directories with pdfLaTeX. The final build passes contain no LaTeX, reference, citation, box or PDF-destination warnings. The build report and artifact checksums are in `submission/release/`.
+All three PDFs compile from clean directories with pdfLaTeX. The final build passes contain no LaTeX, reference, citation, box or PDF-destination warnings. The historical build report and artifact checksums are preserved in `research/history/release-archives/2026-10-15-16/`.
 
 The revised contribution guide distinguishes the Lee–Kim reduction, Jacobi representation and Atouani–Marchal–Arbel three-mass proxy formula from the manuscript's global comparison, exact constants, extremizer classification and finite-population expansions. Manuscript and citation metadata use the revision date 15 October 2026.
 

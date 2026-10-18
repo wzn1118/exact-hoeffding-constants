@@ -6,3 +6,5 @@ Dated files preserve the mathematical experiments, source derivations and calcul
 - **14 October 2026 — Riccati/Chernoff diagnostics:** axiom inspections, finite-model comparisons and Lean build records. Original checkpoint: `research/C-riccati-reductions-20261014` (`cb3be6bc4c9fe904008cb4c16066be192f75e196`).
 
 The current mathematical statements and proofs are in [`ExactHoeffding/`](../../ExactHoeffding/) and [the unified manuscript](../../submission/current/manuscript.pdf).
+
+Historical publication snapshots from 15–16 October 2026 are preserved in [`release-archives/2026-10-15-16/`](release-archives/2026-10-15-16/). They are retained for provenance; `submission/current/` is the active release.
