@@ -2,7 +2,7 @@
 
 ## Current source and verification status — 18 October 2026
 
-The canonical manuscript is the byte-identical GitHub `main` source at commit `91719272750df6103358d8daccc4de8526a0d101`. The current TeX SHA-256 is `617cce1f87272bd5d5d58e3d91342bba658bb490cb901643fb9436ecc6e2894b`; the current PDF SHA-256 is `df93908f10e3398066a3ceb5283aeccdf961b86913bbe7bd5a5e82b68897797c`.
+The canonical manuscript is the byte-identical GitHub `main` source at commit `91719272750df6103358d8daccc4de8526a0d101`. The current TeX SHA-256 is `617cce1f87272bd5d5d58e3d91342bba658bb490cb901643fb9436ecc6e2894b`; the current PDF SHA-256 is `a98a31c380e152a7213676c6c72836ecd9497f288c911c5d6315aadecd5d5aac`.
 
 The live map contains 49 rows (35 theorem-class environments and 14 supplementary claims), all marked `Complete`, with 49 typed proposition contracts and 394 distinct mapped Lean theorem declarations. The display inventory contains 240 blocks. `lake build ExactHoeffding` passed 3,454 jobs. The current manifest and concordance were regenerated from this source. The older counts and scope statements below are historical and are superseded by `formal_status/current_pdf_lean_reconciliation_20261018.md`.
 
