@@ -14,3 +14,4 @@ goal_b/paper/*.pdf
 goal_b/checks/verification.json
 goal_b/SHA256SUMS.txt
 goal_b/dist/
+submission/integrated/*.log
