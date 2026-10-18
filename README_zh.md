@@ -16,9 +16,10 @@ lake exe cache get
 lake build ExactHoeffding
 ```
 
-统一投稿稿位于 [`submission/current/`](submission/current/)，早期论文与研究记录按原始目录保存。
+当前唯一正式投稿入口是 [`submission/current/`](submission/current/)。根目录旧主稿 PDF、旧补充稿 PDF 与 `submission/combined_all.tex` 已从活动入口移除；它们的 10 月 15–16 日历史发布包保存在 [`research/history/release-archives/2026-10-15-16/`](research/history/release-archives/2026-10-15-16/)。`submission/manuscript.tex`、Goal B 和 A 的 TeX 文件是当前统一论文的三个组成源码，并非完整论文替代入口。
+旧版 `run_all.sh`、`build_manuscript.sh` 和发布工作流随该版本线一并退役；当前复现包使用 `bash checks/verify_current_reproducibility.sh`。
 
 [英文仓库首页](README.md) · [投稿说明](submission/README.md) · [形式化证明范围](LEAN_PROOF_STATUS.md)
 
 
-完整定理—Lean 对应表：`submission/current/theorem_lean_concordance.md`。
+完整定理—Lean 对应表：`submission/current/theorem_lean_concordance.md`。240 个展示公式的当前源码审阅绑定见 [`formal_status/display_formula_audit_current_20261018.md`](formal_status/display_formula_audit_current_20261018.md)。

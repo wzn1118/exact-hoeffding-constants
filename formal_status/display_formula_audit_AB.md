@@ -1,5 +1,8 @@
 # Display-formula audit: fixed-sample proxies and piecewise KL
 
+> Historical source binding: this review was performed against the 17 October source snapshot `b1bb1e3df8d8b651c4872692a8b0f4424541b4e9b3a5576d39a2be485d26e23f` at commit `8b75977b138205c4ba402000b25d226d55994682`. Its original line numbers and display IDs are historical. For the current 240-display source binding, use `formal_status/display_formula_audit_current_20261018.md`; that report preserves the prior review scope and records the five current-source deltas.
+
+
 Date: 2026-10-17. Read-only inspection of the active root working tree at
 `/data/odd_proxy/github_publication/exact-hoeffding-constants`.
 Base commit: `8b75977b138205c4ba402000b25d226d55994682`.

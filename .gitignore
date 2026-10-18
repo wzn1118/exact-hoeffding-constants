@@ -15,3 +15,7 @@ goal_b/checks/verification.json
 goal_b/SHA256SUMS.txt
 goal_b/dist/
 submission/integrated/*.log
+
+# Current unified manuscript build outputs; source of record is submission/current/manuscript.tex.
+/submission/integrated/combined_manuscript.tex
+/submission/integrated/combined_manuscript.pdf

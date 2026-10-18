@@ -18,8 +18,7 @@ def generate():
     rows = []
     for index, match in enumerate(PATTERN.finditer(text), 1):
         line = text.count('\n', 0, match.start()) + 1
-        review = ('formal_status/display_formula_audit_AB.md' if 1075 <= line <= 1609
-                  else 'formal_status/display_formula_audit_main_appendices.md')
+        review = 'formal_status/display_formula_audit_current_20261018.md'
         rows.append({'id': f'D{index}', 'start_line': line,
             'end_line': text.count('\n', 0, match.end()) + 1,
             'environment': match.group(1) or 'displaymath',
@@ -27,7 +26,7 @@ def generate():
             'tex': match.group(),
             'sha256': hashlib.sha256(match.group().encode()).hexdigest(),
             'scope_review': review,
-            'proof_status': 'consult_exact_scope_review_and_concordance'})
+            'proof_status': 'consult_current_source_review_binding_and_concordance'})
     return {'source': SOURCE, 'source_sha256': hashlib.sha256(data).hexdigest(),
         'display_count': len(rows),
         'policy': 'Inventory and review routing only; no proof is certified by parsing TeX.',

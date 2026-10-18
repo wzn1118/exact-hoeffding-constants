@@ -1,10 +1,9 @@
 # Inspected theorem manifest
 
-After `lake build ExactHoeffding`, run:
+After `lake build ExactHoeffding`, run from the repository root (or an extracted complete reproducibility archive):
 
 ```sh
-flock /data/hoeffding_full_20261015/lean_compile.lock \
-  timeout 600 python3 checks/export_theorem_manifest.py
+python3 checks/export_theorem_manifest.py
 python3 checks/check_theorem_manifest.py
 ```
 
@@ -45,10 +44,11 @@ Inspected Lean types do not automatically prove that a paper statement and its
 formal statement are semantically equivalent. That correspondence still requires
 mathematical review, including parameters, strictness, endpoints, and equality.
 
-Display coverage is tracked separately. Run:
+Display coverage is tracked separately. For the current paper, check the full inventory and mathematical review binding with:
 
 ```sh
 python3 checks/manuscript_display_inventory.py --check
+python3 checks/check_display_formula_review_binding.py
 ```
 
 This freezes all 240 display blocks, including unlabelled formulas, and links

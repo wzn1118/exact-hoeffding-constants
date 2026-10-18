@@ -56,7 +56,7 @@ python3 checks/check_axiom_output.py lean_axioms.log
 ```
 
 The independent mathematical computations and manuscript builds are reproduced
-with `bash run_all.sh`. Their full execution is retained in
+with the dated `bash run_all.sh` workflow. That workflow is historical; the current 37-page package is verified by `bash checks/verify_current_reproducibility.sh`. Their full execution is retained in
 `checks/logs/run_all.log`; `checks/logs/math_test_report.json` indexes the tests.
 The single-entry arXiv archive and publication archive are built in empty
 directories and include explicit manifests and checksums. Original work remains

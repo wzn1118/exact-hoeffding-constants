@@ -317,8 +317,7 @@ def check_display_inventory(root: Path) -> int:
             "labels": re.findall(r"\\label\{([^}]+)\}", block),
             "tex": block,
             "sha256": sha(block.encode("utf-8")),
-            "scope_review": ("formal_status/display_formula_audit_AB.md" if 1075 <= line <= 1609
-                             else "formal_status/display_formula_audit_main_appendices.md"),
+            "scope_review": "formal_status/display_formula_audit_current_20261018.md",
         })
     rows = inventory.get("displays")
     if inventory.get("display_count") != len(expected):

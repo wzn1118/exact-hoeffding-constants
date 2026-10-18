@@ -32,6 +32,6 @@ python3 checks/check_axiom_output.py lean_axioms.log
 
 The latest completed audit covers **2,028 public declarations in 333 imported project modules**. Their axiom dependencies lie in `propext`, `Classical.choice` and `Quot.sound`. The current [GitHub Actions Lean workflow](.github/workflows/lean4.yml) executes the build and audit.
 
-[Current 37-page manuscript](submission/current/manuscript.pdf) · [Theorem–Lean concordance](submission/current/theorem_lean_concordance.md) · [Complete reproducibility archive](submission/current/complete-reproducibility.zip) · [Theorem index](theorem_to_lean.csv)
+[Current official 37-page manuscript (only publication entry)](submission/current/manuscript.pdf) · [Theorem–Lean concordance](submission/current/theorem_lean_concordance.md) · [Complete reproducibility archive](submission/current/complete-reproducibility.zip) · [Theorem index](theorem_to_lean.csv)
 
 Copyright © 2026 Zinan Wang. See [license](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md).

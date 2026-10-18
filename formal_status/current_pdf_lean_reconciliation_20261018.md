@@ -3,7 +3,7 @@
 The canonical paper for this audit is the byte-identical source published on GitHub `main` at commit `91719272750df6103358d8daccc4de8526a0d101` (17 October 2026). The checked files are:
 
 - `submission/current/manuscript.tex`: SHA-256 `617cce1f87272bd5d5d58e3d91342bba658bb490cb901643fb9436ecc6e2894b`;
-- `submission/current/manuscript.pdf`: SHA-256 `21e5bf768f0dc7f80d69904ec7a64642c4adacfaa04d9514ea83a0d4f32550e8`.
+- `submission/current/manuscript.pdf`: SHA-256 `df93908f10e3398066a3ceb5283aeccdf961b86913bbe7bd5a5e82b68897797c`.
 
 The theorem map and live manifest bind this source to 49 rows: 35 theorem-class environments and 14 supplementary claims. Every row is marked `Complete`, has an explicit typed Lean contract, and is bound to the current source hash. The manifest contains 394 distinct mapped Lean theorem declarations and 240 inventoried display blocks. The concordance is regenerated at `submission/current/theorem_lean_concordance.md`.
 

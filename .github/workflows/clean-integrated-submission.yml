@@ -4,13 +4,16 @@ on:
   push:
     branches: [main]
     paths:
-      - 'submission/integrated/**'
+      - 'submission/integrated/build_clean_submission.py'
+      - 'submission/current/manuscript.tex'
+      - 'submission/current/display_formula_inventory.json'
+      - 'submission/current/display_formula_review_bindings.json'
       - 'submission/manuscript.tex'
       - 'research/tail_bounds/minimum_variance_tail.tex'
       - 'goal_b/paper/main.tex'
-      - 'checks/build_current_release.py'
-      - 'checks/render_full_manuscript_concordance.py'
-      - 'checks/manuscript_lean_map.json'
+      - 'checks/**'
+      - 'requirements.txt'
+      - 'goal_b/requirements.txt'
       - '.github/workflows/clean-integrated-submission.yml'
   workflow_dispatch:
 

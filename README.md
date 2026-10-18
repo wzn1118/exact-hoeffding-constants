@@ -5,7 +5,7 @@
 
 *Exact Exchangeability Constants, Fixed-Sample Extremizers, and Piecewise KL Bounds*
 
-This repository contains the unified mathematical article, its source and verifiable Lean 4 development. All current research is maintained on **main**.
+This repository contains the unified mathematical article, its source and verifiable Lean 4 development. All current research is maintained on **main**. The only current publication entry is `submission/current/`; earlier Main-only PDFs and release packages are dated historical records.
 
 ## Current manuscript
 
@@ -48,6 +48,7 @@ The reproducibility archive contains all **357 tracked Lean files**: **334** cor
 | [source/](source/) | Foundational manuscript source |
 | [research/history/](research/history/) | Historical independent checkpoints |
 
-The current Main+A+B submission is in [`submission/current/`](submission/current/). Earlier editions and research notes are preserved in their respective source and history directories.
+The current Main+A+B submission is in [`submission/current/`](submission/current/). The 16 October Main-only PDFs and `submission/combined_all.tex` have been removed from the active entry paths; their release snapshots remain under [`research/history/release-archives/2026-10-15-16/`](research/history/release-archives/2026-10-15-16/). The three TeX files listed above are component inputs to the current integrated source, not alternate complete-paper releases.
+The superseded `run_all.sh`, `build_manuscript.sh`, and old publication workflow were retired with that release line; use `bash checks/verify_current_reproducibility.sh` for the current package.
 
-[Submission guide](submission/README.md) · [Citation metadata](CITATION.cff) · [Formal theorem coverage](LEAN_PROOF_STATUS.md) · [Current theorem–Lean concordance](submission/current/theorem_lean_concordance.md) · [License](LICENSE) · [Third-party notices](THIRD_PARTY_NOTICES.md)
+[Submission guide](submission/README.md) · [Citation metadata](CITATION.cff) · [Formal theorem coverage](LEAN_PROOF_STATUS.md) · [Current theorem–Lean concordance](submission/current/theorem_lean_concordance.md) · [240-display review binding](formal_status/display_formula_audit_current_20261018.md) · [License](LICENSE) · [Third-party notices](THIRD_PARTY_NOTICES.md)

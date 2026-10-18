@@ -13,8 +13,16 @@ PAPER = ROOT / "submission/integrated/combined_manuscript.tex"
 PDF = ROOT / "submission/integrated/combined_manuscript.pdf"
 TITLE = ("Sharp Hypergeometric Concentration: Exact Exchangeability Constants, "
          "Fixed-Sample Extremizers, and Piecewise KL Bounds")
-BLOCKED_DIRS = {"logs", "release", "current", ".git", ".lake", "__pycache__", "build_evidence"}
+BLOCKED_DIRS = {"logs", "release", "current", ".git", ".github", ".lake", "__pycache__", "build_evidence"}
 BLOCKED_EXTS = {".zip",".pdf",".png",".jpg",".jpeg",".log",".pyc",".aux",".out",".gz",".tar"}
+BLOCKED_FILES = {
+    "run_all.sh", "build_manuscript.sh", "submission/combined_all.tex",
+    "submission/integrated/combined_manuscript.tex",
+    "checks/validate_package.py", "checks/package_submission.py",
+    "checks/package_research.py", "checks/sync_submission.py",
+    "checks/refresh_checksums.py", "checks/check_baseline_protection.py",
+    "checks/build_current_release.py",
+}
 
 def sha(data):
     return hashlib.sha256(data).hexdigest()
@@ -22,7 +30,7 @@ def sha(data):
 def writezip(path, contents):
     with ZipFile(path, "w", ZIP_DEFLATED, compresslevel=9) as z:
         for k in sorted(contents):
-            item = ZipInfo(k,(2026,10,17,0,0,0))
+            item = ZipInfo(k,(2026,10,18,0,0,0))
             item.compress_type = ZIP_DEFLATED
             item.external_attr = 0o644 << 16
             z.writestr(item,contents[k])
@@ -39,7 +47,7 @@ def files_in(path, contents):
             continue
         rel=p.relative_to(ROOT)
         # The release generator is a publisher utility, not a mathematical reproducer.
-        if rel.as_posix() == "checks/build_current_release.py":
+        if rel.as_posix() in BLOCKED_FILES:
             continue
         if any(part in BLOCKED_DIRS for part in rel.parts):
             continue
@@ -85,7 +93,7 @@ def main():
     (CURRENT/"manuscript.pdf").write_bytes(pdf)
     meta={"title":TITLE,"authors":[{"name":"Zinan Wang","affiliation":"The University of Manchester"},
            {"name":"Xinhao Yang","affiliation":"University of Southern California"}],
-          "date":"2026-10-17","primary_category":"math.PR","optional_cross_list":"math.ST",
+          "date":"2026-10-18","primary_category":"math.PR","optional_cross_list":"math.ST",
           "entry_point":"manuscript.tex","pages":pages,"references":len(bib)}
     (CURRENT/"metadata.json").write_text(json.dumps(meta,indent=2,ensure_ascii=False)+"\n")
     writezip(CURRENT/"arxiv-source.zip",{"manuscript.tex":tex})
@@ -102,8 +110,7 @@ def main():
               "submission/manuscript.tex","submission/integrated/build_clean_submission.py",
               "submission/current/manuscript.tex","submission/current/theorem_lean_concordance.md",
               "submission/current/theorem_lean_manifest.json","lean-toolchain","lakefile.toml",
-              "lake-manifest.json","requirements.txt","run_all.sh",
-              "build_manuscript.sh","LICENSE","COPYRIGHT.md",
+              "lake-manifest.json","requirements.txt","LICENSE","COPYRIGHT.md",
               "THIRD_PARTY_NOTICES.md","theorem_to_lean.csv",
               "LEAN_PROOF_STATUS.md","proof_gap_register.md"]:
         p=ROOT/f
@@ -114,7 +121,7 @@ def main():
         files_in(historical_lean,reproducer)
     reproducer["submission/current/manuscript.pdf"]=pdf
     # Current source and correspondence are part of the reproduction archive.
-    for current_file in ("manuscript.tex", "metadata.json", "theorem_lean_concordance.md", "theorem_lean_manifest.json", "display_formula_inventory.json"):
+    for current_file in ("manuscript.tex", "metadata.json", "theorem_lean_concordance.md", "theorem_lean_manifest.json", "display_formula_inventory.json", "display_formula_review_bindings.json"):
         current_path = CURRENT / current_file
         if current_path.exists():
             reproducer[f"submission/current/{current_file}"] = current_path.read_bytes()
@@ -152,34 +159,45 @@ def main():
         "- [Clean submission ZIP](clean-submission.zip)\n"
         "- [Complete reproducibility ZIP](complete-reproducibility.zip)\n"
         "- [Theorem–Lean concordance](theorem_lean_concordance.md)\n"
-        "- [Submission metadata](metadata.json)\n\n"
-        "The exact paper-statement coverage and any open scope qualifications are recorded in the concordance and formal_status reports. "
-        "Main, A and B share the integrated formal proof project. "
-        "Original research and earlier manuscript editions are archived "
-        "in their respective directories.\n"
+        "- [Submission metadata](metadata.json)\n"
+        "- [240-display review binding](../../formal_status/display_formula_audit_current_20261018.md)\n\n"
+        "This is the sole current Main+A+B publication entry. The exact paper-statement coverage and scope qualifications are recorded in the concordance and review reports. "
+        "Earlier Main-only editions and their release packages are dated historical records under `research/history/release-archives/`.\n"
     )
     (CURRENT / "README.md").write_text(release_readme, encoding="utf-8")
-    reproducer["submission/current/README.md"] = release_readme.encode("utf-8")
+    archive_readme = (
+        "# Current manuscript included in this reproduction archive\n\n"
+        + TITLE + "\n\n"
+        "These are the official Main+A+B manuscript and verification inputs.\n\n"
+        "- Paper PDF: `manuscript.pdf` (this directory)\n"
+        "- LaTeX source: `manuscript.tex` (this directory)\n"
+        "- Theorem–Lean concordance: `theorem_lean_concordance.md`\n"
+        "- Theorem manifest: `theorem_lean_manifest.json`\n"
+        "- Display inventory and review bindings: `display_formula_inventory.json`, `display_formula_review_bindings.json`\n"
+        "- Reproduction instructions: archive-root `README.txt`\n\n"
+        "The arXiv-source and clean-submission ZIPs are published beside the full archive in the repository's `submission/current/`; they are not nested in this archive.\n"
+    )
+    reproducer["submission/current/README.md"] = archive_readme.encode("utf-8")
 
     disclosure = "AI-assisted tools were used in Lean 4 formalization and verification."
     readme = (
         TITLE + "\n"
         "Zinan Wang — The University of Manchester\n"
         "Xinhao Yang — University of Southern California\n\n"
-        "Lean 4 build and axiom audit:\n"
-        "  lake exe cache get\n"
-        "  lake build ExactHoeffding\n"
-        "  python3 checks/generate_axiom_audit.py --check\n"
-        "  python3 checks/check_full_manuscript_concordance.py\n"
-        "  lake env lean checks/full_closure_axioms.lean\n\n"
-        "Numerical verification:\n"
+        "This is the current Main+A+B paper and verification package. Earlier Main-only papers, supplements, release ZIPs, and their validation scripts are historical records, not the entry point for this manuscript.\n\n"
+        "Requirements:\n"
+        "  Python 3.11+, Git, network access for the pinned Mathlib cache, Lean 4 from lean-toolchain,\n"
+        "  TeX Live/pdfLaTeX, latexmk, and Poppler pdfinfo.\n\n"
+        "Install elan and both Python dependency sets (Linux):\n"
+        "  curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none\n"
+        "  export PATH=\"$HOME/.elan/bin:$PATH\"\n"
         "  python3 -m pip install -r requirements.txt\n"
-        "  python3 checks/verify_piecewise_kl.py\n"
-        "  python3 goal_b/code/verify_goal_b.py --maxN 60 --numericN 18 "
-        "--output goal_b/checks/verification.json\n\n"
-        "Rebuild the unified manuscript:\n"
-        "  python3 submission/integrated/build_clean_submission.py\n"
-        "  (cd submission/integrated && latexmk -pdf -halt-on-error combined_manuscript.tex)\n\n"
+        "  python3 -m pip install -r goal_b/requirements.txt\n\n"
+        "From the extracted archive root, run the complete verification:\n"
+        "  bash checks/verify_current_reproducibility.sh\n\n"
+        "The script checks archive checksums, all 240 current-source display bindings, theorem correspondence,\n"
+        "numerical checks, the Lean build and axiom audit, and a clean 37-page manuscript build.\n"
+        "The commands do not require Git history or workspace-specific paths. Mathlib cache retrieval needs network access.\n\n"
         + disclosure + "\n"
     )
     reproducer["README.txt"] = readme.encode("utf-8")

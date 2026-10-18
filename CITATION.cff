@@ -10,7 +10,7 @@ authors:
     affiliation: University of Southern California
 type: software
 version: "2.0.0"
-date-released: "2026-10-16"
+date-released: "2026-10-18"
 repository-code: "https://github.com/wzn1118/exact-hoeffding-constants"
 preferred-citation:
   type: unpublished
@@ -23,7 +23,6 @@ preferred-citation:
       given-names: Xinhao
       affiliation: University of Southern California
   year: 2026
-  date-published: "2026-10-16"
   url: "https://github.com/wzn1118/exact-hoeffding-constants/tree/main/submission/current"
   notes: "Current Main+A+B unified manuscript. Copyright (c) 2026 Zinan Wang. All rights reserved."
 abstract: >-
