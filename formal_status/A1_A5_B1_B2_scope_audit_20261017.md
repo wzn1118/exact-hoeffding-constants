@@ -1,7 +1,9 @@
-# A1–A5 and B1–B2 Lean closure audit — 17 October 2026
+> **Historical snapshot.** This dated report records an earlier verification state. The current release status is maintained in `formal_status/current_pdf_lean_reconciliation_20261018.md` and `formal_status/manuscript_concordance.md`.
 
-This audit records the current root-tree result scope for the seven requested
-proof groups. The authoritative declaration-by-declaration bindings are in
+# Historical A1–A5 and B1–B2 Lean closure audit — 17 October 2026
+
+This dated audit records the root-tree result scope for the seven requested
+proof groups at that checkpoint. The authoritative declaration-by-declaration bindings are in
 `checks/manuscript_lean_map.json` and the generated
 `submission/current/theorem_lean_concordance.md`. The frozen manuscript and
 pinned Lean/Mathlib dependencies were not changed.
@@ -24,7 +26,7 @@ fifth-derivative remainder gives the displayed expansion through the sixth
 cumulant. At `e=1/N` the rescaled factorial-family cumulants are identified
 with the actual finite-law cumulants.
 
-## Verification on the integrated root tree
+## Verification at the 17 October integrated checkpoint
 
 - `lake build ExactHoeffding`: **passed**, 3,445 jobs, including all newly integrated contract modules.
 - Full transitive Lean axiom audit: **passed**, 1,971 public theorems in 324 project modules; dependencies are only `propext`, `Classical.choice`, and `Quot.sound`.

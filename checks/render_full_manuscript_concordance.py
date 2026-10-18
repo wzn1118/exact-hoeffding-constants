@@ -29,7 +29,7 @@ out += [
     '',
     '`checks/check_full_manuscript_concordance.py` reparses the frozen manuscript, checks the exact environment count, kinds, titles, labels and source line identities, and rejects any missing declaration or non-Complete result. `checks/full_closure_axioms.lean` is the generated public theorem audit input. The permitted audit axioms remain the repository policy: `propext`, `Classical.choice`, and `Quot.sound`.',
     '',
-    f"Typed Lean statement contracts are recorded for {sum(bool(r.get('semantic_contract_declaration')) for r in data['results'])} of {len(data['results'])} mapped rows. The checker binds each contract to the frozen manuscript environment hash, verifies that the Lean contract is kernel checked, axiom audited, and assembled from a mapped theorem. The proposition is a manually reviewed formal transcription; neither a source hash nor declaration check proves TeX-to-Lean semantic equivalence. The strict semantic-contract mode still has 35 contracts without individually reviewed marker profiles.",
+    f"Typed Lean statement contracts are recorded for {sum(bool(r.get('semantic_contract_declaration')) for r in data['results'])} of {len(data['results'])} mapped rows. The checker binds each contract to the frozen manuscript environment hash, verifies that the Lean contract is kernel checked, axiom audited, and assembled from a mapped theorem. The proposition is a manually reviewed formal transcription; neither a source hash nor declaration check proves TeX-to-Lean semantic equivalence. The strict semantic-contract mode now passes with reviewed marker profiles for all 49 mapped contracts.",
     ''
 ]
 (ROOT / 'submission/current/theorem_lean_concordance.md').write_text('\n'.join(out))

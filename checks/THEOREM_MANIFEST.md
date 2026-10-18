@@ -51,8 +51,9 @@ Display coverage is tracked separately. Run:
 python3 checks/manuscript_display_inventory.py --check
 ```
 
-This freezes all 236 display blocks, including unlabelled formulas, and links
-them to independent scope reviews. It does not relabel unproved formulas as
-proved. Supplementary result rows retain explicit `Partial` status for literal
-paper statements whose domains or remaining identities are not closed; the
-full concordance gate continues to reject them.
+This freezes all 240 display blocks, including unlabelled formulas, and links
+them to independent scope reviews. The current 49-row concordance gives every
+mapped theorem-class and supplementary result an explicit typed contract and
+`Complete` status. Domain qualifications are recorded in the current contracts
+and their scope reports; the manifest checker verifies the bindings, types,
+source hashes and kernel-audit records.

@@ -84,7 +84,7 @@ jobs:
           python3 checks/generate_axiom_audit.py --check
           python3 checks/check_manuscript_concordance.py
           python3 checks/check_full_manuscript_concordance.py
-          python3 checks/check_semantic_contract_integrity.py
+          python3 checks/check_semantic_contract_integrity.py --require-contracts
           python3 -m unittest discover -s checks -p 'test_a1_variance_contract.py'
           python3 -m unittest discover -s checks -p 'test_theorem_manifest.py'
           lake env lean checks/full_closure_axioms.lean | tee lean_axioms.log

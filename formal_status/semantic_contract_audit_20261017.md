@@ -26,7 +26,7 @@ The theorem map and live manifest bind this source to 49 rows: 35 theorem-class 
 - The previous 46/49 status, the old 37-item register, the old 377-declaration count, the old 3,445-job audit, and the old manuscript SHA are historical records. They do not describe the current GitHub paper.
 - The old baseline check that compared the paper to commit `8b75977b138205c4ba402000b25d226d55994682` was invalid after the GitHub paper publication. The baseline now protects Lean sources and pinned dependencies against that core commit while separately pinning the canonical paper to `91719272750df6103358d8daccc4de8526a0d101`.
 - The seven earlier “direct dependency” failures were checker artifacts. A typed contract may prove its proposition through an inline proof or a shared helper; the revised checker audits the transitive kernel dependency closure and does not require an arbitrary same-row sibling edge.
-- A source hash, a declaration name, or a token marker cannot decide TeX-to-Lean semantic equivalence. The ordinary checker therefore reports the exact structural result and leaves 35 contracts without individually reviewed marker profiles as an explicit review queue. The strict `--require-contracts` mode is not a theorem-completion claim.
+- A source hash, a declaration name, or a token marker cannot decide TeX-to-Lean semantic equivalence. The 35 marker profiles that were open in the earlier snapshot are now individually reviewed and registered; the strict `--require-contracts` mode passes 49/49. Marker profiles are structural evidence and do not replace mathematical statement review.
 
 ## Verification record
 

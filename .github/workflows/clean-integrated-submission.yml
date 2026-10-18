@@ -59,7 +59,7 @@ jobs:
       - name: Audit manuscript theorem-to-Lean correspondence
         run: |
           python3 checks/check_full_manuscript_concordance.py
-          python3 checks/check_semantic_contract_integrity.py
+          python3 checks/check_semantic_contract_integrity.py --require-contracts
       - name: Verify three source and archive formats
         run: |
           python3 - <<'PY'

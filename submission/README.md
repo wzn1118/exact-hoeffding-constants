@@ -3,7 +3,7 @@
 **Zinan Wang** — The University of Manchester  
 **Xinhao Yang** — University of Southern California
 
-The [current submission directory](current/) contains the 36-page unified paper, its standalone LaTeX source, arXiv upload archive and full formal/numerical reproducibility package.
+The [current submission directory](current/) contains the 37-page unified paper, its standalone LaTeX source, arXiv upload archive and full formal/numerical reproducibility package.
 
 - [Paper PDF](current/manuscript.pdf)
 - [Standalone LaTeX](current/manuscript.tex)

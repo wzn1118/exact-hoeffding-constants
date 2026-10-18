@@ -1,22 +1,21 @@
+> **Historical snapshot.** This dated report records an earlier verification state. The current release status is maintained in `formal_status/current_pdf_lean_reconciliation_20261018.md` and `formal_status/manuscript_concordance.md`.
+
 # Formal proof coverage — 16 October 2026
 
-## Current statement-scope audit — 17 October 2026
+## Historical statement-scope audit — 17 October 2026
 
-The Main+A+B core results remain proved. This working extension is on
-`formal/end-to-end-scope-audit-20261017`. The frozen whole-paper gate is
-**not closed**: `A:factorial` has the two definition-domain qualifications
-recorded in `formal_status/a2_factorial_denominator_audit.md`. The requested
-A1–A5 and B1–B2 proof families are represented in the current concordance;
-only A2 remains scope-qualified. A1 endpoint extensions follow from the actual
-endpoint atom costs and finite one-sided integral limits. The actual proxy's
-joint local Taylor remainder and the odd-central variational boundary cases
-are now included. The current integrated build passed 3,445 jobs; the full
-axiom audit passed for 1,971 theorems in 324 modules; and the live manifest
-matched 339 distinct theorem declarations across 49 result rows. Ten rows
-have typed Lean proposition contracts. The manuscript and pinned dependencies
-are unchanged; no final-main merge has been performed. The other 39 rows still
-need standalone proposition contracts, separately from the A2 mathematical
-scope qualification.
+The Main+A+B core results were proved at this checkpoint. This working
+extension was on `formal/end-to-end-scope-audit-20261017`. The frozen whole-paper
+gate was then **not closed**: `A:factorial` had the two definition-domain
+qualifications recorded in `formal_status/a2_factorial_denominator_audit.md`.
+The requested A1–A5 and B1–B2 families were represented in that concordance,
+but A2 remained scope-qualified. A1 endpoint extensions followed from the
+actual endpoint atom costs and finite one-sided integral limits. The actual
+proxy's joint local Taylor remainder and odd-central variational boundary cases
+were included. The checkpoint had 3,445 build jobs, an audit of 1,971 theorems
+in 324 modules, 339 mapped declarations across 49 rows, and ten typed contracts.
+The other 39 rows still needed standalone contracts then. The current release
+supersedes this historical snapshot.
 
 
 Canonical branch: `main`.
@@ -150,9 +149,9 @@ kernel check. `proof_gap_register.md` records completed assertion coverage; `che
 ## Integrated verification checkpoint
 
 The following module-specific logs record the 16 October control-worktree
-checkpoint. The current integrated result is the 17 October audit recorded
-above: **1,971 public theorems in 324 project modules**, with only `propext`,
-`Classical.choice`, and `Quot.sound`.
+checkpoint. That report pointed to the 17 October audit state: **1,971 public
+theorems in 324 project modules**, with only `propext`, `Classical.choice`, and
+`Quot.sound`. Both dated counts are superseded by the current release record.
 
 Evidence: `checks/logs/full_closure/jacobi_tilt_second_rootverify.log`,
 `fixed_sample_global_rootverify.log`, `real_recurrence_curvature.log`,
@@ -173,7 +172,16 @@ coverage are recorded in `research/tail_bounds/lean_validation.md` and
 
 ## 16 October 2026 closure additions
 
-The current umbrella adds the integer-tail, four-rate KL, Bennett/Bernstein, factorial-Chernoff, odd-global, and finite-support mean-coordinate modules. `FiniteSupportMeanEnvelope` proves the Legendre-to-envelope comparison by change of variables; its strict and endpoint variants cover strict gaps and one-sided endpoint continuation. `FiniteSupportTiltCurveOfLaw` realizes the interface from an actual normalized finite weighted law with ordered positive endpoint atoms and positive tilted variance, while `FiniteSupportRecurrenceBridge` specializes it to the paper's recurrence laws. The generated current concordance has 35 theorem-class rows and 6 supplementary claims.
+At that stage the umbrella added the integer-tail, four-rate KL, Bennett/Bernstein,
+factorial-Chernoff, odd-global, and finite-support mean-coordinate modules.
+`FiniteSupportMeanEnvelope` proves the Legendre-to-envelope comparison by change
+of variables; its strict and endpoint variants cover strict gaps and one-sided
+endpoint continuation. `FiniteSupportTiltCurveOfLaw` realizes the interface from
+an actual normalized finite weighted law with ordered positive endpoint atoms and
+positive tilted variance, while `FiniteSupportRecurrenceBridge` specializes it to
+the paper's recurrence laws. The 17 October concordance snapshot then had 35
+theorem-class rows and 6 supplementary claims; the current 49-row register is
+maintained in `submission/current/theorem_lean_concordance.md`.
 
 ## Initial 17 October scope-audit snapshot (superseded by the latest results below)
 
@@ -224,4 +232,14 @@ no completion or final-main merge is asserted at this checkpoint.
 
 ## 17 October typed-contract continuation
 
-The latest integrated build passed 3,445 jobs. The 1,971-declaration axiom audit and live 49-row manifest passed; 339 distinct declarations are mapped. Ten rows have Lean-proved statement transcriptions: A1, A3, A4, `thm:curvature`, `thm:main_laplace`, `cor:mgf`, integer tails, `thm:exchange`, `cor:tail`, and `prop:variational`. Their proof terms depend on the mapped underlying results, and the checker binds them to frozen TeX result hashes. The translation from TeX to each Lean proposition remains a reviewed mathematical encoding; it is not inferred from a hash. A1 positivity now follows from finite support, normalized nonnegative weights, distinct endpoint values, and positive endpoint masses, with no variance-positivity premise in the direct law interface. The full correspondence gate remains open only because A2's frozen statement omits its quotient and strict-rate domains.
+At that checkpoint the integrated build passed 3,445 jobs. The 1,971-declaration
+axiom audit and live 49-row manifest passed; 339 distinct declarations were
+mapped. Ten rows had Lean-proved statement transcriptions: A1, A3, A4,
+`thm:curvature`, `thm:main_laplace`, `cor:mgf`, integer tails, `thm:exchange`,
+`cor:tail`, and `prop:variational`. Their proof terms depended on the mapped
+underlying results, and the checker bound them to frozen TeX result hashes. A1
+positivity followed from finite support, normalized nonnegative weights, distinct
+endpoint values, and positive endpoint masses, with no variance-positivity
+premise in the direct law interface. The full correspondence gate was still open
+then because A2's frozen statement omitted its quotient and strict-rate domains;
+the current release supersedes that checkpoint.

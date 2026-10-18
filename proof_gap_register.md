@@ -1,19 +1,13 @@
 # Manuscript proof obligations
 
-## Current statement-scope audit — 17 October 2026
+## Current release status — 18 October 2026
 
-The Main+A+B core results remain proved. This working extension is on
-`formal/end-to-end-scope-audit-20261017`. The frozen whole-paper gate is
-**not closed**: `A:factorial` has the two definition-domain qualifications
-recorded in `formal_status/a2_factorial_denominator_audit.md`. A1–A5 and B1–B2
-have current theorem mappings; the Q-expansion uniform remainder and B2
-deterministic boundary cases are now proved. Final build and audit counts are
-recorded after the last verification. The generated concordance overrides
-historical blanket-coverage statements below. The paper source and pinned
-dependencies are unchanged; no final-main merge has been performed.
+The current Main+A+B release has 49 mapped rows (35 theorem environments and 14 supplementary claims), 49 typed contracts, and 394 distinct mapped Lean declarations. `lake build ExactHoeffding` passed 3,454 jobs; the kernel audit covers 2,028 public declarations in 333 imported modules; and the strict semantic-contract checker passes all 49 marker profiles. The corrected A:factorial domains, odd two-draw expansion, fixed-m gap aggregate, A1 endpoint interface, and B2 boundary cases are included in the current contracts.
+
+The full manuscript concordance, current PDF/TeX hashes, and release package are authoritative. Older scope notes below are retained as dated proof history.
 
 
-Updated 17 October 2026. Canonical branch: `main`.
+Updated 18 October 2026. Canonical branch: `main`.
 
 ## Completed core obligations
 
@@ -52,7 +46,7 @@ The earlier baseline register listed complete mappings for all 35 theorem-class 
 - `ExchangeableVarianceSupremum` defines the actual variance supremum over exchangeable cube probability laws and nonzero zero-sum contrasts. It proves the floor and parity formulas, attainment under the nearest-balanced Hamming law for every contrast, the strict odd variance gap, its integral identity, and its fourth-order expansion with coefficient `26/45`.
 - `ExplicitExtremizerTheorem` assembles the nearest-balanced actual Hamming law, explicit coordinate contrast, full Bernoulli pushforward, odd nonzero-tilt contact, and even zero-tilt limiting equality for every population `N≥2`.
 
-The 17 October integrated kernel build passed 3,435 jobs and the generated axiom audit passed for 1,945 public theorems in 314 imported project modules. The current 49-row concordance has 48 complete rows; A2 remains open only because the frozen manuscript omits two domain restrictions. All F-01–F-10 obligations and the two assembled parity propositions are completed.
+The historical 17 October checkpoint reported 3,435 jobs and 1,945 audited declarations. The current release supersedes those counts with the 3,454-job build, 2,028-declaration audit, and 49/49 strict contract coverage recorded above.
 
 An incorrect pointwise odd constant curvature shortcut remains excluded:
 the odd sharp quadratic proxy must follow from integrated mean-dependent

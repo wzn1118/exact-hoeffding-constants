@@ -11,7 +11,7 @@ This repository contains the unified mathematical article, its source and verifi
 
 **[Read the complete paper (PDF)](submission/current/manuscript.pdf)** · [LaTeX](submission/current/manuscript.tex) · [arXiv source](submission/current/arxiv-source.zip) · [Clean submission](submission/current/clean-submission.zip) · [Full reproducibility](submission/current/complete-reproducibility.zip)
 
-The 36-page article has 19 references and presents three results:
+The 37-page article has 20 references and presents three results:
 
 1. **Exact Hoeffding constants.** For centered contrasts of bounded finitely exchangeable sequences,
    \[

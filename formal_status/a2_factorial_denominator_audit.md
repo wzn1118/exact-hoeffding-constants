@@ -1,3 +1,5 @@
+> **Historical audit.** This report records the denominator and support-domain issue found before the corrected current manuscript was published. The current A:factorial statement and Lean aggregate contract include the corrected domains; this file is retained as provenance.
+
 # A2 factorial ratio denominator audit
 
 Frozen manuscript: `submission/current/manuscript.tex`, Proposition `A:factorial`.
@@ -40,5 +42,6 @@ nonnegative-tilt Chernoff infimum are zero; the correct extended-real rate is
 infinite. The real-valued Legendre `sSup` is not used outside its bounded
 support domain as an extended-real substitute.
 
-The frozen paper has not been changed. Its unconditional completion claim
-remains open pending resolution of these two stated definition-domain issues.
+The frozen paper was subsequently corrected to state these domains explicitly. The
+current release uses the corrected A:factorial contract; the unresolved wording above
+belongs to this historical audit snapshot.

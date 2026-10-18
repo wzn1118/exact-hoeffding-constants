@@ -6,21 +6,25 @@ The canonical paper is the GitHub `main` source at commit `91719272750df6103358d
 
 `lake build ExactHoeffding` passed 3,454 jobs. The generated `#print axioms` audit covers 2,028 public declarations in 333 imported project modules and uses only `propext`, `Classical.choice`, and `Quot.sound`. A1, `prop:odd2`, `A:factorial`, and `cor:fixedm_gap` are covered by their current aggregate contracts. The old 46/49 status, old source hash, and old job/declaration counts below are historical records and are not the current release status.
 
-The remaining process item is statement-level review of 35 typed contracts that do not yet have individual marker profiles in strict checker mode. This does not weaken the kernel proofs; it prevents a claim that a generic checker has mechanically established every TeX-to-Lean semantic translation.
+The strict semantic-contract review is closed: all 49 typed contracts have individually reviewed marker profiles, and `check_semantic_contract_integrity.py --require-contracts` passes. The marker gate records reviewed proposition structure; the mathematical TeX-to-Lean correspondence remains documented in the current concordance and scope audits.
 
 ## Historical status notes
 
 
-## Current statement-scope audit — 17 October 2026
+## Historical checkpoint — 17 October 2026
 
-The Main+A+B core results remain proved. This working extension is on
-`formal/end-to-end-scope-audit-20261017`. The frozen whole-paper gate is
-**not closed**: `A:factorial` has the two definition-domain qualifications
-recorded in `formal_status/a2_factorial_denominator_audit.md`. The requested
-A1–A5 and B1–B2 proof families are now represented in the current concordance;
-the only incomplete row is A2 because the frozen display omits two domain
-conditions. The Q-expansion's jointly uniform local remainder and the odd
-central variational boundary cases have also been added. The current concordance has 49 rows: 35 theorem environments and 14 supplements, with 377 declaration references to 339 distinct Lean theorems. Ten rows now carry separately transcribed Lean proposition contracts: A1, A3, A4, curvature, main Laplace, MGF, integer tails, exact exchangeability, weighted tails, and the variational identity. The other 39 rows still need standalone contracts. A2 remains scope-qualified. The integrated build passed 3,445 jobs, and the full audit passed for 1,971 theorems in 324 modules. The manuscript and pinned dependencies remain unchanged; no final-main merge has been performed.
+The Main+A+B core results were already proved. This working extension was on
+`formal/end-to-end-scope-audit-20261017`. At that checkpoint the frozen
+whole-paper gate was **not closed**: `A:factorial` had the two definition-domain
+qualifications recorded in `formal_status/a2_factorial_denominator_audit.md`.
+The requested A1–A5 and B1–B2 proof families were represented in the then-current
+concordance, but A2 still lacked the two domain conditions in the frozen display.
+The Q-expansion's jointly uniform local remainder and the odd central variational
+boundary cases had also been added. That checkpoint had 49 rows, 377 declaration
+references to 339 distinct Lean theorems, ten standalone proposition contracts,
+3,445 build jobs, and an audit of 1,971 theorems in 324 modules. The other 39
+rows still needed standalone contracts at that time, and no final-main merge had
+been performed. The current release supersedes this snapshot.
 
 
 Paper: **Exact Hoeffding Constants for Finite Exchangeable Sequences**.
@@ -72,7 +76,7 @@ The compact success-proportion argument now has both an independent finite compa
 
 The earlier baseline register listed complete mappings for all 35 theorem-class environments and 6 supplementary claims; the current scope audit and generated concordance supersede that blanket statement. Detailed mappings remain in [submission/current/theorem_lean_concordance.md](submission/current/theorem_lean_concordance.md). The actual variance supremum, its strict odd gap and fourth-order expansion, the finite-support mean-coordinate envelope, and the explicit Hamming-law extremizer with its full Bernoulli pushforward and both parity contact mechanisms are included.
 
-Current integrated checkpoint (17 October 2026): the umbrella build passed 3,445 jobs and the generated axiom audit passed for **1,971 public theorems in 324 project modules**. The audit reports only `propext`, `Classical.choice`, and `Quot.sound`. The 49-row concordance contains 377 declaration references to 339 distinct Lean theorems. Ten rows have kernel-checked typed Lean proposition contracts; these are manually transcribed and reviewed against the frozen TeX, since the checker does not prove arbitrary TeX-to-Lean semantic equivalence. The other 39 rows still lack standalone proposition contracts. The sole mathematical scope row still open is A2. Detailed A1–A5/B1–B2 coverage is in [formal_status/A1_A5_B1_B2_scope_audit_20261017.md](formal_status/A1_A5_B1_B2_scope_audit_20261017.md).
+Historical integrated checkpoint (17 October 2026): the umbrella build passed 3,445 jobs and the generated axiom audit passed for **1,971 public theorems in 324 project modules**. The audit reported only `propext`, `Classical.choice`, and `Quot.sound`. The 49-row concordance then contained 377 declaration references to 339 distinct Lean theorems; ten rows had standalone typed proposition contracts, 39 rows still needed them, and A2 remained scope-qualified. The current release status is recorded at the top of this file and in [formal_status/current_pdf_lean_reconciliation_20261018.md](formal_status/current_pdf_lean_reconciliation_20261018.md).
 
 ## Verification
 
